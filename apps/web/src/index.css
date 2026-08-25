@@ -1,0 +1,27 @@
+﻿:root {
+  font-family: Inter, "Segoe UI", "Microsoft YaHei", system-ui, sans-serif;
+  color: #10243f;
+  background: #edf5fb;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 7% 8%, rgba(37, 99, 235, 0.13), transparent 29%),
+    radial-gradient(circle at 88% 14%, rgba(15, 159, 128, 0.16), transparent 31%),
+    linear-gradient(135deg, #f7fbff 0%, #edf5fb 100%);
+}
+
+#root {
+  min-height: 100vh;
+}

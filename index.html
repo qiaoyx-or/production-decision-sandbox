@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="DecisioWorks 制造业生产决策工具包：连接行业数据、目标与规则、受控求解、结果解释和反馈联动。" />
+  <meta name="theme-color" content="#f3f7fb" />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="DecisioWorks | 制造业生产决策工具包" />
+  <meta property="og:description" content="连接行业数据、目标与规则、受控求解、结果解释和反馈联动。" />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <title>DecisioWorks | 制造业生产决策工具包</title>
+  <link rel="icon" href="./assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css?v=20260825-2" />
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="site-header" id="top">
+    <div class="nav-shell">
+      <a class="brand" href="#top" aria-label="DecisioWorks 首页">
+        <img src="./assets/decisioworks-logo.png" alt="" />
+        <span><strong>DecisioWorks</strong><small>生产决策工具包</small></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="打开主导航" aria-expanded="false" aria-controls="site-nav" title="打开导航">☰</button>
+      <nav id="site-nav" class="site-nav" aria-label="主要导航">
+        <a href="#capability">能力链</a>
+        <a href="#architecture">项目结构</a>
+        <a href="#examples">场景样例</a>
+        <a href="#ecosystem">开放生态</a>
+        <a href="#editions">版本</a>
+        <a class="nav-command" href="./sandbox/">进入沙盘 <span aria-hidden="true">→</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-art" aria-hidden="true">
+        <div class="hero-art-orbit">
+          <img src="./assets/decisioworks-logo.png" alt="" />
+          <span class="hero-signal signal-data">数据语义</span>
+          <span class="hero-signal signal-objective">目标治理</span>
+          <span class="hero-signal signal-solver">受控求解</span>
+          <span class="hero-signal signal-feedback">反馈演化</span>
+        </div>
+      </div>
+      <div class="content-shell hero-content">
+        <p class="eyebrow">PRODUCTION DECISION TOOLKIT</p>
+        <h1 id="hero-title">DecisioWorks<br /><span>制造业生产决策工具包</span></h1>
+        <p class="hero-lead">让行业数据、目标与规则、受控求解、结果解释和反馈联动进入同一条可运行、可复核、可持续迭代的能力链。</p>
+        <div class="hero-actions">
+          <a class="button primary" href="./sandbox/">进入决策沙盘 <span aria-hidden="true">→</span></a>
+          <a class="button secondary" href="https://github.com/qiaoyx-or/DecisioWorks" target="_blank" rel="noreferrer">查看 DecisioCore</a>
+        </div>
+        <dl class="hero-facts" aria-label="项目状态">
+          <div><dt>Research</dt><dd>研究版已公开</dd></div>
+          <div><dt>Commercial</dt><dd>商业版已就绪</dd></div>
+          <div><dt>DecisioCore</dt><dd>开放参考实现</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="evidence-strip" aria-label="项目证据">
+      <div class="content-shell evidence-grid">
+        <div><strong>Scene × Business</strong><span>从行业场景与业务事实出发</span></div>
+        <div><strong>Model × Solver</strong><span>模型与求解能力独立演进</span></div>
+        <div><strong>Windows + Linux</strong><span>跨平台发行与运行验证</span></div>
+        <div><strong>Human + OR + AI</strong><span>让不同能力在决策链中协同</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="capability">
+      <div class="content-shell">
+        <div class="section-heading">
+          <p class="eyebrow">CAPABILITY CHAIN</p>
+          <h2>从业务数据到下一轮决策</h2>
+          <p>生产决策的质量不只取决于一次求解。DecisioWorks 把输入、治理、求解和反馈组织成完整运行链路。</p>
+        </div>
+        <div class="capability-chain">
+          <article class="capability-step blue">
+            <span>01</span><h3>数据进入业务表达</h3>
+            <p>订单、制品、工艺、产能、物料、日历与班制通过标准数据接口进入可计算结构。</p>
+            <ul><li>数据语义</li><li>关系闭合</li><li>结构约束</li></ul>
+          </article>
+          <article class="capability-step green">
+            <span>02</span><h3>目标与规则得到治理</h3>
+            <p>交付、负荷、库存和切换等目标，以及现场规则和瓶颈，被转化为可配置的决策要素。</p>
+            <ul><li>目标系统</li><li>规则控制</li><li>计划偏差</li></ul>
+          </article>
+          <article class="capability-step orange">
+            <span>03</span><h3>模型完成受控求解</h3>
+            <p>DecisioCore 将决策要素稳定映射到 GOCK，在明确约束和运行资源内形成高质量计划。</p>
+            <ul><li>能力编排</li><li>模型适配</li><li>受控运行</li></ul>
+          </article>
+          <article class="capability-step purple">
+            <span>04</span><h3>结果进入解释与反馈</h3>
+            <p>总体指标与明细结果共同解释负荷、等待、短缺和偏差，并形成下一轮调整依据。</p>
+            <ul><li>结果分析</li><li>运行审计</li><li>反馈联动</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section architecture-section" id="architecture">
+      <div class="content-shell architecture-layout">
+        <div class="architecture-copy">
+          <p class="eyebrow">PROJECT STRUCTURE</p>
+          <h2>四个层次，各自解决一个关键问题</h2>
+          <p>业务、决策、模型与展示保持清晰职责，再通过稳定接口、分析结果和反馈信号保持联动。</p>
+          <div class="architecture-list">
+            <article><b>DataSets</b><span>行业场景与标准数据接口实例</span></article>
+            <article><b>DecisioCore</b><span>组织动作、目标、规则、解释与反馈</span></article>
+            <article><b>GOCK</b><span>模型构建、计划优化与受控求解</span></article>
+            <article><b>Web & Sandbox</b><span>让数据、配置、过程与结果可见</span></article>
+          </div>
+        </div>
+        <figure class="architecture-figure">
+          <img src="./assets/decisioworks-project-layers.png" alt="DecisioWorks 项目层次：展示交互、决策编排、模型优化、场景数据四层结构" />
+          <figcaption>各层可以独立迭代，并通过清晰接口形成完整生产决策能力。</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section sandbox-section" id="sandbox-preview">
+      <div class="content-shell sandbox-layout">
+        <figure class="sandbox-visual">
+          <img src="./assets/decision-validation-loop.png" alt="从选择数据、配置目标、运行求解到分析反馈的生产决策闭环" />
+        </figure>
+        <div class="sandbox-copy">
+          <p class="eyebrow">PRODUCTION DECISION SANDBOX</p>
+          <h2>先看清链路，再进入场景</h2>
+          <p>沙盘以公开演示数据呈现数据准备、业务关系、目标配置、运行过程、排程结果与分析反馈，适合用于认知、教学和方案沟通。</p>
+          <div class="sandbox-entries">
+            <a href="./sandbox/#businessMap">数据与业务关系 <span>→</span></a>
+            <a href="./sandbox/#controlBars">目标与规则控制 <span>→</span></a>
+            <a href="./sandbox/#analysisStack">结果与反馈复盘 <span>→</span></a>
+          </div>
+          <a class="button primary" href="./sandbox/">打开可交互沙盘 <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="examples">
+      <div class="content-shell">
+        <div class="section-heading compact">
+          <p class="eyebrow">SCENE EXAMPLES</p>
+          <h2>从具体制造场景理解能力</h2>
+          <p>样例用于说明输入数据、业务约束、运行流程和结果解释，不把能力藏在抽象概念里。</p>
+        </div>
+        <div class="example-grid">
+          <article class="example-card">
+            <div class="example-meta"><span>主生产计划</span><b>MPS</b></div>
+            <h3>冲压车间生产计划</h3>
+            <p>围绕生产日历、产能、需求、物料齐套与库存容量组织计划，并观察交付与负荷变化。</p>
+            <dl><div><dt>输入</dt><dd>需求 / 产能 / 物料</dd></div><div><dt>输出</dt><dd>计划量 / 负荷 / 偏差</dd></div></dl>
+          </article>
+          <article class="example-card">
+            <div class="example-meta"><span>作业排程</span><b>SCHEDULING</b></div>
+            <h3>注塑车间作业排程</h3>
+            <p>在设备、模具、班制、维护窗口和切换属性下形成作业顺序，分析等待与换型影响。</p>
+            <dl><div><dt>输入</dt><dd>工艺 / 设备 / 日历</dd></div><div><dt>输出</dt><dd>序列 / 等待 / 切换</dd></div></dl>
+          </article>
+          <article class="example-card">
+            <div class="example-meta"><span>混线制造</span><b>ASSEMBLY</b></div>
+            <h3>多品种混线装配</h3>
+            <p>连接订单优先级、工序级物料、共享资源和目标偏好，展示多目标取舍与结果复核。</p>
+            <dl><div><dt>输入</dt><dd>订单 / BOM / 资源</dd></div><div><dt>输出</dt><dd>方案 / 瓶颈 / 解释</dd></div></dl>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section ecosystem-section" id="ecosystem">
+      <div class="content-shell ecosystem-layout">
+        <div>
+          <p class="eyebrow">OPEN & EVOLUTION-FRIENDLY</p>
+          <h2>开放，是为了让能力持续生长</h2>
+          <p class="ecosystem-lead">DecisioWorks 允许数据来源、业务规则、能力编排、模型适配和应用界面分别演进。DecisioCore 作为开放参考实现，让伙伴可以理解、复用和扩展生产决策链路。</p>
+        </div>
+        <div class="ecosystem-grid">
+          <article><span>数据</span><h3>接入不被单一系统绑定</h3><p>标准数据接口承接 ERP、MES、文件或现场数据，保持业务语义一致。</p></article>
+          <article><span>能力</span><h3>按场景组合而非重复开发</h3><p>标准动作、能力注册和编排配方，让已有能力可以重新组织。</p></article>
+          <article><span>算法</span><h3>模型与求解器可以升级</h3><p>稳定适配层承接底层演进，降低算法变化对业务系统的冲击。</p></article>
+          <article><span>伙伴</span><h3>保留自己的行业优势</h3><p>制造企业、咨询伙伴和集成商可以在共同底座上沉淀场景知识。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="editions">
+      <div class="content-shell editions-layout">
+        <div class="section-heading compact">
+          <p class="eyebrow">EDITIONS</p>
+          <h2>从公开验证到商业运行</h2>
+          <p>研究版便于理解和验证工具包能力，商业版面向正式业务应用与持续运行。</p>
+        </div>
+        <div class="edition-table" role="table" aria-label="版本比较">
+          <div class="edition-row heading" role="row"><span role="columnheader">能力</span><span role="columnheader">研究版</span><span role="columnheader">商业版</span></div>
+          <div class="edition-row" role="row"><b role="cell">公开场景与数据接口</b><span role="cell">支持</span><span role="cell">支持</span></div>
+          <div class="edition-row" role="row"><b role="cell">DecisioCore 开放参考实现</b><span role="cell">支持</span><span role="cell">支持</span></div>
+          <div class="edition-row" role="row"><b role="cell">生产运行与授权等级</b><span role="cell">受研究范围限制</span><span role="cell">按商业授权开放</span></div>
+          <div class="edition-row" role="row"><b role="cell">场景扩展与伙伴集成</b><span role="cell">用于评估</span><span role="cell">面向实施与运营</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section" id="contact">
+      <div class="content-shell cta-layout">
+        <div><p class="eyebrow">START FROM A REAL SCENE</p><h2>从一个真实问题开始</h2><p>欢迎制造企业、园区机构、产业伙伴及生态合作方，围绕 AI+生产决策、智能制造与工业软件工具包化开展交流与合作。</p></div>
+        <div class="cta-actions">
+          <a class="button light" href="mailto:openaps@163.com">邮件联系</a>
+          <a class="button outline-light" href="https://gitee.com/qiaoyx-or/decisioworks-research" target="_blank" rel="noreferrer">查看研究版</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="content-shell footer-layout">
+      <div><strong>DecisioWorks</strong><p>让生产决策能力可运行、可解释、可持续迭代。</p></div>
+      <div class="footer-links"><a href="https://github.com/qiaoyx-or/DecisioWorks" target="_blank" rel="noreferrer">GitHub</a><a href="https://gitee.com/qiaoyx-or/decisioworks" target="_blank" rel="noreferrer">Gitee</a><a href="./sandbox/">Sandbox</a><a href="mailto:openaps@163.com">openaps@163.com</a></div>
+      <small>© 2026 DecisioWorks. 页面内容用于项目介绍与公开能力展示。</small>
+    </div>
+  </footer>
+  <script src="./app.js"></script>
+</body>
+</html>

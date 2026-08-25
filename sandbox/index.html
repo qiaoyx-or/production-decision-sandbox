@@ -1,0 +1,189 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Production Decision Sandbox：可交互查看制造数据、业务关系、规则配置、运行过程与反馈迭代。" />
+  <meta name="theme-color" content="#eef5fb" />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/sandbox/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Production Decision Sandbox | DecisioWorks" />
+  <meta property="og:description" content="可交互查看制造数据、业务关系、规则配置、运行过程与反馈迭代。" />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/sandbox/" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <title>Production Decision Sandbox | DecisioWorks</title>
+  <link rel="stylesheet" href="./styles.css?v=20260825-4" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="hero">
+      <nav class="topbar">
+        <div>
+          <span class="eyebrow">AI+生产决策 / DecisioWorks</span>
+          <h1>Production Decision Sandbox</h1>
+        </div>
+        <div class="topbar-actions">
+          <a class="back-home" href="../">返回 DecisioWorks 首页</a>
+          <div class="status-pill"><span></span> 交互沙盘 · V0.1</div>
+        </div>
+      </nav>
+      <div class="hero-grid">
+        <section class="hero-copy">
+          <h2>把生产决策能力做成<br />可验证、可编排、可演化的沙盘。</h2>
+          <p>面向制造企业、咨询伙伴与 MES/ERP 厂商，先接入数据、看清业务关系，再配置规则、运行求解、复核结果，沉淀可复用项目模板。</p>
+          <div class="hero-actions">
+            <button id="runSandbox" class="primary-btn">运行沙盘验证</button>
+            <button id="resetSandbox" class="ghost-btn">恢复初始状态</button>
+          </div>
+        </section>
+        <section class="hero-panel" aria-label="核心特点">
+          <div class="signal-card blue"><strong>数据可表达</strong><span>字段、关系、业务语义闭合</span></div>
+          <div class="signal-card green"><strong>业务可计算</strong><span>订单、工艺、资源进入模型链</span></div>
+          <div class="signal-card amber"><strong>过程可编排</strong><span>数据、目标、规则、求解可视</span></div>
+          <div class="signal-card purple"><strong>能力可演化</strong><span>反馈沉淀为下一轮模板</span></div>
+        </section>
+      </div>
+    </header>
+
+    <main>
+      <section class="control-strip">
+        <label>
+          <span>数据集</span>
+          <select id="datasetSelect">
+            <option value="demoA">离散制造样例 A</option>
+            <option value="demoB">维护窗口敏感样例 B</option>
+            <option value="demoC">交期压力样例 C</option>
+          </select>
+        </label>
+        <label>
+          <span>验证场景</span>
+          <select id="scenarioSelect">
+            <option value="schedule">车间作业排程</option>
+            <option value="capacity">产能负载分析</option>
+            <option value="material">齐套与交期复核</option>
+          </select>
+        </label>
+        <label class="range-label">
+          <span>交期权重 <b id="dueWeightText">70</b></span>
+          <input id="dueWeight" type="range" min="30" max="90" value="70" />
+        </label>
+        <label class="range-label">
+          <span>维护避让 <b id="maintenanceText">60</b></span>
+          <input id="maintenanceWeight" type="range" min="20" max="90" value="60" />
+        </label>
+      </section>
+
+      <section class="kpi-grid" aria-label="沙盘指标">
+        <article class="kpi-card">
+          <span>数据质量</span>
+          <strong id="qualityScore">86%</strong>
+          <small>字段完整、关系闭合与异常检查</small>
+        </article>
+        <article class="kpi-card">
+          <span>交期满足</span>
+          <strong id="dueScore">91%</strong>
+          <small>按当前目标系统生成候选结果</small>
+        </article>
+        <article class="kpi-card">
+          <span>资源峰值负载</span>
+          <strong id="loadScore">78%</strong>
+          <small>瓶颈设备与班制窗口综合评估</small>
+        </article>
+        <article class="kpi-card">
+          <span>可复用模板</span>
+          <strong id="templateScore">4</strong>
+          <small>数据、场景、编排、报告模板</small>
+        </article>
+      </section>
+
+      <section class="workspace-grid capability-layout">
+        <article class="panel large-panel">
+          <div class="panel-heading">
+            <div>
+              <span class="section-label">Capability Chain</span>
+              <h3>生产决策能力链路</h3>
+            </div>
+            <span class="panel-badge">非一次性流程，而是持续复核与演化</span>
+          </div>
+          <div class="chain" id="capabilityChain">
+            <div class="chain-node active" data-step="0"><b>01</b><strong>接入数据</strong><span>data.db / 映射说明</span></div>
+            <div class="chain-arrow" aria-hidden="true"></div>
+            <div class="chain-node" data-step="1"><b>02</b><strong>业务表达</strong><span>订单 / 工艺 / 资源</span></div>
+            <div class="chain-arrow" aria-hidden="true"></div>
+            <div class="chain-node" data-step="2"><b>03</b><strong>设置规则</strong><span>目标 / 约束 / 日历</span></div>
+            <div class="chain-arrow" aria-hidden="true"></div>
+            <div class="chain-node" data-step="3"><b>04</b><strong>受控求解</strong><span>授权 / 资源 / 时间</span></div>
+            <div class="chain-arrow" aria-hidden="true"></div>
+            <div class="chain-node" data-step="4"><b>05</b><strong>结果分析</strong><span>负载 / 交期 / 瓶颈</span></div>
+            <div class="chain-arrow feedback" aria-hidden="true"></div>
+            <div class="chain-node" data-step="5"><b>06</b><strong>反馈迭代</strong><span>偏差吸收 / 模板沉淀</span></div>
+          </div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-heading compact">
+            <div>
+              <span class="section-label">Data Readiness</span>
+              <h3>数据准备状态</h3>
+            </div>
+          </div>
+          <div class="readiness-list" id="readinessList"></div>
+        </article>
+      </section>
+
+      <section class="workspace-grid two-columns">
+        <article class="panel">
+          <div class="panel-heading compact">
+            <div>
+              <span class="section-label">Business Map</span>
+              <h3>业务关系视图</h3>
+            </div>
+          </div>
+          <div class="business-map" id="businessMap"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-heading compact">
+            <div>
+              <span class="section-label">Scenario Control</span>
+              <h3>目标与规则控制</h3>
+            </div>
+          </div>
+          <div class="control-bars" id="controlBars"></div>
+          <div class="note-card">
+            <strong>边缘化控制</strong>
+            <p>不是在结果上手工乱改，而是在目标、规则、资源和反馈层面约束求解行为，让优化结果与现场决策保持一致。</p>
+          </div>
+        </article>
+      </section>
+
+      <section class="workspace-grid two-columns bottom-grid">
+        <article class="panel">
+          <div class="panel-heading compact">
+            <div>
+              <span class="section-label">Schedule View</span>
+              <h3>排程时间轴</h3>
+            </div>
+            <span class="panel-badge local">本地演示数据</span>
+          </div>
+          <div class="timeline" id="timeline"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-heading compact">
+            <div>
+              <span class="section-label">Analysis</span>
+              <h3>结果分析与下一轮建议</h3>
+            </div>
+          </div>
+          <div class="analysis-stack" id="analysisStack"></div>
+          <div class="run-log" id="runLog">等待运行：选择数据集与场景后，点击“运行沙盘验证”。</div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <script src="./app.js?v=20260825-3"></script>
+</body>
+</html>

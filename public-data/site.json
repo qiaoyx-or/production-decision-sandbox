@@ -1,0 +1,14 @@
+{
+  "name": "DecisioWorks",
+  "category": "制造业生产决策工具包",
+  "status": {
+    "research": "公开发布",
+    "commercial": "已就绪",
+    "decisioCore": "开放参考实现"
+  },
+  "links": {
+    "github": "https://github.com/qiaoyx-or/DecisioWorks",
+    "gitee": "https://gitee.com/qiaoyx-or/decisioworks",
+    "research": "https://gitee.com/qiaoyx-or/decisioworks-research"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "production-decision-sandbox-web",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview --host 0.0.0.0"
+  },
+  "dependencies": {
+    "@ant-design/icons": "latest",
+    "@xyflow/react": "latest",
+    "antd": "latest",
+    "dayjs": "latest",
+    "echarts": "latest",
+    "echarts-for-react": "latest",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "vis-timeline": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.15",
+    "@types/react": "18.2.66",
+    "@types/react-dom": "18.2.22",
+    "@vitejs/plugin-react": "4.3.4",
+    "typescript": "5.6.3",
+    "vite": "5.4.11"
+  }
+}
