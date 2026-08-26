@@ -19,12 +19,6 @@
 - 样例、配方、规则、提示词、教学和证据模板资产中心；
 - GitHub Pages 公开主页与本地真实运行环境分离。
 
-详细方案：
-
-- [总体设计](DESIGN.md)
-- [V0.2 服务范围补充方案](docs/V0.2_SERVICE_SCOPE.md)
-- [GitHub Pages 主页设计](GITHUB_PAGES_DESIGN.md)
-
 ## V0.2 模块边界
 
 V0.2 以“外围服务”而非“重型系统”为边界，重点补齐六类能力：
