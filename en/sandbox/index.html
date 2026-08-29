@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Production Decision Sandbox: interactively explore manufacturing data, business relationships, rule configuration, runtime flow, results, and feedback-driven iteration." />
+  <meta name="theme-color" content="#eef5fb" />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/sandbox/" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/sandbox/" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/sandbox/" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/sandbox/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Production Decision Sandbox | DecisioWorks" />
+  <meta property="og:description" content="Interactively explore manufacturing data, business relationships, rule configuration, runtime flow, results, and feedback-driven iteration." />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/en/sandbox/" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers-en.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <title>Production Decision Sandbox | DecisioWorks</title>
+  <link rel="stylesheet" href="../../sandbox/styles.css?v=20260825-4" />
+  <link rel="stylesheet" href="./styles.css?v=20260829-1" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="hero">
+      <nav class="topbar">
+        <div>
+          <span class="eyebrow">AI + PRODUCTION DECISIONS / DecisioWorks</span>
+          <h1>Production Decision Sandbox</h1>
+        </div>
+        <div class="topbar-actions">
+          <a class="back-home" href="../../sandbox/" lang="zh-CN" aria-label="Switch to Chinese">中</a>
+          <a class="back-home" href="../">Back to DecisioWorks Home</a>
+          <div class="status-pill"><span></span> Interactive Sandbox · V0.1</div>
+        </div>
+      </nav>
+      <div class="hero-grid">
+        <section class="hero-copy">
+          <h2>Turn Production Decision Capabilities into<br />a Verifiable, Orchestrated, and Evolving Sandbox.</h2>
+          <p>For manufacturers, consultants, and MES/ERP vendors: connect data, understand business relationships, configure rules, run optimization, review results, and retain reusable project templates.</p>
+          <div class="hero-actions">
+            <button id="runSandbox" class="primary-btn">Run Sandbox Validation</button>
+            <button id="resetSandbox" class="ghost-btn">Reset</button>
+          </div>
+        </section>
+        <section class="hero-panel" aria-label="Core features">
+          <div class="signal-card blue"><strong>Expressive Data</strong><span>Complete fields, relationships, and business semantics</span></div>
+          <div class="signal-card green"><strong>Computable Business</strong><span>Orders, processes, and resources enter the model chain</span></div>
+          <div class="signal-card amber"><strong>Orchestrated Process</strong><span>Visible data, objectives, rules, and optimization</span></div>
+          <div class="signal-card purple"><strong>Evolving Capabilities</strong><span>Feedback becomes the next reusable template</span></div>
+        </section>
+      </div>
+    </header>
+
+    <main>
+      <section class="control-strip">
+        <label>
+          <span>Dataset</span>
+          <select id="datasetSelect">
+            <option value="demoA">Discrete Manufacturing Demo A</option>
+            <option value="demoB">Maintenance-Sensitive Demo B</option>
+            <option value="demoC">Due-Date Pressure Demo C</option>
+          </select>
+        </label>
+        <label>
+          <span>Validation Scenario</span>
+          <select id="scenarioSelect">
+            <option value="schedule">Workshop Scheduling</option>
+            <option value="capacity">Capacity Load Analysis</option>
+            <option value="material">Material Availability and Due-Date Review</option>
+          </select>
+        </label>
+        <label class="range-label">
+          <span>Due-Date Weight <b id="dueWeightText">70</b></span>
+          <input id="dueWeight" type="range" min="30" max="90" value="70" />
+        </label>
+        <label class="range-label">
+          <span>Maintenance Avoidance <b id="maintenanceText">60</b></span>
+          <input id="maintenanceWeight" type="range" min="20" max="90" value="60" />
+        </label>
+      </section>
+
+      <section class="kpi-grid" aria-label="Sandbox metrics">
+        <article class="kpi-card">
+          <span>Data Quality</span>
+          <strong id="qualityScore">86%</strong>
+          <small>Field completeness, relationship integrity, and anomaly checks</small>
+        </article>
+        <article class="kpi-card">
+          <span>Due-Date Fulfillment</span>
+          <strong id="dueScore">91%</strong>
+          <small>Candidate results under the current objective system</small>
+        </article>
+        <article class="kpi-card">
+          <span>Peak Resource Load</span>
+          <strong id="loadScore">78%</strong>
+          <small>Combined evaluation of bottleneck equipment and shift windows</small>
+        </article>
+        <article class="kpi-card">
+          <span>Reusable Templates</span>
+          <strong id="templateScore">4</strong>
+          <small>Data, scenario, orchestration, and report templates</small>
+        </article>
+      </section>
+
+      <section class="workspace-grid capability-layout">
+        <article class="panel large-panel">
+          <div class="panel-heading">
+            <div>
+              <span class="section-label">Capability Chain</span>
+              <h3>Production Decision Capability Chain</h3>
+            </div>
+            <span class="panel-badge">Continuous review and evolution, not a one-off flow</span>
+          </div>
+          <div class="chain" id="capabilityChain">
+            <div class="chain-node active" data-step="0"><b>01</b><strong>Connect Data</strong><span>data.db / mapping guide</span></div>
+            <div class="chain-arrow" aria-hidden="true"></div>
+            <div class="chain-node" data-step="1"><b>02</b><strong>Represent Business</strong><span>orders / processes / resources</span></div>
+            <div class="chain-arrow" aria-hidden="true"></div>
+            <div class="chain-node" data-step="2"><b>03</b><strong>Configure Rules</strong><span>objectives / constraints / calendars</span></div>
+            <div class="chain-arrow" aria-hidden="true"></div>
+            <div class="chain-node" data-step="3"><b>04</b><strong>Controlled Optimization</strong><span>license / resources / time</span></div>
+            <div class="chain-arrow" aria-hidden="true"></div>
+            <div class="chain-node" data-step="4"><b>05</b><strong>Analyze Results</strong><span>load / due dates / bottlenecks</span></div>
+            <div class="chain-arrow feedback" aria-hidden="true"></div>
+            <div class="chain-node" data-step="5"><b>06</b><strong>Iterate with Feedback</strong><span>deviation absorption / template retention</span></div>
+          </div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-heading compact">
+            <div>
+              <span class="section-label">Data Readiness</span>
+              <h3>Data Readiness</h3>
+            </div>
+          </div>
+          <div class="readiness-list" id="readinessList"></div>
+        </article>
+      </section>
+
+      <section class="workspace-grid two-columns">
+        <article class="panel">
+          <div class="panel-heading compact">
+            <div>
+              <span class="section-label">Business Map</span>
+              <h3>Business Relationship Map</h3>
+            </div>
+          </div>
+          <div class="business-map" id="businessMap"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-heading compact">
+            <div>
+              <span class="section-label">Scenario Control</span>
+              <h3>Objective and Rule Control</h3>
+            </div>
+          </div>
+          <div class="control-bars" id="controlBars"></div>
+          <div class="note-card">
+            <strong>Decision Rule Control</strong>
+            <p>Control optimization behavior through objectives, rules, resources, and feedback so results remain aligned with shop-floor decisions.</p>
+          </div>
+        </article>
+      </section>
+
+      <section class="workspace-grid two-columns bottom-grid">
+        <article class="panel">
+          <div class="panel-heading compact">
+            <div>
+              <span class="section-label">Schedule View</span>
+              <h3>Scheduling Timeline</h3>
+            </div>
+            <span class="panel-badge local">Local Demo Data</span>
+          </div>
+          <div class="timeline" id="timeline"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-heading compact">
+            <div>
+              <span class="section-label">Analysis</span>
+              <h3>Result Analysis and Next-Cycle Recommendations</h3>
+            </div>
+          </div>
+          <div class="analysis-stack" id="analysisStack"></div>
+          <div class="run-log" id="runLog">Ready: select a dataset and scenario, then click Run Sandbox Validation.</div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <script src="./app.js?v=20260825-3"></script>
+</body>
+</html>

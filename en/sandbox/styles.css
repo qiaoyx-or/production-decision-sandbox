@@ -1,0 +1,75 @@
+/* English-only responsive adjustments. The shared Chinese layout remains unchanged. */
+.hero-grid,
+.hero-copy,
+.hero-panel,
+.workspace-grid,
+.workspace-grid > *,
+.control-strip,
+.control-strip > *,
+.panel,
+.panel-heading,
+.range-label {
+  min-width: 0;
+}
+
+.hero-copy h2,
+.hero-copy p,
+.panel-heading h3,
+.status-pill,
+.range-label,
+.analysis-item,
+.run-log {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 680px) {
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .app-shell,
+  .hero,
+  main,
+  .workspace-grid,
+  .workspace-grid.capability-layout,
+  .workspace-grid.two-columns,
+  .panel {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .topbar-actions {
+    align-items: flex-start;
+  }
+
+  .status-pill {
+    max-width: 100%;
+    white-space: normal;
+  }
+
+  .hero-copy h2 {
+    font-size: 32px;
+    line-height: 1.16;
+  }
+
+  .range-label {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 8px;
+  }
+
+  .timeline-row {
+    grid-template-columns: 72px minmax(0, 1fr);
+  }
+
+  .time-block {
+    min-width: 0;
+    overflow: hidden;
+    padding-inline: 3px;
+    font-size: 10px;
+    white-space: nowrap;
+  }
+}
