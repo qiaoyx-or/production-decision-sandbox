@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import html
+import json
 import re
 import shutil
 import subprocess
@@ -128,6 +129,72 @@ GROUPS = {
 BASE_URL = "https://qiaoyx-or.github.io/production-decision-sandbox"
 WIKI_URL = "https://github.com/qiaoyx-or/decisioworks/wiki"
 
+SEO_TITLES = {
+    "What-Is-DecisioWorks": {
+        "zh": "DecisioWorks是什么：面向制造业的生产决策工具包",
+        "en": "What Is DecisioWorks? A Manufacturing Production Decision Toolkit",
+    },
+    "Scenarios-and-Pain-Points": {
+        "zh": "APS为什么难落地：制造业生产决策的常见问题",
+        "en": "Why APS Implementations Struggle: Common Production Decision Problems",
+    },
+    "Architecture-Overview": {
+        "zh": "DecisioWorks架构：数据、决策、模型与Web如何协同",
+        "en": "DecisioWorks Architecture: Data, Decisions, Models, and Web",
+    },
+    "Standardized-Data-Interface": {
+        "zh": "APS标准化数据接口：如何让生产数据真正可计算",
+        "en": "Standardized APS Data Interfaces: Making Production Data Computable",
+    },
+    "ERP-MES-Data-Mapping-Guide": {
+        "zh": "ERP、MES数据为什么不能直接用于APS",
+        "en": "Why ERP and MES Data Cannot Be Used Directly by APS",
+    },
+    "Data-Readiness-and-Validation": {
+        "zh": "APS数据准备度：从ContractReady到SolverReady",
+        "en": "APS Data Readiness: From ContractReady to SolverReady",
+    },
+    "Objectives-and-Rule-Control": {
+        "zh": "APS如何表达交期、负荷、库存和现场规则",
+        "en": "How APS Represents Delivery, Load, Inventory, and Shop-Floor Rules",
+    },
+    "Planning-and-Scheduling-Overview": {
+        "zh": "主生产计划、任务释放与作业排程有什么区别",
+        "en": "Master Planning, Task Release, and Job Scheduling Explained",
+    },
+    "Results-Evidence-and-Feedback": {
+        "zh": "APS结果如何解释：从总体指标追溯到业务对象",
+        "en": "How to Interpret APS Results: From Metrics to Business Objects",
+    },
+    "Stamping-Planning-Case-Walkthrough": {
+        "zh": "冲压生产计划案例：1920条订单如何进入计划链",
+        "en": "Stamping Planning Case: Turning 1,920 Orders into a Controlled Plan",
+    },
+    "Injection-Molding-Scheduling-Case-Walkthrough": {
+        "zh": "注塑排程案例：设备、模具、班制与换型如何配置",
+        "en": "Injection-Molding Scheduling: Molds, Shifts, and Changeovers",
+    },
+    "Research-and-Commercial-Editions": {
+        "zh": "DecisioWorks研究版与商业版有什么区别",
+        "en": "DecisioWorks Research and Commercial Editions Compared",
+    },
+}
+
+RELATED = {
+    "What-Is-DecisioWorks": ["Scenarios-and-Pain-Points", "Architecture-Overview", "Research-and-Commercial-Editions"],
+    "Scenarios-and-Pain-Points": ["Objectives-and-Rule-Control", "Planning-and-Scheduling-Overview", "Stamping-Planning-Case-Walkthrough"],
+    "Architecture-Overview": ["Standardized-Data-Interface", "Objectives-and-Rule-Control", "Results-Evidence-and-Feedback"],
+    "Standardized-Data-Interface": ["ERP-MES-Data-Mapping-Guide", "Data-Readiness-and-Validation", "Stamping-Planning-Case-Walkthrough"],
+    "ERP-MES-Data-Mapping-Guide": ["Standardized-Data-Interface", "Data-Readiness-and-Validation", "Injection-Molding-Scheduling-Case-Walkthrough"],
+    "Data-Readiness-and-Validation": ["Standardized-Data-Interface", "ERP-MES-Data-Mapping-Guide", "Results-Evidence-and-Feedback"],
+    "Objectives-and-Rule-Control": ["Planning-and-Scheduling-Overview", "Results-Evidence-and-Feedback", "Injection-Molding-Scheduling-Case-Walkthrough"],
+    "Planning-and-Scheduling-Overview": ["Objectives-and-Rule-Control", "Results-Evidence-and-Feedback", "Stamping-Planning-Case-Walkthrough"],
+    "Results-Evidence-and-Feedback": ["Objectives-and-Rule-Control", "Planning-and-Scheduling-Overview", "Architecture-Overview"],
+    "Stamping-Planning-Case-Walkthrough": ["Standardized-Data-Interface", "Planning-and-Scheduling-Overview", "Results-Evidence-and-Feedback"],
+    "Injection-Molding-Scheduling-Case-Walkthrough": ["ERP-MES-Data-Mapping-Guide", "Objectives-and-Rule-Control", "Results-Evidence-and-Feedback"],
+    "Research-and-Commercial-Editions": ["What-Is-DecisioWorks", "Architecture-Overview", "Scenarios-and-Pain-Points"],
+}
+
 
 def strip_wiki_language_line(text: str) -> str:
     lines = text.splitlines()
@@ -180,6 +247,7 @@ def rewrite_links(body: str, language: str, selected: set[str]) -> str:
 def article_template(article: dict[str, str], language: str, body: str) -> str:
     is_zh = language == "zh"
     title = article["zh_title" if is_zh else "en_title"]
+    seo_title = SEO_TITLES[article["slug"]][language]
     summary = article["zh_summary" if is_zh else "en_summary"]
     lang_code = "zh-CN" if is_zh else "en"
     root = "../" if is_zh else "../../"
@@ -194,6 +262,27 @@ def article_template(article: dict[str, str], language: str, body: str) -> str:
     home = "产品主页" if is_zh else "Product Home"
     wiki = "完整 Wiki" if is_zh else "Full Wiki"
     footer = "制造业生产决策工具包" if is_zh else "Manufacturing Production Decision Toolkit"
+    breadcrumb_home = "首页" if is_zh else "Home"
+    breadcrumb_docs = "文档中心" if is_zh else "Documentation"
+    related_title = "继续阅读" if is_zh else "Continue Reading"
+    article_by_slug = {item["slug"]: item for item in ARTICLES}
+    related_links = "".join(
+        f'''<a href="{slug}.html"><span>{html.escape(article_by_slug[slug]['zh_title' if is_zh else 'en_title'])}</span><b>→</b></a>'''
+        for slug in RELATED[article["slug"]]
+    )
+    breadcrumb_data = json.dumps(
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": breadcrumb_home, "item": f"{BASE_URL}/"},
+                {"@type": "ListItem", "position": 2, "name": breadcrumb_docs, "item": f"{BASE_URL}/{'docs' if is_zh else 'en/docs'}/"},
+                {"@type": "ListItem", "position": 3, "name": title, "item": canonical},
+            ],
+        },
+        ensure_ascii=False,
+        separators=(",", ":"),
+    )
     return f'''<!doctype html>
 <html lang="{lang_code}">
 <head>
@@ -206,13 +295,14 @@ def article_template(article: dict[str, str], language: str, body: str) -> str:
   <link rel="alternate" hreflang="en" href="{en_url}" />
   <link rel="alternate" hreflang="x-default" href="{zh_url}" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="{html.escape(title, quote=True)} | DecisioWorks" />
+  <meta property="og:title" content="{html.escape(seo_title, quote=True)}" />
   <meta property="og:description" content="{html.escape(summary, quote=True)}" />
   <meta property="og:url" content="{canonical}" />
   <meta property="og:image" content="{BASE_URL}/assets/decisioworks-project-layers{'-en' if not is_zh else ''}.png" />
-  <title>{html.escape(title)} | DecisioWorks</title>
+  <title>{html.escape(seo_title)}</title>
   <link rel="icon" href="{root}assets/decisioworks-logo.png" />
   <link rel="stylesheet" href="./styles.css?v=20260831-1" />
+  <script type="application/ld+json">{breadcrumb_data}</script>
 </head>
 <body>
   <a class="skip-link" href="#article">{'跳到正文' if is_zh else 'Skip to article'}</a>
@@ -225,8 +315,9 @@ def article_template(article: dict[str, str], language: str, body: str) -> str:
     </div>
   </header>
   <main class="docs-shell article-layout">
+    <nav class="breadcrumbs" aria-label="{'面包屑导航' if is_zh else 'Breadcrumb'}"><a href="{root}">{breadcrumb_home}</a><span>/</span><a href="./">{breadcrumb_docs}</a><span>/</span><span aria-current="page">{html.escape(title)}</span></nav>
     <aside class="article-aside"><a href="./">← {back}</a><p>{summary}</p></aside>
-    <article class="doc-article" id="article">{body}</article>
+    <article class="doc-article" id="article">{body}<section class="related-docs"><h2>{related_title}</h2><div>{related_links}</div></section></article>
   </main>
   <footer class="docs-footer"><div class="docs-shell"><strong>DecisioWorks</strong><span>{footer}</span></div></footer>
 </body>
@@ -286,7 +377,7 @@ def index_template(language: str) -> str:
 '''
 
 
-CSS = r''':root{color-scheme:light;--ink:#10233d;--muted:#526985;--line:#cbd8e8;--surface:#fff;--canvas:#f3f7fb;--navy:#0c2743;--blue:#2468dc;--cyan:#0aaec7;--green:#079b70;--orange:#e18108;--purple:#7254d6;--shadow:0 16px 38px rgba(14,40,69,.08);font-family:Inter,"Segoe UI","Microsoft YaHei",system-ui,sans-serif}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:var(--canvas);letter-spacing:0}a{color:inherit;text-decoration:none}img{display:block;max-width:100%}.docs-shell{width:min(1160px,calc(100% - 48px));margin:0 auto}.skip-link{position:fixed;left:16px;top:-60px;z-index:99;padding:10px 14px;background:#fff;border:1px solid var(--line)}.skip-link:focus{top:12px}.docs-header{position:sticky;top:0;z-index:20;background:rgba(243,247,251,.97);border-bottom:1px solid rgba(153,174,198,.5);backdrop-filter:blur(12px)}.docs-nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:28px}.docs-brand{display:inline-flex;align-items:center;gap:11px}.docs-brand img{width:38px;height:38px;border-radius:50%}.docs-brand span{display:grid;line-height:1.08}.docs-brand strong{font-size:17px}.docs-brand small{margin-top:5px;color:var(--muted);font-size:11px}.docs-nav nav{display:flex;align-items:center;gap:24px;color:#314a68;font-size:14px;font-weight:700}.docs-nav nav a:hover{color:var(--blue)}.eyebrow{margin:0 0 18px;color:var(--cyan);font-size:12px;font-weight:800;letter-spacing:.12em}.docs-hero{padding:90px 0 76px;color:#fff;background:var(--navy);border-bottom:7px solid var(--cyan)}.docs-hero h1{max-width:900px;margin:0;font-size:clamp(44px,6vw,74px);line-height:1.08}.docs-hero>div>p:last-of-type{max-width:820px;margin:24px 0 0;color:#c2d2e1;font-size:18px;line-height:1.8}.docs-hero dl{display:flex;width:fit-content;margin:36px 0 0;border:1px solid rgba(255,255,255,.2)}.docs-hero dl div{min-width:145px;padding:14px 18px;border-right:1px solid rgba(255,255,255,.2)}.docs-hero dl div:last-child{border-right:0}.docs-hero dt{font-size:21px;font-weight:800}.docs-hero dd{margin:5px 0 0;color:#a9bfd2;font-size:11px}.groups{padding:76px 0 90px}.doc-group{display:grid;grid-template-columns:270px 1fr;gap:46px;padding:44px 0;border-bottom:1px solid var(--line)}.doc-group:first-child{padding-top:0}.group-heading h2{margin:0;font-size:28px}.group-heading p{margin:14px 0 0;color:var(--muted);font-size:14px;line-height:1.75}.doc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.doc-card{display:flex;min-height:250px;flex-direction:column;padding:23px;background:#fff;border:1px solid var(--line);border-top:4px solid var(--blue);border-radius:5px;box-shadow:0 8px 20px rgba(21,49,80,.04);transition:transform .18s ease,border-color .18s ease}.doc-card:hover{transform:translateY(-3px);border-color:#8eacd0}.doc-card>span{color:var(--blue);font-size:10px;font-weight:800}.doc-card h3{margin:35px 0 13px;font-size:20px;line-height:1.35}.doc-card p{margin:0;color:var(--muted);font-size:13px;line-height:1.7}.doc-card b{margin-top:auto;padding-top:20px;color:var(--blue);font-size:12px}.docs-cta{padding:58px 0;color:#fff;background:var(--blue)}.docs-cta>div{display:flex;align-items:center;justify-content:space-between;gap:34px}.docs-cta h2{margin:0;font-size:30px}.docs-cta p{margin:10px 0 0;color:#dce9fb}.docs-cta a{padding:13px 17px;background:#fff;color:var(--blue);border-radius:4px;font-weight:800}.docs-footer{padding:38px 0;color:#a9bed1;background:#071b2f}.docs-footer>div{display:flex;justify-content:space-between;gap:20px}.docs-footer strong{color:#fff}.article-layout{display:grid;grid-template-columns:230px minmax(0,760px);justify-content:center;gap:58px;padding:70px 0 100px}.article-aside{position:sticky;top:105px;align-self:start;padding:18px 0;border-top:3px solid var(--blue);border-bottom:1px solid var(--line)}.article-aside>a{color:var(--blue);font-size:13px;font-weight:800}.article-aside p{margin:20px 0 0;color:var(--muted);font-size:13px;line-height:1.7}.doc-article{min-width:0;padding:0 0 30px}.doc-article h1{margin:0 0 28px;font-size:clamp(38px,5vw,58px);line-height:1.12}.doc-article h2{margin:50px 0 18px;padding-top:8px;font-size:28px;line-height:1.3;border-top:1px solid var(--line)}.doc-article h3{margin:32px 0 14px;font-size:20px}.doc-article p,.doc-article li{color:#354e6a;font-size:16px;line-height:1.85}.doc-article strong{color:var(--ink)}.doc-article a{color:var(--blue);text-decoration:underline;text-underline-offset:3px}.doc-article blockquote{margin:0 0 30px;padding:13px 18px;color:#3c5874;background:#eaf2fa;border-left:4px solid var(--cyan)}.doc-article blockquote p{margin:0;font-size:13px}.doc-article ul,.doc-article ol{padding-left:24px}.doc-article li+li{margin-top:8px}.doc-article code{padding:2px 5px;background:#e8eef5;border-radius:3px;font-size:.9em}.doc-article pre{overflow:auto;padding:18px;color:#e7f0f8;background:#0b2239;border-radius:4px}.doc-article pre code{padding:0;background:transparent}.doc-article table{display:block;width:100%;overflow-x:auto;border-collapse:collapse;margin:24px 0}.doc-article th,.doc-article td{min-width:120px;padding:11px 12px;border:1px solid var(--line);font-size:13px;line-height:1.55;text-align:left}.doc-article th{background:#e9f0f7}.doc-article img{margin:26px auto;border:1px solid var(--line)}@media(max-width:920px){.doc-group{grid-template-columns:1fr}.doc-grid{grid-template-columns:repeat(2,1fr)}.article-layout{grid-template-columns:1fr;gap:25px}.article-aside{position:static;display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:start}.article-aside p{margin:0}}@media(max-width:680px){.docs-shell{width:min(100% - 28px,1160px)}.docs-nav{min-height:64px}.docs-brand small{display:none}.docs-nav nav{gap:12px;font-size:12px}.docs-nav nav a[href*="github.com"]{display:none}.docs-hero{padding:64px 0 52px}.docs-hero h1{font-size:40px}.docs-hero>div>p:last-of-type{font-size:15px}.docs-hero dl{width:100%;display:grid;grid-template-columns:repeat(3,1fr)}.docs-hero dl div{min-width:0;padding:12px 9px}.doc-grid{grid-template-columns:1fr}.doc-card{min-height:220px}.docs-cta>div,.docs-footer>div{align-items:flex-start;flex-direction:column}.docs-cta a{width:100%;text-align:center}.article-layout{padding-top:42px}.article-aside{grid-template-columns:1fr}.doc-article h1{font-size:36px;overflow-wrap:anywhere}.doc-article h2{font-size:25px}.doc-article p,.doc-article li{font-size:15px}.docs-nav nav a:nth-child(2){display:none}}'''
+CSS = r''':root{color-scheme:light;--ink:#10233d;--muted:#526985;--line:#cbd8e8;--surface:#fff;--canvas:#f3f7fb;--navy:#0c2743;--blue:#2468dc;--cyan:#0aaec7;--green:#079b70;--orange:#e18108;--purple:#7254d6;--shadow:0 16px 38px rgba(14,40,69,.08);font-family:Inter,"Segoe UI","Microsoft YaHei",system-ui,sans-serif}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:var(--canvas);letter-spacing:0}a{color:inherit;text-decoration:none}img{display:block;max-width:100%}.docs-shell{width:min(1160px,calc(100% - 48px));margin:0 auto}.skip-link{position:fixed;left:16px;top:-60px;z-index:99;padding:10px 14px;background:#fff;border:1px solid var(--line)}.skip-link:focus{top:12px}.docs-header{position:sticky;top:0;z-index:20;background:rgba(243,247,251,.97);border-bottom:1px solid rgba(153,174,198,.5);backdrop-filter:blur(12px)}.docs-nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:28px}.docs-brand{display:inline-flex;align-items:center;gap:11px}.docs-brand img{width:38px;height:38px;border-radius:50%}.docs-brand span{display:grid;line-height:1.08}.docs-brand strong{font-size:17px}.docs-brand small{margin-top:5px;color:var(--muted);font-size:11px}.docs-nav nav{display:flex;align-items:center;gap:24px;color:#314a68;font-size:14px;font-weight:700}.docs-nav nav a:hover{color:var(--blue)}.eyebrow{margin:0 0 18px;color:var(--cyan);font-size:12px;font-weight:800;letter-spacing:.12em}.docs-hero{padding:90px 0 76px;color:#fff;background:var(--navy);border-bottom:7px solid var(--cyan)}.docs-hero h1{max-width:900px;margin:0;font-size:clamp(44px,6vw,74px);line-height:1.08}.docs-hero>div>p:last-of-type{max-width:820px;margin:24px 0 0;color:#c2d2e1;font-size:18px;line-height:1.8}.docs-hero dl{display:flex;width:fit-content;margin:36px 0 0;border:1px solid rgba(255,255,255,.2)}.docs-hero dl div{min-width:145px;padding:14px 18px;border-right:1px solid rgba(255,255,255,.2)}.docs-hero dl div:last-child{border-right:0}.docs-hero dt{font-size:21px;font-weight:800}.docs-hero dd{margin:5px 0 0;color:#a9bfd2;font-size:11px}.groups{padding:76px 0 90px}.doc-group{display:grid;grid-template-columns:270px 1fr;gap:46px;padding:44px 0;border-bottom:1px solid var(--line)}.doc-group:first-child{padding-top:0}.group-heading h2{margin:0;font-size:28px}.group-heading p{margin:14px 0 0;color:var(--muted);font-size:14px;line-height:1.75}.doc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.doc-card{display:flex;min-height:250px;flex-direction:column;padding:23px;background:#fff;border:1px solid var(--line);border-top:4px solid var(--blue);border-radius:5px;box-shadow:0 8px 20px rgba(21,49,80,.04);transition:transform .18s ease,border-color .18s ease}.doc-card:hover{transform:translateY(-3px);border-color:#8eacd0}.doc-card>span{color:var(--blue);font-size:10px;font-weight:800}.doc-card h3{margin:35px 0 13px;font-size:20px;line-height:1.35}.doc-card p{margin:0;color:var(--muted);font-size:13px;line-height:1.7}.doc-card b{margin-top:auto;padding-top:20px;color:var(--blue);font-size:12px}.docs-cta{padding:58px 0;color:#fff;background:var(--blue)}.docs-cta>div{display:flex;align-items:center;justify-content:space-between;gap:34px}.docs-cta h2{margin:0;font-size:30px}.docs-cta p{margin:10px 0 0;color:#dce9fb}.docs-cta a{padding:13px 17px;background:#fff;color:var(--blue);border-radius:4px;font-weight:800}.docs-footer{padding:38px 0;color:#a9bed1;background:#071b2f}.docs-footer>div{display:flex;justify-content:space-between;gap:20px}.docs-footer strong{color:#fff}.article-layout{display:grid;grid-template-columns:230px minmax(0,760px);justify-content:center;gap:58px;padding:70px 0 100px}.breadcrumbs{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin-bottom:-20px;color:var(--muted);font-size:12px}.breadcrumbs a{color:var(--blue)}.article-aside{position:sticky;top:105px;align-self:start;padding:18px 0;border-top:3px solid var(--blue);border-bottom:1px solid var(--line)}.article-aside>a{color:var(--blue);font-size:13px;font-weight:800}.article-aside p{margin:20px 0 0;color:var(--muted);font-size:13px;line-height:1.7}.doc-article{min-width:0;padding:0 0 30px}.doc-article h1{margin:0 0 28px;font-size:clamp(38px,5vw,58px);line-height:1.12}.doc-article h2{margin:50px 0 18px;padding-top:8px;font-size:28px;line-height:1.3;border-top:1px solid var(--line)}.doc-article h3{margin:32px 0 14px;font-size:20px}.doc-article p,.doc-article li{color:#354e6a;font-size:16px;line-height:1.85}.doc-article strong{color:var(--ink)}.doc-article a{color:var(--blue);text-decoration:underline;text-underline-offset:3px}.doc-article blockquote{margin:0 0 30px;padding:13px 18px;color:#3c5874;background:#eaf2fa;border-left:4px solid var(--cyan)}.doc-article blockquote p{margin:0;font-size:13px}.doc-article ul,.doc-article ol{padding-left:24px}.doc-article li+li{margin-top:8px}.doc-article code{padding:2px 5px;background:#e8eef5;border-radius:3px;font-size:.9em}.doc-article pre{overflow:auto;padding:18px;color:#e7f0f8;background:#0b2239;border-radius:4px}.doc-article pre code{padding:0;background:transparent}.doc-article table{display:block;width:100%;overflow-x:auto;border-collapse:collapse;margin:24px 0}.doc-article th,.doc-article td{min-width:120px;padding:11px 12px;border:1px solid var(--line);font-size:13px;line-height:1.55;text-align:left}.doc-article th{background:#e9f0f7}.doc-article img{margin:26px auto;border:1px solid var(--line)}.related-docs{margin-top:62px;padding-top:24px;border-top:4px solid var(--blue)}.related-docs h2{margin:0 0 15px;padding:0;border:0;font-size:23px}.related-docs>div{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.doc-article .related-docs a{display:flex;min-height:105px;flex-direction:column;justify-content:space-between;padding:14px;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:4px;text-decoration:none}.doc-article .related-docs a:hover{border-color:var(--blue)}.related-docs a span{font-size:13px;line-height:1.5}.related-docs a b{color:var(--blue)}@media(max-width:920px){.doc-group{grid-template-columns:1fr}.doc-grid{grid-template-columns:repeat(2,1fr)}.article-layout{grid-template-columns:1fr;gap:25px}.breadcrumbs{margin-bottom:0}.article-aside{position:static;display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:start}.article-aside p{margin:0}}@media(max-width:680px){.docs-shell{width:min(100% - 28px,1160px)}.docs-nav{min-height:64px}.docs-brand small{display:none}.docs-nav nav{gap:12px;font-size:12px}.docs-nav nav a[href*="github.com"]{display:none}.docs-hero{padding:64px 0 52px}.docs-hero h1{font-size:40px}.docs-hero>div>p:last-of-type{font-size:15px}.docs-hero dl{width:100%;display:grid;grid-template-columns:repeat(3,1fr)}.docs-hero dl div{min-width:0;padding:12px 9px}.doc-grid{grid-template-columns:1fr}.doc-card{min-height:220px}.docs-cta>div,.docs-footer>div{align-items:flex-start;flex-direction:column}.docs-cta a{width:100%;text-align:center}.article-layout{padding-top:42px}.article-aside{grid-template-columns:1fr}.doc-article h1{font-size:36px;overflow-wrap:anywhere}.doc-article h2{font-size:25px}.doc-article p,.doc-article li{font-size:15px}.related-docs>div{grid-template-columns:1fr}.docs-nav nav a:nth-child(2){display:none}}'''
 
 
 def copy_sources(wiki_publish: Path, content_root: Path) -> None:

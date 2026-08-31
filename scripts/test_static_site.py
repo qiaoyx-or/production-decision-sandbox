@@ -4,6 +4,8 @@
 from __future__ import annotations
 
 import argparse
+import json
+import re
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
@@ -80,6 +82,25 @@ def main() -> None:
             errors.append(f"{rel}: expected one canonical link, found {parsed.canonical_count}")
         if parsed.h1_count != 1:
             errors.append(f"{rel}: expected one h1, found {parsed.h1_count}")
+        if page.parent.name == "docs" and page.name != "index.html":
+            source_text = page.read_text(encoding="utf-8")
+            if source_text.count('class="breadcrumbs"') != 1:
+                errors.append(f"{rel}: expected one visible breadcrumb")
+            if source_text.count('class="related-docs"') != 1:
+                errors.append(f"{rel}: expected one related-documents section")
+            related_match = re.search(r'<section class="related-docs">.*?<div>(.*?)</div></section>', source_text, re.S)
+            if not related_match or related_match.group(1).count("<a ") != 3:
+                errors.append(f"{rel}: expected three related-document links")
+            json_match = re.search(r'<script type="application/ld\+json">(.*?)</script>', source_text, re.S)
+            try:
+                structured_data = json.loads(json_match.group(1)) if json_match else None
+            except json.JSONDecodeError as exc:
+                errors.append(f"{rel}: invalid JSON-LD: {exc}")
+            else:
+                if not structured_data or structured_data.get("@type") != "BreadcrumbList":
+                    errors.append(f"{rel}: missing BreadcrumbList JSON-LD")
+                elif len(structured_data.get("itemListElement", [])) != 3:
+                    errors.append(f"{rel}: expected three BreadcrumbList items")
         duplicates = sorted({item for item in parsed.ids if parsed.ids.count(item) > 1})
         if duplicates:
             errors.append(f"{rel}: duplicate ids {duplicates}")
