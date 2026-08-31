@@ -2,3 +2,7 @@
 /DESIGN.md
 /GITHUB_PAGES_DESIGN.md
 /docs/V0.2_SERVICE_SCOPE.md
+
+# Local Python build and test artifacts.
+__pycache__/
+*.py[cod]

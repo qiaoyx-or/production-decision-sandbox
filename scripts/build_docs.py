@@ -9,6 +9,7 @@ import json
 import re
 import shutil
 import subprocess
+from datetime import date
 from pathlib import Path
 
 
@@ -270,16 +271,27 @@ def article_template(article: dict[str, str], language: str, body: str) -> str:
         f'''<a href="{slug}.html"><span>{html.escape(article_by_slug[slug]['zh_title' if is_zh else 'en_title'])}</span><b>→</b></a>'''
         for slug in RELATED[article["slug"]]
     )
-    breadcrumb_data = json.dumps(
-        {
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-                {"@type": "ListItem", "position": 1, "name": breadcrumb_home, "item": f"{BASE_URL}/"},
-                {"@type": "ListItem", "position": 2, "name": breadcrumb_docs, "item": f"{BASE_URL}/{'docs' if is_zh else 'en/docs'}/"},
-                {"@type": "ListItem", "position": 3, "name": title, "item": canonical},
-            ],
-        },
+    breadcrumb = {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": breadcrumb_home, "item": f"{BASE_URL}/"},
+            {"@type": "ListItem", "position": 2, "name": breadcrumb_docs, "item": f"{BASE_URL}/{'docs' if is_zh else 'en/docs'}/"},
+            {"@type": "ListItem", "position": 3, "name": title, "item": canonical},
+        ],
+    }
+    article_data = {
+        "@type": "TechArticle",
+        "headline": seo_title,
+        "description": summary,
+        "url": canonical,
+        "mainEntityOfPage": canonical,
+        "inLanguage": lang_code,
+        "author": {"@type": "Person", "name": "qiaoyx-or", "url": "https://github.com/qiaoyx-or"},
+        "isPartOf": {"@type": "WebSite", "name": "DecisioWorks", "url": f"{BASE_URL}/"},
+        "breadcrumb": breadcrumb,
+    }
+    structured_data = json.dumps(
+        {"@context": "https://schema.org", "@graph": [article_data, breadcrumb]},
         ensure_ascii=False,
         separators=(",", ":"),
     )
@@ -299,10 +311,14 @@ def article_template(article: dict[str, str], language: str, body: str) -> str:
   <meta property="og:description" content="{html.escape(summary, quote=True)}" />
   <meta property="og:url" content="{canonical}" />
   <meta property="og:image" content="{BASE_URL}/assets/decisioworks-project-layers{'-en' if not is_zh else ''}.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{html.escape(seo_title, quote=True)}" />
+  <meta name="twitter:description" content="{html.escape(summary, quote=True)}" />
+  <meta name="twitter:image" content="{BASE_URL}/assets/decisioworks-project-layers{'-en' if not is_zh else ''}.png" />
   <title>{html.escape(seo_title)}</title>
   <link rel="icon" href="{root}assets/decisioworks-logo.png" />
   <link rel="stylesheet" href="./styles.css?v=20260831-1" />
-  <script type="application/ld+json">{breadcrumb_data}</script>
+  <script type="application/ld+json">{structured_data}</script>
 </head>
 <body>
   <a class="skip-link" href="#article">{'跳到正文' if is_zh else 'Skip to article'}</a>
@@ -343,6 +359,27 @@ def index_template(language: str) -> str:
         cards.append(f'''<section class="doc-group"><div class="group-heading"><h2>{html.escape(group_title)}</h2><p>{html.escape(group_summary)}</p></div><div class="doc-grid">{card_html}</div></section>''')
     zh_url = f"{BASE_URL}/docs/"
     en_url = f"{BASE_URL}/en/docs/"
+    collection_data = json.dumps(
+        {
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            "name": title,
+            "description": intro,
+            "url": canonical,
+            "inLanguage": lang_code,
+            "isPartOf": {"@type": "WebSite", "name": "DecisioWorks", "url": f"{BASE_URL}/"},
+            "hasPart": [
+                {
+                    "@type": "TechArticle",
+                    "name": item["zh_title" if is_zh else "en_title"],
+                    "url": f"{canonical}{item['slug']}.html",
+                }
+                for item in ARTICLES
+            ],
+        },
+        ensure_ascii=False,
+        separators=(",", ":"),
+    )
     return f'''<!doctype html>
 <html lang="{lang_code}">
 <head>
@@ -359,6 +396,11 @@ def index_template(language: str) -> str:
   <meta property="og:description" content="{html.escape(intro, quote=True)}" />
   <meta property="og:url" content="{canonical}" />
   <meta property="og:image" content="{BASE_URL}/assets/decisioworks-project-layers{'-en' if not is_zh else ''}.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{title}" />
+  <meta name="twitter:description" content="{html.escape(intro, quote=True)}" />
+  <meta name="twitter:image" content="{BASE_URL}/assets/decisioworks-project-layers{'-en' if not is_zh else ''}.png" />
+  <script type="application/ld+json">{collection_data}</script>
   <title>{title}</title>
   <link rel="icon" href="{root}assets/decisioworks-logo.png" />
   <link rel="stylesheet" href="./styles.css?v=20260831-1" />
@@ -423,7 +465,8 @@ def build(project_root: Path, wiki_publish: Path | None) -> None:
         sitemap_urls.append(f"{BASE_URL}/docs/{article['slug']}.html")
         sitemap_urls.append(f"{BASE_URL}/en/docs/{article['slug']}.html")
     sitemap = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
-    sitemap.extend(f"  <url><loc>{url}</loc></url>" for url in sitemap_urls)
+    lastmod = date.today().isoformat()
+    sitemap.extend(f"  <url><loc>{url}</loc><lastmod>{lastmod}</lastmod></url>" for url in sitemap_urls)
     sitemap.append("</urlset>")
     (project_root / "sitemap.xml").write_text("\n".join(sitemap) + "\n", encoding="utf-8")
 

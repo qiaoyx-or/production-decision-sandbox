@@ -1,0 +1,42 @@
+name: Notify IndexNow
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "index.html"
+      - "en/index.html"
+      - "sandbox/**"
+      - "en/sandbox/**"
+      - "docs/**"
+      - "en/docs/**"
+      - "sitemap.xml"
+  workflow_dispatch:
+    inputs:
+      submit_all:
+        description: Submit all canonical sitemap URLs
+        required: false
+        default: true
+        type: boolean
+
+permissions:
+  contents: read
+
+concurrency:
+  group: indexnow-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - name: Submit updated URLs
+        run: |
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" && "${{ inputs.submit_all }}" == "true" ]]; then
+            python3 scripts/submit_indexnow.py --all
+          else
+            python3 scripts/submit_indexnow.py --base "${{ github.event.before }}" --head "${{ github.sha }}"
+          fi

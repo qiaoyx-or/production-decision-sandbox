@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import xml.etree.ElementTree as ET
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
@@ -20,6 +21,9 @@ class PageParser(HTMLParser):
         self.title_count = 0
         self.description_count = 0
         self.canonical_count = 0
+        self.alternate_languages: set[str] = set()
+        self.twitter_fields: set[str] = set()
+        self.json_ld_count = 0
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         values = dict(attrs)
@@ -39,6 +43,12 @@ class PageParser(HTMLParser):
             self.description_count += 1
         if tag == "link" and values.get("rel") == "canonical" and values.get("href"):
             self.canonical_count += 1
+        if tag == "link" and values.get("rel") == "alternate" and values.get("hreflang"):
+            self.alternate_languages.add(values["hreflang"] or "")
+        if tag == "meta" and (values.get("name") or "").startswith("twitter:") and values.get("content"):
+            self.twitter_fields.add(values["name"] or "")
+        if tag == "script" and values.get("type") == "application/ld+json":
+            self.json_ld_count += 1
 
 
 def local_target(root: Path, page: Path, raw_url: str) -> Path | None:
@@ -82,6 +92,14 @@ def main() -> None:
             errors.append(f"{rel}: expected one canonical link, found {parsed.canonical_count}")
         if parsed.h1_count != 1:
             errors.append(f"{rel}: expected one h1, found {parsed.h1_count}")
+        expected_languages = {"zh-CN", "en", "x-default"}
+        if parsed.alternate_languages != expected_languages:
+            errors.append(f"{rel}: expected hreflang {sorted(expected_languages)}, found {sorted(parsed.alternate_languages)}")
+        expected_twitter = {"twitter:card", "twitter:title", "twitter:description", "twitter:image"}
+        if parsed.twitter_fields != expected_twitter:
+            errors.append(f"{rel}: incomplete Twitter metadata {sorted(parsed.twitter_fields)}")
+        if parsed.json_ld_count < 1:
+            errors.append(f"{rel}: expected JSON-LD structured data")
         if page.parent.name == "docs" and page.name != "index.html":
             source_text = page.read_text(encoding="utf-8")
             if source_text.count('class="breadcrumbs"') != 1:
@@ -97,10 +115,16 @@ def main() -> None:
             except json.JSONDecodeError as exc:
                 errors.append(f"{rel}: invalid JSON-LD: {exc}")
             else:
-                if not structured_data or structured_data.get("@type") != "BreadcrumbList":
+                graph = structured_data.get("@graph", []) if structured_data else []
+                by_type = {item.get("@type"): item for item in graph if isinstance(item, dict)}
+                breadcrumb = by_type.get("BreadcrumbList")
+                article = by_type.get("TechArticle")
+                if not breadcrumb:
                     errors.append(f"{rel}: missing BreadcrumbList JSON-LD")
-                elif len(structured_data.get("itemListElement", [])) != 3:
+                elif len(breadcrumb.get("itemListElement", [])) != 3:
                     errors.append(f"{rel}: expected three BreadcrumbList items")
+                if not article or not article.get("headline") or not article.get("author"):
+                    errors.append(f"{rel}: missing complete TechArticle JSON-LD")
         duplicates = sorted({item for item in parsed.ids if parsed.ids.count(item) > 1})
         if duplicates:
             errors.append(f"{rel}: duplicate ids {duplicates}")
@@ -108,6 +132,18 @@ def main() -> None:
             target = local_target(root, page, raw_url)
             if target and not target.exists():
                 errors.append(f"{rel}: missing {attribute} target {raw_url}")
+    sitemap = ET.parse(root / "sitemap.xml")
+    namespace = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+    sitemap_entries = sitemap.findall("sm:url", namespace)
+    if len(sitemap_entries) != len(pages):
+        errors.append(f"sitemap.xml: expected {len(pages)} URLs, found {len(sitemap_entries)}")
+    for entry in sitemap_entries:
+        if entry.find("sm:loc", namespace) is None or entry.find("sm:lastmod", namespace) is None:
+            errors.append("sitemap.xml: every URL requires loc and lastmod")
+            break
+    key_files = [path for path in root.glob("*.txt") if path.read_text(encoding="utf-8").strip() == path.stem]
+    if len(key_files) != 1:
+        errors.append(f"IndexNow: expected one root key file, found {len(key_files)}")
     if errors:
         raise SystemExit("\n".join(errors))
     print(f"OK: validated metadata, structure, and local assets across {len(pages)} public HTML pages")
