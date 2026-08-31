@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Understand the roles of master planning, task release, and job scheduling." />
+  <meta name="theme-color" content="#f3f7fb" />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/docs/Planning-and-Scheduling-Overview.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/docs/Planning-and-Scheduling-Overview.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/docs/Planning-and-Scheduling-Overview.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/docs/Planning-and-Scheduling-Overview.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Planning and Scheduling Overview | DecisioWorks" />
+  <meta property="og:description" content="Understand the roles of master planning, task release, and job scheduling." />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/en/docs/Planning-and-Scheduling-Overview.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers-en.png" />
+  <title>Planning and Scheduling Overview | DecisioWorks</title>
+  <link rel="icon" href="../../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css?v=20260831-1" />
+</head>
+<body>
+  <a class="skip-link" href="#article">Skip to article</a>
+  <header class="docs-header">
+    <div class="docs-shell docs-nav">
+      <a class="docs-brand" href="../../"><img src="../../assets/decisioworks-logo.png" alt="" /><span><strong>DecisioWorks</strong><small>Manufacturing Production Decision Toolkit</small></span></a>
+      <nav aria-label="Documentation navigation">
+        <a href="./">Documentation</a><a href="../../">Product Home</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki" target="_blank" rel="noreferrer">Full Wiki</a><a href="../../docs/Planning-and-Scheduling-Overview.html" lang="zh-CN">中</a>
+      </nav>
+    </div>
+  </header>
+  <main class="docs-shell article-layout">
+    <aside class="article-aside"><a href="./">← Documentation</a><p>Understand the roles of master planning, task release, and job scheduling.</p></aside>
+    <article class="doc-article" id="article"><blockquote>
+<p>Applies to DecisioWorks v1.4.0</p>
+</blockquote>
+<h1
+id="planning-and-scheduling-keeping-two-decision-levels-aligned">Planning
+and scheduling: keeping two decision levels aligned</h1>
+<p>Master planning and detailed scheduling solve different problems.
+Planning decides what to produce, how much, and when work may be
+released. Scheduling assigns released, executable work to resources,
+sequence, and time. Combining everything in one model often makes the
+plan too detailed and pushes material or management conflicts into the
+scheduler.</p>
+<h2 id="what-master-planning-owns">What master planning owns</h2>
+<p>Master planning brings together demand, capacity, material
+availability, inventory, delivery commitments, and execution feedback.
+It identifies underproduction, overload, kitting risk, inventory
+pressure, and commitment risk, then decides what may be released and
+what requires review.</p>
+<p>DecisioWorks can represent these changes as PlanBias records. A bias
+preserves source, affected object, direction, and impact before anyone
+overwrites the active plan.</p>
+<h2 id="what-detailed-scheduling-owns">What detailed scheduling
+owns</h2>
+<p>Scheduling receives released, confirmed, materially ready work
+packages. Within a local production unit it handles resource assignment,
+sequence, waiting, idle time, and changeovers. Precise scheduling
+depends on stable input and should not absorb long-term forecasting,
+procurement commitments, or cross-department negotiation.</p>
+<h2 id="linkage-flow">Linkage flow</h2>
+<pre class="text"><code>demand, capacity, material, and execution changes
+  -&gt; PlanBias -&gt; PlanSignal
+  -&gt; objective/rule candidates or release policy
+  -&gt; scheduling work package
+  -&gt; workload, waiting, changeover, and execution feedback
+  -&gt; next planning cycle</code></pre>
+<p>A PlanSignal can adjust an objective, create a local rule, influence
+release, or remain an alert. Change therefore enters the decision
+process before it modifies the plan.</p>
+<h2 id="freeze-continue-or-reconstruct">Freeze, continue, or
+reconstruct</h2>
+<p>Disturbance response should not default to global rescheduling.
+Near-term prepared work may be frozen, still-valid work continued, and
+only the affected scope reconstructed. Compare solution gain with change
+scope, shop-floor switching cost, and commitment impact.</p>
+<h2 id="observe-it-in-the-web-cockpit">Observe it in the Web
+cockpit</h2>
+<ol type="1">
+<li>Inspect demand, capacity, kitting, and time units.</li>
+<li>Run a baseline and review satisfaction, workload, waiting, and
+shortage.</li>
+<li>Change one objective, rule, or resource condition and rerun.</li>
+<li>Compare what remained stable, what changed, and why.</li>
+<li>Record cross-cycle issues as inputs to the next planning round.</li>
+</ol>
+<p>Common mistakes include treating MPS as a coarse Gantt chart, leaving
+procurement conflicts to scheduling, overwriting plans without an
+explanation, and comparing scores without considering execution
+stability.</p>
+</article>
+  </main>
+  <footer class="docs-footer"><div class="docs-shell"><strong>DecisioWorks</strong><span>Manufacturing Production Decision Toolkit</span></div></footer>
+</body>
+</html>

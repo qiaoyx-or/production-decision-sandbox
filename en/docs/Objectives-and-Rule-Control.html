@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Bring delivery, load, inventory, changeovers, and site rules into controlled solving." />
+  <meta name="theme-color" content="#f3f7fb" />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/docs/Objectives-and-Rule-Control.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/docs/Objectives-and-Rule-Control.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/docs/Objectives-and-Rule-Control.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/docs/Objectives-and-Rule-Control.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Objectives and Rule Control | DecisioWorks" />
+  <meta property="og:description" content="Bring delivery, load, inventory, changeovers, and site rules into controlled solving." />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/en/docs/Objectives-and-Rule-Control.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers-en.png" />
+  <title>Objectives and Rule Control | DecisioWorks</title>
+  <link rel="icon" href="../../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css?v=20260831-1" />
+</head>
+<body>
+  <a class="skip-link" href="#article">Skip to article</a>
+  <header class="docs-header">
+    <div class="docs-shell docs-nav">
+      <a class="docs-brand" href="../../"><img src="../../assets/decisioworks-logo.png" alt="" /><span><strong>DecisioWorks</strong><small>Manufacturing Production Decision Toolkit</small></span></a>
+      <nav aria-label="Documentation navigation">
+        <a href="./">Documentation</a><a href="../../">Product Home</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki" target="_blank" rel="noreferrer">Full Wiki</a><a href="../../docs/Objectives-and-Rule-Control.html" lang="zh-CN">中</a>
+      </nav>
+    </div>
+  </header>
+  <main class="docs-shell article-layout">
+    <aside class="article-aside"><a href="./">← Documentation</a><p>Bring delivery, load, inventory, changeovers, and site rules into controlled solving.</p></aside>
+    <article class="doc-article" id="article"><blockquote>
+<p>Applies to DecisioWorks v1.4.0</p>
+</blockquote>
+<h1
+id="objectives-and-rule-control-bringing-enterprise-trade-offs-into-solving">Objectives
+and rule control: bringing enterprise trade-offs into solving</h1>
+<p>A central APS challenge is expressing the enterprise trade-offs that
+guide computation. Delivery, inventory, workload, changeovers,
+stability, and risk cannot all improve without limit. If the system does
+not know what matters now or which shop-floor conditions must hold, the
+result may be mathematically valid but operationally rejected.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Question</th>
+<th>Owner</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Structural constraint</td>
+<td>Is it physically or logically possible?</td>
+<td>Standard data interface</td>
+<td>Route, capacity, shift, BOM, batch</td>
+</tr>
+<tr class="even">
+<td>Management objective</td>
+<td>What should the alternative favor?</td>
+<td><code>objective_system</code></td>
+<td>Delivery, workload, waiting, inventory, changeover</td>
+</tr>
+<tr class="odd">
+<td>Scenario rule</td>
+<td>What must this situation respect?</td>
+<td><code>marginal_control</code></td>
+<td>Bottleneck protection, priority window, prohibition, resource
+quota</td>
+</tr>
+</tbody>
+</table>
+<p>Separating these types preserves source, scope, effective time, and
+result interpretation. Objective terms include semantic name, direction,
+weight, object scope, granularity, and audit material. A weight
+represents relative trade-off; physical cost and quantity remain
+separate business measures.</p>
+<p><code>marginal_control</code> carries customer- or site-confirmed
+rules, bottlenecks, consensus, and balancing signals. A rule should
+identify its objects, scope, source, and expiry so that a one-time
+workaround does not become permanent hidden logic.</p>
+<p>When delivery conflicts with changeover reduction, or an urgent order
+conflicts with a freeze window, the system should expose the conflict.
+Compare objectives, matched rules, and object-level impact, then let the
+accountable person confirm the trade-off.</p>
+<p>Configure by validating structural constraints first, selecting a
+small set of relevant objectives, scoping rules, running a baseline,
+changing only a few factors, and comparing business quantities and
+stability rather than a score alone.</p>
+</article>
+  </main>
+  <footer class="docs-footer"><div class="docs-shell"><strong>DecisioWorks</strong><span>Manufacturing Production Decision Toolkit</span></div></footer>
+</body>
+</html>

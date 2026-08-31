@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Turn orders, routes, capacity, materials, and time relationships into computable business structures." />
+  <meta name="theme-color" content="#f3f7fb" />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/docs/Standardized-Data-Interface.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/docs/Standardized-Data-Interface.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/docs/Standardized-Data-Interface.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/docs/Standardized-Data-Interface.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Standardized Data Interface | DecisioWorks" />
+  <meta property="og:description" content="Turn orders, routes, capacity, materials, and time relationships into computable business structures." />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/en/docs/Standardized-Data-Interface.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers-en.png" />
+  <title>Standardized Data Interface | DecisioWorks</title>
+  <link rel="icon" href="../../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css?v=20260831-1" />
+</head>
+<body>
+  <a class="skip-link" href="#article">Skip to article</a>
+  <header class="docs-header">
+    <div class="docs-shell docs-nav">
+      <a class="docs-brand" href="../../"><img src="../../assets/decisioworks-logo.png" alt="" /><span><strong>DecisioWorks</strong><small>Manufacturing Production Decision Toolkit</small></span></a>
+      <nav aria-label="Documentation navigation">
+        <a href="./">Documentation</a><a href="../../">Product Home</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki" target="_blank" rel="noreferrer">Full Wiki</a><a href="../../docs/Standardized-Data-Interface.html" lang="zh-CN">中</a>
+      </nav>
+    </div>
+  </header>
+  <main class="docs-shell article-layout">
+    <aside class="article-aside"><a href="./">← Documentation</a><p>Turn orders, routes, capacity, materials, and time relationships into computable business structures.</p></aside>
+    <article class="doc-article" id="article"><blockquote>
+<p>Applies to DecisioWorks v1.4.0</p>
+</blockquote>
+<h1 id="standardized-data-interface">Standardized Data Interface</h1>
+<p>A standardized data interface does more than align fields: it turns
+business facts into computable structures.</p>
+<h2 id="core-objects">Core objects</h2>
+<p>Orders, products, routes, operations, work centers, capacity,
+calendars, shifts, maintenance, materials, operation-level BOM,
+inventory, kitting information, and planning results are connected
+through explicit keys, time coordinates, and relationships.</p>
+<h2 id="four-relationship-chains">Four relationship chains</h2>
+<ol type="1">
+<li>Time: delivery, capacity, kitting, and results share one planning
+coordinate.</li>
+<li>Product: orders, routes, inventory, and properties refer to
+consistent products.</li>
+<li>Process and capacity: products traverse routes and operations to
+resources with valid capacity and calendars.</li>
+<li>Material and kitting: material conditions bind to operations and
+planning levels.</li>
+</ol>
+<p>The scenario <code>data.db</code> is a testable interface template.
+Complete fields are only the beginning; closed relationships, consistent
+semantics, and active structural constraints determine solver
+readiness.</p>
+<h2 id="design-principle-complete-fields-are-only-the-beginning">Design
+principle: complete fields are only the beginning</h2>
+<p>The hard part of APS data onboarding is not importing tables. It is
+proving that time, product, process-capacity, and material-readiness
+relationships close correctly. Data enters production decisions only
+when objects, relationships, units, and constraint semantics agree.</p>
+<h2 id="typical-uses">Typical uses</h2>
+<ul>
+<li>without ERP or MES, use <code>data.db</code> as a standard interface
+template to organize a scenario quickly;</li>
+<li>with ERP or MES, map source data into shared business semantics and
+reduce integration friction;</li>
+<li>represent shifts, maintenance, shared resources, lot sizes, yield,
+and operation-level BOM;</li>
+<li>provide common inputs for master planning, scheduling, material
+readiness, and AI Agent onboarding.</li>
+</ul>
+<h2 id="differentiation">Differentiation</h2>
+<p>Many interfaces stop when fields can be transferred. DecisioWorks
+distinguishes readable structure, closed business relationships, and
+solver readiness. The interface is therefore both a data entry point and
+the first stage of business modeling and constraint construction.</p>
+</article>
+  </main>
+  <footer class="docs-footer"><div class="docs-shell"><strong>DecisioWorks</strong><span>Manufacturing Production Decision Toolkit</span></div></footer>
+</body>
+</html>

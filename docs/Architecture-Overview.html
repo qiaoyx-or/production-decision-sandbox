@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="梳理 DataSets、DecisioCore、GOCK 与 Web 的职责及协作关系。" />
+  <meta name="theme-color" content="#f3f7fb" />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/docs/Architecture-Overview.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/docs/Architecture-Overview.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/docs/Architecture-Overview.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/docs/Architecture-Overview.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="DecisioWorks 架构概览 | DecisioWorks" />
+  <meta property="og:description" content="梳理 DataSets、DecisioCore、GOCK 与 Web 的职责及协作关系。" />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/docs/Architecture-Overview.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <title>DecisioWorks 架构概览 | DecisioWorks</title>
+  <link rel="icon" href="../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css?v=20260831-1" />
+</head>
+<body>
+  <a class="skip-link" href="#article">跳到正文</a>
+  <header class="docs-header">
+    <div class="docs-shell docs-nav">
+      <a class="docs-brand" href="../"><img src="../assets/decisioworks-logo.png" alt="" /><span><strong>DecisioWorks</strong><small>制造业生产决策工具包</small></span></a>
+      <nav aria-label="文档导航">
+        <a href="./">文档中心</a><a href="../">产品主页</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki" target="_blank" rel="noreferrer">完整 Wiki</a><a href="../en/docs/Architecture-Overview.html" lang="en">EN</a>
+      </nav>
+    </div>
+  </header>
+  <main class="docs-shell article-layout">
+    <aside class="article-aside"><a href="./">← 文档中心</a><p>梳理 DataSets、DecisioCore、GOCK 与 Web 的职责及协作关系。</p></aside>
+    <article class="doc-article" id="article"><blockquote>
+<p>适用于 DecisioWorks v1.4.0</p>
+</blockquote>
+<h1 id="总体架构">总体架构</h1>
+<p>DecisioWorks 以 <code>Scene × Business × Model × Solver</code>
+为顶层逻辑，并形成四个相互协作的项目层次。项目层次说明“谁负责什么”，运行链路说明“一次决策怎样流动”，两者不能简单理解为同一条单向流水线。</p>
+<ol type="1">
+<li><strong>DataSets</strong>：保存行业场景和标准数据接口实例，回答业务如何被准确表达。</li>
+<li><strong>GOCK</strong>：承担模型构建与优化，回答计划如何在明确约束和目标下形成。</li>
+<li><strong>DecisioCore</strong>：连接数据、目标、规则、模型、结果与反馈，回答计划如何进入决策。</li>
+<li><strong>Web
+Cockpit</strong>：展示输入、配置、过程、输出与证据，回答能力如何被看见和操作。</li>
+</ol>
+<p>文档、工具、容器、测试与发行治理横向支撑这些层次。各层可以独立演进，通过稳定接口、分析结果和反馈信号保持联动。</p>
+<h2 id="项目层次与运行顺序的区别">项目层次与运行顺序的区别</h2>
+<p>DataSets、GOCK、DecisioCore 和 Web Cockpit
+是职责层次，不表示程序按该列表顺序依次运行。一次典型运行更接近：</p>
+<pre class="text"><code>DataSets
+   ↓ 业务对象与结构约束
+DecisioCore：数据校验、目标与规则、标准动作
+   ↓ 模型配置与受控参数
+GOCK：模型构建与优化
+   ↓ 计划结果与运行状态
+DecisioCore：分析、解释、偏差与反馈
+   ↓
+Web Cockpit / API / 下一轮计划</code></pre>
+<p>DecisioCore
+在求解前后都承担职责：求解前组织模型输入，求解后把计划结果拆解为业务指标、对象明细和下一轮决策依据。</p>
+<h2 id="为什么采用分层架构">为什么采用分层架构</h2>
+<p>生产场景持续变化，但变化发生的位置不同：字段与关系属于数据层，管理偏好属于目标层，现场经验属于规则控制，流程变化属于能力编排，模型升级属于求解层。分层使每类变化回到相应位置处理，并通过稳定接口保持联动。</p>
+<h2 id="顶层逻辑scene--business--model--solver">顶层逻辑：Scene ×
+Business × Model × Solver</h2>
+<ul>
+<li><strong>Scene</strong> 确定行业场景、数据范围与业务边界；</li>
+<li><strong>Business</strong>
+表达订单、工艺、产能、物料、目标和规则；</li>
+<li><strong>Model</strong> 将业务事实转化为可求解结构；</li>
+<li><strong>Solver</strong> 在受控参数与授权范围内执行计算。</li>
+</ul>
+<p>四个项目层次按照各自职责共同承接这条逻辑。DataSets
+提供场景和数据模板，DecisioCore 组织生产决策链，GOCK
+提供模型与优化能力，Web 负责展示、操作和验证。</p>
+<p>下一步：<a href="https://github.com/qiaoyx-or/decisioworks/wiki/Component-Responsibilities-zh-CN">组件职责</a> · <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Standard-Actions-and-Orchestration-zh-CN">标准动作与能力编排</a></p>
+</article>
+  </main>
+  <footer class="docs-footer"><div class="docs-shell"><strong>DecisioWorks</strong><span>制造业生产决策工具包</span></div></footer>
+</body>
+</html>

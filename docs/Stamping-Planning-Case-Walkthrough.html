@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="查看需求、产能、物料如何形成基线计划与调整结果。" />
+  <meta name="theme-color" content="#f3f7fb" />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/docs/Stamping-Planning-Case-Walkthrough.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/docs/Stamping-Planning-Case-Walkthrough.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/docs/Stamping-Planning-Case-Walkthrough.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/docs/Stamping-Planning-Case-Walkthrough.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="冲压计划案例 | DecisioWorks" />
+  <meta property="og:description" content="查看需求、产能、物料如何形成基线计划与调整结果。" />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/docs/Stamping-Planning-Case-Walkthrough.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <title>冲压计划案例 | DecisioWorks</title>
+  <link rel="icon" href="../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css?v=20260831-1" />
+</head>
+<body>
+  <a class="skip-link" href="#article">跳到正文</a>
+  <header class="docs-header">
+    <div class="docs-shell docs-nav">
+      <a class="docs-brand" href="../"><img src="../assets/decisioworks-logo.png" alt="" /><span><strong>DecisioWorks</strong><small>制造业生产决策工具包</small></span></a>
+      <nav aria-label="文档导航">
+        <a href="./">文档中心</a><a href="../">产品主页</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki" target="_blank" rel="noreferrer">完整 Wiki</a><a href="../en/docs/Stamping-Planning-Case-Walkthrough.html" lang="en">EN</a>
+      </nav>
+    </div>
+  </header>
+  <main class="docs-shell article-layout">
+    <aside class="article-aside"><a href="./">← 文档中心</a><p>查看需求、产能、物料如何形成基线计划与调整结果。</p></aside>
+    <article class="doc-article" id="article"><blockquote>
+<p>适用于 DecisioWorks v1.4.0</p>
+</blockquote>
+<h1 id="冲压计划案例从-1920-条订单明细到受控计划链">冲压计划案例：从
+1920 条订单明细到受控计划链</h1>
+<p>本案例使用标准样例 <code>StampingWorkshop/data.db</code> 与官方
+<code>production_planning</code> 配方。2026-08-31
+的只读检查确认数据库完整性为 <code>ok</code>，包含 1920 条订单明细、50
+条产能记录、38 条工艺与工序级物料关系、500 条齐套记录、25 个时间单元和 3
+个工作中心。</p>
+<h2 id="1-输入数据">1. 输入数据</h2>
+<p>订单通过 <code>order_item</code>
+表达制品、交期和数量；制品经工艺路线和工序连接工作中心；<code>ingredient</code>
+把物料需求绑定到工序；<code>kitting_information</code>
+表达各时间单元的物料可用量；<code>capacity.used</code>
+表达已有产能占用比例。</p>
+<h2 id="2-约束与目标">2. 约束与目标</h2>
+<p>官方配方启用产能、需求和齐套约束，产能采用软约束，不启用库存约束。目标使用
+<code>job_bias=-0.001</code> 与
+<code>waittime=1.0</code>，并把交期/完工期压力桥接为车间计划中的累计等待时间材料。求解配置为
+16 线程、120 秒；实际可用上限仍由发行版和授权控制。</p>
+<h2 id="3-处理流程">3. 处理流程</h2>
+<p>数据采集 → 约束解析 → 方案生成 → 方案选择 → 结果评估 →
+可选结果派发。标准数据库不会被结果派发动作写回；只有显式配置的独立 JSON
+结果文件可以持久化。</p>
+<h2 id="4-输出与解释">4. 输出与解释</h2>
+<table>
+<thead>
+<tr class="header">
+<th>输出</th>
+<th>阅读方式</th>
+<th>验收问题</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>计划结果</td>
+<td>按时间、工作中心和工序查看数量</td>
+<td>是否覆盖需求且保持时间坐标一致</td>
+</tr>
+<tr class="even">
+<td>交付偏差</td>
+<td>下钻到制品或订单</td>
+<td>风险来自数量、时间还是释放策略</td>
+</tr>
+<tr class="odd">
+<td>工作中心负荷</td>
+<td>同时看总体与时间单元</td>
+<td>瓶颈是否被平均值掩盖</td>
+</tr>
+<tr class="even">
+<td>空闲与等待</td>
+<td>使用明确时间单位</td>
+<td>是否由齐套、产能或目标取舍造成</td>
+</tr>
+<tr class="odd">
+<td>目标材料审计</td>
+<td>核对方向、权重和语义</td>
+<td>加权值是否被误当成实际业务量</td>
+</tr>
+</tbody>
+</table>
+<p>基线与重算应使用相同数据版本，只调整少量目标、规则或资源条件，并保留前后配置差异。</p>
+<h2 id="5-证据说明">5. 证据说明</h2>
+<p>2026-08-31，本案例在隔离的商业版副本中使用有效
+<code>Enterprise</code> 授权完成了新的真实运行。正式 API 基线采用 16
+线程、120 秒上限，14.41 秒返回
+<code>ok</code>；调整方案采用相同数据、约束和求解资源，仅把
+<code>job_bias</code> 从 <code>-0.001</code> 调整为
+<code>-0.003</code>、<code>waittime</code> 从 <code>1.0</code> 调整为
+<code>2.0</code>，14.29 秒返回 <code>ok</code>。两次运行均产生 1
+个候选解、有效最佳方案、66 条结果和 12 个动作事件，错误数为 0。</p>
+<p>基线结果中，总需求与总产出均为 680,500，最终短缺为 0，需求满足率为
+100%；可用产能为 1,188,000，加工负荷为
+371,588.48，含准备与等待的计划负荷为 377,080.42，利用率约
+31.74%。本次权重调整没有改变这些计划结果，但 <code>job_bias</code>
+的加权贡献由 <code>-7,854.678</code> 变为
+<code>-23,564.034</code>。这说明权重已进入目标材料计算，同时也说明“调整权重”不等于“结果必然变化”：在当前数据与约束下，同一计划仍可能保持稳定。</p>
+<p><img
+src="assets/enterprise-real-run-20260831/stamping_input_data.jpg"
+alt="冲压样例真实输入数据" /></p>
+<p><img
+src="assets/enterprise-real-run-20260831/stamping_baseline_result.jpg"
+alt="冲压基线真实运行结果" /></p>
+<p><img
+src="assets/enterprise-real-run-20260831/stamping_ab_compare.jpg"
+alt="冲压调整方案与基线对比" /></p>
+<p>截图由商业版场景实验台真实加载和运行生成。页面复现使用教学页配置的 2
+线程、60 秒并成功完成；API 证据使用本节列出的 16 线程、120
+秒配置。公开运行记录保留版本、授权等级、参数、指标和文件哈希。本次结果用于证明该发行版本与样例链路可运行，客户环境仍需完成数据、性能和业务验收。</p>
+</article>
+  </main>
+  <footer class="docs-footer"><div class="docs-shell"><strong>DecisioWorks</strong><span>制造业生产决策工具包</span></div></footer>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="See how demand, capacity, and materials shape a baseline plan and adjusted result." />
+  <meta name="theme-color" content="#f3f7fb" />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/docs/Stamping-Planning-Case-Walkthrough.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/docs/Stamping-Planning-Case-Walkthrough.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/docs/Stamping-Planning-Case-Walkthrough.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/docs/Stamping-Planning-Case-Walkthrough.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Stamping Planning Case Walkthrough | DecisioWorks" />
+  <meta property="og:description" content="See how demand, capacity, and materials shape a baseline plan and adjusted result." />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/en/docs/Stamping-Planning-Case-Walkthrough.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers-en.png" />
+  <title>Stamping Planning Case Walkthrough | DecisioWorks</title>
+  <link rel="icon" href="../../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css?v=20260831-1" />
+</head>
+<body>
+  <a class="skip-link" href="#article">Skip to article</a>
+  <header class="docs-header">
+    <div class="docs-shell docs-nav">
+      <a class="docs-brand" href="../../"><img src="../../assets/decisioworks-logo.png" alt="" /><span><strong>DecisioWorks</strong><small>Manufacturing Production Decision Toolkit</small></span></a>
+      <nav aria-label="Documentation navigation">
+        <a href="./">Documentation</a><a href="../../">Product Home</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki" target="_blank" rel="noreferrer">Full Wiki</a><a href="../../docs/Stamping-Planning-Case-Walkthrough.html" lang="zh-CN">中</a>
+      </nav>
+    </div>
+  </header>
+  <main class="docs-shell article-layout">
+    <aside class="article-aside"><a href="./">← Documentation</a><p>See how demand, capacity, and materials shape a baseline plan and adjusted result.</p></aside>
+    <article class="doc-article" id="article"><blockquote>
+<p>Applies to DecisioWorks v1.4.0</p>
+</blockquote>
+<h1
+id="stamping-planning-case-from-1920-order-lines-to-a-controlled-planning-chain">Stamping
+planning case: from 1,920 order lines to a controlled planning
+chain</h1>
+<p>This case uses the reference <code>StampingWorkshop/data.db</code>
+and the official <code>production_planning</code> recipe. A read-only
+inspection on 2026-08-31 returned SQLite integrity <code>ok</code> and
+found 1,920 order lines, 50 capacity records, 38 operation-level
+material links, 500 kitting records, 25 time units, and 3 work
+centers.</p>
+<p>Orders provide product, due time, and quantity. Routes and operations
+connect products to work centers. <code>ingredient</code> binds material
+demand to operations, <code>kitting_information</code> provides material
+availability by time, and <code>capacity.used</code> represents an
+existing utilization ratio.</p>
+<p>The recipe enables capacity, demand, and kitting constraints, uses
+soft capacity, and leaves inventory constraints disabled. Its objective
+uses <code>job_bias=-0.001</code> and <code>waittime=1.0</code>. The
+configured solver request is 16 threads and 120 seconds, subject to
+edition and license limits.</p>
+<p>The action chain is acquisition → constraint parsing → generation →
+selection → evaluation → optional dispatch.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Output</th>
+<th>How to read it</th>
+<th>Acceptance question</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Planning result</td>
+<td>Quantity by time, work center, and operation</td>
+<td>Does it cover demand on the shared time coordinate?</td>
+</tr>
+<tr class="even">
+<td>Delivery bias</td>
+<td>Drill down to product or order</td>
+<td>Is risk caused by quantity, timing, or release?</td>
+</tr>
+<tr class="odd">
+<td>Workload</td>
+<td>Compare aggregate and time-unit detail</td>
+<td>Does an average hide a bottleneck?</td>
+</tr>
+<tr class="even">
+<td>Idle and waiting</td>
+<td>Use an explicit time unit</td>
+<td>Is it caused by kitting, capacity, or trade-off?</td>
+</tr>
+<tr class="odd">
+<td>Objective-material audit</td>
+<td>Verify direction, weight, and meaning</td>
+<td>Has a weighted value been confused with a physical quantity?</td>
+</tr>
+</tbody>
+</table>
+<p>Baseline and rerun comparisons should keep the data version fixed,
+change only a few objectives, rules, or resource conditions, and retain
+the configuration difference.</p>
+<p>On 2026-08-31, a fresh run was completed in an isolated
+commercial-edition copy under a valid <code>Enterprise</code> license.
+The API baseline used 16 threads with a 120-second limit and returned
+<code>ok</code> in 14.41 seconds. The adjusted run kept the same data,
+constraints, and compute settings, changing only <code>job_bias</code>
+from <code>-0.001</code> to <code>-0.003</code> and
+<code>waittime</code> from <code>1.0</code> to <code>2.0</code>; it
+returned <code>ok</code> in 14.29 seconds. Both runs produced one
+candidate, a valid best solution, 66 result records, 12 action events,
+and no errors.</p>
+<p>For the baseline, total demand and output were both 680,500, final
+shortage was zero, and fulfilment was 100%. Available capacity was
+1,188,000; processing load was 371,588.48; planned load including setup
+and waiting was 377,080.42; utilization was about 31.74%. The weight
+change did not alter these planning quantities, while the weighted
+<code>job_bias</code> contribution changed from <code>-7,854.678</code>
+to <code>-23,564.034</code>. This is useful evidence in its own right: a
+weight can enter the objective correctly without forcing a different
+plan when the current data and constraints still support the same
+solution.</p>
+<p><img
+src="assets/enterprise-real-run-20260831/stamping_input_data.jpg"
+alt="Real stamping input data" /></p>
+<p><img
+src="assets/enterprise-real-run-20260831/stamping_baseline_result.jpg"
+alt="Real stamping baseline result" /></p>
+<p><img
+src="assets/enterprise-real-run-20260831/stamping_ab_compare.jpg"
+alt="Stamping baseline versus adjusted run" /></p>
+<p>The screenshots were produced by loading and running the Commercial
+Edition Scenario Lab. The UI reproduction completed with its teaching
+configuration of two threads and 60 seconds; the API evidence used the
+16-thread, 120-second configuration stated above. The public run record
+retains the version, license tier, parameters, metrics, and file hashes.
+These results verify the release and reference scenario chain; customer
+environments still require data, performance, and business
+acceptance.</p>
+</article>
+  </main>
+  <footer class="docs-footer"><div class="docs-shell"><strong>DecisioWorks</strong><span>Manufacturing Production Decision Toolkit</span></div></footer>
+</body>
+</html>

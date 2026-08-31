@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Move from source fields to shared semantics, closed relationships, and solver inputs." />
+  <meta name="theme-color" content="#f3f7fb" />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/docs/ERP-MES-Data-Mapping-Guide.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/docs/ERP-MES-Data-Mapping-Guide.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/docs/ERP-MES-Data-Mapping-Guide.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/docs/ERP-MES-Data-Mapping-Guide.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="ERP/MES Data Mapping Guide | DecisioWorks" />
+  <meta property="og:description" content="Move from source fields to shared semantics, closed relationships, and solver inputs." />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/en/docs/ERP-MES-Data-Mapping-Guide.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers-en.png" />
+  <title>ERP/MES Data Mapping Guide | DecisioWorks</title>
+  <link rel="icon" href="../../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css?v=20260831-1" />
+</head>
+<body>
+  <a class="skip-link" href="#article">Skip to article</a>
+  <header class="docs-header">
+    <div class="docs-shell docs-nav">
+      <a class="docs-brand" href="../../"><img src="../../assets/decisioworks-logo.png" alt="" /><span><strong>DecisioWorks</strong><small>Manufacturing Production Decision Toolkit</small></span></a>
+      <nav aria-label="Documentation navigation">
+        <a href="./">Documentation</a><a href="../../">Product Home</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki" target="_blank" rel="noreferrer">Full Wiki</a><a href="../../docs/ERP-MES-Data-Mapping-Guide.html" lang="zh-CN">中</a>
+      </nav>
+    </div>
+  </header>
+  <main class="docs-shell article-layout">
+    <aside class="article-aside"><a href="./">← Documentation</a><p>Move from source fields to shared semantics, closed relationships, and solver inputs.</p></aside>
+    <article class="doc-article" id="article"><blockquote>
+<p>Applies to DecisioWorks v1.4.0</p>
+</blockquote>
+<h1 id="erpmes-data-mapping-guide">ERP/MES Data Mapping Guide</h1>
+<p>ERP, MES, WMS, spreadsheets, and equipment feeds can all provide
+source data. None is an automatic APS prerequisite. The key is to map
+source fields into stable business objects and relationships rather than
+copying source tables into a planning database.</p>
+<h2 id="four-mapping-layers">Four mapping layers</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Layer</th>
+<th>Question</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Source</td>
+<td>Where is data maintained and how often does it change?</td>
+<td>ERP order, MES route, WMS stock</td>
+</tr>
+<tr class="even">
+<td>Semantics</td>
+<td>What does the field mean and what is its unit?</td>
+<td>due date, work center, minute, quantity</td>
+</tr>
+<tr class="odd">
+<td>Relationship</td>
+<td>How do objects connect and close?</td>
+<td>order to product, operation to resource</td>
+</tr>
+<tr class="even">
+<td>Solving</td>
+<td>Which fields become constraints, objectives, or runtime input?</td>
+<td>capacity, BOM, readiness, weight</td>
+</tr>
+</tbody>
+</table>
+<h2 id="typical-source-mapping">Typical source mapping</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Source</th>
+<th>Common objects</th>
+<th>Key checks</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ERP</td>
+<td>orders, products, BOM, purchasing, inventory</td>
+<td>version, effective time, unit, due-date meaning</td>
+</tr>
+<tr class="even">
+<td>MES</td>
+<td>routes, operations, equipment, reports, shifts</td>
+<td>sequence, eligible resource, cycle time, state</td>
+</tr>
+<tr class="odd">
+<td>WMS</td>
+<td>inventory, lot, in-transit, location</td>
+<td>available and frozen quantities, timestamp, substitution</td>
+</tr>
+<tr class="even">
+<td>Excel/CSV</td>
+<td>temporary plans, manual rules, master-data supplements</td>
+<td>ownership, version, nulls, duplicates</td>
+</tr>
+<tr class="odd">
+<td>Equipment/IIoT</td>
+<td>status, failure, output, energy</td>
+<td>sampling rate, valid range, aggregation granularity</td>
+</tr>
+</tbody>
+</table>
+<h2 id="four-relationships-that-must-close">Four relationships that must
+close</h2>
+<ol type="1">
+<li>Time: due dates, capacity, material readiness, and results share a
+planning coordinate.</li>
+<li>Product: orders, products, routes, inventory, and properties
+connect.</li>
+<li>Process-capacity: products and operations connect to work centers
+that have available capacity and valid calendars.</li>
+<li>Operation-material: operations, material demand, inventory, and
+readiness connect.</li>
+</ol>
+<h2 id="integration-checklist">Integration checklist</h2>
+<p>Record source and target fields, transformation, unit, owner, update
+mode, traceable identifiers, enum rules, time rules, quantity rules, and
+null handling. Complete ContractReady, relationship-closure, and
+SolverReady checks before solving. When a source system changes, rerun
+mapping and regression tests.</p>
+<h2 id="when-erp-or-mes-is-absent">When ERP or MES is absent</h2>
+<p>Start with the standardized template and a minimum dataset owned
+jointly by business and data teams. Computable business facts matter
+more than first deploying a complete information system. Existing
+ERP/MES data requires the same semantic and relationship checks.</p>
+<p>Continue with <a href="Standardized-Data-Interface.html">Standardized Data
+Interface</a> and <a href="Data-Readiness-and-Validation.html">Data Readiness
+and Validation</a>.</p>
+</article>
+  </main>
+  <footer class="docs-footer"><div class="docs-shell"><strong>DecisioWorks</strong><span>Manufacturing Production Decision Toolkit</span></div></footer>
+</body>
+</html>

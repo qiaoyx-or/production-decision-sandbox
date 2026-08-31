@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="See how DataSets, DecisioCore, GOCK, and the Web layer work together." />
+  <meta name="theme-color" content="#f3f7fb" />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/docs/Architecture-Overview.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/docs/Architecture-Overview.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/docs/Architecture-Overview.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/docs/Architecture-Overview.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="DecisioWorks Architecture Overview | DecisioWorks" />
+  <meta property="og:description" content="See how DataSets, DecisioCore, GOCK, and the Web layer work together." />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/en/docs/Architecture-Overview.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers-en.png" />
+  <title>DecisioWorks Architecture Overview | DecisioWorks</title>
+  <link rel="icon" href="../../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css?v=20260831-1" />
+</head>
+<body>
+  <a class="skip-link" href="#article">Skip to article</a>
+  <header class="docs-header">
+    <div class="docs-shell docs-nav">
+      <a class="docs-brand" href="../../"><img src="../../assets/decisioworks-logo.png" alt="" /><span><strong>DecisioWorks</strong><small>Manufacturing Production Decision Toolkit</small></span></a>
+      <nav aria-label="Documentation navigation">
+        <a href="./">Documentation</a><a href="../../">Product Home</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki" target="_blank" rel="noreferrer">Full Wiki</a><a href="../../docs/Architecture-Overview.html" lang="zh-CN">中</a>
+      </nav>
+    </div>
+  </header>
+  <main class="docs-shell article-layout">
+    <aside class="article-aside"><a href="./">← Documentation</a><p>See how DataSets, DecisioCore, GOCK, and the Web layer work together.</p></aside>
+    <article class="doc-article" id="article"><blockquote>
+<p>Applies to DecisioWorks v1.4.0</p>
+</blockquote>
+<h1 id="architecture-overview">Architecture Overview</h1>
+<p>DecisioWorks uses <code>Scene × Business × Model × Solver</code> as
+its top-level logic and consists of four cooperating project layers. The
+layers explain responsibility; the runtime path explains how one
+decision cycle moves through the system. They should not be read as the
+same one-way pipeline.</p>
+<ol type="1">
+<li><strong>DataSets</strong> stores industry scenarios and standardized
+data-interface instances. It answers how the business is represented
+accurately.</li>
+<li><strong>GOCK</strong> provides model construction and optimization.
+It answers how a plan is produced within explicit constraints and
+objectives.</li>
+<li><strong>DecisioCore</strong> connects data, objectives, rules,
+models, results, and feedback. It answers how a plan becomes part of a
+production decision.</li>
+<li><strong>Web Cockpit</strong> displays input, configuration,
+execution, output, and evidence. It makes capabilities visible and
+operable.</li>
+</ol>
+<p>Documentation, tooling, containers, tests, and release governance
+support all four layers. Each layer can evolve independently while
+stable interfaces, analysis results, and feedback signals preserve
+linkage.</p>
+<h2 id="project-layers-are-not-runtime-order">Project layers are not
+runtime order</h2>
+<p>DataSets, GOCK, DecisioCore, and Web Cockpit describe
+responsibilities. A typical run is closer to:</p>
+<pre class="text"><code>DataSets
+   ↓ business objects and structural constraints
+DecisioCore: validation, objectives, rules, and standard actions
+   ↓ model configuration and controlled parameters
+GOCK: model construction and optimization
+   ↓ planning result and runtime state
+DecisioCore: analysis, explanation, deviation, and feedback
+   ↓
+Web Cockpit / API / next planning cycle</code></pre>
+<p>DecisioCore participates before and after solving. Before solving, it
+organizes model input; after solving, it breaks planning output into
+business metrics, object-level details, and input to the next decision
+cycle.</p>
+<h2 id="why-the-architecture-is-layered">Why the architecture is
+layered</h2>
+<p>Manufacturing scenarios change continuously, but different changes
+belong in different places. Fields and relationships belong to the data
+layer. Management preferences belong to objective governance. Shop-floor
+experience belongs to rule control. Process changes belong to
+orchestration. Model upgrades belong to the solving layer. Layering
+keeps each change in its responsible location while preserving linkage
+through stable interfaces.</p>
+<h2 id="top-level-logic-scene--business--model--solver">Top-level logic:
+Scene × Business × Model × Solver</h2>
+<ul>
+<li><strong>Scene</strong> defines the industry context, data scope, and
+business boundary.</li>
+<li><strong>Business</strong> expresses orders, routes, capacity,
+materials, objectives, and rules.</li>
+<li><strong>Model</strong> converts business facts into a solvable
+structure.</li>
+<li><strong>Solver</strong> executes computation within controlled
+parameters and authorization scope.</li>
+</ul>
+<p>The four project layers jointly implement this logic. DataSets
+provides scenarios and templates, DecisioCore organizes the
+production-decision chain, GOCK provides modeling and optimization, and
+Web supports operation, presentation, and validation.</p>
+<p>Continue with <a href="https://github.com/qiaoyx-or/decisioworks/wiki/Component-Responsibilities">Component
+Responsibilities</a> and <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Standard-Actions-and-Orchestration">Standard Actions and
+Orchestration</a>.</p>
+</article>
+  </main>
+  <footer class="docs-footer"><div class="docs-shell"><strong>DecisioWorks</strong><span>Manufacturing Production Decision Toolkit</span></div></footer>
+</body>
+</html>

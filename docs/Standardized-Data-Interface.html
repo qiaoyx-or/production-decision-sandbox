@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="把订单、工艺、产能、物料和时间关系转化为可计算业务结构。" />
+  <meta name="theme-color" content="#f3f7fb" />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/docs/Standardized-Data-Interface.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/docs/Standardized-Data-Interface.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/docs/Standardized-Data-Interface.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/docs/Standardized-Data-Interface.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="标准化数据接口 | DecisioWorks" />
+  <meta property="og:description" content="把订单、工艺、产能、物料和时间关系转化为可计算业务结构。" />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/docs/Standardized-Data-Interface.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <title>标准化数据接口 | DecisioWorks</title>
+  <link rel="icon" href="../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css?v=20260831-1" />
+</head>
+<body>
+  <a class="skip-link" href="#article">跳到正文</a>
+  <header class="docs-header">
+    <div class="docs-shell docs-nav">
+      <a class="docs-brand" href="../"><img src="../assets/decisioworks-logo.png" alt="" /><span><strong>DecisioWorks</strong><small>制造业生产决策工具包</small></span></a>
+      <nav aria-label="文档导航">
+        <a href="./">文档中心</a><a href="../">产品主页</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki" target="_blank" rel="noreferrer">完整 Wiki</a><a href="../en/docs/Standardized-Data-Interface.html" lang="en">EN</a>
+      </nav>
+    </div>
+  </header>
+  <main class="docs-shell article-layout">
+    <aside class="article-aside"><a href="./">← 文档中心</a><p>把订单、工艺、产能、物料和时间关系转化为可计算业务结构。</p></aside>
+    <article class="doc-article" id="article"><blockquote>
+<p>适用于 DecisioWorks v1.4.0</p>
+</blockquote>
+<h1 id="标准化数据接口">标准化数据接口</h1>
+<p>标准化数据接口让业务事实进入可计算结构，字段映射只是其中的基础步骤。</p>
+<h2 id="核心对象">核心对象</h2>
+<p>订单、制品、工艺路线、工序、工作中心、产能、日历、班制、设备维护、物料、工序级
+BOM、库存、齐套信息和计划结果，通过明确主键、时间坐标和关联关系组成业务链。</p>
+<h2 id="四条关键关系">四条关键关系</h2>
+<ol type="1">
+<li>时间链：交期、产能、齐套和结果使用一致时间坐标。</li>
+<li>制品链：订单、路线、库存和属性指向同一制品语义。</li>
+<li>工艺产能链：制品经路线和工序映射到可执行资源。</li>
+<li>物料齐套链：物料条件绑定到具体工序和计划层级。</li>
+</ol>
+<p>接口模板保存在场景 <code>data.db</code>
+中。字段齐全只是起点，关系闭合、语义一致和约束可执行才是进入求解链路的条件。</p>
+<h2 id="设计理念字段齐全只是起点">设计理念：字段齐全只是起点</h2>
+<p>APS
+数据接入需要证明时间、制品、工艺产能和物料齐套关系能够闭合。只有业务对象、关联关系、单位和约束语义一致，数据才真正进入生产决策。</p>
+<h2 id="典型应用">典型应用</h2>
+<ul>
+<li>没有 ERP、MES 时，以 <code>data.db</code>
+作为标准数据接口模板快速组织场景；</li>
+<li>已有 ERP、MES
+时，将来源数据映射为统一业务语义，降低系统集成牵制；</li>
+<li>表达班制、维护、共享资源、批量、出件率和工序级 BOM；</li>
+<li>为主生产计划、作业排程、齐套判断和 AI Agent 接入提供共同输入。</li>
+</ul>
+<h2 id="差异化">差异化</h2>
+<p>常见接口以“字段能传递”为验收目标；DecisioWorks
+进一步区分结构可读、业务关系闭合和求解就绪。标准接口因此既是数据入口，也是业务建模和约束进入模型的第一步。</p>
+</article>
+  </main>
+  <footer class="docs-footer"><div class="docs-shell"><strong>DecisioWorks</strong><span>制造业生产决策工具包</span></div></footer>
+</body>
+</html>

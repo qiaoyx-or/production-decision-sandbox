@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="从计划、排程、齐套、瓶颈与扰动响应理解制造企业的共同难题。" />
+  <meta name="theme-color" content="#f3f7fb" />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/docs/Scenarios-and-Pain-Points.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/docs/Scenarios-and-Pain-Points.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/docs/Scenarios-and-Pain-Points.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/docs/Scenarios-and-Pain-Points.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="生产决策场景与痛点 | DecisioWorks" />
+  <meta property="og:description" content="从计划、排程、齐套、瓶颈与扰动响应理解制造企业的共同难题。" />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/docs/Scenarios-and-Pain-Points.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <title>生产决策场景与痛点 | DecisioWorks</title>
+  <link rel="icon" href="../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css?v=20260831-1" />
+</head>
+<body>
+  <a class="skip-link" href="#article">跳到正文</a>
+  <header class="docs-header">
+    <div class="docs-shell docs-nav">
+      <a class="docs-brand" href="../"><img src="../assets/decisioworks-logo.png" alt="" /><span><strong>DecisioWorks</strong><small>制造业生产决策工具包</small></span></a>
+      <nav aria-label="文档导航">
+        <a href="./">文档中心</a><a href="../">产品主页</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki" target="_blank" rel="noreferrer">完整 Wiki</a><a href="../en/docs/Scenarios-and-Pain-Points.html" lang="en">EN</a>
+      </nav>
+    </div>
+  </header>
+  <main class="docs-shell article-layout">
+    <aside class="article-aside"><a href="./">← 文档中心</a><p>从计划、排程、齐套、瓶颈与扰动响应理解制造企业的共同难题。</p></aside>
+    <article class="doc-article" id="article"><blockquote>
+<p>适用于 DecisioWorks v1.4.0</p>
+</blockquote>
+<h1 id="适用场景与痛点">适用场景与痛点</h1>
+<p>DecisioWorks
+面向制造业生产决策。它适合承接那些已经超出流程记录范围、需要在多目标、多约束和持续变化中形成可执行方案的问题。</p>
+<h2 id="生产决策为什么难">生产决策为什么难</h2>
+<p>制造企业通常已经积累订单、物料、工艺、设备、库存和执行数据，但“有数据”并不等于“能够决策”。常见阻碍包括：</p>
+<ul>
+<li>数据分散在
+ERP、MES、表格和人员经验中，字段存在，却无法完整表达业务关系；</li>
+<li>计划目标没有统一口径，交付、库存、负荷、切换和成本相互冲突；</li>
+<li>规则长期依靠口头传递或项目代码堆叠，业务变化后难以维护；</li>
+<li>求解器能生成结果，但计划员无法解释、复核或放心执行；</li>
+<li>主生产计划、作业排程、物料齐套和执行反馈彼此割裂；</li>
+<li>项目在正式建设前没有真实数据基线和调整对照，投入、周期和效果难以判断。</li>
+</ul>
+<p>这些问题的共同点是：业务事实、计划配置、求解结果和执行反馈没有进入同一套工作机制。</p>
+<h2 id="典型适用场景">典型适用场景</h2>
+<h3 id="主生产计划与生产计划">主生产计划与生产计划</h3>
+<p>把需求、产能、物料、库存和交付承诺放入统一时间坐标，识别缺口、过载和风险，并形成可释放的计划结果。</p>
+<h3 id="作业排程">作业排程</h3>
+<p>在已确认任务范围内处理设备、工序、班制、维护、批量、切换和顺序约束，形成可执行的局部排程。</p>
+<h3 id="多品种小批量与复杂工艺">多品种、小批量与复杂工艺</h3>
+<p>面对订单数量多、批量小、工艺路线复杂、换型频繁的场景，通过结构化约束和目标治理减少规则堆叠。</p>
+<h3 id="工序级物料齐套">工序级物料齐套</h3>
+<p>把物料需求绑定到具体工序与时间位置，判断缺料会阻塞哪一段工艺，而不只计算产品级
+BOM 总量。</p>
+<h3 id="共享资源与瓶颈治理">共享资源与瓶颈治理</h3>
+<p>表达跨工作中心共享的模具、工装、人员或特殊设备，识别瓶颈影响，并为资源窗口、能力额度和局部排程提供依据。</p>
+<h3 id="滚动计划与扰动响应">滚动计划与扰动响应</h3>
+<p>当订单、设备、产能或物料发生变化时，区分需要冻结、延续和重构的部分，把偏差和反馈带入下一轮决策。</p>
+<h3 id="系统建设前验证与既有系统增强">系统建设前验证与既有系统增强</h3>
+<p>企业可以用真实数据先验证业务语义、约束、目标、求解和解释链路，也可以将
+DecisioWorks 作为 ERP、MES、WMS 或工业平台的生产决策能力层。</p>
+<h3 id="ai-agent-调用工业决策能力">AI Agent 调用工业决策能力</h3>
+<p>AI Agent
+可依据统一的数据语义、标准动作和参数规范组织数据接入与能力编排，并调用可审计的运行链路。</p>
+<h2 id="谁适合使用">谁适合使用</h2>
+<ul>
+<li>制造企业的生产、计划、供应链和数字化团队；</li>
+<li>APS、ERP、MES、WMS 与工业互联网伙伴；</li>
+<li>咨询机构、园区平台和智能制造服务机构；</li>
+<li>需要调用生产决策能力的开发团队与 AI Agent。</li>
+</ul>
+<h2 id="从哪里开始">从哪里开始</h2>
+<p>优先选择一个业务边界清楚、数据可获得、指标能够下钻到具体对象的场景，完成数据映射、约束确认、目标配置、基线求解和调整重算，再逐步扩展到更多对象与联动关系。</p>
+<p>下一步：<a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Typical-Value-Entry-Scenarios-zh-CN">典型价值进入场景</a> · <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Production-Decision-Data-Assets-zh-CN">生产决策数据资产</a> · <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Design-Principles-and-Differentiation-zh-CN">设计原则与差异化</a>
+· <a href="Standardized-Data-Interface.html">标准化数据接口</a> · <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Scenario-Tutorial-Index-zh-CN">场景教程</a></p>
+</article>
+  </main>
+  <footer class="docs-footer"><div class="docs-shell"><strong>DecisioWorks</strong><span>制造业生产决策工具包</span></div></footer>
+</body>
+</html>

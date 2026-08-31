@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Distinguish readable data, relationship integrity, and true solver readiness." />
+  <meta name="theme-color" content="#f3f7fb" />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/docs/Data-Readiness-and-Validation.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/docs/Data-Readiness-and-Validation.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/docs/Data-Readiness-and-Validation.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/docs/Data-Readiness-and-Validation.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Data Readiness and Validation | DecisioWorks" />
+  <meta property="og:description" content="Distinguish readable data, relationship integrity, and true solver readiness." />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/en/docs/Data-Readiness-and-Validation.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers-en.png" />
+  <title>Data Readiness and Validation | DecisioWorks</title>
+  <link rel="icon" href="../../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css?v=20260831-1" />
+</head>
+<body>
+  <a class="skip-link" href="#article">Skip to article</a>
+  <header class="docs-header">
+    <div class="docs-shell docs-nav">
+      <a class="docs-brand" href="../../"><img src="../../assets/decisioworks-logo.png" alt="" /><span><strong>DecisioWorks</strong><small>Manufacturing Production Decision Toolkit</small></span></a>
+      <nav aria-label="Documentation navigation">
+        <a href="./">Documentation</a><a href="../../">Product Home</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki" target="_blank" rel="noreferrer">Full Wiki</a><a href="../../docs/Data-Readiness-and-Validation.html" lang="zh-CN">中</a>
+      </nav>
+    </div>
+  </header>
+  <main class="docs-shell article-layout">
+    <aside class="article-aside"><a href="./">← Documentation</a><p>Distinguish readable data, relationship integrity, and true solver readiness.</p></aside>
+    <article class="doc-article" id="article"><blockquote>
+<p>Applies to DecisioWorks v1.4.0</p>
+</blockquote>
+<h1
+id="data-readiness-and-validation-from-importable-to-decision-ready">Data
+readiness and validation: from importable to decision-ready</h1>
+<p>Readable data proves only that files and fields are accessible. It
+does not prove that business relationships are correct or that a model
+can solve the problem. DecisioWorks separates readiness into stages so
+defects appear before solver execution.</p>
+<table>
+<thead>
+<tr class="header">
+<th>State</th>
+<th>Question</th>
+<th>Typical evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ContractReady</td>
+<td>Are tables, fields, types, and identifiers recognizable?</td>
+<td>Structure and required-field report</td>
+</tr>
+<tr class="even">
+<td>RelationReady</td>
+<td>Do time, product, route, resource, and material links close?</td>
+<td>Relationship report</td>
+</tr>
+<tr class="odd">
+<td>ModelReady</td>
+<td>Can business facts form model objects and structural
+constraints?</td>
+<td>Capability and constraint inventory</td>
+</tr>
+<tr class="even">
+<td>SolverReady</td>
+<td>Can objectives, rules, and runtime settings form a solvable
+request?</td>
+<td>Recipe check and objective-material audit</td>
+</tr>
+<tr class="odd">
+<td>DecisionReady</td>
+<td>Can people explain, compare, and confirm the result?</td>
+<td>Drill-down evidence and review record</td>
+</tr>
+</tbody>
+</table>
+<p>These are acceptance states, not project-progress labels. A dataset
+may be ContractReady while missing the route, capacity, or objective
+material needed for SolverReady.</p>
+<p>Validation follows four chains: a common time coordinate; consistent
+product identity; route-operation-resource closure; and operation-level
+material demand connected to availability. It also checks units and
+ranges. <code>capacity.used</code> is a 0-to-1 utilization ratio,
+objective weights are not physical quantities, and time or quantity
+fields require explicit units.</p>
+<p>Failures should identify the object, field, or relationship and
+propose a repair direction. Mapping code must not silently invent
+defaults merely to make a solve pass. If a business default is approved,
+retain its source and assumption.</p>
+<p>For ERP/MES integration, map business objects before system columns.
+Demand may come from ERP, execution state from MES, and availability
+from WMS or procurement. The standardized interface brings them into
+shared semantics without making one source system an absolute APS
+prerequisite.</p>
+<p>Retain data version, mapping rules, row counts, relationship errors,
+units, readiness state, and unresolved issues. Only SolverReady datasets
+should appear as directly runnable scenarios.</p>
+</article>
+  </main>
+  <footer class="docs-footer"><div class="docs-shell"><strong>DecisioWorks</strong><span>Manufacturing Production Decision Toolkit</span></div></footer>
+</body>
+</html>

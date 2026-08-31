@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Trace aggregate metrics to business objects and carry deviations into the next cycle." />
+  <meta name="theme-color" content="#f3f7fb" />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/docs/Results-Evidence-and-Feedback.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/docs/Results-Evidence-and-Feedback.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/docs/Results-Evidence-and-Feedback.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/docs/Results-Evidence-and-Feedback.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Results, Evidence, and Feedback | DecisioWorks" />
+  <meta property="og:description" content="Trace aggregate metrics to business objects and carry deviations into the next cycle." />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/en/docs/Results-Evidence-and-Feedback.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers-en.png" />
+  <title>Results, Evidence, and Feedback | DecisioWorks</title>
+  <link rel="icon" href="../../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css?v=20260831-1" />
+</head>
+<body>
+  <a class="skip-link" href="#article">Skip to article</a>
+  <header class="docs-header">
+    <div class="docs-shell docs-nav">
+      <a class="docs-brand" href="../../"><img src="../../assets/decisioworks-logo.png" alt="" /><span><strong>DecisioWorks</strong><small>Manufacturing Production Decision Toolkit</small></span></a>
+      <nav aria-label="Documentation navigation">
+        <a href="./">Documentation</a><a href="../../">Product Home</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki" target="_blank" rel="noreferrer">Full Wiki</a><a href="../../docs/Results-Evidence-and-Feedback.html" lang="zh-CN">中</a>
+      </nav>
+    </div>
+  </header>
+  <main class="docs-shell article-layout">
+    <aside class="article-aside"><a href="./">← Documentation</a><p>Trace aggregate metrics to business objects and carry deviations into the next cycle.</p></aside>
+    <article class="doc-article" id="article"><blockquote>
+<p>Applies to DecisioWorks v1.4.0</p>
+</blockquote>
+<h1
+id="results-evidence-and-feedback-from-an-answer-to-a-decision">Results,
+evidence, and feedback: from an answer to a decision</h1>
+<p>A schedule shows that the model produced an arrangement. It does not
+by itself prove that the arrangement should be executed. Users still
+need to know which demand is met, which orders are affected, where
+workload moved, what was sacrificed to reduce changeovers, and what must
+enter the next cycle.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Level</th>
+<th>Question</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Portfolio</td>
+<td>How does the whole alternative perform?</td>
+<td>Satisfaction, shortage, output, workload, objective summary</td>
+</tr>
+<tr class="even">
+<td>Object</td>
+<td>Where does the issue occur?</td>
+<td>Work center, product, order, operation, time unit, changeover</td>
+</tr>
+<tr class="odd">
+<td>Audit</td>
+<td>Did the configured run produce this result?</td>
+<td>Data/recipe version, objective direction, parameters, status</td>
+</tr>
+</tbody>
+</table>
+<p>Weighted objective scores are not physical minutes, quantities, or
+utilization. The Web cockpit should show objective material alongside
+readable business quantities with units and object granularity.</p>
+<p>Evidence should retain dataset and recipe versions, runtime
+parameters, timestamps, action status, candidate count, selected
+solution, key business metrics, and a diagnostic ID. Public evidence
+should use redacted run summaries, configuration fingerprints, and only
+the diagnostic information required for review.</p>
+<p>Underproduction, overload, kitting risk, waiting, changeovers, and
+execution deviation may become PlanBias and then PlanSignal. A signal
+can influence objectives, local rules, release, or data preparation for
+the next cycle. Feedback supplies sourced decision material; it does not
+silently overwrite the plan.</p>
+<p>For baseline-versus-rerun comparison, change only a small number of
+factors and report the benefit, cost, affected objects, stable scope,
+and new risks. A claim that an optimized result is better without input
+differences and object-level evidence is incomplete.</p>
+</article>
+  </main>
+  <footer class="docs-footer"><div class="docs-shell"><strong>DecisioWorks</strong><span>Manufacturing Production Decision Toolkit</span></div></footer>
+</body>
+</html>

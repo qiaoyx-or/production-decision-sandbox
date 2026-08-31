@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Follow a real scheduling flow with equipment, molds, shifts, maintenance, and changeovers." />
+  <meta name="theme-color" content="#f3f7fb" />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/docs/Injection-Molding-Scheduling-Case-Walkthrough.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/docs/Injection-Molding-Scheduling-Case-Walkthrough.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/docs/Injection-Molding-Scheduling-Case-Walkthrough.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/docs/Injection-Molding-Scheduling-Case-Walkthrough.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Injection-Molding Scheduling Case Walkthrough | DecisioWorks" />
+  <meta property="og:description" content="Follow a real scheduling flow with equipment, molds, shifts, maintenance, and changeovers." />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/en/docs/Injection-Molding-Scheduling-Case-Walkthrough.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers-en.png" />
+  <title>Injection-Molding Scheduling Case Walkthrough | DecisioWorks</title>
+  <link rel="icon" href="../../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css?v=20260831-1" />
+</head>
+<body>
+  <a class="skip-link" href="#article">Skip to article</a>
+  <header class="docs-header">
+    <div class="docs-shell docs-nav">
+      <a class="docs-brand" href="../../"><img src="../../assets/decisioworks-logo.png" alt="" /><span><strong>DecisioWorks</strong><small>Manufacturing Production Decision Toolkit</small></span></a>
+      <nav aria-label="Documentation navigation">
+        <a href="./">Documentation</a><a href="../../">Product Home</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki" target="_blank" rel="noreferrer">Full Wiki</a><a href="../../docs/Injection-Molding-Scheduling-Case-Walkthrough.html" lang="zh-CN">中</a>
+      </nav>
+    </div>
+  </header>
+  <main class="docs-shell article-layout">
+    <aside class="article-aside"><a href="./">← Documentation</a><p>Follow a real scheduling flow with equipment, molds, shifts, maintenance, and changeovers.</p></aside>
+    <article class="doc-article" id="article"><blockquote>
+<p>Applies to DecisioWorks v1.4.0</p>
+</blockquote>
+<h1
+id="injection-molding-scheduling-case-bringing-color-cap-type-and-capacity-into-changeover-decisions">Injection-molding
+scheduling case: bringing color, cap type, and capacity into changeover
+decisions</h1>
+<p>This case uses <code>InjectionMoldingWorkshop/data.db</code> and the
+official <code>production_scheduling</code> recipe. A read-only
+inspection on 2026-08-31 returned SQLite integrity <code>ok</code> and
+found 37 demand lines, 2 work centers, 115 materials, 418 process
+adaptors, and 120 existing result rows.</p>
+<p>The recipe maps standard property slots to color, cap type, and
+container capacity. This keeps the model connected to business meaning
+instead of guessing meaning from storage positions.</p>
+<p>The circular-sequence configuration enables capacity, demand,
+inventory, sequence-changeover, and circular-changeover constraints.
+Adjacent tasks use color for sequence changeovers; reused-capacity
+cycles use container capacity for circular state changes. Preprocessing
+validates integer fields and batch multiples before solving.</p>
+<p>The reference configuration uses work center 2, sequence length 40,
+three cycles, objective weights color 0.1 and capacity 1, and a request
+of 16 threads for 60 seconds. These are sample settings, not universal
+injection-molding recommendations.</p>
+<p>Acceptance goes beyond the existence of a sequence.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Output</th>
+<th>How to read it</th>
+<th>Acceptance question</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Schedule sequence</td>
+<td>Tasks by work center and cycle</td>
+<td>Are scope and sequence length correct?</td>
+</tr>
+<tr class="even">
+<td>Demand coverage</td>
+<td>Compare all 37 demand lines</td>
+<td>Are any tasks missing or duplicated?</td>
+</tr>
+<tr class="odd">
+<td>Sequence changeover</td>
+<td>Count adjacent color changes</td>
+<td>What was sacrificed to reduce changes?</td>
+</tr>
+<tr class="even">
+<td>Circular changeover</td>
+<td>Inspect capacity state across cycle boundaries</td>
+<td>Do reused cycles connect consistently?</td>
+</tr>
+<tr class="odd">
+<td>Batch audit</td>
+<td>Compare rate and demand multiples</td>
+<td>Did preprocessing catch inconsistency?</td>
+</tr>
+<tr class="even">
+<td>Objective-material audit</td>
+<td>Verify color and capacity direction</td>
+<td>Did configured weights enter solving correctly?</td>
+</tr>
+</tbody>
+</table>
+<p>For a rerun, change only a small number of color/capacity weights,
+sequence length, or cycle-count settings.</p>
+<p>On 2026-08-31, real A/B runs were completed in an isolated
+commercial-edition copy under a valid <code>Enterprise</code> license.
+Both API runs used 16 threads with a 60-second solve limit and returned
+<code>ok</code>, one candidate, a valid best solution, 120 result
+records, 12 action events, and no errors. The baseline completed in
+66.57 seconds and the adjusted run in 66.50 seconds. These elapsed
+values include Web API processing and should not be read as solver-only
+time.</p>
+<p>With <code>color=0.1</code> and <code>capacity=1.0</code>, the
+baseline analysis reported 41 sequence changes, 6 circular changes, and
+a weighted changeover cost of 14.9. With <code>color=0.8</code> and
+<code>capacity=1.5</code>, the adjusted run reported 46 sequence
+changes, 14 circular changes, and a weighted cost of 66.4. Direction
+audits passed in both runs, and the analysis values matched the GOCK
+objective-material values.</p>
+<p>The result shows why a rerun must be reviewed through business
+measures. Native objective units include material-specific and
+empty-state transitions, while changed weights alter the relative cost
+of competing trade-offs. A weight expresses a decision preference;
+changes in any displayed metric still depend on the data, constraints,
+and competing objectives.</p>
+<p><img
+src="assets/enterprise-real-run-20260831/injection_input_data.jpg"
+alt="Real injection-molding input data" /></p>
+<p><img
+src="assets/enterprise-real-run-20260831/injection_baseline_result.jpg"
+alt="Real injection-molding baseline result" /></p>
+<p><img
+src="assets/enterprise-real-run-20260831/injection_ab_compare.jpg"
+alt="Injection-molding baseline versus adjusted run" /></p>
+<p>The UI reproduction also exposed a configuration mismatch: the
+teaching catalog requested two threads, while the dataset's public
+default was 16. The two-thread run failed; after the request was aligned
+with the 16-thread dataset default, both baseline and adjusted runs
+completed successfully. The mismatch, correction, and results are
+retained in the validation record. Public evidence contains only the
+runtime configuration, status, and result summary; customer data,
+performance, and business acceptance remain part of deployment
+validation.</p>
+<p>The API evidence and UI screenshots come from separate real
+executions. Parallel search can return different feasible sequences, so
+the screenshot counts are not expected to match the API summary item by
+item. Each A/B comparison is evaluated only within its own execution
+environment and parameter baseline.</p>
+</article>
+  </main>
+  <footer class="docs-footer"><div class="docs-shell"><strong>DecisioWorks</strong><span>Manufacturing Production Decision Toolkit</span></div></footer>
+</body>
+</html>

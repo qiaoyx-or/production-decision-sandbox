@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore shared manufacturing challenges across planning, scheduling, readiness, bottlenecks, and disruptions." />
+  <meta name="theme-color" content="#f3f7fb" />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/docs/Scenarios-and-Pain-Points.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/docs/Scenarios-and-Pain-Points.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/docs/Scenarios-and-Pain-Points.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/docs/Scenarios-and-Pain-Points.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Production Decision Scenarios and Pain Points | DecisioWorks" />
+  <meta property="og:description" content="Explore shared manufacturing challenges across planning, scheduling, readiness, bottlenecks, and disruptions." />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/en/docs/Scenarios-and-Pain-Points.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers-en.png" />
+  <title>Production Decision Scenarios and Pain Points | DecisioWorks</title>
+  <link rel="icon" href="../../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css?v=20260831-1" />
+</head>
+<body>
+  <a class="skip-link" href="#article">Skip to article</a>
+  <header class="docs-header">
+    <div class="docs-shell docs-nav">
+      <a class="docs-brand" href="../../"><img src="../../assets/decisioworks-logo.png" alt="" /><span><strong>DecisioWorks</strong><small>Manufacturing Production Decision Toolkit</small></span></a>
+      <nav aria-label="Documentation navigation">
+        <a href="./">Documentation</a><a href="../../">Product Home</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki" target="_blank" rel="noreferrer">Full Wiki</a><a href="../../docs/Scenarios-and-Pain-Points.html" lang="zh-CN">中</a>
+      </nav>
+    </div>
+  </header>
+  <main class="docs-shell article-layout">
+    <aside class="article-aside"><a href="./">← Documentation</a><p>Explore shared manufacturing challenges across planning, scheduling, readiness, bottlenecks, and disruptions.</p></aside>
+    <article class="doc-article" id="article"><blockquote>
+<p>Applies to DecisioWorks v1.4.0</p>
+</blockquote>
+<h1 id="scenarios-and-pain-points">Scenarios and Pain Points</h1>
+<p>DecisioWorks addresses manufacturing decisions that go beyond
+workflow recording and require explicit trade-offs among objectives,
+constraints, and changing operating conditions.</p>
+<h2 id="why-production-decisions-remain-difficult">Why production
+decisions remain difficult</h2>
+<p>Manufacturers often have order, material, process, equipment,
+inventory, and execution data, yet data availability alone does not
+create decision capability. Common obstacles include:</p>
+<ul>
+<li>data is scattered across ERP, MES, spreadsheets, and human
+experience, without complete business relationships;</li>
+<li>delivery, inventory, workload, changeover, and cost objectives
+conflict without a governed decision language;</li>
+<li>rules live in conversations or accumulated project code and become
+fragile when operations change;</li>
+<li>a solver produces an answer, but planners cannot explain, review, or
+confidently execute it;</li>
+<li>master planning, scheduling, material readiness, and execution
+feedback remain disconnected;</li>
+<li>teams cannot validate feasibility and value before committing to a
+large implementation.</li>
+</ul>
+<p>The shared root cause is that business facts, planning configuration,
+solving results, and operating feedback do not enter the same working
+mechanism.</p>
+<h2 id="typical-scenarios">Typical scenarios</h2>
+<h3 id="master-and-production-planning">Master and production
+planning</h3>
+<p>Place demand, capacity, materials, inventory, and delivery
+commitments on a common time axis, identify gaps and overloads, and
+create releasable planning results.</p>
+<h3 id="production-scheduling">Production scheduling</h3>
+<p>Within a confirmed work package, apply equipment, routing, shift,
+maintenance, lot-size, changeover, and sequencing constraints to produce
+a resource-feasible local sequence.</p>
+<h3 id="high-mix-low-volume-and-complex-routing-production">High-mix,
+low-volume, and complex-routing production</h3>
+<p>Use structured constraints and governed objectives to reduce the
+dependence on accumulated rules in environments with many orders, small
+lots, complex routes, and frequent changeovers.</p>
+<h3 id="operation-level-material-readiness">Operation-level material
+readiness</h3>
+<p>Bind material demand to the operation and time at which it is
+consumed, so shortages can be traced to the affected part of the route
+rather than only to product-level BOM totals.</p>
+<h3 id="shared-resources-and-bottlenecks">Shared resources and
+bottlenecks</h3>
+<p>Represent molds, tooling, specialists, and special equipment shared
+across work centers, expose bottleneck impact, and support resource
+windows, capacity quotas, and local scheduling.</p>
+<h3 id="rolling-planning-and-disturbance-response">Rolling planning and
+disturbance response</h3>
+<p>When orders, equipment, capacity, or materials change, distinguish
+what should be frozen, continued, or reconstructed and carry deviations
+into the next decision cycle.</p>
+<h3 id="pre-build-validation-and-system-enhancement">Pre-build
+validation and system enhancement</h3>
+<p>Teams can validate semantics, constraints, objectives, solving, and
+explanation with real data before a full implementation. DecisioWorks
+can also serve as a production-decision capability layer for ERP, MES,
+WMS, and industrial platforms.</p>
+<h3 id="ai-agent-access-to-industrial-decision-capabilities">AI Agent
+access to industrial decision capabilities</h3>
+<p>AI Agents can use shared data semantics, standard actions, and
+parameter specifications to organize data onboarding and orchestration
+while invoking an auditable execution path.</p>
+<h2 id="intended-users">Intended users</h2>
+<ul>
+<li>manufacturing production, planning, supply-chain, and digital
+teams;</li>
+<li>APS, ERP, MES, WMS, and industrial-platform partners;</li>
+<li>consulting firms, industrial parks, and smart-manufacturing service
+providers;</li>
+<li>development teams and AI Agents that need production-decision
+capabilities.</li>
+</ul>
+<h2 id="a-practical-starting-point">A practical starting point</h2>
+<p>Choose one scenario with a clear boundary, available data, and
+metrics that can be traced to specific business objects. Complete data
+mapping, constraint confirmation, objective configuration, baseline
+solving, and adjusted re-solving before expanding the scope.</p>
+<p>Next: <a href="https://github.com/qiaoyx-or/decisioworks/wiki/Typical-Value-Entry-Scenarios">Typical Value Entry
+Scenarios</a> · <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Production-Decision-Data-Assets">Production-Decision Data
+Assets</a> · <a href="https://github.com/qiaoyx-or/decisioworks/wiki/Design-Principles-and-Differentiation">Design
+Principles and Differentiation</a> · <a
+href="Standardized-Data-Interface.html">Standardized Data Interface</a> · <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Scenario-Tutorial-Index">Scenario Tutorials</a></p>
+</article>
+  </main>
+  <footer class="docs-footer"><div class="docs-shell"><strong>DecisioWorks</strong><span>Manufacturing Production Decision Toolkit</span></div></footer>
+</body>
+</html>
