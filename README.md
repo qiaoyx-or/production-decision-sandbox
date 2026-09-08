@@ -50,11 +50,6 @@ Sandbox 的 V0.2 不以“功能多”为目标，而以“试点转化”为目
 - 所有真实求解通过 `decisioworks-adapter` 调用 DecisioWorks，不提供 GOCK 内部访问入口；
 - AI Agent 提示词不得包含私钥、授权文件、客户原始数据和受保护实现信息。
 
-## 本地运行
+## 产品主页
 
-```bash
-cd /home/qiaoyx/workspace/production-decision-sandbox
-python3 -m http.server 5177 --bind 0.0.0.0
-```
-
-访问：`http://localhost:5177/`
+[https://qiaoyx-or.github.io/production-decision-sandbox/](https://qiaoyx-or.github.io/production-decision-sandbox/)
