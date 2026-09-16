@@ -1,0 +1,742 @@
+[
+  {
+    "source": "Learning-A1-Define-a-Decision-Task-zh-CN.md",
+    "slug": "Learning-A1-Define-a-Decision-Task",
+    "language": "zh-CN",
+    "kind": "lesson",
+    "topic": "A",
+    "id": "A1",
+    "file": "Learning-A1-Define-a-Decision-Task.html",
+    "sha256": "c350bfa8b5b45f408a8a16006aa9d2a882ba1e3513b4d5abb95ff1972da1c46e"
+  },
+  {
+    "source": "Learning-A1-Define-a-Decision-Task.md",
+    "slug": "Learning-A1-Define-a-Decision-Task",
+    "language": "en",
+    "kind": "lesson",
+    "topic": "A",
+    "id": "A1",
+    "file": "Learning-A1-Define-a-Decision-Task.html",
+    "sha256": "099473398f19ef4fdd3e10759d4a8210ea27635f9668eb347b2b3a42d390430b"
+  },
+  {
+    "source": "Learning-A2-Design-a-Useful-Planning-Comparison-zh-CN.md",
+    "slug": "Learning-A2-Design-a-Useful-Planning-Comparison",
+    "language": "zh-CN",
+    "kind": "lesson",
+    "topic": "A",
+    "id": "A2",
+    "file": "Learning-A2-Design-a-Useful-Planning-Comparison.html",
+    "sha256": "29274a947c83fcd7d825ddf3d9434cfe874861169675fe2e47cbb008be75c6c4"
+  },
+  {
+    "source": "Learning-A2-Design-a-Useful-Planning-Comparison.md",
+    "slug": "Learning-A2-Design-a-Useful-Planning-Comparison",
+    "language": "en",
+    "kind": "lesson",
+    "topic": "A",
+    "id": "A2",
+    "file": "Learning-A2-Design-a-Useful-Planning-Comparison.html",
+    "sha256": "35802a7235b3080912ae3ac08de9b6ae00855e097d3074d3ece8a6fb7c4ac110"
+  },
+  {
+    "source": "Learning-A3-Compare-Plans-on-the-Same-Basis-zh-CN.md",
+    "slug": "Learning-A3-Compare-Plans-on-the-Same-Basis",
+    "language": "zh-CN",
+    "kind": "lesson",
+    "topic": "A",
+    "id": "A3",
+    "file": "Learning-A3-Compare-Plans-on-the-Same-Basis.html",
+    "sha256": "6552fa4584d665e242a9284eea85100cc34614c13fc81ce1d5eced42552601da"
+  },
+  {
+    "source": "Learning-A3-Compare-Plans-on-the-Same-Basis.md",
+    "slug": "Learning-A3-Compare-Plans-on-the-Same-Basis",
+    "language": "en",
+    "kind": "lesson",
+    "topic": "A",
+    "id": "A3",
+    "file": "Learning-A3-Compare-Plans-on-the-Same-Basis.html",
+    "sha256": "7f1bf254fd118faf2f91b6ebc3b0e2f9c5423665b39395984b4b409aeeead0ec"
+  },
+  {
+    "source": "Learning-B1-Business-Tables-to-Computable-Objects-zh-CN.md",
+    "slug": "Learning-B1-Business-Tables-to-Computable-Objects",
+    "language": "zh-CN",
+    "kind": "lesson",
+    "topic": "B",
+    "id": "B1",
+    "file": "Learning-B1-Business-Tables-to-Computable-Objects.html",
+    "sha256": "a7f031879aa7c831f683881d155be7f03f41b40e77c10da4b5b12791276a1f52"
+  },
+  {
+    "source": "Learning-B1-Business-Tables-to-Computable-Objects.md",
+    "slug": "Learning-B1-Business-Tables-to-Computable-Objects",
+    "language": "en",
+    "kind": "lesson",
+    "topic": "B",
+    "id": "B1",
+    "file": "Learning-B1-Business-Tables-to-Computable-Objects.html",
+    "sha256": "3ec352324d89fd9c4388d653d3d4a31a184b7a47ab749e7e3f1f29ef25a8ca72"
+  },
+  {
+    "source": "Learning-B2-Routes-and-Operation-Level-BOM-zh-CN.md",
+    "slug": "Learning-B2-Routes-and-Operation-Level-BOM",
+    "language": "zh-CN",
+    "kind": "lesson",
+    "topic": "B",
+    "id": "B2",
+    "file": "Learning-B2-Routes-and-Operation-Level-BOM.html",
+    "sha256": "48ca99a52851dbab30ad15da248b7c99276176c24b5386312de0e0c3fd3c709e"
+  },
+  {
+    "source": "Learning-B2-Routes-and-Operation-Level-BOM.md",
+    "slug": "Learning-B2-Routes-and-Operation-Level-BOM",
+    "language": "en",
+    "kind": "lesson",
+    "topic": "B",
+    "id": "B2",
+    "file": "Learning-B2-Routes-and-Operation-Level-BOM.html",
+    "sha256": "9349214bad1ddd5beba3f0d4603f48f68bd2ed25a90a19e06a0251a00f98e6b1"
+  },
+  {
+    "source": "Learning-B3-Align-Time-Capacity-and-Materials-zh-CN.md",
+    "slug": "Learning-B3-Align-Time-Capacity-and-Materials",
+    "language": "zh-CN",
+    "kind": "lesson",
+    "topic": "B",
+    "id": "B3",
+    "file": "Learning-B3-Align-Time-Capacity-and-Materials.html",
+    "sha256": "4e70cd44cfe420df117333fd2368a743d340cadfa5b80a6e3fa6e78d45df417c"
+  },
+  {
+    "source": "Learning-B3-Align-Time-Capacity-and-Materials.md",
+    "slug": "Learning-B3-Align-Time-Capacity-and-Materials",
+    "language": "en",
+    "kind": "lesson",
+    "topic": "B",
+    "id": "B3",
+    "file": "Learning-B3-Align-Time-Capacity-and-Materials.html",
+    "sha256": "fdf946781869be5e88da3a187748cc7ca48d65cd6d9ef805234abf91aa612724"
+  },
+  {
+    "source": "Learning-C1-Facts-Constraints-and-Preferences-zh-CN.md",
+    "slug": "Learning-C1-Facts-Constraints-and-Preferences",
+    "language": "zh-CN",
+    "kind": "lesson",
+    "topic": "C",
+    "id": "C1",
+    "file": "Learning-C1-Facts-Constraints-and-Preferences.html",
+    "sha256": "52cac3610e4d228d961ae9e435de2fd2366e4fc244b3e84470a466f88e2ac81d"
+  },
+  {
+    "source": "Learning-C1-Facts-Constraints-and-Preferences.md",
+    "slug": "Learning-C1-Facts-Constraints-and-Preferences",
+    "language": "en",
+    "kind": "lesson",
+    "topic": "C",
+    "id": "C1",
+    "file": "Learning-C1-Facts-Constraints-and-Preferences.html",
+    "sha256": "611fd112eab6afcb5f35d3f8159a91aa160e1c446360fa233079aa54f786fb33"
+  },
+  {
+    "source": "Learning-C2-Explain-Objective-Tradeoffs-zh-CN.md",
+    "slug": "Learning-C2-Explain-Objective-Tradeoffs",
+    "language": "zh-CN",
+    "kind": "lesson",
+    "topic": "C",
+    "id": "C2",
+    "file": "Learning-C2-Explain-Objective-Tradeoffs.html",
+    "sha256": "9ec3fc8cbcca07cfbc72735adf4248ee3cb09466e343b4c97316a3e1b429c7e8"
+  },
+  {
+    "source": "Learning-C2-Explain-Objective-Tradeoffs.md",
+    "slug": "Learning-C2-Explain-Objective-Tradeoffs",
+    "language": "en",
+    "kind": "lesson",
+    "topic": "C",
+    "id": "C2",
+    "file": "Learning-C2-Explain-Objective-Tradeoffs.html",
+    "sha256": "89b5c9b278466c62208bbe67c7c8226f9c5b836f7beebf378c97a1f02888c482"
+  },
+  {
+    "source": "Learning-C3-Turn-Experience-into-Rules-zh-CN.md",
+    "slug": "Learning-C3-Turn-Experience-into-Rules",
+    "language": "zh-CN",
+    "kind": "lesson",
+    "topic": "C",
+    "id": "C3",
+    "file": "Learning-C3-Turn-Experience-into-Rules.html",
+    "sha256": "84002244fe7371a3efe0a8d7743a03871f215755a0e4063a517ac95cee95a1ec"
+  },
+  {
+    "source": "Learning-C3-Turn-Experience-into-Rules.md",
+    "slug": "Learning-C3-Turn-Experience-into-Rules",
+    "language": "en",
+    "kind": "lesson",
+    "topic": "C",
+    "id": "C3",
+    "file": "Learning-C3-Turn-Experience-into-Rules.html",
+    "sha256": "4be9469097c8f5be45e5fbd1c3d3275f73a518301ccfae2327dc15f17ff937c8"
+  },
+  {
+    "source": "Learning-Center-zh-CN.md",
+    "slug": "Learning-Center",
+    "language": "zh-CN",
+    "kind": "center",
+    "topic": null,
+    "id": null,
+    "file": "index.html",
+    "sha256": "7e75f93192e46bf72b0694a1218b13129ae2511fadea7d22784088dd93df0b72"
+  },
+  {
+    "source": "Learning-Center.md",
+    "slug": "Learning-Center",
+    "language": "en",
+    "kind": "center",
+    "topic": null,
+    "id": null,
+    "file": "index.html",
+    "sha256": "673335938e668358f46065815fb69fcb3a2abe938aa2a119afb24f42b7c265f0"
+  },
+  {
+    "source": "Learning-D1-Read-a-Stamping-Plan-zh-CN.md",
+    "slug": "Learning-D1-Read-a-Stamping-Plan",
+    "language": "zh-CN",
+    "kind": "lesson",
+    "topic": "D",
+    "id": "D1",
+    "file": "Learning-D1-Read-a-Stamping-Plan.html",
+    "sha256": "8465a5f4a2379fea2478b8c49106cace58f4062a9021e3a58ac7d4fec463a2f5"
+  },
+  {
+    "source": "Learning-D1-Read-a-Stamping-Plan.md",
+    "slug": "Learning-D1-Read-a-Stamping-Plan",
+    "language": "en",
+    "kind": "lesson",
+    "topic": "D",
+    "id": "D1",
+    "file": "Learning-D1-Read-a-Stamping-Plan.html",
+    "sha256": "20ea908d6cafc865b5a9220d7574b897e475e21a3bf24633e2734e33081bb1b5"
+  },
+  {
+    "source": "Learning-D2-Read-Injection-Molding-Changeovers-zh-CN.md",
+    "slug": "Learning-D2-Read-Injection-Molding-Changeovers",
+    "language": "zh-CN",
+    "kind": "lesson",
+    "topic": "D",
+    "id": "D2",
+    "file": "Learning-D2-Read-Injection-Molding-Changeovers.html",
+    "sha256": "d05056e15b53e354dacf4e4480630c99c0f7879bc6b5622bc95c1cd98482cec2"
+  },
+  {
+    "source": "Learning-D2-Read-Injection-Molding-Changeovers.md",
+    "slug": "Learning-D2-Read-Injection-Molding-Changeovers",
+    "language": "en",
+    "kind": "lesson",
+    "topic": "D",
+    "id": "D2",
+    "file": "Learning-D2-Read-Injection-Molding-Changeovers.html",
+    "sha256": "cc5b6b1c4eb46c1d8f44d1f127a2ece65ed7dc7c18778cfbb0524550e7b9d6ba"
+  },
+  {
+    "source": "Learning-D3-Select-Cases-by-Data-Characteristics-zh-CN.md",
+    "slug": "Learning-D3-Select-Cases-by-Data-Characteristics",
+    "language": "zh-CN",
+    "kind": "lesson",
+    "topic": "D",
+    "id": "D3",
+    "file": "Learning-D3-Select-Cases-by-Data-Characteristics.html",
+    "sha256": "23ba7e7ed847a57eca36d4e7b613fe9a27f924782828c54dfa19c939dce12708"
+  },
+  {
+    "source": "Learning-D3-Select-Cases-by-Data-Characteristics.md",
+    "slug": "Learning-D3-Select-Cases-by-Data-Characteristics",
+    "language": "en",
+    "kind": "lesson",
+    "topic": "D",
+    "id": "D3",
+    "file": "Learning-D3-Select-Cases-by-Data-Characteristics.html",
+    "sha256": "14f5ac16f506783b2b8ae561aa44d2ece6af8b950d00b9bca24a3ed6586dd420"
+  },
+  {
+    "source": "Learning-E1-Master-Plan-to-Work-Release-zh-CN.md",
+    "slug": "Learning-E1-Master-Plan-to-Work-Release",
+    "language": "zh-CN",
+    "kind": "lesson",
+    "topic": "E",
+    "id": "E1",
+    "file": "Learning-E1-Master-Plan-to-Work-Release.html",
+    "sha256": "7a0e78bb76b1ec08c9009c09d293bc07a1f95a93449a920f09e73aa524f2d1a6"
+  },
+  {
+    "source": "Learning-E1-Master-Plan-to-Work-Release.md",
+    "slug": "Learning-E1-Master-Plan-to-Work-Release",
+    "language": "en",
+    "kind": "lesson",
+    "topic": "E",
+    "id": "E1",
+    "file": "Learning-E1-Master-Plan-to-Work-Release.html",
+    "sha256": "f82ede1530ab3f6a01b2f1c9cb9a9478ff027afeedd61ad2eaadaa936c63aa26"
+  },
+  {
+    "source": "Learning-E2-Deviations-to-Planning-Signals-zh-CN.md",
+    "slug": "Learning-E2-Deviations-to-Planning-Signals",
+    "language": "zh-CN",
+    "kind": "lesson",
+    "topic": "E",
+    "id": "E2",
+    "file": "Learning-E2-Deviations-to-Planning-Signals.html",
+    "sha256": "b282f8ccb0f8d1e88afc17c9ebabead6fb9ff8385bc3a501f26c0483f81f3f06"
+  },
+  {
+    "source": "Learning-E2-Deviations-to-Planning-Signals.md",
+    "slug": "Learning-E2-Deviations-to-Planning-Signals",
+    "language": "en",
+    "kind": "lesson",
+    "topic": "E",
+    "id": "E2",
+    "file": "Learning-E2-Deviations-to-Planning-Signals.html",
+    "sha256": "e8f1d4f2663076b1c61bae5a5e29e2560bb6a1799758e96da188a94a36ba854f"
+  },
+  {
+    "source": "Learning-E3-Scope-a-Disruption-Response-zh-CN.md",
+    "slug": "Learning-E3-Scope-a-Disruption-Response",
+    "language": "zh-CN",
+    "kind": "lesson",
+    "topic": "E",
+    "id": "E3",
+    "file": "Learning-E3-Scope-a-Disruption-Response.html",
+    "sha256": "26177c7937f21932490df4f879932f7d5a507984005df7d5f28b1b2b7b9318f8"
+  },
+  {
+    "source": "Learning-E3-Scope-a-Disruption-Response.md",
+    "slug": "Learning-E3-Scope-a-Disruption-Response",
+    "language": "en",
+    "kind": "lesson",
+    "topic": "E",
+    "id": "E3",
+    "file": "Learning-E3-Scope-a-Disruption-Response.html",
+    "sha256": "ec1441dbb6f71130f5a347439728d95f464f3ef8cce706cea50897960660c65b"
+  },
+  {
+    "source": "Learning-F1-Place-Changes-in-the-Right-Layer-zh-CN.md",
+    "slug": "Learning-F1-Place-Changes-in-the-Right-Layer",
+    "language": "zh-CN",
+    "kind": "lesson",
+    "topic": "F",
+    "id": "F1",
+    "file": "Learning-F1-Place-Changes-in-the-Right-Layer.html",
+    "sha256": "3fa00042e171bb79fe95b016e9ac79fafac787cfcef0055a1a1a0666c649b5a3"
+  },
+  {
+    "source": "Learning-F1-Place-Changes-in-the-Right-Layer.md",
+    "slug": "Learning-F1-Place-Changes-in-the-Right-Layer",
+    "language": "en",
+    "kind": "lesson",
+    "topic": "F",
+    "id": "F1",
+    "file": "Learning-F1-Place-Changes-in-the-Right-Layer.html",
+    "sha256": "734c1bbd251f237e5bf0be82fdab9c2a3e0bd5b4a0a33cbcde434e8934fcffcd"
+  },
+  {
+    "source": "Learning-F2-Preserve-Data-Assets-and-Templates-zh-CN.md",
+    "slug": "Learning-F2-Preserve-Data-Assets-and-Templates",
+    "language": "zh-CN",
+    "kind": "lesson",
+    "topic": "F",
+    "id": "F2",
+    "file": "Learning-F2-Preserve-Data-Assets-and-Templates.html",
+    "sha256": "574efc33e198f3a5bad5e17a9edffb7d584445736d364498a52e813ea5b6c95f"
+  },
+  {
+    "source": "Learning-F2-Preserve-Data-Assets-and-Templates.md",
+    "slug": "Learning-F2-Preserve-Data-Assets-and-Templates",
+    "language": "en",
+    "kind": "lesson",
+    "topic": "F",
+    "id": "F2",
+    "file": "Learning-F2-Preserve-Data-Assets-and-Templates.html",
+    "sha256": "9fa57c743b2bce2ccda0f35c39bc9925e3c2889022166692b07e5b449268eb21"
+  },
+  {
+    "source": "Learning-F3-Define-Ecosystem-Responsibilities-zh-CN.md",
+    "slug": "Learning-F3-Define-Ecosystem-Responsibilities",
+    "language": "zh-CN",
+    "kind": "lesson",
+    "topic": "F",
+    "id": "F3",
+    "file": "Learning-F3-Define-Ecosystem-Responsibilities.html",
+    "sha256": "92bb97db01d33ab75bdf2f8a92f0a3026eddf739b54ed8838ddc72e588505a3a"
+  },
+  {
+    "source": "Learning-F3-Define-Ecosystem-Responsibilities.md",
+    "slug": "Learning-F3-Define-Ecosystem-Responsibilities",
+    "language": "en",
+    "kind": "lesson",
+    "topic": "F",
+    "id": "F3",
+    "file": "Learning-F3-Define-Ecosystem-Responsibilities.html",
+    "sha256": "ca6d1f71cefaa5fad6cbddbc33a31f616d092e89bba059b4f07531216721fccb"
+  },
+  {
+    "source": "Learning-G1-Read-and-Modify-a-Recipe-zh-CN.md",
+    "slug": "Learning-G1-Read-and-Modify-a-Recipe",
+    "language": "zh-CN",
+    "kind": "lesson",
+    "topic": "G",
+    "id": "G1",
+    "file": "Learning-G1-Read-and-Modify-a-Recipe.html",
+    "sha256": "38566d8ca22622c1cc8abe82669ede67c1928f2249951d698cfe443c218d1fec"
+  },
+  {
+    "source": "Learning-G1-Read-and-Modify-a-Recipe.md",
+    "slug": "Learning-G1-Read-and-Modify-a-Recipe",
+    "language": "en",
+    "kind": "lesson",
+    "topic": "G",
+    "id": "G1",
+    "file": "Learning-G1-Read-and-Modify-a-Recipe.html",
+    "sha256": "1e9ebdd7d5b6b9899918568b81d90ec2898b80dd97392d6d75afbee7c1ed3e6b"
+  },
+  {
+    "source": "Learning-G2-Extend-a-Capability-zh-CN.md",
+    "slug": "Learning-G2-Extend-a-Capability",
+    "language": "zh-CN",
+    "kind": "lesson",
+    "topic": "G",
+    "id": "G2",
+    "file": "Learning-G2-Extend-a-Capability.html",
+    "sha256": "d83031c338a5271220b63c05114c21978ed6197bf375e468ec1c1aabac1f8e3f"
+  },
+  {
+    "source": "Learning-G2-Extend-a-Capability.md",
+    "slug": "Learning-G2-Extend-a-Capability",
+    "language": "en",
+    "kind": "lesson",
+    "topic": "G",
+    "id": "G2",
+    "file": "Learning-G2-Extend-a-Capability.html",
+    "sha256": "b5095f4ac3c93527be7e03622fd3062920d284b1468e7c975ba9b1624fbb11af"
+  },
+  {
+    "source": "Learning-G3-Write-an-Agent-Task-zh-CN.md",
+    "slug": "Learning-G3-Write-an-Agent-Task",
+    "language": "zh-CN",
+    "kind": "lesson",
+    "topic": "G",
+    "id": "G3",
+    "file": "Learning-G3-Write-an-Agent-Task.html",
+    "sha256": "585e4724e7193f04a6d0320b4e8cc0d11d18066ec124d8df53084bc57c37d942"
+  },
+  {
+    "source": "Learning-G3-Write-an-Agent-Task.md",
+    "slug": "Learning-G3-Write-an-Agent-Task",
+    "language": "en",
+    "kind": "lesson",
+    "topic": "G",
+    "id": "G3",
+    "file": "Learning-G3-Write-an-Agent-Task.html",
+    "sha256": "cb77796aac72c6f8271a3553ccb63eb827eb365f3f62159d5cc0aa0053a3d393"
+  },
+  {
+    "source": "Learning-H1-Review-a-Plan-zh-CN.md",
+    "slug": "Learning-H1-Review-a-Plan",
+    "language": "zh-CN",
+    "kind": "lesson",
+    "topic": "H",
+    "id": "H1",
+    "file": "Learning-H1-Review-a-Plan.html",
+    "sha256": "d7d37616de924d98d49c03c703d3c0c3c566634b85cdc1b438762ce6120ce35c"
+  },
+  {
+    "source": "Learning-H1-Review-a-Plan.md",
+    "slug": "Learning-H1-Review-a-Plan",
+    "language": "en",
+    "kind": "lesson",
+    "topic": "H",
+    "id": "H1",
+    "file": "Learning-H1-Review-a-Plan.html",
+    "sha256": "09cc903dbeb742cccdffe837a0f861cd290d403bd46506fdec7d3174fbe9af2e"
+  },
+  {
+    "source": "Learning-H2-Move-to-Continued-Operation-zh-CN.md",
+    "slug": "Learning-H2-Move-to-Continued-Operation",
+    "language": "zh-CN",
+    "kind": "lesson",
+    "topic": "H",
+    "id": "H2",
+    "file": "Learning-H2-Move-to-Continued-Operation.html",
+    "sha256": "fbacba463ad596cd3d3c741d2458274c3fd4d32cc2b47b73f359bff61f8e832d"
+  },
+  {
+    "source": "Learning-H2-Move-to-Continued-Operation.md",
+    "slug": "Learning-H2-Move-to-Continued-Operation",
+    "language": "en",
+    "kind": "lesson",
+    "topic": "H",
+    "id": "H2",
+    "file": "Learning-H2-Move-to-Continued-Operation.html",
+    "sha256": "d8d9fb0546a1f0e4ed20f735a3255f535ad74e1bfa8c393b15146ddf835071c5"
+  },
+  {
+    "source": "Learning-H3-Run-a-Cross-Functional-Review-zh-CN.md",
+    "slug": "Learning-H3-Run-a-Cross-Functional-Review",
+    "language": "zh-CN",
+    "kind": "lesson",
+    "topic": "H",
+    "id": "H3",
+    "file": "Learning-H3-Run-a-Cross-Functional-Review.html",
+    "sha256": "f8911111a4ddec8ea3e473e721ad1878a81d42cdaecb1f69e9339a05116b8ec3"
+  },
+  {
+    "source": "Learning-H3-Run-a-Cross-Functional-Review.md",
+    "slug": "Learning-H3-Run-a-Cross-Functional-Review",
+    "language": "en",
+    "kind": "lesson",
+    "topic": "H",
+    "id": "H3",
+    "file": "Learning-H3-Run-a-Cross-Functional-Review.html",
+    "sha256": "b25e3d0c145ddde940b3aea675970c30bd56b5dcabf11626d182d864b3752572"
+  },
+  {
+    "source": "Learning-Topic-A-Problem-and-Validation-zh-CN.md",
+    "slug": "Learning-Topic-A-Problem-and-Validation",
+    "language": "zh-CN",
+    "kind": "topic",
+    "topic": "A",
+    "id": null,
+    "file": "Learning-Topic-A-Problem-and-Validation.html",
+    "sha256": "adba778a70b9a065fb434b9555558061f3d158237dffbe387a471ab18c5f368f"
+  },
+  {
+    "source": "Learning-Topic-A-Problem-and-Validation.md",
+    "slug": "Learning-Topic-A-Problem-and-Validation",
+    "language": "en",
+    "kind": "topic",
+    "topic": "A",
+    "id": null,
+    "file": "Learning-Topic-A-Problem-and-Validation.html",
+    "sha256": "63084446b540a6f8639b7c7202eebd5bb6c0232f2f4d4ef90d97f0f326ff2b3d"
+  },
+  {
+    "source": "Learning-Topic-B-Manufacturing-Data-zh-CN.md",
+    "slug": "Learning-Topic-B-Manufacturing-Data",
+    "language": "zh-CN",
+    "kind": "topic",
+    "topic": "B",
+    "id": null,
+    "file": "Learning-Topic-B-Manufacturing-Data.html",
+    "sha256": "f6bf84c4c685201dcf28f2561468c4a352139b9736002dc535cb2549d0933f42"
+  },
+  {
+    "source": "Learning-Topic-B-Manufacturing-Data.md",
+    "slug": "Learning-Topic-B-Manufacturing-Data",
+    "language": "en",
+    "kind": "topic",
+    "topic": "B",
+    "id": null,
+    "file": "Learning-Topic-B-Manufacturing-Data.html",
+    "sha256": "e9146beda7cb102e164cf68edbbe78306c64becdcdfd29d49920da71c13b3d99"
+  },
+  {
+    "source": "Learning-Topic-C-Objectives-and-Operational-Rules-zh-CN.md",
+    "slug": "Learning-Topic-C-Objectives-and-Operational-Rules",
+    "language": "zh-CN",
+    "kind": "topic",
+    "topic": "C",
+    "id": null,
+    "file": "Learning-Topic-C-Objectives-and-Operational-Rules.html",
+    "sha256": "f339ab4167b7c6ebef178376a6eeadee44380ece1b4fdc2b03902023e409e1c3"
+  },
+  {
+    "source": "Learning-Topic-C-Objectives-and-Operational-Rules.md",
+    "slug": "Learning-Topic-C-Objectives-and-Operational-Rules",
+    "language": "en",
+    "kind": "topic",
+    "topic": "C",
+    "id": null,
+    "file": "Learning-Topic-C-Objectives-and-Operational-Rules.html",
+    "sha256": "9fb0b9fdd66110bb30f1c2f74f7c21f9275df946aabf4a13d2472296c0f2c4ed"
+  },
+  {
+    "source": "Learning-Topic-D-Read-Real-Planning-Cases-zh-CN.md",
+    "slug": "Learning-Topic-D-Read-Real-Planning-Cases",
+    "language": "zh-CN",
+    "kind": "topic",
+    "topic": "D",
+    "id": null,
+    "file": "Learning-Topic-D-Read-Real-Planning-Cases.html",
+    "sha256": "23ca34307af2e57f3d9242f4c32dbd2004ad26822a1e56826221cc68249bdb7f"
+  },
+  {
+    "source": "Learning-Topic-D-Read-Real-Planning-Cases.md",
+    "slug": "Learning-Topic-D-Read-Real-Planning-Cases",
+    "language": "en",
+    "kind": "topic",
+    "topic": "D",
+    "id": null,
+    "file": "Learning-Topic-D-Read-Real-Planning-Cases.html",
+    "sha256": "e017c4106e446eb9077b90a7622b677820f63ed9f026e2cc9d0b214e5f188227"
+  },
+  {
+    "source": "Learning-Topic-E-Coordinate-Plans-and-Responses-zh-CN.md",
+    "slug": "Learning-Topic-E-Coordinate-Plans-and-Responses",
+    "language": "zh-CN",
+    "kind": "topic",
+    "topic": "E",
+    "id": null,
+    "file": "Learning-Topic-E-Coordinate-Plans-and-Responses.html",
+    "sha256": "5e12287aed88954d375a9afe70f19ad57ef90483ca96f2964841fa6199f01cae"
+  },
+  {
+    "source": "Learning-Topic-E-Coordinate-Plans-and-Responses.md",
+    "slug": "Learning-Topic-E-Coordinate-Plans-and-Responses",
+    "language": "en",
+    "kind": "topic",
+    "topic": "E",
+    "id": null,
+    "file": "Learning-Topic-E-Coordinate-Plans-and-Responses.html",
+    "sha256": "ceec2ddbeb68f33fd13c12d24e4d285311217db5d6955789b2c71d6b64924529"
+  },
+  {
+    "source": "Learning-Topic-F-Open-Collaboration-and-Evolution-zh-CN.md",
+    "slug": "Learning-Topic-F-Open-Collaboration-and-Evolution",
+    "language": "zh-CN",
+    "kind": "topic",
+    "topic": "F",
+    "id": null,
+    "file": "Learning-Topic-F-Open-Collaboration-and-Evolution.html",
+    "sha256": "c289648397a0695c4d0eca3a5bfff471ab4e21c79ed89188018ef8ce4ebc75ca"
+  },
+  {
+    "source": "Learning-Topic-F-Open-Collaboration-and-Evolution.md",
+    "slug": "Learning-Topic-F-Open-Collaboration-and-Evolution",
+    "language": "en",
+    "kind": "topic",
+    "topic": "F",
+    "id": null,
+    "file": "Learning-Topic-F-Open-Collaboration-and-Evolution.html",
+    "sha256": "d8be350d4597c64da9fbc3e555893b0e32eb7a6f47bc23d62ca6069a4fd02d33"
+  },
+  {
+    "source": "Learning-Topic-G-Actions-Extensions-and-Agents-zh-CN.md",
+    "slug": "Learning-Topic-G-Actions-Extensions-and-Agents",
+    "language": "zh-CN",
+    "kind": "topic",
+    "topic": "G",
+    "id": null,
+    "file": "Learning-Topic-G-Actions-Extensions-and-Agents.html",
+    "sha256": "2ffdbb57f3532c4156b95099777181dd09798480b81fab8e5c4641c855b89059"
+  },
+  {
+    "source": "Learning-Topic-G-Actions-Extensions-and-Agents.md",
+    "slug": "Learning-Topic-G-Actions-Extensions-and-Agents",
+    "language": "en",
+    "kind": "topic",
+    "topic": "G",
+    "id": null,
+    "file": "Learning-Topic-G-Actions-Extensions-and-Agents.html",
+    "sha256": "a980cf69023724588822ff2a0cf1cec34adb4f6f5c9fc2caacb0f78a5e22b31d"
+  },
+  {
+    "source": "Learning-Topic-H-Build-Everyday-Decision-Capability-zh-CN.md",
+    "slug": "Learning-Topic-H-Build-Everyday-Decision-Capability",
+    "language": "zh-CN",
+    "kind": "topic",
+    "topic": "H",
+    "id": null,
+    "file": "Learning-Topic-H-Build-Everyday-Decision-Capability.html",
+    "sha256": "f1bb75ece1cdb0a6f69394e23e39e107c21aae0d6030b3c678f2957625e26367"
+  },
+  {
+    "source": "Learning-Topic-H-Build-Everyday-Decision-Capability.md",
+    "slug": "Learning-Topic-H-Build-Everyday-Decision-Capability",
+    "language": "en",
+    "kind": "topic",
+    "topic": "H",
+    "id": null,
+    "file": "Learning-Topic-H-Build-Everyday-Decision-Capability.html",
+    "sha256": "7b0fbbe408abdb28471c7c7e772022a7ff860e4254f9b36b339cba4a4f4b73c3"
+  },
+  {
+    "source": "Worksheet-Operational-Rule-zh-CN.md",
+    "slug": "Worksheet-Operational-Rule",
+    "language": "zh-CN",
+    "kind": "worksheet",
+    "topic": null,
+    "id": null,
+    "file": "Worksheet-Operational-Rule.html",
+    "sha256": "0e5af8559a52391d311235cc93f4be370ee61b9f7472e82931b723d5697d853a"
+  },
+  {
+    "source": "Worksheet-Operational-Rule.md",
+    "slug": "Worksheet-Operational-Rule",
+    "language": "en",
+    "kind": "worksheet",
+    "topic": null,
+    "id": null,
+    "file": "Worksheet-Operational-Rule.html",
+    "sha256": "df33cadfb56d30816504a7443dce40a38ca97b05bcad0dbc6aff0dfd04c747c8"
+  },
+  {
+    "source": "Worksheet-Plan-Comparison-zh-CN.md",
+    "slug": "Worksheet-Plan-Comparison",
+    "language": "zh-CN",
+    "kind": "worksheet",
+    "topic": null,
+    "id": null,
+    "file": "Worksheet-Plan-Comparison.html",
+    "sha256": "463f7116ea4e67da872ef68420b281593737002bc650cd68f6fafce4403f49c4"
+  },
+  {
+    "source": "Worksheet-Plan-Comparison.md",
+    "slug": "Worksheet-Plan-Comparison",
+    "language": "en",
+    "kind": "worksheet",
+    "topic": null,
+    "id": null,
+    "file": "Worksheet-Plan-Comparison.html",
+    "sha256": "083fe1b02aa605c5ef27c3fc63c91f886206c3a619289a8822d0f5aa4da6da88"
+  },
+  {
+    "source": "Worksheet-Review-and-Change-Record-zh-CN.md",
+    "slug": "Worksheet-Review-and-Change-Record",
+    "language": "zh-CN",
+    "kind": "worksheet",
+    "topic": null,
+    "id": null,
+    "file": "Worksheet-Review-and-Change-Record.html",
+    "sha256": "1a28bfbd7d4a4b7764dc20b98418cbbf8fbb73777d6f3457b6cc5fa56703322c"
+  },
+  {
+    "source": "Worksheet-Review-and-Change-Record.md",
+    "slug": "Worksheet-Review-and-Change-Record",
+    "language": "en",
+    "kind": "worksheet",
+    "topic": null,
+    "id": null,
+    "file": "Worksheet-Review-and-Change-Record.html",
+    "sha256": "f4cd1ead9f405cf4db17ade832f77ee983a9d44bcb23e860e22a37520df2a90b"
+  },
+  {
+    "source": "Worksheet-Scenario-Brief-zh-CN.md",
+    "slug": "Worksheet-Scenario-Brief",
+    "language": "zh-CN",
+    "kind": "worksheet",
+    "topic": null,
+    "id": null,
+    "file": "Worksheet-Scenario-Brief.html",
+    "sha256": "2fd124b18d7c597163f0bc005aa1707ec5f351eac9e87475ee942b3c7a40f5c0"
+  },
+  {
+    "source": "Worksheet-Scenario-Brief.md",
+    "slug": "Worksheet-Scenario-Brief",
+    "language": "en",
+    "kind": "worksheet",
+    "topic": null,
+    "id": null,
+    "file": "Worksheet-Scenario-Brief.html",
+    "sha256": "f431311a7ba335cbe9c691e7e0ee40c6ed881b7ab5671f4f9cbdb02b53481202"
+  }
+]

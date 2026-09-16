@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C3 把现场经验写成可检查的规则 | DecisioWorks</title>
+  <meta name="description" content="这份业务说明用于确认规则含义；接入时再将其转换为所选接口要求的字段。" />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-C3-Turn-Experience-into-Rules.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-C3-Turn-Experience-into-Rules.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Learning-C3-Turn-Experience-into-Rules.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-C3-Turn-Experience-into-Rules.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="C3 把现场经验写成可检查的规则 | DecisioWorks" />
+  <meta property="og:description" content="这份业务说明用于确认规则含义；接入时再将其转换为所选接口要求的字段。" />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-C3-Turn-Experience-into-Rules.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="C3 把现场经验写成可检查的规则 | DecisioWorks" />
+  <meta name="twitter:description" content="这份业务说明用于确认规则含义；接入时再将其转换为所选接口要求的字段。" />
+  <meta name="twitter:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <link rel="icon" href="../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "C3 把现场经验写成可检查的规则", "description": "这份业务说明用于确认规则含义；接入时再将其转换为所选接口要求的字段。", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-C3-Turn-Experience-into-Rules.html", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "DecisioWorks", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "首页", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/"}, {"@type": "ListItem", "position": 2, "name": "学习中心", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/"}, {"@type": "ListItem", "position": 3, "name": "C 让目标、经验与规则参与决策", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-Topic-C-Objectives-and-Operational-Rules.html"}, {"@type": "ListItem", "position": 4, "name": "C3 把现场经验写成可检查的规则", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-C3-Turn-Experience-into-Rules.html"}]}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#article">跳到正文</a>
+  <header class="learning-header"><div class="shell header-inner">
+    <a class="brand" href="../"><img src="../assets/decisioworks-logo.png" alt="" width="36" height="36" /><strong>DecisioWorks</strong></a>
+    <nav aria-label="主导航">
+      <a href="../">主页</a>
+      <a href="../docs/">文档</a>
+      <a class="language-switch" href="../en/learn/Learning-C3-Turn-Experience-into-Rules.html" lang="en" hreflang="en">English</a>
+    </nav>
+  </div></header>
+  <div class="shell breadcrumbs" aria-label="面包屑导航"><a href="../">首页</a><span>/</span><a href="./">学习中心</a><span>/</span><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C</a><span>/</span><span aria-current="page">C3 把现场经验写成可检查的规则</span></div>
+  <div class="shell reading-layout">
+    <aside class="sidebar"><nav aria-label="课程目录"><a class="contents-home" href="./">学习中心</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A 从生产问题到可检验的决策</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B 用数据表达制造过程</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C 让目标、经验与规则参与决策</a><a class="lesson-link" href="./Learning-C1-Facts-Constraints-and-Preferences.html">C1 区分业务事实、约束条件与目标偏好</a><a class="lesson-link" href="./Learning-C2-Explain-Objective-Tradeoffs.html">C2 交期、库存与切换：让取舍可以讨论</a><a class="lesson-link" href="./Learning-C3-Turn-Experience-into-Rules.html" aria-current="page">C3 把现场经验写成可检查的规则</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D 从真实样例学会读计划</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E 让计划层级协同工作</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F 开放协作与持续演进</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G 用标准动作连接应用与AI Agent</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H 把一次练习变成日常能力</a><span class="nav-section">工作表</span><a href="./Worksheet-Operational-Rule.html">现场规则记录与检查</a><a href="./Worksheet-Plan-Comparison.html">基线与调整方案比较</a><a href="./Worksheet-Review-and-Change-Record.html">复盘与持续改进记录</a><a href="./Worksheet-Scenario-Brief.html">场景与决策任务</a></nav></aside>
+    <main>
+      <details class="mobile-contents"><summary>课程目录</summary><nav aria-label="移动端课程目录"><a class="contents-home" href="./">学习中心</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A 从生产问题到可检验的决策</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B 用数据表达制造过程</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C 让目标、经验与规则参与决策</a><a class="lesson-link" href="./Learning-C1-Facts-Constraints-and-Preferences.html">C1 区分业务事实、约束条件与目标偏好</a><a class="lesson-link" href="./Learning-C2-Explain-Objective-Tradeoffs.html">C2 交期、库存与切换：让取舍可以讨论</a><a class="lesson-link" href="./Learning-C3-Turn-Experience-into-Rules.html" aria-current="page">C3 把现场经验写成可检查的规则</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D 从真实样例学会读计划</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E 让计划层级协同工作</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F 开放协作与持续演进</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G 用标准动作连接应用与AI Agent</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H 把一次练习变成日常能力</a><span class="nav-section">工作表</span><a href="./Worksheet-Operational-Rule.html">现场规则记录与检查</a><a href="./Worksheet-Plan-Comparison.html">基线与调整方案比较</a><a href="./Worksheet-Review-and-Change-Record.html">复盘与持续改进记录</a><a href="./Worksheet-Scenario-Brief.html">场景与决策任务</a></nav></details>
+      <article id="article">
+        <header class="article-heading"><p class="kicker">课程</p><h1>C3 把现场经验写成可检查的规则</h1></header>
+        <details class="page-contents"><summary>本页内容</summary><nav><a href="#经验需要对象范围和原因">经验需要对象、范围和原因</a><a href="#marginal_control的作用位置">marginal_control的作用位置</a><a href="#走完四个检查点">走完四个检查点</a><a href="#处理冲突与到期">处理冲突与到期</a><a href="#练习与参考解析">练习与参考解析</a><a href="#延伸阅读">延伸阅读</a></nav></details>
+        <h2 id="经验需要对象范围和原因">经验需要对象、范围和原因</h2>
+<p>“这台设备最近不稳定，少排一点”包含有价值的判断，但缺少可执行定义。需要确认不稳定影响哪种制品、哪个时段，减少多少，以及何时重新评估。规则写清楚后，经验才能被复用和讨论。</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>规则记录</th>
+<th>教学示例</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>对象</td>
+<td>工作中心WC-2，今天第二时段</td>
+</tr>
+<tr class="even">
+<td>依据</td>
+<td>已确认的设备状态检查</td>
+</tr>
+<tr class="odd">
+<td>措施</td>
+<td>分配额度采用经确认的上限</td>
+</tr>
+<tr class="even">
+<td>有效期</td>
+<td>本时段，复核后续期或取消</td>
+</tr>
+<tr class="odd">
+<td>确认人</td>
+<td>设备负责人提供事实，计划负责人确认安排</td>
+</tr>
+<tr class="even">
+<td>检查</td>
+<td>额度输入、实际分配与例外记录</td>
+</tr>
+</tbody>
+</table></div>
+<p>这份业务说明用于确认规则含义；接入时再将其转换为所选接口要求的字段。</p>
+<h2 id="marginal_control的作用位置">marginal_control的作用位置</h2>
+<p><code>marginal_control</code>（边缘控制模块）表达现场规则与控制要求，并生成影响分析。<code>marginalization_analysis</code>能力编排配方（recipe）演示了<code>boundary_control</code>方法：用对象键标识控制对象，<code>lower_bound</code>和<code>upper_bound</code>分别表示下限和上限，<code>variable_indices</code>指定对应的优化变量索引。</p>
+<p><code>variable_indices</code>表示变量位置，而不是生产数量。只有在某个变量确实表示指定对象的产量、单位也为“件”时，给它设置<code>upper_bound=300</code>才有“最多300件”的业务含义。接入前先确认对象映射、变量单位及模型支持情况。</p>
+<h2 id="走完四个检查点">走完四个检查点</h2>
+<ol type="1">
+<li><strong>表达</strong>：规则记录能说明来源、对象、有效期和计量口径。</li>
+<li><strong>分析</strong>：控制输入被解析，报告与对象一致。</li>
+<li><strong>应用</strong>：检查相应能力或模型适配器是否读取规则，并将其加入模型或后续处理。</li>
+<li><strong>结果</strong>：结合约束配置、执行记录和对象明细核对规则是否得到应用；仅有某次结果恰好满足限额，还不足以说明限额参与了计算。</li>
+</ol>
+<p>该分析配方生成控制分析报告。需要让规则影响求解时，还要通过相应能力将其加入配置：可以形成目标调整建议、显式约束或人工待办。沿着报告、配置和执行记录检查，才能看清规则实际发挥了什么作用。</p>
+<h2 id="处理冲突与到期">处理冲突与到期</h2>
+<p>新限额可能与交期要求冲突。保存冲突对象、时段及数量，再讨论替代资源、延期或其他措施。多条规则同时存在时，写清优先关系和批准方式，不通过静默覆盖掩盖冲突。</p>
+<p>到期规则应重新确认。短期设备问题解除后，如果限制仍然生效，系统会继续按旧条件工作；这正是规则生命周期需要被管理的原因。</p>
+<h2 id="练习与参考解析">练习与参考解析</h2>
+<p>将“重点客户优先”改写为一份规则记录，再写出它与已冻结任务可能发生的冲突。明确“优先”是提高目标偏好，还是必须满足的资源或时间条件。</p>
+<p>成果应包含一条正常检查和一条反例：例如有效期已过后不再应用该限制。若当前接口仅产生建议，结论应写“形成建议并等待确认”，而不是“已完成调整”。</p>
+<h2 id="延伸阅读">延伸阅读</h2>
+<p><a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Objectives-and-Rule-Control-zh-CN">目标与规则控制</a>
+· <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Controlled-Solving-and-Engine-Adapters-zh-CN">受控求解与模型适配</a>
+· <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Trusted-Operation-and-Human-Review-zh-CN">人工复核与可信运行</a></p>
+<p>配套工作表：<a
+href="./Worksheet-Plan-Comparison.html">工作表：基线与调整方案比较</a>
+· <a
+href="./Worksheet-Operational-Rule.html">工作表：现场规则记录与检查</a></p>
+<p><a
+href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">专题
+C</a> · <a
+href="./Learning-C2-Explain-Objective-Tradeoffs.html">上一篇:
+交期、库存与切换：让取舍可以讨论</a> · <a
+href="./Learning-D1-Read-a-Stamping-Plan.html">下一篇:
+冲压计划：把需求、产能与齐套放在一起看</a></p>
+      </article>
+      <footer class="article-footer"><a href="./">返回学习中心</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki/Learning-C3-Turn-Experience-into-Rules-zh-CN">在 Wiki 阅读</a></footer>
+    </main>
+  </div>
+  <footer class="site-footer shell"><strong>DecisioWorks</strong><span>从生产问题出发，理解与使用决策能力。</span></footer>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>B1 从业务表格到可计算对象 | DecisioWorks</title>
+  <meta name="description" content="本课使用教学订单O-7：制品P-1，需求120件，承诺在时间单元T-3完成。以下是语义映射示意，标识的实际类型以所用数据模板为准。" />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-B1-Business-Tables-to-Computable-Objects.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-B1-Business-Tables-to-Computable-Objects.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Learning-B1-Business-Tables-to-Computable-Objects.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-B1-Business-Tables-to-Computable-Objects.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="B1 从业务表格到可计算对象 | DecisioWorks" />
+  <meta property="og:description" content="本课使用教学订单O-7：制品P-1，需求120件，承诺在时间单元T-3完成。以下是语义映射示意，标识的实际类型以所用数据模板为准。" />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-B1-Business-Tables-to-Computable-Objects.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="B1 从业务表格到可计算对象 | DecisioWorks" />
+  <meta name="twitter:description" content="本课使用教学订单O-7：制品P-1，需求120件，承诺在时间单元T-3完成。以下是语义映射示意，标识的实际类型以所用数据模板为准。" />
+  <meta name="twitter:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <link rel="icon" href="../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "B1 从业务表格到可计算对象", "description": "本课使用教学订单O-7：制品P-1，需求120件，承诺在时间单元T-3完成。以下是语义映射示意，标识的实际类型以所用数据模板为准。", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-B1-Business-Tables-to-Computable-Objects.html", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "DecisioWorks", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "首页", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/"}, {"@type": "ListItem", "position": 2, "name": "学习中心", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/"}, {"@type": "ListItem", "position": 3, "name": "B 用数据表达制造过程", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-Topic-B-Manufacturing-Data.html"}, {"@type": "ListItem", "position": 4, "name": "B1 从业务表格到可计算对象", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-B1-Business-Tables-to-Computable-Objects.html"}]}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#article">跳到正文</a>
+  <header class="learning-header"><div class="shell header-inner">
+    <a class="brand" href="../"><img src="../assets/decisioworks-logo.png" alt="" width="36" height="36" /><strong>DecisioWorks</strong></a>
+    <nav aria-label="主导航">
+      <a href="../">主页</a>
+      <a href="../docs/">文档</a>
+      <a class="language-switch" href="../en/learn/Learning-B1-Business-Tables-to-Computable-Objects.html" lang="en" hreflang="en">English</a>
+    </nav>
+  </div></header>
+  <div class="shell breadcrumbs" aria-label="面包屑导航"><a href="../">首页</a><span>/</span><a href="./">学习中心</a><span>/</span><a href="./Learning-Topic-B-Manufacturing-Data.html">B</a><span>/</span><span aria-current="page">B1 从业务表格到可计算对象</span></div>
+  <div class="shell reading-layout">
+    <aside class="sidebar"><nav aria-label="课程目录"><a class="contents-home" href="./">学习中心</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A 从生产问题到可检验的决策</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B 用数据表达制造过程</a><a class="lesson-link" href="./Learning-B1-Business-Tables-to-Computable-Objects.html" aria-current="page">B1 从业务表格到可计算对象</a><a class="lesson-link" href="./Learning-B2-Routes-and-Operation-Level-BOM.html">B2 工艺路线与工序级BOM：物料在哪一步发生作用</a><a class="lesson-link" href="./Learning-B3-Align-Time-Capacity-and-Materials.html">B3 让产能、班制、维护与齐套使用同一时间坐标</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C 让目标、经验与规则参与决策</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D 从真实样例学会读计划</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E 让计划层级协同工作</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F 开放协作与持续演进</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G 用标准动作连接应用与AI Agent</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H 把一次练习变成日常能力</a><span class="nav-section">工作表</span><a href="./Worksheet-Operational-Rule.html">现场规则记录与检查</a><a href="./Worksheet-Plan-Comparison.html">基线与调整方案比较</a><a href="./Worksheet-Review-and-Change-Record.html">复盘与持续改进记录</a><a href="./Worksheet-Scenario-Brief.html">场景与决策任务</a></nav></aside>
+    <main>
+      <details class="mobile-contents"><summary>课程目录</summary><nav aria-label="移动端课程目录"><a class="contents-home" href="./">学习中心</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A 从生产问题到可检验的决策</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B 用数据表达制造过程</a><a class="lesson-link" href="./Learning-B1-Business-Tables-to-Computable-Objects.html" aria-current="page">B1 从业务表格到可计算对象</a><a class="lesson-link" href="./Learning-B2-Routes-and-Operation-Level-BOM.html">B2 工艺路线与工序级BOM：物料在哪一步发生作用</a><a class="lesson-link" href="./Learning-B3-Align-Time-Capacity-and-Materials.html">B3 让产能、班制、维护与齐套使用同一时间坐标</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C 让目标、经验与规则参与决策</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D 从真实样例学会读计划</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E 让计划层级协同工作</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F 开放协作与持续演进</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G 用标准动作连接应用与AI Agent</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H 把一次练习变成日常能力</a><span class="nav-section">工作表</span><a href="./Worksheet-Operational-Rule.html">现场规则记录与检查</a><a href="./Worksheet-Plan-Comparison.html">基线与调整方案比较</a><a href="./Worksheet-Review-and-Change-Record.html">复盘与持续改进记录</a><a href="./Worksheet-Scenario-Brief.html">场景与决策任务</a></nav></details>
+      <article id="article">
+        <header class="article-heading"><p class="kicker">课程</p><h1>B1 从业务表格到可计算对象</h1></header>
+        <details class="page-contents"><summary>本页内容</summary><nav><a href="#同名字段可能描述不同事情">同名字段可能描述不同事情</a><a href="#按关系检查而不只按行检查">按关系检查，而不只按行检查</a><a href="#可计算需要哪些检查">可计算需要哪些检查</a><a href="#做一次小调整">做一次小调整</a><a href="#练习与参考解析">练习与参考解析</a><a href="#延伸阅读">延伸阅读</a></nav></details>
+        <h2 id="同名字段可能描述不同事情">同名字段可能描述不同事情</h2>
+<p>企业导出的“数量”可能是订单件数、包装箱数或剩余未交量，“日期”可能是接单日、承诺交期或预计到料日。接入数据时，先确定业务定义，再映射字段。企业资源计划系统（ERP）、制造执行系统（MES）、电子表格和人工整理的记录都可以成为来源，计算所需的含义与关系保持一致。</p>
+<p>本课使用教学订单O-7：制品P-1，需求120件，承诺在时间单元T-3完成。以下是语义映射示意，标识的实际类型以所用数据模板为准。</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>来源信息</th>
+<th>标准对象或字段</th>
+<th>需要确认</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>制品编号P-1</td>
+<td>product及order_item.product</td>
+<td>明细引用的是有效制品标识</td>
+</tr>
+<tr class="even">
+<td>剩余需求120件</td>
+<td>order_item.number</td>
+<td>已交付部分是否已经扣除</td>
+</tr>
+<tr class="odd">
+<td>承诺交期T-3</td>
+<td>order_item.delivery_time</td>
+<td>指向time_unit，含义是允许完成的时点</td>
+</tr>
+<tr class="even">
+<td>制品颜色“蓝”</td>
+<td>product属性槽位与业务映射</td>
+<td>明确哪个槽位代表颜色</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="按关系检查而不只按行检查">按关系检查，而不只按行检查</h2>
+<p>从订单明细解析制品，再查制品的工艺路线、工序顺序与可加工工作中心。启用物料条件时，再连接工序物料需求与可用量。某行字段全部非空，并不能弥补无效引用。</p>
+<p>检查记录应包含原始值、解释后的值和转换规则。例如12箱、每箱10件，应在确认“箱”的包装规则后转换成120件；若包装系数未知，保留问题并补充资料，而不是假设为1。</p>
+<h2 id="可计算需要哪些检查">可计算需要哪些检查</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>检查</th>
+<th>例子</th>
+<th>处理方式</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>标识一致</td>
+<td>订单引用的制品不存在</td>
+<td>修复映射或补齐主数据</td>
+</tr>
+<tr class="even">
+<td>单位明确</td>
+<td>件与箱混用</td>
+<td>使用有来源的换算规则</td>
+</tr>
+<tr class="odd">
+<td>时间一致</td>
+<td>交期不能对应时间单元</td>
+<td>检查日历映射</td>
+</tr>
+<tr class="even">
+<td>路径可达</td>
+<td>工序没有适配工作中心</td>
+<td>确认真实资源选择</td>
+</tr>
+<tr class="odd">
+<td>数量与批量</td>
+<td>需求不是生产批量的整倍数</td>
+<td>确认是否允许拆批、余量或超产，再按所选模型检查</td>
+</tr>
+</tbody>
+</table></div>
+<p>DecisioCore 的 data_layer
+将来源转换为统一业务对象，后续计划和排程复用这些对象。数据结构检查与完整求解检查分阶段进行：<code>ContractReady</code>（接口检查就绪）表示通过相应的数据接口检查；<code>SolverReady</code>（求解链路就绪）表示通过该报告规定的数据与求解能力衔接检查。阅读状态时同时确认适用场景、版本和检查范围，再按本次运行结果判断具体计划的可行性。</p>
+<h2 id="做一次小调整">做一次小调整</h2>
+<p>把O-7的来源数量改为“12箱”，包装规则确认每箱10件。标准需求仍为120件，但转换说明发生变化。下一次包装规格改变时，应更新映射和检查，而不是让求解器猜测。</p>
+<h2 id="练习与参考解析">练习与参考解析</h2>
+<p>制作五列表：来源字段、业务含义、标准对象、单位转换、检查方法。挑一个看似容易的字段，请业务人员解释。</p>
+<p>如果交期字段实际是预计到料日，即使类型符合日期格式，映射仍然错误。合格成果应保留定义、来源和确认信息，让别人能够独立复核。</p>
+<h2 id="延伸阅读">延伸阅读</h2>
+<p><a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Standardized-Data-Interface-zh-CN">标准化数据接口</a>
+· <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Data-Object-and-Field-Reference-zh-CN">数据对象与字段</a>
+· <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Data-Readiness-and-Validation-zh-CN">数据准备与验证</a>
+· <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/ERP-MES-Data-Mapping-Guide-zh-CN">ERP与MES数据映射</a></p>
+<p>配套工作表：<a
+href="./Worksheet-Scenario-Brief.html">工作表：场景与决策任务</a></p>
+<p><a href="./Learning-Topic-B-Manufacturing-Data.html">专题 B</a> ·
+<a href="./Learning-A3-Compare-Plans-on-the-Same-Basis.html">上一篇:
+用同一把尺子比较两个方案</a> · <a
+href="./Learning-B2-Routes-and-Operation-Level-BOM.html">下一篇:
+工艺路线与工序级BOM：物料在哪一步发生作用</a></p>
+      </article>
+      <footer class="article-footer"><a href="./">返回学习中心</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki/Learning-B1-Business-Tables-to-Computable-Objects-zh-CN">在 Wiki 阅读</a></footer>
+    </main>
+  </div>
+  <footer class="site-footer shell"><strong>DecisioWorks</strong><span>从生产问题出发，理解与使用决策能力。</span></footer>
+</body>
+</html>

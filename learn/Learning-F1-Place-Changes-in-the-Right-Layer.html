@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>F1 业务变化时，应该调整哪一层 | DecisioWorks</title>
+  <meta name="description" content="DecisioCore进一步区分数据接入、目标管理（objective_system）、规则控制（marginal_control）、模型适配（engine_adapters）、结果分析（analysis）与计划联动（planning_system）。开放参考实现使开发者能够理解这些连接，复用已有方式或实现自己的调用层。" />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-F1-Place-Changes-in-the-Right-Layer.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-F1-Place-Changes-in-the-Right-Layer.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Learning-F1-Place-Changes-in-the-Right-Layer.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-F1-Place-Changes-in-the-Right-Layer.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="F1 业务变化时，应该调整哪一层 | DecisioWorks" />
+  <meta property="og:description" content="DecisioCore进一步区分数据接入、目标管理（objective_system）、规则控制（marginal_control）、模型适配（engine_adapters）、结果分析（analysis）与计划联动（planning_system）。开放参考实现使开发者能够理解这些连接，复用已有方式或实现自己的调用层。" />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-F1-Place-Changes-in-the-Right-Layer.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="F1 业务变化时，应该调整哪一层 | DecisioWorks" />
+  <meta name="twitter:description" content="DecisioCore进一步区分数据接入、目标管理（objective_system）、规则控制（marginal_control）、模型适配（engine_adapters）、结果分析（analysis）与计划联动（planning_system）。开放参考实现使开发者能够理解这些连接，复用已有方式或实现自己的调用层。" />
+  <meta name="twitter:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <link rel="icon" href="../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "F1 业务变化时，应该调整哪一层", "description": "DecisioCore进一步区分数据接入、目标管理（objective_system）、规则控制（marginal_control）、模型适配（engine_adapters）、结果分析（analysis）与计划联动（planning_system）。开放参考实现使开发者能够理解这些连接，复用已有方式或实现自己的调用层。", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-F1-Place-Changes-in-the-Right-Layer.html", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "DecisioWorks", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "首页", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/"}, {"@type": "ListItem", "position": 2, "name": "学习中心", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/"}, {"@type": "ListItem", "position": 3, "name": "F 开放协作与持续演进", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-Topic-F-Open-Collaboration-and-Evolution.html"}, {"@type": "ListItem", "position": 4, "name": "F1 业务变化时，应该调整哪一层", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-F1-Place-Changes-in-the-Right-Layer.html"}]}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#article">跳到正文</a>
+  <header class="learning-header"><div class="shell header-inner">
+    <a class="brand" href="../"><img src="../assets/decisioworks-logo.png" alt="" width="36" height="36" /><strong>DecisioWorks</strong></a>
+    <nav aria-label="主导航">
+      <a href="../">主页</a>
+      <a href="../docs/">文档</a>
+      <a class="language-switch" href="../en/learn/Learning-F1-Place-Changes-in-the-Right-Layer.html" lang="en" hreflang="en">English</a>
+    </nav>
+  </div></header>
+  <div class="shell breadcrumbs" aria-label="面包屑导航"><a href="../">首页</a><span>/</span><a href="./">学习中心</a><span>/</span><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F</a><span>/</span><span aria-current="page">F1 业务变化时，应该调整哪一层</span></div>
+  <div class="shell reading-layout">
+    <aside class="sidebar"><nav aria-label="课程目录"><a class="contents-home" href="./">学习中心</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A 从生产问题到可检验的决策</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B 用数据表达制造过程</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C 让目标、经验与规则参与决策</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D 从真实样例学会读计划</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E 让计划层级协同工作</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F 开放协作与持续演进</a><a class="lesson-link" href="./Learning-F1-Place-Changes-in-the-Right-Layer.html" aria-current="page">F1 业务变化时，应该调整哪一层</a><a class="lesson-link" href="./Learning-F2-Preserve-Data-Assets-and-Templates.html">F2 把场景经验沉淀为数据资产与行业模板</a><a class="lesson-link" href="./Learning-F3-Define-Ecosystem-Responsibilities.html">F3 企业、咨询与软件伙伴怎样分工</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G 用标准动作连接应用与AI Agent</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H 把一次练习变成日常能力</a><span class="nav-section">工作表</span><a href="./Worksheet-Operational-Rule.html">现场规则记录与检查</a><a href="./Worksheet-Plan-Comparison.html">基线与调整方案比较</a><a href="./Worksheet-Review-and-Change-Record.html">复盘与持续改进记录</a><a href="./Worksheet-Scenario-Brief.html">场景与决策任务</a></nav></aside>
+    <main>
+      <details class="mobile-contents"><summary>课程目录</summary><nav aria-label="移动端课程目录"><a class="contents-home" href="./">学习中心</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A 从生产问题到可检验的决策</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B 用数据表达制造过程</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C 让目标、经验与规则参与决策</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D 从真实样例学会读计划</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E 让计划层级协同工作</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F 开放协作与持续演进</a><a class="lesson-link" href="./Learning-F1-Place-Changes-in-the-Right-Layer.html" aria-current="page">F1 业务变化时，应该调整哪一层</a><a class="lesson-link" href="./Learning-F2-Preserve-Data-Assets-and-Templates.html">F2 把场景经验沉淀为数据资产与行业模板</a><a class="lesson-link" href="./Learning-F3-Define-Ecosystem-Responsibilities.html">F3 企业、咨询与软件伙伴怎样分工</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G 用标准动作连接应用与AI Agent</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H 把一次练习变成日常能力</a><span class="nav-section">工作表</span><a href="./Worksheet-Operational-Rule.html">现场规则记录与检查</a><a href="./Worksheet-Plan-Comparison.html">基线与调整方案比较</a><a href="./Worksheet-Review-and-Change-Record.html">复盘与持续改进记录</a><a href="./Worksheet-Scenario-Brief.html">场景与决策任务</a></nav></details>
+      <article id="article">
+        <header class="article-heading"><p class="kicker">课程</p><h1>F1 业务变化时，应该调整哪一层</h1></header>
+        <details class="page-contents"><summary>本页内容</summary><nav><a href="#用四个部分理解-decisioworks">用四个部分理解 DecisioWorks</a><a href="#对一次变化画影响图">对一次变化画影响图</a><a href="#独立演进仍需要协作验证">独立演进仍需要协作验证</a><a href="#练习与参考解析">练习与参考解析</a><a href="#延伸阅读">延伸阅读</a></nav></details>
+        <h2
+id="变化本身并不可怕关键是知道改哪里">变化本身并不可怕，关键是知道改哪里</h2>
+<p>新增一种制品，可能只需增加工艺与物料数据；新增一种从未支持的调度结构，则可能需要模型适配。两者都叫“业务变化”，工程工作却不同。分层让团队知道应修改哪些数据或模块，以及需要检查哪些关联功能。</p>
+<h2 id="用四个部分理解-decisioworks">用四个部分理解 DecisioWorks</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>部分</th>
+<th>主要职责</th>
+<th>典型变化</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>DataSets与标准接口</td>
+<td>场景数据及制造关系</td>
+<td>订单、路线、产能、物料清单（BOM）变化</td>
+</tr>
+<tr class="even">
+<td>DecisioCore</td>
+<td>数据、目标、规则、编排、分析与联动</td>
+<td>管理偏好、行业逻辑、反馈方式</td>
+</tr>
+<tr class="odd">
+<td>GOCK</td>
+<td>模型构建与优化</td>
+<td>模型或求解能力升级</td>
+</tr>
+<tr class="even">
+<td>Web及其他应用</td>
+<td>展示、操作与业务交互</td>
+<td>新报表、培训页面、应用流程</td>
+</tr>
+</tbody>
+</table></div>
+<p>DecisioCore进一步区分数据接入、目标管理（<code>objective_system</code>）、规则控制（<code>marginal_control</code>）、模型适配（<code>engine_adapters</code>）、结果分析（<code>analysis</code>）与计划联动（<code>planning_system</code>）。开放参考实现使开发者能够理解这些连接，复用已有方式或实现自己的调用层。</p>
+<h2 id="对一次变化画影响图">对一次变化画影响图</h2>
+<p>教学变化：客户要求同一组制品按颜色分组展示，同时更重视减少颜色切换。这包含两项独立需求。分组展示由应用处理；切换偏好需要确认数据中存在颜色映射，模型也支持相应的切换指标，再调整目标。改变页面排序不会自动改变求解顺序。</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>变化</th>
+<th>首先检查</th>
+<th>修改后需要复查</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>加工时间更新</td>
+<td>数据单位及工艺适配</td>
+<td>负荷、交期及结果</td>
+</tr>
+<tr class="even">
+<td>交期偏好更新</td>
+<td>目标统计量与方向</td>
+<td>取舍、明细与审计</td>
+</tr>
+<tr class="odd">
+<td>临时资源额度</td>
+<td>规则对象及模型采用方式</td>
+<td>约束生效及到期处理</td>
+</tr>
+<tr class="even">
+<td>新结果展示</td>
+<td>分析字段与单位</td>
+<td>数值一致性和页面阅读</td>
+</tr>
+<tr class="odd">
+<td>新模型能力</td>
+<td>输入输出适配</td>
+<td>支持范围、状态和既有调用</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="独立演进仍需要协作验证">独立演进仍需要协作验证</h2>
+<p>接口让各模块可以分别改进。新增字段、改变单位或替换模型后，通过检查输入含义、输出结构和既有场景，确认新版本仍能与其他部分配合。演进的实际含义，是利用已有基础持续调整，同时保留能继续工作的部分。</p>
+<p>开放参考实现也让伙伴能够看清哪些能力适合复用，哪些需要自行适配。最终应用可采用自己的页面、数据接入或工作流，同时通过明确接口调用所需优化能力。</p>
+<h2 id="练习与参考解析">练习与参考解析</h2>
+<p>把“新增制品、调整交期偏好、增加一个审批页面、换用新的模型能力”分别放到对应层，再写一个跨层影响。</p>
+<p>审批页面属于应用，但审批状态若决定任务是否释放，还需连接计划输入。成果应同时标出主责任层和受影响的接口，避免把“分层”理解为彼此完全无关。</p>
+<h2 id="延伸阅读">延伸阅读</h2>
+<p><a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Design-Principles-and-Differentiation-zh-CN">设计原则与差异化</a>
+· <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Architecture-Overview-zh-CN">架构总览</a>
+· <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Production-Decision-Data-Assets-zh-CN">生产决策数据资产</a>
+· <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Ecosystem-Overview-zh-CN">生态协作</a>
+· <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Partner-Onboarding-and-Integration-zh-CN">伙伴接入</a></p>
+<p>配套工作表：<a
+href="./Worksheet-Scenario-Brief.html">工作表：场景与决策任务</a> · <a
+href="./Worksheet-Review-and-Change-Record.html">工作表：复盘与持续改进记录</a></p>
+<p><a
+href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">专题
+F</a> · <a
+href="./Learning-E3-Scope-a-Disruption-Response.html">上一篇:
+扰动发生后，确定需要调整的范围</a> · <a
+href="./Learning-F2-Preserve-Data-Assets-and-Templates.html">下一篇:
+把场景经验沉淀为数据资产与行业模板</a></p>
+      </article>
+      <footer class="article-footer"><a href="./">返回学习中心</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki/Learning-F1-Place-Changes-in-the-Right-Layer-zh-CN">在 Wiki 阅读</a></footer>
+    </main>
+  </div>
+  <footer class="site-footer shell"><strong>DecisioWorks</strong><span>从生产问题出发，理解与使用决策能力。</span></footer>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>D3 按数据属性选择适用案例 | DecisioWorks</title>
+  <meta name="description" content="选择样例时，可以先按下表整理生产结构，再逐项比较数据和模型是否匹配。" />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-D3-Select-Cases-by-Data-Characteristics.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-D3-Select-Cases-by-Data-Characteristics.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Learning-D3-Select-Cases-by-Data-Characteristics.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-D3-Select-Cases-by-Data-Characteristics.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="D3 按数据属性选择适用案例 | DecisioWorks" />
+  <meta property="og:description" content="选择样例时，可以先按下表整理生产结构，再逐项比较数据和模型是否匹配。" />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-D3-Select-Cases-by-Data-Characteristics.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="D3 按数据属性选择适用案例 | DecisioWorks" />
+  <meta name="twitter:description" content="选择样例时，可以先按下表整理生产结构，再逐项比较数据和模型是否匹配。" />
+  <meta name="twitter:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <link rel="icon" href="../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "D3 按数据属性选择适用案例", "description": "选择样例时，可以先按下表整理生产结构，再逐项比较数据和模型是否匹配。", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-D3-Select-Cases-by-Data-Characteristics.html", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "DecisioWorks", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "首页", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/"}, {"@type": "ListItem", "position": 2, "name": "学习中心", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/"}, {"@type": "ListItem", "position": 3, "name": "D 从真实样例学会读计划", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-Topic-D-Read-Real-Planning-Cases.html"}, {"@type": "ListItem", "position": 4, "name": "D3 按数据属性选择适用案例", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-D3-Select-Cases-by-Data-Characteristics.html"}]}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#article">跳到正文</a>
+  <header class="learning-header"><div class="shell header-inner">
+    <a class="brand" href="../"><img src="../assets/decisioworks-logo.png" alt="" width="36" height="36" /><strong>DecisioWorks</strong></a>
+    <nav aria-label="主导航">
+      <a href="../">主页</a>
+      <a href="../docs/">文档</a>
+      <a class="language-switch" href="../en/learn/Learning-D3-Select-Cases-by-Data-Characteristics.html" lang="en" hreflang="en">English</a>
+    </nav>
+  </div></header>
+  <div class="shell breadcrumbs" aria-label="面包屑导航"><a href="../">首页</a><span>/</span><a href="./">学习中心</a><span>/</span><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D</a><span>/</span><span aria-current="page">D3 按数据属性选择适用案例</span></div>
+  <div class="shell reading-layout">
+    <aside class="sidebar"><nav aria-label="课程目录"><a class="contents-home" href="./">学习中心</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A 从生产问题到可检验的决策</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B 用数据表达制造过程</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C 让目标、经验与规则参与决策</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D 从真实样例学会读计划</a><a class="lesson-link" href="./Learning-D1-Read-a-Stamping-Plan.html">D1 冲压计划：把需求、产能与齐套放在一起看</a><a class="lesson-link" href="./Learning-D2-Read-Injection-Molding-Changeovers.html">D2 注塑排程：解释属性与切换的关系</a><a class="lesson-link" href="./Learning-D3-Select-Cases-by-Data-Characteristics.html" aria-current="page">D3 按数据属性选择适用案例</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E 让计划层级协同工作</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F 开放协作与持续演进</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G 用标准动作连接应用与AI Agent</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H 把一次练习变成日常能力</a><span class="nav-section">工作表</span><a href="./Worksheet-Operational-Rule.html">现场规则记录与检查</a><a href="./Worksheet-Plan-Comparison.html">基线与调整方案比较</a><a href="./Worksheet-Review-and-Change-Record.html">复盘与持续改进记录</a><a href="./Worksheet-Scenario-Brief.html">场景与决策任务</a></nav></aside>
+    <main>
+      <details class="mobile-contents"><summary>课程目录</summary><nav aria-label="移动端课程目录"><a class="contents-home" href="./">学习中心</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A 从生产问题到可检验的决策</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B 用数据表达制造过程</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C 让目标、经验与规则参与决策</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D 从真实样例学会读计划</a><a class="lesson-link" href="./Learning-D1-Read-a-Stamping-Plan.html">D1 冲压计划：把需求、产能与齐套放在一起看</a><a class="lesson-link" href="./Learning-D2-Read-Injection-Molding-Changeovers.html">D2 注塑排程：解释属性与切换的关系</a><a class="lesson-link" href="./Learning-D3-Select-Cases-by-Data-Characteristics.html" aria-current="page">D3 按数据属性选择适用案例</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E 让计划层级协同工作</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F 开放协作与持续演进</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G 用标准动作连接应用与AI Agent</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H 把一次练习变成日常能力</a><span class="nav-section">工作表</span><a href="./Worksheet-Operational-Rule.html">现场规则记录与检查</a><a href="./Worksheet-Plan-Comparison.html">基线与调整方案比较</a><a href="./Worksheet-Review-and-Change-Record.html">复盘与持续改进记录</a><a href="./Worksheet-Scenario-Brief.html">场景与决策任务</a></nav></details>
+      <article id="article">
+        <header class="article-heading"><p class="kicker">课程</p><h1>D3 按数据属性选择适用案例</h1></header>
+        <details class="page-contents"><summary>本页内容</summary><nav><a href="#行业名称只提供背景">行业名称只提供背景</a><a href="#制作场景画像">制作场景画像</a><a href="#从相近案例迁移">从相近案例迁移</a><a href="#做一次对比选择">做一次对比选择</a><a href="#练习与参考解析">练习与参考解析</a><a href="#延伸阅读">延伸阅读</a></nav></details>
+        <h2 id="行业名称只提供背景">行业名称只提供背景</h2>
+<p>同属机加行业，一个场景以每日产量分配为主，另一个需要多工序设备排序，还有一个主要处理批量与外协。选择样例时，先看需要作出的决策和已有数据，而不是直接根据“机加”标签选择模型。</p>
+<p>选择样例时，可以先按下表整理生产结构，再逐项比较数据和模型是否匹配。</p>
+<h2 id="制作场景画像">制作场景画像</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>维度</th>
+<th>要记录什么</th>
+<th>对选择的影响</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>决策粒度</td>
+<td>时段数量或精确顺序</td>
+<td>计划与排程能力不同</td>
+</tr>
+<tr class="even">
+<td>工艺结构</td>
+<td>固定路线、候选路线、循环序列</td>
+<td>需要的模型结构</td>
+</tr>
+<tr class="odd">
+<td>资源条件</td>
+<td>单机、并行、共享工装</td>
+<td>资源约束与关系</td>
+</tr>
+<tr class="even">
+<td>批量</td>
+<td>固定批量、倍数、多出件</td>
+<td>数量一致性与整数要求</td>
+</tr>
+<tr class="odd">
+<td>切换</td>
+<td>颜色、规格、模具及方向性</td>
+<td>属性映射与切换代价定义</td>
+</tr>
+<tr class="even">
+<td>时间</td>
+<td>班次、维护、交期、冻结范围</td>
+<td>可用时窗与稳定性</td>
+</tr>
+<tr class="odd">
+<td>物料</td>
+<td>工序消耗、到料、库存</td>
+<td>上游确认或求解中的物料约束</td>
+</tr>
+</tbody>
+</table></div>
+<p>画像可以很短，但应说明证据来自哪个表、字段或业务确认。数据里没有体现共享工装，就不能从行业名称推定共享约束已启用。</p>
+<h2 id="从相近案例迁移">从相近案例迁移</h2>
+<p>冲压计划样例适合学习时段需求、产能和齐套联合检查；注塑样例适合学习属性驱动的循环序列。迁移时首先比较这些结构，再替换名称和数据。</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>匹配结果</th>
+<th>下一步</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>结构与约束均匹配</td>
+<td>使用副本接入，检查单位与规则后运行</td>
+</tr>
+<tr class="even">
+<td>结构匹配，但缺少字段或映射</td>
+<td>先补数据与说明，再进行链路验证</td>
+</tr>
+<tr class="odd">
+<td>需要的规则暂无生效接口</td>
+<td>明确扩展点与检查方式，先完成小范围适配</td>
+</tr>
+<tr class="even">
+<td>决策结构明显不同</td>
+<td>重新选择能力或模型，避免套用不合适示例</td>
+</tr>
+</tbody>
+</table></div>
+<p>SolverReady说明对应数据与能力组合达到了其报告的检查范围。它不意味着同一数据随意换用另一模型也能求解。</p>
+<h2 id="做一次对比选择">做一次对比选择</h2>
+<p>教学场景X有按日需求、工序级物料和可用产能，当前只需确定每日生产量。场景Y有已释放任务、颜色属性和复用周期，当前需要确定周期中的顺序。X可先参考计划链，Y可先参考循环序列链；若Y还有复杂回流工艺，应继续确认现有模型能否表达。</p>
+<h2 id="练习与参考解析">练习与参考解析</h2>
+<p>先用上文X、Y完成两张画像：X选择按时段数量组织的计划案例，Y选择循环序列案例，并列出各自还需确认的条件。</p>
+<p>有数据集时，再选择三个样例各填一张画像，并说明一个最接近的已有案例。列出“可复用内容、需要修改内容、尚待确认条件”。</p>
+<p>合格答案以数据关系与决策结构为依据。仅写“都是汽车零部件，因此可复用”不足以支撑选择；能指明相同资源、时间或切换结构，才有可检查的迁移基础。</p>
+<h2 id="延伸阅读">延伸阅读</h2>
+<p><a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Stamping-Planning-Case-Walkthrough-zh-CN">冲压计划运行案例</a>
+· <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Injection-Molding-Scheduling-Case-Walkthrough-zh-CN">注塑排程运行案例</a>
+· <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/End-to-End-Scenario-Walkthrough-zh-CN">端到端场景</a>
+· <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Scenarios-and-Pain-Points-zh-CN">场景与问题</a></p>
+<p>配套工作表：<a
+href="./Worksheet-Plan-Comparison.html">工作表：基线与调整方案比较</a></p>
+<p><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">专题
+D</a> · <a
+href="./Learning-D2-Read-Injection-Molding-Changeovers.html">上一篇:
+注塑排程：解释属性与切换的关系</a> · <a
+href="./Learning-E1-Master-Plan-to-Work-Release.html">下一篇:
+从主生产计划到任务释放与作业排程</a></p>
+      </article>
+      <footer class="article-footer"><a href="./">返回学习中心</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki/Learning-D3-Select-Cases-by-Data-Characteristics-zh-CN">在 Wiki 阅读</a></footer>
+    </main>
+  </div>
+  <footer class="site-footer shell"><strong>DecisioWorks</strong><span>从生产问题出发，理解与使用决策能力。</span></footer>
+</body>
+</html>

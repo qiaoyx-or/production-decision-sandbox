@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>H2 从小范围验证走向持续运行 | DecisioWorks</title>
+  <meta name="description" content="DecisioWorks提供数据、执行、分析和联动能力；应用与团队把它们接入自身更新和确认流程。版本升级、模型变化和新增规则需要通过代表性样例检查，确保原有用法仍然清楚。" />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-H2-Move-to-Continued-Operation.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-H2-Move-to-Continued-Operation.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Learning-H2-Move-to-Continued-Operation.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-H2-Move-to-Continued-Operation.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="H2 从小范围验证走向持续运行 | DecisioWorks" />
+  <meta property="og:description" content="DecisioWorks提供数据、执行、分析和联动能力；应用与团队把它们接入自身更新和确认流程。版本升级、模型变化和新增规则需要通过代表性样例检查，确保原有用法仍然清楚。" />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-H2-Move-to-Continued-Operation.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="H2 从小范围验证走向持续运行 | DecisioWorks" />
+  <meta name="twitter:description" content="DecisioWorks提供数据、执行、分析和联动能力；应用与团队把它们接入自身更新和确认流程。版本升级、模型变化和新增规则需要通过代表性样例检查，确保原有用法仍然清楚。" />
+  <meta name="twitter:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <link rel="icon" href="../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "H2 从小范围验证走向持续运行", "description": "DecisioWorks提供数据、执行、分析和联动能力；应用与团队把它们接入自身更新和确认流程。版本升级、模型变化和新增规则需要通过代表性样例检查，确保原有用法仍然清楚。", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-H2-Move-to-Continued-Operation.html", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "DecisioWorks", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "首页", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/"}, {"@type": "ListItem", "position": 2, "name": "学习中心", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/"}, {"@type": "ListItem", "position": 3, "name": "H 把一次练习变成日常能力", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-Topic-H-Build-Everyday-Decision-Capability.html"}, {"@type": "ListItem", "position": 4, "name": "H2 从小范围验证走向持续运行", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-H2-Move-to-Continued-Operation.html"}]}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#article">跳到正文</a>
+  <header class="learning-header"><div class="shell header-inner">
+    <a class="brand" href="../"><img src="../assets/decisioworks-logo.png" alt="" width="36" height="36" /><strong>DecisioWorks</strong></a>
+    <nav aria-label="主导航">
+      <a href="../">主页</a>
+      <a href="../docs/">文档</a>
+      <a class="language-switch" href="../en/learn/Learning-H2-Move-to-Continued-Operation.html" lang="en" hreflang="en">English</a>
+    </nav>
+  </div></header>
+  <div class="shell breadcrumbs" aria-label="面包屑导航"><a href="../">首页</a><span>/</span><a href="./">学习中心</a><span>/</span><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H</a><span>/</span><span aria-current="page">H2 从小范围验证走向持续运行</span></div>
+  <div class="shell reading-layout">
+    <aside class="sidebar"><nav aria-label="课程目录"><a class="contents-home" href="./">学习中心</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A 从生产问题到可检验的决策</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B 用数据表达制造过程</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C 让目标、经验与规则参与决策</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D 从真实样例学会读计划</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E 让计划层级协同工作</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F 开放协作与持续演进</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G 用标准动作连接应用与AI Agent</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H 把一次练习变成日常能力</a><a class="lesson-link" href="./Learning-H1-Review-a-Plan.html">H1 复核一份计划：从运行状态到业务结论</a><a class="lesson-link" href="./Learning-H2-Move-to-Continued-Operation.html" aria-current="page">H2 从小范围验证走向持续运行</a><a class="lesson-link" href="./Learning-H3-Run-a-Cross-Functional-Review.html">H3 组织一次跨角色的计划复盘</a><span class="nav-section">工作表</span><a href="./Worksheet-Operational-Rule.html">现场规则记录与检查</a><a href="./Worksheet-Plan-Comparison.html">基线与调整方案比较</a><a href="./Worksheet-Review-and-Change-Record.html">复盘与持续改进记录</a><a href="./Worksheet-Scenario-Brief.html">场景与决策任务</a></nav></aside>
+    <main>
+      <details class="mobile-contents"><summary>课程目录</summary><nav aria-label="移动端课程目录"><a class="contents-home" href="./">学习中心</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A 从生产问题到可检验的决策</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B 用数据表达制造过程</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C 让目标、经验与规则参与决策</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D 从真实样例学会读计划</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E 让计划层级协同工作</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F 开放协作与持续演进</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G 用标准动作连接应用与AI Agent</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H 把一次练习变成日常能力</a><a class="lesson-link" href="./Learning-H1-Review-a-Plan.html">H1 复核一份计划：从运行状态到业务结论</a><a class="lesson-link" href="./Learning-H2-Move-to-Continued-Operation.html" aria-current="page">H2 从小范围验证走向持续运行</a><a class="lesson-link" href="./Learning-H3-Run-a-Cross-Functional-Review.html">H3 组织一次跨角色的计划复盘</a><span class="nav-section">工作表</span><a href="./Worksheet-Operational-Rule.html">现场规则记录与检查</a><a href="./Worksheet-Plan-Comparison.html">基线与调整方案比较</a><a href="./Worksheet-Review-and-Change-Record.html">复盘与持续改进记录</a><a href="./Worksheet-Scenario-Brief.html">场景与决策任务</a></nav></details>
+      <article id="article">
+        <header class="article-heading"><p class="kicker">课程</p><h1>H2 从小范围验证走向持续运行</h1></header>
+        <details class="page-contents"><summary>本页内容</summary><nav><a href="#建立持续运行清单">建立持续运行清单</a><a href="#按证据扩大范围">按证据扩大范围</a><a href="#让变化有可追溯记录">让变化有可追溯记录</a><a href="#练习与参考解析">练习与参考解析</a><a href="#学习与应用之间的连续性">学习与应用之间的连续性</a><a href="#延伸阅读">延伸阅读</a></nav></details>
+        <h2
+id="一次成功运行之后问题发生了变化">一次成功运行之后，问题发生了变化</h2>
+<p>样例运行回答“这组数据和配置能否形成结果”。日常运行还需要回答：数据何时更新、谁确认目标、输入异常如何处理、结果交给谁，以及环境变化怎样检查。把这些事项落实，才能把一次练习接入企业的工作节奏。</p>
+<h2 id="建立持续运行清单">建立持续运行清单</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>事项</th>
+<th>需要确定</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>数据更新</td>
+<td>来源、频率、截止时点与完整性检查</td>
+</tr>
+<tr class="even">
+<td>配置管理</td>
+<td>目标、规则、能力编排配方（recipe）版本及修改权限</td>
+</tr>
+<tr class="odd">
+<td>执行环境</td>
+<td>运行组件、依赖、授权与资源限制</td>
+</tr>
+<tr class="even">
+<td>结果确认</td>
+<td>复核角色、时点和采用条件</td>
+</tr>
+<tr class="odd">
+<td>异常处理</td>
+<td>失败通知、人工接续和重新运行条件</td>
+</tr>
+<tr class="even">
+<td>记录保存</td>
+<td>输入版本、配置差异、状态与结论</td>
+</tr>
+</tbody>
+</table></div>
+<p>DecisioWorks提供数据、执行、分析和联动能力；应用与团队把它们接入自身更新和确认流程。版本升级、模型变化和新增规则需要通过代表性样例检查，确保原有用法仍然清楚。</p>
+<h2 id="按证据扩大范围">按证据扩大范围</h2>
+<p>先选一个决策对象和有限周期，完成数据、结果与业务确认；再增加订单规模、资源范围或规则种类。每次扩展记录新增条件，避免同时改变太多因素后无法定位问题。</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>检查结果</th>
+<th>下一步选择</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>数据、模型与业务判断一致</td>
+<td>评估扩大到相近范围</td>
+</tr>
+<tr class="even">
+<td>可运行但目标解释不足</td>
+<td>补指标与复核，不急于扩张</td>
+</tr>
+<tr class="odd">
+<td>关键数据或资源关系缺失</td>
+<td>先完善表达</td>
+</tr>
+<tr class="even">
+<td>当前能力不适合问题结构</td>
+<td>重新选择模型或设计适配</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="让变化有可追溯记录">让变化有可追溯记录</h2>
+<p>教学例子：企业新增夜班。更新日历或产能数据后，同时确认人员、维护安排和物料供应。若夜班产能已生成，别在应用层再次按班次数乘总量。保存变更前后输入和运行结果，比较新增班次真正承担了哪些任务。</p>
+<p>持续运行的目标是适应变化，而不是保持一组永远不变的参数。保留有效的基础定义、更新已改变的事实，并使重要取舍获得确认。</p>
+<h2 id="练习与参考解析">练习与参考解析</h2>
+<p>为每周一次的计划运行设计一个流程：数据截止、数据检查、运行、复核、采用、记录。再加入一个异常分支：物料数据晚到。</p>
+<p>可行答案应明确继续等待、采用经确认的数据版本或转交人工判断的条件，并将未知物料量与已确认可用量区分开。成果是一页可由同事执行的运行清单。</p>
+<h2 id="学习与应用之间的连续性">学习与应用之间的连续性</h2>
+<p>场景说明、检查表、配方和结果记录可以沿用到日常工作。每次复盘补充一个已确认的事实或检查，让工具包的基础能力与企业自己的经验共同积累。</p>
+<h2 id="延伸阅读">延伸阅读</h2>
+<p><a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Trusted-Operation-and-Human-Review-zh-CN">人工复核与可信运行</a>
+· <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Runtime-Status-Errors-and-Limits-Reference-zh-CN">运行状态与限制</a>
+· <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Web-Cockpit-Guide-zh-CN">Web驾驶舱指南</a>
+· <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Value-Validation-and-Adoption-Framework-zh-CN">价值验证与应用框架</a></p>
+<p>配套工作表：<a
+href="./Worksheet-Plan-Comparison.html">工作表：基线与调整方案比较</a>
+· <a
+href="./Worksheet-Review-and-Change-Record.html">工作表：复盘与持续改进记录</a></p>
+<p><a
+href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">专题
+H</a> · <a href="./Learning-H1-Review-a-Plan.html">上一篇:
+复核一份计划：从运行状态到业务结论</a> · <a
+href="./Learning-H3-Run-a-Cross-Functional-Review.html">下一篇:
+组织一次跨角色的计划复盘</a></p>
+      </article>
+      <footer class="article-footer"><a href="./">返回学习中心</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki/Learning-H2-Move-to-Continued-Operation-zh-CN">在 Wiki 阅读</a></footer>
+    </main>
+  </div>
+  <footer class="site-footer shell"><strong>DecisioWorks</strong><span>从生产问题出发，理解与使用决策能力。</span></footer>
+</body>
+</html>

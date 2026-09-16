@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>工作表：现场规则记录与检查 | DecisioWorks</title>
+  <meta name="description" content="至少记录正常输入、错误对象、到期规则与冲突规则的检查结果。建议分别记录为待确认、已采用或已执行；模型中的规则应用状态与业务措施执行状态分开填写。" />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Worksheet-Operational-Rule.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Worksheet-Operational-Rule.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Worksheet-Operational-Rule.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Worksheet-Operational-Rule.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="工作表：现场规则记录与检查 | DecisioWorks" />
+  <meta property="og:description" content="至少记录正常输入、错误对象、到期规则与冲突规则的检查结果。建议分别记录为待确认、已采用或已执行；模型中的规则应用状态与业务措施执行状态分开填写。" />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Worksheet-Operational-Rule.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="工作表：现场规则记录与检查 | DecisioWorks" />
+  <meta name="twitter:description" content="至少记录正常输入、错误对象、到期规则与冲突规则的检查结果。建议分别记录为待确认、已采用或已执行；模型中的规则应用状态与业务措施执行状态分开填写。" />
+  <meta name="twitter:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <link rel="icon" href="../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "工作表：现场规则记录与检查", "description": "至少记录正常输入、错误对象、到期规则与冲突规则的检查结果。建议分别记录为待确认、已采用或已执行；模型中的规则应用状态与业务措施执行状态分开填写。", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Worksheet-Operational-Rule.html", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "DecisioWorks", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "首页", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/"}, {"@type": "ListItem", "position": 2, "name": "学习中心", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/"}, {"@type": "ListItem", "position": 3, "name": "工作表：现场规则记录与检查", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Worksheet-Operational-Rule.html"}]}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#article">跳到正文</a>
+  <header class="learning-header"><div class="shell header-inner">
+    <a class="brand" href="../"><img src="../assets/decisioworks-logo.png" alt="" width="36" height="36" /><strong>DecisioWorks</strong></a>
+    <nav aria-label="主导航">
+      <a href="../">主页</a>
+      <a href="../docs/">文档</a>
+      <a class="language-switch" href="../en/learn/Worksheet-Operational-Rule.html" lang="en" hreflang="en">English</a>
+    </nav>
+  </div></header>
+  <div class="shell breadcrumbs" aria-label="面包屑导航"><a href="../">首页</a><span>/</span><a href="./">学习中心</a><span>/</span><span aria-current="page">工作表：现场规则记录与检查</span></div>
+  <div class="shell reading-layout">
+    <aside class="sidebar"><nav aria-label="课程目录"><a class="contents-home" href="./">学习中心</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A 从生产问题到可检验的决策</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B 用数据表达制造过程</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C 让目标、经验与规则参与决策</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D 从真实样例学会读计划</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E 让计划层级协同工作</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F 开放协作与持续演进</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G 用标准动作连接应用与AI Agent</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H 把一次练习变成日常能力</a><span class="nav-section">工作表</span><a href="./Worksheet-Operational-Rule.html">现场规则记录与检查</a><a href="./Worksheet-Plan-Comparison.html">基线与调整方案比较</a><a href="./Worksheet-Review-and-Change-Record.html">复盘与持续改进记录</a><a href="./Worksheet-Scenario-Brief.html">场景与决策任务</a></nav></aside>
+    <main>
+      <details class="mobile-contents"><summary>课程目录</summary><nav aria-label="移动端课程目录"><a class="contents-home" href="./">学习中心</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A 从生产问题到可检验的决策</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B 用数据表达制造过程</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C 让目标、经验与规则参与决策</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D 从真实样例学会读计划</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E 让计划层级协同工作</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F 开放协作与持续演进</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G 用标准动作连接应用与AI Agent</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H 把一次练习变成日常能力</a><span class="nav-section">工作表</span><a href="./Worksheet-Operational-Rule.html">现场规则记录与检查</a><a href="./Worksheet-Plan-Comparison.html">基线与调整方案比较</a><a href="./Worksheet-Review-and-Change-Record.html">复盘与持续改进记录</a><a href="./Worksheet-Scenario-Brief.html">场景与决策任务</a></nav></details>
+      <article id="article">
+        <header class="article-heading"><p class="kicker">工作表</p><h1>工作表：现场规则记录与检查</h1></header>
+        <details class="page-contents"><summary>本页内容</summary><nav><a href="#规则定义">规则定义</a><a href="#四步检查">四步检查</a></nav></details>
+        <h2 id="规则定义">规则定义</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>项目</th>
+<th>填写说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>原始描述</td>
+<td>现场人员怎样表达需求</td>
+</tr>
+<tr class="even">
+<td>确认后的含义</td>
+<td>事实、硬条件、软条件或目标偏好</td>
+</tr>
+<tr class="odd">
+<td>对象与时段</td>
+<td>明确业务标识及有效期</td>
+</tr>
+<tr class="even">
+<td>单位与上下限</td>
+<td>数量、时间、比例或变量含义</td>
+</tr>
+<tr class="odd">
+<td>来源与确认人</td>
+<td>事实依据及批准角色</td>
+</tr>
+<tr class="even">
+<td>输入位置</td>
+<td>数据、目标、规则接口或应用措施</td>
+</tr>
+<tr class="odd">
+<td>应用位置</td>
+<td>哪个动作或模型实际采用</td>
+</tr>
+<tr class="even">
+<td>冲突处理</td>
+<td>与其他约束冲突时由谁决定</td>
+</tr>
+<tr class="odd">
+<td>到期处理</td>
+<td>续期、移除或重新检查</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="四步检查">四步检查</h2>
+<ol type="1">
+<li>定义能否复述为明确条件？</li>
+<li>输入是否成功解析并形成正确报告？</li>
+<li>对应能力是否读取规则并加入模型或后续处理？</li>
+<li>配置和执行记录能否说明规则已应用，相关对象的结果是否符合要求？</li>
+</ol>
+<p>至少记录正常输入、错误对象、到期规则与冲突规则的检查结果。建议分别记录为待确认、已采用或已执行；模型中的规则应用状态与业务措施执行状态分开填写。</p>
+      </article>
+      <footer class="article-footer"><a href="./">返回学习中心</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki/Worksheet-Operational-Rule-zh-CN">在 Wiki 阅读</a></footer>
+    </main>
+  </div>
+  <footer class="site-footer shell"><strong>DecisioWorks</strong><span>从生产问题出发，理解与使用决策能力。</span></footer>
+</body>
+</html>

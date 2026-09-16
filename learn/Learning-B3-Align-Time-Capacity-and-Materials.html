@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>B3 让产能、班制、维护与齐套使用同一时间坐标 | DecisioWorks</title>
+  <meta name="description" content="以下为人工教学假设：480分钟是未扣维护的班次时间，25%占用按480分钟计算，维护与已占任务不重叠。因此剩余时间为480×(1−0.25)−30=330分钟。这个计算适用于上述三项假设；其他产能定义需要使用相应的换算方法。" />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-B3-Align-Time-Capacity-and-Materials.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-B3-Align-Time-Capacity-and-Materials.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Learning-B3-Align-Time-Capacity-and-Materials.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-B3-Align-Time-Capacity-and-Materials.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="B3 让产能、班制、维护与齐套使用同一时间坐标 | DecisioWorks" />
+  <meta property="og:description" content="以下为人工教学假设：480分钟是未扣维护的班次时间，25%占用按480分钟计算，维护与已占任务不重叠。因此剩余时间为480×(1−0.25)−30=330分钟。这个计算适用于上述三项假设；其他产能定义需要使用相应的换算方法。" />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-B3-Align-Time-Capacity-and-Materials.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="B3 让产能、班制、维护与齐套使用同一时间坐标 | DecisioWorks" />
+  <meta name="twitter:description" content="以下为人工教学假设：480分钟是未扣维护的班次时间，25%占用按480分钟计算，维护与已占任务不重叠。因此剩余时间为480×(1−0.25)−30=330分钟。这个计算适用于上述三项假设；其他产能定义需要使用相应的换算方法。" />
+  <meta name="twitter:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <link rel="icon" href="../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "B3 让产能、班制、维护与齐套使用同一时间坐标", "description": "以下为人工教学假设：480分钟是未扣维护的班次时间，25%占用按480分钟计算，维护与已占任务不重叠。因此剩余时间为480×(1−0.25)−30=330分钟。这个计算适用于上述三项假设；其他产能定义需要使用相应的换算方法。", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-B3-Align-Time-Capacity-and-Materials.html", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "DecisioWorks", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "首页", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/"}, {"@type": "ListItem", "position": 2, "name": "学习中心", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/"}, {"@type": "ListItem", "position": 3, "name": "B 用数据表达制造过程", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-Topic-B-Manufacturing-Data.html"}, {"@type": "ListItem", "position": 4, "name": "B3 让产能、班制、维护与齐套使用同一时间坐标", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-B3-Align-Time-Capacity-and-Materials.html"}]}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#article">跳到正文</a>
+  <header class="learning-header"><div class="shell header-inner">
+    <a class="brand" href="../"><img src="../assets/decisioworks-logo.png" alt="" width="36" height="36" /><strong>DecisioWorks</strong></a>
+    <nav aria-label="主导航">
+      <a href="../">主页</a>
+      <a href="../docs/">文档</a>
+      <a class="language-switch" href="../en/learn/Learning-B3-Align-Time-Capacity-and-Materials.html" lang="en" hreflang="en">English</a>
+    </nav>
+  </div></header>
+  <div class="shell breadcrumbs" aria-label="面包屑导航"><a href="../">首页</a><span>/</span><a href="./">学习中心</a><span>/</span><a href="./Learning-Topic-B-Manufacturing-Data.html">B</a><span>/</span><span aria-current="page">B3 让产能、班制、维护与齐套使用同一时间坐标</span></div>
+  <div class="shell reading-layout">
+    <aside class="sidebar"><nav aria-label="课程目录"><a class="contents-home" href="./">学习中心</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A 从生产问题到可检验的决策</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B 用数据表达制造过程</a><a class="lesson-link" href="./Learning-B1-Business-Tables-to-Computable-Objects.html">B1 从业务表格到可计算对象</a><a class="lesson-link" href="./Learning-B2-Routes-and-Operation-Level-BOM.html">B2 工艺路线与工序级BOM：物料在哪一步发生作用</a><a class="lesson-link" href="./Learning-B3-Align-Time-Capacity-and-Materials.html" aria-current="page">B3 让产能、班制、维护与齐套使用同一时间坐标</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C 让目标、经验与规则参与决策</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D 从真实样例学会读计划</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E 让计划层级协同工作</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F 开放协作与持续演进</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G 用标准动作连接应用与AI Agent</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H 把一次练习变成日常能力</a><span class="nav-section">工作表</span><a href="./Worksheet-Operational-Rule.html">现场规则记录与检查</a><a href="./Worksheet-Plan-Comparison.html">基线与调整方案比较</a><a href="./Worksheet-Review-and-Change-Record.html">复盘与持续改进记录</a><a href="./Worksheet-Scenario-Brief.html">场景与决策任务</a></nav></aside>
+    <main>
+      <details class="mobile-contents"><summary>课程目录</summary><nav aria-label="移动端课程目录"><a class="contents-home" href="./">学习中心</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A 从生产问题到可检验的决策</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B 用数据表达制造过程</a><a class="lesson-link" href="./Learning-B1-Business-Tables-to-Computable-Objects.html">B1 从业务表格到可计算对象</a><a class="lesson-link" href="./Learning-B2-Routes-and-Operation-Level-BOM.html">B2 工艺路线与工序级BOM：物料在哪一步发生作用</a><a class="lesson-link" href="./Learning-B3-Align-Time-Capacity-and-Materials.html" aria-current="page">B3 让产能、班制、维护与齐套使用同一时间坐标</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C 让目标、经验与规则参与决策</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D 从真实样例学会读计划</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E 让计划层级协同工作</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F 开放协作与持续演进</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G 用标准动作连接应用与AI Agent</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H 把一次练习变成日常能力</a><span class="nav-section">工作表</span><a href="./Worksheet-Operational-Rule.html">现场规则记录与检查</a><a href="./Worksheet-Plan-Comparison.html">基线与调整方案比较</a><a href="./Worksheet-Review-and-Change-Record.html">复盘与持续改进记录</a><a href="./Worksheet-Scenario-Brief.html">场景与决策任务</a></nav></details>
+      <article id="article">
+        <header class="article-heading"><p class="kicker">课程</p><h1>B3 让产能、班制、维护与齐套使用同一时间坐标</h1></header>
+        <details class="page-contents"><summary>本页内容</summary><nav><a href="#今天有产能还不够具体">“今天有产能”还不够具体</a><a href="#先对齐四类时间">先对齐四类时间</a><a href="#比例数量和时间分别检查">比例、数量和时间分别检查</a><a href="#在-decisioworks-中做一次检查">在 DecisioWorks 中做一次检查</a><a href="#练习与参考解析">练习与参考解析</a><a href="#延伸阅读">延伸阅读</a></nav></details>
+        <h2 id="今天有产能还不够具体">“今天有产能”还不够具体</h2>
+<p>一个班次可用480分钟，已有任务占用25%，再安排维护30分钟，新任务能使用多少时间？答案取决于480分钟是否已经扣除维护、占用比例的分母，以及维护是否与已有任务重叠。先确认这些定义，再计算可用时间。</p>
+<p>以下为人工教学假设：480分钟是未扣维护的班次时间，25%占用按480分钟计算，维护与已占任务不重叠。因此剩余时间为480×(1−0.25)−30=330分钟。这个计算适用于上述三项假设；其他产能定义需要使用相应的换算方法。</p>
+<h2 id="先对齐四类时间">先对齐四类时间</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>信息</th>
+<th>应关联的对象</th>
+<th>检查</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>订单交期</td>
+<td>order_item.delivery_time</td>
+<td>能否解析到时间单元</td>
+</tr>
+<tr class="even">
+<td>资源可用量</td>
+<td>capacity及日历班制</td>
+<td>范围、时间尺度与折减含义</td>
+</tr>
+<tr class="odd">
+<td>物料可用量</td>
+<td>kitting_information.time_unit</td>
+<td>到料时点与数量单位</td>
+</tr>
+<tr class="even">
+<td>计划结果</td>
+<td>planning_result.time_unit</td>
+<td>与输入使用同一时间坐标</td>
+</tr>
+</tbody>
+</table></div>
+<p>time_unit.id是引用标识，offset与scale共同解释时间位置和尺度。连续编号不自动代表一天，也不意味着可以直接换算成分钟。需要查看场景的时间定义。</p>
+<h2 id="比例数量和时间分别检查">比例、数量和时间分别检查</h2>
+<p>capacity.used采用0到1的比例语义，25%应为0.25；写成25或120分钟都会改变含义。界面可以显示百分比，但存储、计算与显示必须约定一致。</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>条件</th>
+<th>正确处理思路</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>班制已生成净产能</td>
+<td>核对维护是否已扣除，避免再次扣减</td>
+</tr>
+<tr class="even">
+<td>并行工位已计入capacity</td>
+<td>检查后续是否重复乘以工位数</td>
+</tr>
+<tr class="odd">
+<td>物料明日到达</td>
+<td>对齐到料时间与使用工序，而非只看总量</td>
+</tr>
+<tr class="even">
+<td>需要分钟结果</td>
+<td>先确定数据原有单位及换算，再标注分钟</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="在-decisioworks-中做一次检查">在 DecisioWorks 中做一次检查</h2>
+<p>选择样例，读取时间、产能、物料可用量和结果表。先挑一个工作中心与一个时间单元，再追溯相关订单和物料。先看总体余量，再检查具体时段与关键物料，找出被平均值掩盖的局部缺口。</p>
+<p>实际修改使用数据副本。只更改一段已经确认的维护安排，核对产能生成规则与数据差异，再运行对应计划能力。查看该时段的负荷、等待与未满足需求，不根据平均利用率直接判断影响。</p>
+<h2 id="练习与参考解析">练习与参考解析</h2>
+<p>在上述330分钟假设下，新增任务需要360分钟。按时间总量计算，缺口为30分钟。应检查是否存在可批准的其他时间或资源，并核对连续加工要求与维护时窗，确保新增时间确实能够用于该任务。</p>
+<p>如果480分钟本来已经扣除维护，本题公式就不成立。成果应同时保存计算结果与定义依据，使读者知道在哪些条件下可以复算。</p>
+<h2 id="延伸阅读">延伸阅读</h2>
+<p><a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Standardized-Data-Interface-zh-CN">标准化数据接口</a>
+· <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Data-Object-and-Field-Reference-zh-CN">数据对象与字段</a>
+· <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Data-Readiness-and-Validation-zh-CN">数据准备与验证</a>
+· <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/ERP-MES-Data-Mapping-Guide-zh-CN">ERP与MES数据映射</a></p>
+<p>配套工作表：<a
+href="./Worksheet-Scenario-Brief.html">工作表：场景与决策任务</a></p>
+<p><a href="./Learning-Topic-B-Manufacturing-Data.html">专题 B</a> ·
+<a href="./Learning-B2-Routes-and-Operation-Level-BOM.html">上一篇:
+工艺路线与工序级BOM：物料在哪一步发生作用</a> · <a
+href="./Learning-C1-Facts-Constraints-and-Preferences.html">下一篇:
+区分业务事实、约束条件与目标偏好</a></p>
+      </article>
+      <footer class="article-footer"><a href="./">返回学习中心</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki/Learning-B3-Align-Time-Capacity-and-Materials-zh-CN">在 Wiki 阅读</a></footer>
+    </main>
+  </div>
+  <footer class="site-footer shell"><strong>DecisioWorks</strong><span>从生产问题出发，理解与使用决策能力。</span></footer>
+</body>
+</html>

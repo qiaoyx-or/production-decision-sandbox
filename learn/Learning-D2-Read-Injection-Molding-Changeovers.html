@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>D2 注塑排程：解释属性与切换的关系 | DecisioWorks</title>
+  <meta name="description" content="container_capacity描述制品的容器容量。该样例名为capacity的目标统计量与此属性有关，不是设备产能。" />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-D2-Read-Injection-Molding-Changeovers.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-D2-Read-Injection-Molding-Changeovers.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Learning-D2-Read-Injection-Molding-Changeovers.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-D2-Read-Injection-Molding-Changeovers.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="D2 注塑排程：解释属性与切换的关系 | DecisioWorks" />
+  <meta property="og:description" content="container_capacity描述制品的容器容量。该样例名为capacity的目标统计量与此属性有关，不是设备产能。" />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-D2-Read-Injection-Molding-Changeovers.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="D2 注塑排程：解释属性与切换的关系 | DecisioWorks" />
+  <meta name="twitter:description" content="container_capacity描述制品的容器容量。该样例名为capacity的目标统计量与此属性有关，不是设备产能。" />
+  <meta name="twitter:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <link rel="icon" href="../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "D2 注塑排程：解释属性与切换的关系", "description": "container_capacity描述制品的容器容量。该样例名为capacity的目标统计量与此属性有关，不是设备产能。", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-D2-Read-Injection-Molding-Changeovers.html", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "DecisioWorks", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "首页", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/"}, {"@type": "ListItem", "position": 2, "name": "学习中心", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/"}, {"@type": "ListItem", "position": 3, "name": "D 从真实样例学会读计划", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-Topic-D-Read-Real-Planning-Cases.html"}, {"@type": "ListItem", "position": 4, "name": "D2 注塑排程：解释属性与切换的关系", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-D2-Read-Injection-Molding-Changeovers.html"}]}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#article">跳到正文</a>
+  <header class="learning-header"><div class="shell header-inner">
+    <a class="brand" href="../"><img src="../assets/decisioworks-logo.png" alt="" width="36" height="36" /><strong>DecisioWorks</strong></a>
+    <nav aria-label="主导航">
+      <a href="../">主页</a>
+      <a href="../docs/">文档</a>
+      <a class="language-switch" href="../en/learn/Learning-D2-Read-Injection-Molding-Changeovers.html" lang="en" hreflang="en">English</a>
+    </nav>
+  </div></header>
+  <div class="shell breadcrumbs" aria-label="面包屑导航"><a href="../">首页</a><span>/</span><a href="./">学习中心</a><span>/</span><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D</a><span>/</span><span aria-current="page">D2 注塑排程：解释属性与切换的关系</span></div>
+  <div class="shell reading-layout">
+    <aside class="sidebar"><nav aria-label="课程目录"><a class="contents-home" href="./">学习中心</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A 从生产问题到可检验的决策</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B 用数据表达制造过程</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C 让目标、经验与规则参与决策</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D 从真实样例学会读计划</a><a class="lesson-link" href="./Learning-D1-Read-a-Stamping-Plan.html">D1 冲压计划：把需求、产能与齐套放在一起看</a><a class="lesson-link" href="./Learning-D2-Read-Injection-Molding-Changeovers.html" aria-current="page">D2 注塑排程：解释属性与切换的关系</a><a class="lesson-link" href="./Learning-D3-Select-Cases-by-Data-Characteristics.html">D3 按数据属性选择适用案例</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E 让计划层级协同工作</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F 开放协作与持续演进</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G 用标准动作连接应用与AI Agent</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H 把一次练习变成日常能力</a><span class="nav-section">工作表</span><a href="./Worksheet-Operational-Rule.html">现场规则记录与检查</a><a href="./Worksheet-Plan-Comparison.html">基线与调整方案比较</a><a href="./Worksheet-Review-and-Change-Record.html">复盘与持续改进记录</a><a href="./Worksheet-Scenario-Brief.html">场景与决策任务</a></nav></aside>
+    <main>
+      <details class="mobile-contents"><summary>课程目录</summary><nav aria-label="移动端课程目录"><a class="contents-home" href="./">学习中心</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A 从生产问题到可检验的决策</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B 用数据表达制造过程</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C 让目标、经验与规则参与决策</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D 从真实样例学会读计划</a><a class="lesson-link" href="./Learning-D1-Read-a-Stamping-Plan.html">D1 冲压计划：把需求、产能与齐套放在一起看</a><a class="lesson-link" href="./Learning-D2-Read-Injection-Molding-Changeovers.html" aria-current="page">D2 注塑排程：解释属性与切换的关系</a><a class="lesson-link" href="./Learning-D3-Select-Cases-by-Data-Characteristics.html">D3 按数据属性选择适用案例</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E 让计划层级协同工作</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F 开放协作与持续演进</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G 用标准动作连接应用与AI Agent</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H 把一次练习变成日常能力</a><span class="nav-section">工作表</span><a href="./Worksheet-Operational-Rule.html">现场规则记录与检查</a><a href="./Worksheet-Plan-Comparison.html">基线与调整方案比较</a><a href="./Worksheet-Review-and-Change-Record.html">复盘与持续改进记录</a><a href="./Worksheet-Scenario-Brief.html">场景与决策任务</a></nav></details>
+      <article id="article">
+        <header class="article-heading"><p class="kicker">课程</p><h1>D2 注塑排程：解释属性与切换的关系</h1></header>
+        <details class="page-contents"><summary>本页内容</summary><nav><a href="#从业务属性读序列">从业务属性读序列</a><a href="#配置决定比较范围">配置决定比较范围</a><a href="#读取已有ab结果">读取已有A/B结果</a><a href="#解释这次调整">解释这次调整</a><a href="#练习与参考解析">练习与参考解析</a><a href="#延伸阅读">延伸阅读</a></nav></details>
+        <h2 id="从业务属性读序列">从业务属性读序列</h2>
+<p>本课解读2026-08-31已有的v1.4.0
+Enterprise授权运行记录，数据为InjectionMoldingWorkshop/data.db。理解重点是属性如何影响序列，以及为何目标分数和界面统计需要分别查看。</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>输入</th>
+<th>已记录内容</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>需求</td>
+<td>37条</td>
+</tr>
+<tr class="even">
+<td>工作中心</td>
+<td>共2个；本次选择ID为2的工作中心</td>
+</tr>
+<tr class="odd">
+<td>物料</td>
+<td>115种</td>
+</tr>
+<tr class="even">
+<td>工艺适配</td>
+<td>418条</td>
+</tr>
+<tr class="odd">
+<td>输入中既有结果</td>
+<td>120条，与新运行结果分别记录</td>
+</tr>
+<tr class="even">
+<td>属性映射</td>
+<td>颜色color→property_1；盖型cap_type→property_2；容器容量container_capacity→property_3</td>
+</tr>
+</tbody>
+</table></div>
+<p>container_capacity描述制品的容器容量。该样例名为capacity的目标统计量与此属性有关，不是设备产能。</p>
+<h2 id="配置决定比较范围">配置决定比较范围</h2>
+<p>循环序列排程设置序列长度40、循环次数3。启用产能、需求、库存、序列切换和循环切换相关约束；局部排程承接上游已经确认的物料条件。数据预处理包含整数化和批量倍数检查，发现不一致时停止。</p>
+<p>序列切换关注相邻任务的颜色变化；循环切换关联复用周期间的容器容量状态。解释结果时要保留这一区别，不能把两种次数相加后统一称作换模次数。</p>
+<h2 id="读取已有ab结果">读取已有A/B结果</h2>
+<p>两次API请求均为16线程、60秒上限，均返回<code>ok</code>，选出经检查有效的候选方案，并生成120条新结果。选中候选与证明全局最优是不同的求解状态。</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>项目</th>
+<th style="text-align: right;">基线</th>
+<th style="text-align: right;">调整</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>color权重</td>
+<td style="text-align: right;">0.1</td>
+<td style="text-align: right;">0.8</td>
+</tr>
+<tr class="even">
+<td>capacity权重</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">1.5</td>
+</tr>
+<tr class="odd">
+<td>序列切换次数</td>
+<td style="text-align: right;">41</td>
+<td style="text-align: right;">46</td>
+</tr>
+<tr class="even">
+<td>循环切换次数</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">14</td>
+</tr>
+<tr class="odd">
+<td>加权切换成本</td>
+<td style="text-align: right;">14.9</td>
+<td style="text-align: right;">66.4</td>
+</tr>
+<tr class="even">
+<td>API总耗时（秒）</td>
+<td style="text-align: right;">66.57</td>
+<td style="text-align: right;">66.50</td>
+</tr>
+</tbody>
+</table></div>
+<p>总耗时包含外层处理，不能直接解释为纯求解时间。两个分数使用不同权重，不能直接据此判断改善比例。展示次数与模型计分采用不同的统计定义。本例的模型计分还涉及空状态转换，即空位置与已占用位置之间的变化。因此，复算14.9需要原始目标统计值，不能只使用表中的41和6。这里的“加权成本”是目标分值，不是货币费用。</p>
+<h2 id="解释这次调整">解释这次调整</h2>
+<p>这次组合调整后，两类切换次数均增加。记录中的方向审计也通过，表示目标方向及其映射符合相应检查，而非业务指标已经改善。进一步解释需要查看各周期的序列和模型计分明细，找出哪些属性变化带来了代价。要研究color权重自身的影响，应将capacity权重保持不变，另做比较。</p>
+<p>参考文档中的页面截图与API记录是不同运行组。某环境下2线程运行失败、16线程成功，是该记录的环境事实，不是所有注塑问题的通用线程门槛。</p>
+<h2 id="练习与参考解析">练习与参考解析</h2>
+<p><strong>阅读练习：解释表中两类切换发生了什么变化。</strong></p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>检查项</th>
+<th>人工复算</th>
+<th>可以确认的观察</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>序列切换变化</td>
+<td>46 − 41 = 5</td>
+<td>调整后增加5次</td>
+</tr>
+<tr class="even">
+<td>循环切换变化</td>
+<td>14 − 6 = 8</td>
+<td>调整后增加8次</td>
+</tr>
+</tbody>
+</table></div>
+<p>参考结论可写为：“本次两个权重同时调整后，序列切换和循环切换均增加。按展示的这两项次数评价，本次调整未体现减少切换；进一步取舍仍需结合序列、原始目标统计量与业务要求。”两类次数分别报告，不合并为换模次数；14.9和66.4分别使用不同权重，也不作为改善比例的依据。</p>
+<p><strong>操作练习：设计并执行只改变color的比较。</strong>
+固定数据版本、capacity权重、约束、工作中心、40×3结构及运行条件与时间上限。保留实际状态、完整序列、两类切换和目标统计量。</p>
+<p>总体次数相同时，继续按周期、位置和制品检查；没有可用方案时，先读停止原因。这项单变量实验需要另行运行，上述组合调整记录不能替代它的结果。</p>
+<h2 id="延伸阅读">延伸阅读</h2>
+<p><a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Stamping-Planning-Case-Walkthrough-zh-CN">冲压计划运行案例</a>
+· <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Injection-Molding-Scheduling-Case-Walkthrough-zh-CN">注塑排程运行案例</a>
+· <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/End-to-End-Scenario-Walkthrough-zh-CN">端到端场景</a>
+· <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Scenarios-and-Pain-Points-zh-CN">场景与问题</a></p>
+<p>配套工作表：<a
+href="./Worksheet-Plan-Comparison.html">工作表：基线与调整方案比较</a></p>
+<p><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">专题
+D</a> · <a href="./Learning-D1-Read-a-Stamping-Plan.html">上一篇:
+冲压计划：把需求、产能与齐套放在一起看</a> · <a
+href="./Learning-D3-Select-Cases-by-Data-Characteristics.html">下一篇:
+按数据属性选择适用案例</a></p>
+      </article>
+      <footer class="article-footer"><a href="./">返回学习中心</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki/Learning-D2-Read-Injection-Molding-Changeovers-zh-CN">在 Wiki 阅读</a></footer>
+    </main>
+  </div>
+  <footer class="site-footer shell"><strong>DecisioWorks</strong><span>从生产问题出发，理解与使用决策能力。</span></footer>
+</body>
+</html>

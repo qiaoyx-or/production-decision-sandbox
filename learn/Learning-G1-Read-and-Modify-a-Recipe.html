@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>G1 读懂并修改一份能力编排配方 | DecisioWorks</title>
+  <meta name="description" content="本课以v1.4.0的production_planning.yaml为阅读对象。真实求解需要匹配的运行组件、依赖与有效授权；文件中的参数也应处于当前允许范围内。" />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-G1-Read-and-Modify-a-Recipe.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-G1-Read-and-Modify-a-Recipe.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Learning-G1-Read-and-Modify-a-Recipe.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-G1-Read-and-Modify-a-Recipe.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="G1 读懂并修改一份能力编排配方 | DecisioWorks" />
+  <meta property="og:description" content="本课以v1.4.0的production_planning.yaml为阅读对象。真实求解需要匹配的运行组件、依赖与有效授权；文件中的参数也应处于当前允许范围内。" />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-G1-Read-and-Modify-a-Recipe.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="G1 读懂并修改一份能力编排配方 | DecisioWorks" />
+  <meta name="twitter:description" content="本课以v1.4.0的production_planning.yaml为阅读对象。真实求解需要匹配的运行组件、依赖与有效授权；文件中的参数也应处于当前允许范围内。" />
+  <meta name="twitter:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <link rel="icon" href="../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "G1 读懂并修改一份能力编排配方", "description": "本课以v1.4.0的production_planning.yaml为阅读对象。真实求解需要匹配的运行组件、依赖与有效授权；文件中的参数也应处于当前允许范围内。", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-G1-Read-and-Modify-a-Recipe.html", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "DecisioWorks", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "首页", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/"}, {"@type": "ListItem", "position": 2, "name": "学习中心", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/"}, {"@type": "ListItem", "position": 3, "name": "G 用标准动作连接应用与AI Agent", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-Topic-G-Actions-Extensions-and-Agents.html"}, {"@type": "ListItem", "position": 4, "name": "G1 读懂并修改一份能力编排配方", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-G1-Read-and-Modify-a-Recipe.html"}]}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#article">跳到正文</a>
+  <header class="learning-header"><div class="shell header-inner">
+    <a class="brand" href="../"><img src="../assets/decisioworks-logo.png" alt="" width="36" height="36" /><strong>DecisioWorks</strong></a>
+    <nav aria-label="主导航">
+      <a href="../">主页</a>
+      <a href="../docs/">文档</a>
+      <a class="language-switch" href="../en/learn/Learning-G1-Read-and-Modify-a-Recipe.html" lang="en" hreflang="en">English</a>
+    </nav>
+  </div></header>
+  <div class="shell breadcrumbs" aria-label="面包屑导航"><a href="../">首页</a><span>/</span><a href="./">学习中心</a><span>/</span><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G</a><span>/</span><span aria-current="page">G1 读懂并修改一份能力编排配方</span></div>
+  <div class="shell reading-layout">
+    <aside class="sidebar"><nav aria-label="课程目录"><a class="contents-home" href="./">学习中心</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A 从生产问题到可检验的决策</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B 用数据表达制造过程</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C 让目标、经验与规则参与决策</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D 从真实样例学会读计划</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E 让计划层级协同工作</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F 开放协作与持续演进</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G 用标准动作连接应用与AI Agent</a><a class="lesson-link" href="./Learning-G1-Read-and-Modify-a-Recipe.html" aria-current="page">G1 读懂并修改一份能力编排配方</a><a class="lesson-link" href="./Learning-G2-Extend-a-Capability.html">G2 扩展一项能力，保持调用方式清楚</a><a class="lesson-link" href="./Learning-G3-Write-an-Agent-Task.html">G3 为AI Agent写一份可检查的任务说明</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H 把一次练习变成日常能力</a><span class="nav-section">工作表</span><a href="./Worksheet-Operational-Rule.html">现场规则记录与检查</a><a href="./Worksheet-Plan-Comparison.html">基线与调整方案比较</a><a href="./Worksheet-Review-and-Change-Record.html">复盘与持续改进记录</a><a href="./Worksheet-Scenario-Brief.html">场景与决策任务</a></nav></aside>
+    <main>
+      <details class="mobile-contents"><summary>课程目录</summary><nav aria-label="移动端课程目录"><a class="contents-home" href="./">学习中心</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A 从生产问题到可检验的决策</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B 用数据表达制造过程</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C 让目标、经验与规则参与决策</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D 从真实样例学会读计划</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E 让计划层级协同工作</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F 开放协作与持续演进</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G 用标准动作连接应用与AI Agent</a><a class="lesson-link" href="./Learning-G1-Read-and-Modify-a-Recipe.html" aria-current="page">G1 读懂并修改一份能力编排配方</a><a class="lesson-link" href="./Learning-G2-Extend-a-Capability.html">G2 扩展一项能力，保持调用方式清楚</a><a class="lesson-link" href="./Learning-G3-Write-an-Agent-Task.html">G3 为AI Agent写一份可检查的任务说明</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H 把一次练习变成日常能力</a><span class="nav-section">工作表</span><a href="./Worksheet-Operational-Rule.html">现场规则记录与检查</a><a href="./Worksheet-Plan-Comparison.html">基线与调整方案比较</a><a href="./Worksheet-Review-and-Change-Record.html">复盘与持续改进记录</a><a href="./Worksheet-Scenario-Brief.html">场景与决策任务</a></nav></details>
+      <article id="article">
+        <header class="article-heading"><p class="kicker">课程</p><h1>G1 读懂并修改一份能力编排配方</h1></header>
+        <details class="page-contents"><summary>本页内容</summary><nav><a href="#用配方说明怎样运行一个场景">用配方说明怎样运行一个场景</a><a href="#按五个部分阅读">按五个部分阅读</a><a href="#配置片段怎样读">配置片段怎样读</a><a href="#一次修改的过程">一次修改的过程</a><a href="#练习与参考解析">练习与参考解析</a><a href="#延伸阅读">延伸阅读</a></nav></details>
+        <h2 id="用配方说明怎样运行一个场景">用配方说明怎样运行一个场景</h2>
+<p>能力编排配方（recipe）记录使用哪些能力、按什么顺序运行、输入哪些配置以及期望得到什么。它连接业务意图与标准动作，便于页面、脚本或Agent使用相同过程。</p>
+<p>本课以v1.4.0的production_planning.yaml为阅读对象。真实求解需要匹配的运行组件、依赖与有效授权；文件中的参数也应处于当前允许范围内。</p>
+<h2 id="按五个部分阅读">按五个部分阅读</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>部分</th>
+<th>本例中要找什么</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>register</td>
+<td>数据采集与生产能力的注册函数</td>
+</tr>
+<tr class="even">
+<td>pipeline</td>
+<td>数据采集、约束解析、生成、选择、评估和结果输出</td>
+</tr>
+<tr class="odd">
+<td>context.inputs</td>
+<td>数据源、引擎类型与planning配置</td>
+</tr>
+<tr class="even">
+<td>expected_outputs</td>
+<td>最佳方案、分析与目标统计量检查</td>
+</tr>
+<tr class="odd">
+<td>safety</td>
+<td>数据库写入关闭，结果采用独立文件</td>
+</tr>
+</tbody>
+</table></div>
+<p>原始数据路径在data_acquisition和production中均有指定时，修改数据源应核对两处一致。文件相对路径按项目的配方加载规则解析。</p>
+<h2 id="配置片段怎样读">配置片段怎样读</h2>
+<p>下面摘录配方中的约束与目标配置。执行时使用完整的<code>production_planning.yaml</code>，保留数据来源、注册和动作顺序等部分。</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">planning</span><span class="kw">:</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">constraints</span><span class="kw">:</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">enable_capacity_cons</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">capacity_soft</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">enable_demand_cons</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">demand_cons_mode</span><span class="kw">:</span><span class="at"> </span><span class="dv">3</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">enable_kitting_cons</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">enable_inventory_cons</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">CSP</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">objective</span><span class="kw">:</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">job_bias</span><span class="kw">:</span><span class="at"> </span><span class="fl">-0.001</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">waittime</span><span class="kw">:</span><span class="at"> </span><span class="fl">1.0</span></span></code></pre></div>
+<p>capacity_soft说明产能采用软条件；enable_kitting_cons决定是否启用齐套约束。配置字段以所用版本的配方与接口定义为准。具体枚举如demand_cons_mode应结合当前说明和解析器理解，不能只根据数字猜测。</p>
+<p>该配方还通过<code>initial_objective_overrides</code>将初始<code>waittime</code>设为0，再用<code>objective_candidate_bridge</code>把交期或完工期相关意图映射到累计等待时间目标。这里的“桥接”是把业务目标对应到模型能计算的指标。因此，应沿初始配置、目标调整和最终审计查看实际采用的值；<code>objective</code>段本身不足以说明运行过程中的全部目标设置。</p>
+<h2 id="一次修改的过程">一次修改的过程</h2>
+<p>复制配方，记录版本和数据来源。只改变一个支持的目标参数，保持其他条件。若研究waittime，先标出初始覆盖值和目标桥接分别在哪一步改变它，再选择当前接口支持的调整位置。运行后以实际生效配置核对修改；若目标值被后续覆盖，应先修正比较设计。通过现有配方加载与执行入口运行，检查实际动作历史、选中方案、production_analysis及错误记录。需要结果文件时使用公开支持的独立输出参数。</p>
+<p><code>expected_outputs</code>列出预期输出，运行后应逐项核对状态和结果；如需自动检查，可将其写成测试断言。需要保存JSON结果时，显式设置配方支持的独立输出位置；没有配置时，检查输出动作是否跳过，并在运行记录中注明。</p>
+<h2 id="练习与参考解析">练习与参考解析</h2>
+<p>用不同颜色标出数据来源、业务条件、目标和计算资源与时间上限，写出你打算修改的一项及检查依据。结果应说明加载成功、能力注册成功、动作实际执行和输出成立是不同检查点。</p>
+<p>阅读和运行配方可使用相应的脚本入口；使用演示页面时，按页面提供的动作和参数操作。设计有分支或依赖关系的流程时，再查阅DecisioCore执行模块的相应接口。</p>
+<h2 id="延伸阅读">延伸阅读</h2>
+<p><a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Standard-Actions-and-Orchestration-zh-CN">标准动作与编排</a>
+· <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Actions-Recipes-and-Execution-Reference-zh-CN">动作、配方与执行参考</a>
+· <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Developer-Guide-Index-zh-CN">开发指南</a>
+· <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Runtime-Status-Errors-and-Limits-Reference-zh-CN">运行状态与限制</a></p>
+<p>配套工作表：<a
+href="./Worksheet-Scenario-Brief.html">工作表：场景与决策任务</a> · <a
+href="./Worksheet-Operational-Rule.html">工作表：现场规则记录与检查</a></p>
+<p><a
+href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">专题
+G</a> · <a
+href="./Learning-F3-Define-Ecosystem-Responsibilities.html">上一篇:
+企业、咨询与软件伙伴怎样分工</a> · <a
+href="./Learning-G2-Extend-a-Capability.html">下一篇:
+扩展一项能力，保持调用方式清楚</a></p>
+      </article>
+      <footer class="article-footer"><a href="./">返回学习中心</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki/Learning-G1-Read-and-Modify-a-Recipe-zh-CN">在 Wiki 阅读</a></footer>
+    </main>
+  </div>
+  <footer class="site-footer shell"><strong>DecisioWorks</strong><span>从生产问题出发，理解与使用决策能力。</span></footer>
+</body>
+</html>

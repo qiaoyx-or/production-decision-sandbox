@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>G1 Read and Modify a Capability Orchestration Recipe | DecisioWorks</title>
+  <meta name="description" content="Read the v1.4.0 production_planning.yaml example. Actual solving requires compatible runtime components, dependencies and authorization. Parameters must also remain within the active limits." />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Learning-G1-Read-and-Modify-a-Recipe.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-G1-Read-and-Modify-a-Recipe.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Learning-G1-Read-and-Modify-a-Recipe.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-G1-Read-and-Modify-a-Recipe.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="G1 Read and Modify a Capability Orchestration Recipe | DecisioWorks" />
+  <meta property="og:description" content="Read the v1.4.0 production_planning.yaml example. Actual solving requires compatible runtime components, dependencies and authorization. Parameters must also remain within the active limits." />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Learning-G1-Read-and-Modify-a-Recipe.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers-en.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="G1 Read and Modify a Capability Orchestration Recipe | DecisioWorks" />
+  <meta name="twitter:description" content="Read the v1.4.0 production_planning.yaml example. Actual solving requires compatible runtime components, dependencies and authorization. Parameters must also remain within the active limits." />
+  <meta name="twitter:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers-en.png" />
+  <link rel="icon" href="../../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "G1 Read and Modify a Capability Orchestration Recipe", "description": "Read the v1.4.0 production_planning.yaml example. Actual solving requires compatible runtime components, dependencies and authorization. Parameters must also remain within the active limits.", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Learning-G1-Read-and-Modify-a-Recipe.html", "inLanguage": "en", "author": {"@type": "Organization", "name": "DecisioWorks", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/"}, {"@type": "ListItem", "position": 2, "name": "Learning Center", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/"}, {"@type": "ListItem", "position": 3, "name": "G Connect Applications and AI Agents through Standard Actions", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Learning-Topic-G-Actions-Extensions-and-Agents.html"}, {"@type": "ListItem", "position": 4, "name": "G1 Read and Modify a Capability Orchestration Recipe", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Learning-G1-Read-and-Modify-a-Recipe.html"}]}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#article">Skip to content</a>
+  <header class="learning-header"><div class="shell header-inner">
+    <a class="brand" href="../"><img src="../../assets/decisioworks-logo.png" alt="" width="36" height="36" /><strong>DecisioWorks</strong></a>
+    <nav aria-label="Main navigation">
+      <a href="../">Home</a>
+      <a href="../docs/">Docs</a>
+      <a class="language-switch" href="../../learn/Learning-G1-Read-and-Modify-a-Recipe.html" lang="zh-CN" hreflang="zh-CN">中文</a>
+    </nav>
+  </div></header>
+  <div class="shell breadcrumbs" aria-label="Breadcrumb"><a href="../">Home</a><span>/</span><a href="./">Learning Center</a><span>/</span><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G</a><span>/</span><span aria-current="page">G1 Read and Modify a Capability Orchestration Recipe</span></div>
+  <div class="shell reading-layout">
+    <aside class="sidebar"><nav aria-label="Course contents"><a class="contents-home" href="./">Learning Center</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A From a Production Problem to a Testable Decision</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B Represent Manufacturing in Data</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C Objectives, Experience and Operational Rules</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D Read Plans through Recorded Cases</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E Coordinate Planning Levels and Responses</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F Open Collaboration and Continued Evolution</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G Connect Applications and AI Agents through Standard Actions</a><a class="lesson-link" href="./Learning-G1-Read-and-Modify-a-Recipe.html" aria-current="page">G1 Read and Modify a Capability Orchestration Recipe</a><a class="lesson-link" href="./Learning-G2-Extend-a-Capability.html">G2 Extend a Capability with a Clear Calling Interface</a><a class="lesson-link" href="./Learning-G3-Write-an-Agent-Task.html">G3 Write an AI Agent Task That Can Be Reviewed</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H Build Everyday Decision Capability</a><span class="nav-section">Worksheets</span><a href="./Worksheet-Operational-Rule.html">Operational Rule and Verification</a><a href="./Worksheet-Plan-Comparison.html">Baseline and Adjusted Plan Comparison</a><a href="./Worksheet-Review-and-Change-Record.html">Review and Change Record</a><a href="./Worksheet-Scenario-Brief.html">Scenario and Decision Task</a></nav></aside>
+    <main>
+      <details class="mobile-contents"><summary>Course contents</summary><nav aria-label="Mobile course contents"><a class="contents-home" href="./">Learning Center</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A From a Production Problem to a Testable Decision</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B Represent Manufacturing in Data</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C Objectives, Experience and Operational Rules</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D Read Plans through Recorded Cases</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E Coordinate Planning Levels and Responses</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F Open Collaboration and Continued Evolution</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G Connect Applications and AI Agents through Standard Actions</a><a class="lesson-link" href="./Learning-G1-Read-and-Modify-a-Recipe.html" aria-current="page">G1 Read and Modify a Capability Orchestration Recipe</a><a class="lesson-link" href="./Learning-G2-Extend-a-Capability.html">G2 Extend a Capability with a Clear Calling Interface</a><a class="lesson-link" href="./Learning-G3-Write-an-Agent-Task.html">G3 Write an AI Agent Task That Can Be Reviewed</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H Build Everyday Decision Capability</a><span class="nav-section">Worksheets</span><a href="./Worksheet-Operational-Rule.html">Operational Rule and Verification</a><a href="./Worksheet-Plan-Comparison.html">Baseline and Adjusted Plan Comparison</a><a href="./Worksheet-Review-and-Change-Record.html">Review and Change Record</a><a href="./Worksheet-Scenario-Brief.html">Scenario and Decision Task</a></nav></details>
+      <article id="article">
+        <header class="article-heading"><p class="kicker">Lesson</p><h1>G1 Read and Modify a Capability Orchestration Recipe</h1></header>
+        <details class="page-contents"><summary>On this page</summary><nav><a href="#use-a-recipe-to-describe-a-scenario-run">Use a Recipe to
+Describe a Scenario Run</a><a href="#read-five-parts">Read Five Parts</a><a href="#interpret-a-configuration-excerpt">Interpret a Configuration
+Excerpt</a><a href="#make-one-change">Make One Change</a><a href="#exercise-and-review">Exercise and Review</a><a href="#further-reading">Further Reading</a></nav></details>
+        <h2 id="use-a-recipe-to-describe-a-scenario-run">Use a Recipe to
+Describe a Scenario Run</h2>
+<p>A capability orchestration recipe records capabilities, action order,
+configuration and expected outputs. It connects business intent with
+standard actions so pages, scripts and Agents can use the same
+process.</p>
+<p>Read the v1.4.0 production_planning.yaml example. Actual solving
+requires compatible runtime components, dependencies and authorization.
+Parameters must also remain within the active limits.</p>
+<h2 id="read-five-parts">Read Five Parts</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th>Part</th>
+<th>Find in the example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>register</td>
+<td>Data-acquisition and production registration functions</td>
+</tr>
+<tr class="even">
+<td>pipeline</td>
+<td>Acquisition, constraint parsing, generation, selection, evaluation
+and output</td>
+</tr>
+<tr class="odd">
+<td>context.inputs</td>
+<td>Source, engine type and planning configuration</td>
+</tr>
+<tr class="even">
+<td>expected_outputs</td>
+<td>Best solution, analysis and objective checks</td>
+</tr>
+<tr class="odd">
+<td>safety</td>
+<td>Database writes disabled; results use separate files</td>
+</tr>
+</tbody>
+</table></div>
+<p>If both data_acquisition and production specify a source, keep them
+consistent when changing datasets. Relative paths follow the project's
+recipe-loader rules.</p>
+<h2 id="interpret-a-configuration-excerpt">Interpret a Configuration
+Excerpt</h2>
+<p>This excerpt shows the constraints and objectives. For execution, use
+the complete <code>production_planning.yaml</code>, including data
+sources, registration and action order.</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">planning</span><span class="kw">:</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">constraints</span><span class="kw">:</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">enable_capacity_cons</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">capacity_soft</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">enable_demand_cons</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">demand_cons_mode</span><span class="kw">:</span><span class="at"> </span><span class="dv">3</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">enable_kitting_cons</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">enable_inventory_cons</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">CSP</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">objective</span><span class="kw">:</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">job_bias</span><span class="kw">:</span><span class="at"> </span><span class="fl">-0.001</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">waittime</span><span class="kw">:</span><span class="at"> </span><span class="fl">1.0</span></span></code></pre></div>
+<p>capacity_soft makes capacity a soft condition, while
+enable_kitting_cons controls material-availability constraints. Use the
+field definitions for the installed recipe and interface version.
+Interpret enumerations such as demand_cons_mode using current
+documentation and parsing behavior, not the number alone.</p>
+<p>The recipe uses <code>initial_objective_overrides</code> to set the
+initial <code>waittime</code> to zero. Its
+<code>objective_candidate_bridge</code> maps delivery or completion-time
+intent to an accumulated-waiting objective. This bridge connects a
+business intent to a measure the model can calculate. Trace initial
+settings, objective updates and the final audit to see the values
+actually used; the <code>objective</code> block alone does not describe
+every stage.</p>
+<h2 id="make-one-change">Make One Change</h2>
+<p>Copy the recipe and record its version and source. Change one
+supported objective parameter while preserving other conditions. For
+waittime, first identify where initial overrides and the objective
+bridge update it, then choose a supported adjustment point. Check the
+effective configuration after execution. If a later stage overwrites the
+intended value, revise the comparison design first. Execute through the
+existing loader and runner, then inspect action history, the selected
+solution, production_analysis and errors. Use supported
+independent-output parameters when persistence is needed.</p>
+<p><code>expected_outputs</code> lists expected outcomes. Check status
+and results against each item after execution, or encode the conditions
+as test assertions. To save JSON results, configure a supported
+independent output location. Otherwise, check whether the output action
+was skipped and record that status.</p>
+<h2 id="exercise-and-review">Exercise and Review</h2>
+<p>Mark source data, business conditions, objectives and computing
+limits separately. Identify one proposed change and its check.</p>
+<p>Loading, registration, execution and verified output are distinct
+checkpoints. Use the recipe's script entry point to load and run it. In
+demonstration pages, use the actions and parameters the page exposes.
+For workflows with branches or dependencies, consult the corresponding
+DecisioCore execution interfaces.</p>
+<h2 id="further-reading">Further Reading</h2>
+<p><a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Standard-Actions-and-Orchestration">Standard
+Actions and Orchestration</a> · <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Actions-Recipes-and-Execution-Reference">Actions,
+Recipes and Execution</a> · <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Developer-Guide-Index">Developer
+Guides</a> · <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Runtime-Status-Errors-and-Limits-Reference">Runtime
+Status and Limits</a></p>
+<p>Worksheets: <a href="./Worksheet-Scenario-Brief.html">Worksheet: Scenario
+and Decision Task</a> · <a
+href="./Worksheet-Operational-Rule.html">Worksheet: Operational Rule and
+Verification</a></p>
+<p><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">Topic
+G</a> · <a
+href="./Learning-F3-Define-Ecosystem-Responsibilities.html">Previous: Define
+Roles for Manufacturers, Consultants and Software Partners</a> · <a
+href="./Learning-G2-Extend-a-Capability.html">Next: Extend a Capability with
+a Clear Calling Interface</a></p>
+      </article>
+      <footer class="article-footer"><a href="./">Back to Learning Center</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki/Learning-G1-Read-and-Modify-a-Recipe">Read on Wiki</a></footer>
+    </main>
+  </div>
+  <footer class="site-footer shell"><strong>DecisioWorks</strong><span>Learn decision capabilities through production problems.</span></footer>
+</body>
+</html>

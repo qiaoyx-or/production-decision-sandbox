@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>F1 Locate the Layer That Should Handle a Change | DecisioWorks</title>
+  <meta name="description" content="Within DecisioCore, data integration, objective management (objective_system), rule control (marginal_control), engine adaptation (engine_adapters), result analysis (analysis) and planning coordination (planning_system) have distinct roles. Its available reference implementation lets developers understand and reuse those connections or implement their own calling layer." />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Learning-F1-Place-Changes-in-the-Right-Layer.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-F1-Place-Changes-in-the-Right-Layer.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Learning-F1-Place-Changes-in-the-Right-Layer.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-F1-Place-Changes-in-the-Right-Layer.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="F1 Locate the Layer That Should Handle a Change | DecisioWorks" />
+  <meta property="og:description" content="Within DecisioCore, data integration, objective management (objective_system), rule control (marginal_control), engine adaptation (engine_adapters), result analysis (analysis) and planning coordination (planning_system) have distinct roles. Its available reference implementation lets developers understand and reuse those connections or implement their own calling layer." />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Learning-F1-Place-Changes-in-the-Right-Layer.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers-en.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="F1 Locate the Layer That Should Handle a Change | DecisioWorks" />
+  <meta name="twitter:description" content="Within DecisioCore, data integration, objective management (objective_system), rule control (marginal_control), engine adaptation (engine_adapters), result analysis (analysis) and planning coordination (planning_system) have distinct roles. Its available reference implementation lets developers understand and reuse those connections or implement their own calling layer." />
+  <meta name="twitter:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers-en.png" />
+  <link rel="icon" href="../../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "F1 Locate the Layer That Should Handle a Change", "description": "Within DecisioCore, data integration, objective management (objective_system), rule control (marginal_control), engine adaptation (engine_adapters), result analysis (analysis) and planning coordination (planning_system) have distinct roles. Its available reference implementation lets developers understand and reuse those connections or implement their own calling layer.", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Learning-F1-Place-Changes-in-the-Right-Layer.html", "inLanguage": "en", "author": {"@type": "Organization", "name": "DecisioWorks", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/"}, {"@type": "ListItem", "position": 2, "name": "Learning Center", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/"}, {"@type": "ListItem", "position": 3, "name": "F Open Collaboration and Continued Evolution", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Learning-Topic-F-Open-Collaboration-and-Evolution.html"}, {"@type": "ListItem", "position": 4, "name": "F1 Locate the Layer That Should Handle a Change", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Learning-F1-Place-Changes-in-the-Right-Layer.html"}]}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#article">Skip to content</a>
+  <header class="learning-header"><div class="shell header-inner">
+    <a class="brand" href="../"><img src="../../assets/decisioworks-logo.png" alt="" width="36" height="36" /><strong>DecisioWorks</strong></a>
+    <nav aria-label="Main navigation">
+      <a href="../">Home</a>
+      <a href="../docs/">Docs</a>
+      <a class="language-switch" href="../../learn/Learning-F1-Place-Changes-in-the-Right-Layer.html" lang="zh-CN" hreflang="zh-CN">中文</a>
+    </nav>
+  </div></header>
+  <div class="shell breadcrumbs" aria-label="Breadcrumb"><a href="../">Home</a><span>/</span><a href="./">Learning Center</a><span>/</span><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F</a><span>/</span><span aria-current="page">F1 Locate the Layer That Should Handle a Change</span></div>
+  <div class="shell reading-layout">
+    <aside class="sidebar"><nav aria-label="Course contents"><a class="contents-home" href="./">Learning Center</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A From a Production Problem to a Testable Decision</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B Represent Manufacturing in Data</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C Objectives, Experience and Operational Rules</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D Read Plans through Recorded Cases</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E Coordinate Planning Levels and Responses</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F Open Collaboration and Continued Evolution</a><a class="lesson-link" href="./Learning-F1-Place-Changes-in-the-Right-Layer.html" aria-current="page">F1 Locate the Layer That Should Handle a Change</a><a class="lesson-link" href="./Learning-F2-Preserve-Data-Assets-and-Templates.html">F2 Preserve Experience in Data Assets and Industry Templates</a><a class="lesson-link" href="./Learning-F3-Define-Ecosystem-Responsibilities.html">F3 Define Roles for Manufacturers, Consultants and Software Partners</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G Connect Applications and AI Agents through Standard Actions</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H Build Everyday Decision Capability</a><span class="nav-section">Worksheets</span><a href="./Worksheet-Operational-Rule.html">Operational Rule and Verification</a><a href="./Worksheet-Plan-Comparison.html">Baseline and Adjusted Plan Comparison</a><a href="./Worksheet-Review-and-Change-Record.html">Review and Change Record</a><a href="./Worksheet-Scenario-Brief.html">Scenario and Decision Task</a></nav></aside>
+    <main>
+      <details class="mobile-contents"><summary>Course contents</summary><nav aria-label="Mobile course contents"><a class="contents-home" href="./">Learning Center</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A From a Production Problem to a Testable Decision</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B Represent Manufacturing in Data</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C Objectives, Experience and Operational Rules</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D Read Plans through Recorded Cases</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E Coordinate Planning Levels and Responses</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F Open Collaboration and Continued Evolution</a><a class="lesson-link" href="./Learning-F1-Place-Changes-in-the-Right-Layer.html" aria-current="page">F1 Locate the Layer That Should Handle a Change</a><a class="lesson-link" href="./Learning-F2-Preserve-Data-Assets-and-Templates.html">F2 Preserve Experience in Data Assets and Industry Templates</a><a class="lesson-link" href="./Learning-F3-Define-Ecosystem-Responsibilities.html">F3 Define Roles for Manufacturers, Consultants and Software Partners</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G Connect Applications and AI Agents through Standard Actions</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H Build Everyday Decision Capability</a><span class="nav-section">Worksheets</span><a href="./Worksheet-Operational-Rule.html">Operational Rule and Verification</a><a href="./Worksheet-Plan-Comparison.html">Baseline and Adjusted Plan Comparison</a><a href="./Worksheet-Review-and-Change-Record.html">Review and Change Record</a><a href="./Worksheet-Scenario-Brief.html">Scenario and Decision Task</a></nav></details>
+      <article id="article">
+        <header class="article-heading"><p class="kicker">Lesson</p><h1>F1 Locate the Layer That Should Handle a Change</h1></header>
+        <details class="page-contents"><summary>On this page</summary><nav><a href="#the-key-question-is-where-a-change-belongs">The Key Question Is
+Where a Change Belongs</a><a href="#four-parts-of-decisioworks">Four Parts of DecisioWorks</a><a href="#map-one-change">Map One Change</a><a href="#exercise-and-review">Exercise and Review</a><a href="#further-reading">Further Reading</a></nav></details>
+        <h2 id="the-key-question-is-where-a-change-belongs">The Key Question Is
+Where a Change Belongs</h2>
+<p>A new product may require route and material records. A previously
+unsupported scheduling structure may require model adaptation. Both are
+business changes, but the engineering work differs. Layering gives each
+change a place and makes review scope easier to define.</p>
+<h2 id="four-parts-of-decisioworks">Four Parts of DecisioWorks</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th>Part</th>
+<th>Responsibility</th>
+<th>Typical changes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>DataSets and the standard interface</td>
+<td>Scenario data and manufacturing relationships</td>
+<td>Orders, routes, capacity and bills of materials (BOMs)</td>
+</tr>
+<tr class="even">
+<td>DecisioCore</td>
+<td>Data, objectives, rules, orchestration, analysis and linkage</td>
+<td>Preferences, industry logic and feedback</td>
+</tr>
+<tr class="odd">
+<td>GOCK</td>
+<td>Modeling and optimization</td>
+<td>Model or solving capability upgrades</td>
+</tr>
+<tr class="even">
+<td>Web and other applications</td>
+<td>Presentation, operation and interaction</td>
+<td>Reports, training pages and workflows</td>
+</tr>
+</tbody>
+</table></div>
+<p>Within DecisioCore, data integration, objective management
+(<code>objective_system</code>), rule control
+(<code>marginal_control</code>), engine adaptation
+(<code>engine_adapters</code>), result analysis (<code>analysis</code>)
+and planning coordination (<code>planning_system</code>) have distinct
+roles. Its available reference implementation lets developers understand
+and reuse those connections or implement their own calling layer.</p>
+<h2 id="map-one-change">Map One Change</h2>
+<p>Suppose a customer wants a display grouped by color and a stronger
+preference for fewer color changes. These are separate requests.
+Grouping belongs in the application. The preference requires a color
+mapping and a supported changeover measure before adjusting the
+objective. Sorting a table does not change the solver's sequence.</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th>Change</th>
+<th>First check</th>
+<th>Recheck after the change</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Processing-time update</td>
+<td>Units and process adaptation</td>
+<td>Load, delivery and results</td>
+</tr>
+<tr class="even">
+<td>Delivery preference</td>
+<td>Objective measure and direction</td>
+<td>Trade-offs, details and audit</td>
+</tr>
+<tr class="odd">
+<td>Temporary resource allowance</td>
+<td>Affected object and how the model applies the rule</td>
+<td>Enforcement and expiry</td>
+</tr>
+<tr class="even">
+<td>New result display</td>
+<td>Analysis fields and units</td>
+<td>Numerical consistency and readability</td>
+</tr>
+<tr class="odd">
+<td>New model capability</td>
+<td>Input/output adaptation</td>
+<td>Support, status and existing calls</td>
+</tr>
+</tbody>
+</table></div>
+<h2
+id="independent-evolution-still-needs-compatibility-checks">Independent
+Evolution Still Needs Compatibility Checks</h2>
+<p>Interfaces let modules improve separately. After adding fields,
+changing units or replacing a model, check input meanings, output
+structure and existing cases to confirm that the parts still work
+together. Evolution means adapting on the foundation while preserving
+the parts that continue to work.</p>
+<p>The reference implementation helps partners see what can be reused
+and what needs adaptation. An application can use its own interface,
+integration or workflow while invoking optimization through defined
+connections.</p>
+<h2 id="exercise-and-review">Exercise and Review</h2>
+<p>Locate four changes: a new product, a delivery preference, an
+approval page and a new model capability. Identify one cross-layer
+effect for each.</p>
+<p>An approval page belongs to the application, but if approval
+determines task release it must connect to planning inputs. Record the
+primary owner and affected interfaces. Layering provides
+responsibilities, not complete independence from consequences.</p>
+<h2 id="further-reading">Further Reading</h2>
+<p><a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Design-Principles-and-Differentiation">Design
+Principles and Differentiation</a> · <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Architecture-Overview">Architecture
+Overview</a> · <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Production-Decision-Data-Assets">Production
+Decision Data Assets</a> · <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Ecosystem-Overview">Ecosystem
+Overview</a> · <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Partner-Onboarding-and-Integration">Partner
+Onboarding and Integration</a></p>
+<p>Worksheets: <a href="./Worksheet-Scenario-Brief.html">Worksheet: Scenario
+and Decision Task</a> · <a
+href="./Worksheet-Review-and-Change-Record.html">Worksheet: Review and
+Change Record</a></p>
+<p><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">Topic
+F</a> · <a href="./Learning-E3-Scope-a-Disruption-Response.html">Previous:
+Define the Scope of a Disruption Response</a> · <a
+href="./Learning-F2-Preserve-Data-Assets-and-Templates.html">Next: Preserve
+Experience in Data Assets and Industry Templates</a></p>
+      </article>
+      <footer class="article-footer"><a href="./">Back to Learning Center</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki/Learning-F1-Place-Changes-in-the-Right-Layer">Read on Wiki</a></footer>
+    </main>
+  </div>
+  <footer class="site-footer shell"><strong>DecisioWorks</strong><span>Learn decision capabilities through production problems.</span></footer>
+</body>
+</html>

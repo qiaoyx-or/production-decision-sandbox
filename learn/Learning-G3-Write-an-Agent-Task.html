@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>G3 为AI Agent写一份可检查的任务说明 | DecisioWorks</title>
+  <meta name="description" content="本课使用注塑标准样例，把任务分为两步：先准备只调整color权重的配置差异和检查清单；经过确认后，再由具备运行条件的执行环境完成比较。第一步的配置建议与第二步的运行结果分别保存。" />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-G3-Write-an-Agent-Task.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-G3-Write-an-Agent-Task.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Learning-G3-Write-an-Agent-Task.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-G3-Write-an-Agent-Task.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="G3 为AI Agent写一份可检查的任务说明 | DecisioWorks" />
+  <meta property="og:description" content="本课使用注塑标准样例，把任务分为两步：先准备只调整color权重的配置差异和检查清单；经过确认后，再由具备运行条件的执行环境完成比较。第一步的配置建议与第二步的运行结果分别保存。" />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-G3-Write-an-Agent-Task.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="G3 为AI Agent写一份可检查的任务说明 | DecisioWorks" />
+  <meta name="twitter:description" content="本课使用注塑标准样例，把任务分为两步：先准备只调整color权重的配置差异和检查清单；经过确认后，再由具备运行条件的执行环境完成比较。第一步的配置建议与第二步的运行结果分别保存。" />
+  <meta name="twitter:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <link rel="icon" href="../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "G3 为AI Agent写一份可检查的任务说明", "description": "本课使用注塑标准样例，把任务分为两步：先准备只调整color权重的配置差异和检查清单；经过确认后，再由具备运行条件的执行环境完成比较。第一步的配置建议与第二步的运行结果分别保存。", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-G3-Write-an-Agent-Task.html", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "DecisioWorks", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "首页", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/"}, {"@type": "ListItem", "position": 2, "name": "学习中心", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/"}, {"@type": "ListItem", "position": 3, "name": "G 用标准动作连接应用与AI Agent", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-Topic-G-Actions-Extensions-and-Agents.html"}, {"@type": "ListItem", "position": 4, "name": "G3 为AI Agent写一份可检查的任务说明", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-G3-Write-an-Agent-Task.html"}]}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#article">跳到正文</a>
+  <header class="learning-header"><div class="shell header-inner">
+    <a class="brand" href="../"><img src="../assets/decisioworks-logo.png" alt="" width="36" height="36" /><strong>DecisioWorks</strong></a>
+    <nav aria-label="主导航">
+      <a href="../">主页</a>
+      <a href="../docs/">文档</a>
+      <a class="language-switch" href="../en/learn/Learning-G3-Write-an-Agent-Task.html" lang="en" hreflang="en">English</a>
+    </nav>
+  </div></header>
+  <div class="shell breadcrumbs" aria-label="面包屑导航"><a href="../">首页</a><span>/</span><a href="./">学习中心</a><span>/</span><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G</a><span>/</span><span aria-current="page">G3 为AI Agent写一份可检查的任务说明</span></div>
+  <div class="shell reading-layout">
+    <aside class="sidebar"><nav aria-label="课程目录"><a class="contents-home" href="./">学习中心</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A 从生产问题到可检验的决策</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B 用数据表达制造过程</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C 让目标、经验与规则参与决策</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D 从真实样例学会读计划</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E 让计划层级协同工作</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F 开放协作与持续演进</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G 用标准动作连接应用与AI Agent</a><a class="lesson-link" href="./Learning-G1-Read-and-Modify-a-Recipe.html">G1 读懂并修改一份能力编排配方</a><a class="lesson-link" href="./Learning-G2-Extend-a-Capability.html">G2 扩展一项能力，保持调用方式清楚</a><a class="lesson-link" href="./Learning-G3-Write-an-Agent-Task.html" aria-current="page">G3 为AI Agent写一份可检查的任务说明</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H 把一次练习变成日常能力</a><span class="nav-section">工作表</span><a href="./Worksheet-Operational-Rule.html">现场规则记录与检查</a><a href="./Worksheet-Plan-Comparison.html">基线与调整方案比较</a><a href="./Worksheet-Review-and-Change-Record.html">复盘与持续改进记录</a><a href="./Worksheet-Scenario-Brief.html">场景与决策任务</a></nav></aside>
+    <main>
+      <details class="mobile-contents"><summary>课程目录</summary><nav aria-label="移动端课程目录"><a class="contents-home" href="./">学习中心</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A 从生产问题到可检验的决策</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B 用数据表达制造过程</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C 让目标、经验与规则参与决策</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D 从真实样例学会读计划</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E 让计划层级协同工作</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F 开放协作与持续演进</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G 用标准动作连接应用与AI Agent</a><a class="lesson-link" href="./Learning-G1-Read-and-Modify-a-Recipe.html">G1 读懂并修改一份能力编排配方</a><a class="lesson-link" href="./Learning-G2-Extend-a-Capability.html">G2 扩展一项能力，保持调用方式清楚</a><a class="lesson-link" href="./Learning-G3-Write-an-Agent-Task.html" aria-current="page">G3 为AI Agent写一份可检查的任务说明</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H 把一次练习变成日常能力</a><span class="nav-section">工作表</span><a href="./Worksheet-Operational-Rule.html">现场规则记录与检查</a><a href="./Worksheet-Plan-Comparison.html">基线与调整方案比较</a><a href="./Worksheet-Review-and-Change-Record.html">复盘与持续改进记录</a><a href="./Worksheet-Scenario-Brief.html">场景与决策任务</a></nav></details>
+      <article id="article">
+        <header class="article-heading"><p class="kicker">课程</p><h1>G3 为AI Agent写一份可检查的任务说明</h1></header>
+        <details class="page-contents"><summary>本页内容</summary><nav><a href="#把意图变成明确任务">把意图变成明确任务</a><a href="#一份任务说明示例">一份任务说明示例</a><a href="#给agent明确的检查问题">给Agent明确的检查问题</a><a href="#区分三类输出">区分三类输出</a><a href="#可直接改写的任务文本">可直接改写的任务文本</a><a href="#练习与参考解析">练习与参考解析</a><a href="#延伸阅读">延伸阅读</a></nav></details>
+        <h2 id="把意图变成明确任务">把意图变成明确任务</h2>
+<p>“帮我优化排程”没有说明数据、允许动作或判断依据。一个可检查的Agent任务应指出使用哪份样例、允许修改什么、需要哪些结果，以及何时交给人确认。</p>
+<p>本课使用注塑标准样例，把任务分为两步：先准备只调整<code>color</code>权重的配置差异和检查清单；经过确认后，再由具备运行条件的执行环境完成比较。第一步的配置建议与第二步的运行结果分别保存。</p>
+<h2 id="一份任务说明示例">一份任务说明示例</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>项目</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>任务</td>
+<td>在相同数据和约束下比较一个color权重变更</td>
+</tr>
+<tr class="even">
+<td>输入</td>
+<td>已确认版本的production_scheduling能力编排配方（recipe）及字段说明</td>
+</tr>
+<tr class="odd">
+<td>可修改</td>
+<td>color目标权重，值由任务发起人指定</td>
+</tr>
+<tr class="even">
+<td>保持不变</td>
+<td>capacity权重、工作中心、40×3结构、约束、数据</td>
+</tr>
+<tr class="odd">
+<td>资源限制</td>
+<td>从所用运行环境读取允许范围</td>
+</tr>
+<tr class="even">
+<td>第一阶段输出</td>
+<td>配置差异与执行前检查，不附未运行的结果</td>
+</tr>
+<tr class="odd">
+<td>第二阶段输出</td>
+<td>实际运行状态、结果对照及解释</td>
+</tr>
+<tr class="even">
+<td>人工确认</td>
+<td>配置提交运行前，以及建议进入业务执行前</td>
+</tr>
+</tbody>
+</table></div>
+<p>授权文件由实际执行环境管理，任务包只需包含配置准备所需的信息。使用外部Agent服务时，先确认可分享的数据范围。</p>
+<h2 id="给agent明确的检查问题">给Agent明确的检查问题</h2>
+<p>要求它回答：color映射哪个业务属性；capacity在该配方中是什么意思；哪些输出能证明本次真正运行；不同权重下怎样比较指标；没有可用方案时怎样描述。</p>
+<p>这些问题促使Agent依据结构化输入，而不是凭通用排程知识填空。若它把capacity理解成设备产能，先修正解释与配置，再继续运行。</p>
+<h2 id="区分三类输出">区分三类输出</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>类型</th>
+<th>标识与复核</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>配置建议</td>
+<td>尚未执行，检查参数和差异</td>
+</tr>
+<tr class="even">
+<td>执行请求</td>
+<td>记录接收方、输入版本及计算资源与时间上限</td>
+</tr>
+<tr class="odd">
+<td>运行结果</td>
+<td>包含实际状态、动作与结果证据</td>
+</tr>
+</tbody>
+</table></div>
+<p>复核运行结果时，先匹配本次请求与运行标识，再检查候选方案、选中方案和指标来源。结果说明应能从实际记录追到相应的配置和输出。</p>
+<p>使用支持任务包导出的工作台时，可将任务说明、上下文、预期结果与允许动作一并交给所选Agent。随后由使用者或已配置的集成程序发起调用，并检查返回内容；任务包导出本身只完成信息准备。</p>
+<h2 id="可直接改写的任务文本">可直接改写的任务文本</h2>
+<p>下面是给Agent的自然语言任务示例，不是可直接执行的接口请求。方括号中的内容由任务发起人填写；缺少值时，先补充信息。</p>
+<pre class="text"><code>任务：准备一次只改变color目标权重的注塑排程比较，暂不启动求解。
+输入：数据版本[填写]；production_scheduling配方版本[填写]；
+      字段说明[提供]；当前运行环境允许的参数范围[提供]。
+修改：color从[基线值]改为[目标值]。
+保持：数据、约束、capacity权重、工作中心、序列长度、
+      循环次数、线程数和时间上限均与基线一致。
+先检查：本样例color对应property_1；
+        capacity目标关联容器容量property_3，不是设备产能。
+提交：基线与建议配置差异、参数检查、缺失信息和待确认项。
+遇到未知字段、超限参数或需要改动固定项时，暂停并说明原因。
+配置经确认后，由已具备运行条件的执行端分别运行基线和调整方案；
+只有拿到实际记录后，再报告状态、序列、两类切换和目标统计量。</code></pre>
+<p>阅读检查时，若建议配置同时改变了capacity权重，应退回修改；若目标color值尚未填写，应列为待确认；若所有检查通过，可将配置交给运行负责人。这三种状态都与“已获得改善结果”不同。</p>
+<h2 id="练习与参考解析">练习与参考解析</h2>
+<p>编写一份任务说明，并设计两个拒绝条件：请求超出允许参数范围；Agent尝试修改未授权的数据或字段。另写一条正常验收：仅指定权重变化，其他固定项一致。</p>
+<p>最终提交任务、配置差异、检查表及状态说明。Agent帮助组织工作，企业人员仍通过明确证据判断配置与方案能否采用。</p>
+<h2 id="延伸阅读">延伸阅读</h2>
+<p><a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Standard-Actions-and-Orchestration-zh-CN">标准动作与编排</a>
+· <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Actions-Recipes-and-Execution-Reference-zh-CN">动作、配方与执行参考</a>
+· <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Developer-Guide-Index-zh-CN">开发指南</a>
+· <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Runtime-Status-Errors-and-Limits-Reference-zh-CN">运行状态与限制</a></p>
+<p>配套工作表：<a
+href="./Worksheet-Scenario-Brief.html">工作表：场景与决策任务</a> · <a
+href="./Worksheet-Operational-Rule.html">工作表：现场规则记录与检查</a></p>
+<p><a
+href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">专题
+G</a> · <a href="./Learning-G2-Extend-a-Capability.html">上一篇:
+扩展一项能力，保持调用方式清楚</a> · <a
+href="./Learning-H1-Review-a-Plan.html">下一篇:
+复核一份计划：从运行状态到业务结论</a></p>
+      </article>
+      <footer class="article-footer"><a href="./">返回学习中心</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki/Learning-G3-Write-an-Agent-Task-zh-CN">在 Wiki 阅读</a></footer>
+    </main>
+  </div>
+  <footer class="site-footer shell"><strong>DecisioWorks</strong><span>从生产问题出发，理解与使用决策能力。</span></footer>
+</body>
+</html>

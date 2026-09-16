@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>G2 扩展一项能力，保持调用方式清楚 | DecisioWorks</title>
+  <meta name="description" content="本课的开发练习是新增“结果复核摘要”：接收已有分析结果，形成订单类别汇总。下面先定义这项扩展的输入、输出和检查方法。" />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-G2-Extend-a-Capability.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-G2-Extend-a-Capability.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Learning-G2-Extend-a-Capability.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-G2-Extend-a-Capability.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="G2 扩展一项能力，保持调用方式清楚 | DecisioWorks" />
+  <meta property="og:description" content="本课的开发练习是新增“结果复核摘要”：接收已有分析结果，形成订单类别汇总。下面先定义这项扩展的输入、输出和检查方法。" />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-G2-Extend-a-Capability.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="G2 扩展一项能力，保持调用方式清楚 | DecisioWorks" />
+  <meta name="twitter:description" content="本课的开发练习是新增“结果复核摘要”：接收已有分析结果，形成订单类别汇总。下面先定义这项扩展的输入、输出和检查方法。" />
+  <meta name="twitter:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <link rel="icon" href="../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "G2 扩展一项能力，保持调用方式清楚", "description": "本课的开发练习是新增“结果复核摘要”：接收已有分析结果，形成订单类别汇总。下面先定义这项扩展的输入、输出和检查方法。", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-G2-Extend-a-Capability.html", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "DecisioWorks", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "首页", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/"}, {"@type": "ListItem", "position": 2, "name": "学习中心", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/"}, {"@type": "ListItem", "position": 3, "name": "G 用标准动作连接应用与AI Agent", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-Topic-G-Actions-Extensions-and-Agents.html"}, {"@type": "ListItem", "position": 4, "name": "G2 扩展一项能力，保持调用方式清楚", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-G2-Extend-a-Capability.html"}]}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#article">跳到正文</a>
+  <header class="learning-header"><div class="shell header-inner">
+    <a class="brand" href="../"><img src="../assets/decisioworks-logo.png" alt="" width="36" height="36" /><strong>DecisioWorks</strong></a>
+    <nav aria-label="主导航">
+      <a href="../">主页</a>
+      <a href="../docs/">文档</a>
+      <a class="language-switch" href="../en/learn/Learning-G2-Extend-a-Capability.html" lang="en" hreflang="en">English</a>
+    </nav>
+  </div></header>
+  <div class="shell breadcrumbs" aria-label="面包屑导航"><a href="../">首页</a><span>/</span><a href="./">学习中心</a><span>/</span><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G</a><span>/</span><span aria-current="page">G2 扩展一项能力，保持调用方式清楚</span></div>
+  <div class="shell reading-layout">
+    <aside class="sidebar"><nav aria-label="课程目录"><a class="contents-home" href="./">学习中心</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A 从生产问题到可检验的决策</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B 用数据表达制造过程</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C 让目标、经验与规则参与决策</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D 从真实样例学会读计划</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E 让计划层级协同工作</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F 开放协作与持续演进</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G 用标准动作连接应用与AI Agent</a><a class="lesson-link" href="./Learning-G1-Read-and-Modify-a-Recipe.html">G1 读懂并修改一份能力编排配方</a><a class="lesson-link" href="./Learning-G2-Extend-a-Capability.html" aria-current="page">G2 扩展一项能力，保持调用方式清楚</a><a class="lesson-link" href="./Learning-G3-Write-an-Agent-Task.html">G3 为AI Agent写一份可检查的任务说明</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H 把一次练习变成日常能力</a><span class="nav-section">工作表</span><a href="./Worksheet-Operational-Rule.html">现场规则记录与检查</a><a href="./Worksheet-Plan-Comparison.html">基线与调整方案比较</a><a href="./Worksheet-Review-and-Change-Record.html">复盘与持续改进记录</a><a href="./Worksheet-Scenario-Brief.html">场景与决策任务</a></nav></aside>
+    <main>
+      <details class="mobile-contents"><summary>课程目录</summary><nav aria-label="移动端课程目录"><a class="contents-home" href="./">学习中心</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A 从生产问题到可检验的决策</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B 用数据表达制造过程</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C 让目标、经验与规则参与决策</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D 从真实样例学会读计划</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E 让计划层级协同工作</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F 开放协作与持续演进</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G 用标准动作连接应用与AI Agent</a><a class="lesson-link" href="./Learning-G1-Read-and-Modify-a-Recipe.html">G1 读懂并修改一份能力编排配方</a><a class="lesson-link" href="./Learning-G2-Extend-a-Capability.html" aria-current="page">G2 扩展一项能力，保持调用方式清楚</a><a class="lesson-link" href="./Learning-G3-Write-an-Agent-Task.html">G3 为AI Agent写一份可检查的任务说明</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H 把一次练习变成日常能力</a><span class="nav-section">工作表</span><a href="./Worksheet-Operational-Rule.html">现场规则记录与检查</a><a href="./Worksheet-Plan-Comparison.html">基线与调整方案比较</a><a href="./Worksheet-Review-and-Change-Record.html">复盘与持续改进记录</a><a href="./Worksheet-Scenario-Brief.html">场景与决策任务</a></nav></details>
+      <article id="article">
+        <header class="article-heading"><p class="kicker">课程</p><h1>G2 扩展一项能力，保持调用方式清楚</h1></header>
+        <details class="page-contents"><summary>本页内容</summary><nav><a href="#先决定扩展的对象">先决定扩展的对象</a><a href="#设计输入输出">设计输入输出</a><a href="#使用标准扩展方式">使用标准扩展方式</a><a href="#设计正常与错误检查">设计正常与错误检查</a><a href="#练习与参考解析">练习与参考解析</a><a href="#延伸阅读">延伸阅读</a></nav></details>
+        <h2 id="先决定扩展的对象">先决定扩展的对象</h2>
+<p>希望增加“按订单类别汇总结果”的功能，通常可以在分析层完成；希望改变求解器接受的约束，则涉及约束或模型适配。先确定功能处理的是数据、规则、目标、分析还是引擎，再选择接入位置。</p>
+<p>本课的开发练习是新增“结果复核摘要”：接收已有分析结果，形成订单类别汇总。下面先定义这项扩展的输入、输出和检查方法。</p>
+<h2 id="设计输入输出">设计输入输出</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>项目</th>
+<th>约定</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>输入</td>
+<td>已有结果、订单类别映射、指标定义</td>
+</tr>
+<tr class="even">
+<td>输出</td>
+<td>各类别汇总、未能匹配的记录、统计口径</td>
+</tr>
+<tr class="odd">
+<td>结果保存位置</td>
+<td>在ctx.derived下使用独立键保存汇总，避免覆盖其他分析</td>
+</tr>
+<tr class="even">
+<td>失败条件</td>
+<td>缺少必需映射、数量单位无法确认</td>
+</tr>
+<tr class="odd">
+<td>跳过条件</td>
+<td>应用明确未启用可选汇总</td>
+</tr>
+<tr class="even">
+<td>副作用</td>
+<td>不修改源数据或已选中的方案</td>
+</tr>
+</tbody>
+</table></div>
+<p>先检查结果能否关联到订单。如果结果只按制品、工序或时段汇总，而同一制品对应多张订单，就需要补充明确的分配关系；没有该关系时，应保持原有汇总粒度，并报告尚不能归属到订单的记录。字段按实际对象结构读取，未分类订单也单独列出，保证分类合计与总量可核对。</p>
+<h2 id="使用标准扩展方式">使用标准扩展方式</h2>
+<p>处理器是执行具体业务逻辑的函数，ctx是保存本次输入、中间结果和状态的执行上下文。开发指南提供handler(ctx)或handler(ctx,
+params)签名，处理器返回DecisionContext或ActionResult。通过CapabilityRegistry把处理器注册到合适的标准动作，执行层记录调用与结果。</p>
+<p>能力条目具有版本、优先级和启用状态。默认解析选取启用且优先级最高的实现。因此提高优先级可能替换同一动作的已有实现，而不是自动追加一个步骤。扩展前检查动作语义与选择方式；需要保留原评估时，采用符合工程模式的组合处理或独立调用安排。</p>
+<h2
+id="让注册目录和能力编排配方recipe保持一致">让注册、目录和能力编排配方（recipe）保持一致</h2>
+<ol type="1">
+<li>编写轻量注册函数，避免导入时加载业务数据或启动求解。</li>
+<li>让处理器输入输出与所选动作一致。</li>
+<li>更新能力目录和说明，提供适用范围。</li>
+<li>增加最小配方或调用例子。</li>
+<li>检查注册、解析、调用、异常与结果。</li>
+</ol>
+<p>单例适合线程安全且无请求状态的服务。每次运行的求解对象与客户数据应留在请求上下文，避免不同任务相互污染。</p>
+<h2 id="设计正常与错误检查">设计正常与错误检查</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>输入情形</th>
+<th>预期</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>类别齐全、单位明确</td>
+<td>类别合计与总量一致</td>
+</tr>
+<tr class="even">
+<td>存在未知类别</td>
+<td>输出未分类清单或按约定失败</td>
+</tr>
+<tr class="odd">
+<td>缺少必需结果</td>
+<td>结构化失败</td>
+</tr>
+<tr class="even">
+<td>可选功能关闭</td>
+<td>明确跳过</td>
+</tr>
+<tr class="odd">
+<td>两次不同请求</td>
+<td>各自结果独立</td>
+</tr>
+</tbody>
+</table></div>
+<p>上游未提供有效结果时，扩展应返回相应错误或跳过状态；汇总只读取本次运行的数据。授权和输入错误继续使用既有的结构化错误响应。</p>
+<h2 id="练习与参考解析">练习与参考解析</h2>
+<p>提交扩展说明、输入输出表、注册策略和五条检查用例。解释为什么选择该动作，以及怎样确保原有分析仍执行。</p>
+<p>通过条件是能力真实被选中、结果符合口径、异常可解释，并且已有用法保持一致。只看到模块能导入，尚不能证明扩展完成。</p>
+<h2 id="延伸阅读">延伸阅读</h2>
+<p><a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Standard-Actions-and-Orchestration-zh-CN">标准动作与编排</a>
+· <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Actions-Recipes-and-Execution-Reference-zh-CN">动作、配方与执行参考</a>
+· <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Developer-Guide-Index-zh-CN">开发指南</a>
+· <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Runtime-Status-Errors-and-Limits-Reference-zh-CN">运行状态与限制</a></p>
+<p>配套工作表：<a
+href="./Worksheet-Scenario-Brief.html">工作表：场景与决策任务</a> · <a
+href="./Worksheet-Operational-Rule.html">工作表：现场规则记录与检查</a></p>
+<p><a
+href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">专题
+G</a> · <a href="./Learning-G1-Read-and-Modify-a-Recipe.html">上一篇:
+读懂并修改一份能力编排配方</a> · <a
+href="./Learning-G3-Write-an-Agent-Task.html">下一篇: 为AI
+Agent写一份可检查的任务说明</a></p>
+      </article>
+      <footer class="article-footer"><a href="./">返回学习中心</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki/Learning-G2-Extend-a-Capability-zh-CN">在 Wiki 阅读</a></footer>
+    </main>
+  </div>
+  <footer class="site-footer shell"><strong>DecisioWorks</strong><span>从生产问题出发，理解与使用决策能力。</span></footer>
+</body>
+</html>

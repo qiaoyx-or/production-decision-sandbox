@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>A2 先验证：设计一次有用的计划比较 | DecisioWorks</title>
+  <meta name="description" content="一台设备，两个订单，一次维护。这个小场景足以说明：计划比较要先解释条件怎样变化，再讨论系统给出的结果。" />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-A2-Design-a-Useful-Planning-Comparison.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-A2-Design-a-Useful-Planning-Comparison.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Learning-A2-Design-a-Useful-Planning-Comparison.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-A2-Design-a-Useful-Planning-Comparison.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="A2 先验证：设计一次有用的计划比较 | DecisioWorks" />
+  <meta property="og:description" content="一台设备，两个订单，一次维护。这个小场景足以说明：计划比较要先解释条件怎样变化，再讨论系统给出的结果。" />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-A2-Design-a-Useful-Planning-Comparison.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="A2 先验证：设计一次有用的计划比较 | DecisioWorks" />
+  <meta name="twitter:description" content="一台设备，两个订单，一次维护。这个小场景足以说明：计划比较要先解释条件怎样变化，再讨论系统给出的结果。" />
+  <meta name="twitter:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <link rel="icon" href="../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "A2 先验证：设计一次有用的计划比较", "description": "一台设备，两个订单，一次维护。这个小场景足以说明：计划比较要先解释条件怎样变化，再讨论系统给出的结果。", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-A2-Design-a-Useful-Planning-Comparison.html", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "DecisioWorks", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "首页", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/"}, {"@type": "ListItem", "position": 2, "name": "学习中心", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/"}, {"@type": "ListItem", "position": 3, "name": "A 从生产问题到可检验的决策", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-Topic-A-Problem-and-Validation.html"}, {"@type": "ListItem", "position": 4, "name": "A2 先验证：设计一次有用的计划比较", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-A2-Design-a-Useful-Planning-Comparison.html"}]}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#article">跳到正文</a>
+  <header class="learning-header"><div class="shell header-inner">
+    <a class="brand" href="../"><img src="../assets/decisioworks-logo.png" alt="" width="36" height="36" /><strong>DecisioWorks</strong></a>
+    <nav aria-label="主导航">
+      <a href="../">主页</a>
+      <a href="../docs/">文档</a>
+      <a class="language-switch" href="../en/learn/Learning-A2-Design-a-Useful-Planning-Comparison.html" lang="en" hreflang="en">English</a>
+    </nav>
+  </div></header>
+  <div class="shell breadcrumbs" aria-label="面包屑导航"><a href="../">首页</a><span>/</span><a href="./">学习中心</a><span>/</span><a href="./Learning-Topic-A-Problem-and-Validation.html">A</a><span>/</span><span aria-current="page">A2 先验证：设计一次有用的计划比较</span></div>
+  <div class="shell reading-layout">
+    <aside class="sidebar"><nav aria-label="课程目录"><a class="contents-home" href="./">学习中心</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A 从生产问题到可检验的决策</a><a class="lesson-link" href="./Learning-A1-Define-a-Decision-Task.html">A1 从一个交付问题定义决策任务</a><a class="lesson-link" href="./Learning-A2-Design-a-Useful-Planning-Comparison.html" aria-current="page">A2 先验证：设计一次有用的计划比较</a><a class="lesson-link" href="./Learning-A3-Compare-Plans-on-the-Same-Basis.html">A3 用同一把尺子比较两个方案</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B 用数据表达制造过程</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C 让目标、经验与规则参与决策</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D 从真实样例学会读计划</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E 让计划层级协同工作</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F 开放协作与持续演进</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G 用标准动作连接应用与AI Agent</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H 把一次练习变成日常能力</a><span class="nav-section">工作表</span><a href="./Worksheet-Operational-Rule.html">现场规则记录与检查</a><a href="./Worksheet-Plan-Comparison.html">基线与调整方案比较</a><a href="./Worksheet-Review-and-Change-Record.html">复盘与持续改进记录</a><a href="./Worksheet-Scenario-Brief.html">场景与决策任务</a></nav></aside>
+    <main>
+      <details class="mobile-contents"><summary>课程目录</summary><nav aria-label="移动端课程目录"><a class="contents-home" href="./">学习中心</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A 从生产问题到可检验的决策</a><a class="lesson-link" href="./Learning-A1-Define-a-Decision-Task.html">A1 从一个交付问题定义决策任务</a><a class="lesson-link" href="./Learning-A2-Design-a-Useful-Planning-Comparison.html" aria-current="page">A2 先验证：设计一次有用的计划比较</a><a class="lesson-link" href="./Learning-A3-Compare-Plans-on-the-Same-Basis.html">A3 用同一把尺子比较两个方案</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B 用数据表达制造过程</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C 让目标、经验与规则参与决策</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D 从真实样例学会读计划</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E 让计划层级协同工作</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F 开放协作与持续演进</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G 用标准动作连接应用与AI Agent</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H 把一次练习变成日常能力</a><span class="nav-section">工作表</span><a href="./Worksheet-Operational-Rule.html">现场规则记录与检查</a><a href="./Worksheet-Plan-Comparison.html">基线与调整方案比较</a><a href="./Worksheet-Review-and-Change-Record.html">复盘与持续改进记录</a><a href="./Worksheet-Scenario-Brief.html">场景与决策任务</a></nav></details>
+      <article id="article">
+        <header class="article-heading"><p class="kicker">课程</p><h1>A2 先验证：设计一次有用的计划比较</h1></header>
+        <details class="page-contents"><summary>本页内容</summary><nav><a href="#一先说明要做什么决定">一、先说明要做什么决定</a><a href="#二输入数据">二、输入数据</a><a href="#三把事实约束与可选措施分开">三、把事实、约束与可选措施分开</a><a href="#四先做一次人工核算">四、先做一次人工核算</a><a href="#五怎样把方法用到-decisioworks">五、怎样把方法用到
+DecisioWorks</a><a href="#六怎样读结果">六、怎样读结果</a><a href="#七练习与参考解析">七、练习与参考解析</a><a href="#八把验证继续用于实际建设">八、把验证继续用于实际建设</a><a href="#延伸阅读">延伸阅读</a></nav></details>
+        <p>一台设备，两个订单，一次维护。这个小场景足以说明：计划比较要先解释条件怎样变化，再讨论系统给出的结果。</p>
+<p>本课学习三个判断：当前条件是否允许按期完成；一项变化影响了什么；需要通过哪类数据、配置或管理决定来处理。</p>
+<p>下面使用教学数据，按表中条件人工核算加工时间和可用产能。后半部分结合已有真实运行案例，说明怎样在
+DecisioWorks 中开展同类比较。</p>
+<h2 id="一先说明要做什么决定">一、先说明要做什么决定</h2>
+<p>今天要在工作中心 WC-1
+上完成两个订单。两种制品都只有一道加工工序，均只能使用
+WC-1；设备一次加工一个批次。原料已齐套，其他资源满足要求。两张订单都要求今天结束前完成。</p>
+<p>本课只有今天这一个计划时段，不允许提前到其他时段生产。每种制品形成一个完整批次，同一批次连续加工。设备起始时无需准备；从A切换到B或从B切换到A均需40分钟，且占用
+WC-1。没有其他切换。</p>
+<p>当前允许的条件为：今天的正常工作时间、既定数量、既定工艺。加班、转移设备、拆批、延期需要另行决定，尚未纳入基线。</p>
+<h2 id="二输入数据">二、输入数据</h2>
+<h3 id="订单与加工条件">订单与加工条件</h3>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>订单</th>
+<th>制品</th>
+<th style="text-align: right;">数量（件）</th>
+<th style="text-align: right;">加工时间（分钟/件）</th>
+<th>工作中心</th>
+<th>交期</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>O-1</td>
+<td>A</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">10</td>
+<td>WC-1</td>
+<td>今天结束前</td>
+</tr>
+<tr class="even">
+<td>O-2</td>
+<td>B</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">11</td>
+<td>WC-1</td>
+<td>今天结束前</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="日历与变化">日历与变化</h3>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>条件</th>
+<th style="text-align: right;">基线</th>
+<th style="text-align: right;">维护调整后</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>班次总时间，未扣维护（分钟）</td>
+<td style="text-align: right;">480</td>
+<td style="text-align: right;">480</td>
+</tr>
+<tr class="even">
+<td>计划维护占用（分钟）</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">30</td>
+</tr>
+<tr class="odd">
+<td>净可用时间（分钟）</td>
+<td style="text-align: right;">480</td>
+<td style="text-align: right;">450</td>
+</tr>
+<tr class="even">
+<td>两种制品间的一次切换（分钟）</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">40</td>
+</tr>
+</tbody>
+</table></div>
+<p>本例把维护放在工作开始前，剩余450分钟连续可用。若维护发生在工作中间，还要检查连续批次与维护时窗是否冲突，净时间合计只解决其中一部分问题。</p>
+<p>这些业务表用于说明计算条件。接入 <code>data.db</code>
+时，还需按标准接口补齐对象标识、时间单元及工艺、资源之间的关系。</p>
+<h2 id="三把事实约束与可选措施分开">三、把事实、约束与可选措施分开</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>类别</th>
+<th>本例内容</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>业务事实</td>
+<td>订单数量、工序时间、维护时段</td>
+<td>需要由业务数据准确描述</td>
+</tr>
+<tr class="even">
+<td>必须满足的条件</td>
+<td>全部数量今天完成，单机不重叠，整批连续加工</td>
+<td>判断本例能否按当前承诺执行</td>
+</tr>
+<tr class="odd">
+<td>可比较的偏好</td>
+<td>在满足条件的方案中选择顺序或其他支持的目标</td>
+<td>只有存在可行选择时，才讨论偏好带来的取舍</td>
+</tr>
+<tr class="even">
+<td>待批准措施</td>
+<td>加班、延期、转移资源或改变批量</td>
+<td>需要确认可实施性，再更新相应数据和配置</td>
+</tr>
+</tbody>
+</table></div>
+<p>硬约束禁止违反条件；软约束允许按已定义的代价表达偏差。将产能配置为软约束后得到候选方案，读者还应检查其中是否包含超负荷安排，以及现实中如何处理。</p>
+<h2 id="四先做一次人工核算">四、先做一次人工核算</h2>
+<p>A的加工需求为 <code>20 × 10 = 200</code> 分钟；B为
+<code>20 × 11 = 220</code>
+分钟。加上一次40分钟切换，总占用为460分钟。</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>检查项</th>
+<th style="text-align: right;">基线</th>
+<th style="text-align: right;">维护调整后</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>加工占用（分钟）</td>
+<td style="text-align: right;">420</td>
+<td style="text-align: right;">420</td>
+</tr>
+<tr class="even">
+<td>切换占用（分钟）</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">40</td>
+</tr>
+<tr class="odd">
+<td>总占用（分钟）</td>
+<td style="text-align: right;">460</td>
+<td style="text-align: right;">460</td>
+</tr>
+<tr class="even">
+<td>净可用时间（分钟）</td>
+<td style="text-align: right;">480</td>
+<td style="text-align: right;">450</td>
+</tr>
+<tr class="odd">
+<td>余量或缺口（分钟）</td>
+<td style="text-align: right;">余量20</td>
+<td style="text-align: right;">缺口10</td>
+</tr>
+</tbody>
+</table></div>
+<p>基线存在一个简单的可行顺序：加工A用200分钟，切换40分钟，再加工B用220分钟，总计460分钟。维护调整后，任何顺序都需要460分钟，而连续可用时间为450分钟，因此在本课明确的条件下，无法同时满足全部数量与当天交付要求。</p>
+<p>这一结论只适用于本课简化条件。真实场景中的多工序、替代资源、分批和不同日历，需要继续检查对应关系和时窗。</p>
+<h2 id="五怎样把方法用到-decisioworks">五、怎样把方法用到
+DecisioWorks</h2>
+<p>选用已有的<a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Stamping-Planning-Case-Walkthrough-zh-CN">冲压计划案例</a>或<a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Injection-Molding-Scheduling-Case-Walkthrough-zh-CN">注塑排程案例</a>。先完成基线，再设计该案例和接口支持的一项调整。能力编排配方（recipe）说明使用哪些动作、配置和数据，可作为脚本运行与结果复查的依据。</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>步骤</th>
+<th>操作</th>
+<th>留下的记录</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1. 确认问题</td>
+<td>说明计划周期、对象与待比较条件</td>
+<td>场景说明</td>
+</tr>
+<tr class="even">
+<td>2. 核对输入</td>
+<td>在样例副本中检查单位、工艺、产能和物料关系</td>
+<td>数据版本、相关表与检查结果</td>
+</tr>
+<tr class="odd">
+<td>3. 确认配置</td>
+<td>记录约束开关、目标、求解资源与允许的运行时长</td>
+<td>基线配置</td>
+</tr>
+<tr class="even">
+<td>4. 运行基线</td>
+<td>通过该案例支持的页面或配方入口运行</td>
+<td>状态、动作记录、结果表与分析</td>
+</tr>
+<tr class="odd">
+<td>5. 只改一项条件</td>
+<td>修改支持的目标参数，或在独立数据副本中改变业务条件</td>
+<td>修改项、原因与调整后版本</td>
+</tr>
+<tr class="even">
+<td>6. 对比与解释</td>
+<td>先比较状态和约束，再比较实际业务量与明细</td>
+<td>结论、待确认事项与下一步</td>
+</tr>
+</tbody>
+</table></div>
+<p>使用场景实验台时，可按页面提供的配置运行基线并调整参数。修改日历、工艺等业务数据时，使用独立数据副本，再通过该场景支持的接入与运行入口执行。这样可以分别保存参数调整和业务数据变化的记录。</p>
+<p>如果比较的是目标参数，输入数据应保持一致；如果比较的是维护等数据条件，保留原数据副本，并尽量保持其他参数一致。线程数、时间上限等运行条件也应保持一致，必要时进行多次运行，观察结果是否稳定。</p>
+<h2 id="六怎样读结果">六、怎样读结果</h2>
+<p>按以下顺序检查：</p>
+<ol type="1">
+<li><strong>状态</strong>：是否成功生成可用方案？未找到方案时，是已证明不可行、时间耗尽，还是输入、环境或授权问题？</li>
+<li><strong>条件</strong>：哪些约束生效？是否允许超负荷、延期或欠产？</li>
+<li><strong>实际量</strong>：生产多少、缺多少、交付何时发生、资源占用多少？</li>
+<li><strong>目标与明细</strong>：权重如何影响取舍，哪条订单或哪个工作中心出现变化？</li>
+<li><strong>决策</strong>：当前方案是否可执行，需要谁确认哪些措施？</li>
+</ol>
+<p>不同权重配置的目标总分采用了不同的评价尺度。比较时应先查看实际业务量；需要比较总分时，使用相同目标定义、方向和权重重新评价两份结果。</p>
+<h2 id="七练习与参考解析">七、练习与参考解析</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>练习</th>
+<th>参考解析</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>把交期目标权重提高十倍，能消除本例10分钟缺口吗？</td>
+<td>权重表达偏好，不会增加可用时间。全部数量与交期作为硬条件时，容量缺口仍存在；允许偏差时，要说明转移到了哪里</td>
+</tr>
+<tr class="even">
+<td>改成B先生产、A后生产，可以解决吗？</td>
+<td>本例两个方向均为40分钟，总占用不变。真实场景若方向切换时间不同，需要重新计算</td>
+</tr>
+<tr class="odd">
+<td>经批准增加10分钟可用时间后，还要确认什么？</td>
+<td>本例还需确认新增时间与原450分钟连续衔接，且人员、物料等条件不变；这样460分钟可容纳已给出的顺序。真实场景还需检查其他工序和资源条件</td>
+</tr>
+<tr class="even">
+<td>程序60秒内未找到方案，能否直接写“业务不可行”？</td>
+<td>要看返回状态和证明信息。搜索时间耗尽与已证明不可行应分别描述</td>
+</tr>
+<tr class="odd">
+<td>调整后全部数量完成，可以直接写“交付改善”吗？</td>
+<td>还需检查完成时间与订单交期。数量满足与按期交付分别统计</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="八把验证继续用于实际建设">八、把验证继续用于实际建设</h2>
+<p>这次练习留下三类可复用内容：数据如何表达生产条件、怎样公平比较方案、如何根据结果组织下一步行动。</p>
+<p>扩大到更多订单或资源时，可以继续使用同一套数据检查和比较方法；进入日常应用后，维护、目标或规则发生变化，也能沿着已有记录调整。DecisioWorks
+提供相应的数据、配置、运行和分析能力，企业与伙伴将这些能力接入自己的流程，并确认实际决策。</p>
+<h2 id="延伸阅读">延伸阅读</h2>
+<p><a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Value-Validation-and-Adoption-Framework-zh-CN">价值验证与应用框架</a>
+· <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Typical-Value-Entry-Scenarios-zh-CN">典型价值场景</a></p>
+<p>配套工作表：<a
+href="./Worksheet-Scenario-Brief.html">工作表：场景与决策任务</a> · <a
+href="./Worksheet-Plan-Comparison.html">工作表：基线与调整方案比较</a></p>
+<p><a href="./Learning-Topic-A-Problem-and-Validation.html">专题 A</a>
+· <a href="./Learning-A1-Define-a-Decision-Task.html">上一篇:
+从一个交付问题定义决策任务</a> · <a
+href="./Learning-A3-Compare-Plans-on-the-Same-Basis.html">下一篇:
+用同一把尺子比较两个方案</a></p>
+      </article>
+      <footer class="article-footer"><a href="./">返回学习中心</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki/Learning-A2-Design-a-Useful-Planning-Comparison-zh-CN">在 Wiki 阅读</a></footer>
+    </main>
+  </div>
+  <footer class="site-footer shell"><strong>DecisioWorks</strong><span>从生产问题出发，理解与使用决策能力。</span></footer>
+</body>
+</html>

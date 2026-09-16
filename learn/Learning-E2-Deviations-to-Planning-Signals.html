@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>E2 把变化表达为偏差与计划信号 | DecisioWorks</title>
+  <meta name="description" content="本课的教学时段T1、T2、T3按时间先后排列。教学事件：物料M原定T2可用，确认推迟到T3；工序OP-1在T2需要它。首先检查OP-1的任务数量及可替代条件，再表达计划影响。" />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-E2-Deviations-to-Planning-Signals.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-E2-Deviations-to-Planning-Signals.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Learning-E2-Deviations-to-Planning-Signals.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-E2-Deviations-to-Planning-Signals.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="E2 把变化表达为偏差与计划信号 | DecisioWorks" />
+  <meta property="og:description" content="本课的教学时段T1、T2、T3按时间先后排列。教学事件：物料M原定T2可用，确认推迟到T3；工序OP-1在T2需要它。首先检查OP-1的任务数量及可替代条件，再表达计划影响。" />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-E2-Deviations-to-Planning-Signals.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="E2 把变化表达为偏差与计划信号 | DecisioWorks" />
+  <meta name="twitter:description" content="本课的教学时段T1、T2、T3按时间先后排列。教学事件：物料M原定T2可用，确认推迟到T3；工序OP-1在T2需要它。首先检查OP-1的任务数量及可替代条件，再表达计划影响。" />
+  <meta name="twitter:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <link rel="icon" href="../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "E2 把变化表达为偏差与计划信号", "description": "本课的教学时段T1、T2、T3按时间先后排列。教学事件：物料M原定T2可用，确认推迟到T3；工序OP-1在T2需要它。首先检查OP-1的任务数量及可替代条件，再表达计划影响。", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-E2-Deviations-to-Planning-Signals.html", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "DecisioWorks", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "首页", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/"}, {"@type": "ListItem", "position": 2, "name": "学习中心", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/"}, {"@type": "ListItem", "position": 3, "name": "E 让计划层级协同工作", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-Topic-E-Coordinate-Plans-and-Responses.html"}, {"@type": "ListItem", "position": 4, "name": "E2 把变化表达为偏差与计划信号", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-E2-Deviations-to-Planning-Signals.html"}]}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#article">跳到正文</a>
+  <header class="learning-header"><div class="shell header-inner">
+    <a class="brand" href="../"><img src="../assets/decisioworks-logo.png" alt="" width="36" height="36" /><strong>DecisioWorks</strong></a>
+    <nav aria-label="主导航">
+      <a href="../">主页</a>
+      <a href="../docs/">文档</a>
+      <a class="language-switch" href="../en/learn/Learning-E2-Deviations-to-Planning-Signals.html" lang="en" hreflang="en">English</a>
+    </nav>
+  </div></header>
+  <div class="shell breadcrumbs" aria-label="面包屑导航"><a href="../">首页</a><span>/</span><a href="./">学习中心</a><span>/</span><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E</a><span>/</span><span aria-current="page">E2 把变化表达为偏差与计划信号</span></div>
+  <div class="shell reading-layout">
+    <aside class="sidebar"><nav aria-label="课程目录"><a class="contents-home" href="./">学习中心</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A 从生产问题到可检验的决策</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B 用数据表达制造过程</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C 让目标、经验与规则参与决策</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D 从真实样例学会读计划</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E 让计划层级协同工作</a><a class="lesson-link" href="./Learning-E1-Master-Plan-to-Work-Release.html">E1 从主生产计划到任务释放与作业排程</a><a class="lesson-link" href="./Learning-E2-Deviations-to-Planning-Signals.html" aria-current="page">E2 把变化表达为偏差与计划信号</a><a class="lesson-link" href="./Learning-E3-Scope-a-Disruption-Response.html">E3 扰动发生后，确定需要调整的范围</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F 开放协作与持续演进</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G 用标准动作连接应用与AI Agent</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H 把一次练习变成日常能力</a><span class="nav-section">工作表</span><a href="./Worksheet-Operational-Rule.html">现场规则记录与检查</a><a href="./Worksheet-Plan-Comparison.html">基线与调整方案比较</a><a href="./Worksheet-Review-and-Change-Record.html">复盘与持续改进记录</a><a href="./Worksheet-Scenario-Brief.html">场景与决策任务</a></nav></aside>
+    <main>
+      <details class="mobile-contents"><summary>课程目录</summary><nav aria-label="移动端课程目录"><a class="contents-home" href="./">学习中心</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A 从生产问题到可检验的决策</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B 用数据表达制造过程</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C 让目标、经验与规则参与决策</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D 从真实样例学会读计划</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E 让计划层级协同工作</a><a class="lesson-link" href="./Learning-E1-Master-Plan-to-Work-Release.html">E1 从主生产计划到任务释放与作业排程</a><a class="lesson-link" href="./Learning-E2-Deviations-to-Planning-Signals.html" aria-current="page">E2 把变化表达为偏差与计划信号</a><a class="lesson-link" href="./Learning-E3-Scope-a-Disruption-Response.html">E3 扰动发生后，确定需要调整的范围</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F 开放协作与持续演进</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G 用标准动作连接应用与AI Agent</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H 把一次练习变成日常能力</a><span class="nav-section">工作表</span><a href="./Worksheet-Operational-Rule.html">现场规则记录与检查</a><a href="./Worksheet-Plan-Comparison.html">基线与调整方案比较</a><a href="./Worksheet-Review-and-Change-Record.html">复盘与持续改进记录</a><a href="./Worksheet-Scenario-Brief.html">场景与决策任务</a></nav></details>
+      <article id="article">
+        <header class="article-heading"><p class="kicker">课程</p><h1>E2 把变化表达为偏差与计划信号</h1></header>
+        <details class="page-contents"><summary>本页内容</summary><nav><a href="#先把变化说清楚">先把变化说清楚</a><a href="#分清四种记录">分清四种记录</a><a href="#沿联动配方观察">沿联动配方观察</a><a href="#信号到动作之间保留判断">信号到动作之间保留判断</a><a href="#合并信息但保留来源">合并信息，但保留来源</a><a href="#练习与参考解析">练习与参考解析</a><a href="#延伸阅读">延伸阅读</a></nav></details>
+        <h2 id="先把变化说清楚">先把变化说清楚</h2>
+<p>“原料晚到”描述了事件，但计划员还需要知道影响哪些订单、哪道工序、多少数量及哪个时期。变化只有连接业务对象，才便于决定后续行动。</p>
+<p>本课的教学时段T1、T2、T3按时间先后排列。教学事件：物料M原定T2可用，确认推迟到T3；工序OP-1在T2需要它。首先检查OP-1的任务数量及可替代条件，再表达计划影响。</p>
+<h2 id="分清四种记录">分清四种记录</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>记录</th>
+<th>作用</th>
+<th>本例需要保留</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>业务变化</td>
+<td>记录更新的事实</td>
+<td>M的新到料时点及来源</td>
+</tr>
+<tr class="even">
+<td>计划偏差PlanBias</td>
+<td>表达变化相对原计划的影响</td>
+<td>受影响对象、时段、方向和数量</td>
+</tr>
+<tr class="odd">
+<td>计划信号PlanSignal</td>
+<td>将影响传递给后续处理环节</td>
+<td>接收方、优先级与建议方向</td>
+</tr>
+<tr class="even">
+<td>后续措施</td>
+<td>执行或等待确认的处理</td>
+<td>调整释放、目标调整建议、规则或人工协调</td>
+</tr>
+</tbody>
+</table></div>
+<p>表中按业务含义说明记录内容；调用接口时，使用所选版本定义的数据类型与字段。</p>
+<h2 id="沿联动配方观察">沿联动配方观察</h2>
+<p><code>planning_system_linkage</code>能力编排配方（recipe）先运行生产计划和分析，再执行影响分析动作<code>impact_analysis</code>。阅读结果时，先看<code>production_analysis.planning</code>中的计划分析，再看<code>planning_system.linkage_report</code>联动报告，以及<code>plan_biases</code>偏差记录和<code>plan_signals</code>计划信号，追踪同一业务变化如何被逐步处理。</p>
+<p><code>PlanBias</code>属于运行期间生成的接口数据，与<code>data.db</code>中的标准输入表分开管理。需要长期保存时，可写入应用的独立结果记录，并附上来源数据版本和运行标识。</p>
+<h2 id="信号到动作之间保留判断">信号到动作之间保留判断</h2>
+<p>一种偏差可能对应多种处理方向：继续观察、降低近期释放量、建议调整目标，或提示采购确认。把建议、审批和实际处理状态分别记录，便于参与者知道下一步由谁完成。</p>
+<p>检查时依次查看分析输出、接收方、是否采用及处理结果。目标调整建议被采用后，核对实际配置和重算结果；如果还在等待确认，则保留为待处理建议。</p>
+<h2 id="合并信息但保留来源">合并信息，但保留来源</h2>
+<p>同一物料延迟可能影响多张订单。汇总可以帮助判断优先级，但仍需保留订单到工序、物料和时段的追溯关系。若后续又收到到料恢复信息，需要辨别更新版本，防止重复计入影响。</p>
+<h2 id="练习与参考解析">练习与参考解析</h2>
+<p>为教学事件列出受影响对象、检查来源、两种可选措施和各自确认人。再写一条“措施尚未执行”的正确说明。</p>
+<p>例如：已识别T2工序OP-1的物料风险，建议调整任务释放时间，等待计划负责人确认。执行后，再记录实际释放任务、时间及计划结果，用于评价这项措施的效果。</p>
+<h2 id="延伸阅读">延伸阅读</h2>
+<p><a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Planning-and-Scheduling-Overview-zh-CN">计划与排程</a>
+· <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Results-Evidence-and-Feedback-zh-CN">结果与反馈</a>
+· <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Component-Responsibilities-zh-CN">模块职责</a></p>
+<p>配套工作表：<a
+href="./Worksheet-Operational-Rule.html">工作表：现场规则记录与检查</a>
+· <a
+href="./Worksheet-Review-and-Change-Record.html">工作表：复盘与持续改进记录</a></p>
+<p><a
+href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">专题
+E</a> · <a
+href="./Learning-E1-Master-Plan-to-Work-Release.html">上一篇:
+从主生产计划到任务释放与作业排程</a> · <a
+href="./Learning-E3-Scope-a-Disruption-Response.html">下一篇:
+扰动发生后，确定需要调整的范围</a></p>
+      </article>
+      <footer class="article-footer"><a href="./">返回学习中心</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki/Learning-E2-Deviations-to-Planning-Signals-zh-CN">在 Wiki 阅读</a></footer>
+    </main>
+  </div>
+  <footer class="site-footer shell"><strong>DecisioWorks</strong><span>从生产问题出发，理解与使用决策能力。</span></footer>
+</body>
+</html>

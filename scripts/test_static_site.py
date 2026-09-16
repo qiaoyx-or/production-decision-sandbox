@@ -79,6 +79,8 @@ def main() -> None:
         *sorted((root / "en" / "docs").glob("*.html")),
         *sorted((root / "guide").glob("*.html")),
         *sorted((root / "en" / "guide").glob("*.html")),
+        *sorted((root / "learn").glob("*.html")),
+        *sorted((root / "en" / "learn").glob("*.html")),
     ]
     for page in pages:
         if ".git" in page.parts:
@@ -140,9 +142,19 @@ def main() -> None:
     if len(sitemap_entries) != len(pages):
         errors.append(f"sitemap.xml: expected {len(pages)} URLs, found {len(sitemap_entries)}")
     for entry in sitemap_entries:
-        if entry.find("sm:loc", namespace) is None or entry.find("sm:lastmod", namespace) is None:
-            errors.append("sitemap.xml: every URL requires loc and lastmod")
+        if entry.find("sm:loc", namespace) is None:
+            errors.append("sitemap.xml: every URL requires loc")
             break
+    sitemap_urls = [entry.findtext("sm:loc", namespaces=namespace) for entry in sitemap_entries]
+    text_urls = (root / "sitemap.txt").read_text(encoding="utf-8").splitlines()
+    if len(sitemap_urls) != len(set(sitemap_urls)) or sitemap_urls != text_urls:
+        errors.append("XML and text sitemaps must contain the same unique canonical URLs")
+    expected_urls = []
+    for page in pages:
+        markup = page.read_text(encoding="utf-8")
+        expected_urls.extend(re.findall(r'<link rel="canonical" href="([^"]+)"', markup))
+    if set(expected_urls) != set(sitemap_urls):
+        errors.append("Sitemap URLs do not match the public page canonicals")
     key_files = [path for path in root.glob("*.txt") if path.read_text(encoding="utf-8").strip() == path.stem]
     if len(key_files) != 1:
         errors.append(f"IndexNow: expected one root key file, found {len(key_files)}")

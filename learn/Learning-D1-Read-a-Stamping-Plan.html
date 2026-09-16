@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>D1 冲压计划：把需求、产能与齐套放在一起看 | DecisioWorks</title>
+  <meta name="description" content="案例运行于2026-08-31，版本为DecisioWorks v1.4.0，采用商业版Enterprise授权。以下表格保留该次运行的参数和结果，便于对照阅读。" />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-D1-Read-a-Stamping-Plan.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-D1-Read-a-Stamping-Plan.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Learning-D1-Read-a-Stamping-Plan.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-D1-Read-a-Stamping-Plan.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="D1 冲压计划：把需求、产能与齐套放在一起看 | DecisioWorks" />
+  <meta property="og:description" content="案例运行于2026-08-31，版本为DecisioWorks v1.4.0，采用商业版Enterprise授权。以下表格保留该次运行的参数和结果，便于对照阅读。" />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-D1-Read-a-Stamping-Plan.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="D1 冲压计划：把需求、产能与齐套放在一起看 | DecisioWorks" />
+  <meta name="twitter:description" content="案例运行于2026-08-31，版本为DecisioWorks v1.4.0，采用商业版Enterprise授权。以下表格保留该次运行的参数和结果，便于对照阅读。" />
+  <meta name="twitter:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <link rel="icon" href="../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "D1 冲压计划：把需求、产能与齐套放在一起看", "description": "案例运行于2026-08-31，版本为DecisioWorks v1.4.0，采用商业版Enterprise授权。以下表格保留该次运行的参数和结果，便于对照阅读。", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-D1-Read-a-Stamping-Plan.html", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "DecisioWorks", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "首页", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/"}, {"@type": "ListItem", "position": 2, "name": "学习中心", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/"}, {"@type": "ListItem", "position": 3, "name": "D 从真实样例学会读计划", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-Topic-D-Read-Real-Planning-Cases.html"}, {"@type": "ListItem", "position": 4, "name": "D1 冲压计划：把需求、产能与齐套放在一起看", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-D1-Read-a-Stamping-Plan.html"}]}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#article">跳到正文</a>
+  <header class="learning-header"><div class="shell header-inner">
+    <a class="brand" href="../"><img src="../assets/decisioworks-logo.png" alt="" width="36" height="36" /><strong>DecisioWorks</strong></a>
+    <nav aria-label="主导航">
+      <a href="../">主页</a>
+      <a href="../docs/">文档</a>
+      <a class="language-switch" href="../en/learn/Learning-D1-Read-a-Stamping-Plan.html" lang="en" hreflang="en">English</a>
+    </nav>
+  </div></header>
+  <div class="shell breadcrumbs" aria-label="面包屑导航"><a href="../">首页</a><span>/</span><a href="./">学习中心</a><span>/</span><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D</a><span>/</span><span aria-current="page">D1 冲压计划：把需求、产能与齐套放在一起看</span></div>
+  <div class="shell reading-layout">
+    <aside class="sidebar"><nav aria-label="课程目录"><a class="contents-home" href="./">学习中心</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A 从生产问题到可检验的决策</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B 用数据表达制造过程</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C 让目标、经验与规则参与决策</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D 从真实样例学会读计划</a><a class="lesson-link" href="./Learning-D1-Read-a-Stamping-Plan.html" aria-current="page">D1 冲压计划：把需求、产能与齐套放在一起看</a><a class="lesson-link" href="./Learning-D2-Read-Injection-Molding-Changeovers.html">D2 注塑排程：解释属性与切换的关系</a><a class="lesson-link" href="./Learning-D3-Select-Cases-by-Data-Characteristics.html">D3 按数据属性选择适用案例</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E 让计划层级协同工作</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F 开放协作与持续演进</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G 用标准动作连接应用与AI Agent</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H 把一次练习变成日常能力</a><span class="nav-section">工作表</span><a href="./Worksheet-Operational-Rule.html">现场规则记录与检查</a><a href="./Worksheet-Plan-Comparison.html">基线与调整方案比较</a><a href="./Worksheet-Review-and-Change-Record.html">复盘与持续改进记录</a><a href="./Worksheet-Scenario-Brief.html">场景与决策任务</a></nav></aside>
+    <main>
+      <details class="mobile-contents"><summary>课程目录</summary><nav aria-label="移动端课程目录"><a class="contents-home" href="./">学习中心</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A 从生产问题到可检验的决策</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B 用数据表达制造过程</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C 让目标、经验与规则参与决策</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D 从真实样例学会读计划</a><a class="lesson-link" href="./Learning-D1-Read-a-Stamping-Plan.html" aria-current="page">D1 冲压计划：把需求、产能与齐套放在一起看</a><a class="lesson-link" href="./Learning-D2-Read-Injection-Molding-Changeovers.html">D2 注塑排程：解释属性与切换的关系</a><a class="lesson-link" href="./Learning-D3-Select-Cases-by-Data-Characteristics.html">D3 按数据属性选择适用案例</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E 让计划层级协同工作</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F 开放协作与持续演进</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G 用标准动作连接应用与AI Agent</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H 把一次练习变成日常能力</a><span class="nav-section">工作表</span><a href="./Worksheet-Operational-Rule.html">现场规则记录与检查</a><a href="./Worksheet-Plan-Comparison.html">基线与调整方案比较</a><a href="./Worksheet-Review-and-Change-Record.html">复盘与持续改进记录</a><a href="./Worksheet-Scenario-Brief.html">场景与决策任务</a></nav></details>
+      <article id="article">
+        <header class="article-heading"><p class="kicker">课程</p><h1>D1 冲压计划：把需求、产能与齐套放在一起看</h1></header>
+        <details class="page-contents"><summary>本页内容</summary><nav><a href="#从订单需求追到资源和物料">从订单需求追到资源和物料</a><a href="#输入不是一张订单表">输入不是一张订单表</a><a href="#约束与执行流程">约束与执行流程</a><a href="#读懂基线与调整">读懂基线与调整</a><a href="#页面截图怎样使用">页面截图怎样使用</a><a href="#练习与参考解析">练习与参考解析</a><a href="#延伸阅读">延伸阅读</a></nav></details>
+        <h2 id="从订单需求追到资源和物料">从订单需求追到资源和物料</h2>
+<p>冲压计划需要同时回答：哪些时段能够完成需求，工作中心是否有足够产能，相关工序的物料是否可用。本例使用<code>StampingWorkshop/data.db</code>及<code>production_planning</code>能力编排配方（recipe），沿输入、配置和结果逐步检查这些问题。</p>
+<p>案例运行于2026-08-31，版本为DecisioWorks
+v1.4.0，采用商业版Enterprise授权。以下表格保留该次运行的参数和结果，便于对照阅读。</p>
+<h2 id="输入不是一张订单表">输入不是一张订单表</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>对象</th>
+<th style="text-align: right;">已记录规模</th>
+<th>在计划中起什么作用</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>订单明细</td>
+<td style="text-align: right;">1920条</td>
+<td>制品、交期与需求数量</td>
+</tr>
+<tr class="even">
+<td>产能记录</td>
+<td style="text-align: right;">50条</td>
+<td>时间与工作中心可用条件</td>
+</tr>
+<tr class="odd">
+<td>工序物料关系（ingredient）</td>
+<td style="text-align: right;">38条</td>
+<td>各工序所需的物料及消耗关系</td>
+</tr>
+<tr class="even">
+<td>齐套记录</td>
+<td style="text-align: right;">500条</td>
+<td>物料可用时间与数量</td>
+</tr>
+<tr class="odd">
+<td>时间单元</td>
+<td style="text-align: right;">25个</td>
+<td>输入与结果共同时间坐标</td>
+</tr>
+<tr class="even">
+<td>工作中心</td>
+<td style="text-align: right;">3个</td>
+<td>资源范围</td>
+</tr>
+</tbody>
+</table></div>
+<p>先选一条订单，追到制品、路线、工序及可执行资源；启用齐套时，再检查相应物料条件。各表行数用于检查导入是否完整；进一步核对引用关系，才能确认订单已经连接到相应的资源和物料。</p>
+<h2 id="约束与执行流程">约束与执行流程</h2>
+<p>本记录启用产能、需求和齐套约束，产能采用软约束，库存约束关闭。基线目标为job_bias=-0.001、waittime=1.0；求解请求为16线程、120秒。参数属于该次记录，实际使用遵循当前版本与授权范围。</p>
+<p>流程为数据采集、约束解析、方案生成、方案选择、结果评估和可选结果输出。结果输出使用独立文件，不依靠覆盖标准业务数据库。</p>
+<h2 id="读懂基线与调整">读懂基线与调整</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>项目</th>
+<th style="text-align: right;">基线</th>
+<th style="text-align: right;">调整方案</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>job_bias权重</td>
+<td style="text-align: right;">-0.001</td>
+<td style="text-align: right;">-0.003</td>
+</tr>
+<tr class="even">
+<td>waittime权重</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">2.0</td>
+</tr>
+<tr class="odd">
+<td>API返回状态</td>
+<td style="text-align: right;">ok</td>
+<td style="text-align: right;">ok</td>
+</tr>
+<tr class="even">
+<td>API耗时（秒）</td>
+<td style="text-align: right;">14.41</td>
+<td style="text-align: right;">14.29</td>
+</tr>
+<tr class="odd">
+<td>结果行数</td>
+<td style="text-align: right;">66</td>
+<td style="text-align: right;">66</td>
+</tr>
+<tr class="even">
+<td>总需求/总产出</td>
+<td style="text-align: right;">680500/680500</td>
+<td style="text-align: right;">680500/680500</td>
+</tr>
+<tr class="odd">
+<td>最终短缺</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td>job_bias加权贡献</td>
+<td style="text-align: right;">-7854.678</td>
+<td style="text-align: right;">-23564.034</td>
+</tr>
+</tbody>
+</table></div>
+<p>基线记录中，可用产能1188000，加工负荷371588.48，含准备与等待的计划负荷377080.42，报告利用率约31.74%。这些负荷数值保留报告口径，未在本课换算为分钟。</p>
+<p>两次运行均选出经检查有效的候选方案；这里的“最佳”指本次运行选中的候选，不表示已证明全局最优。所列总体指标一致，下一步可按业务标识对齐明细，检查数量与完成时点是否也一致，并将完成时点与交期比较。两项权重同时变化，本记录反映的是组合调整的结果。</p>
+<h2 id="页面截图怎样使用">页面截图怎样使用</h2>
+<p>参考资料包含真实输入、基线和对比截图。页面记录采用2线程、60秒，是与上述API不同的一组运行。阅读时保持每组配置与结果对应，不把截图数字拼接到API表中。</p>
+<h2 id="练习与参考解析">练习与参考解析</h2>
+<p><strong>阅读练习：只用上文数字，复核以下两项。</strong></p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>检查项</th>
+<th>人工复算</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>总体利用率</td>
+<td>377080.42 ÷ 1188000 × 100 ≈ 31.74%</td>
+<td>与报告的总体利用率一致；局部是否超载还需查看时段明细</td>
+</tr>
+<tr class="even">
+<td>计划负荷与加工负荷之差</td>
+<td>377080.42 − 371588.48 = 5491.94</td>
+<td>按报告定义，两者的差涉及准备与等待；不能据此分别确定两项数值</td>
+</tr>
+</tbody>
+</table></div>
+<p>这里复算的是已发表记录，负荷继续使用报告原有单位。表中没有提供分钟换算依据。</p>
+<p>参考结论可写为：“两次运行的总产出均为680500，最终短缺均为0；现有汇总可以确认这两项数量结果一致。是否同样准时、是否有局部超载，以及任务时点是否改变，需要继续查看明细。”</p>
+<p><strong>操作练习：取得结果明细后再完成。</strong>
+在同一运行组中选择一个工作中心与时间单元，填写需求、产能、物料条件、结果和待检查事项。只有汇总表时，将这一步标为“待取得明细”，不推算不存在的逐行结果。</p>
+<p>后续可设计只改变waittime的比较：固定数据、约束、其他目标及运行条件，并检查最终生效的目标配置。另行保存新运行的状态、结果和明细差异，再判断该项变化的影响。</p>
+<h2 id="延伸阅读">延伸阅读</h2>
+<p><a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Stamping-Planning-Case-Walkthrough-zh-CN">冲压计划运行案例</a>
+· <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Injection-Molding-Scheduling-Case-Walkthrough-zh-CN">注塑排程运行案例</a>
+· <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/End-to-End-Scenario-Walkthrough-zh-CN">端到端场景</a>
+· <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Scenarios-and-Pain-Points-zh-CN">场景与问题</a></p>
+<p>配套工作表：<a
+href="./Worksheet-Plan-Comparison.html">工作表：基线与调整方案比较</a></p>
+<p><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">专题
+D</a> · <a
+href="./Learning-C3-Turn-Experience-into-Rules.html">上一篇:
+把现场经验写成可检查的规则</a> · <a
+href="./Learning-D2-Read-Injection-Molding-Changeovers.html">下一篇:
+注塑排程：解释属性与切换的关系</a></p>
+      </article>
+      <footer class="article-footer"><a href="./">返回学习中心</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki/Learning-D1-Read-a-Stamping-Plan-zh-CN">在 Wiki 阅读</a></footer>
+    </main>
+  </div>
+  <footer class="site-footer shell"><strong>DecisioWorks</strong><span>从生产问题出发，理解与使用决策能力。</span></footer>
+</body>
+</html>

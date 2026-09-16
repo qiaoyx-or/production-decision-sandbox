@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>A2 Validate First: Design a Useful Planning Comparison | DecisioWorks</title>
+  <meta name="description" content="One machine, two orders and a maintenance window. This small scenario illustrates why a plan comparison starts by explaining how conditions have changed, before interpreting a system&#x27;s result." />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Learning-A2-Design-a-Useful-Planning-Comparison.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-A2-Design-a-Useful-Planning-Comparison.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Learning-A2-Design-a-Useful-Planning-Comparison.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-A2-Design-a-Useful-Planning-Comparison.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="A2 Validate First: Design a Useful Planning Comparison | DecisioWorks" />
+  <meta property="og:description" content="One machine, two orders and a maintenance window. This small scenario illustrates why a plan comparison starts by explaining how conditions have changed, before interpreting a system&#x27;s result." />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Learning-A2-Design-a-Useful-Planning-Comparison.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers-en.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="A2 Validate First: Design a Useful Planning Comparison | DecisioWorks" />
+  <meta name="twitter:description" content="One machine, two orders and a maintenance window. This small scenario illustrates why a plan comparison starts by explaining how conditions have changed, before interpreting a system&#x27;s result." />
+  <meta name="twitter:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers-en.png" />
+  <link rel="icon" href="../../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "A2 Validate First: Design a Useful Planning Comparison", "description": "One machine, two orders and a maintenance window. This small scenario illustrates why a plan comparison starts by explaining how conditions have changed, before interpreting a system's result.", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Learning-A2-Design-a-Useful-Planning-Comparison.html", "inLanguage": "en", "author": {"@type": "Organization", "name": "DecisioWorks", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/"}, {"@type": "ListItem", "position": 2, "name": "Learning Center", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/"}, {"@type": "ListItem", "position": 3, "name": "A From a Production Problem to a Testable Decision", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Learning-Topic-A-Problem-and-Validation.html"}, {"@type": "ListItem", "position": 4, "name": "A2 Validate First: Design a Useful Planning Comparison", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Learning-A2-Design-a-Useful-Planning-Comparison.html"}]}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#article">Skip to content</a>
+  <header class="learning-header"><div class="shell header-inner">
+    <a class="brand" href="../"><img src="../../assets/decisioworks-logo.png" alt="" width="36" height="36" /><strong>DecisioWorks</strong></a>
+    <nav aria-label="Main navigation">
+      <a href="../">Home</a>
+      <a href="../docs/">Docs</a>
+      <a class="language-switch" href="../../learn/Learning-A2-Design-a-Useful-Planning-Comparison.html" lang="zh-CN" hreflang="zh-CN">中文</a>
+    </nav>
+  </div></header>
+  <div class="shell breadcrumbs" aria-label="Breadcrumb"><a href="../">Home</a><span>/</span><a href="./">Learning Center</a><span>/</span><a href="./Learning-Topic-A-Problem-and-Validation.html">A</a><span>/</span><span aria-current="page">A2 Validate First: Design a Useful Planning Comparison</span></div>
+  <div class="shell reading-layout">
+    <aside class="sidebar"><nav aria-label="Course contents"><a class="contents-home" href="./">Learning Center</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A From a Production Problem to a Testable Decision</a><a class="lesson-link" href="./Learning-A1-Define-a-Decision-Task.html">A1 Define a Decision Task from a Delivery Problem</a><a class="lesson-link" href="./Learning-A2-Design-a-Useful-Planning-Comparison.html" aria-current="page">A2 Validate First: Design a Useful Planning Comparison</a><a class="lesson-link" href="./Learning-A3-Compare-Plans-on-the-Same-Basis.html">A3 Compare Two Plans on the Same Basis</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B Represent Manufacturing in Data</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C Objectives, Experience and Operational Rules</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D Read Plans through Recorded Cases</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E Coordinate Planning Levels and Responses</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F Open Collaboration and Continued Evolution</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G Connect Applications and AI Agents through Standard Actions</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H Build Everyday Decision Capability</a><span class="nav-section">Worksheets</span><a href="./Worksheet-Operational-Rule.html">Operational Rule and Verification</a><a href="./Worksheet-Plan-Comparison.html">Baseline and Adjusted Plan Comparison</a><a href="./Worksheet-Review-and-Change-Record.html">Review and Change Record</a><a href="./Worksheet-Scenario-Brief.html">Scenario and Decision Task</a></nav></aside>
+    <main>
+      <details class="mobile-contents"><summary>Course contents</summary><nav aria-label="Mobile course contents"><a class="contents-home" href="./">Learning Center</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A From a Production Problem to a Testable Decision</a><a class="lesson-link" href="./Learning-A1-Define-a-Decision-Task.html">A1 Define a Decision Task from a Delivery Problem</a><a class="lesson-link" href="./Learning-A2-Design-a-Useful-Planning-Comparison.html" aria-current="page">A2 Validate First: Design a Useful Planning Comparison</a><a class="lesson-link" href="./Learning-A3-Compare-Plans-on-the-Same-Basis.html">A3 Compare Two Plans on the Same Basis</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B Represent Manufacturing in Data</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C Objectives, Experience and Operational Rules</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D Read Plans through Recorded Cases</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E Coordinate Planning Levels and Responses</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F Open Collaboration and Continued Evolution</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G Connect Applications and AI Agents through Standard Actions</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H Build Everyday Decision Capability</a><span class="nav-section">Worksheets</span><a href="./Worksheet-Operational-Rule.html">Operational Rule and Verification</a><a href="./Worksheet-Plan-Comparison.html">Baseline and Adjusted Plan Comparison</a><a href="./Worksheet-Review-and-Change-Record.html">Review and Change Record</a><a href="./Worksheet-Scenario-Brief.html">Scenario and Decision Task</a></nav></details>
+      <article id="article">
+        <header class="article-heading"><p class="kicker">Lesson</p><h1>A2 Validate First: Design a Useful Planning Comparison</h1></header>
+        <details class="page-contents"><summary>On this page</summary><nav><a href="#1-state-the-decision">1. State the Decision</a><a href="#2-input-data">2. Input Data</a><a href="#3-separate-facts-constraints-and-possible-measures">3. Separate
+Facts, Constraints and Possible Measures</a><a href="#4-check-the-arithmetic-first">4. Check the Arithmetic First</a><a href="#5-apply-the-method-in-decisioworks">5. Apply the Method in
+DecisioWorks</a><a href="#6-read-the-result-in-order">6. Read the Result in Order</a><a href="#7-exercises-and-suggested-answers">7. Exercises and Suggested
+Answers</a><a href="#8-carry-the-learning-into-implementation">8. Carry the Learning
+into Implementation</a><a href="#further-reading">Further Reading</a></nav></details>
+        <p>One machine, two orders and a maintenance window. This small scenario
+illustrates why a plan comparison starts by explaining how conditions
+have changed, before interpreting a system's result.</p>
+<p>This lesson develops three judgments: whether current conditions
+permit on-time completion, what a change affects, and which data,
+configuration or management decision could address it.</p>
+<p>The exercise uses teaching data, with processing time and available
+capacity calculated by hand from the stated conditions. The second half
+uses existing recorded cases to explain how to conduct a similar
+comparison in DecisioWorks.</p>
+<h2 id="1-state-the-decision">1. State the Decision</h2>
+<p>Two orders must be completed today on work center WC-1. Each product
+has one operation and can only use WC-1. The machine processes one batch
+at a time. All required materials and other resources are available.
+Both orders are due by the end of today.</p>
+<p>The exercise has only one planning period: today. Production cannot
+be moved to an earlier period. Each product forms one complete batch
+that runs continuously. No initial setup is needed. Changing from A to B
+or B to A takes 40 minutes and occupies WC-1. There are no other
+changeovers.</p>
+<p>The baseline uses today's normal working time, the stated quantities
+and the specified process. Overtime, alternative equipment, batch
+splitting and later delivery require separate decisions and have not
+been included.</p>
+<h2 id="2-input-data">2. Input Data</h2>
+<h3 id="orders-and-processing-conditions">Orders and Processing
+Conditions</h3>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th>Order</th>
+<th>Product</th>
+<th style="text-align: right;">Quantity (units)</th>
+<th style="text-align: right;">Processing time (minutes/unit)</th>
+<th>Work center</th>
+<th>Due</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>O-1</td>
+<td>A</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">10</td>
+<td>WC-1</td>
+<td>End of today</td>
+</tr>
+<tr class="even">
+<td>O-2</td>
+<td>B</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">11</td>
+<td>WC-1</td>
+<td>End of today</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="calendar-and-change">Calendar and Change</h3>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th>Condition</th>
+<th style="text-align: right;">Baseline</th>
+<th style="text-align: right;">With maintenance</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Gross shift time before maintenance (minutes)</td>
+<td style="text-align: right;">480</td>
+<td style="text-align: right;">480</td>
+</tr>
+<tr class="even">
+<td>Planned maintenance (minutes)</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">30</td>
+</tr>
+<tr class="odd">
+<td>Net available time (minutes)</td>
+<td style="text-align: right;">480</td>
+<td style="text-align: right;">450</td>
+</tr>
+<tr class="even">
+<td>One changeover between products (minutes)</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">40</td>
+</tr>
+</tbody>
+</table></div>
+<p>Maintenance occurs before production starts, leaving 450 continuous
+minutes. If it occurred in the middle of production, the exercise would
+also need to check whether continuous batches fit around the maintenance
+window. Total available time alone would answer only part of that
+question.</p>
+<p>These business tables explain the calculation. When preparing
+<code>data.db</code>, also provide the object identifiers, time units
+and process-resource relationships required by the standard
+interface.</p>
+<h2 id="3-separate-facts-constraints-and-possible-measures">3. Separate
+Facts, Constraints and Possible Measures</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th>Category</th>
+<th>In this exercise</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Business facts</td>
+<td>Order quantities, processing times and maintenance period</td>
+<td>Conditions that the data must represent accurately</td>
+</tr>
+<tr class="even">
+<td>Required conditions</td>
+<td>All quantities completed today, no overlapping use of the machine,
+continuous batches</td>
+<td>The basis for assessing whether current commitments can be met</td>
+</tr>
+<tr class="odd">
+<td>Preferences to compare</td>
+<td>Sequence choices or other supported objectives among feasible
+plans</td>
+<td>Trade-offs to examine when feasible alternatives exist</td>
+</tr>
+<tr class="even">
+<td>Measures requiring approval</td>
+<td>Overtime, later delivery, alternative resources or batch
+changes</td>
+<td>Options whose practical feasibility must be confirmed before
+updating data and configuration</td>
+</tr>
+</tbody>
+</table></div>
+<p>Hard constraints prohibit violations. Soft constraints allow
+deviations at a defined cost. If capacity is modeled as a soft
+constraint and a candidate plan is returned, inspect whether it includes
+overload and how that overload would be handled in practice.</p>
+<h2 id="4-check-the-arithmetic-first">4. Check the Arithmetic First</h2>
+<p>Product A requires <code>20 × 10 = 200</code> minutes. Product B
+requires <code>20 × 11 = 220</code> minutes. Including one 40-minute
+changeover, total occupancy is 460 minutes.</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th>Check</th>
+<th style="text-align: right;">Baseline</th>
+<th style="text-align: right;">With maintenance</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Processing time (minutes)</td>
+<td style="text-align: right;">420</td>
+<td style="text-align: right;">420</td>
+</tr>
+<tr class="even">
+<td>Changeover time (minutes)</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">40</td>
+</tr>
+<tr class="odd">
+<td>Total occupancy (minutes)</td>
+<td style="text-align: right;">460</td>
+<td style="text-align: right;">460</td>
+</tr>
+<tr class="even">
+<td>Net available time (minutes)</td>
+<td style="text-align: right;">480</td>
+<td style="text-align: right;">450</td>
+</tr>
+<tr class="odd">
+<td>Spare time or shortfall (minutes)</td>
+<td style="text-align: right;">20 spare</td>
+<td style="text-align: right;">10 short</td>
+</tr>
+</tbody>
+</table></div>
+<p>The baseline has a simple feasible sequence: run A for 200 minutes,
+change over for 40 minutes, then run B for 220 minutes. The total is 460
+minutes. After maintenance is added, either sequence still needs 460
+minutes, but only 450 continuous minutes are available. Under the stated
+conditions, both full-quantity and same-day commitments cannot be met
+together.</p>
+<p>This conclusion applies to the simplified conditions of this
+exercise. Multiple operations, alternative resources, batch splitting
+and different calendars require additional relationship and time-window
+checks.</p>
+<h2 id="5-apply-the-method-in-decisioworks">5. Apply the Method in
+DecisioWorks</h2>
+<p>Choose the existing <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Stamping-Planning-Case-Walkthrough">stamping
+planning case</a> or <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Injection-Molding-Scheduling-Case-Walkthrough">injection-molding
+scheduling case</a>. Establish a baseline, then select one change
+supported by that case and its interface. An orchestration recipe
+specifies the actions, settings and data used for execution and later
+review.</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th>Step</th>
+<th>Action</th>
+<th>Record to keep</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1. Confirm the question</td>
+<td>State the planning period, objects and condition to compare</td>
+<td>Scenario brief</td>
+</tr>
+<tr class="even">
+<td>2. Inspect the inputs</td>
+<td>Check units, processes, capacity and material relationships in a
+copy of the sample</td>
+<td>Data version, relevant tables and checks</td>
+</tr>
+<tr class="odd">
+<td>3. Confirm configuration</td>
+<td>Record enabled constraints, objectives, computing resources and
+allowed run time</td>
+<td>Baseline configuration</td>
+</tr>
+<tr class="even">
+<td>4. Run the baseline</td>
+<td>Use the page or recipe entry point supported by the case</td>
+<td>Status, action history, result tables and analysis</td>
+</tr>
+<tr class="odd">
+<td>5. Change one condition</td>
+<td>Modify a supported objective parameter, or change a business
+condition in a separate data copy</td>
+<td>The change, its reason and the revised version</td>
+</tr>
+<tr class="even">
+<td>6. Compare and explain</td>
+<td>Check status and constraints before business measures and detailed
+rows</td>
+<td>Conclusions, decisions requiring confirmation and the next step</td>
+</tr>
+</tbody>
+</table></div>
+<p>In the Scenario Lab, use the configuration exposed by the page to run
+a baseline and adjust parameters. For calendar or process-data changes,
+work on a separate data copy and use the integration and execution entry
+point supported by that scenario. Keep parameter experiments separate
+from changes to business data.</p>
+<p>For an objective-parameter comparison, keep the input data unchanged.
+For a data change such as maintenance, preserve the original copy and
+keep other parameters consistent where possible. Keep thread counts,
+time limits and other execution conditions consistent; repeat runs where
+appropriate to assess stability.</p>
+<h2 id="6-read-the-result-in-order">6. Read the Result in Order</h2>
+<ol type="1">
+<li><strong>Status:</strong> was a usable plan produced? If not, was
+infeasibility proved, did time run out, or was there an input,
+environment or authorization issue?</li>
+<li><strong>Conditions:</strong> which constraints were active? Were
+overload, lateness or unmet demand allowed?</li>
+<li><strong>Business measures:</strong> how much was produced or left
+short, when was work completed, and how much resource time was
+used?</li>
+<li><strong>Objectives and details:</strong> how did weights influence
+the trade-off, and which orders or work centers changed?</li>
+<li><strong>Decision:</strong> can the plan be executed, and who must
+confirm any measures it requires?</li>
+</ol>
+<p>Objective totals calculated with different weights use different
+evaluation scales. Compare actual business measures first. If comparing
+total scores is useful, evaluate both results with the same objective
+definitions, directions and weights.</p>
+<h2 id="7-exercises-and-suggested-answers">7. Exercises and Suggested
+Answers</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th>Exercise</th>
+<th>Suggested answer</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Will increasing the delivery-objective weight tenfold remove the
+10-minute shortfall?</td>
+<td>A weight expresses preference; it does not add time. With full
+quantity and delivery enforced as hard conditions, the shortfall
+remains. If deviations are allowed, explain where the unmet requirement
+moves</td>
+</tr>
+<tr class="even">
+<td>Will producing B before A solve the problem?</td>
+<td>Both changeover directions take 40 minutes here, so total occupancy
+stays the same. Recalculate if directional changeover times differ in
+another case</td>
+</tr>
+<tr class="odd">
+<td>After 10 extra minutes are approved, what still needs
+confirmation?</td>
+<td>Here, confirm that the extra time extends the existing 450-minute
+window continuously and that staffing and materials remain available.
+The resulting 460 minutes accommodate the stated sequence. Other cases
+also need checks on their operations and resources</td>
+</tr>
+<tr class="even">
+<td>If a program finds no plan in 60 seconds, can the result be
+described as a business infeasibility?</td>
+<td>Inspect its status and proof information. Search time exhaustion and
+proven infeasibility must be described separately</td>
+</tr>
+<tr class="odd">
+<td>If all quantities are produced after the change, can that be
+described as improved delivery?</td>
+<td>Completion times must also be compared with due dates. Measure
+quantity fulfillment and on-time delivery separately</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="8-carry-the-learning-into-implementation">8. Carry the Learning
+into Implementation</h2>
+<p>This exercise leaves three reusable assets: a way to describe
+production conditions in data, a fair comparison method, and a process
+for deciding what to do with the result.</p>
+<p>As the scope expands to more orders or resources, the same data
+checks and comparison method can be used again. During regular
+operation, changes to maintenance, objectives or rules can build on the
+recorded work. DecisioWorks supplies data, configuration, execution and
+analysis capabilities; manufacturers and partners connect them to their
+own processes and confirm the operational decisions.</p>
+<h2 id="further-reading">Further Reading</h2>
+<p><a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Value-Validation-and-Adoption-Framework">Value
+Validation and Adoption</a> · <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Typical-Value-Entry-Scenarios">Typical
+Value Entry Scenarios</a></p>
+<p>Worksheets: <a href="./Worksheet-Scenario-Brief.html">Worksheet: Scenario
+and Decision Task</a> · <a
+href="./Worksheet-Plan-Comparison.html">Worksheet: Baseline and Adjusted
+Plan Comparison</a></p>
+<p><a href="./Learning-Topic-A-Problem-and-Validation.html">Topic A</a> · <a
+href="./Learning-A1-Define-a-Decision-Task.html">Previous: Define a Decision
+Task from a Delivery Problem</a> · <a
+href="./Learning-A3-Compare-Plans-on-the-Same-Basis.html">Next: Compare Two
+Plans on the Same Basis</a></p>
+      </article>
+      <footer class="article-footer"><a href="./">Back to Learning Center</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki/Learning-A2-Design-a-Useful-Planning-Comparison">Read on Wiki</a></footer>
+    </main>
+  </div>
+  <footer class="site-footer shell"><strong>DecisioWorks</strong><span>Learn decision capabilities through production problems.</span></footer>
+</body>
+</html>

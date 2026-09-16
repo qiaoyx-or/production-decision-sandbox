@@ -3,8 +3,6 @@
 
 import html
 import json
-import xml.etree.ElementTree as ET
-from datetime import date
 from pathlib import Path
 
 BASE = "https://qiaoyx-or.github.io/production-decision-sandbox"
@@ -112,27 +110,8 @@ def build():
 '''
             (folder / f"{slug}.html").write_text(markup, encoding="utf-8", newline="\n")
     print("Built 8 static bilingual guide pages.")
-    namespace = "http://www.sitemaps.org/schemas/sitemap/0.9"
-    ET.register_namespace("", namespace)
-    sitemap = ET.parse(ROOT / "sitemap.xml")
-    known = {node.text for node in sitemap.findall(f".//{{{namespace}}}loc")}
-    for prefix in ("guide", "en/guide"):
-        for slug in SLUGS:
-            url = f'{BASE}/{prefix}/{"" if slug == "index" else slug + ".html"}'
-            if url not in known:
-                entry = ET.SubElement(sitemap.getroot(), f"{{{namespace}}}url")
-                ET.SubElement(entry, f"{{{namespace}}}loc").text = url
-                ET.SubElement(entry, f"{{{namespace}}}lastmod").text = date.today().isoformat()
-    lines = ['<?xml version="1.0" encoding="UTF-8"?>', f'<urlset xmlns="{namespace}">']
-    refreshed = {f"{BASE}/{suffix}" for suffix in ("", "en/", "sandbox/", "en/sandbox/")}
-    for entry in sitemap.getroot():
-        url = entry.find(f"{{{namespace}}}loc").text
-        lastmod = entry.find(f"{{{namespace}}}lastmod").text
-        if url in refreshed:
-            lastmod = date.today().isoformat()
-        lines.append(f"  <url><loc>{esc(url)}</loc><lastmod>{esc(lastmod)}</lastmod></url>")
-    lines.append("</urlset>")
-    (ROOT / "sitemap.xml").write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")
+    from build_sitemap import build as build_sitemap
+    build_sitemap(ROOT)
 
 
 if __name__ == "__main__":

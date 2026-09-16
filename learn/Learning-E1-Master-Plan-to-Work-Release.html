@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>E1 从主生产计划到任务释放与作业排程 | DecisioWorks</title>
+  <meta name="description" content="教学场景中，下周有100件A需求，其中60件物料已到、40件仍需等待。是否允许分批释放，由批量和业务承诺决定；不能仅凭“60件已齐套”就自动拆分订单。" />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-E1-Master-Plan-to-Work-Release.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-E1-Master-Plan-to-Work-Release.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Learning-E1-Master-Plan-to-Work-Release.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-E1-Master-Plan-to-Work-Release.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="E1 从主生产计划到任务释放与作业排程 | DecisioWorks" />
+  <meta property="og:description" content="教学场景中，下周有100件A需求，其中60件物料已到、40件仍需等待。是否允许分批释放，由批量和业务承诺决定；不能仅凭“60件已齐套”就自动拆分订单。" />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-E1-Master-Plan-to-Work-Release.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="E1 从主生产计划到任务释放与作业排程 | DecisioWorks" />
+  <meta name="twitter:description" content="教学场景中，下周有100件A需求，其中60件物料已到、40件仍需等待。是否允许分批释放，由批量和业务承诺决定；不能仅凭“60件已齐套”就自动拆分订单。" />
+  <meta name="twitter:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <link rel="icon" href="../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "E1 从主生产计划到任务释放与作业排程", "description": "教学场景中，下周有100件A需求，其中60件物料已到、40件仍需等待。是否允许分批释放，由批量和业务承诺决定；不能仅凭“60件已齐套”就自动拆分订单。", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-E1-Master-Plan-to-Work-Release.html", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "DecisioWorks", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "首页", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/"}, {"@type": "ListItem", "position": 2, "name": "学习中心", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/"}, {"@type": "ListItem", "position": 3, "name": "E 让计划层级协同工作", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-Topic-E-Coordinate-Plans-and-Responses.html"}, {"@type": "ListItem", "position": 4, "name": "E1 从主生产计划到任务释放与作业排程", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-E1-Master-Plan-to-Work-Release.html"}]}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#article">跳到正文</a>
+  <header class="learning-header"><div class="shell header-inner">
+    <a class="brand" href="../"><img src="../assets/decisioworks-logo.png" alt="" width="36" height="36" /><strong>DecisioWorks</strong></a>
+    <nav aria-label="主导航">
+      <a href="../">主页</a>
+      <a href="../docs/">文档</a>
+      <a class="language-switch" href="../en/learn/Learning-E1-Master-Plan-to-Work-Release.html" lang="en" hreflang="en">English</a>
+    </nav>
+  </div></header>
+  <div class="shell breadcrumbs" aria-label="面包屑导航"><a href="../">首页</a><span>/</span><a href="./">学习中心</a><span>/</span><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E</a><span>/</span><span aria-current="page">E1 从主生产计划到任务释放与作业排程</span></div>
+  <div class="shell reading-layout">
+    <aside class="sidebar"><nav aria-label="课程目录"><a class="contents-home" href="./">学习中心</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A 从生产问题到可检验的决策</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B 用数据表达制造过程</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C 让目标、经验与规则参与决策</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D 从真实样例学会读计划</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E 让计划层级协同工作</a><a class="lesson-link" href="./Learning-E1-Master-Plan-to-Work-Release.html" aria-current="page">E1 从主生产计划到任务释放与作业排程</a><a class="lesson-link" href="./Learning-E2-Deviations-to-Planning-Signals.html">E2 把变化表达为偏差与计划信号</a><a class="lesson-link" href="./Learning-E3-Scope-a-Disruption-Response.html">E3 扰动发生后，确定需要调整的范围</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F 开放协作与持续演进</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G 用标准动作连接应用与AI Agent</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H 把一次练习变成日常能力</a><span class="nav-section">工作表</span><a href="./Worksheet-Operational-Rule.html">现场规则记录与检查</a><a href="./Worksheet-Plan-Comparison.html">基线与调整方案比较</a><a href="./Worksheet-Review-and-Change-Record.html">复盘与持续改进记录</a><a href="./Worksheet-Scenario-Brief.html">场景与决策任务</a></nav></aside>
+    <main>
+      <details class="mobile-contents"><summary>课程目录</summary><nav aria-label="移动端课程目录"><a class="contents-home" href="./">学习中心</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A 从生产问题到可检验的决策</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B 用数据表达制造过程</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C 让目标、经验与规则参与决策</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D 从真实样例学会读计划</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E 让计划层级协同工作</a><a class="lesson-link" href="./Learning-E1-Master-Plan-to-Work-Release.html" aria-current="page">E1 从主生产计划到任务释放与作业排程</a><a class="lesson-link" href="./Learning-E2-Deviations-to-Planning-Signals.html">E2 把变化表达为偏差与计划信号</a><a class="lesson-link" href="./Learning-E3-Scope-a-Disruption-Response.html">E3 扰动发生后，确定需要调整的范围</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F 开放协作与持续演进</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G 用标准动作连接应用与AI Agent</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H 把一次练习变成日常能力</a><span class="nav-section">工作表</span><a href="./Worksheet-Operational-Rule.html">现场规则记录与检查</a><a href="./Worksheet-Plan-Comparison.html">基线与调整方案比较</a><a href="./Worksheet-Review-and-Change-Record.html">复盘与持续改进记录</a><a href="./Worksheet-Scenario-Brief.html">场景与决策任务</a></nav></details>
+      <article id="article">
+        <header class="article-heading"><p class="kicker">课程</p><h1>E1 从主生产计划到任务释放与作业排程</h1></header>
+        <details class="page-contents"><summary>本页内容</summary><nav><a href="#两个层级回答不同问题">两个层级回答不同问题</a><a href="#释放前检查什么">释放前检查什么</a><a href="#在-decisioworks-中理解衔接">在 DecisioWorks 中理解衔接</a><a href="#保留局部精度传回必要反馈">保留局部精度，传回必要反馈</a><a href="#练习与参考解析">练习与参考解析</a><a href="#延伸阅读">延伸阅读</a></nav></details>
+        <h2 id="两个层级回答不同问题">两个层级回答不同问题</h2>
+<p>主生产计划（MPS）统筹一个时期内生产什么、多少以及安排在哪些时段；释放策略再结合资源和齐套状态，确定哪些任务进入作业排程。作业排程在已确认的任务范围内细化资源与顺序。两者通过任务条件衔接，局部排程才能专注于可执行工作。</p>
+<p>教学场景中，下周有100件A需求，其中60件物料已到、40件仍需等待。是否允许分批释放，由批量和业务承诺决定；不能仅凭“60件已齐套”就自动拆分订单。</p>
+<h2 id="释放前检查什么">释放前检查什么</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>条件</th>
+<th>要传递的信息</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>任务身份</td>
+<td>来源订单、制品或任务引用</td>
+</tr>
+<tr class="even">
+<td>数量</td>
+<td>本次释放量、单位、剩余需求</td>
+</tr>
+<tr class="odd">
+<td>时间</td>
+<td>允许开工范围、交期、冻结要求</td>
+</tr>
+<tr class="even">
+<td>资源</td>
+<td>工作中心或已确认的可选范围</td>
+</tr>
+<tr class="odd">
+<td>工艺与物料</td>
+<td>路线、批量及上游确认的齐套条件</td>
+</tr>
+<tr class="even">
+<td>追踪</td>
+<td>所依据的数据与计划版本</td>
+</tr>
+</tbody>
+</table></div>
+<p>这些是业务检查维度，实际释放包字段应使用对应接口定义。信息传递时保留来源，才能把排程反馈追溯到原计划。</p>
+<h2 id="在-decisioworks-中理解衔接">在 DecisioWorks 中理解衔接</h2>
+<p>planning_system将计划分析与偏差信号组织为联动信息，可形成目标或规则调整建议、释放策略及下游排程任务。排程能力使用适合本地资源的模型和约束。以注塑标准样例为例，物料条件由上游确认，局部排程主要处理既定任务与属性切换。</p>
+<p>这意味着“排程成功”应与“释放条件满足”同时检查。若释放前物料确认错误，单纯查看排程序列无法纠正上游事实。</p>
+<h2 id="保留局部精度传回必要反馈">保留局部精度，传回必要反馈</h2>
+<p>排程结果可能暴露主计划未显式考虑的切换压力、等待或局部负荷。把影响汇总回相应对象与时期，再决定是否调整释放量、目标或资源条件。没必要把每个局部细节复制到每个计划层级；保留足以支持下一步判断的信息。</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>局部观察</th>
+<th>可返回上层的内容</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>某资源无法容纳已释放工作</td>
+<td>对象、时间范围、需求量与能力差额</td>
+</tr>
+<tr class="even">
+<td>切换代价明显增大</td>
+<td>相关任务群、代价定义与候选分组调整</td>
+</tr>
+<tr class="odd">
+<td>物料确认变更</td>
+<td>受影响任务与最早可用时间</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="练习与参考解析">练习与参考解析</h2>
+<p>先列出缺失的条件：允许分批吗？最小批量与倍数是多少？资源、可用时间和交付承诺是否允许提前处理部分需求？</p>
+<p>为便于人工计算，补充以下课堂假设：需求为100件A，物料仅覆盖60件；分批时按20件的整数倍释放，最小批量20件；相应资源和时间已经确认，交付承诺允许分批，未释放需求仍由上游跟踪。</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>释放政策</th>
+<th style="text-align: right;">本次可释放（件）</th>
+<th style="text-align: right;">保留待释放（件）</th>
+<th>计算或原因</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>按20件分批</td>
+<td style="text-align: right;">60</td>
+<td style="text-align: right;">40</td>
+<td>物料覆盖3个20件批次，其他释放条件已确认</td>
+</tr>
+<tr class="even">
+<td>必须100件整批</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">100</td>
+<td>当前物料尚不覆盖完整批量，全部需求继续等待</td>
+</tr>
+</tbody>
+</table></div>
+<p>这是在明确假设下计算的释放数量，不是排程序列或真实求解结果。将“允许分批”改成“最小批量80件”时，60件物料不再足以释放首批；其他条件再充足也不能略过该规则。</p>
+<p>完成一份释放检查记录：注明来源、释放数量、剩余需求、时间与资源范围，以及确认人。下游据此排程，上游继续跟踪尚未释放的需求，避免将已齐套但尚未释放的数量误记为已投产。</p>
+<h2 id="延伸阅读">延伸阅读</h2>
+<p><a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Planning-and-Scheduling-Overview-zh-CN">计划与排程</a>
+· <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Results-Evidence-and-Feedback-zh-CN">结果与反馈</a>
+· <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Component-Responsibilities-zh-CN">模块职责</a></p>
+<p>配套工作表：<a
+href="./Worksheet-Operational-Rule.html">工作表：现场规则记录与检查</a>
+· <a
+href="./Worksheet-Review-and-Change-Record.html">工作表：复盘与持续改进记录</a></p>
+<p><a
+href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">专题
+E</a> · <a
+href="./Learning-D3-Select-Cases-by-Data-Characteristics.html">上一篇:
+按数据属性选择适用案例</a> · <a
+href="./Learning-E2-Deviations-to-Planning-Signals.html">下一篇:
+把变化表达为偏差与计划信号</a></p>
+      </article>
+      <footer class="article-footer"><a href="./">返回学习中心</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki/Learning-E1-Master-Plan-to-Work-Release-zh-CN">在 Wiki 阅读</a></footer>
+    </main>
+  </div>
+  <footer class="site-footer shell"><strong>DecisioWorks</strong><span>从生产问题出发，理解与使用决策能力。</span></footer>
+</body>
+</html>

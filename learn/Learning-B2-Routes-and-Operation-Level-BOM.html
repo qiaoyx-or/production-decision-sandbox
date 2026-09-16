@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>B2 工艺路线与工序级BOM：物料在哪一步发生作用 | DecisioWorks</title>
+  <meta name="description" content="编号10、20只表示工序顺序。本例假设每执行一次工序产出一件；若实际工序一次产出多件，应分别说明每次加工的产出数量和物料消耗单位。" />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-B2-Routes-and-Operation-Level-BOM.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-B2-Routes-and-Operation-Level-BOM.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Learning-B2-Routes-and-Operation-Level-BOM.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-B2-Routes-and-Operation-Level-BOM.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="B2 工艺路线与工序级BOM：物料在哪一步发生作用 | DecisioWorks" />
+  <meta property="og:description" content="编号10、20只表示工序顺序。本例假设每执行一次工序产出一件；若实际工序一次产出多件，应分别说明每次加工的产出数量和物料消耗单位。" />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-B2-Routes-and-Operation-Level-BOM.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="B2 工艺路线与工序级BOM：物料在哪一步发生作用 | DecisioWorks" />
+  <meta name="twitter:description" content="编号10、20只表示工序顺序。本例假设每执行一次工序产出一件；若实际工序一次产出多件，应分别说明每次加工的产出数量和物料消耗单位。" />
+  <meta name="twitter:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <link rel="icon" href="../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "B2 工艺路线与工序级BOM：物料在哪一步发生作用", "description": "编号10、20只表示工序顺序。本例假设每执行一次工序产出一件；若实际工序一次产出多件，应分别说明每次加工的产出数量和物料消耗单位。", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-B2-Routes-and-Operation-Level-BOM.html", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "DecisioWorks", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "首页", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/"}, {"@type": "ListItem", "position": 2, "name": "学习中心", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/"}, {"@type": "ListItem", "position": 3, "name": "B 用数据表达制造过程", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-Topic-B-Manufacturing-Data.html"}, {"@type": "ListItem", "position": 4, "name": "B2 工艺路线与工序级BOM：物料在哪一步发生作用", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-B2-Routes-and-Operation-Level-BOM.html"}]}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#article">跳到正文</a>
+  <header class="learning-header"><div class="shell header-inner">
+    <a class="brand" href="../"><img src="../assets/decisioworks-logo.png" alt="" width="36" height="36" /><strong>DecisioWorks</strong></a>
+    <nav aria-label="主导航">
+      <a href="../">主页</a>
+      <a href="../docs/">文档</a>
+      <a class="language-switch" href="../en/learn/Learning-B2-Routes-and-Operation-Level-BOM.html" lang="en" hreflang="en">English</a>
+    </nav>
+  </div></header>
+  <div class="shell breadcrumbs" aria-label="面包屑导航"><a href="../">首页</a><span>/</span><a href="./">学习中心</a><span>/</span><a href="./Learning-Topic-B-Manufacturing-Data.html">B</a><span>/</span><span aria-current="page">B2 工艺路线与工序级BOM：物料在哪一步发生作用</span></div>
+  <div class="shell reading-layout">
+    <aside class="sidebar"><nav aria-label="课程目录"><a class="contents-home" href="./">学习中心</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A 从生产问题到可检验的决策</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B 用数据表达制造过程</a><a class="lesson-link" href="./Learning-B1-Business-Tables-to-Computable-Objects.html">B1 从业务表格到可计算对象</a><a class="lesson-link" href="./Learning-B2-Routes-and-Operation-Level-BOM.html" aria-current="page">B2 工艺路线与工序级BOM：物料在哪一步发生作用</a><a class="lesson-link" href="./Learning-B3-Align-Time-Capacity-and-Materials.html">B3 让产能、班制、维护与齐套使用同一时间坐标</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C 让目标、经验与规则参与决策</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D 从真实样例学会读计划</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E 让计划层级协同工作</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F 开放协作与持续演进</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G 用标准动作连接应用与AI Agent</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H 把一次练习变成日常能力</a><span class="nav-section">工作表</span><a href="./Worksheet-Operational-Rule.html">现场规则记录与检查</a><a href="./Worksheet-Plan-Comparison.html">基线与调整方案比较</a><a href="./Worksheet-Review-and-Change-Record.html">复盘与持续改进记录</a><a href="./Worksheet-Scenario-Brief.html">场景与决策任务</a></nav></aside>
+    <main>
+      <details class="mobile-contents"><summary>课程目录</summary><nav aria-label="移动端课程目录"><a class="contents-home" href="./">学习中心</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A 从生产问题到可检验的决策</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B 用数据表达制造过程</a><a class="lesson-link" href="./Learning-B1-Business-Tables-to-Computable-Objects.html">B1 从业务表格到可计算对象</a><a class="lesson-link" href="./Learning-B2-Routes-and-Operation-Level-BOM.html" aria-current="page">B2 工艺路线与工序级BOM：物料在哪一步发生作用</a><a class="lesson-link" href="./Learning-B3-Align-Time-Capacity-and-Materials.html">B3 让产能、班制、维护与齐套使用同一时间坐标</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C 让目标、经验与规则参与决策</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D 从真实样例学会读计划</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E 让计划层级协同工作</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F 开放协作与持续演进</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G 用标准动作连接应用与AI Agent</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H 把一次练习变成日常能力</a><span class="nav-section">工作表</span><a href="./Worksheet-Operational-Rule.html">现场规则记录与检查</a><a href="./Worksheet-Plan-Comparison.html">基线与调整方案比较</a><a href="./Worksheet-Review-and-Change-Record.html">复盘与持续改进记录</a><a href="./Worksheet-Scenario-Brief.html">场景与决策任务</a></nav></details>
+      <article id="article">
+        <header class="article-heading"><p class="kicker">课程</p><h1>B2 工艺路线与工序级BOM：物料在哪一步发生作用</h1></header>
+        <details class="page-contents"><summary>本页内容</summary><nav><a href="#一张制品bom还需要制造顺序">一张制品BOM还需要制造顺序</a><a href="#物料进入工序时间才有含义">物料进入工序，时间才有含义</a><a href="#在数据中逐步复核">在数据中逐步复核</a><a href="#改动应该落在哪里">改动应该落在哪里</a><a href="#练习与参考解析">练习与参考解析</a><a href="#延伸阅读">延伸阅读</a></nav></details>
+        <h2 id="一张制品bom还需要制造顺序">一张制品BOM还需要制造顺序</h2>
+<p>物料清单（BOM）说明制造所需物料，工序级BOM进一步说明在哪一步消耗。教学制品P经过切割、装配两步。每件在切割工序消耗一份坯料，在装配工序消耗两个紧固件。计划10件P时，需要知道20个紧固件用于装配；这会影响何时能够进入该工序。</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>业务对象</th>
+<th>教学内容</th>
+<th>对应关系</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>制品</td>
+<td>P</td>
+<td>product</td>
+</tr>
+<tr class="even">
+<td>路线</td>
+<td>R-P</td>
+<td>process_route.product连接P</td>
+</tr>
+<tr class="odd">
+<td>工序</td>
+<td>切割10、装配20</td>
+<td>process.route、process.seqno</td>
+</tr>
+<tr class="even">
+<td>资源</td>
+<td>切割机WC-C、装配台WC-A</td>
+<td>process_adaptor连接工序和工作中心</td>
+</tr>
+<tr class="odd">
+<td>物料</td>
+<td>坯料M-1、紧固件M-2</td>
+<td>ingredient连接工序与material</td>
+</tr>
+</tbody>
+</table></div>
+<p>编号10、20只表示工序顺序。本例假设每执行一次工序产出一件；若实际工序一次产出多件，应分别说明每次加工的产出数量和物料消耗单位。</p>
+<h2 id="物料进入工序时间才有含义">物料进入工序，时间才有含义</h2>
+<p>若10份坯料今天可用、20个紧固件明天可用，业务上可能允许今天完成切割、明天装配。是否允许这种中间库存、工序拆分和跨时段安排，还要由选用的模型及已启用约束确认。工序级表达提供了检查这些问题所需的位置。</p>
+<p>把所有物料只绑定到制品终点，可能掩盖早期工序的物料限制；把全部物料都要求在第一步到齐，也可能过早阻止可开展的工序。正确位置取决于实际消耗点。</p>
+<h2 id="在数据中逐步复核">在数据中逐步复核</h2>
+<ol type="1">
+<li>确认P的路线与候选路线范围。</li>
+<li>检查各工序的顺序、输出与可执行工作中心。</li>
+<li>把每条ingredient记录追到具体工序和物料。</li>
+<li>核对单耗所依据的数量口径，包括工序次数或产出单位。</li>
+<li>将物料可用量映射到相同时间轴，检查是否满足对应工序需求。</li>
+</ol>
+<p>本课假设一件成品各经过一次工序、无损耗与副产物，因此10件需10份坯料、20个紧固件。多出件、损耗或联产品场景应先确认所选模型能否表达，再按每次加工的产出数量和物料消耗重新计算；出件率在这里指每次加工的产出数量，不是良品率。</p>
+<h2 id="改动应该落在哪里">改动应该落在哪里</h2>
+<p>将紧固件单耗从2改为3，教学总需求变为30个。应修改经业务确认的工序物料关系，检查现有可用量，再重算。单纯提高交期权重不会生成缺少的10个紧固件。</p>
+<p>修改路线或替代资源时，检查受影响对象，不只看图是否连通。另一条路线可能改变物料、生产率和加工时长，不能只替换工作中心名称。</p>
+<h2 id="练习与参考解析">练习与参考解析</h2>
+<p>为制品P增加一道表面处理，并规定每件耗0.2升处理液。画出路线、资源和物料关系，计算10件在无损耗假设下需要2升处理液。</p>
+<p>成果应说明处理液在哪一步消耗、单位是什么、何时可用，以及新工序具备哪些可选资源。这里只完成结构和人工核算；实际计划结果来自启用相应约束后的运行。</p>
+<h2 id="延伸阅读">延伸阅读</h2>
+<p><a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Standardized-Data-Interface-zh-CN">标准化数据接口</a>
+· <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Data-Object-and-Field-Reference-zh-CN">数据对象与字段</a>
+· <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Data-Readiness-and-Validation-zh-CN">数据准备与验证</a>
+· <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/ERP-MES-Data-Mapping-Guide-zh-CN">ERP与MES数据映射</a></p>
+<p>配套工作表：<a
+href="./Worksheet-Scenario-Brief.html">工作表：场景与决策任务</a></p>
+<p><a href="./Learning-Topic-B-Manufacturing-Data.html">专题 B</a> ·
+<a
+href="./Learning-B1-Business-Tables-to-Computable-Objects.html">上一篇:
+从业务表格到可计算对象</a> · <a
+href="./Learning-B3-Align-Time-Capacity-and-Materials.html">下一篇:
+让产能、班制、维护与齐套使用同一时间坐标</a></p>
+      </article>
+      <footer class="article-footer"><a href="./">返回学习中心</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki/Learning-B2-Routes-and-Operation-Level-BOM-zh-CN">在 Wiki 阅读</a></footer>
+    </main>
+  </div>
+  <footer class="site-footer shell"><strong>DecisioWorks</strong><span>从生产问题出发，理解与使用决策能力。</span></footer>
+</body>
+</html>

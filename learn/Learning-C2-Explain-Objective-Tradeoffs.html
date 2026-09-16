@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C2 交期、库存与切换：让取舍可以讨论 | DecisioWorks</title>
+  <meta name="description" content="教学情境中，一份计划提前生产、库存较高但切换较少；另一份推迟到更接近交期生产、库存较低但切换更多。没有一组权重能代替企业对这些代价的判断。" />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-C2-Explain-Objective-Tradeoffs.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-C2-Explain-Objective-Tradeoffs.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Learning-C2-Explain-Objective-Tradeoffs.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-C2-Explain-Objective-Tradeoffs.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="C2 交期、库存与切换：让取舍可以讨论 | DecisioWorks" />
+  <meta property="og:description" content="教学情境中，一份计划提前生产、库存较高但切换较少；另一份推迟到更接近交期生产、库存较低但切换更多。没有一组权重能代替企业对这些代价的判断。" />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-C2-Explain-Objective-Tradeoffs.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="C2 交期、库存与切换：让取舍可以讨论 | DecisioWorks" />
+  <meta name="twitter:description" content="教学情境中，一份计划提前生产、库存较高但切换较少；另一份推迟到更接近交期生产、库存较低但切换更多。没有一组权重能代替企业对这些代价的判断。" />
+  <meta name="twitter:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <link rel="icon" href="../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "C2 交期、库存与切换：让取舍可以讨论", "description": "教学情境中，一份计划提前生产、库存较高但切换较少；另一份推迟到更接近交期生产、库存较低但切换更多。没有一组权重能代替企业对这些代价的判断。", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-C2-Explain-Objective-Tradeoffs.html", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "DecisioWorks", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "首页", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/"}, {"@type": "ListItem", "position": 2, "name": "学习中心", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/"}, {"@type": "ListItem", "position": 3, "name": "C 让目标、经验与规则参与决策", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-Topic-C-Objectives-and-Operational-Rules.html"}, {"@type": "ListItem", "position": 4, "name": "C2 交期、库存与切换：让取舍可以讨论", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-C2-Explain-Objective-Tradeoffs.html"}]}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#article">跳到正文</a>
+  <header class="learning-header"><div class="shell header-inner">
+    <a class="brand" href="../"><img src="../assets/decisioworks-logo.png" alt="" width="36" height="36" /><strong>DecisioWorks</strong></a>
+    <nav aria-label="主导航">
+      <a href="../">主页</a>
+      <a href="../docs/">文档</a>
+      <a class="language-switch" href="../en/learn/Learning-C2-Explain-Objective-Tradeoffs.html" lang="en" hreflang="en">English</a>
+    </nav>
+  </div></header>
+  <div class="shell breadcrumbs" aria-label="面包屑导航"><a href="../">首页</a><span>/</span><a href="./">学习中心</a><span>/</span><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C</a><span>/</span><span aria-current="page">C2 交期、库存与切换：让取舍可以讨论</span></div>
+  <div class="shell reading-layout">
+    <aside class="sidebar"><nav aria-label="课程目录"><a class="contents-home" href="./">学习中心</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A 从生产问题到可检验的决策</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B 用数据表达制造过程</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C 让目标、经验与规则参与决策</a><a class="lesson-link" href="./Learning-C1-Facts-Constraints-and-Preferences.html">C1 区分业务事实、约束条件与目标偏好</a><a class="lesson-link" href="./Learning-C2-Explain-Objective-Tradeoffs.html" aria-current="page">C2 交期、库存与切换：让取舍可以讨论</a><a class="lesson-link" href="./Learning-C3-Turn-Experience-into-Rules.html">C3 把现场经验写成可检查的规则</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D 从真实样例学会读计划</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E 让计划层级协同工作</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F 开放协作与持续演进</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G 用标准动作连接应用与AI Agent</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H 把一次练习变成日常能力</a><span class="nav-section">工作表</span><a href="./Worksheet-Operational-Rule.html">现场规则记录与检查</a><a href="./Worksheet-Plan-Comparison.html">基线与调整方案比较</a><a href="./Worksheet-Review-and-Change-Record.html">复盘与持续改进记录</a><a href="./Worksheet-Scenario-Brief.html">场景与决策任务</a></nav></aside>
+    <main>
+      <details class="mobile-contents"><summary>课程目录</summary><nav aria-label="移动端课程目录"><a class="contents-home" href="./">学习中心</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A 从生产问题到可检验的决策</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B 用数据表达制造过程</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C 让目标、经验与规则参与决策</a><a class="lesson-link" href="./Learning-C1-Facts-Constraints-and-Preferences.html">C1 区分业务事实、约束条件与目标偏好</a><a class="lesson-link" href="./Learning-C2-Explain-Objective-Tradeoffs.html" aria-current="page">C2 交期、库存与切换：让取舍可以讨论</a><a class="lesson-link" href="./Learning-C3-Turn-Experience-into-Rules.html">C3 把现场经验写成可检查的规则</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D 从真实样例学会读计划</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E 让计划层级协同工作</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F 开放协作与持续演进</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G 用标准动作连接应用与AI Agent</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H 把一次练习变成日常能力</a><span class="nav-section">工作表</span><a href="./Worksheet-Operational-Rule.html">现场规则记录与检查</a><a href="./Worksheet-Plan-Comparison.html">基线与调整方案比较</a><a href="./Worksheet-Review-and-Change-Record.html">复盘与持续改进记录</a><a href="./Worksheet-Scenario-Brief.html">场景与决策任务</a></nav></details>
+      <article id="article">
+        <header class="article-heading"><p class="kicker">课程</p><h1>C2 交期、库存与切换：让取舍可以讨论</h1></header>
+        <details class="page-contents"><summary>本页内容</summary><nav><a href="#选择目标之前先说清代价">选择目标之前，先说清代价</a><a href="#建立目标说明表">建立目标说明表</a><a href="#用注塑样例设计一次实验">用注塑样例设计一次实验</a><a href="#怎样解释观察">怎样解释观察</a><a href="#练习与参考解析">练习与参考解析</a><a href="#延伸阅读">延伸阅读</a></nav></details>
+        <h2 id="选择目标之前先说清代价">选择目标之前，先说清代价</h2>
+<p>计划员希望交期稳定，车间希望少切换，库存管理希望少积压。把三个愿望写成目标名称之后，还需要说明各自统计什么、作用于哪些对象、如何比较。</p>
+<p>教学情境中，一份计划提前生产、库存较高但切换较少；另一份推迟到更接近交期生产、库存较低但切换更多。没有一组权重能代替企业对这些代价的判断。</p>
+<h2 id="建立目标说明表">建立目标说明表</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>项目</th>
+<th>需要写清</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>业务意图</td>
+<td>例如减少相邻任务颜色切换</td>
+</tr>
+<tr class="even">
+<td>作用对象</td>
+<td>当前工作中心、任务集合与计划周期</td>
+</tr>
+<tr class="odd">
+<td>实际指标</td>
+<td>切换次数、准备时间或其他已定义量</td>
+</tr>
+<tr class="even">
+<td>目标统计量</td>
+<td>模型用于计分的原始量，如累计等待或切换代价；工程文档称其为“目标材料”</td>
+</tr>
+<tr class="odd">
+<td>方向与权重</td>
+<td>最小化或最大化，以及相对系数</td>
+</tr>
+<tr class="even">
+<td>复核方式</td>
+<td>对照实际指标、结果明细和模型计分依据</td>
+</tr>
+</tbody>
+</table></div>
+<p>DecisioWorks
+的目标系统组织这些内容，模型适配层负责连接实际目标统计量。配置业务目标时，先确认所选引擎能计算哪个指标，以及该指标怎样对应业务意图，再设置参数。</p>
+<h2 id="用注塑样例设计一次实验">用注塑样例设计一次实验</h2>
+<p>样例用业务名称<code>color</code>表示颜色，读取<code>property_1</code>；用<code>container_capacity</code>表示容器容量，读取<code>property_3</code>。该能力编排配方（recipe）的目标名<code>capacity</code>对应容器容量属性的循环切换代价，与机器可用产能是两个不同概念。</p>
+<p>复制基线配置，只调整color权重，保持数据、约束、其他权重、工作中心、序列长度和循环次数一致。记录请求的线程与时间上限，并遵守当前授权允许值。运行后分别查看颜色序列切换、循环切换及相应目标统计量。</p>
+<h2 id="怎样解释观察">怎样解释观察</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>观察</th>
+<th>下一步检查</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>分数变化，实际量不变</td>
+<td>是否仅发生加权贡献变化</td>
+</tr>
+<tr class="even">
+<td>总体指标不变</td>
+<td>对象级序列和时段是否变化</td>
+</tr>
+<tr class="odd">
+<td>一项指标改善，另一项变差</td>
+<td>取舍是否符合当前业务意图</td>
+</tr>
+<tr class="even">
+<td>结果波动较大</td>
+<td>运行条件、停止状态与重复运行记录</td>
+</tr>
+<tr class="odd">
+<td>没有可用方案</td>
+<td>数据、约束和状态，先于权重讨论</td>
+</tr>
+</tbody>
+</table></div>
+<p>限时运行或多个目标共同作用时，应同时检查模型计分依据和界面统计。两者可能包含不同项目，例如模型是否把空位置与已占用位置之间的转换计入代价。目标之间的取舍与限时搜索也会影响结果，因此提高一项权重后仍需重新查看实际序列。</p>
+<h2 id="练习与参考解析">练习与参考解析</h2>
+<p>为“尽量少切换”补充适用对象、切换指标与检查方法，再写一段结果说明，分别描述改善、不变或变差的指标，以及相应代价。没有观察到改善时，直接记录这一结果。若使用已有注塑A/B记录，应说明其中同时改变了两个权重，只能评价组合调整，不能把影响全部归因于color。</p>
+<p>最终成果是一张目标说明表与一份有条件、有指标、有对象的比较结论。</p>
+<h2 id="延伸阅读">延伸阅读</h2>
+<p><a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Objectives-and-Rule-Control-zh-CN">目标与规则控制</a>
+· <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Controlled-Solving-and-Engine-Adapters-zh-CN">受控求解与模型适配</a>
+· <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Trusted-Operation-and-Human-Review-zh-CN">人工复核与可信运行</a></p>
+<p>配套工作表：<a
+href="./Worksheet-Plan-Comparison.html">工作表：基线与调整方案比较</a>
+· <a
+href="./Worksheet-Operational-Rule.html">工作表：现场规则记录与检查</a></p>
+<p><a
+href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">专题
+C</a> · <a
+href="./Learning-C1-Facts-Constraints-and-Preferences.html">上一篇:
+区分业务事实、约束条件与目标偏好</a> · <a
+href="./Learning-C3-Turn-Experience-into-Rules.html">下一篇:
+把现场经验写成可检查的规则</a></p>
+      </article>
+      <footer class="article-footer"><a href="./">返回学习中心</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki/Learning-C2-Explain-Objective-Tradeoffs-zh-CN">在 Wiki 阅读</a></footer>
+    </main>
+  </div>
+  <footer class="site-footer shell"><strong>DecisioWorks</strong><span>从生产问题出发，理解与使用决策能力。</span></footer>
+</body>
+</html>

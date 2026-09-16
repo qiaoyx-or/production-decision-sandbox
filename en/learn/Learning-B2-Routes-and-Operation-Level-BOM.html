@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>B2 Process Routes and Operation-Level BOMs | DecisioWorks</title>
+  <meta name="description" content="Sequence values 10 and 20 only specify order. Here, one execution of an operation produces one unit. For operations producing several units per execution, record output per execution and the basis of material consumption separately." />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Learning-B2-Routes-and-Operation-Level-BOM.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-B2-Routes-and-Operation-Level-BOM.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Learning-B2-Routes-and-Operation-Level-BOM.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-B2-Routes-and-Operation-Level-BOM.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="B2 Process Routes and Operation-Level BOMs | DecisioWorks" />
+  <meta property="og:description" content="Sequence values 10 and 20 only specify order. Here, one execution of an operation produces one unit. For operations producing several units per execution, record output per execution and the basis of material consumption separately." />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Learning-B2-Routes-and-Operation-Level-BOM.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers-en.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="B2 Process Routes and Operation-Level BOMs | DecisioWorks" />
+  <meta name="twitter:description" content="Sequence values 10 and 20 only specify order. Here, one execution of an operation produces one unit. For operations producing several units per execution, record output per execution and the basis of material consumption separately." />
+  <meta name="twitter:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers-en.png" />
+  <link rel="icon" href="../../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "B2 Process Routes and Operation-Level BOMs", "description": "Sequence values 10 and 20 only specify order. Here, one execution of an operation produces one unit. For operations producing several units per execution, record output per execution and the basis of material consumption separately.", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Learning-B2-Routes-and-Operation-Level-BOM.html", "inLanguage": "en", "author": {"@type": "Organization", "name": "DecisioWorks", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/"}, {"@type": "ListItem", "position": 2, "name": "Learning Center", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/"}, {"@type": "ListItem", "position": 3, "name": "B Represent Manufacturing in Data", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Learning-Topic-B-Manufacturing-Data.html"}, {"@type": "ListItem", "position": 4, "name": "B2 Process Routes and Operation-Level BOMs", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Learning-B2-Routes-and-Operation-Level-BOM.html"}]}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#article">Skip to content</a>
+  <header class="learning-header"><div class="shell header-inner">
+    <a class="brand" href="../"><img src="../../assets/decisioworks-logo.png" alt="" width="36" height="36" /><strong>DecisioWorks</strong></a>
+    <nav aria-label="Main navigation">
+      <a href="../">Home</a>
+      <a href="../docs/">Docs</a>
+      <a class="language-switch" href="../../learn/Learning-B2-Routes-and-Operation-Level-BOM.html" lang="zh-CN" hreflang="zh-CN">中文</a>
+    </nav>
+  </div></header>
+  <div class="shell breadcrumbs" aria-label="Breadcrumb"><a href="../">Home</a><span>/</span><a href="./">Learning Center</a><span>/</span><a href="./Learning-Topic-B-Manufacturing-Data.html">B</a><span>/</span><span aria-current="page">B2 Process Routes and Operation-Level BOMs</span></div>
+  <div class="shell reading-layout">
+    <aside class="sidebar"><nav aria-label="Course contents"><a class="contents-home" href="./">Learning Center</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A From a Production Problem to a Testable Decision</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B Represent Manufacturing in Data</a><a class="lesson-link" href="./Learning-B1-Business-Tables-to-Computable-Objects.html">B1 From Business Tables to Computable Objects</a><a class="lesson-link" href="./Learning-B2-Routes-and-Operation-Level-BOM.html" aria-current="page">B2 Process Routes and Operation-Level BOMs</a><a class="lesson-link" href="./Learning-B3-Align-Time-Capacity-and-Materials.html">B3 Align Time, Capacity and Material Availability</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C Objectives, Experience and Operational Rules</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D Read Plans through Recorded Cases</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E Coordinate Planning Levels and Responses</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F Open Collaboration and Continued Evolution</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G Connect Applications and AI Agents through Standard Actions</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H Build Everyday Decision Capability</a><span class="nav-section">Worksheets</span><a href="./Worksheet-Operational-Rule.html">Operational Rule and Verification</a><a href="./Worksheet-Plan-Comparison.html">Baseline and Adjusted Plan Comparison</a><a href="./Worksheet-Review-and-Change-Record.html">Review and Change Record</a><a href="./Worksheet-Scenario-Brief.html">Scenario and Decision Task</a></nav></aside>
+    <main>
+      <details class="mobile-contents"><summary>Course contents</summary><nav aria-label="Mobile course contents"><a class="contents-home" href="./">Learning Center</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A From a Production Problem to a Testable Decision</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B Represent Manufacturing in Data</a><a class="lesson-link" href="./Learning-B1-Business-Tables-to-Computable-Objects.html">B1 From Business Tables to Computable Objects</a><a class="lesson-link" href="./Learning-B2-Routes-and-Operation-Level-BOM.html" aria-current="page">B2 Process Routes and Operation-Level BOMs</a><a class="lesson-link" href="./Learning-B3-Align-Time-Capacity-and-Materials.html">B3 Align Time, Capacity and Material Availability</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C Objectives, Experience and Operational Rules</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D Read Plans through Recorded Cases</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E Coordinate Planning Levels and Responses</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F Open Collaboration and Continued Evolution</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G Connect Applications and AI Agents through Standard Actions</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H Build Everyday Decision Capability</a><span class="nav-section">Worksheets</span><a href="./Worksheet-Operational-Rule.html">Operational Rule and Verification</a><a href="./Worksheet-Plan-Comparison.html">Baseline and Adjusted Plan Comparison</a><a href="./Worksheet-Review-and-Change-Record.html">Review and Change Record</a><a href="./Worksheet-Scenario-Brief.html">Scenario and Decision Task</a></nav></details>
+      <article id="article">
+        <header class="article-heading"><p class="kicker">Lesson</p><h1>B2 Process Routes and Operation-Level BOMs</h1></header>
+        <details class="page-contents"><summary>On this page</summary><nav><a href="#a-product-bom-also-needs-a-manufacturing-sequence">A Product BOM
+Also Needs a Manufacturing Sequence</a><a href="#review-the-data-step-by-step">Review the Data Step by Step</a><a href="#place-a-change-correctly">Place a Change Correctly</a><a href="#exercise-and-suggested-answer">Exercise and Suggested
+Answer</a><a href="#further-reading">Further Reading</a></nav></details>
+        <h2 id="a-product-bom-also-needs-a-manufacturing-sequence">A Product BOM
+Also Needs a Manufacturing Sequence</h2>
+<p>A bill of materials (BOM) identifies required materials; an
+operation-level BOM identifies where they are consumed. Teaching product
+P goes through cutting and assembly. Each unit consumes one blank in
+cutting and two fasteners in assembly. Planning ten units requires
+knowing that the 20 fasteners are needed at assembly, because their
+availability can affect when that operation starts.</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th>Business object</th>
+<th>Teaching example</th>
+<th>Relationship</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Product</td>
+<td>P</td>
+<td>product</td>
+</tr>
+<tr class="even">
+<td>Route</td>
+<td>R-P</td>
+<td>process_route.product links to P</td>
+</tr>
+<tr class="odd">
+<td>Operations</td>
+<td>Cutting 10, assembly 20</td>
+<td>process.route and process.seqno</td>
+</tr>
+<tr class="even">
+<td>Resources</td>
+<td>Cutter WC-C, assembly station WC-A</td>
+<td>process_adaptor links operations and work centers</td>
+</tr>
+<tr class="odd">
+<td>Materials</td>
+<td>Blank M-1, fastener M-2</td>
+<td>ingredient links an operation to material</td>
+</tr>
+</tbody>
+</table></div>
+<p>Sequence values 10 and 20 only specify order. Here, one execution of
+an operation produces one unit. For operations producing several units
+per execution, record output per execution and the basis of material
+consumption separately.</p>
+<h2
+id="connect-material-requirements-to-their-consumption-point">Connect
+Material Requirements to Their Consumption Point</h2>
+<p>Suppose ten blanks are available today and 20 fasteners arrive
+tomorrow. The business may permit cutting today and assembly tomorrow.
+Whether intermediate inventory, separated operations and cross-period
+work can be represented depends on the selected model and enabled
+constraints. Operation-level data provides the place to examine those
+questions.</p>
+<p>Attaching all materials only to the finished product can hide
+early-operation requirements. Requiring everything at the first
+operation can prevent work that could otherwise start. Use the real
+consumption point.</p>
+<h2 id="review-the-data-step-by-step">Review the Data Step by Step</h2>
+<ol type="1">
+<li>Confirm P's route and any candidate routes.</li>
+<li>Check operation order, outputs and eligible work centers.</li>
+<li>Trace each ingredient record to a specific operation and
+material.</li>
+<li>Check the basis of consumption, including processing cycles or
+output units.</li>
+<li>Align material availability with the planning time axis.</li>
+</ol>
+<p>This exercise assumes each finished unit passes through each
+operation once, without losses or co-products. Ten units therefore
+require ten blanks and 20 fasteners. For multi-output, scrap or
+co-product cases, first confirm that the selected model can represent
+the process. Then calculate from output per execution and material
+consumption. Output per execution is distinct from the proportion of
+good units produced.</p>
+<h2 id="place-a-change-correctly">Place a Change Correctly</h2>
+<p>Changing fastener consumption from two to three raises the teaching
+requirement to 30. Update the confirmed operation-material relationship,
+check availability, then rerun. A larger delivery weight cannot supply
+the missing ten fasteners.</p>
+<p>A route or alternative-resource change also needs an object-level
+review. Another route may change materials, productivity and duration.
+Replacing a work-center label alone is insufficient.</p>
+<h2 id="exercise-and-suggested-answer">Exercise and Suggested
+Answer</h2>
+<p>Add a surface-treatment operation consuming 0.2 liters of fluid per
+unit. Draw the route, resource and material relationships. Under the
+no-loss assumption, ten units require two liters.</p>
+<p>Explain where the fluid is consumed, its unit, its availability and
+the eligible resources. This establishes structure and hand
+calculations. Actual planning results require execution with the
+corresponding constraints enabled.</p>
+<h2 id="further-reading">Further Reading</h2>
+<p><a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Standardized-Data-Interface">Standardized
+Data Interface</a> · <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Data-Object-and-Field-Reference">Data
+Objects and Fields</a> · <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Data-Readiness-and-Validation">Data
+Readiness and Validation</a> · <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/ERP-MES-Data-Mapping-Guide">ERP
+and MES Data Mapping</a></p>
+<p>Worksheets: <a href="./Worksheet-Scenario-Brief.html">Worksheet: Scenario
+and Decision Task</a></p>
+<p><a href="./Learning-Topic-B-Manufacturing-Data.html">Topic B</a> · <a
+href="./Learning-B1-Business-Tables-to-Computable-Objects.html">Previous:
+From Business Tables to Computable Objects</a> · <a
+href="./Learning-B3-Align-Time-Capacity-and-Materials.html">Next: Align
+Time, Capacity and Material Availability</a></p>
+      </article>
+      <footer class="article-footer"><a href="./">Back to Learning Center</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki/Learning-B2-Routes-and-Operation-Level-BOM">Read on Wiki</a></footer>
+    </main>
+  </div>
+  <footer class="site-footer shell"><strong>DecisioWorks</strong><span>Learn decision capabilities through production problems.</span></footer>
+</body>
+</html>

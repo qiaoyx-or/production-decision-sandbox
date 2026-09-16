@@ -19,11 +19,13 @@ def public_url(path: str) -> str | None:
     normalized = path.replace("\\", "/").lstrip("./")
     if normalized == "index.html":
         return f"{BASE_URL}/"
-    if normalized.endswith("/index.html"):
+    if normalized in {"en/index.html", "sandbox/index.html", "en/sandbox/index.html"}:
         return f"{BASE_URL}/{normalized[:-10]}"
-    if normalized.endswith(".html") and (
-        normalized.startswith("docs/") or normalized.startswith("en/docs/")
+    if normalized.endswith(".html") and normalized.startswith(
+        ("docs/", "en/docs/", "guide/", "en/guide/", "learn/", "en/learn/")
     ):
+        if normalized.endswith("/index.html"):
+            return f"{BASE_URL}/{normalized[:-10]}"
         return f"{BASE_URL}/{normalized}"
     return None
 

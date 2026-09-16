@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C1 区分业务事实、约束条件与目标偏好 | DecisioWorks</title>
+  <meta name="description" content="本课以教学车间的六条描述进行分类。" />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-C1-Facts-Constraints-and-Preferences.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-C1-Facts-Constraints-and-Preferences.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Learning-C1-Facts-Constraints-and-Preferences.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-C1-Facts-Constraints-and-Preferences.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="C1 区分业务事实、约束条件与目标偏好 | DecisioWorks" />
+  <meta property="og:description" content="本课以教学车间的六条描述进行分类。" />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-C1-Facts-Constraints-and-Preferences.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="C1 区分业务事实、约束条件与目标偏好 | DecisioWorks" />
+  <meta name="twitter:description" content="本课以教学车间的六条描述进行分类。" />
+  <meta name="twitter:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <link rel="icon" href="../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "C1 区分业务事实、约束条件与目标偏好", "description": "本课以教学车间的六条描述进行分类。", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-C1-Facts-Constraints-and-Preferences.html", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "DecisioWorks", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "首页", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/"}, {"@type": "ListItem", "position": 2, "name": "学习中心", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/"}, {"@type": "ListItem", "position": 3, "name": "C 让目标、经验与规则参与决策", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-Topic-C-Objectives-and-Operational-Rules.html"}, {"@type": "ListItem", "position": 4, "name": "C1 区分业务事实、约束条件与目标偏好", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-C1-Facts-Constraints-and-Preferences.html"}]}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#article">跳到正文</a>
+  <header class="learning-header"><div class="shell header-inner">
+    <a class="brand" href="../"><img src="../assets/decisioworks-logo.png" alt="" width="36" height="36" /><strong>DecisioWorks</strong></a>
+    <nav aria-label="主导航">
+      <a href="../">主页</a>
+      <a href="../docs/">文档</a>
+      <a class="language-switch" href="../en/learn/Learning-C1-Facts-Constraints-and-Preferences.html" lang="en" hreflang="en">English</a>
+    </nav>
+  </div></header>
+  <div class="shell breadcrumbs" aria-label="面包屑导航"><a href="../">首页</a><span>/</span><a href="./">学习中心</a><span>/</span><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C</a><span>/</span><span aria-current="page">C1 区分业务事实、约束条件与目标偏好</span></div>
+  <div class="shell reading-layout">
+    <aside class="sidebar"><nav aria-label="课程目录"><a class="contents-home" href="./">学习中心</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A 从生产问题到可检验的决策</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B 用数据表达制造过程</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C 让目标、经验与规则参与决策</a><a class="lesson-link" href="./Learning-C1-Facts-Constraints-and-Preferences.html" aria-current="page">C1 区分业务事实、约束条件与目标偏好</a><a class="lesson-link" href="./Learning-C2-Explain-Objective-Tradeoffs.html">C2 交期、库存与切换：让取舍可以讨论</a><a class="lesson-link" href="./Learning-C3-Turn-Experience-into-Rules.html">C3 把现场经验写成可检查的规则</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D 从真实样例学会读计划</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E 让计划层级协同工作</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F 开放协作与持续演进</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G 用标准动作连接应用与AI Agent</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H 把一次练习变成日常能力</a><span class="nav-section">工作表</span><a href="./Worksheet-Operational-Rule.html">现场规则记录与检查</a><a href="./Worksheet-Plan-Comparison.html">基线与调整方案比较</a><a href="./Worksheet-Review-and-Change-Record.html">复盘与持续改进记录</a><a href="./Worksheet-Scenario-Brief.html">场景与决策任务</a></nav></aside>
+    <main>
+      <details class="mobile-contents"><summary>课程目录</summary><nav aria-label="移动端课程目录"><a class="contents-home" href="./">学习中心</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A 从生产问题到可检验的决策</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B 用数据表达制造过程</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C 让目标、经验与规则参与决策</a><a class="lesson-link" href="./Learning-C1-Facts-Constraints-and-Preferences.html" aria-current="page">C1 区分业务事实、约束条件与目标偏好</a><a class="lesson-link" href="./Learning-C2-Explain-Objective-Tradeoffs.html">C2 交期、库存与切换：让取舍可以讨论</a><a class="lesson-link" href="./Learning-C3-Turn-Experience-into-Rules.html">C3 把现场经验写成可检查的规则</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D 从真实样例学会读计划</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E 让计划层级协同工作</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F 开放协作与持续演进</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G 用标准动作连接应用与AI Agent</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H 把一次练习变成日常能力</a><span class="nav-section">工作表</span><a href="./Worksheet-Operational-Rule.html">现场规则记录与检查</a><a href="./Worksheet-Plan-Comparison.html">基线与调整方案比较</a><a href="./Worksheet-Review-and-Change-Record.html">复盘与持续改进记录</a><a href="./Worksheet-Scenario-Brief.html">场景与决策任务</a></nav></details>
+      <article id="article">
+        <header class="article-heading"><p class="kicker">课程</p><h1>C1 区分业务事实、约束条件与目标偏好</h1></header>
+        <details class="page-contents"><summary>本页内容</summary><nav><a href="#把分类映射到工具包">把分类映射到工具包</a><a href="#区分硬条件与代价">区分硬条件与代价</a><a href="#配置前完成一个小表">配置前完成一个小表</a><a href="#练习与参考解析">练习与参考解析</a><a href="#延伸阅读">延伸阅读</a></nav></details>
+        <h2
+id="同一句现场要求可能包含不同层次">同一句现场要求，可能包含不同层次</h2>
+<p>“这台设备今天少做一些，优先保障重点客户。”前半句可能来自已知维护，也可能只是风险偏好；后半句可能意味着已承诺交期必须满足，也可能只表示排序倾向。配置前把原因问清，能避免错误地把所有判断写成永久限制。</p>
+<p>本课以教学车间的六条描述进行分类。</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>描述</th>
+<th>初步分类</th>
+<th>还需确认</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>WC-1只能加工制品A</td>
+<td>资源与工艺事实</td>
+<td>是否存在已认可的替代路线</td>
+</tr>
+<tr class="even">
+<td>WC-1今天维护两小时</td>
+<td>日历事实</td>
+<td>是否已折减产能</td>
+</tr>
+<tr class="odd">
+<td>今天最多安排300件A</td>
+<td>管理规则或模型约束</td>
+<td>限额依据、对象与有效期</td>
+</tr>
+<tr class="even">
+<td>尽量减少颜色切换</td>
+<td>目标偏好</td>
+<td>颜色属性映射、切换指标及优化方向</td>
+</tr>
+<tr class="odd">
+<td>已开工任务保持不变</td>
+<td>执行稳定性规则</td>
+<td>哪些字段冻结、作用时间</td>
+</tr>
+<tr class="even">
+<td>超负荷时批准加班</td>
+<td>业务措施</td>
+<td>谁批准、可增加多少时间</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="把分类映射到工具包">把分类映射到工具包</h2>
+<p>标准数据接口表达工艺、资源、日历、数量和物料等结构。objective_system组织目标方向、权重与作用对象。marginal_control承接明确的规则、额度和现场控制信息；规则进入求解还需对应适配与实际执行检查。</p>
+<p>分类并非仅凭句式。“最多300件”若来自设备物理上限，应回到资源数据；若来自当前分配协议，则记录为有范围和有效期的规则。同一数值的来源不同，后续更新方式也不同。</p>
+<h2 id="区分硬条件与代价">区分硬条件与代价</h2>
+<p>硬条件要求所有被接受的方案满足限制。软条件允许出现偏差，并通过模型定义的惩罚项或目标统计量计算相应代价。选择软产能约束后，模型可能返回超负荷候选；使用者需要看到超载发生在哪个对象和时段，以及现场是否有处理办法。</p>
+<p>目标权重不会自动改变物理可行范围。若对所有已承诺任务都设硬交期，又没有足够资源，增加交期权重不能修复矛盾。</p>
+<h2 id="配置前完成一个小表">配置前完成一个小表</h2>
+<p>为每条要求记录“原始描述、确认后的含义、数据或配置位置、生效范围、确认人、复核方式”。把依据保留在业务说明中，字段与接口名则保持准确。</p>
+<p>调整一条规则后，检查目标配置之外是否还有同一限制在数据、能力编排配方（recipe）或应用中重复存在。重复约束会造成“我已放宽，结果为什么没变”的困惑。</p>
+<h2 id="练习与参考解析">练习与参考解析</h2>
+<p>将“紧急订单必须优先，但不能影响已开工任务”拆成两条要求。紧急任务需要明确对象与交期；已开工任务需要明确冻结范围。如果两者冲突，应展示资源与时段冲突，并由责任人确认改变哪项承诺。</p>
+<p>成果是一张可复核的要求分类表。读者应能说明为什么放在该位置，以及下一次业务变化由谁更新。</p>
+<h2 id="延伸阅读">延伸阅读</h2>
+<p><a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Objectives-and-Rule-Control-zh-CN">目标与规则控制</a>
+· <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Controlled-Solving-and-Engine-Adapters-zh-CN">受控求解与模型适配</a>
+· <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Trusted-Operation-and-Human-Review-zh-CN">人工复核与可信运行</a></p>
+<p>配套工作表：<a
+href="./Worksheet-Plan-Comparison.html">工作表：基线与调整方案比较</a>
+· <a
+href="./Worksheet-Operational-Rule.html">工作表：现场规则记录与检查</a></p>
+<p><a
+href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">专题
+C</a> · <a
+href="./Learning-B3-Align-Time-Capacity-and-Materials.html">上一篇:
+让产能、班制、维护与齐套使用同一时间坐标</a> · <a
+href="./Learning-C2-Explain-Objective-Tradeoffs.html">下一篇:
+交期、库存与切换：让取舍可以讨论</a></p>
+      </article>
+      <footer class="article-footer"><a href="./">返回学习中心</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki/Learning-C1-Facts-Constraints-and-Preferences-zh-CN">在 Wiki 阅读</a></footer>
+    </main>
+  </div>
+  <footer class="site-footer shell"><strong>DecisioWorks</strong><span>从生产问题出发，理解与使用决策能力。</span></footer>
+</body>
+</html>

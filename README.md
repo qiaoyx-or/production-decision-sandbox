@@ -45,6 +45,7 @@ GitHub Pages 提供静态浏览和前端演示，不接收生产数据或执行�
 | `index.html`、`en/` | 中英文产品主页及英文页面 |
 | `guide/`、`content/guides/` | 静态导览页面及双语 JSON 源内容 |
 | `docs/`、`content/docs/` | 文档中心页面及双语 Markdown 源内容 |
+| `learn/`、`en/learn/`、`content/learning/` | 双语学习中心、24 节课程及工作表 |
 | `sandbox/` | 原理沙盘 |
 | `workbench/`、`resources/` | 本地工作台、操作指南与集成模板 |
 | `assets/`、`downloads/` | 图片与白皮书下载文件 |
@@ -58,9 +59,23 @@ GitHub Pages 提供静态浏览和前端演示，不接收生产数据或执行�
 ```bash
 python3 scripts/build_docs.py
 python3 scripts/build_guides.py
+python3 scripts/build_learning.py
+python3 scripts/build_sitemap.py
 python3 scripts/test_static_site.py
 python3 scripts/test_guides.py
 python3 scripts/test_public_docs.py
+python3 scripts/test_learning.py
 ```
 
 先修改 `content/docs/` 或 `content/guides/` 中的源内容，再生成页面，并同时检查中英文版本。只更新本站内容时，直接运行上述生成命令；`--sync-from-wiki` 会用 Wiki 文件覆盖文档源内容，仅在需要重新导入时使用。
+
+学习中心使用 `content/learning/` 中的 Markdown，生成过程需要 Python 3 和 Pandoc。中英文对应页共用课程编号，表格中的案例数值与适用条件随正文保留。需要向 Wiki 同步时，运行 `python3 scripts/build_learning.py --wiki-output <Wiki目录>`；该命令只更新课程、专题和工作表文件，不覆盖 Wiki 的其他内容。
+
+## 搜索引擎收录
+
+所有页面生成器都会同步刷新站点地图。XML 与纯文本版本使用同一组页面的规范网址，包含中英文主页、沙盘、文档、导览和学习中心。构建日期不作为页面更新时间，因而不输出无法核实的 `lastmod`。
+
+- [XML sitemap](https://qiaoyx-or.github.io/production-decision-sandbox/sitemap.xml)
+- [Text sitemap](https://qiaoyx-or.github.io/production-decision-sandbox/sitemap.txt)
+
+在 Google Search Console 的对应网址前缀资源中提交完整 XML sitemap 地址；纯文本版本也符合 Google 的支持格式，可用于格式问题排查。项目位于 GitHub Pages 子路径，项目内的 `robots.txt` 不等同于域名根目录的爬虫规则。提交后的抓取和处理状态以 Search Console 报告为准。

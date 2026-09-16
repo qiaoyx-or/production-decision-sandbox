@@ -9,7 +9,6 @@ import json
 import re
 import shutil
 import subprocess
-from datetime import date
 from pathlib import Path
 
 
@@ -410,7 +409,7 @@ def index_template(language: str) -> str:
   <header class="docs-header"><div class="docs-shell docs-nav"><a class="docs-brand" href="{root}"><img src="{root}assets/decisioworks-logo.png" alt="" /><span><strong>DecisioWorks</strong><small>{'生产决策工具包' if is_zh else 'Production Decision Toolkit'}</small></span></a><nav><a href="{root}">{'产品主页' if is_zh else 'Product Home'}</a><a href="{WIKI_URL}" target="_blank" rel="noreferrer">{'完整 Wiki' if is_zh else 'Full Wiki'}</a><a href="{other}" lang="{'en' if is_zh else 'zh-CN'}">{'EN' if is_zh else '中'}</a></nav></div></header>
   <main id="main">
     <section class="docs-hero"><div class="docs-shell"><p class="eyebrow">DECISIOWORKS DOCUMENTATION</p><h1>{title}</h1><p>{intro}</p><dl><div><dt>12</dt><dd>{'核心专题' if is_zh else 'Core topics'}</dd></div><div><dt>2</dt><dd>{'真实案例' if is_zh else 'Real cases'}</dd></div><div><dt>中 / EN</dt><dd>{'双语文档' if is_zh else 'Bilingual docs'}</dd></div></dl></div></section>
-    <div class="docs-shell groups">{''.join(cards)}</div>
+    <div class="docs-shell groups"><section class="doc-group"><div class="group-heading"><h2>{'生产决策学习' if is_zh else 'Learn Production Decisions'}</h2></div><div><p>{'从生产问题出发，学习数据表达、规则配置、方案比较与计划联动。8 个专题、24 节课程及工作表可按任务选读。' if is_zh else 'Learn data modeling, operational rules, plan comparison and planning coordination through eight topics, 24 lessons and practical worksheets.'}</p><a href="../learn/">{'进入学习中心' if is_zh else 'Open the Learning Center'} →</a></div></section>{''.join(cards)}</div>
     <section class="docs-cta"><div class="docs-shell"><div><h2>{'需要更完整的技术参考？' if is_zh else 'Need the complete technical reference?'}</h2><p>{'GitHub Wiki 包含完整架构、字段、运行、集成和支持文档。' if is_zh else 'The GitHub Wiki contains the complete architecture, field, runtime, integration, and support documentation.'}</p></div><a href="{WIKI_URL}" target="_blank" rel="noreferrer">{'打开完整 Wiki' if is_zh else 'Open full Wiki'} →</a></div></section>
   </main>
   <footer class="docs-footer"><div class="docs-shell"><strong>DecisioWorks</strong><span>{'制造业生产决策工具包' if is_zh else 'Manufacturing Production Decision Toolkit'}</span></div></footer>
@@ -453,26 +452,8 @@ def build(project_root: Path, wiki_publish: Path | None) -> None:
         if asset_source.exists():
             shutil.copytree(asset_source, output_dir / "assets", dirs_exist_ok=True)
 
-    sitemap_urls = [
-        f"{BASE_URL}/",
-        f"{BASE_URL}/sandbox/",
-        f"{BASE_URL}/en/",
-        f"{BASE_URL}/en/sandbox/",
-        f"{BASE_URL}/docs/",
-        f"{BASE_URL}/en/docs/",
-    ]
-    for article in ARTICLES:
-        sitemap_urls.append(f"{BASE_URL}/docs/{article['slug']}.html")
-        sitemap_urls.append(f"{BASE_URL}/en/docs/{article['slug']}.html")
-    for prefix in ("guide", "en/guide"):
-        for page in sorted((project_root / prefix).glob("*.html")):
-            suffix = "" if page.name == "index.html" else page.name
-            sitemap_urls.append(f"{BASE_URL}/{prefix}/{suffix}")
-    sitemap = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
-    lastmod = date.today().isoformat()
-    sitemap.extend(f"  <url><loc>{url}</loc><lastmod>{lastmod}</lastmod></url>" for url in sitemap_urls)
-    sitemap.append("</urlset>")
-    (project_root / "sitemap.xml").write_text("\n".join(sitemap) + "\n", encoding="utf-8")
+    from build_sitemap import build as build_sitemap
+    build_sitemap(project_root)
 
 
 def main() -> None:

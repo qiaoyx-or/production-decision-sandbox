@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>D1 Stamping Planning: Read Demand, Capacity and Materials Together | DecisioWorks</title>
+  <meta name="description" content="The recorded run took place on 2026-08-31 using DecisioWorks v1.4.0 with commercial Enterprise authorization. The tables retain that run&#x27;s parameters and measurements." />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Learning-D1-Read-a-Stamping-Plan.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-D1-Read-a-Stamping-Plan.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Learning-D1-Read-a-Stamping-Plan.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-D1-Read-a-Stamping-Plan.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="D1 Stamping Planning: Read Demand, Capacity and Materials Together | DecisioWorks" />
+  <meta property="og:description" content="The recorded run took place on 2026-08-31 using DecisioWorks v1.4.0 with commercial Enterprise authorization. The tables retain that run&#x27;s parameters and measurements." />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Learning-D1-Read-a-Stamping-Plan.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers-en.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="D1 Stamping Planning: Read Demand, Capacity and Materials Together | DecisioWorks" />
+  <meta name="twitter:description" content="The recorded run took place on 2026-08-31 using DecisioWorks v1.4.0 with commercial Enterprise authorization. The tables retain that run&#x27;s parameters and measurements." />
+  <meta name="twitter:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers-en.png" />
+  <link rel="icon" href="../../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "D1 Stamping Planning: Read Demand, Capacity and Materials Together", "description": "The recorded run took place on 2026-08-31 using DecisioWorks v1.4.0 with commercial Enterprise authorization. The tables retain that run's parameters and measurements.", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Learning-D1-Read-a-Stamping-Plan.html", "inLanguage": "en", "author": {"@type": "Organization", "name": "DecisioWorks", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/"}, {"@type": "ListItem", "position": 2, "name": "Learning Center", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/"}, {"@type": "ListItem", "position": 3, "name": "D Read Plans through Recorded Cases", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Learning-Topic-D-Read-Real-Planning-Cases.html"}, {"@type": "ListItem", "position": 4, "name": "D1 Stamping Planning: Read Demand, Capacity and Materials Together", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Learning-D1-Read-a-Stamping-Plan.html"}]}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#article">Skip to content</a>
+  <header class="learning-header"><div class="shell header-inner">
+    <a class="brand" href="../"><img src="../../assets/decisioworks-logo.png" alt="" width="36" height="36" /><strong>DecisioWorks</strong></a>
+    <nav aria-label="Main navigation">
+      <a href="../">Home</a>
+      <a href="../docs/">Docs</a>
+      <a class="language-switch" href="../../learn/Learning-D1-Read-a-Stamping-Plan.html" lang="zh-CN" hreflang="zh-CN">中文</a>
+    </nav>
+  </div></header>
+  <div class="shell breadcrumbs" aria-label="Breadcrumb"><a href="../">Home</a><span>/</span><a href="./">Learning Center</a><span>/</span><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D</a><span>/</span><span aria-current="page">D1 Stamping Planning: Read Demand, Capacity and Materials Together</span></div>
+  <div class="shell reading-layout">
+    <aside class="sidebar"><nav aria-label="Course contents"><a class="contents-home" href="./">Learning Center</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A From a Production Problem to a Testable Decision</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B Represent Manufacturing in Data</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C Objectives, Experience and Operational Rules</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D Read Plans through Recorded Cases</a><a class="lesson-link" href="./Learning-D1-Read-a-Stamping-Plan.html" aria-current="page">D1 Stamping Planning: Read Demand, Capacity and Materials Together</a><a class="lesson-link" href="./Learning-D2-Read-Injection-Molding-Changeovers.html">D2 Injection Molding: Explain Attributes and Changeovers</a><a class="lesson-link" href="./Learning-D3-Select-Cases-by-Data-Characteristics.html">D3 Choose Cases by Their Data Characteristics</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E Coordinate Planning Levels and Responses</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F Open Collaboration and Continued Evolution</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G Connect Applications and AI Agents through Standard Actions</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H Build Everyday Decision Capability</a><span class="nav-section">Worksheets</span><a href="./Worksheet-Operational-Rule.html">Operational Rule and Verification</a><a href="./Worksheet-Plan-Comparison.html">Baseline and Adjusted Plan Comparison</a><a href="./Worksheet-Review-and-Change-Record.html">Review and Change Record</a><a href="./Worksheet-Scenario-Brief.html">Scenario and Decision Task</a></nav></aside>
+    <main>
+      <details class="mobile-contents"><summary>Course contents</summary><nav aria-label="Mobile course contents"><a class="contents-home" href="./">Learning Center</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A From a Production Problem to a Testable Decision</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B Represent Manufacturing in Data</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C Objectives, Experience and Operational Rules</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D Read Plans through Recorded Cases</a><a class="lesson-link" href="./Learning-D1-Read-a-Stamping-Plan.html" aria-current="page">D1 Stamping Planning: Read Demand, Capacity and Materials Together</a><a class="lesson-link" href="./Learning-D2-Read-Injection-Molding-Changeovers.html">D2 Injection Molding: Explain Attributes and Changeovers</a><a class="lesson-link" href="./Learning-D3-Select-Cases-by-Data-Characteristics.html">D3 Choose Cases by Their Data Characteristics</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E Coordinate Planning Levels and Responses</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F Open Collaboration and Continued Evolution</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G Connect Applications and AI Agents through Standard Actions</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H Build Everyday Decision Capability</a><span class="nav-section">Worksheets</span><a href="./Worksheet-Operational-Rule.html">Operational Rule and Verification</a><a href="./Worksheet-Plan-Comparison.html">Baseline and Adjusted Plan Comparison</a><a href="./Worksheet-Review-and-Change-Record.html">Review and Change Record</a><a href="./Worksheet-Scenario-Brief.html">Scenario and Decision Task</a></nav></details>
+      <article id="article">
+        <header class="article-heading"><p class="kicker">Lesson</p><h1>D1 Stamping Planning: Read Demand, Capacity and Materials Together</h1></header>
+        <details class="page-contents"><summary>On this page</summary><nav><a href="#trace-order-demand-to-resources-and-materials">Trace Order
+Demand to Resources and Materials</a><a href="#inputs-extend-beyond-an-order-table">Inputs Extend beyond an
+Order Table</a><a href="#configuration-and-processing">Configuration and Processing</a><a href="#read-the-comparison">Read the Comparison</a><a href="#keep-screenshot-and-api-evidence-separate">Keep Screenshot and
+API Evidence Separate</a><a href="#exercise-and-review">Exercise and Review</a><a href="#further-reading">Further Reading</a></nav></details>
+        <h2 id="trace-order-demand-to-resources-and-materials">Trace Order
+Demand to Resources and Materials</h2>
+<p>A stamping plan must align demand by period with work-center capacity
+and material availability at each operation. This case uses
+<code>StampingWorkshop/data.db</code> and the
+<code>production_planning</code> orchestration recipe to examine those
+relationships through inputs, configuration and results.</p>
+<p>The recorded run took place on 2026-08-31 using DecisioWorks v1.4.0
+with commercial Enterprise authorization. The tables retain that run's
+parameters and measurements.</p>
+<h2 id="inputs-extend-beyond-an-order-table">Inputs Extend beyond an
+Order Table</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th>Object</th>
+<th style="text-align: right;">Recorded size</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Order details</td>
+<td style="text-align: right;">1,920 rows</td>
+<td>Products, due times and quantities</td>
+</tr>
+<tr class="even">
+<td>Capacity</td>
+<td style="text-align: right;">50 rows</td>
+<td>Resource availability by time</td>
+</tr>
+<tr class="odd">
+<td>Operation-material relationships (ingredient)</td>
+<td style="text-align: right;">38 rows</td>
+<td>Materials required at each operation</td>
+</tr>
+<tr class="even">
+<td>Material availability</td>
+<td style="text-align: right;">500 rows</td>
+<td>Available quantities and timing</td>
+</tr>
+<tr class="odd">
+<td>Time units</td>
+<td style="text-align: right;">25</td>
+<td>Shared input and output coordinate</td>
+</tr>
+<tr class="even">
+<td>Work centers</td>
+<td style="text-align: right;">3</td>
+<td>Resource scope</td>
+</tr>
+</tbody>
+</table></div>
+<p>Trace one order through its product, route, operations and eligible
+resources, then inspect material conditions. Use row counts to check
+import completeness, then verify references to confirm that orders
+connect to the intended resources and materials.</p>
+<h2 id="configuration-and-processing">Configuration and Processing</h2>
+<p>The record enables capacity, demand and material-availability
+constraints. Capacity is soft and inventory constraints are disabled.
+Baseline weights are job_bias=-0.001 and waittime=1.0. The request uses
+16 threads and a 120-second limit. These describe the recorded run;
+current use follows the installed release and authorization.</p>
+<p>Actions acquire data, parse constraints, generate and select a
+solution, evaluate it and optionally output results. Persistence uses a
+separate result file rather than overwriting the standard business
+database.</p>
+<h2 id="read-the-comparison">Read the Comparison</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th>Item</th>
+<th style="text-align: right;">Baseline</th>
+<th style="text-align: right;">Adjusted</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>job_bias weight</td>
+<td style="text-align: right;">-0.001</td>
+<td style="text-align: right;">-0.003</td>
+</tr>
+<tr class="even">
+<td>waittime weight</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">2.0</td>
+</tr>
+<tr class="odd">
+<td>API status</td>
+<td style="text-align: right;">ok</td>
+<td style="text-align: right;">ok</td>
+</tr>
+<tr class="even">
+<td>API elapsed seconds</td>
+<td style="text-align: right;">14.41</td>
+<td style="text-align: right;">14.29</td>
+</tr>
+<tr class="odd">
+<td>Result rows</td>
+<td style="text-align: right;">66</td>
+<td style="text-align: right;">66</td>
+</tr>
+<tr class="even">
+<td>Total demand/output</td>
+<td style="text-align: right;">680500/680500</td>
+<td style="text-align: right;">680500/680500</td>
+</tr>
+<tr class="odd">
+<td>Final shortage</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td>Weighted job_bias contribution</td>
+<td style="text-align: right;">-7854.678</td>
+<td style="text-align: right;">-23564.034</td>
+</tr>
+</tbody>
+</table></div>
+<p>The baseline reports available capacity of 1188000, processing load
+of 371588.48 and planned load including setup and waiting of 377080.42,
+with reported utilization around 31.74%. These retain the report's
+measurement basis and are not converted to minutes here.</p>
+<p>Both runs selected candidates that passed the recorded validity
+checks. Here, “best” means the selected candidate from that run, without
+a claim of proven global optimality. The listed aggregates are
+unchanged. Match rows by business identifiers to compare quantities and
+completion times, then check those times against due dates. As two
+weights changed together, this record describes their combined
+adjustment.</p>
+<h2 id="keep-screenshot-and-api-evidence-separate">Keep Screenshot and
+API Evidence Separate</h2>
+<p>The reference includes actual input, baseline and comparison
+screenshots. Those page runs used two threads and 60 seconds and form a
+separate execution group. Keep each group's configuration and results
+together rather than inserting screenshot values into the API table.</p>
+<h2 id="exercise-and-review">Exercise and Review</h2>
+<p><strong>Reading exercise: check two values using only the figures
+above.</strong></p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th>Check</th>
+<th>Hand calculation</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Overall utilization</td>
+<td>377080.42 ÷ 1188000 × 100 ≈ 31.74%</td>
+<td>Matches the reported aggregate; period-level detail is still needed
+to identify local overload</td>
+</tr>
+<tr class="even">
+<td>Planned minus processing load</td>
+<td>377080.42 − 371588.48 = 5491.94</td>
+<td>Under the report's definitions, the difference involves setup and
+waiting; it does not separate their individual values</td>
+</tr>
+</tbody>
+</table></div>
+<p>These calculations use the published record and retain its original
+load units. The table supplies no conversion to minutes.</p>
+<p>A suitable conclusion is: “Both runs report total output of 680500
+and zero final shortage. Those two quantity measures agree. On-time
+completion, local overload and task-timing changes require detailed
+records.”</p>
+<p><strong>Runtime exercise: obtain the detailed results first.</strong>
+Within one run group, choose a work center and period. Record demand,
+capacity, materials, output and open questions. If only aggregates are
+available, mark this step as awaiting detail rather than inferring
+missing rows.</p>
+<p>For a follow-up comparison, change only waittime. Hold data,
+constraints, other objectives and computing conditions constant, and
+check the effective objective configuration. Save the new run's status,
+results and detailed differences before assessing the effect.</p>
+<h2 id="further-reading">Further Reading</h2>
+<p><a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Stamping-Planning-Case-Walkthrough">Stamping
+Planning Case</a> · <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Injection-Molding-Scheduling-Case-Walkthrough">Injection-Molding
+Scheduling Case</a> · <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/End-to-End-Scenario-Walkthrough">End-to-End
+Scenario</a> · <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Scenarios-and-Pain-Points">Scenarios
+and Pain Points</a></p>
+<p>Worksheets: <a href="./Worksheet-Plan-Comparison.html">Worksheet:
+Baseline and Adjusted Plan Comparison</a></p>
+<p><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">Topic D</a> ·
+<a href="./Learning-C3-Turn-Experience-into-Rules.html">Previous: Turn
+Shop-Floor Experience into Checkable Rules</a> · <a
+href="./Learning-D2-Read-Injection-Molding-Changeovers.html">Next: Injection
+Molding: Explain Attributes and Changeovers</a></p>
+      </article>
+      <footer class="article-footer"><a href="./">Back to Learning Center</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki/Learning-D1-Read-a-Stamping-Plan">Read on Wiki</a></footer>
+    </main>
+  </div>
+  <footer class="site-footer shell"><strong>DecisioWorks</strong><span>Learn decision capabilities through production problems.</span></footer>
+</body>
+</html>

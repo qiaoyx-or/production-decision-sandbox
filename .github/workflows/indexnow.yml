@@ -10,6 +10,10 @@ on:
       - "en/sandbox/**"
       - "docs/**"
       - "en/docs/**"
+      - "guide/**"
+      - "en/guide/**"
+      - "learn/**"
+      - "en/learn/**"
       - "sitemap.xml"
   workflow_dispatch:
     inputs:

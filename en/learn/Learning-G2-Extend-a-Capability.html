@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>G2 Extend a Capability with a Clear Calling Interface | DecisioWorks</title>
+  <meta name="description" content="The development exercise adds a result-review summary using existing analysis and order categories. Start by defining the extension&#x27;s inputs, outputs and checks." />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Learning-G2-Extend-a-Capability.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-G2-Extend-a-Capability.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Learning-G2-Extend-a-Capability.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Learning-G2-Extend-a-Capability.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="G2 Extend a Capability with a Clear Calling Interface | DecisioWorks" />
+  <meta property="og:description" content="The development exercise adds a result-review summary using existing analysis and order categories. Start by defining the extension&#x27;s inputs, outputs and checks." />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Learning-G2-Extend-a-Capability.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers-en.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="G2 Extend a Capability with a Clear Calling Interface | DecisioWorks" />
+  <meta name="twitter:description" content="The development exercise adds a result-review summary using existing analysis and order categories. Start by defining the extension&#x27;s inputs, outputs and checks." />
+  <meta name="twitter:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers-en.png" />
+  <link rel="icon" href="../../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "G2 Extend a Capability with a Clear Calling Interface", "description": "The development exercise adds a result-review summary using existing analysis and order categories. Start by defining the extension's inputs, outputs and checks.", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Learning-G2-Extend-a-Capability.html", "inLanguage": "en", "author": {"@type": "Organization", "name": "DecisioWorks", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/"}, {"@type": "ListItem", "position": 2, "name": "Learning Center", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/"}, {"@type": "ListItem", "position": 3, "name": "G Connect Applications and AI Agents through Standard Actions", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Learning-Topic-G-Actions-Extensions-and-Agents.html"}, {"@type": "ListItem", "position": 4, "name": "G2 Extend a Capability with a Clear Calling Interface", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Learning-G2-Extend-a-Capability.html"}]}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#article">Skip to content</a>
+  <header class="learning-header"><div class="shell header-inner">
+    <a class="brand" href="../"><img src="../../assets/decisioworks-logo.png" alt="" width="36" height="36" /><strong>DecisioWorks</strong></a>
+    <nav aria-label="Main navigation">
+      <a href="../">Home</a>
+      <a href="../docs/">Docs</a>
+      <a class="language-switch" href="../../learn/Learning-G2-Extend-a-Capability.html" lang="zh-CN" hreflang="zh-CN">中文</a>
+    </nav>
+  </div></header>
+  <div class="shell breadcrumbs" aria-label="Breadcrumb"><a href="../">Home</a><span>/</span><a href="./">Learning Center</a><span>/</span><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G</a><span>/</span><span aria-current="page">G2 Extend a Capability with a Clear Calling Interface</span></div>
+  <div class="shell reading-layout">
+    <aside class="sidebar"><nav aria-label="Course contents"><a class="contents-home" href="./">Learning Center</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A From a Production Problem to a Testable Decision</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B Represent Manufacturing in Data</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C Objectives, Experience and Operational Rules</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D Read Plans through Recorded Cases</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E Coordinate Planning Levels and Responses</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F Open Collaboration and Continued Evolution</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G Connect Applications and AI Agents through Standard Actions</a><a class="lesson-link" href="./Learning-G1-Read-and-Modify-a-Recipe.html">G1 Read and Modify a Capability Orchestration Recipe</a><a class="lesson-link" href="./Learning-G2-Extend-a-Capability.html" aria-current="page">G2 Extend a Capability with a Clear Calling Interface</a><a class="lesson-link" href="./Learning-G3-Write-an-Agent-Task.html">G3 Write an AI Agent Task That Can Be Reviewed</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H Build Everyday Decision Capability</a><span class="nav-section">Worksheets</span><a href="./Worksheet-Operational-Rule.html">Operational Rule and Verification</a><a href="./Worksheet-Plan-Comparison.html">Baseline and Adjusted Plan Comparison</a><a href="./Worksheet-Review-and-Change-Record.html">Review and Change Record</a><a href="./Worksheet-Scenario-Brief.html">Scenario and Decision Task</a></nav></aside>
+    <main>
+      <details class="mobile-contents"><summary>Course contents</summary><nav aria-label="Mobile course contents"><a class="contents-home" href="./">Learning Center</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A From a Production Problem to a Testable Decision</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B Represent Manufacturing in Data</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C Objectives, Experience and Operational Rules</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D Read Plans through Recorded Cases</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E Coordinate Planning Levels and Responses</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F Open Collaboration and Continued Evolution</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G Connect Applications and AI Agents through Standard Actions</a><a class="lesson-link" href="./Learning-G1-Read-and-Modify-a-Recipe.html">G1 Read and Modify a Capability Orchestration Recipe</a><a class="lesson-link" href="./Learning-G2-Extend-a-Capability.html" aria-current="page">G2 Extend a Capability with a Clear Calling Interface</a><a class="lesson-link" href="./Learning-G3-Write-an-Agent-Task.html">G3 Write an AI Agent Task That Can Be Reviewed</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H Build Everyday Decision Capability</a><span class="nav-section">Worksheets</span><a href="./Worksheet-Operational-Rule.html">Operational Rule and Verification</a><a href="./Worksheet-Plan-Comparison.html">Baseline and Adjusted Plan Comparison</a><a href="./Worksheet-Review-and-Change-Record.html">Review and Change Record</a><a href="./Worksheet-Scenario-Brief.html">Scenario and Decision Task</a></nav></details>
+      <article id="article">
+        <header class="article-heading"><p class="kicker">Lesson</p><h1>G2 Extend a Capability with a Clear Calling Interface</h1></header>
+        <details class="page-contents"><summary>On this page</summary><nav><a href="#choose-what-you-are-extending">Choose What You Are
+Extending</a><a href="#define-inputs-and-outputs">Define Inputs and Outputs</a><a href="#use-the-standard-extension-pattern">Use the Standard Extension
+Pattern</a><a href="#keep-registration-discovery-and-recipes-aligned">Keep
+Registration, Discovery and Recipes Aligned</a><a href="#test-normal-and-error-cases">Test Normal and Error Cases</a><a href="#exercise-and-review">Exercise and Review</a><a href="#further-reading">Further Reading</a></nav></details>
+        <h2 id="choose-what-you-are-extending">Choose What You Are
+Extending</h2>
+<p>A summary by order category usually belongs in analysis. A new
+constraint accepted by a solver may involve constraint handling or
+engine adaptation. Decide whether the change concerns data, rules,
+objectives, analysis or the engine before choosing its entry point.</p>
+<p>The development exercise adds a result-review summary using existing
+analysis and order categories. Start by defining the extension's inputs,
+outputs and checks.</p>
+<h2 id="define-inputs-and-outputs">Define Inputs and Outputs</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th>Item</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Inputs</td>
+<td>Results, order-category mapping and metric definitions</td>
+</tr>
+<tr class="even">
+<td>Outputs</td>
+<td>Category totals, unmatched records and measurement basis</td>
+</tr>
+<tr class="odd">
+<td>Result location</td>
+<td>A separate key under ctx.derived, without overwriting other
+analysis</td>
+</tr>
+<tr class="even">
+<td>Failure</td>
+<td>Missing required mapping or unresolved units</td>
+</tr>
+<tr class="odd">
+<td>Skip</td>
+<td>The application explicitly disables optional summarization</td>
+</tr>
+<tr class="even">
+<td>Side effects</td>
+<td>No source-data or selected-solution mutation</td>
+</tr>
+</tbody>
+</table></div>
+<p>First check whether results can be linked to orders. If output is
+aggregated by product, operation or period and several orders share a
+product, an explicit allocation is needed. Without it, keep the original
+granularity and report records that cannot be attributed to orders. Read
+fields from the actual object structure and list unclassified orders
+separately so category totals can be reconciled with the overall
+amount.</p>
+<h2 id="use-the-standard-extension-pattern">Use the Standard Extension
+Pattern</h2>
+<p>A handler is the function performing the business logic. Its ctx
+argument holds this execution's inputs, intermediate results and state.
+The developer guide supports handler(ctx) or handler(ctx, params),
+returning DecisionContext or ActionResult. CapabilityRegistry associates
+a handler with an appropriate standard action, and execution records its
+invocation and result.</p>
+<p>Entries have versions, priorities and enabled states. Default
+resolution selects the enabled implementation with the highest priority.
+Raising priority can therefore replace an existing action implementation
+rather than append a step. Inspect action semantics and selection. To
+preserve existing evaluation, use an appropriate composition or separate
+invocation supported by the project.</p>
+<h2 id="keep-registration-discovery-and-recipes-aligned">Keep
+Registration, Discovery and Recipes Aligned</h2>
+<ol type="1">
+<li>Provide a lightweight registration function without loading business
+data or starting a solve at import time.</li>
+<li>Match handler inputs and outputs to the action.</li>
+<li>Update the capability description and applicability.</li>
+<li>Provide a minimal recipe or calling example.</li>
+<li>Check registration, resolution, invocation, errors and results.</li>
+</ol>
+<p>Singletons suit thread-safe services without per-request state. Keep
+solve objects and customer data in request contexts so tasks remain
+isolated.</p>
+<h2 id="test-normal-and-error-cases">Test Normal and Error Cases</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th>Input</th>
+<th>Expected behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Complete categories and units</td>
+<td>Category totals match the overall amount</td>
+</tr>
+<tr class="even">
+<td>Unknown categories</td>
+<td>Report them or fail according to the definition</td>
+</tr>
+<tr class="odd">
+<td>Required results missing</td>
+<td>Structured failure</td>
+</tr>
+<tr class="even">
+<td>Optional feature disabled</td>
+<td>Explicit skip</td>
+</tr>
+<tr class="odd">
+<td>Two different requests</td>
+<td>Independent outputs</td>
+</tr>
+</tbody>
+</table></div>
+<p>If upstream processing provides no valid result, return the
+appropriate error or skip status. Summarize only data from the current
+run, and preserve the existing structured handling of authorization and
+input errors.</p>
+<h2 id="exercise-and-review">Exercise and Review</h2>
+<p>Produce the extension description, input/output table, registration
+strategy and five checks. Explain the action choice and how existing
+analysis continues to run.</p>
+<p>Completion requires the intended handler to be selected, correct
+measures, understandable errors and consistent existing behavior.
+Successful import alone does not establish a working extension.</p>
+<h2 id="further-reading">Further Reading</h2>
+<p><a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Standard-Actions-and-Orchestration">Standard
+Actions and Orchestration</a> · <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Actions-Recipes-and-Execution-Reference">Actions,
+Recipes and Execution</a> · <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Developer-Guide-Index">Developer
+Guides</a> · <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/Runtime-Status-Errors-and-Limits-Reference">Runtime
+Status and Limits</a></p>
+<p>Worksheets: <a href="./Worksheet-Scenario-Brief.html">Worksheet: Scenario
+and Decision Task</a> · <a
+href="./Worksheet-Operational-Rule.html">Worksheet: Operational Rule and
+Verification</a></p>
+<p><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">Topic
+G</a> · <a href="./Learning-G1-Read-and-Modify-a-Recipe.html">Previous: Read
+and Modify a Capability Orchestration Recipe</a> · <a
+href="./Learning-G3-Write-an-Agent-Task.html">Next: Write an AI Agent Task
+That Can Be Reviewed</a></p>
+      </article>
+      <footer class="article-footer"><a href="./">Back to Learning Center</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki/Learning-G2-Extend-a-Capability">Read on Wiki</a></footer>
+    </main>
+  </div>
+  <footer class="site-footer shell"><strong>DecisioWorks</strong><span>Learn decision capabilities through production problems.</span></footer>
+</body>
+</html>
