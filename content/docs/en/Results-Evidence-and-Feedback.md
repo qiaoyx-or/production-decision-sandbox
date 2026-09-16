@@ -8,13 +8,13 @@ A schedule shows that the model produced an arrangement. It does not by itself p
 
 | Level | Question | Examples |
 |---|---|---|
-| Portfolio | How does the whole alternative perform? | Satisfaction, shortage, output, workload, objective summary |
+| Overall | How does the whole alternative perform? | Satisfaction, shortage, output, workload, objective summary |
 | Object | Where does the issue occur? | Work center, product, order, operation, time unit, changeover |
 | Audit | Did the configured run produce this result? | Data/recipe version, objective direction, parameters, status |
 
-Weighted objective scores are not physical minutes, quantities, or utilization. The Web cockpit should show objective material alongside readable business quantities with units and object granularity.
+Weighted objective scores describe trade-offs; physical time, quantities, and workload come from the corresponding business metrics. When reading Web Cockpit results, check units and granularity, then inspect workload by work center and shortages by order or product. Converting time to minutes requires an explicit time unit in the data, not a weighted score.
 
-Evidence should retain dataset and recipe versions, runtime parameters, timestamps, action status, candidate count, selected solution, key business metrics, and a diagnostic ID. Public evidence should use redacted run summaries, configuration fingerprints, and only the diagnostic information required for review.
+Keep dataset and recipe versions, runtime parameters, timestamps, action status, candidate count, selected solution, key business metrics, and a diagnostic ID for later review. Run summaries, configuration fingerprints, and relevant diagnostics can support discussions with partners. Handle order, customer, and equipment details according to your organization's data-sharing requirements.
 
 Underproduction, overload, kitting risk, waiting, changeovers, and execution deviation may become PlanBias and then PlanSignal. A signal can influence objectives, local rules, release, or data preparation for the next cycle. Feedback supplies sourced decision material; it does not silently overwrite the plan.
 

@@ -16,10 +16,10 @@ Readable data proves only that files and fields are accessible. It does not prov
 
 These are acceptance states, not project-progress labels. A dataset may be ContractReady while missing the route, capacity, or objective material needed for SolverReady.
 
-Validation follows four chains: a common time coordinate; consistent product identity; route-operation-resource closure; and operation-level material demand connected to availability. It also checks units and ranges. `capacity.used` is a 0-to-1 utilization ratio, objective weights are not physical quantities, and time or quantity fields require explicit units.
+Validation follows four chains: a common time coordinate; consistent product identity; route-operation-resource closure; and operation-level material demand connected to availability. It also checks units and ranges. `capacity.used` is the fraction of capacity already occupied, from 0 to 1: 0.25 means 25% is already occupied. It is an input condition, not the utilization calculated from this run. Objective weights are not physical quantities, and time or quantity fields require explicit units.
 
 Failures should identify the object, field, or relationship and propose a repair direction. Mapping code must not silently invent defaults merely to make a solve pass. If a business default is approved, retain its source and assumption.
 
 For ERP/MES integration, map business objects before system columns. Demand may come from ERP, execution state from MES, and availability from WMS or procurement. The standardized interface brings them into shared semantics without making one source system an absolute APS prerequisite.
 
-Retain data version, mapping rules, row counts, relationship errors, units, readiness state, and unresolved issues. Only SolverReady datasets should appear as directly runnable scenarios.
+Retain data version, mapping rules, row counts, relationship errors, units, readiness state, and unresolved issues. Confirm that the data and configuration are SolverReady before solving. This means the inputs are prepared; finding a feasible solution still depends on the constraints and the solving process.

@@ -32,4 +32,4 @@ The hard part of APS data onboarding is not importing tables. It is proving that
 
 ## Differentiation
 
-Many interfaces stop when fields can be transferred. DecisioWorks distinguishes readable structure, closed business relationships, and solver readiness. The interface is therefore both a data entry point and the first stage of business modeling and constraint construction.
+DecisioWorks checks readable structure, complete business relationships, and solver readiness separately, so onboarding issues can be traced to a specific stage. The interface represents both source fields and their relationships and constraint semantics, allowing data from different systems to feed a shared planning model.

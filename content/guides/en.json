@@ -1,0 +1,127 @@
+{
+  "labels":{"skip":"Skip to content","mainnav":"Main navigation","home":"Product home","docs":"Docs","breadcrumb":"Breadcrumb","guide":"Start here","guidenav":"Guide topics","onpage":"On this page","back":"Back to start","whitepapers":"Read the whitepapers","footer":"Production Decision Toolkit · Data, decisions, models and applications can evolve independently.","contact":"Discuss your production scenario"},
+  "pages":{
+    "index":{
+      "short":"Start here","eyebrow":"MEET THE TOOLKIT","title":"Understand DecisioWorks through a production problem",
+      "intro":"When orders, resources or operating rules change, plans need to change with them. DecisioWorks provides production decision capabilities you can embed in business applications: connect data, express trade-offs, generate plans and explain what changed.",
+      "context":"A guide for manufacturers and partners · From production problems and data preparation to adoption",
+      "sections":[
+        {"id":"fit","title":"Which problem are you working on?","blocks":[
+          {"type":"table","caption":"Choose a starting point","heads":["Your situation","Where to start","What to establish"],"rows":[
+            ["Orders and capacity data exist, but planning still relies on spreadsheets","Stamping case: connect demand, time and resources","Whether the data supports planning and where the gaps are"],
+            ["Required quantities can be produced, but sequences and changeovers are hard to balance","Injection-molding case: compare sequences after changing preferences","Which measures changed and what the trade-offs were"],
+            ["You have ERP/MES and want to add production decision capabilities","Partner guide: mapping, calls and result handoff","What work is needed while retaining existing systems"],
+            ["Business conditions keep changing and the software needs to keep up","Responsibilities and adoption path","Which changes belong in data, rules or applications"]
+          ]},
+          {"type":"links","items":[{"href":"stamping.html","title":"Stamping: from demand to planned quantities","text":"Follow 1,920 order lines into a plan and examine the recorded re-run."},{"href":"injection-molding.html","title":"Injection molding: from preferences to sequence","text":"See why changeover counts and weighted scores need separate interpretation."},{"href":"partners.html","title":"Connect to your business or product","text":"Understand the roles of manufacturers, consultants, integrators and the toolkit."},{"href":"../docs/","title":"Explore the technical documentation","text":"Find data fields, readiness checks, rules, architecture and case evidence."}]}
+        ]},
+        {"id":"roles","title":"What do you provide, and what do you get?","blocks":[
+          {"type":"p","text":"Your organization supplies business facts and management judgment. DecisioWorks organizes those inputs into a computational process and returns results for planners or business applications. Commercial deployments can use this process in ongoing operations; a focused first scenario establishes shared definitions."},
+          {"type":"table","caption":"Inputs and outputs of a production decision","heads":["Stage","You provide","You can inspect"],"rows":[
+            ["Business data","Orders, products, routes, resources, calendars, and the materials or inventory needed by the scenario","Shared objects, mappings and relationship checks"],
+            ["Management intent","Delivery and load priorities, allowed adjustments and mandatory rules","Objective and rule configuration, including what is enabled"],
+            ["Plan generation","A capability workflow and runtime resources allowed by the license","Solver status, candidate plans, quantities or job sequences"],
+            ["Review and adjustment","Business review and actual execution deviations","Metrics, detailed results, comparisons and inputs for the next cycle"]
+          ]},
+          {"type":"figure","file":"capability-chain-en.png","width":1600,"height":900,"alt":"Five stages: standardized data interface, capability orchestration, objectives and rules, controlled solving, analysis and linkage","caption":"Each stage has inputs or outputs that can be inspected. The two cases show how this works in practice."}
+        ]},
+        {"id":"difference","title":"What makes the capabilities reusable over time?","blocks":[
+          {"type":"table","caption":"Give each change a clear place in the system","heads":["What changes","Where it belongs","What that means for users"],"rows":[
+            ["Data sources or field names","Standardized data interface and data_layer","Maintain the mapping while preserving business meaning"],
+            ["Management preferences or operating rules","objective_system and marginal_control","Record trade-offs and rules explicitly and compare results"],
+            ["Business workflows","Standard actions and capability orchestration","Recombine existing capabilities and retain execution records"],
+            ["Models or algorithms","GOCK and model adapters","Use interfaces to reduce direct disruption to business applications"],
+            ["Industry interfaces or system integrations","The open DecisioCore reference implementation","Understand the implementation, reuse interfaces or write your own calling code"]
+          ]},
+          {"type":"p","text":"Data mappings, rule configurations, case records and industry applications become reusable assets for manufacturers and partners. Available source code makes the calling patterns and decision workflow understandable. Use and distribution follow the license terms of the relevant edition."}
+        ]},
+        {"id":"next","title":"Continue from your role","blocks":[
+          {"type":"list","items":["Manufacturers: choose a planning problem that requires frequent adjustment, and read the cases alongside a sample of your data.","Consultants and industrial parks: turn a diagnosis into concrete data preparation, scenario comparison and business review tasks.","Software partners and developers: start with integration responsibilities, then explore the standard interfaces and open reference implementation."]},
+          {"type":"links","items":[{"href":"partners.html#prepare","title":"Prepare for an initial discussion","text":"Bring a scenario, sample data, key rules, review criteria and the people involved."},{"href":"../sandbox/","title":"Explore the illustrative sandbox","text":"Interactive examples explain capability relationships. Its values are illustrative; recorded solver results are in the case guides."}]}
+        ]}
+      ]
+    },
+    "stamping":{
+      "short":"Stamping planning","eyebrow":"RECORDED RUN · MASTER PRODUCTION PLANNING","title":"Stamping: from input data to a reviewable plan",
+      "intro":"Start by connecting demand, time and material availability under finite capacity. Then compare the plan after changing management preferences. This guide follows a recorded baseline and re-run.",
+      "context":"Recorded 2026-08-31 · DecisioWorks v1.4.0 · Commercial Enterprise license · API records, not a live run on this page",
+      "sections":[
+        {"id":"question","title":"The business question","blocks":[
+          {"type":"p","text":"What time-phased production plan can be generated from the given demand, capacity and material conditions? After changing load- and waiting-related objectives, did demand coverage, load or shortages change? Planners need to inspect both physical quantities and how the plan is evaluated."},
+          {"type":"note","title":"Evidence from an integrated sample","text":"These figures describe a particular dataset and configuration. They are not a promise of customer outcomes. Quantity coverage, delivery performance and equipment utilization require separate checks."}
+        ]},
+        {"id":"input","title":"Input: connect the business objects","blocks":[
+          {"type":"table","caption":"Input scale in this sample","heads":["Object","Records","Business meaning"],"rows":[["Order lines","1,920","Demand items, quantities and due dates"],["Capacity","50","Work-center availability by time unit"],["Operation-material links","38","Materials required by operations"],["Material availability","500","Material readiness by time unit"],["Time units","25","A shared time coordinate for demand, capacity and results"],["Work centers","3","One parent workshop and two production lines, not three machines"]]},
+          {"type":"p","text":"The capacity.used field represents the occupied or unavailable proportion, from 0 to 1. It is not the utilization calculated by this solve. Establishing that meaning gives everyone the same capacity baseline."}
+        ]},
+        {"id":"configuration","title":"Configuration: expose constraints and objectives","blocks":[
+          {"type":"table","caption":"Baseline and adjusted configuration","heads":["Setting","Baseline","Adjusted"],"rows":[["Capability workflow","production_planning","Unchanged"],["Demand, capacity and material constraints","Enabled","Unchanged"],["Soft capacity constraint","capacity_soft = true","Unchanged"],["Inventory constraint","Disabled","Unchanged"],["job_bias weight","-0.001","-0.003"],["waittime weight","1","2"],["Solver resources","16 threads / 120-second limit","Unchanged"]]},
+          {"type":"p","text":"After reading and checking the data, an orchestration recipe assembles objectives and constraints and calls GOCK to generate a plan. Analysis then examines planned quantities, shortages, load and objective details. The re-run uses the same data and retains configuration differences for review."}
+        ]},
+        {"id":"results","title":"Output: did the business quantities change?","blocks":[
+          {"type":"table","caption":"Baseline and re-run from the same API comparison","heads":["Measure","Baseline","Adjusted"],"rows":[["Valid candidates returned","1","1"],["Plan result rows","66","66"],["Total demand / output","680,500 / 680,500","680,500 / 680,500"],["Final shortage","0","0"],["Planned load rate","31.74%","31.74%"],["Weighted job_bias","-7,854.678","-23,564.034"],["Recorded elapsed time","14.41 seconds","14.29 seconds"],["Action events / errors","12 / 0","12 / 0"]]},
+          {"type":"p","text":"The aggregate business quantities stayed the same, while weighted job_bias changed with its weight. That score change alone does not demonstrate a production improvement. Matching aggregates also do not prove that every task assignment stayed identical; detailed results are needed for that assessment."},
+          {"type":"note","title":"Keep three distinctions in view","text":"100% quantity coverage does not establish on-time delivery. Two weights changed together, so this comparison cannot isolate either one's effect. Time and load fields must be interpreted in the dataset's units, not relabeled as minutes without conversion."}
+        ]},
+        {"id":"apply","title":"Apply the approach to your own planning","blocks":[
+          {"type":"list","items":["Check that order, work-center, route, material and time identifiers connect correctly.","Separate mandatory conditions from soft constraints that can be expressed through a penalty.","Keep an approved baseline and, where possible, change one factor per comparison.","Review detailed plans and business measures with the planner responsible for accepting changes."]},
+          {"type":"links","items":[{"href":"../docs/Stamping-Planning-Case-Walkthrough.html","title":"Full record and original UI screenshots","text":"The screenshots come from a separate UI run with different resource settings. Interpret each record in its own context."},{"href":"partners.html","title":"Plan integration and ongoing operation","text":"Move from the sample to enterprise data, business review and system integration."}]}
+        ]}
+      ]
+    },
+    "injection-molding":{
+      "short":"Injection scheduling","eyebrow":"RECORDED RUN · JOB SCHEDULING","title":"Injection molding: inspect the sequence after changing weights",
+      "intro":"Color, product attributes and job order interact. A higher score or a larger weight only becomes meaningful when you examine the actual sequence and changeover counts.",
+      "context":"Recorded 2026-08-31 · DecisioWorks v1.4.0 · Commercial Enterprise license · API records, not a live run on this page",
+      "sections":[
+        {"id":"question","title":"The business question","blocks":[
+          {"type":"p","text":"How can changeover preferences be expressed when different products run consecutively? This example compares sequences after adjusting color- and container-capacity-related weights. It shows how to inspect trade-offs, rather than assuming that one adjustment will improve every measure."}
+        ]},
+        {"id":"input","title":"Input: how product attributes enter scheduling","blocks":[
+          {"type":"table","caption":"Main objects in this sample","heads":["Object","Count or attributes","What it tells us"],"rows":[["Demand","37 records","Products and quantities to schedule"],["Work centers","2","Resource structure"],["Materials","115 records","Material objects and relationships"],["Process-adaptor relationships","418 records","Compatibility between operations and resources"],["Product attributes","Color, cap type, container capacity","Changeover differences; container capacity is a product attribute"],["Run configuration","Work center 2; 40 positions × 3 cycles","120 sequence positions in total"]]},
+          {"type":"note","title":"Distinguish stored data from new results","text":"The input package already contained 120 result records; this run also returned 120 new rows. Use the run status and its outputs to establish completion, not simply the number of rows already in the database."}
+        ]},
+        {"id":"configuration","title":"Configuration: change preferences, retain comparison conditions","blocks":[
+          {"type":"table","caption":"Constraints and weights used in this comparison","heads":["Setting","Baseline","Adjusted"],"rows":[["Capacity, demand and inventory constraints","Enabled","Unchanged"],["Sequence and circular changeover constraints","Enabled","Unchanged"],["Color-related weight","0.1","0.8"],["Container-capacity-related weight","1","1.5"],["Solver resources","16 threads / 60-second limit","Unchanged"]]},
+          {"type":"p","text":"The system reads attributes and compatibility relationships, builds constraints and objectives, and returns a sequence with analysis results. Keep both configurations and outputs. Compare physical changeover counts first, then examine weighted evaluation terms."}
+        ]},
+        {"id":"results","title":"Output: what did this re-run show?","blocks":[
+          {"type":"table","caption":"Baseline and re-run from the same API comparison","heads":["Measure","Baseline","Adjusted"],"rows":[["Valid candidates returned","1","1"],["New result rows","120","120"],["Sequence changeovers","41","46"],["Circular changeovers","6","14"],["Weighted changeover cost","14.9","66.4"],["Total API request time","66.57 seconds","66.50 seconds"],["Action events / errors","12 / 0","12 / 0"]]},
+          {"type":"p","text":"In this recorded comparison, changeover counts increased after the weights were raised. A feasible plan found within the available resources is not necessarily a proven global optimum. Scores calculated under different weights are also not an improvement percentage. Review sequences, business measures and constraint satisfaction together."},
+          {"type":"note","title":"Use consistent evaluation definitions","text":"Weighted cost includes model-specific evaluation terms and cannot be reconstructed by simply multiplying the displayed counts by the weights. Total API request time and the solver time limit measure different things. Because two attribute weights changed together, this comparison does not isolate either attribute's causal effect."}
+        ]},
+        {"id":"apply","title":"What should the next comparison change?","blocks":[
+          {"type":"list","items":["Identify the changeover type you want to reduce and confirm attribute meanings and units.","Hold data and runtime resources constant; compare one preference change at a time.","Inspect adjacent jobs and cycle transitions to locate the changes.","Consider delivery, output and shop-floor conditions before keeping the result, adjusting again or returning to the baseline."]},
+          {"type":"links","items":[{"href":"../docs/Injection-Molding-Scheduling-Case-Walkthrough.html","title":"Full record and original UI screenshots","text":"The historical settings and screenshot context support a closer review of the results."},{"href":"../docs/Objectives-and-Rule-Control.html","title":"Understand objectives and rules","text":"Separate mandatory rules from management preferences that can be traded off."}]}
+        ]}
+      ]
+    },
+    "partners":{
+      "short":"Integration & partners","eyebrow":"ADOPTION · ECOSYSTEM PARTNERS","title":"Connect production decisions to your existing business",
+      "intro":"Begin with a clear data mapping, then bring plan generation, review and feedback into daily operations. Manufacturers retain business judgment, partners contribute domain and integration expertise, and DecisioWorks supplies shared decision capabilities.",
+      "context":"Working together · For manufacturers, consultants, industrial software vendors and integrators",
+      "sections":[
+        {"id":"connect","title":"How do existing systems work with the toolkit?","blocks":[
+          {"type":"table","caption":"From source data to business handoff","heads":["Stage","Work involved","Handoff"],"rows":[["ERP / MES / files and shop-floor data","Confirm sources, owners, units, time and object identifiers","Field inventory and sample data"],["Standardized data interface","Map orders, routes and resources; validate relationships","Computable dataset and diagnostic records"],["DecisioCore + GOCK","Organize objectives, rules and execution; generate and analyze plans","Configuration, run status, result tables and explanations"],["Business application and human review","Check commitments, resources and execution arrangements","Decision to approve, adjust or retain"],["Execution feedback","Receive actual deviations and decide the next action","Evidence for updating data, rules or plans"]]},
+          {"type":"p","text":"Without ERP or MES, you can begin with spreadsheets and files. With those systems in place, completeness of business meaning and relationships remains the central question. Reuse the mapping and workflow in ongoing operation, then extend them to further scenarios."}
+        ]},
+        {"id":"responsibilities","title":"Who does what?","blocks":[
+          {"type":"table","caption":"Agree responsibilities at the start","heads":["Role","Main contribution","Assets to retain"],"rows":[["Manufacturer","Business objectives, operating rules, data ownership and plan approval","Shared definitions, baseline and acceptance criteria"],["Consultant or industrial park","Problem diagnosis, scenario selection, data preparation and result communication","Diagnosis, priority scenarios and improvement path"],["Software partner, integrator or internal development team","Data connections, workflow integration, interfaces, deployment and operations","Mappings, integration code, industry application and operating instructions"],["DecisioWorks","Shared data structures, decision orchestration, optimization and analysis interfaces","Toolkit, open reference implementation, examples and documentation"]]},
+          {"type":"p","text":"DecisioCore can serve as an implementation reference: reuse code, extend domain logic or write your own code to call GOCK. Connecting the parts responsible for business, models and applications gives future changes a clear place to be handled."}
+        ]},
+        {"id":"adoption","title":"What does each stage produce?","blocks":[
+          {"type":"figure","file":"adoption-en.png","width":1600,"height":900,"alt":"Six-stage route: define scenario, prepare data, run baseline, adjust and re-run, business review, integrate and operate","caption":"The adoption path continues into integration and ongoing operation. Validation is one step along the way."},
+          {"type":"table","caption":"Six stages and their outputs","heads":["Stage","Key activity","Output"],"rows":[["1. Define the scenario","Agree scope, horizon, owner and business question","Scenario description and success criteria"],["2. Prepare data","Check fields, units and object relationships","Mappings and gap list"],["3. Run a baseline","Record current configuration and results","Reviewable baseline"],["4. Adjust and re-run","Compare objective, rule or resource changes","Configuration differences and result comparison"],["5. Business review","Check operational conditions, benefits and trade-offs","Evidence to continue, adjust or stop"],["6. Integrate and operate","Connect systems, define approvals and collect feedback","Operating workflow, responsibilities and maintenance arrangements"]]}
+        ]},
+        {"id":"value","title":"Where does value start to accumulate?","blocks":[
+          {"type":"list","items":["Data assets: shared definitions for orders, routes and resources, with reusable mappings and checks.","Decision evidence: turn verbal trade-off discussions into comparable configurations and results.","Industry assets: partners build their own rules, workflows, applications and examples on shared capabilities.","Ongoing operation: update the relevant data and rules as the business changes, retaining versions and feedback to improve planning over time."]},
+          {"type":"p","text":"Evaluate ROI against a consistently defined business baseline, such as planning effort, manual adjustments, delivery deviations and changeover losses. Include data preparation, integration and maintenance costs. Actual value depends on the scenario, data and execution conditions."}
+        ]},
+        {"id":"prepare","title":"Bring five things to an initial discussion","blocks":[
+          {"type":"list","items":["A recurring planning problem: the affected objects, time horizon and people.","An anonymized data sample: fields, units, identifiers and missing values.","A few key rules: what must be respected and what can be negotiated.","An existing plan and its deviations: how you judge a good result.","The people involved: who provides data, reviews results, integrates and operates the system."]},
+          {"type":"links","items":[{"href":"../docs/ERP-MES-Data-Mapping-Guide.html","title":"Data mapping guide","text":"Translate source-system fields into shared business objects and relationships."},{"href":"../#contact","title":"Discuss a specific scenario","text":"Contact details and research-edition resources."}]}
+        ]}
+      ]
+    }
+  }
+}

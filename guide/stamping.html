@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>冲压计划：数据怎样变成可复核的计划？ | DecisioWorks</title>
+  <meta name="description" content="面对多条订单和有限产能，先把需求、时间与齐套关系表达清楚，再比较管理偏好变化后的计划。本页沿一次已记录的基线与重算过程展开。">
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/guide/stamping.html">
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/guide/stamping.html">
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/guide/stamping.html">
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/guide/stamping.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="冲压计划：数据怎样变成可复核的计划？ | DecisioWorks">
+  <meta property="og:description" content="面对多条订单和有限产能，先把需求、时间与齐套关系表达清楚，再比较管理偏好变化后的计划。本页沿一次已记录的基线与重算过程展开。">
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/guide/stamping.html">
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/guide/brand-hero.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="冲压计划：数据怎样变成可复核的计划？ | DecisioWorks">
+  <meta name="twitter:description" content="面对多条订单和有限产能，先把需求、时间与齐套关系表达清楚，再比较管理偏好变化后的计划。本页沿一次已记录的基线与重算过程展开。">
+  <meta name="twitter:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/guide/brand-hero.png">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "冲压计划：数据怎样变成可复核的计划？", "description": "面对多条订单和有限产能，先把需求、时间与齐套关系表达清楚，再比较管理偏好变化后的计划。本页沿一次已记录的基线与重算过程展开。", "inLanguage": "zh-CN", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/guide/stamping.html", "isPartOf": {"@type": "WebSite", "name": "DecisioWorks", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/"}}</script>
+  <link rel="icon" href="../assets/decisioworks-logo.png">
+  <link rel="stylesheet" href="../guide/styles.css?v=20260916">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到正文</a>
+  <header class="guide-header"><div class="guide-shell header-row">
+    <a class="guide-brand" href="../"><img src="../assets/decisioworks-logo.png" width="36" height="36" alt=""><strong>DecisioWorks</strong></a>
+    <nav aria-label="主要导航"><a href="../">产品主页</a><a href="../docs/">文档</a><a class="language-link" href="../en/guide/stamping.html" lang="en">EN</a></nav>
+  </div></header>
+  <main id="main">
+    <div class="guide-shell">
+      <nav class="guide-path" aria-label="当前位置"><a href="../">产品主页</a><span aria-hidden="true">/</span><a href="./">入门导览</a></nav>
+      <div class="guide-heading"><p class="eyebrow">已记录运行 · 主生产计划</p><h1>冲压计划：数据怎样变成可复核的计划？</h1><p class="guide-intro">面对多条订单和有限产能，先把需求、时间与齐套关系表达清楚，再比较管理偏好变化后的计划。本页沿一次已记录的基线与重算过程展开。</p><p class="record-label">记录日期：2026-08-31 · DecisioWorks v1.4.0 · 商业企业级授权 · API 运行记录，非本页实时求解</p></div>
+      <nav class="guide-tabs" aria-label="导览专题"><a href="./">从这里开始</a><a href="./stamping.html" aria-current="page">冲压计划</a><a href="./injection-molding.html">注塑排程</a><a href="./partners.html">接入与合作</a></nav>
+      <div class="guide-layout"><aside class="guide-toc"><strong>本页内容</strong><nav aria-label="本页内容"><a href="#question">要回答的业务问题</a><a href="#input">输入：先把业务对象连接起来</a><a href="#configuration">配置：让启用的约束与目标可见</a><a href="#results">输出：总分变了，业务量变了吗？</a><a href="#apply">怎样迁移到自己的场景？</a></nav></aside><article><section id="question" class="guide-section"><h2>要回答的业务问题</h2><p>在给定需求、产能与物料条件下，可以形成怎样的分期生产计划？调整负荷与等待相关目标后，需求覆盖、负荷和短缺有没有变化？计划员需要同时看结果数量和评价口径。</p><aside class="evidence-note"><strong>这是已接入样例的运行记录</strong><p>这些数字说明特定数据与配置下的运行结果，不是客户现场收益承诺。数量满足率、交期表现与设备利用情况要分别检查。</p></aside></section><section id="input" class="guide-section"><h2>输入：先把业务对象连接起来</h2><div class="table-scroll" tabindex="0" role="region" aria-label="该样例的输入规模"><table><caption>该样例的输入规模</caption><thead><tr><th scope="col">对象</th><th scope="col">记录数</th><th scope="col">业务含义</th></tr></thead><tbody><tr><th scope="row">订单明细</th><td>1,920</td><td>需求对象、数量与交期</td></tr><tr><th scope="row">产能</th><td>50</td><td>工作中心在时间单元内的可用条件</td></tr><tr><th scope="row">工序物料关联</th><td>38</td><td>工序与所需物料的关系</td></tr><tr><th scope="row">齐套信息</th><td>500</td><td>物料在时间单元内的可用条件</td></tr><tr><th scope="row">时间单元</th><td>25</td><td>统一需求、产能和结果的时间坐标</td></tr><tr><th scope="row">工作中心</th><td>3</td><td>上级车间与两条生产线；不等于三台设备</td></tr></tbody></table></div><p>产能表 capacity.used 表示已占用或不可用的比例，取值为 0 到 1；它不是本次求解得到的利用率。明确字段含义后，才有共同的产能基准。</p></section><section id="configuration" class="guide-section"><h2>配置：让启用的约束与目标可见</h2><div class="table-scroll" tabindex="0" role="region" aria-label="基线与调整配置"><table><caption>基线与调整配置</caption><thead><tr><th scope="col">配置项</th><th scope="col">基线</th><th scope="col">调整后</th></tr></thead><tbody><tr><th scope="row">能力流程</th><td>production_planning</td><td>保持不变</td></tr><tr><th scope="row">需求、产能、齐套约束</th><td>启用</td><td>保持不变</td></tr><tr><th scope="row">产能软约束</th><td>capacity_soft = true</td><td>保持不变</td></tr><tr><th scope="row">库存约束</th><td>未启用</td><td>保持不变</td></tr><tr><th scope="row">job_bias 权重</th><td>-0.001</td><td>-0.003</td></tr><tr><th scope="row">waittime 权重</th><td>1</td><td>2</td></tr><tr><th scope="row">求解资源</th><td>16 线程 / 120 秒上限</td><td>保持不变</td></tr></tbody></table></div><p>数据读取与检查后，系统按能力编排配方组织目标和约束，调用 GOCK 生成计划，最后分析计划量、短缺、负荷与目标明细。重算沿用同一组数据，保留配置差异以便复核。</p></section><section id="results" class="guide-section"><h2>输出：总分变了，业务量变了吗？</h2><div class="table-scroll" tabindex="0" role="region" aria-label="同一组 API 记录中的基线与重算结果"><table><caption>同一组 API 记录中的基线与重算结果</caption><thead><tr><th scope="col">指标</th><th scope="col">基线</th><th scope="col">调整后</th></tr></thead><tbody><tr><th scope="row">返回的有效候选</th><td>1</td><td>1</td></tr><tr><th scope="row">计划结果行数</th><td>66</td><td>66</td></tr><tr><th scope="row">需求总量 / 产出总量</th><td>680,500 / 680,500</td><td>680,500 / 680,500</td></tr><tr><th scope="row">最终短缺</th><td>0</td><td>0</td></tr><tr><th scope="row">计划负荷率</th><td>31.74%</td><td>31.74%</td></tr><tr><th scope="row">加权 job_bias</th><td>-7,854.678</td><td>-23,564.034</td></tr><tr><th scope="row">记录的运行耗时</th><td>14.41 秒</td><td>14.29 秒</td></tr><tr><th scope="row">动作事件 / 错误</th><td>12 / 0</td><td>12 / 0</td></tr></tbody></table></div><p>本次比较中，汇总业务量保持一致，而加权 job_bias 随权重变化。这个分数变化本身不代表生产效果改善；汇总相同也不能证明每条任务分配完全相同。进一步判断需要查看结果明细。</p><aside class="evidence-note"><strong>复核时注意三个口径</strong><p>100% 数量覆盖不等于按时交付；本次同时改变两个权重，不能把变化单独归因于其中一个；时间和负荷字段应按数据集单位解释，不能未经换算直接称为分钟。</p></aside></section><section id="apply" class="guide-section"><h2>怎样迁移到自己的场景？</h2><ul class="guide-list"><li>核对订单、工作中心、工艺、物料和时间标识能否关联。</li><li>列出必须满足的条件，以及可以通过代价表达的软约束。</li><li>保存一组已核准的基线；每次调整尽量只改变一个因素。</li><li>对照计划明细和业务指标，由计划负责人确认调整是否值得采用。</li></ul><div class="reading-links"><a href="../docs/Stamping-Planning-Case-Walkthrough.html"><strong>查看完整记录与原始界面截图</strong><span>截图属于另一次界面运行，资源设置与本页 API 对比不同；请按各自记录解读。</span><b aria-hidden="true">→</b></a><a href="partners.html"><strong>规划数据接入与持续运行</strong><span>从样例转到企业数据、业务复核和系统衔接。</span><b aria-hidden="true">→</b></a></div></section><div class="guide-next"><a href="./">返回入门导览</a><a href="../#whitepapers">阅读白皮书 →</a></div></article></div>
+    </div>
+  </main>
+  <footer class="guide-footer"><div class="guide-shell"><strong>DecisioWorks</strong><p>生产决策工具包 · 数据、决策、模型与应用可以分别演进。</p><a href="../#contact">讨论你的生产场景 →</a></div></footer>
+</body>
+</html>

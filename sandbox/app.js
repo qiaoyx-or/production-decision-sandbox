@@ -171,7 +171,7 @@ function clearRunTimers() {
 function setRunning(running) {
   const button = document.getElementById("runSandbox");
   button.disabled = running;
-  button.textContent = running ? "沙盘运行中..." : "运行沙盘验证";
+  button.textContent = running ? "流程演示中..." : "播放流程演示";
 }
 
 function runSandbox() {
@@ -181,17 +181,17 @@ function runSandbox() {
   state.activeStep = 0;
   const log = document.getElementById("runLog");
   const steps = ["接入数据", "业务表达", "设置规则", "受控求解", "结果分析", "反馈迭代"];
-  log.textContent = "沙盘运行中：" + steps[0] + "...";
+  log.textContent = "流程演示中：" + steps[0] + "...";
   render();
   steps.forEach((step, index) => {
     const timerId = setTimeout(() => {
       state.activeStep = index;
-      log.textContent = "沙盘运行中：" + steps.slice(0, index + 1).join(" → ");
+      log.textContent = "流程演示中：" + steps.slice(0, index + 1).join(" → ");
       render();
       if (index === steps.length - 1) {
         const dataLabel = datasetProfiles[state.dataset].label;
         const sceneLabel = document.getElementById("scenarioSelect").selectedOptions[0].textContent;
-        log.textContent = "运行完成：" + dataLabel + " / " + sceneLabel + " 已形成数据质量、能力编排、排程结果与下一轮建议。";
+        log.textContent = "演示完成：" + dataLabel + " / " + sceneLabel + " 的流程、指标与序列仅作原理说明；真实求解记录请查看案例导览。";
         runTimerIds = [];
         setRunning(false);
       }
@@ -213,7 +213,7 @@ function resetSandbox() {
   document.getElementById("scenarioSelect").value = state.scenario;
   document.getElementById("dueWeight").value = state.dueWeight;
   document.getElementById("maintenanceWeight").value = state.maintenanceWeight;
-  document.getElementById("runLog").textContent = "等待运行：选择数据集与场景后，点击“运行沙盘验证”。";
+  document.getElementById("runLog").textContent = "等待演示：选择数据集与场景后，点击“播放流程演示”。";
   render();
 }
 

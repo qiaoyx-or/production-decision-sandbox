@@ -171,7 +171,7 @@ function clearRunTimers() {
 function setRunning(running) {
   const button = document.getElementById("runSandbox");
   button.disabled = running;
-  button.textContent = running ? "Sandbox Running..." : "Run Sandbox Validation";
+  button.textContent = running ? "Process Demo Playing..." : "Play Process Demo";
 }
 
 function runSandbox() {
@@ -181,17 +181,17 @@ function runSandbox() {
   state.activeStep = 0;
   const log = document.getElementById("runLog");
   const steps = ["Connect Data", "Represent Business", "Configure Rules", "Controlled Optimization", "Analyze Results", "Iterate with Feedback"];
-  log.textContent = "Sandbox running: " + steps[0] + "...";
+  log.textContent = "Process demonstration: " + steps[0] + "...";
   render();
   steps.forEach((step, index) => {
     const timerId = setTimeout(() => {
       state.activeStep = index;
-      log.textContent = "Sandbox running: " + steps.slice(0, index + 1).join(" → ");
+      log.textContent = "Process demonstration: " + steps.slice(0, index + 1).join(" → ");
       render();
       if (index === steps.length - 1) {
         const dataLabel = datasetProfiles[state.dataset].label;
         const sceneLabel = document.getElementById("scenarioSelect").selectedOptions[0].textContent;
-        log.textContent = "Run complete: " + dataLabel + " / " + sceneLabel + " produced data-quality checks, capability orchestration, scheduling results, and next-cycle recommendations.";
+        log.textContent = "Demo complete: " + dataLabel + " / " + sceneLabel + " uses illustrative steps, metrics and sequences. See the case guides for recorded solver results.";
         runTimerIds = [];
         setRunning(false);
       }
@@ -213,7 +213,7 @@ function resetSandbox() {
   document.getElementById("scenarioSelect").value = state.scenario;
   document.getElementById("dueWeight").value = state.dueWeight;
   document.getElementById("maintenanceWeight").value = state.maintenanceWeight;
-  document.getElementById("runLog").textContent = "Ready: select a dataset and scenario, then click Run Sandbox Validation.";
+  document.getElementById("runLog").textContent = "Ready: select a dataset and scenario, then click Play Process Demo.";
   render();
 }
 

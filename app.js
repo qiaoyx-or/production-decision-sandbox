@@ -2,17 +2,30 @@ const navToggle = document.querySelector('.nav-toggle');
 const siteNav = document.querySelector('.site-nav');
 
 if (navToggle && siteNav) {
+  document.body.classList.add('navigation-ready');
+  const isEnglish = document.documentElement.lang === 'en';
+  const setToggle = (isOpen) => {
+    const label = isEnglish ? (isOpen ? 'Close navigation' : 'Open navigation') : (isOpen ? '关闭导航' : '打开导航');
+    navToggle.setAttribute('aria-expanded', String(isOpen));
+    navToggle.setAttribute('aria-label', label);
+    navToggle.textContent = isOpen ? '×' : '☰';
+    navToggle.title = label;
+  };
   navToggle.addEventListener('click', () => {
     const isOpen = siteNav.classList.toggle('open');
-    navToggle.setAttribute('aria-expanded', String(isOpen));
-    navToggle.textContent = isOpen ? '×' : '☰';
-    navToggle.title = isOpen ? '关闭导航' : '打开导航';
+    setToggle(isOpen);
   });
 
   siteNav.addEventListener('click', () => {
     siteNav.classList.remove('open');
-    navToggle.setAttribute('aria-expanded', 'false');
-    navToggle.textContent = '☰';
+    setToggle(false);
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && siteNav.classList.contains('open')) {
+      siteNav.classList.remove('open');
+      setToggle(false);
+      navToggle.focus();
+    }
   });
 }
 

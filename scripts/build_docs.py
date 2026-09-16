@@ -99,8 +99,8 @@ ARTICLES = [
         "group": "case",
         "zh_title": "注塑排程案例",
         "en_title": "Injection-Molding Scheduling Case Walkthrough",
-        "zh_summary": "展示设备、模具、班制、维护与切换约束下的真实排程过程。",
-        "en_summary": "Follow a real scheduling flow with equipment, molds, shifts, maintenance, and changeovers.",
+        "zh_summary": "查看颜色、盖型与容器容量如何进入循环排程及换型结果对比。",
+        "en_summary": "See how color, cap type, and container capacity enter cyclic scheduling and changeover comparisons.",
     },
     {
         "slug": "Research-and-Commercial-Editions",
@@ -148,8 +148,8 @@ SEO_TITLES = {
         "en": "Standardized APS Data Interfaces: Making Production Data Computable",
     },
     "ERP-MES-Data-Mapping-Guide": {
-        "zh": "ERP、MES数据为什么不能直接用于APS",
-        "en": "Why ERP and MES Data Cannot Be Used Directly by APS",
+        "zh": "ERP/MES数据接入APS：字段映射、语义与关系校验",
+        "en": "Mapping ERP and MES Data to APS: Semantics and Validation",
     },
     "Data-Readiness-and-Validation": {
         "zh": "APS数据准备度：从ContractReady到SolverReady",
@@ -172,8 +172,8 @@ SEO_TITLES = {
         "en": "Stamping Planning Case: Turning 1,920 Orders into a Controlled Plan",
     },
     "Injection-Molding-Scheduling-Case-Walkthrough": {
-        "zh": "注塑排程案例：设备、模具、班制与换型如何配置",
-        "en": "Injection-Molding Scheduling: Molds, Shifts, and Changeovers",
+        "zh": "注塑排程案例：颜色、容器容量与循环换型如何配置",
+        "en": "Injection-Molding Scheduling: Color, Container Capacity, and Cyclic Changeovers",
     },
     "Research-and-Commercial-Editions": {
         "zh": "DecisioWorks研究版与商业版有什么区别",
@@ -464,6 +464,10 @@ def build(project_root: Path, wiki_publish: Path | None) -> None:
     for article in ARTICLES:
         sitemap_urls.append(f"{BASE_URL}/docs/{article['slug']}.html")
         sitemap_urls.append(f"{BASE_URL}/en/docs/{article['slug']}.html")
+    for prefix in ("guide", "en/guide"):
+        for page in sorted((project_root / prefix).glob("*.html")):
+            suffix = "" if page.name == "index.html" else page.name
+            sitemap_urls.append(f"{BASE_URL}/{prefix}/{suffix}")
     sitemap = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     lastmod = date.today().isoformat()
     sitemap.extend(f"  <url><loc>{url}</loc><lastmod>{lastmod}</lastmod></url>" for url in sitemap_urls)

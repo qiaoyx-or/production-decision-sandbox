@@ -11,7 +11,7 @@ DecisioWorks uses `Scene × Business × Model × Solver` as its top-level logic 
 3. **DecisioCore** connects data, objectives, rules, models, results, and feedback. It answers how a plan becomes part of a production decision.
 4. **Web Cockpit** displays input, configuration, execution, output, and evidence. It makes capabilities visible and operable.
 
-Documentation, tooling, containers, tests, and release governance support all four layers. Each layer can evolve independently while stable interfaces, analysis results, and feedback signals preserve linkage.
+Documentation, tooling, containers, tests, and version management support all four layers, helping users understand interfaces, prepare deployments, and check the effects of upgrades. Each layer can evolve independently while stable interfaces, analysis results, and feedback signals keep them connected.
 
 ## Project layers are not runtime order
 

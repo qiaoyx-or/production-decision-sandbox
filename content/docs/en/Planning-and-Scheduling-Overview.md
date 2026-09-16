@@ -35,9 +35,11 @@ Disturbance response should not default to global rescheduling. Near-term prepar
 
 ## Observe it in the Web cockpit
 
+These steps use an installed DecisioWorks Web Cockpit with the required license configuration. This website provides documentation and historical case records; its sandbox illustrates the workflow.
+
 1. Inspect demand, capacity, kitting, and time units.
 2. Run a baseline and review satisfaction, workload, waiting, and shortage.
-3. Change one objective, rule, or resource condition and rerun.
+3. Change an objective or solver parameter supported by the page and rerun. For rule or resource changes, update the corresponding data or recipe and reload it first.
 4. Compare what remained stable, what changed, and why.
 5. Record cross-cycle issues as inputs to the next planning round.
 

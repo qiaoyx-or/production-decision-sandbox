@@ -1,55 +1,66 @@
 ﻿# Production Decision Sandbox
 
-生产决策沙盘系统本地 Web 原型，也是围绕 DecisioWorks 建设的数据诊断、流程编排、规则案例、AI Agent 与教学服务入口。
+DecisioWorks 的产品主页、双语文档与生产决策案例网站。通过输入数据、约束配置、处理过程和结果对比，帮助制造企业、咨询伙伴、软件集成商与开发者理解生产决策工具包的使用方式。
 
-## 当前版本
+**产品主页：[中文](https://qiaoyx-or.github.io/production-decision-sandbox/) · [English](https://qiaoyx-or.github.io/production-decision-sandbox/en/)**
 
-- 静态前端，无需安装依赖。
-- 展示数据准备、业务关系、能力编排、目标边界、排程时间轴、结果分析与反馈迭代。
-- 当前使用演示数据，不连接真实 DecisioWorks / GOCK。
-- 后续通过 `decisioworks-adapter` 接入 DecisioWorks 授权调用链路。
+DecisioWorks 提供可复用的数据接口、目标与规则配置、能力编排、模型求解和结果分析。企业和伙伴可以在这些基础能力上建设自己的场景应用，并随着业务变化持续调整数据、规则与流程。
 
-## V0.2 规划重点
+## 从哪里开始
 
-- 输入数据诊断与 ContractReady / ModelReady / SolverReady 分阶段判断；
-- 基于 DecisioWorks 注册能力的可视化流程编排；
-- 经验、偏好与规则案例库，其中 `marginal_control` 作为工程标识；
-- AI Agent 结构化任务包生成；
-- DecisioWorks 分角色教学、练习和真实运行检查点；
-- 样例、配方、规则、提示词、教学和证据模板资产中心；
-- GitHub Pages 公开主页与本地真实运行环境分离。
+| 想了解的内容 | 中文 | English |
+| --- | --- | --- |
+| 产品定位与使用路径 | [从这里开始](https://qiaoyx-or.github.io/production-decision-sandbox/guide/) | [Getting started](https://qiaoyx-or.github.io/production-decision-sandbox/en/guide/) |
+| 订单、产能和齐套如何进入计划 | [冲压计划案例](https://qiaoyx-or.github.io/production-decision-sandbox/guide/stamping.html) | [Stamping planning](https://qiaoyx-or.github.io/production-decision-sandbox/en/guide/stamping.html) |
+| 产品属性与目标权重怎样影响排程 | [注塑排程案例](https://qiaoyx-or.github.io/production-decision-sandbox/guide/injection-molding.html) | [Injection-molding scheduling](https://qiaoyx-or.github.io/production-decision-sandbox/en/guide/injection-molding.html) |
+| 架构、数据接口与运行方法 | [文档中心](https://qiaoyx-or.github.io/production-decision-sandbox/docs/) | [Documentation](https://qiaoyx-or.github.io/production-decision-sandbox/en/docs/) |
+| 集成分工与合作路径 | [接入与合作](https://qiaoyx-or.github.io/production-decision-sandbox/guide/partners.html) | [Integration and partnerships](https://qiaoyx-or.github.io/production-decision-sandbox/en/guide/partners.html) |
 
-## V0.2 模块边界
+产品与解决方案白皮书可在主页的[白皮书专区](https://qiaoyx-or.github.io/production-decision-sandbox/#whitepapers)阅读和下载。
 
-V0.2 以“外围服务”而非“重型系统”为边界，重点补齐六类能力：
+## 页面与运行方式
 
-- **可视化流程编排**：把 DecisioWorks 的标准动作和 Recipe 变成可读、可校验、可复用的流程图。
-- **输入数据诊断**：判断数据是否达到 ContractReady / ModelReady / SolverReady，而不只是检查字段是否存在。
-- **经验、偏好与规则案例**：以 `marginal_control` 等工程标识承接现场经验，使规则有条件、有参数、有证据。
-- **AI Agent 任务包**：生成带上下文、允许动作、禁止动作和验收标准的结构化提示词包。
-- **DecisioWorks 使用教学**：围绕真实样例形成分角色学习、练习、检查和复盘路径。
-- **GitHub Pages 公开主页**：发布公开说明、脱敏样例、教程、模板和下载入口，与本地真实运行严格分离。
+| 入口 | 可以做什么 | 数据与结果来源 |
+| --- | --- | --- |
+| 产品主页、静态导览、文档中心 | 阅读产品说明、案例、架构图和白皮书 | 已发布资料及标明配置的历史运行记录 |
+| 原理沙盘 `sandbox/` | 交互了解数据关系、配置和决策流程 | 浏览器中的示意数据与演示逻辑 |
+| 本地工作台 `workbench/` | 查看标准样例、整理配方、生成 Agent 任务包；连接本地服务后运行基线与重算 | 静态模式使用样例快照；本地模式读取所连接的 DecisioWorks 运行环境 |
 
-## 转化型能力
+GitHub Pages 提供静态浏览和前端演示，不接收生产数据或执行在线求解。需要实际运行时，请按照[本地工作台指南](resources/LOCAL_WORKBENCH.md)连接已安装、已授权的 DecisioWorks。
 
-Sandbox 的 V0.2 不以“功能多”为目标，而以“试点转化”为目标：
+冲压和注塑案例采用标准样例的真实运行记录，并区分 API 结果与独立截图运行。读者可以据此理解方法，再用自己的数据和业务验收条件检查适用性；样例指标不代表客户实施收益。
 
-- **场景卡**：把客户问题整理成业务问题、所需数据、可验证结果、适用对象和下一步动作。
-- **数据资产评分**：把数据诊断结果转成结构完整度、语义清晰度、关系闭合度、约束可用度和运行就绪度。
-- **证据包**：沉淀数据版本、配方、参数、结果、分析和人工复核结论。
-- **伙伴集成包**：帮助 MES / ERP / WMS 厂商和系统集成商理解如何导出数据、调用能力和嵌入结果。
-- **咨询伙伴工作流**：支持咨询伙伴从方案诊断走向数据验证、效果评估和 ROI 判断。
-- **AI Agent 模板库**：提供带上下文、允许动作、禁止动作和验收标准的结构化任务模板。
-- **公开页转化漏斗**：引导访问者从了解项目进入研究版下载、场景整理、伙伴集成或试点沟通。
+## 场景准备与伙伴集成
 
+- [伙伴集成指南](resources/PARTNER_INTEGRATION.md)：数据映射、调用方式、结果复核及各方分工。
+- [场景与验收记录模板](resources/templates/SCENARIO_AND_ACCEPTANCE.md)：整理业务问题、数据来源、约束、基线与重算结果。
+- [完整技术 Wiki](https://github.com/qiaoyx-or/decisioworks/wiki)：查阅更多字段、配置、集成与使用说明。
 
-## 产品边界
+实际使用范围、源码使用条件和运行资源以所选 DecisioWorks 版本的许可与发行说明为准。分享运行记录或 Agent 任务包前，请确认其中的业务内容适合接收方使用。
 
-- GitHub Pages 仅发布公开说明、脱敏样例、教程、模板索引和下载入口；
-- 客户数据诊断、真实流程运行与方案对比只在本地或客户内网完成；
-- 所有真实求解通过 `decisioworks-adapter` 调用 DecisioWorks，不提供 GOCK 内部访问入口；
-- AI Agent 提示词不得包含私钥、授权文件、客户原始数据和受保护实现信息。
+## 仓库结构
 
-## 产品主页
+| 目录 | 内容 |
+| --- | --- |
+| `index.html`、`en/` | 中英文产品主页及英文页面 |
+| `guide/`、`content/guides/` | 静态导览页面及双语 JSON 源内容 |
+| `docs/`、`content/docs/` | 文档中心页面及双语 Markdown 源内容 |
+| `sandbox/` | 原理沙盘 |
+| `workbench/`、`resources/` | 本地工作台、操作指南与集成模板 |
+| `assets/`、`downloads/` | 图片与白皮书下载文件 |
+| `scripts/` | 静态内容生成与检查脚本 |
+| `apps/web/` | 独立的 React 界面示例，参见其 [README](apps/web/README.md) |
 
-[https://qiaoyx-or.github.io/production-decision-sandbox/](https://qiaoyx-or.github.io/production-decision-sandbox/)
+## 内容维护与检查
+
+浏览静态网站无需安装依赖。维护内容时，在仓库根目录运行以下命令；文档中心生成需要 Python 3 和 Pandoc，静态导览生成及以下检查使用 Python 标准库。
+
+```bash
+python3 scripts/build_docs.py
+python3 scripts/build_guides.py
+python3 scripts/test_static_site.py
+python3 scripts/test_guides.py
+python3 scripts/test_public_docs.py
+```
+
+先修改 `content/docs/` 或 `content/guides/` 中的源内容，再生成页面，并同时检查中英文版本。只更新本站内容时，直接运行上述生成命令；`--sync-from-wiki` 会用 Wiki 文件覆盖文档源内容，仅在需要重新导入时使用。

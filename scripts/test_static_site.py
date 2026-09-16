@@ -77,6 +77,8 @@ def main() -> None:
         root / "en" / "sandbox" / "index.html",
         *sorted((root / "docs").glob("*.html")),
         *sorted((root / "en" / "docs").glob("*.html")),
+        *sorted((root / "guide").glob("*.html")),
+        *sorted((root / "en" / "guide").glob("*.html")),
     ]
     for page in pages:
         if ".git" in page.parts:

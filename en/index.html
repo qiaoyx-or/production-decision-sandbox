@@ -13,11 +13,11 @@
   <meta property="og:title" content="DecisioWorks | Manufacturing Production Decision Toolkit" />
   <meta property="og:description" content="Connect industry data, objectives and rules, controlled optimization, result interpretation, and feedback-driven evolution." />
   <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/en/" />
-  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers-en.png" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/guide/brand-hero.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="DecisioWorks | Manufacturing Production Decision Toolkit" />
   <meta name="twitter:description" content="Connect manufacturing data, objectives and rules, controlled optimization, result interpretation, and feedback." />
-  <meta name="twitter:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers-en.png" />
+  <meta name="twitter:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/guide/brand-hero.png" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -45,7 +45,7 @@
   </script>
   <title>DecisioWorks | Manufacturing Production Decision Toolkit</title>
   <link rel="icon" href="../assets/decisioworks-logo.png" />
-  <link rel="stylesheet" href="../styles.css?v=20260906-1" />
+  <link rel="stylesheet" href="../styles.css?v=20260916" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -71,23 +71,15 @@
   </header>
 
   <main id="main">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-art" aria-hidden="true">
-        <div class="hero-art-orbit">
-          <img src="../assets/decisioworks-logo.png" alt="" />
-          <span class="hero-signal signal-data">Data Semantics</span>
-          <span class="hero-signal signal-objective">Objective Governance</span>
-          <span class="hero-signal signal-solver">Controlled Optimization</span>
-          <span class="hero-signal signal-feedback">Feedback Evolution</span>
-        </div>
-      </div>
+    <section class="hero brand-hero" aria-labelledby="hero-title">
+      <div class="brand-banner"><img src="../assets/guide/brand-hero.png" width="1672" height="941" fetchpriority="high" alt="DecisioWorks: Production Decision Toolkit, connecting data, models, solvers and decisions" /></div>
       <div class="content-shell hero-content">
-        <p class="eyebrow">PRODUCTION DECISION TOOLKIT</p>
-        <h1 id="hero-title">DecisioWorks<br /><span>Manufacturing Production Decision Toolkit</span></h1>
-        <p class="hero-lead">Bring industry data, objectives and rules, controlled optimization, result interpretation, and feedback into one runnable, reviewable, and continuously evolving capability chain.</p>
+        <h1 id="hero-title">DecisioWorks · Production Decision Toolkit</h1>
+        <p class="hero-lead">Connect orders, capacity and operating rules to a production decision engine. Generate plans, compare trade-offs and adapt as your business changes.</p>
         <div class="hero-actions">
-          <a class="button primary" href="./sandbox/">Open Decision Sandbox <span aria-hidden="true">→</span></a>
-          <a class="button secondary" href="https://github.com/qiaoyx-or/DecisioWorks" target="_blank" rel="noreferrer">Explore DecisioCore</a>
+          <a class="button primary" href="./guide/">Start here <span aria-hidden="true">→</span></a>
+          <a class="button secondary" href="./guide/stamping.html">View a real case</a>
+          <a class="hero-text-link" href="https://github.com/qiaoyx-or/DecisioWorks" target="_blank" rel="noreferrer">Explore the source code ↗</a>
         </div>
         <dl class="hero-facts" aria-label="Project status">
           <div><dt>Research</dt><dd>Research edition available</dd></div>
@@ -152,8 +144,8 @@
           </div>
         </div>
         <figure class="architecture-figure">
-          <img src="../assets/decisioworks-project-layers-en.png" alt="DecisioWorks project architecture: presentation and interaction, decision orchestration, model optimization, and scenario data" />
-          <figcaption>Each layer can evolve independently while clear interfaces form a complete production decision capability.</figcaption>
+          <a href="../assets/guide/architecture-en.png" target="_blank" rel="noreferrer"><img src="../assets/guide/architecture-en.png" width="1600" height="900" loading="lazy" alt="DecisioWorks architecture: business applications, decision orchestration, model optimization and scenario data" /></a>
+          <figcaption>Layers evolve independently and work together through interfaces. <a href="./guide/partners.html">Explore integration roles →</a></figcaption>
         </figure>
       </div>
     </section>
@@ -161,18 +153,19 @@
     <section class="section sandbox-section" id="sandbox-preview">
       <div class="content-shell sandbox-layout">
         <figure class="sandbox-visual">
-          <img src="../assets/decision-validation-loop-en.png" alt="Production decision loop from data selection and objective configuration to optimization, analysis, deviation identification, and feedback" />
+          <a href="../assets/guide/capability-chain-en.png" target="_blank" rel="noreferrer"><img src="../assets/guide/capability-chain-en.png" width="1600" height="900" loading="lazy" alt="Standardized data, capability orchestration, objectives and rules, controlled solving, analysis and linkage" /></a>
         </figure>
         <div class="sandbox-copy">
-          <p class="eyebrow">PRODUCTION DECISION SANDBOX</p>
-          <h2>Understand the Chain Before Entering the Scenario</h2>
-          <p>The sandbox uses public demonstration data to show data preparation, business relationships, objective configuration, runtime flow, scheduling results, analysis, and feedback for learning, training, and solution communication.</p>
+          <p class="eyebrow">FOLLOW A REAL CASE</p>
+          <h2>Follow the inputs through to the results</h2>
+          <p>Start with a business question, then inspect the data, enabled constraints, baseline and adjusted results. The guides use recorded real runs to show how the approach could apply to your business.</p>
           <div class="sandbox-entries">
-            <a href="./sandbox/#businessMap">Data and Business Relationships <span>→</span></a>
-            <a href="./sandbox/#controlBars">Objective and Rule Control <span>→</span></a>
-            <a href="./sandbox/#analysisStack">Results and Feedback Review <span>→</span></a>
+            <a href="./guide/stamping.html#input">Stamping: from data to a plan <span>→</span></a>
+            <a href="./guide/injection-molding.html#results">Injection molding: compare weights and changeovers <span>→</span></a>
+            <a href="./guide/partners.html#adoption">Integration: from baseline to ongoing operation <span>→</span></a>
           </div>
-          <a class="button primary" href="./sandbox/">Open Interactive Sandbox <span aria-hidden="true">→</span></a>
+          <a class="button primary" href="./guide/">Read the guides <span aria-hidden="true">→</span></a>
+          <p class="demo-note">The <a href="./sandbox/">illustrative sandbox</a> retains interactive examples with demonstration values. Recorded solver results are in the case guides.</p>
         </div>
       </div>
     </section>
@@ -185,20 +178,20 @@
           <p>Examples expose input data, business constraints, runtime processes, and result interpretation instead of hiding capabilities behind abstractions.</p>
         </div>
         <div class="example-grid">
-          <a class="example-card" href="./docs/Stamping-Planning-Case-Walkthrough.html">
+          <a class="example-card" href="./guide/stamping.html">
             <div class="example-meta"><span>Master Production Planning</span><b>MPS</b></div>
             <h3>Stamping Workshop Production Planning</h3>
-            <p>Organize plans around production calendars, capacity, demand, material availability, and inventory limits, then observe delivery and load changes.</p>
+            <p>Follow 1,920 order lines, capacity and material availability into a plan. Compare planned quantities, load and weighted scores after a re-run.</p>
             <dl><div><dt>Input</dt><dd>Demand / Capacity / Materials</dd></div><div><dt>Output</dt><dd>Plan / Load / Deviation</dd></div></dl>
           </a>
-          <a class="example-card" href="./docs/Injection-Molding-Scheduling-Case-Walkthrough.html">
+          <a class="example-card" href="./guide/injection-molding.html">
             <div class="example-meta"><span>Job Scheduling</span><b>SCHEDULING</b></div>
             <h3>Injection-Molding Workshop Scheduling</h3>
-            <p>Build job sequences under equipment, molds, shifts, maintenance windows, and changeover attributes, then analyze waiting and setup impacts.</p>
-            <dl><div><dt>Input</dt><dd>Process / Equipment / Calendar</dd></div><div><dt>Output</dt><dd>Sequence / Waiting / Changeover</dd></div></dl>
+            <p>Use product attributes and process-resource compatibility to build sequences. Inspect changeovers after changing color and container-capacity weights.</p>
+            <dl><div><dt>Input</dt><dd>Demand / Attributes / Compatibility</dd></div><div><dt>Output</dt><dd>Sequence / Changeovers / Weighted cost</dd></div></dl>
           </a>
           <a class="example-card" href="./docs/Scenarios-and-Pain-Points.html">
-            <div class="example-meta"><span>Mixed-Model Manufacturing</span><b>ASSEMBLY</b></div>
+            <div class="example-meta"><span>Scenario concept · not a recorded run</span><b>ASSEMBLY</b></div>
             <h3>Multi-Product Mixed-Model Assembly</h3>
             <p>Connect order priorities, operation-level materials, shared resources, and objective preferences to demonstrate multi-objective trade-offs and result review.</p>
             <dl><div><dt>Input</dt><dd>Orders / BOM / Resources</dd></div><div><dt>Output</dt><dd>Plan / Bottleneck / Explanation</dd></div></dl>
@@ -213,6 +206,7 @@
           <p class="eyebrow">OPEN & EVOLUTION-FRIENDLY</p>
           <h2>Open by Design, Built for Continuous Evolution</h2>
           <p class="ecosystem-lead">DecisioWorks allows data sources, business rules, capability orchestration, model adapters, and application interfaces to evolve independently. DecisioCore is an open reference implementation that partners can understand, reuse, and extend across the production decision chain.</p>
+          <a class="ecosystem-link" href="./guide/partners.html">Explore partner roles and the adoption path →</a>
         </div>
         <div class="ecosystem-grid">
           <article><span>Data</span><h3>Integration without system lock-in</h3><p>Standardized interfaces connect ERP, MES, files, and shop-floor data while preserving business semantics.</p></article>
@@ -288,6 +282,6 @@
       <small>© 2026 DecisioWorks. This site presents the project and its publicly available capabilities.</small>
     </div>
   </footer>
-  <script src="./app.js"></script>
+  <script src="../app.js?v=20260916"></script>
 </body>
 </html>

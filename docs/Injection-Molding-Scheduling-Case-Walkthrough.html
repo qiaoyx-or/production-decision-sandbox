@@ -3,25 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="展示设备、模具、班制、维护与切换约束下的真实排程过程。" />
+  <meta name="description" content="查看颜色、盖型与容器容量如何进入循环排程及换型结果对比。" />
   <meta name="theme-color" content="#f3f7fb" />
   <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/docs/Injection-Molding-Scheduling-Case-Walkthrough.html" />
   <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/docs/Injection-Molding-Scheduling-Case-Walkthrough.html" />
   <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/docs/Injection-Molding-Scheduling-Case-Walkthrough.html" />
   <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/docs/Injection-Molding-Scheduling-Case-Walkthrough.html" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="注塑排程案例：设备、模具、班制与换型如何配置" />
-  <meta property="og:description" content="展示设备、模具、班制、维护与切换约束下的真实排程过程。" />
+  <meta property="og:title" content="注塑排程案例：颜色、容器容量与循环换型如何配置" />
+  <meta property="og:description" content="查看颜色、盖型与容器容量如何进入循环排程及换型结果对比。" />
   <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/docs/Injection-Molding-Scheduling-Case-Walkthrough.html" />
   <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="注塑排程案例：设备、模具、班制与换型如何配置" />
-  <meta name="twitter:description" content="展示设备、模具、班制、维护与切换约束下的真实排程过程。" />
+  <meta name="twitter:title" content="注塑排程案例：颜色、容器容量与循环换型如何配置" />
+  <meta name="twitter:description" content="查看颜色、盖型与容器容量如何进入循环排程及换型结果对比。" />
   <meta name="twitter:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
-  <title>注塑排程案例：设备、模具、班制与换型如何配置</title>
+  <title>注塑排程案例：颜色、容器容量与循环换型如何配置</title>
   <link rel="icon" href="../assets/decisioworks-logo.png" />
   <link rel="stylesheet" href="./styles.css?v=20260831-1" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","headline":"注塑排程案例：设备、模具、班制与换型如何配置","description":"展示设备、模具、班制、维护与切换约束下的真实排程过程。","url":"https://qiaoyx-or.github.io/production-decision-sandbox/docs/Injection-Molding-Scheduling-Case-Walkthrough.html","mainEntityOfPage":"https://qiaoyx-or.github.io/production-decision-sandbox/docs/Injection-Molding-Scheduling-Case-Walkthrough.html","inLanguage":"zh-CN","author":{"@type":"Person","name":"qiaoyx-or","url":"https://github.com/qiaoyx-or"},"isPartOf":{"@type":"WebSite","name":"DecisioWorks","url":"https://qiaoyx-or.github.io/production-decision-sandbox/"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://qiaoyx-or.github.io/production-decision-sandbox/"},{"@type":"ListItem","position":2,"name":"文档中心","item":"https://qiaoyx-or.github.io/production-decision-sandbox/docs/"},{"@type":"ListItem","position":3,"name":"注塑排程案例","item":"https://qiaoyx-or.github.io/production-decision-sandbox/docs/Injection-Molding-Scheduling-Case-Walkthrough.html"}]}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://qiaoyx-or.github.io/production-decision-sandbox/"},{"@type":"ListItem","position":2,"name":"文档中心","item":"https://qiaoyx-or.github.io/production-decision-sandbox/docs/"},{"@type":"ListItem","position":3,"name":"注塑排程案例","item":"https://qiaoyx-or.github.io/production-decision-sandbox/docs/Injection-Molding-Scheduling-Case-Walkthrough.html"}]}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","headline":"注塑排程案例：颜色、容器容量与循环换型如何配置","description":"查看颜色、盖型与容器容量如何进入循环排程及换型结果对比。","url":"https://qiaoyx-or.github.io/production-decision-sandbox/docs/Injection-Molding-Scheduling-Case-Walkthrough.html","mainEntityOfPage":"https://qiaoyx-or.github.io/production-decision-sandbox/docs/Injection-Molding-Scheduling-Case-Walkthrough.html","inLanguage":"zh-CN","author":{"@type":"Person","name":"qiaoyx-or","url":"https://github.com/qiaoyx-or"},"isPartOf":{"@type":"WebSite","name":"DecisioWorks","url":"https://qiaoyx-or.github.io/production-decision-sandbox/"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://qiaoyx-or.github.io/production-decision-sandbox/"},{"@type":"ListItem","position":2,"name":"文档中心","item":"https://qiaoyx-or.github.io/production-decision-sandbox/docs/"},{"@type":"ListItem","position":3,"name":"注塑排程案例","item":"https://qiaoyx-or.github.io/production-decision-sandbox/docs/Injection-Molding-Scheduling-Case-Walkthrough.html"}]}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://qiaoyx-or.github.io/production-decision-sandbox/"},{"@type":"ListItem","position":2,"name":"文档中心","item":"https://qiaoyx-or.github.io/production-decision-sandbox/docs/"},{"@type":"ListItem","position":3,"name":"注塑排程案例","item":"https://qiaoyx-or.github.io/production-decision-sandbox/docs/Injection-Molding-Scheduling-Case-Walkthrough.html"}]}]}</script>
 </head>
 <body>
   <a class="skip-link" href="#article">跳到正文</a>
@@ -35,22 +35,23 @@
   </header>
   <main class="docs-shell article-layout">
     <nav class="breadcrumbs" aria-label="面包屑导航"><a href="../">首页</a><span>/</span><a href="./">文档中心</a><span>/</span><span aria-current="page">注塑排程案例</span></nav>
-    <aside class="article-aside"><a href="./">← 文档中心</a><p>展示设备、模具、班制、维护与切换约束下的真实排程过程。</p></aside>
+    <aside class="article-aside"><a href="./">← 文档中心</a><p>查看颜色、盖型与容器容量如何进入循环排程及换型结果对比。</p></aside>
     <article class="doc-article" id="article"><blockquote>
 <p>适用于 DecisioWorks v1.4.0</p>
 </blockquote>
 <h1
 id="注塑排程案例让颜色盖型与容量进入换型决策">注塑排程案例：让颜色、盖型与容量进入换型决策</h1>
-<p>本案例使用 <code>InjectionMoldingWorkshop/data.db</code> 与官方
-<code>production_scheduling</code> 配方。2026-08-31
-只读检查确认数据库完整性为 <code>ok</code>，其中有 37 条需求、2
-个工作中心、115 种物料、418 条工艺适配和 120 条既有结果记录。</p>
+<p>本案例使用 <code>InjectionMoldingWorkshop/data.db</code> 与
+<code>production_scheduling</code>
+能力编排配方（recipe），展示产品属性怎样影响循环排程与换型取舍。2026-08-31
+的样例包含 37 条需求、2 个工作中心、115 种物料、418 条工艺适配和 120
+条既有结果记录，数据库完整性检查通过。既有结果是输入文件中的历史记录，应与本次求解新生成的结果分别查看。</p>
 <h2 id="1-输入语义">1. 输入语义</h2>
-<p>标准属性槽位在配方中映射为颜色、盖型和容器容量。这个映射使模型直接处理业务属性，避免依赖
+<p>标准属性槽位在配方中映射为颜色、盖型和容器容量。这里的容量指制品的容器容量，不是设备产能。这个映射使模型直接处理业务属性，避免依赖
 <code>property_1</code>、<code>property_2</code>
 这类存储位置猜测含义。</p>
 <h2 id="2-约束与切换">2. 约束与切换</h2>
-<p>配方选择循环序列排程，引入产能、需求、库存、序列切换和循环切换约束。序列内相邻任务按颜色计算切换，复用产能周期之间按容器容量表达状态变化。上线前还执行整数化和批量倍数检查，发现不一致即停止，不把错误数据带入求解。</p>
+<p>配方选择循环序列排程，引入产能、需求、库存、序列切换和循环切换约束。序列内相邻任务按颜色计算切换，复用产能周期之间按容器容量表达状态变化。求解前执行整数化和批量倍数检查；不满足要求时，先修正对应数据再运行。</p>
 <h2 id="3-运行配置">3. 运行配置</h2>
 <p>工作中心为 2，序列长度 40，循环次数 3，目标权重为颜色 0.1、容量
 1，求解请求为 16 线程、60
@@ -98,19 +99,20 @@ id="注塑排程案例让颜色盖型与容量进入换型决策">注塑排程�
 </tbody>
 </table>
 <p>重算时一次只调整颜色/容量权重、序列长度或循环次数中的少量参数，避免无法解释差异来源。</p>
-<h2 id="5-证据边界">5. 证据边界</h2>
-<p>2026-08-31，本案例在隔离的商业版副本中使用有效
-<code>Enterprise</code> 授权完成了真实 A/B 运行。两次 API 运行均采用 16
-线程、60 秒上限，返回 <code>ok</code>、1 个候选解、有效最佳方案、120
-条结果和 12 个动作事件，错误数为 0。基线耗时 66.57 秒，调整方案耗时
-66.50 秒；该时间包含 Web API 外层处理，不应直接解释为纯求解器耗时。</p>
+<h2 id="5-实际运行与结果对比">5. 实际运行与结果对比</h2>
+<p>以下记录来自 2026-08-31 的 DecisioWorks v1.4.0 商业版
+<code>Enterprise</code> 授权运行。两次 API 运行均采用 16 线程、60
+秒上限，返回 <code>ok</code>、1 个有效候选方案、120 条新生成结果和 12
+个动作事件，错误数为 0。成功返回可用方案不表示已证明全局最优。基线耗时
+66.57 秒，调整方案耗时 66.50 秒；该时间包含 Web API
+外层处理，不应直接解释为纯求解器耗时。</p>
 <p>基线配置为
 <code>color=0.1</code>、<code>capacity=1.0</code>，结果分析得到 41
 次序列切换、6 次循环切换，加权切换成本为 14.9。调整方案为
 <code>color=0.8</code>、<code>capacity=1.5</code>，结果为 46
 次序列切换、14 次循环切换，加权切换成本为
 66.4。两次方向审计均通过，分析值与 GOCK 目标材料值一致。</p>
-<p>这个结果没有被包装成“提高权重就一定减少切换”。相反，它展示了重算后必须重新查看业务结果：样例目标材料统计包含原生材料单位和空状态转换，权重变化也会改变不同取舍的相对代价。权重表达决策偏好；展示指标是否变化，还取决于数据、约束和其他目标之间的共同作用。</p>
+<p>调整后，两类切换次数都增加了，因此这组记录不能作为“增加权重就能减少换型”的依据。两次加权成本使用不同权重，也不宜直接据此判断方案优劣。样例的目标材料还包含模型自身的计量项和空状态转换，不能仅用页面切换次数乘权重还原。复核时应结合任务序列、约束满足情况和实际换型代价判断是否接受新方案。</p>
 <p><img
 src="assets/enterprise-real-run-20260831/injection_input_data.jpg"
 alt="注塑样例真实输入数据" /></p>
@@ -120,10 +122,10 @@ alt="注塑基线真实运行结果" /></p>
 <p><img
 src="assets/enterprise-real-run-20260831/injection_ab_compare.jpg"
 alt="注塑调整方案与基线对比" /></p>
-<p>页面复现时还发现一项配置差异：教学目录原先使用 2
-线程，而数据集公开默认配置为 16 线程；2
-线程运行失败，按数据集默认值调整为 16
-线程后，基线与调整重算均成功。该差异、调整过程和运行结果已写入验证记录。公开证据仅保留运行配置、状态和结果摘要；本次结果仍需结合客户环境完成数据、性能和业务验收。</p>
+<p>在这次样例环境中，页面以 2 线程请求运行时未成功，以数据集默认的 16
+线程运行时，基线与调整重算均完成。复查样例时需要同时记录线程数、时间上限、数据版本和约束配置；这项观察不表示
+16
+线程是所有场景的最低要求，也不保证相同资源在不同环境中得到相同结果。</p>
 <p>API
 证据与页面截图是两组独立的真实运行。并行搜索可能返回不同的可行序列，因此截图中的切换次数不要求与
 API 摘要逐项相同；每组 A/B 只在自身同一执行环境和参数口径内比较。</p>

@@ -10,18 +10,23 @@ The Research Edition provides a public entry point for learning, evaluation, dem
 
 ## Commercial Edition
 
-The Commercial Edition supports licensed integration and operational use with broader datasets, execution resources, licensed capabilities, and support paths. The current commercial release is `v1.4.0`.
+The Commercial Edition supports production applications and project integration, with datasets, execution resources, capabilities, and support defined by the selected license. This page describes `v1.4.0`; check the distribution and license documentation for your actual configuration.
 
 ## Adoption path
 
-Teams can begin with the Research Edition to build understanding and prepare data, then move to the Commercial Edition according to deployment, resource, integration, and support requirements.
+Teams can start with the Research Edition to understand interfaces, prepare data, and compare sample results, then select commercial licensing according to business scope, runtime resources, deployment, and support needs. Teams with a defined integration requirement can also start directly with the Commercial Edition.
 
-## Shared positioning and adoption path
+## Moving between editions
 
-The Research and Commercial Editions share the same data semantics, action model, and operating logic. The Research Edition supports learning, evaluation, scenario understanding, and controlled trials. The Commercial Edition supports sustained use, project integration, and formally licensed operation with the corresponding scope and support terms.
+The editions share data semantics, standard actions, and result interpretation methods. When moving between them, reuse confirmed business mappings and scenario design, while checking the distribution, license, dataset scope, interface versions, and runtime parameters.
 
-A typical path starts with documentation, examples, and the Research Edition to understand the data interface and one complete decision cycle. Commercial licensing, integration, and support are then selected for the actual scenario. The Commercial Edition supports operational applications and partner integration while allowing data, rules, and scenario configuration to change over time.
+During ongoing use, data, rules, and scenario configuration can continue to change with the business. Keep baseline and adjusted results to assess the effect of upgrades or configuration changes.
 
-## Principle for edition differences
+## What to check before choosing
 
-Edition differences should be expressed through licensed capabilities, runtime resources, permitted use, and support services. Data semantics, standard actions, result interpretation, and interface design remain consistent so users do not have to relearn the method when moving between editions.
+- Whether the intended use is evaluation, production operation, or customer integration.
+- Whether the distribution includes the required datasets, models, and capabilities.
+- Licensed solver thread counts, time limits, and deployment conditions.
+- Terms for source-code use, customization, redistribution, and support.
+
+Check the relevant license files, authorization details, and support agreement for these conditions. Publicly readable code and permission to use it should be reviewed separately.

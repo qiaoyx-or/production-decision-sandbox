@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>注塑排程：权重改变，为什么要重新审视序列？ | DecisioWorks</title>
+  <meta name="description" content="颜色、制品属性与作业顺序相互影响。一个更高的目标分数，或一个更大的权重，都需要回到实际序列和切换次数才能判断其意义。">
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/guide/injection-molding.html">
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/guide/injection-molding.html">
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/guide/injection-molding.html">
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/guide/injection-molding.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="注塑排程：权重改变，为什么要重新审视序列？ | DecisioWorks">
+  <meta property="og:description" content="颜色、制品属性与作业顺序相互影响。一个更高的目标分数，或一个更大的权重，都需要回到实际序列和切换次数才能判断其意义。">
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/guide/injection-molding.html">
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/guide/brand-hero.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="注塑排程：权重改变，为什么要重新审视序列？ | DecisioWorks">
+  <meta name="twitter:description" content="颜色、制品属性与作业顺序相互影响。一个更高的目标分数，或一个更大的权重，都需要回到实际序列和切换次数才能判断其意义。">
+  <meta name="twitter:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/guide/brand-hero.png">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "注塑排程：权重改变，为什么要重新审视序列？", "description": "颜色、制品属性与作业顺序相互影响。一个更高的目标分数，或一个更大的权重，都需要回到实际序列和切换次数才能判断其意义。", "inLanguage": "zh-CN", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/guide/injection-molding.html", "isPartOf": {"@type": "WebSite", "name": "DecisioWorks", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/"}}</script>
+  <link rel="icon" href="../assets/decisioworks-logo.png">
+  <link rel="stylesheet" href="../guide/styles.css?v=20260916">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到正文</a>
+  <header class="guide-header"><div class="guide-shell header-row">
+    <a class="guide-brand" href="../"><img src="../assets/decisioworks-logo.png" width="36" height="36" alt=""><strong>DecisioWorks</strong></a>
+    <nav aria-label="主要导航"><a href="../">产品主页</a><a href="../docs/">文档</a><a class="language-link" href="../en/guide/injection-molding.html" lang="en">EN</a></nav>
+  </div></header>
+  <main id="main">
+    <div class="guide-shell">
+      <nav class="guide-path" aria-label="当前位置"><a href="../">产品主页</a><span aria-hidden="true">/</span><a href="./">入门导览</a></nav>
+      <div class="guide-heading"><p class="eyebrow">已记录运行 · 作业排程</p><h1>注塑排程：权重改变，为什么要重新审视序列？</h1><p class="guide-intro">颜色、制品属性与作业顺序相互影响。一个更高的目标分数，或一个更大的权重，都需要回到实际序列和切换次数才能判断其意义。</p><p class="record-label">记录日期：2026-08-31 · DecisioWorks v1.4.0 · 商业企业级授权 · API 运行记录，非本页实时求解</p></div>
+      <nav class="guide-tabs" aria-label="导览专题"><a href="./">从这里开始</a><a href="./stamping.html">冲压计划</a><a href="./injection-molding.html" aria-current="page">注塑排程</a><a href="./partners.html">接入与合作</a></nav>
+      <div class="guide-layout"><aside class="guide-toc"><strong>本页内容</strong><nav aria-label="本页内容"><a href="#question">要回答的业务问题</a><a href="#input">输入：制品属性怎样参与排程？</a><a href="#configuration">配置：改变偏好，保留比较条件</a><a href="#results">输出：这次重算体现了什么？</a><a href="#apply">下一轮应该怎样调整？</a></nav></aside><article><section id="question" class="guide-section"><h2>要回答的业务问题</h2><p>当不同制品连续生产时，如何表达切换偏好并生成作业顺序？本例比较颜色与容器容量相关权重调整后的序列。关注点是如何检查取舍，而不是预设一次调参就会改善所有指标。</p></section><section id="input" class="guide-section"><h2>输入：制品属性怎样参与排程？</h2><div class="table-scroll" tabindex="0" role="region" aria-label="该样例的主要对象"><table><caption>该样例的主要对象</caption><thead><tr><th scope="col">对象</th><th scope="col">数量或属性</th><th scope="col">用于理解什么</th></tr></thead><tbody><tr><th scope="row">需求</th><td>37 条</td><td>需要安排的制品与数量</td></tr><tr><th scope="row">工作中心</th><td>2 个</td><td>资源结构</td></tr><tr><th scope="row">物料</th><td>115 条</td><td>物料对象及其关联</td></tr><tr><th scope="row">工序适配关系</th><td>418 条</td><td>工序与资源的适配</td></tr><tr><th scope="row">制品属性</th><td>颜色、盖型、容器容量</td><td>表达切换差异；容器容量是制品属性</td></tr><tr><th scope="row">本次配置</th><td>工作中心 2；40 个序位 × 3 个周期</td><td>共 120 个序位位置</td></tr></tbody></table></div><aside class="evidence-note"><strong>区分输入表和新结果</strong><p>数据包原有 120 行结果记录，本次返回的新结果也是 120 行。新求解是否完成，需要以对应运行状态和结果为依据，不能只看数据库中已有行数。</p></aside></section><section id="configuration" class="guide-section"><h2>配置：改变偏好，保留比较条件</h2><div class="table-scroll" tabindex="0" role="region" aria-label="本次比较启用的条件与权重"><table><caption>本次比较启用的条件与权重</caption><thead><tr><th scope="col">配置项</th><th scope="col">基线</th><th scope="col">调整后</th></tr></thead><tbody><tr><th scope="row">产能、需求、库存约束</th><td>启用</td><td>保持不变</td></tr><tr><th scope="row">序列与循环切换约束</th><td>启用</td><td>保持不变</td></tr><tr><th scope="row">颜色相关权重</th><td>0.1</td><td>0.8</td></tr><tr><th scope="row">容器容量相关权重</th><td>1</td><td>1.5</td></tr><tr><th scope="row">求解资源</th><td>16 线程 / 60 秒上限</td><td>保持不变</td></tr></tbody></table></div><p>系统读取属性与适配关系，构造约束和目标，求解后返回序列及分析结果。保存两组配置与结果后，先比较实际切换次数，再检查加权评价项。</p></section><section id="results" class="guide-section"><h2>输出：这次重算体现了什么？</h2><div class="table-scroll" tabindex="0" role="region" aria-label="同一组 API 记录中的基线与重算结果"><table><caption>同一组 API 记录中的基线与重算结果</caption><thead><tr><th scope="col">指标</th><th scope="col">基线</th><th scope="col">调整后</th></tr></thead><tbody><tr><th scope="row">返回的有效候选</th><td>1</td><td>1</td></tr><tr><th scope="row">新结果行数</th><td>120</td><td>120</td></tr><tr><th scope="row">序列切换次数</th><td>41</td><td>46</td></tr><tr><th scope="row">循环切换次数</th><td>6</td><td>14</td></tr><tr><th scope="row">加权切换代价</th><td>14.9</td><td>66.4</td></tr><tr><th scope="row">API 请求总耗时</th><td>66.57 秒</td><td>66.50 秒</td></tr><tr><th scope="row">动作事件 / 错误</th><td>12 / 0</td><td>12 / 0</td></tr></tbody></table></div><p>提高相关权重后，这一次记录中的切换次数反而增加。可行方案是在给定资源内找到的结果，不代表已证明全局最优。新旧权重下的加权分数也不能直接作为改善率；应结合序列、实际业务指标和约束满足情况复核。</p><aside class="evidence-note"><strong>评价口径保持一致</strong><p>加权代价包含模型自身的评价项，不能用表中切换次数简单乘权重重建。API 请求总耗时与求解时间上限属于不同计时口径。两组属性权重同时改变，本例也不能单独判断某一属性的因果影响。</p></aside></section><section id="apply" class="guide-section"><h2>下一轮应该怎样调整？</h2><ul class="guide-list"><li>明确主要希望减少哪一种切换，并确认属性含义与单位。</li><li>固定数据和运行资源，一次比较一个偏好变化。</li><li>查看具体相邻作业和循环衔接，定位变化发生的位置。</li><li>结合交付、产量和现场执行条件，决定保留、继续调整或恢复基线。</li></ul><div class="reading-links"><a href="../docs/Injection-Molding-Scheduling-Case-Walkthrough.html"><strong>查看完整记录与原始界面截图</strong><span>保留历史参数和截图上下文，帮助继续追查结果明细。</span><b aria-hidden="true">→</b></a><a href="../docs/Objectives-and-Rule-Control.html"><strong>理解目标与规则配置</strong><span>区分必须遵守的规则与可以权衡的管理偏好。</span><b aria-hidden="true">→</b></a></div></section><div class="guide-next"><a href="./">返回入门导览</a><a href="../#whitepapers">阅读白皮书 →</a></div></article></div>
+    </div>
+  </main>
+  <footer class="guide-footer"><div class="guide-shell"><strong>DecisioWorks</strong><p>生产决策工具包 · 数据、决策、模型与应用可以分别演进。</p><a href="../#contact">讨论你的生产场景 →</a></div></footer>
+</body>
+</html>
