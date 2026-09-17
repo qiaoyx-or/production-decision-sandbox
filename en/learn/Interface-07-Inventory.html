@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>07 Translate Inventory Requirements into Cumulative Bounds | DecisioWorks</title>
+  <meta name="description" content="Opening bracket stock is 20. Each day&#x27;s ending stock must remain between 20 and 100. Issues are 80 on day one and another 40 on day two, with no other receipts. Translate these requirements into cumulative production bounds in inventory_limit." />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-07-Inventory.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-07-Inventory.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-07-Inventory.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-07-Inventory.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="07 Translate Inventory Requirements into Cumulative Bounds | DecisioWorks" />
+  <meta property="og:description" content="Opening bracket stock is 20. Each day&#x27;s ending stock must remain between 20 and 100. Issues are 80 on day one and another 40 on day two, with no other receipts. Translate these requirements into cumulative production bounds in inventory_limit." />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-07-Inventory.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers-en.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="07 Translate Inventory Requirements into Cumulative Bounds | DecisioWorks" />
+  <meta name="twitter:description" content="Opening bracket stock is 20. Each day&#x27;s ending stock must remain between 20 and 100. Issues are 80 on day one and another 40 on day two, with no other receipts. Translate these requirements into cumulative production bounds in inventory_limit." />
+  <meta name="twitter:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers-en.png" />
+  <link rel="icon" href="../../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "07 Translate Inventory Requirements into Cumulative Bounds", "description": "Opening bracket stock is 20. Each day's ending stock must remain between 20 and 100. Issues are 80 on day one and another 40 on day two, with no other receipts. Translate these requirements into cumulative production bounds in inventory_limit.", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-07-Inventory.html", "inLanguage": "en", "author": {"@type": "Organization", "name": "DecisioWorks", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/"}, {"@type": "ListItem", "position": 2, "name": "Learning Center", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/"}, {"@type": "ListItem", "position": 3, "name": "07 Translate Inventory Requirements into Cumulative Bounds", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-07-Inventory.html"}]}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#article">Skip to content</a>
+  <header class="learning-header"><div class="shell header-inner">
+    <a class="brand" href="../"><img src="../../assets/decisioworks-logo.png" alt="" width="36" height="36" /><strong>DecisioWorks</strong></a>
+    <nav aria-label="Main navigation">
+      <a href="../">Home</a>
+      <a href="../docs/">Docs</a>
+      <a class="language-switch" href="../../learn/Interface-07-Inventory.html" lang="zh-CN" hreflang="zh-CN">中文</a>
+    </nav>
+  </div></header>
+  <div class="shell breadcrumbs" aria-label="Breadcrumb"><a href="../">Home</a><span>/</span><a href="./">Learning Center</a><span>/</span><span aria-current="page">07 Translate Inventory Requirements into Cumulative Bounds</span></div>
+  <div class="shell reading-layout">
+    <aside class="sidebar"><nav aria-label="Course contents"><a class="contents-home" href="./">Learning Center</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A From a Production Problem to a Testable Decision</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B Represent Manufacturing in Data</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C Objectives, Experience and Operational Rules</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D Read Plans through Recorded Cases</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E Coordinate Planning Levels and Responses</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F Open Collaboration and Continued Evolution</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G Connect Applications and AI Agents through Standard Actions</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H Build Everyday Decision Capability</a><span class="nav-section">Data Interface Guide</span><a href="./Interface-01-Calendar.html">01 Configure Time, Shifts, and Maintenance</a><a href="./Interface-02-Demand.html">02 Express Orders, Products, and Attributes</a><a href="./Interface-03-Resources.html">03 Configure Work Centers and Shared Resources</a><a href="./Interface-04-Routing.html">04 Configure Routes and Alternative Resources</a><a href="./Interface-05-Quantity.html">05 Calculate Cycle Output, Batches, and Processing Time</a><a href="./Interface-06-Materials.html">06 Configure Operation-Level Materials and Availability</a><a href="./Interface-07-Inventory.html" aria-current="page">07 Translate Inventory Requirements into Cumulative Bounds</a><a href="./Interface-08-Validation.html">08 Import, Validate, and Load Business Data</a><a href="./Interface-09-Results.html">09 Interpret Results and Prepare the Next Planning Cycle</a><a href="./Interface-Configurations.html">Configuration Patterns: From Shop-Floor Arrangements to Data</a><a href="./Interface-Fields.html">Complete Field Reference</a><a href="./Interface-Guide.html">Learning the Standardized Data Interface</a><a href="./Interface-Relationships.html">Object Relationships and Calculation Rules</a><a href="./Interface-Semantics.html">DecisioWorks Standardized Data Interface: A Detailed Semantic Guide</a><a href="./Interface-Walkthrough.html">Worked Example: Inputs, Checks and Adjustments for 120 Brackets</a><span class="nav-section">Worksheets</span><a href="./Worksheet-Operational-Rule.html">Operational Rule and Verification</a><a href="./Worksheet-Plan-Comparison.html">Baseline and Adjusted Plan Comparison</a><a href="./Worksheet-Review-and-Change-Record.html">Review and Change Record</a><a href="./Worksheet-Scenario-Brief.html">Scenario and Decision Task</a></nav></aside>
+    <main>
+      <details class="mobile-contents"><summary>Course contents</summary><nav aria-label="Mobile course contents"><a class="contents-home" href="./">Learning Center</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A From a Production Problem to a Testable Decision</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B Represent Manufacturing in Data</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C Objectives, Experience and Operational Rules</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D Read Plans through Recorded Cases</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E Coordinate Planning Levels and Responses</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F Open Collaboration and Continued Evolution</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G Connect Applications and AI Agents through Standard Actions</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H Build Everyday Decision Capability</a><span class="nav-section">Data Interface Guide</span><a href="./Interface-01-Calendar.html">01 Configure Time, Shifts, and Maintenance</a><a href="./Interface-02-Demand.html">02 Express Orders, Products, and Attributes</a><a href="./Interface-03-Resources.html">03 Configure Work Centers and Shared Resources</a><a href="./Interface-04-Routing.html">04 Configure Routes and Alternative Resources</a><a href="./Interface-05-Quantity.html">05 Calculate Cycle Output, Batches, and Processing Time</a><a href="./Interface-06-Materials.html">06 Configure Operation-Level Materials and Availability</a><a href="./Interface-07-Inventory.html" aria-current="page">07 Translate Inventory Requirements into Cumulative Bounds</a><a href="./Interface-08-Validation.html">08 Import, Validate, and Load Business Data</a><a href="./Interface-09-Results.html">09 Interpret Results and Prepare the Next Planning Cycle</a><a href="./Interface-Configurations.html">Configuration Patterns: From Shop-Floor Arrangements to Data</a><a href="./Interface-Fields.html">Complete Field Reference</a><a href="./Interface-Guide.html">Learning the Standardized Data Interface</a><a href="./Interface-Relationships.html">Object Relationships and Calculation Rules</a><a href="./Interface-Semantics.html">DecisioWorks Standardized Data Interface: A Detailed Semantic Guide</a><a href="./Interface-Walkthrough.html">Worked Example: Inputs, Checks and Adjustments for 120 Brackets</a><span class="nav-section">Worksheets</span><a href="./Worksheet-Operational-Rule.html">Operational Rule and Verification</a><a href="./Worksheet-Plan-Comparison.html">Baseline and Adjusted Plan Comparison</a><a href="./Worksheet-Review-and-Change-Record.html">Review and Change Record</a><a href="./Worksheet-Scenario-Brief.html">Scenario and Decision Task</a></nav></details>
+      <article id="article">
+        <header class="article-heading"><p class="kicker">Standardized Data Interface</p><h1>07 Translate Inventory Requirements into Cumulative Bounds</h1></header>
+        <details class="page-contents"><summary>On this page</summary><nav><a href="#task-derive-fields-from-an-inventory-balance">Task: Derive
+Fields from an Inventory Balance</a><a href="#calculate-the-bounds">Calculate the Bounds</a><a href="#check-in-reverse">Check in Reverse</a><a href="#shared-inventory-and-urgency">Shared Inventory and Urgency</a><a href="#exercise-and-answer">Exercise and Answer</a></nav></details>
+        <h2 id="task-derive-fields-from-an-inventory-balance">Task: Derive
+Fields from an Inventory Balance</h2>
+<p>Opening bracket stock is 20. Each day's ending stock must remain
+between 20 and 100. Issues are 80 on day one and another 40 on day two,
+with no other receipts. Translate these requirements into cumulative
+production bounds in <code>inventory_limit</code>.</p>
+<p>This exercise checks period-end inventory. If storage capacity must
+hold at every instant within a shift, use finer time representation and
+receipt/issue ordering. End-of-day bounds do not establish within-day
+feasibility.</p>
+<h2 id="calculate-the-bounds">Calculate the Bounds</h2>
+<p>Let P(t) be cumulative production receipts and D(t) cumulative
+issues. Inventory is <code>20+P(t)−D(t)</code>. Applying
+<code>20 ≤ 20+P(t)−D(t) ≤ 100</code> gives
+<code>D(t) ≤ P(t) ≤ D(t)+80</code>.</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Period</th>
+<th style="text-align: right;">Period issues</th>
+<th style="text-align: right;">Cumulative issues D(t)</th>
+<th style="text-align: right;">Cumulative production minimum</th>
+<th style="text-align: right;">Cumulative production maximum</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">160</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">120</td>
+<td style="text-align: right;">120</td>
+<td style="text-align: right;">200</td>
+</tr>
+</tbody>
+</table></div>
+<p>Write:</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">id</th>
+<th style="text-align: right;">product</th>
+<th style="text-align: right;">time_unit</th>
+<th>binding</th>
+<th style="text-align: right;">lower_bound_acc</th>
+<th style="text-align: right;">upper_bound_acc</th>
+<th style="text-align: right;">urgency</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td>NULL</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">160</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+<td>NULL</td>
+<td style="text-align: right;">120</td>
+<td style="text-align: right;">200</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table></div>
+<p>The lower bounds 80 and 120 are already cumulative; do not add them
+to 200. Keep opening stock and the issue plan in source records or
+mapping evidence. The standard table carries the derived limits.</p>
+<h2 id="check-in-reverse">Check in Reverse</h2>
+<p>Candidate production of 80 then 40 gives cumulative outputs 80 and
+120. Ending inventory is 20 on both days. Producing only 60 on day one
+leaves zero stock, below the required 20; meeting the two-day total
+later cannot repair the first-day violation.</p>
+<p>If other cumulative receipts E(t) exist, subtract them from both
+bounds. <code>NULL</code> means unspecified. A lower bound of zero
+explicitly permits zero cumulative production and has a different
+meaning.</p>
+<h2 id="shared-inventory-and-urgency">Shared Inventory and Urgency</h2>
+<p>A common <code>binding</code> expresses shared inventory. Allocation
+requires comparable units: one large box and one small box may occupy
+different space. Use volume, pallet positions, or documented
+equivalents. <code>urgency</code> carries urgency or turnover-related
+information; its effect on selection belongs to the adopted policy.</p>
+<h2 id="exercise-and-answer">Exercise and Answer</h2>
+<p>Change opening stock to 30, retaining everything else. Day-one bounds
+become 70 and 150; day-two bounds become 110 and 190. A negative upper
+bound indicates that even zero production exceeds storage capacity and
+must not be silently clamped to zero. A negative lower bound may become
+zero when production is nonnegative.</p>
+<p>The current data layer expresses and validates these bounds. For an
+actual solve, check the chosen model's inventory rules and compare runs
+that change one inventory condition. A populated field alone does not
+establish that a constraint was enforced.</p>
+<p><a href="./Interface-06-Materials.html">Previous</a> · <a
+href="./Interface-08-Validation.html">Next: import and validation</a></p>
+      </article>
+      <footer class="article-footer"><a href="./">Back to Learning Center</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki/Interface-07-Inventory">Read on Wiki</a></footer>
+    </main>
+  </div>
+  <footer class="site-footer shell"><strong>DecisioWorks</strong><span>Learn decision capabilities through production problems.</span></footer>
+</body>
+</html>

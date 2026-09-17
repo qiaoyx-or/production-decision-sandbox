@@ -17,4 +17,6 @@
 
 ## 延伸阅读
 
+需要完整语义体系、字段定义及可执行练习时，继续阅读[标准化数据接口语义详解](Interface-Guide-zh-CN.md)。专题包含九课教程，可下载教学数据库、SQL、字段清单和Python脚本。
+
 [标准化数据接口](https://github.com/qiaoyx-or/decisioworks/wiki/Standardized-Data-Interface-zh-CN) · [数据对象与字段](https://github.com/qiaoyx-or/decisioworks/wiki/Data-Object-and-Field-Reference-zh-CN) · [数据准备与验证](https://github.com/qiaoyx-or/decisioworks/wiki/Data-Readiness-and-Validation-zh-CN) · [ERP与MES数据映射](https://github.com/qiaoyx-or/decisioworks/wiki/ERP-MES-Data-Mapping-Guide-zh-CN)

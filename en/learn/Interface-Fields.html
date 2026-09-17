@@ -1,0 +1,1324 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Complete Field Reference | DecisioWorks</title>
+  <meta name="description" content="This reference covers 18 tables and 105 fields in the current standard SQLite template. Business meaning comes from the semantic system; types, nullability, and object defaults describe this implementation. Object defaults belong to ORM construction, not automatic database defaults during raw SQL insertion. The supplied SQL specifies required values explicitly. Nullable storage does not make a relationship optional for every scenario." />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-Fields.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-Fields.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-Fields.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-Fields.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Complete Field Reference | DecisioWorks" />
+  <meta property="og:description" content="This reference covers 18 tables and 105 fields in the current standard SQLite template. Business meaning comes from the semantic system; types, nullability, and object defaults describe this implementation. Object defaults belong to ORM construction, not automatic database defaults during raw SQL insertion. The supplied SQL specifies required values explicitly. Nullable storage does not make a relationship optional for every scenario." />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-Fields.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers-en.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Complete Field Reference | DecisioWorks" />
+  <meta name="twitter:description" content="This reference covers 18 tables and 105 fields in the current standard SQLite template. Business meaning comes from the semantic system; types, nullability, and object defaults describe this implementation. Object defaults belong to ORM construction, not automatic database defaults during raw SQL insertion. The supplied SQL specifies required values explicitly. Nullable storage does not make a relationship optional for every scenario." />
+  <meta name="twitter:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers-en.png" />
+  <link rel="icon" href="../../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "Complete Field Reference", "description": "This reference covers 18 tables and 105 fields in the current standard SQLite template. Business meaning comes from the semantic system; types, nullability, and object defaults describe this implementation. Object defaults belong to ORM construction, not automatic database defaults during raw SQL insertion. The supplied SQL specifies required values explicitly. Nullable storage does not make a relationship optional for every scenario.", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-Fields.html", "inLanguage": "en", "author": {"@type": "Organization", "name": "DecisioWorks", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/"}, {"@type": "ListItem", "position": 2, "name": "Learning Center", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/"}, {"@type": "ListItem", "position": 3, "name": "Complete Field Reference", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-Fields.html"}]}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#article">Skip to content</a>
+  <header class="learning-header"><div class="shell header-inner">
+    <a class="brand" href="../"><img src="../../assets/decisioworks-logo.png" alt="" width="36" height="36" /><strong>DecisioWorks</strong></a>
+    <nav aria-label="Main navigation">
+      <a href="../">Home</a>
+      <a href="../docs/">Docs</a>
+      <a class="language-switch" href="../../learn/Interface-Fields.html" lang="zh-CN" hreflang="zh-CN">中文</a>
+    </nav>
+  </div></header>
+  <div class="shell breadcrumbs" aria-label="Breadcrumb"><a href="../">Home</a><span>/</span><a href="./">Learning Center</a><span>/</span><span aria-current="page">Complete Field Reference</span></div>
+  <div class="shell reading-layout">
+    <aside class="sidebar"><nav aria-label="Course contents"><a class="contents-home" href="./">Learning Center</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A From a Production Problem to a Testable Decision</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B Represent Manufacturing in Data</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C Objectives, Experience and Operational Rules</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D Read Plans through Recorded Cases</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E Coordinate Planning Levels and Responses</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F Open Collaboration and Continued Evolution</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G Connect Applications and AI Agents through Standard Actions</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H Build Everyday Decision Capability</a><span class="nav-section">Data Interface Guide</span><a href="./Interface-01-Calendar.html">01 Configure Time, Shifts, and Maintenance</a><a href="./Interface-02-Demand.html">02 Express Orders, Products, and Attributes</a><a href="./Interface-03-Resources.html">03 Configure Work Centers and Shared Resources</a><a href="./Interface-04-Routing.html">04 Configure Routes and Alternative Resources</a><a href="./Interface-05-Quantity.html">05 Calculate Cycle Output, Batches, and Processing Time</a><a href="./Interface-06-Materials.html">06 Configure Operation-Level Materials and Availability</a><a href="./Interface-07-Inventory.html">07 Translate Inventory Requirements into Cumulative Bounds</a><a href="./Interface-08-Validation.html">08 Import, Validate, and Load Business Data</a><a href="./Interface-09-Results.html">09 Interpret Results and Prepare the Next Planning Cycle</a><a href="./Interface-Configurations.html">Configuration Patterns: From Shop-Floor Arrangements to Data</a><a href="./Interface-Fields.html" aria-current="page">Complete Field Reference</a><a href="./Interface-Guide.html">Learning the Standardized Data Interface</a><a href="./Interface-Relationships.html">Object Relationships and Calculation Rules</a><a href="./Interface-Semantics.html">DecisioWorks Standardized Data Interface: A Detailed Semantic Guide</a><a href="./Interface-Walkthrough.html">Worked Example: Inputs, Checks and Adjustments for 120 Brackets</a><span class="nav-section">Worksheets</span><a href="./Worksheet-Operational-Rule.html">Operational Rule and Verification</a><a href="./Worksheet-Plan-Comparison.html">Baseline and Adjusted Plan Comparison</a><a href="./Worksheet-Review-and-Change-Record.html">Review and Change Record</a><a href="./Worksheet-Scenario-Brief.html">Scenario and Decision Task</a></nav></aside>
+    <main>
+      <details class="mobile-contents"><summary>Course contents</summary><nav aria-label="Mobile course contents"><a class="contents-home" href="./">Learning Center</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A From a Production Problem to a Testable Decision</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B Represent Manufacturing in Data</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C Objectives, Experience and Operational Rules</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D Read Plans through Recorded Cases</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E Coordinate Planning Levels and Responses</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F Open Collaboration and Continued Evolution</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G Connect Applications and AI Agents through Standard Actions</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H Build Everyday Decision Capability</a><span class="nav-section">Data Interface Guide</span><a href="./Interface-01-Calendar.html">01 Configure Time, Shifts, and Maintenance</a><a href="./Interface-02-Demand.html">02 Express Orders, Products, and Attributes</a><a href="./Interface-03-Resources.html">03 Configure Work Centers and Shared Resources</a><a href="./Interface-04-Routing.html">04 Configure Routes and Alternative Resources</a><a href="./Interface-05-Quantity.html">05 Calculate Cycle Output, Batches, and Processing Time</a><a href="./Interface-06-Materials.html">06 Configure Operation-Level Materials and Availability</a><a href="./Interface-07-Inventory.html">07 Translate Inventory Requirements into Cumulative Bounds</a><a href="./Interface-08-Validation.html">08 Import, Validate, and Load Business Data</a><a href="./Interface-09-Results.html">09 Interpret Results and Prepare the Next Planning Cycle</a><a href="./Interface-Configurations.html">Configuration Patterns: From Shop-Floor Arrangements to Data</a><a href="./Interface-Fields.html" aria-current="page">Complete Field Reference</a><a href="./Interface-Guide.html">Learning the Standardized Data Interface</a><a href="./Interface-Relationships.html">Object Relationships and Calculation Rules</a><a href="./Interface-Semantics.html">DecisioWorks Standardized Data Interface: A Detailed Semantic Guide</a><a href="./Interface-Walkthrough.html">Worked Example: Inputs, Checks and Adjustments for 120 Brackets</a><span class="nav-section">Worksheets</span><a href="./Worksheet-Operational-Rule.html">Operational Rule and Verification</a><a href="./Worksheet-Plan-Comparison.html">Baseline and Adjusted Plan Comparison</a><a href="./Worksheet-Review-and-Change-Record.html">Review and Change Record</a><a href="./Worksheet-Scenario-Brief.html">Scenario and Decision Task</a></nav></details>
+      <article id="article">
+        <header class="article-heading"><p class="kicker">Standardized Data Interface</p><h1>Complete Field Reference</h1></header>
+        <details class="page-contents"><summary>On this page</summary><nav><a href="#capacity">capacity</a><a href="#ingredient">ingredient</a><a href="#inventory_limit">inventory_limit</a><a href="#kitting_information">kitting_information</a><a href="#material">material</a><a href="#order_info">order_info</a><a href="#order_item">order_item</a><a href="#planning_result">planning_result</a><a href="#process">process</a><a href="#process_adaptor">process_adaptor</a><a href="#process_route">process_route</a><a href="#product">product</a><a href="#property_1">property_1</a><a href="#property_2">property_2</a><a href="#property_3">property_3</a><a href="#shared_resource">shared_resource</a><a href="#time_unit">time_unit</a><a href="#workcenter">workcenter</a><a href="#naming-and-extensions">Naming and Extensions</a></nav></details>
+        <p>This reference covers 18 tables and 105 fields in the current
+standard SQLite template. Business meaning comes from the semantic
+system; types, nullability, and object defaults describe this
+implementation. Object defaults belong to ORM construction, not
+automatic database defaults during raw SQL insertion. The supplied SQL
+specifies required values explicitly. Nullable storage does not make a
+relationship optional for every scenario.</p>
+<p>Interpret quantity units alongside the scenario unit mapping. OEE
+defaults to 100 as a percentage; capacity.used is a fraction from 0 to
+1. Confirm model adoption through capability configuration and execution
+evidence.</p>
+<h2 id="capacity">capacity</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Storage type</th>
+<th>Nullable</th>
+<th>Object default</th>
+<th>Unit</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>id</code></td>
+<td>INTEGER</td>
+<td>No</td>
+<td><code>generated key</code></td>
+<td>identifier</td>
+<td>Record primary key for references.</td>
+</tr>
+<tr class="even">
+<td><code>time_unit</code></td>
+<td>INTEGER</td>
+<td>No</td>
+<td><code>none</code></td>
+<td>foreign key</td>
+<td>Capacity period referencing time_unit.id. →
+<code>time_unit.id</code></td>
+</tr>
+<tr class="odd">
+<td><code>used</code></td>
+<td>FLOAT</td>
+<td>No</td>
+<td><code>0.0</code></td>
+<td>fraction</td>
+<td>Occupied or unavailable fraction [0,1]; normal-period availability
+is scale×(1−used).</td>
+</tr>
+<tr class="even">
+<td><code>workcenter</code></td>
+<td>INTEGER</td>
+<td>Yes</td>
+<td><code>None</code></td>
+<td>foreign key</td>
+<td>Resource owning the capacity, referencing workcenter.id. →
+<code>workcenter.id</code></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="ingredient">ingredient</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Storage type</th>
+<th>Nullable</th>
+<th>Object default</th>
+<th>Unit</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>id</code></td>
+<td>INTEGER</td>
+<td>No</td>
+<td><code>generated key</code></td>
+<td>identifier</td>
+<td>Record primary key for references.</td>
+</tr>
+<tr class="even">
+<td><code>process</code></td>
+<td>INTEGER</td>
+<td>No</td>
+<td><code>none</code></td>
+<td>foreign key</td>
+<td>Consuming operation referencing process.id. →
+<code>process.id</code></td>
+</tr>
+<tr class="odd">
+<td><code>material</code></td>
+<td>INTEGER</td>
+<td>No</td>
+<td><code>none</code></td>
+<td>foreign key</td>
+<td>Required material referencing material.id. →
+<code>material.id</code></td>
+</tr>
+<tr class="even">
+<td><code>number</code></td>
+<td>INTEGER</td>
+<td>No</td>
+<td><code>0</code></td>
+<td>material units per output unit</td>
+<td>Operation material coefficient; this course uses one unit of
+operation output, consistent with output and supply units.</td>
+</tr>
+<tr class="odd">
+<td><code>priority</code></td>
+<td>INTEGER</td>
+<td>No</td>
+<td><code>0</code></td>
+<td>priority</td>
+<td>Preference among substitute supplies, applied by the relevant
+selection policy.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="inventory_limit">inventory_limit</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Storage type</th>
+<th>Nullable</th>
+<th>Object default</th>
+<th>Unit</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>id</code></td>
+<td>INTEGER</td>
+<td>No</td>
+<td><code>generated key</code></td>
+<td>identifier</td>
+<td>Record primary key for references.</td>
+</tr>
+<tr class="even">
+<td><code>product</code></td>
+<td>INTEGER</td>
+<td>No</td>
+<td><code>none</code></td>
+<td>foreign key</td>
+<td>Constrained product referencing product.id. →
+<code>product.id</code></td>
+</tr>
+<tr class="odd">
+<td><code>time_unit</code></td>
+<td>INTEGER</td>
+<td>No</td>
+<td><code>none</code></td>
+<td>foreign key</td>
+<td>Period of the bound referencing time_unit.id. →
+<code>time_unit.id</code></td>
+</tr>
+<tr class="even">
+<td><code>binding</code></td>
+<td>INTEGER</td>
+<td>Yes</td>
+<td><code>None</code></td>
+<td>group id</td>
+<td>Common value denotes shared inventory, with explicit units and
+allocation.</td>
+</tr>
+<tr class="odd">
+<td><code>upper_bound_acc</code></td>
+<td>INTEGER</td>
+<td>Yes</td>
+<td><code>None</code></td>
+<td>cumulative product units</td>
+<td>Cumulative production-receipt ceiling derived from opening stock,
+flows, and capacity; null means unspecified.</td>
+</tr>
+<tr class="even">
+<td><code>urgency</code></td>
+<td>FLOAT</td>
+<td>No</td>
+<td><code>0.0</code></td>
+<td>declared scale</td>
+<td>Urgency or turnover-related value interpreted by the business
+policy.</td>
+</tr>
+<tr class="odd">
+<td><code>lower_bound_acc</code></td>
+<td>INTEGER</td>
+<td>Yes</td>
+<td><code>None</code></td>
+<td>cumulative product units</td>
+<td>Cumulative production-receipt floor derived from safety-stock or
+similar requirements; null means unspecified.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="kitting_information">kitting_information</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Storage type</th>
+<th>Nullable</th>
+<th>Object default</th>
+<th>Unit</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>id</code></td>
+<td>INTEGER</td>
+<td>No</td>
+<td><code>generated key</code></td>
+<td>identifier</td>
+<td>Record primary key for references.</td>
+</tr>
+<tr class="even">
+<td><code>time_unit</code></td>
+<td>INTEGER</td>
+<td>No</td>
+<td><code>none</code></td>
+<td>foreign key</td>
+<td>Availability period referencing time_unit.id. →
+<code>time_unit.id</code></td>
+</tr>
+<tr class="odd">
+<td><code>material</code></td>
+<td>INTEGER</td>
+<td>No</td>
+<td><code>none</code></td>
+<td>foreign key</td>
+<td>Ready material referencing material.id. →
+<code>material.id</code></td>
+</tr>
+<tr class="even">
+<td><code>number</code></td>
+<td>INTEGER</td>
+<td>No</td>
+<td><code>0</code></td>
+<td>material units</td>
+<td>Ready quantity; the cumulative-input exercise uses opening
+availability and later increments, not repeated cumulative
+snapshots.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="material">material</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Storage type</th>
+<th>Nullable</th>
+<th>Object default</th>
+<th>Unit</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>id</code></td>
+<td>INTEGER</td>
+<td>No</td>
+<td><code>generated key</code></td>
+<td>identifier</td>
+<td>Record primary key for references.</td>
+</tr>
+<tr class="even">
+<td><code>code</code></td>
+<td>VARCHAR</td>
+<td>No</td>
+<td><code>''</code></td>
+<td>code</td>
+<td>Business material code.</td>
+</tr>
+<tr class="odd">
+<td><code>name</code></td>
+<td>VARCHAR</td>
+<td>No</td>
+<td><code>''</code></td>
+<td>text</td>
+<td>Material name.</td>
+</tr>
+<tr class="even">
+<td><code>vendor</code></td>
+<td>VARCHAR</td>
+<td>No</td>
+<td><code>''</code></td>
+<td>code or text</td>
+<td>Supplier information.</td>
+</tr>
+<tr class="odd">
+<td><code>substitute</code></td>
+<td>INTEGER</td>
+<td>Yes</td>
+<td><code>None</code></td>
+<td>group id</td>
+<td>Common value identifies substitutes; null indicates no substitute
+group.</td>
+</tr>
+<tr class="even">
+<td><code>binding</code></td>
+<td>INTEGER</td>
+<td>Yes</td>
+<td><code>None</code></td>
+<td>group id</td>
+<td>Material dependency or coordinated selection relationship, with a
+defined interpretation and policy.</td>
+</tr>
+<tr class="odd">
+<td><code>extend</code></td>
+<td>INTEGER</td>
+<td>Yes</td>
+<td><code>None</code></td>
+<td>extension-specific</td>
+<td>Reserved extension, for example supplier priority; currently an
+integer, with meaning and allowed values defined before use.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="order_info">order_info</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Storage type</th>
+<th>Nullable</th>
+<th>Object default</th>
+<th>Unit</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>id</code></td>
+<td>INTEGER</td>
+<td>No</td>
+<td><code>generated key</code></td>
+<td>identifier</td>
+<td>Record primary key for references.</td>
+</tr>
+<tr class="even">
+<td><code>description</code></td>
+<td>VARCHAR</td>
+<td>No</td>
+<td><code>''</code></td>
+<td>text</td>
+<td>Order description.</td>
+</tr>
+<tr class="odd">
+<td><code>priority</code></td>
+<td>INTEGER</td>
+<td>No</td>
+<td><code>0</code></td>
+<td>priority</td>
+<td>Order-header priority; the adopting policy defines its ordering
+direction.</td>
+</tr>
+<tr class="even">
+<td><code>code</code></td>
+<td>VARCHAR</td>
+<td>Yes</td>
+<td><code>''</code></td>
+<td>code</td>
+<td>Business order code.</td>
+</tr>
+<tr class="odd">
+<td><code>created_at</code></td>
+<td>DATETIME</td>
+<td>Yes</td>
+<td><code>None</code></td>
+<td>timestamp</td>
+<td>Order creation timestamp, retained rather than mapped to a planning
+time unit.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="order_item">order_item</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Storage type</th>
+<th>Nullable</th>
+<th>Object default</th>
+<th>Unit</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>id</code></td>
+<td>INTEGER</td>
+<td>No</td>
+<td><code>generated key</code></td>
+<td>identifier</td>
+<td>Record primary key for references.</td>
+</tr>
+<tr class="even">
+<td><code>product</code></td>
+<td>INTEGER</td>
+<td>No</td>
+<td><code>none</code></td>
+<td>foreign key</td>
+<td>Demanded product referencing product.id; the design name
+production_id denotes this product reference. →
+<code>product.id</code></td>
+</tr>
+<tr class="odd">
+<td><code>information</code></td>
+<td>INTEGER</td>
+<td>No</td>
+<td><code>none</code></td>
+<td>foreign key</td>
+<td>Parent order referencing order_info.id; corresponds to
+order_information_id. → <code>order_info.id</code></td>
+</tr>
+<tr class="even">
+<td><code>delivery_time</code></td>
+<td>INTEGER</td>
+<td>Yes</td>
+<td><code>None</code></td>
+<td>foreign key</td>
+<td>Due-period reference to time_unit.id; a dated requirement needs a
+valid reference. → <code>time_unit.id</code></td>
+</tr>
+<tr class="odd">
+<td><code>number</code></td>
+<td>INTEGER</td>
+<td>No</td>
+<td><code>0</code></td>
+<td>product units</td>
+<td>Quantity for this delivery requirement; record period requirements
+without duplicating cumulative totals.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="planning_result">planning_result</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Storage type</th>
+<th>Nullable</th>
+<th>Object default</th>
+<th>Unit</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>id</code></td>
+<td>INTEGER</td>
+<td>No</td>
+<td><code>generated key</code></td>
+<td>identifier</td>
+<td>Record primary key for references.</td>
+</tr>
+<tr class="even">
+<td><code>workcenter</code></td>
+<td>INTEGER</td>
+<td>Yes</td>
+<td><code>None</code></td>
+<td>foreign key</td>
+<td>workcenter.id executing the planned work. →
+<code>workcenter.id</code></td>
+</tr>
+<tr class="odd">
+<td><code>time_unit</code></td>
+<td>INTEGER</td>
+<td>No</td>
+<td><code>None</code></td>
+<td>foreign key</td>
+<td>Execution period referencing time_unit.id. →
+<code>time_unit.id</code></td>
+</tr>
+<tr class="even">
+<td><code>process</code></td>
+<td>INTEGER</td>
+<td>Yes</td>
+<td><code>None</code></td>
+<td>foreign key</td>
+<td>Executed operation referencing process.id; a documented empty
+sequence slot may use null. → <code>process.id</code></td>
+</tr>
+<tr class="odd">
+<td><code>number</code></td>
+<td>INTEGER</td>
+<td>No</td>
+<td><code>0</code></td>
+<td>operation-output units</td>
+<td>Planned output, not cycle count; sums across operations are not
+finished deliveries.</td>
+</tr>
+<tr class="even">
+<td><code>value_1</code></td>
+<td>INTEGER</td>
+<td>No</td>
+<td><code>0</code></td>
+<td>scenario-specific</td>
+<td>Extension field; a circular schedule may define a cycle number.</td>
+</tr>
+<tr class="odd">
+<td><code>value_2</code></td>
+<td>INTEGER</td>
+<td>No</td>
+<td><code>0</code></td>
+<td>scenario-specific</td>
+<td>Extension field; a circular schedule may define a sequence
+position.</td>
+</tr>
+<tr class="even">
+<td><code>value_3</code></td>
+<td>INTEGER</td>
+<td>No</td>
+<td><code>0</code></td>
+<td>scenario-specific</td>
+<td>Reserved extension field; define its meaning before use.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="process">process</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Storage type</th>
+<th>Nullable</th>
+<th>Object default</th>
+<th>Unit</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>id</code></td>
+<td>INTEGER</td>
+<td>No</td>
+<td><code>generated key</code></td>
+<td>identifier</td>
+<td>Record primary key for references.</td>
+</tr>
+<tr class="even">
+<td><code>route</code></td>
+<td>INTEGER</td>
+<td>No</td>
+<td><code>none</code></td>
+<td>foreign key</td>
+<td>Owning route referencing process_route.id. →
+<code>process_route.id</code></td>
+</tr>
+<tr class="odd">
+<td><code>name</code></td>
+<td>VARCHAR</td>
+<td>No</td>
+<td><code>''</code></td>
+<td>text</td>
+<td>Operation name.</td>
+</tr>
+<tr class="even">
+<td><code>code</code></td>
+<td>VARCHAR</td>
+<td>Yes</td>
+<td><code>''</code></td>
+<td>code</td>
+<td>Business operation code.</td>
+</tr>
+<tr class="odd">
+<td><code>operation_number</code></td>
+<td>INTEGER</td>
+<td>No</td>
+<td><code>1</code></td>
+<td>number</td>
+<td>Operation number within a route; separate from execution order and
+checked for route-level uniqueness.</td>
+</tr>
+<tr class="even">
+<td><code>seqno</code></td>
+<td>INTEGER</td>
+<td>No</td>
+<td><code>1</code></td>
+<td>sequence</td>
+<td>Precedence value; equal values mean no precedence, while concurrency
+depends on other conditions.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="process_adaptor">process_adaptor</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Storage type</th>
+<th>Nullable</th>
+<th>Object default</th>
+<th>Unit</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>id</code></td>
+<td>INTEGER</td>
+<td>No</td>
+<td><code>generated key</code></td>
+<td>identifier</td>
+<td>Record primary key for references.</td>
+</tr>
+<tr class="even">
+<td><code>process</code></td>
+<td>INTEGER</td>
+<td>Yes</td>
+<td><code>None</code></td>
+<td>foreign key</td>
+<td>Mapped operation referencing process.id. →
+<code>process.id</code></td>
+</tr>
+<tr class="odd">
+<td><code>workcenter</code></td>
+<td>INTEGER</td>
+<td>Yes</td>
+<td><code>None</code></td>
+<td>foreign key</td>
+<td>Compatible execution resource referencing workcenter.id. →
+<code>workcenter.id</code></td>
+</tr>
+<tr class="even">
+<td><code>priority</code></td>
+<td>INTEGER</td>
+<td>No</td>
+<td><code>0</code></td>
+<td>priority</td>
+<td>Priority of this resource option for the operation.</td>
+</tr>
+<tr class="odd">
+<td><code>wip_buffer_size</code></td>
+<td>INTEGER</td>
+<td>No</td>
+<td><code>0</code></td>
+<td>declared quantity unit</td>
+<td>WIP buffer capacity; check the model meaning of zero and how the
+limit is applied.</td>
+</tr>
+<tr class="even">
+<td><code>productivity</code></td>
+<td>INTEGER</td>
+<td>No</td>
+<td><code>1</code></td>
+<td>units per cycle</td>
+<td>Per-cycle output in the current discrete template; a continuous
+interpretation requires an explicit rate conversion.</td>
+</tr>
+<tr class="odd">
+<td><code>processing_time</code></td>
+<td>FLOAT</td>
+<td>No</td>
+<td><code>0.0</code></td>
+<td>seconds per cycle</td>
+<td>Standard duration per cycle; convert source cycle or rate data to
+this basis.</td>
+</tr>
+<tr class="even">
+<td><code>setup_time</code></td>
+<td>FLOAT</td>
+<td>No</td>
+<td><code>0.0</code></td>
+<td>seconds</td>
+<td>Operation changeover time; specify whether initial setup is
+included.</td>
+</tr>
+<tr class="odd">
+<td><code>batch_size</code></td>
+<td>INTEGER</td>
+<td>No</td>
+<td><code>1</code></td>
+<td>product units</td>
+<td>Batch quantity, an integer multiple of per-cycle output.</td>
+</tr>
+<tr class="even">
+<td><code>OEE</code></td>
+<td>INTEGER</td>
+<td>No</td>
+<td><code>100</code></td>
+<td>percent</td>
+<td>Overall equipment effectiveness; current default 100, with the
+loss-accounting layer specified by configuration.</td>
+</tr>
+<tr class="odd">
+<td><code>binding</code></td>
+<td>INTEGER</td>
+<td>Yes</td>
+<td><code>None</code></td>
+<td>group id</td>
+<td>Equal values join jointly processed operations; null or a singleton
+does not form a multi-operation group.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="process_route">process_route</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Storage type</th>
+<th>Nullable</th>
+<th>Object default</th>
+<th>Unit</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>id</code></td>
+<td>INTEGER</td>
+<td>No</td>
+<td><code>generated key</code></td>
+<td>identifier</td>
+<td>Record primary key for references.</td>
+</tr>
+<tr class="even">
+<td><code>product</code></td>
+<td>INTEGER</td>
+<td>No</td>
+<td><code>none</code></td>
+<td>foreign key</td>
+<td>Route owner referencing product.id; one product can have multiple
+routes. → <code>product.id</code></td>
+</tr>
+<tr class="odd">
+<td><code>name</code></td>
+<td>VARCHAR</td>
+<td>No</td>
+<td><code>''</code></td>
+<td>text</td>
+<td>Route name.</td>
+</tr>
+<tr class="even">
+<td><code>code</code></td>
+<td>VARCHAR</td>
+<td>No</td>
+<td><code>''</code></td>
+<td>code</td>
+<td>Business route code.</td>
+</tr>
+<tr class="odd">
+<td><code>priority</code></td>
+<td>INTEGER</td>
+<td>No</td>
+<td><code>0</code></td>
+<td>priority</td>
+<td>Route-selection priority interpreted by the routing policy.</td>
+</tr>
+<tr class="even">
+<td><code>description</code></td>
+<td>VARCHAR</td>
+<td>Yes</td>
+<td><code>''</code></td>
+<td>text</td>
+<td>Business description of the route.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="product">product</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Storage type</th>
+<th>Nullable</th>
+<th>Object default</th>
+<th>Unit</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>id</code></td>
+<td>INTEGER</td>
+<td>No</td>
+<td><code>generated key</code></td>
+<td>identifier</td>
+<td>Record primary key for references.</td>
+</tr>
+<tr class="even">
+<td><code>name</code></td>
+<td>VARCHAR</td>
+<td>No</td>
+<td><code>''</code></td>
+<td>text</td>
+<td>Name of a finished item, intermediate item, or component.</td>
+</tr>
+<tr class="odd">
+<td><code>code</code></td>
+<td>VARCHAR</td>
+<td>No</td>
+<td><code>''</code></td>
+<td>code</td>
+<td>Business product code, managed separately from record id.</td>
+</tr>
+<tr class="even">
+<td><code>vin</code></td>
+<td>VARCHAR</td>
+<td>Yes</td>
+<td><code>''</code></td>
+<td>code</td>
+<td>Unique code of the finished item to which the product belongs; it
+does not define assembly quantities by itself.</td>
+</tr>
+<tr class="odd">
+<td><code>property_1</code></td>
+<td>INTEGER</td>
+<td>Yes</td>
+<td><code>None</code></td>
+<td>foreign key</td>
+<td>References property_1.id; declare its business dimension for the
+scenario. → <code>property_1.id</code></td>
+</tr>
+<tr class="even">
+<td><code>property_2</code></td>
+<td>INTEGER</td>
+<td>Yes</td>
+<td><code>None</code></td>
+<td>foreign key</td>
+<td>References property_2.id as another classification dimension. →
+<code>property_2.id</code></td>
+</tr>
+<tr class="odd">
+<td><code>property_3</code></td>
+<td>INTEGER</td>
+<td>Yes</td>
+<td><code>None</code></td>
+<td>foreign key</td>
+<td>References property_3.id; null means no associated value in this
+dimension. → <code>property_3.id</code></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="property_1">property_1</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Storage type</th>
+<th>Nullable</th>
+<th>Object default</th>
+<th>Unit</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>id</code></td>
+<td>INTEGER</td>
+<td>No</td>
+<td><code>generated key</code></td>
+<td>identifier</td>
+<td>Record primary key for references.</td>
+</tr>
+<tr class="even">
+<td><code>name</code></td>
+<td>VARCHAR</td>
+<td>No</td>
+<td><code>''</code></td>
+<td>text</td>
+<td>Attribute name, such as model, configuration or color; interpreted
+with its code and value.</td>
+</tr>
+<tr class="odd">
+<td><code>code</code></td>
+<td>VARCHAR</td>
+<td>Yes</td>
+<td><code>''</code></td>
+<td>code</td>
+<td>Attribute code with stable classification and mapping within the
+scenario.</td>
+</tr>
+<tr class="even">
+<td><code>value</code></td>
+<td>FLOAT</td>
+<td>Yes</td>
+<td><code>None</code></td>
+<td>dimension-specific</td>
+<td>Numeric attribute value; the current SQLite type is FLOAT, with text
+labels in name and code.</td>
+</tr>
+<tr class="odd">
+<td><code>is_key</code></td>
+<td>BOOLEAN</td>
+<td>No</td>
+<td><code>False</code></td>
+<td>boolean</td>
+<td>Marks an attribute needed to distinguish demanded products; the
+current loader uses it to select attribute fields.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="property_2">property_2</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Storage type</th>
+<th>Nullable</th>
+<th>Object default</th>
+<th>Unit</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>id</code></td>
+<td>INTEGER</td>
+<td>No</td>
+<td><code>generated key</code></td>
+<td>identifier</td>
+<td>Record primary key for references.</td>
+</tr>
+<tr class="even">
+<td><code>name</code></td>
+<td>VARCHAR</td>
+<td>No</td>
+<td><code>''</code></td>
+<td>text</td>
+<td>Attribute name, such as model, configuration or color; interpreted
+with its code and value.</td>
+</tr>
+<tr class="odd">
+<td><code>code</code></td>
+<td>VARCHAR</td>
+<td>Yes</td>
+<td><code>''</code></td>
+<td>code</td>
+<td>Attribute code with stable classification and mapping within the
+scenario.</td>
+</tr>
+<tr class="even">
+<td><code>value</code></td>
+<td>FLOAT</td>
+<td>Yes</td>
+<td><code>None</code></td>
+<td>dimension-specific</td>
+<td>Numeric attribute value; the current SQLite type is FLOAT, with text
+labels in name and code.</td>
+</tr>
+<tr class="odd">
+<td><code>is_key</code></td>
+<td>BOOLEAN</td>
+<td>No</td>
+<td><code>False</code></td>
+<td>boolean</td>
+<td>Marks an attribute needed to distinguish demanded products; the
+current loader uses it to select attribute fields.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="property_3">property_3</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Storage type</th>
+<th>Nullable</th>
+<th>Object default</th>
+<th>Unit</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>id</code></td>
+<td>INTEGER</td>
+<td>No</td>
+<td><code>generated key</code></td>
+<td>identifier</td>
+<td>Record primary key for references.</td>
+</tr>
+<tr class="even">
+<td><code>name</code></td>
+<td>VARCHAR</td>
+<td>No</td>
+<td><code>''</code></td>
+<td>text</td>
+<td>Attribute name, such as model, configuration or color; interpreted
+with its code and value.</td>
+</tr>
+<tr class="odd">
+<td><code>code</code></td>
+<td>VARCHAR</td>
+<td>Yes</td>
+<td><code>''</code></td>
+<td>code</td>
+<td>Attribute code with stable classification and mapping within the
+scenario.</td>
+</tr>
+<tr class="even">
+<td><code>value</code></td>
+<td>FLOAT</td>
+<td>Yes</td>
+<td><code>None</code></td>
+<td>dimension-specific</td>
+<td>Numeric attribute value; the current SQLite type is FLOAT, with text
+labels in name and code.</td>
+</tr>
+<tr class="odd">
+<td><code>is_key</code></td>
+<td>BOOLEAN</td>
+<td>No</td>
+<td><code>False</code></td>
+<td>boolean</td>
+<td>Marks an attribute needed to distinguish demanded products; the
+current loader uses it to select attribute fields.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="shared_resource">shared_resource</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Storage type</th>
+<th>Nullable</th>
+<th>Object default</th>
+<th>Unit</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>id</code></td>
+<td>INTEGER</td>
+<td>No</td>
+<td><code>generated key</code></td>
+<td>identifier</td>
+<td>Record primary key for references.</td>
+</tr>
+<tr class="even">
+<td><code>binding</code></td>
+<td>INTEGER</td>
+<td>Yes</td>
+<td><code>None</code></td>
+<td>foreign key</td>
+<td>workcenter.id representing the shared resource itself. →
+<code>workcenter.id</code></td>
+</tr>
+<tr class="odd">
+<td><code>to</code></td>
+<td>INTEGER</td>
+<td>Yes</td>
+<td><code>None</code></td>
+<td>foreign key</td>
+<td>Target workcenter.id depending on the resource. →
+<code>workcenter.id</code></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="time_unit">time_unit</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Storage type</th>
+<th>Nullable</th>
+<th>Object default</th>
+<th>Unit</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>id</code></td>
+<td>INTEGER</td>
+<td>No</td>
+<td><code>generated key</code></td>
+<td>identifier</td>
+<td>Record primary key for references.</td>
+</tr>
+<tr class="even">
+<td><code>offset</code></td>
+<td>INTEGER</td>
+<td>No</td>
+<td><code>0</code></td>
+<td>order</td>
+<td>Sequence offset from the planning origin; distinct from the primary
+key.</td>
+</tr>
+<tr class="odd">
+<td><code>scale</code></td>
+<td>INTEGER</td>
+<td>No</td>
+<td><code>8 * 60 * 60</code></td>
+<td>seconds</td>
+<td>Period length: 3600 for an hour, 28800 for an eight-hour
+window.</td>
+</tr>
+<tr class="even">
+<td><code>status</code></td>
+<td>INTEGER</td>
+<td>No</td>
+<td><code>1</code></td>
+<td>state</td>
+<td>1 normal, 0 unavailable, -1 special or optional; specify how
+optional time is adopted.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="workcenter">workcenter</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Storage type</th>
+<th>Nullable</th>
+<th>Object default</th>
+<th>Unit</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>id</code></td>
+<td>INTEGER</td>
+<td>No</td>
+<td><code>generated key</code></td>
+<td>identifier</td>
+<td>Record primary key for references.</td>
+</tr>
+<tr class="even">
+<td><code>name</code></td>
+<td>VARCHAR</td>
+<td>No</td>
+<td><code>''</code></td>
+<td>text</td>
+<td>Work-center name, such as a machine, team, area, subcontractor, or
+organization.</td>
+</tr>
+<tr class="odd">
+<td><code>code</code></td>
+<td>VARCHAR</td>
+<td>Yes</td>
+<td><code>''</code></td>
+<td>code</td>
+<td>Business resource code.</td>
+</tr>
+<tr class="even">
+<td><code>type</code></td>
+<td>INTEGER</td>
+<td>No</td>
+<td><code>0</code></td>
+<td>category</td>
+<td>0 for a leaf node; nonzero for a non-leaf.</td>
+</tr>
+<tr class="odd">
+<td><code>parallelism</code></td>
+<td>INTEGER</td>
+<td>No</td>
+<td><code>1</code></td>
+<td>parallel units</td>
+<td>Number of parallel units, modeled separately from station
+count.</td>
+</tr>
+<tr class="even">
+<td><code>station_count</code></td>
+<td>INTEGER</td>
+<td>No</td>
+<td><code>1</code></td>
+<td>stations</td>
+<td>Station count, interpreted for the actual structure such as a
+furnace or circular line.</td>
+</tr>
+<tr class="odd">
+<td><code>equipping_time</code></td>
+<td>FLOAT</td>
+<td>No</td>
+<td><code>0</code></td>
+<td>duration</td>
+<td>Work-center preparation duration; seconds in this course, accounted
+separately from operation changeovers.</td>
+</tr>
+<tr class="even">
+<td><code>parent_id</code></td>
+<td>INTEGER</td>
+<td>Yes</td>
+<td><code>None</code></td>
+<td>foreign key</td>
+<td>Parent workcenter.id; null for a root. →
+<code>workcenter.id</code></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="naming-and-extensions">Naming and Extensions</h2>
+<p><code>order_information → order_info</code>;
+<code>order_information_id → information</code>;
+<code>product_id → product</code>; <code>time_unit_id → time_unit</code>
+(or <code>delivery_time</code> for an order due date);
+<code>route_id → route</code>; <code>process_id → process</code>;
+<code>material_id → material</code>;
+<code>workcenter_id → workcenter</code>;
+<code>parent → parent_id</code>.</p>
+<p>The attribute mechanism extends to property_n; three tables are an
+implementation choice. decision_node is an engineering extension outside
+these 18 standard tables. Map or extend source information such as
+scrap, yield, or approval times explicitly rather than changing standard
+field meanings.</p>
+<h2
+id="representation-differences-between-design-examples-and-the-current-template">Representation
+Differences Between Design Examples and the Current Template</h2>
+<p>The semantic guide defines business meaning; the template records
+actual storage requirements. Interpret these differences explicitly
+rather than changing documented types or defaults to make them appear
+identical.</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Structural design example</th>
+<th>Current template</th>
+<th>Usage requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>process_adaptor.OEE</code></td>
+<td>FLOAT, default 100</td>
+<td>INTEGER, default 100</td>
+<td>Define precision and conversion for fractional percentages; do not
+silently truncate</td>
+</tr>
+<tr class="even">
+<td><code>process_adaptor.wip_buffer_size</code></td>
+<td>Default 1</td>
+<td>Default 0</td>
+<td>Establish the meaning of zero; do not assume unlimited capacity</td>
+</tr>
+<tr class="odd">
+<td><code>property_i.value</code></td>
+<td>Default 0</td>
+<td>Nullable, default None</td>
+<td>Distinguish missing values from zero</td>
+</tr>
+<tr class="even">
+<td><code>property_i.is_key</code></td>
+<td>Default NULL</td>
+<td>Non-null, default False</td>
+<td>Distinguish unspecified from non-key and check loading</td>
+</tr>
+<tr class="odd">
+<td><code>product.vin/property_i</code></td>
+<td>Non-null examples with extensible attributes</td>
+<td>Nullable vin and three attribute references</td>
+<td>Distinguish unused dimensions from missing required data</td>
+</tr>
+<tr class="even">
+<td><code>process_adaptor.process/workcenter</code>,
+<code>capacity.workcenter</code></td>
+<td>Non-null example foreign keys</td>
+<td>Nullable</td>
+<td>Executable tasks and capacity still need complete resource
+relationships</td>
+</tr>
+<tr class="odd">
+<td><code>planning_result.workcenter/process</code></td>
+<td>Non-null example foreign keys</td>
+<td>Nullable</td>
+<td>Distinguish valid operation results from documented empty slots</td>
+</tr>
+</tbody>
+</table></div>
+<p>This is not an exhaustive physical-schema diff. Table names, column
+names, and database forms can be mapped while preserving business
+meanings.</p>
+<p><a href="./Interface-Relationships.html">Relationships and rules</a> · <a
+href="./Interface-Configurations.html">Patterns</a> · <a
+href="./Interface-Walkthrough.html">Teaching database</a></p>
+      </article>
+      <footer class="article-footer"><a href="./">Back to Learning Center</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki/Interface-Fields">Read on Wiki</a></footer>
+    </main>
+  </div>
+  <footer class="site-footer shell"><strong>DecisioWorks</strong><span>Learn decision capabilities through production problems.</span></footer>
+</body>
+</html>

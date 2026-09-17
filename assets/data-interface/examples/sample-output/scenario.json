@@ -1,0 +1,26 @@
+{
+  "evidence_type": "synthetic_teaching_data_and_manual_candidate",
+  "solver_executed": false,
+  "planning_result_rows": 0,
+  "quantity_unit": "piece",
+  "material_units": {
+    "BLANK": "piece",
+    "FASTENER": "piece"
+  },
+  "time_unit": "seconds",
+  "opening_finished_stock": 20,
+  "period_issues": [
+    80,
+    40
+  ],
+  "minimum_finished_stock": 20,
+  "maximum_finished_stock": 100,
+  "supply_storage": "opening_availability_then_period_increments",
+  "assumptions": [
+    "no_scrap",
+    "no_setup_or_changeover",
+    "OEE_100",
+    "single_resource_per_operation"
+  ],
+  "candidate": "manual_candidate.csv"
+}

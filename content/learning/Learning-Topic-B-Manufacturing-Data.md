@@ -17,4 +17,6 @@ Read the three lessons in order. Attempt each exercise before checking the sugge
 
 ## Further Reading
 
+For the complete semantic model, field definitions and executable exercises, continue to the [Standardized Data Interface Guide](Interface-Guide.md). It includes nine lessons and a downloadable teaching database, SQL, field list and Python scripts.
+
 [Standardized Data Interface](https://github.com/qiaoyx-or/decisioworks/wiki/Standardized-Data-Interface) · [Data Objects and Fields](https://github.com/qiaoyx-or/decisioworks/wiki/Data-Object-and-Field-Reference) · [Data Readiness and Validation](https://github.com/qiaoyx-or/decisioworks/wiki/Data-Readiness-and-Validation) · [ERP and MES Data Mapping](https://github.com/qiaoyx-or/decisioworks/wiki/ERP-MES-Data-Mapping-Guide)

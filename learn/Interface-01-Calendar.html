@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>01 配置生产时间、班制与维护 | DecisioWorks</title>
+  <meta name="description" content="为两天的生产计划建立时间坐标。每天以一个8小时生产窗口为时间单元；冲压设备第一天维护2小时，装配设备正常生产。完成后，应能从数据直接算出两台设备每天的可用时间。" />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-01-Calendar.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-01-Calendar.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-01-Calendar.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-01-Calendar.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="01 配置生产时间、班制与维护 | DecisioWorks" />
+  <meta property="og:description" content="为两天的生产计划建立时间坐标。每天以一个8小时生产窗口为时间单元；冲压设备第一天维护2小时，装配设备正常生产。完成后，应能从数据直接算出两台设备每天的可用时间。" />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-01-Calendar.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="01 配置生产时间、班制与维护 | DecisioWorks" />
+  <meta name="twitter:description" content="为两天的生产计划建立时间坐标。每天以一个8小时生产窗口为时间单元；冲压设备第一天维护2小时，装配设备正常生产。完成后，应能从数据直接算出两台设备每天的可用时间。" />
+  <meta name="twitter:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <link rel="icon" href="../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "01 配置生产时间、班制与维护", "description": "为两天的生产计划建立时间坐标。每天以一个8小时生产窗口为时间单元；冲压设备第一天维护2小时，装配设备正常生产。完成后，应能从数据直接算出两台设备每天的可用时间。", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-01-Calendar.html", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "DecisioWorks", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "首页", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/"}, {"@type": "ListItem", "position": 2, "name": "学习中心", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/"}, {"@type": "ListItem", "position": 3, "name": "01 配置生产时间、班制与维护", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-01-Calendar.html"}]}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#article">跳到正文</a>
+  <header class="learning-header"><div class="shell header-inner">
+    <a class="brand" href="../"><img src="../assets/decisioworks-logo.png" alt="" width="36" height="36" /><strong>DecisioWorks</strong></a>
+    <nav aria-label="主导航">
+      <a href="../">主页</a>
+      <a href="../docs/">文档</a>
+      <a class="language-switch" href="../en/learn/Interface-01-Calendar.html" lang="en" hreflang="en">English</a>
+    </nav>
+  </div></header>
+  <div class="shell breadcrumbs" aria-label="面包屑导航"><a href="../">首页</a><span>/</span><a href="./">学习中心</a><span>/</span><span aria-current="page">01 配置生产时间、班制与维护</span></div>
+  <div class="shell reading-layout">
+    <aside class="sidebar"><nav aria-label="课程目录"><a class="contents-home" href="./">学习中心</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A 从生产问题到可检验的决策</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B 用数据表达制造过程</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C 让目标、经验与规则参与决策</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D 从真实样例学会读计划</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E 让计划层级协同工作</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F 开放协作与持续演进</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G 用标准动作连接应用与AI Agent</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H 把一次练习变成日常能力</a><span class="nav-section">数据接口详解</span><a href="./Interface-01-Calendar.html" aria-current="page">01 配置生产时间、班制与维护</a><a href="./Interface-02-Demand.html">02 表达订单、制品与产品属性</a><a href="./Interface-03-Resources.html">03 配置工作中心与共享资源</a><a href="./Interface-04-Routing.html">04 配置工艺路线与可选资源</a><a href="./Interface-05-Quantity.html">05 核算出件率、批量与加工时间</a><a href="./Interface-06-Materials.html">06 配置工序级物料与齐套</a><a href="./Interface-07-Inventory.html">07 把库存要求转换为累计约束</a><a href="./Interface-08-Validation.html">08 导入、校验并读取业务数据</a><a href="./Interface-09-Results.html">09 解释结果并准备下一轮计划</a><a href="./Interface-Configurations.html">典型配置模式：从现场安排到接口记录</a><a href="./Interface-Fields.html">完整字段参考</a><a href="./Interface-Guide.html">标准化数据接口学习指南</a><a href="./Interface-Relationships.html">对象关系与计算规则</a><a href="./Interface-Semantics.html">DecisioWorks 标准化数据接口语义详解</a><a href="./Interface-Walkthrough.html">贯穿案例：120件支架的输入、核对与调整</a><span class="nav-section">工作表</span><a href="./Worksheet-Operational-Rule.html">现场规则记录与检查</a><a href="./Worksheet-Plan-Comparison.html">基线与调整方案比较</a><a href="./Worksheet-Review-and-Change-Record.html">复盘与持续改进记录</a><a href="./Worksheet-Scenario-Brief.html">场景与决策任务</a></nav></aside>
+    <main>
+      <details class="mobile-contents"><summary>课程目录</summary><nav aria-label="移动端课程目录"><a class="contents-home" href="./">学习中心</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A 从生产问题到可检验的决策</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B 用数据表达制造过程</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C 让目标、经验与规则参与决策</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D 从真实样例学会读计划</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E 让计划层级协同工作</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F 开放协作与持续演进</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G 用标准动作连接应用与AI Agent</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H 把一次练习变成日常能力</a><span class="nav-section">数据接口详解</span><a href="./Interface-01-Calendar.html" aria-current="page">01 配置生产时间、班制与维护</a><a href="./Interface-02-Demand.html">02 表达订单、制品与产品属性</a><a href="./Interface-03-Resources.html">03 配置工作中心与共享资源</a><a href="./Interface-04-Routing.html">04 配置工艺路线与可选资源</a><a href="./Interface-05-Quantity.html">05 核算出件率、批量与加工时间</a><a href="./Interface-06-Materials.html">06 配置工序级物料与齐套</a><a href="./Interface-07-Inventory.html">07 把库存要求转换为累计约束</a><a href="./Interface-08-Validation.html">08 导入、校验并读取业务数据</a><a href="./Interface-09-Results.html">09 解释结果并准备下一轮计划</a><a href="./Interface-Configurations.html">典型配置模式：从现场安排到接口记录</a><a href="./Interface-Fields.html">完整字段参考</a><a href="./Interface-Guide.html">标准化数据接口学习指南</a><a href="./Interface-Relationships.html">对象关系与计算规则</a><a href="./Interface-Semantics.html">DecisioWorks 标准化数据接口语义详解</a><a href="./Interface-Walkthrough.html">贯穿案例：120件支架的输入、核对与调整</a><span class="nav-section">工作表</span><a href="./Worksheet-Operational-Rule.html">现场规则记录与检查</a><a href="./Worksheet-Plan-Comparison.html">基线与调整方案比较</a><a href="./Worksheet-Review-and-Change-Record.html">复盘与持续改进记录</a><a href="./Worksheet-Scenario-Brief.html">场景与决策任务</a></nav></details>
+      <article id="article">
+        <header class="article-heading"><p class="kicker">标准化数据接口</p><h1>01 配置生产时间、班制与维护</h1></header>
+        <details class="page-contents"><summary>本页内容</summary><nav><a href="#任务与准备">任务与准备</a><a href="#建立时间记录">建立时间记录</a><a href="#维护进入局部产能">维护进入局部产能</a><a href="#单班双班与可选加班">单班、双班与可选加班</a><a href="#自检与常见错误">自检与常见错误</a><a href="#练习与解析">练习与解析</a></nav></details>
+        <h2 id="任务与准备">任务与准备</h2>
+<p>为两天的生产计划建立时间坐标。每天以一个8小时生产窗口为时间单元；冲压设备第一天维护2小时，装配设备正常生产。完成后，应能从数据直接算出两台设备每天的可用时间。</p>
+<p>先确认计划起点、对应日期、班次和时区。这里的两个单元表示两天各自的生产窗口，不表示相隔连续8小时的日历时刻。日期对应在来源映射表中保存。</p>
+<h2 id="建立时间记录">建立时间记录</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">id</th>
+<th style="text-align: right;">offset</th>
+<th style="text-align: right;">scale（秒）</th>
+<th style="text-align: right;">status</th>
+<th>业务映射</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">28800</td>
+<td style="text-align: right;">1</td>
+<td>第一天生产窗口</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">28800</td>
+<td style="text-align: right;">1</td>
+<td>第二天生产窗口</td>
+</tr>
+</tbody>
+</table></div>
+<p><code>id</code>用于交期、产能、齐套与结果引用；<code>offset</code>用于相对顺序；<code>scale</code>用于时长。将来源系统的第一天交期映射为<code>delivery_time=1</code>，而不是直接填入日期或<code>offset=0</code>。</p>
+<h2 id="维护进入局部产能">维护进入局部产能</h2>
+<p>工作中心11为冲压设备，12为装配设备。以下表格对应<code>capacity</code>，每个组合一条记录：</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">id</th>
+<th style="text-align: right;">time_unit</th>
+<th style="text-align: right;">workcenter</th>
+<th style="text-align: right;">used</th>
+<th style="text-align: right;">可用分钟</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">0.25</td>
+<td style="text-align: right;">360</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">480</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">480</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">480</td>
+</tr>
+</tbody>
+</table></div>
+<p>冲压设备第一天：<code>28800 × (1−0.25) / 60 = 360分钟</code>。这里的维护时间未在其他位置扣除。所有资源共用全局日历，但局部占用可以不同。</p>
+<h2 id="单班双班与可选加班">单班、双班与可选加班</h2>
+<p>如果要表达一天24小时中具体哪些时段开机，可采用每小时一个单元、<code>scale=3600</code>。全局停产小时设为<code>status=0</code>；两班工厂可把两班覆盖的小时设为正常可用，单班设备在第二班对应小时设置<code>used=1</code>。连续生产设备应使用覆盖全天的全局日历，再表达自身维护。</p>
+<p>可选加班使用<code>status=-1</code>表达设计语义。实际运行前，确认所选模型如何采用它；需要确定性日历时，生成“加班已采用”或“未采用”的输入副本，并记录决定。正常时段可用时间公式不直接套用<code>-1</code>。</p>
+<h2 id="自检与常见错误">自检与常见错误</h2>
+<ol type="1">
+<li>维护2小时占8小时的25%，写入0.25，不是2、120或25。</li>
+<li>同一维护损失只扣一次。若其他任务与维护重叠，合并实际不可用区间后再换算。</li>
+<li>整班汇总不能说明360分钟是否连续。需要精确避开中途维护时，细分单元并确认工序连续性。</li>
+<li>对比调整前后的产能表，只改动对应工作中心和时期。</li>
+</ol>
+<h2 id="练习与解析">练习与解析</h2>
+<p>第一天维护改为3小时，其他条件不变。应把<code>capacity.id=1</code>的<code>used</code>改为<code>3/8=0.375</code>，可用时间变为300分钟，减少60分钟。若待加工任务需要200分钟，时间总量仍容纳得下；具体工序安排还需核对物料、先后关系和维护位置。</p>
+<p><a href="./Interface-02-Demand.html">下一课：订单与属性</a> · <a
+href="./Interface-Configurations.html">配置模式</a></p>
+      </article>
+      <footer class="article-footer"><a href="./">返回学习中心</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki/Interface-01-Calendar-zh-CN">在 Wiki 阅读</a></footer>
+    </main>
+  </div>
+  <footer class="site-footer shell"><strong>DecisioWorks</strong><span>从生产问题出发，理解与使用决策能力。</span></footer>
+</body>
+</html>

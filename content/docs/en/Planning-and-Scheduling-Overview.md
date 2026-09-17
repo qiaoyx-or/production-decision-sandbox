@@ -8,13 +8,13 @@ Master planning and detailed scheduling solve different problems. Planning decid
 
 ## What master planning owns
 
-Master planning brings together demand, capacity, material availability, inventory, delivery commitments, and execution feedback. It identifies underproduction, overload, kitting risk, inventory pressure, and commitment risk, then decides what may be released and what requires review.
+Master planning brings together demand, capacity, material availability, inventory, delivery commitments, and execution feedback. It does not seek second-by-second precision for every operation. It identifies underproduction, overload, kitting risk, inventory pressure, and commitment risk, then decides what may be released and what needs to wait, be adjusted, or be escalated.
 
 DecisioWorks can represent these changes as PlanBias records. A bias preserves source, affected object, direction, and impact before anyone overwrites the active plan.
 
 ## What detailed scheduling owns
 
-Scheduling receives released, confirmed, materially ready work packages. Within a local production unit it handles resource assignment, sequence, waiting, idle time, and changeovers. Precise scheduling depends on stable input and should not absorb long-term forecasting, procurement commitments, or cross-department negotiation.
+Scheduling receives released, confirmed work packages that meet the material conditions required for that release. Within a local production unit it handles resource assignment, sequence, waiting, idle time, and changeovers. Upstream planning confirms material readiness; if a scheduling capability also supports time-phased material constraints, enable them explicitly. Precise scheduling depends on stable input, while long-term forecasting, procurement commitments, and cross-department coordination belong to the corresponding planning processes.
 
 ## Linkage flow
 
@@ -27,7 +27,7 @@ demand, capacity, material, and execution changes
   -> next planning cycle
 ```
 
-A PlanSignal can adjust an objective, create a local rule, influence release, or remain an alert. Change therefore enters the decision process before it modifies the plan.
+A PlanSignal routes a planning impact to a receiving action, which may propose an objective change, a local rule, or a release candidate, or retain an alert. Configuration and approval determine whether the proposal enters a later run. Creating a signal does not itself change the plan.
 
 ## Freeze, continue, or reconstruct
 
@@ -43,4 +43,11 @@ These steps use an installed DecisioWorks Web Cockpit with the required license 
 4. Compare what remained stable, what changed, and why.
 5. Record cross-cycle issues as inputs to the next planning round.
 
-Common mistakes include treating MPS as a coarse Gantt chart, leaving procurement conflicts to scheduling, overwriting plans without an explanation, and comparing scores without considering execution stability.
+## Common mistakes
+
+- Treating MPS as a coarse Gantt chart.
+- Leaving material shortages and procurement conflicts entirely to the scheduler.
+- Overwriting the original plan after an exception without explaining the change.
+- Comparing only objective scores rather than plan stability and execution costs.
+
+Continue with the [Stamping Planning Case](Stamping-Planning-Case-Walkthrough) and [Results, Evidence, and Feedback](Results-Evidence-and-Feedback).

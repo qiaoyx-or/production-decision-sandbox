@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>贯穿案例：120件支架的输入、核对与调整 | DecisioWorks</title>
+  <meta name="description" content="本案例用冲压、装配两道工序，把时间、需求、路线、资源、物料和库存联系起来。完成后可以得到一个可加载的教学数据库、表格文件和数量核算报告。全程不需要修改自己的业务数据库。" />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-Walkthrough.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-Walkthrough.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-Walkthrough.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-Walkthrough.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="贯穿案例：120件支架的输入、核对与调整 | DecisioWorks" />
+  <meta property="og:description" content="本案例用冲压、装配两道工序，把时间、需求、路线、资源、物料和库存联系起来。完成后可以得到一个可加载的教学数据库、表格文件和数量核算报告。全程不需要修改自己的业务数据库。" />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-Walkthrough.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="贯穿案例：120件支架的输入、核对与调整 | DecisioWorks" />
+  <meta name="twitter:description" content="本案例用冲压、装配两道工序，把时间、需求、路线、资源、物料和库存联系起来。完成后可以得到一个可加载的教学数据库、表格文件和数量核算报告。全程不需要修改自己的业务数据库。" />
+  <meta name="twitter:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <link rel="icon" href="../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "贯穿案例：120件支架的输入、核对与调整", "description": "本案例用冲压、装配两道工序，把时间、需求、路线、资源、物料和库存联系起来。完成后可以得到一个可加载的教学数据库、表格文件和数量核算报告。全程不需要修改自己的业务数据库。", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-Walkthrough.html", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "DecisioWorks", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "首页", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/"}, {"@type": "ListItem", "position": 2, "name": "学习中心", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/"}, {"@type": "ListItem", "position": 3, "name": "贯穿案例：120件支架的输入、核对与调整", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-Walkthrough.html"}]}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#article">跳到正文</a>
+  <header class="learning-header"><div class="shell header-inner">
+    <a class="brand" href="../"><img src="../assets/decisioworks-logo.png" alt="" width="36" height="36" /><strong>DecisioWorks</strong></a>
+    <nav aria-label="主导航">
+      <a href="../">主页</a>
+      <a href="../docs/">文档</a>
+      <a class="language-switch" href="../en/learn/Interface-Walkthrough.html" lang="en" hreflang="en">English</a>
+    </nav>
+  </div></header>
+  <div class="shell breadcrumbs" aria-label="面包屑导航"><a href="../">首页</a><span>/</span><a href="./">学习中心</a><span>/</span><span aria-current="page">贯穿案例：120件支架的输入、核对与调整</span></div>
+  <div class="shell reading-layout">
+    <aside class="sidebar"><nav aria-label="课程目录"><a class="contents-home" href="./">学习中心</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A 从生产问题到可检验的决策</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B 用数据表达制造过程</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C 让目标、经验与规则参与决策</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D 从真实样例学会读计划</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E 让计划层级协同工作</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F 开放协作与持续演进</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G 用标准动作连接应用与AI Agent</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H 把一次练习变成日常能力</a><span class="nav-section">数据接口详解</span><a href="./Interface-01-Calendar.html">01 配置生产时间、班制与维护</a><a href="./Interface-02-Demand.html">02 表达订单、制品与产品属性</a><a href="./Interface-03-Resources.html">03 配置工作中心与共享资源</a><a href="./Interface-04-Routing.html">04 配置工艺路线与可选资源</a><a href="./Interface-05-Quantity.html">05 核算出件率、批量与加工时间</a><a href="./Interface-06-Materials.html">06 配置工序级物料与齐套</a><a href="./Interface-07-Inventory.html">07 把库存要求转换为累计约束</a><a href="./Interface-08-Validation.html">08 导入、校验并读取业务数据</a><a href="./Interface-09-Results.html">09 解释结果并准备下一轮计划</a><a href="./Interface-Configurations.html">典型配置模式：从现场安排到接口记录</a><a href="./Interface-Fields.html">完整字段参考</a><a href="./Interface-Guide.html">标准化数据接口学习指南</a><a href="./Interface-Relationships.html">对象关系与计算规则</a><a href="./Interface-Semantics.html">DecisioWorks 标准化数据接口语义详解</a><a href="./Interface-Walkthrough.html" aria-current="page">贯穿案例：120件支架的输入、核对与调整</a><span class="nav-section">工作表</span><a href="./Worksheet-Operational-Rule.html">现场规则记录与检查</a><a href="./Worksheet-Plan-Comparison.html">基线与调整方案比较</a><a href="./Worksheet-Review-and-Change-Record.html">复盘与持续改进记录</a><a href="./Worksheet-Scenario-Brief.html">场景与决策任务</a></nav></aside>
+    <main>
+      <details class="mobile-contents"><summary>课程目录</summary><nav aria-label="移动端课程目录"><a class="contents-home" href="./">学习中心</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A 从生产问题到可检验的决策</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B 用数据表达制造过程</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C 让目标、经验与规则参与决策</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D 从真实样例学会读计划</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E 让计划层级协同工作</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F 开放协作与持续演进</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G 用标准动作连接应用与AI Agent</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H 把一次练习变成日常能力</a><span class="nav-section">数据接口详解</span><a href="./Interface-01-Calendar.html">01 配置生产时间、班制与维护</a><a href="./Interface-02-Demand.html">02 表达订单、制品与产品属性</a><a href="./Interface-03-Resources.html">03 配置工作中心与共享资源</a><a href="./Interface-04-Routing.html">04 配置工艺路线与可选资源</a><a href="./Interface-05-Quantity.html">05 核算出件率、批量与加工时间</a><a href="./Interface-06-Materials.html">06 配置工序级物料与齐套</a><a href="./Interface-07-Inventory.html">07 把库存要求转换为累计约束</a><a href="./Interface-08-Validation.html">08 导入、校验并读取业务数据</a><a href="./Interface-09-Results.html">09 解释结果并准备下一轮计划</a><a href="./Interface-Configurations.html">典型配置模式：从现场安排到接口记录</a><a href="./Interface-Fields.html">完整字段参考</a><a href="./Interface-Guide.html">标准化数据接口学习指南</a><a href="./Interface-Relationships.html">对象关系与计算规则</a><a href="./Interface-Semantics.html">DecisioWorks 标准化数据接口语义详解</a><a href="./Interface-Walkthrough.html" aria-current="page">贯穿案例：120件支架的输入、核对与调整</a><span class="nav-section">工作表</span><a href="./Worksheet-Operational-Rule.html">现场规则记录与检查</a><a href="./Worksheet-Plan-Comparison.html">基线与调整方案比较</a><a href="./Worksheet-Review-and-Change-Record.html">复盘与持续改进记录</a><a href="./Worksheet-Scenario-Brief.html">场景与决策任务</a></nav></details>
+      <article id="article">
+        <header class="article-heading"><p class="kicker">标准化数据接口</p><h1>贯穿案例：120件支架的输入、核对与调整</h1></header>
+        <details class="page-contents"><summary>本页内容</summary><nav><a href="#1-业务条件">1. 业务条件</a><a href="#2-准备文件">2. 准备文件</a><a href="#3-检查输入">3. 检查输入</a><a href="#4-读取到decisioworks">4. 读取到DecisioWorks</a><a href="#5-复核人工候选计划">5. 复核人工候选计划</a><a href="#6-维护调整后为什么要重新检查">6.
+维护调整后，为什么要重新检查</a><a href="#7-把练习迁移到自己的数据">7. 把练习迁移到自己的数据</a></nav></details>
+        <p><a
+href="../assets/data-interface/decisioworks-data-interface-examples.zip">下载完整练习包（SQL、字段清单、Python脚本、数据库及CSV）</a></p>
+<p>本案例用冲压、装配两道工序，把时间、需求、路线、资源、物料和库存联系起来。完成后可以得到一个可加载的教学数据库、表格文件和数量核算报告。全程不需要修改自己的业务数据库。</p>
+<h2 id="1-业务条件">1. 业务条件</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>项目</th>
+<th>条件</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>制品</td>
+<td>P-1蓝色支架</td>
+</tr>
+<tr class="even">
+<td>订单</td>
+<td>第1期80件、第2期40件</td>
+</tr>
+<tr class="odd">
+<td>时间</td>
+<td>两个8小时正常生产期，每期28800秒</td>
+</tr>
+<tr class="even">
+<td>冲压</td>
+<td>设备11，每次4件，每次600秒，批量20件</td>
+</tr>
+<tr class="odd">
+<td>装配</td>
+<td>设备12，每次1件，每次120秒，批量20件</td>
+</tr>
+<tr class="even">
+<td>维护</td>
+<td>第1期冲压设备不可用2小时，<code>used=0.25</code></td>
+</tr>
+<tr class="odd">
+<td>BOM</td>
+<td>每件冲压消耗坯料1件，每件装配消耗紧固件2件</td>
+</tr>
+<tr class="even">
+<td>供给</td>
+<td>第1期坯料80、紧固件160；第2期新增40、80</td>
+</tr>
+<tr class="odd">
+<td>成品库存</td>
+<td>期初20，期末要求20至100，出库80、40</td>
+</tr>
+<tr class="even">
+<td>简化条件</td>
+<td>无报废、无切换损失，OEE为100，无备选资源</td>
+</tr>
+</tbody>
+</table></div>
+<p>两个时期在本例中对应两个生产窗口。接入真实日期时，应另外保留计划起点、班次时间和非工作时段的映射。</p>
+<h2 id="2-准备文件">2. 准备文件</h2>
+<p>在配套的<code>examples</code>目录中使用Python
+3.10或以上版本执行以下命令；基础脚本只使用标准库。Windows可使用环境中的<code>python</code>，Linux可按环境改为<code>python3</code>。</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> build_example.py <span class="at">--output-dir</span> ./my-first-example</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> check_example.py ./my-first-example/data.db</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> calculate_candidate.py ./my-first-example</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> test_examples.py</span></code></pre></div>
+<p>创建程序会生成：</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>文件</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>data.db</code></td>
+<td>18张标准表的教学数据库</td>
+</tr>
+<tr class="even">
+<td>各表同名CSV</td>
+<td>查看、比较输入表；结果表初始只有表头</td>
+</tr>
+<tr class="odd">
+<td><code>manual_candidate.csv</code></td>
+<td>四条人工候选工序产出，供手算练习</td>
+</tr>
+<tr class="even">
+<td><code>scenario.json</code></td>
+<td>单位、供给口径、期初库存、独立的各期出库计划<code>period_issues</code>及简化条件</td>
+</tr>
+</tbody>
+</table></div>
+<p>程序遇到已有<code>data.db</code>会停止，请另选目录。也可以先查看随附的<a
+href="../assets/data-interface/decisioworks-data-interface-examples.zip">完整示例下载</a>，再从SQL重建。两份数据的业务内容相同。</p>
+<h2 id="3-检查输入">3. 检查输入</h2>
+<p><code>check_example.py</code>应返回<code>ok: true</code>、18张表、105个字段；其中订单明细2行、工序2行、适配2行、产能4行、BOM2行、齐套4行、库存限制2行。</p>
+<p><code>planning_result</code>为0行。人工候选计划独立保存，不会被当作真实求解结果写回输入库。</p>
+<p>可以在SQLite查看器中运行以下查询，核对需求通过何种路线进入工序：</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode sql"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> oi.<span class="kw">id</span> <span class="kw">AS</span> order_line, p.code <span class="kw">AS</span> product_code,</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>       oi.delivery_time, oi.<span class="dt">number</span> <span class="kw">AS</span> demand_quantity,</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>       r.code <span class="kw">AS</span> route_code, op.code <span class="kw">AS</span> operation_code, op.seqno</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> order_item oi</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="kw">JOIN</span> product p <span class="kw">ON</span> p.<span class="kw">id</span> <span class="op">=</span> oi.product</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="kw">JOIN</span> process_route r <span class="kw">ON</span> r.product <span class="op">=</span> p.<span class="kw">id</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="kw">JOIN</span> process op <span class="kw">ON</span> op.route <span class="op">=</span> r.<span class="kw">id</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> oi.<span class="kw">id</span>, r.<span class="kw">id</span>, op.seqno;</span></code></pre></div>
+<p>查询会返回4行，因为2条需求分别关联2道工序。连接后不要把重复显示的需求数相加当成新需求。</p>
+<h2 id="4-读取到decisioworks">4. 读取到DecisioWorks</h2>
+<p>已有安装及依赖的环境可以从任意目录执行：</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> /path/to/examples/load_with_decisioworks.py /path/to/my-first-example/data.db <span class="at">--project-root</span> /path/to/DecisioWorks</span></code></pre></div>
+<p>把三个路径替换为实际位置。该脚本设置项目导入路径，调用真实的<code>load_business_data</code>，随后执行<code>validate_batch_productivity_multiple</code>预处理。</p>
+<p>本例实际加载结果为：<code>demand=2</code>、<code>process=2</code>、<code>capacity=4</code>、<code>bom=2</code>、<code>kitting=4</code>、<code>inventory_limit=2</code>，预处理状态<code>ok</code>。这验证了示例可进入数据层；此步骤没有执行求解。</p>
+<h2 id="5-复核人工候选计划">5. 复核人工候选计划</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">资源</th>
+<th style="text-align: right;">时期</th>
+<th>工序</th>
+<th style="text-align: right;">产出件数</th>
+<th style="text-align: right;">加工次数</th>
+<th style="text-align: right;">纯加工分钟</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">1</td>
+<td>冲压</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">200</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">1</td>
+<td>装配</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">160</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">2</td>
+<td>冲压</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">100</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">2</td>
+<td>装配</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">80</td>
+</tr>
+</tbody>
+</table></div>
+<p>冲压第1期可用360分钟，其他资源期均可用480分钟。两期累计消耗坯料120件、紧固件240件，与累计供给一致；各期成品库存都为20件，累计生产分别80、120件。</p>
+<p>计算器应返回<code>aggregate_checks_passed: true</code>。结果还保留<code>solver_executed: false</code>与<code>full_scheduling_feasibility_proven: false</code>，因为核算验证的是上述候选的汇总数量关系，未覆盖全部时刻、搬运、切换和任务重叠条件。</p>
+<p><code>ok</code>表示输入满足此手算程序的要求；<code>aggregate_checks_passed</code>表示候选的资源、物料及库存汇总检查通过。<code>demand_issue_comparison</code>逐期列出订单量、假定出库量与差额；<code>issues_match_due_quantities</code>只比较这两组数量，不能证明订单分配或准时交付，故<code>demand_coverage_checked</code>仍为<code>false</code>。缺少配套记录或输入不受支持时，程序返回<code>ok: false</code>、定位信息<code>errors</code>及非零退出码。</p>
+<h2 id="6-维护调整后为什么要重新检查">6.
+维护调整后，为什么要重新检查</h2>
+<p>另建练习副本：</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> build_example.py <span class="at">--output-dir</span> ./three-hour-maintenance</span></code></pre></div>
+<p>在副本数据库中执行：</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode sql"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">UPDATE</span> capacity <span class="kw">SET</span> used<span class="op">=</span><span class="fl">0.375</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> workcenter<span class="op">=</span><span class="dv">11</span> <span class="kw">AND</span> time_unit<span class="op">=</span><span class="dv">1</span>;</span></code></pre></div>
+<p>再运行检查与核算。冲压可用时间降为300分钟，200分钟加工仍在汇总能力内。</p>
+<p>增加“维护在班初、全部冲压完成后才开始装配、两道工序不重叠”的假设：原条件需要120+200+160=480分钟；维护延长后需要180+200+160=540分钟。由此可见，单设备总量通过，并不等于整个工艺链可在8小时内完成。</p>
+<p>下一步应选择具体业务动作，例如允许经确认的转运批次重叠、调整到料与开工时点、调整交付安排，或启用可选时间。将所选条件交给相应排程能力重新运行，再用实际结果复核。</p>
+<h2 id="7-把练习迁移到自己的数据">7. 把练习迁移到自己的数据</h2>
+<p>从保留本例对象关系的小改动开始。改变交期或计划期数时，按<a
+href="./Interface-02-Demand.html">第02课</a>同步出库计划、库存界限、资源日历、供给和人工候选产出；导出的表CSV用于查看，计算以<code>data.db</code>为准。每次记录来源、单位、预期变化和检查结果。</p>
+<p>此手算脚本适用于单制品<code>id=1</code>、一条路线、两道顺序工序、每道工序一个独立资源、OEE100、无准备损失的离散件数练习。每期两道工序产出相等，不带期初在制品；时间单元均为正常生产期。允许按完整步骤增加时期，不自动处理替代路线、共享资源、替代料、共同加工、可选时间或高级批次规则。批次派工、在制品容量、订单分配和详细时间可行性应通过对应模型另行检查。</p>
+<p>改变需求不会自动修改<code>scenario.json</code>的出库假设或<code>manual_candidate.csv</code>的候选产出。先解释差额，再决定改订单、出库安排还是候选方案。迁移到超出上述范围的业务时，继续使用字段和关系检查，并切换到相应DecisioWorks模型与运行配置；不要沿用此手算报告作为完整验收结论。</p>
+<p>建议提交给同事共同检查的材料包括：输入表、来源映射、规则配置、运行记录、结果表、前后变化说明。字段查询回到<a
+href="./Interface-Fields.html">字段参考</a>，业务关系疑问回到<a
+href="./Interface-Semantics.html">语义详解</a>。</p>
+      </article>
+      <footer class="article-footer"><a href="./">返回学习中心</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki/Interface-Walkthrough-zh-CN">在 Wiki 阅读</a></footer>
+    </main>
+  </div>
+  <footer class="site-footer shell"><strong>DecisioWorks</strong><span>从生产问题出发，理解与使用决策能力。</span></footer>
+</body>
+</html>

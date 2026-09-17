@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>05 Calculate Cycle Output, Batches, and Processing Time | DecisioWorks</title>
+  <meta name="description" content="The bracket example produces four units per stamping cycle, takes 600 seconds per cycle, and uses 20-unit batches. Day-one demand is 80. Assume no initial setup, changeover, or scrap; OEE is 100, with no additional efficiency adjustment." />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-05-Quantity.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-05-Quantity.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-05-Quantity.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-05-Quantity.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="05 Calculate Cycle Output, Batches, and Processing Time | DecisioWorks" />
+  <meta property="og:description" content="The bracket example produces four units per stamping cycle, takes 600 seconds per cycle, and uses 20-unit batches. Day-one demand is 80. Assume no initial setup, changeover, or scrap; OEE is 100, with no additional efficiency adjustment." />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-05-Quantity.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers-en.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="05 Calculate Cycle Output, Batches, and Processing Time | DecisioWorks" />
+  <meta name="twitter:description" content="The bracket example produces four units per stamping cycle, takes 600 seconds per cycle, and uses 20-unit batches. Day-one demand is 80. Assume no initial setup, changeover, or scrap; OEE is 100, with no additional efficiency adjustment." />
+  <meta name="twitter:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers-en.png" />
+  <link rel="icon" href="../../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "05 Calculate Cycle Output, Batches, and Processing Time", "description": "The bracket example produces four units per stamping cycle, takes 600 seconds per cycle, and uses 20-unit batches. Day-one demand is 80. Assume no initial setup, changeover, or scrap; OEE is 100, with no additional efficiency adjustment.", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-05-Quantity.html", "inLanguage": "en", "author": {"@type": "Organization", "name": "DecisioWorks", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/"}, {"@type": "ListItem", "position": 2, "name": "Learning Center", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/"}, {"@type": "ListItem", "position": 3, "name": "05 Calculate Cycle Output, Batches, and Processing Time", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-05-Quantity.html"}]}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#article">Skip to content</a>
+  <header class="learning-header"><div class="shell header-inner">
+    <a class="brand" href="../"><img src="../../assets/decisioworks-logo.png" alt="" width="36" height="36" /><strong>DecisioWorks</strong></a>
+    <nav aria-label="Main navigation">
+      <a href="../">Home</a>
+      <a href="../docs/">Docs</a>
+      <a class="language-switch" href="../../learn/Interface-05-Quantity.html" lang="zh-CN" hreflang="zh-CN">中文</a>
+    </nav>
+  </div></header>
+  <div class="shell breadcrumbs" aria-label="Breadcrumb"><a href="../">Home</a><span>/</span><a href="./">Learning Center</a><span>/</span><span aria-current="page">05 Calculate Cycle Output, Batches, and Processing Time</span></div>
+  <div class="shell reading-layout">
+    <aside class="sidebar"><nav aria-label="Course contents"><a class="contents-home" href="./">Learning Center</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A From a Production Problem to a Testable Decision</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B Represent Manufacturing in Data</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C Objectives, Experience and Operational Rules</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D Read Plans through Recorded Cases</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E Coordinate Planning Levels and Responses</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F Open Collaboration and Continued Evolution</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G Connect Applications and AI Agents through Standard Actions</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H Build Everyday Decision Capability</a><span class="nav-section">Data Interface Guide</span><a href="./Interface-01-Calendar.html">01 Configure Time, Shifts, and Maintenance</a><a href="./Interface-02-Demand.html">02 Express Orders, Products, and Attributes</a><a href="./Interface-03-Resources.html">03 Configure Work Centers and Shared Resources</a><a href="./Interface-04-Routing.html">04 Configure Routes and Alternative Resources</a><a href="./Interface-05-Quantity.html" aria-current="page">05 Calculate Cycle Output, Batches, and Processing Time</a><a href="./Interface-06-Materials.html">06 Configure Operation-Level Materials and Availability</a><a href="./Interface-07-Inventory.html">07 Translate Inventory Requirements into Cumulative Bounds</a><a href="./Interface-08-Validation.html">08 Import, Validate, and Load Business Data</a><a href="./Interface-09-Results.html">09 Interpret Results and Prepare the Next Planning Cycle</a><a href="./Interface-Configurations.html">Configuration Patterns: From Shop-Floor Arrangements to Data</a><a href="./Interface-Fields.html">Complete Field Reference</a><a href="./Interface-Guide.html">Learning the Standardized Data Interface</a><a href="./Interface-Relationships.html">Object Relationships and Calculation Rules</a><a href="./Interface-Semantics.html">DecisioWorks Standardized Data Interface: A Detailed Semantic Guide</a><a href="./Interface-Walkthrough.html">Worked Example: Inputs, Checks and Adjustments for 120 Brackets</a><span class="nav-section">Worksheets</span><a href="./Worksheet-Operational-Rule.html">Operational Rule and Verification</a><a href="./Worksheet-Plan-Comparison.html">Baseline and Adjusted Plan Comparison</a><a href="./Worksheet-Review-and-Change-Record.html">Review and Change Record</a><a href="./Worksheet-Scenario-Brief.html">Scenario and Decision Task</a></nav></aside>
+    <main>
+      <details class="mobile-contents"><summary>Course contents</summary><nav aria-label="Mobile course contents"><a class="contents-home" href="./">Learning Center</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A From a Production Problem to a Testable Decision</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B Represent Manufacturing in Data</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C Objectives, Experience and Operational Rules</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D Read Plans through Recorded Cases</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E Coordinate Planning Levels and Responses</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F Open Collaboration and Continued Evolution</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G Connect Applications and AI Agents through Standard Actions</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H Build Everyday Decision Capability</a><span class="nav-section">Data Interface Guide</span><a href="./Interface-01-Calendar.html">01 Configure Time, Shifts, and Maintenance</a><a href="./Interface-02-Demand.html">02 Express Orders, Products, and Attributes</a><a href="./Interface-03-Resources.html">03 Configure Work Centers and Shared Resources</a><a href="./Interface-04-Routing.html">04 Configure Routes and Alternative Resources</a><a href="./Interface-05-Quantity.html" aria-current="page">05 Calculate Cycle Output, Batches, and Processing Time</a><a href="./Interface-06-Materials.html">06 Configure Operation-Level Materials and Availability</a><a href="./Interface-07-Inventory.html">07 Translate Inventory Requirements into Cumulative Bounds</a><a href="./Interface-08-Validation.html">08 Import, Validate, and Load Business Data</a><a href="./Interface-09-Results.html">09 Interpret Results and Prepare the Next Planning Cycle</a><a href="./Interface-Configurations.html">Configuration Patterns: From Shop-Floor Arrangements to Data</a><a href="./Interface-Fields.html">Complete Field Reference</a><a href="./Interface-Guide.html">Learning the Standardized Data Interface</a><a href="./Interface-Relationships.html">Object Relationships and Calculation Rules</a><a href="./Interface-Semantics.html">DecisioWorks Standardized Data Interface: A Detailed Semantic Guide</a><a href="./Interface-Walkthrough.html">Worked Example: Inputs, Checks and Adjustments for 120 Brackets</a><span class="nav-section">Worksheets</span><a href="./Worksheet-Operational-Rule.html">Operational Rule and Verification</a><a href="./Worksheet-Plan-Comparison.html">Baseline and Adjusted Plan Comparison</a><a href="./Worksheet-Review-and-Change-Record.html">Review and Change Record</a><a href="./Worksheet-Scenario-Brief.html">Scenario and Decision Task</a></nav></details>
+      <article id="article">
+        <header class="article-heading"><p class="kicker">Standardized Data Interface</p><h1>05 Calculate Cycle Output, Batches, and Processing Time</h1></header>
+        <details class="page-contents"><summary>On this page</summary><nav><a href="#define-a-processing-cycle-first">Define a Processing Cycle
+First</a><a href="#two-different-divisibility-checks">Two Different Divisibility
+Checks</a><a href="#joint-output-from-one-processing-event">Joint Output from One
+Processing Event</a><a href="#oee-and-whole-cycles">OEE and Whole Cycles</a><a href="#a-different-unit-for-continuous-output">A Different Unit for
+Continuous Output</a><a href="#exercise-and-answer">Exercise and Answer</a></nav></details>
+        <h2 id="define-a-processing-cycle-first">Define a Processing Cycle
+First</h2>
+<p>The bracket example produces four units per stamping cycle, takes 600
+seconds per cycle, and uses 20-unit batches. Day-one demand is 80.
+Assume no initial setup, changeover, or scrap; OEE is 100, with no
+additional efficiency adjustment.</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th>Item</th>
+<th style="text-align: right;">Value</th>
+<th>Manual calculation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>productivity</code></td>
+<td style="text-align: right;">4 units/cycle</td>
+<td>One cycle produces four units</td>
+</tr>
+<tr class="even">
+<td><code>batch_size</code></td>
+<td style="text-align: right;">20 units/batch</td>
+<td>20÷4=5 cycles/batch</td>
+</tr>
+<tr class="odd">
+<td>Demand</td>
+<td style="text-align: right;">80 units</td>
+<td>80÷20=4 batches</td>
+</tr>
+<tr class="even">
+<td>Processing cycles</td>
+<td style="text-align: right;">20</td>
+<td>80÷4</td>
+</tr>
+<tr class="odd">
+<td>Processing time</td>
+<td style="text-align: right;">12000 seconds</td>
+<td>20×600=200 minutes</td>
+</tr>
+</tbody>
+</table></div>
+<p>The result quantity is 80 units, not 20 cycles. Assembly produces one
+unit per 120-second cycle, requiring 160 minutes for the same 80 units.
+Use the explicit unit “units/cycle” here. Continuous-output data
+requires a defined discrete processing unit and time conversion before
+using this template.</p>
+<h2 id="two-different-divisibility-checks">Two Different Divisibility
+Checks</h2>
+<p><code>batch_size/productivity</code> must correspond to whole
+processing cycles. Four units per cycle and an 18-unit batch would
+require 4.5 cycles, contradicting whole-cycle processing.</p>
+<p>Demand-to-batch divisibility is a business policy. For demand 42 and
+batches of 20, output 40 leaves a shortage of two and output 60 creates
+a surplus of 18. If surplus, shortage, or split batches are permitted,
+state the policy and retain original demand 42. Silently replacing it
+with 60 would conceal the surplus.</p>
+<h2 id="joint-output-from-one-processing-event">Joint Output from One
+Processing Event</h2>
+<p>Another mold produces A×2, B×2, and C×1 per cycle. A common adaptor
+<code>binding</code> expresses the relationship. Ten cycles produce 20,
+20, and 10 units. Against demand 18, 20, and 12, the differences are
+surplus two, exact fulfillment, and shortage two. Twelve cycles produce
+24, 24, and 12, giving surpluses six and four, with C exact.</p>
+<p>These are manual candidates. Inventory, dates, cost, and
+configuration determine the choice. Do not add the same joint-processing
+time once for every output; confirm that the model accounts for the
+shared event.</p>
+<h2 id="oee-and-whole-cycles">OEE and Whole Cycles</h2>
+<p>Assume four units per 20-minute cycle and a 480-minute shift.
+Applying an 85% efficiency factor once gives 408 minutes. A continuous
+estimate is 81.6 units; whole-cycle processing permits 20 cycles, or 80
+units. With 20-unit batches, this remains four batches. The discrete
+plan cannot use 81.6 as its output.</p>
+<p>The current template defaults OEE to 100, a percentage
+representation. Lower efficiency can reduce effective capacity or, under
+an explicit conversion, increase the occupied time needed for the same
+output. Confirm where the selected model accounts for the loss and count
+it only once. Entering 85 alone does not establish that it was applied.
+Retain source data and conversion rules.</p>
+<h2 id="a-different-unit-for-continuous-output">A Different Unit for
+Continuous Output</h2>
+<p>For continuous processing, <code>productivity</code> can mean output
+per unit time. At 120 liters/hour, two effective operating hours produce
+240 liters under a no-loss teaching assumption. This uses liters/hour
+rather than the earlier pieces/cycle.</p>
+<p>First select a model interpretation that uses that unit. A projection
+into the current discrete template could explicitly represent a one-hour
+processing unit as 120 liters and 3,600 seconds. Finer windows require
+corresponding units and conversion; 120 cannot simply be treated as
+output from an arbitrary cycle. This is a dimensional example, not a
+recorded continuous-production solve.</p>
+<h2 id="exercise-and-answer">Exercise and Answer</h2>
+<p>Change the base cycle duration from 600 to 900 seconds, retaining
+output and batch size. Eighty units still require 20 cycles, now 18,000
+seconds or 300 minutes. Day-one stamping has 360 available minutes,
+leaving 60. This checks resource-time totals; assembly, materials, and
+windows still determine full feasibility.</p>
+<p><a href="./Interface-04-Routing.html">Previous</a> · <a
+href="./Interface-06-Materials.html">Next: materials</a></p>
+      </article>
+      <footer class="article-footer"><a href="./">Back to Learning Center</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki/Interface-05-Quantity">Read on Wiki</a></footer>
+    </main>
+  </div>
+  <footer class="site-footer shell"><strong>DecisioWorks</strong><span>Learn decision capabilities through production problems.</span></footer>
+</body>
+</html>

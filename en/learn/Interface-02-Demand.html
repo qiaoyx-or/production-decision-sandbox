@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>02 Express Orders, Products, and Attributes | DecisioWorks</title>
+  <meta name="description" content="A customer needs 120 blue brackets: 80 on day one and 40 on day two. Keep one order identity while expressing two due-date requirements." />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-02-Demand.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-02-Demand.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-02-Demand.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-02-Demand.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="02 Express Orders, Products, and Attributes | DecisioWorks" />
+  <meta property="og:description" content="A customer needs 120 blue brackets: 80 on day one and 40 on day two. Keep one order identity while expressing two due-date requirements." />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-02-Demand.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers-en.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="02 Express Orders, Products, and Attributes | DecisioWorks" />
+  <meta name="twitter:description" content="A customer needs 120 blue brackets: 80 on day one and 40 on day two. Keep one order identity while expressing two due-date requirements." />
+  <meta name="twitter:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers-en.png" />
+  <link rel="icon" href="../../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "02 Express Orders, Products, and Attributes", "description": "A customer needs 120 blue brackets: 80 on day one and 40 on day two. Keep one order identity while expressing two due-date requirements.", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-02-Demand.html", "inLanguage": "en", "author": {"@type": "Organization", "name": "DecisioWorks", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/"}, {"@type": "ListItem", "position": 2, "name": "Learning Center", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/"}, {"@type": "ListItem", "position": 3, "name": "02 Express Orders, Products, and Attributes", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-02-Demand.html"}]}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#article">Skip to content</a>
+  <header class="learning-header"><div class="shell header-inner">
+    <a class="brand" href="../"><img src="../../assets/decisioworks-logo.png" alt="" width="36" height="36" /><strong>DecisioWorks</strong></a>
+    <nav aria-label="Main navigation">
+      <a href="../">Home</a>
+      <a href="../docs/">Docs</a>
+      <a class="language-switch" href="../../learn/Interface-02-Demand.html" lang="zh-CN" hreflang="zh-CN">中文</a>
+    </nav>
+  </div></header>
+  <div class="shell breadcrumbs" aria-label="Breadcrumb"><a href="../">Home</a><span>/</span><a href="./">Learning Center</a><span>/</span><span aria-current="page">02 Express Orders, Products, and Attributes</span></div>
+  <div class="shell reading-layout">
+    <aside class="sidebar"><nav aria-label="Course contents"><a class="contents-home" href="./">Learning Center</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A From a Production Problem to a Testable Decision</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B Represent Manufacturing in Data</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C Objectives, Experience and Operational Rules</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D Read Plans through Recorded Cases</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E Coordinate Planning Levels and Responses</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F Open Collaboration and Continued Evolution</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G Connect Applications and AI Agents through Standard Actions</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H Build Everyday Decision Capability</a><span class="nav-section">Data Interface Guide</span><a href="./Interface-01-Calendar.html">01 Configure Time, Shifts, and Maintenance</a><a href="./Interface-02-Demand.html" aria-current="page">02 Express Orders, Products, and Attributes</a><a href="./Interface-03-Resources.html">03 Configure Work Centers and Shared Resources</a><a href="./Interface-04-Routing.html">04 Configure Routes and Alternative Resources</a><a href="./Interface-05-Quantity.html">05 Calculate Cycle Output, Batches, and Processing Time</a><a href="./Interface-06-Materials.html">06 Configure Operation-Level Materials and Availability</a><a href="./Interface-07-Inventory.html">07 Translate Inventory Requirements into Cumulative Bounds</a><a href="./Interface-08-Validation.html">08 Import, Validate, and Load Business Data</a><a href="./Interface-09-Results.html">09 Interpret Results and Prepare the Next Planning Cycle</a><a href="./Interface-Configurations.html">Configuration Patterns: From Shop-Floor Arrangements to Data</a><a href="./Interface-Fields.html">Complete Field Reference</a><a href="./Interface-Guide.html">Learning the Standardized Data Interface</a><a href="./Interface-Relationships.html">Object Relationships and Calculation Rules</a><a href="./Interface-Semantics.html">DecisioWorks Standardized Data Interface: A Detailed Semantic Guide</a><a href="./Interface-Walkthrough.html">Worked Example: Inputs, Checks and Adjustments for 120 Brackets</a><span class="nav-section">Worksheets</span><a href="./Worksheet-Operational-Rule.html">Operational Rule and Verification</a><a href="./Worksheet-Plan-Comparison.html">Baseline and Adjusted Plan Comparison</a><a href="./Worksheet-Review-and-Change-Record.html">Review and Change Record</a><a href="./Worksheet-Scenario-Brief.html">Scenario and Decision Task</a></nav></aside>
+    <main>
+      <details class="mobile-contents"><summary>Course contents</summary><nav aria-label="Mobile course contents"><a class="contents-home" href="./">Learning Center</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A From a Production Problem to a Testable Decision</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B Represent Manufacturing in Data</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C Objectives, Experience and Operational Rules</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D Read Plans through Recorded Cases</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E Coordinate Planning Levels and Responses</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F Open Collaboration and Continued Evolution</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G Connect Applications and AI Agents through Standard Actions</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H Build Everyday Decision Capability</a><span class="nav-section">Data Interface Guide</span><a href="./Interface-01-Calendar.html">01 Configure Time, Shifts, and Maintenance</a><a href="./Interface-02-Demand.html" aria-current="page">02 Express Orders, Products, and Attributes</a><a href="./Interface-03-Resources.html">03 Configure Work Centers and Shared Resources</a><a href="./Interface-04-Routing.html">04 Configure Routes and Alternative Resources</a><a href="./Interface-05-Quantity.html">05 Calculate Cycle Output, Batches, and Processing Time</a><a href="./Interface-06-Materials.html">06 Configure Operation-Level Materials and Availability</a><a href="./Interface-07-Inventory.html">07 Translate Inventory Requirements into Cumulative Bounds</a><a href="./Interface-08-Validation.html">08 Import, Validate, and Load Business Data</a><a href="./Interface-09-Results.html">09 Interpret Results and Prepare the Next Planning Cycle</a><a href="./Interface-Configurations.html">Configuration Patterns: From Shop-Floor Arrangements to Data</a><a href="./Interface-Fields.html">Complete Field Reference</a><a href="./Interface-Guide.html">Learning the Standardized Data Interface</a><a href="./Interface-Relationships.html">Object Relationships and Calculation Rules</a><a href="./Interface-Semantics.html">DecisioWorks Standardized Data Interface: A Detailed Semantic Guide</a><a href="./Interface-Walkthrough.html">Worked Example: Inputs, Checks and Adjustments for 120 Brackets</a><span class="nav-section">Worksheets</span><a href="./Worksheet-Operational-Rule.html">Operational Rule and Verification</a><a href="./Worksheet-Plan-Comparison.html">Baseline and Adjusted Plan Comparison</a><a href="./Worksheet-Review-and-Change-Record.html">Review and Change Record</a><a href="./Worksheet-Scenario-Brief.html">Scenario and Decision Task</a></nav></details>
+      <article id="article">
+        <header class="article-heading"><p class="kicker">Standardized Data Interface</p><h1>02 Express Orders, Products, and Attributes</h1></header>
+        <details class="page-contents"><summary>On this page</summary><nav><a href="#turn-one-order-into-schedulable-requirements">Turn One Order
+into Schedulable Requirements</a><a href="#create-a-header-and-two-lines">Create a Header and Two
+Lines</a><a href="#map-an-attribute-to-a-business-name">Map an Attribute to a
+Business Name</a><a href="#check-your-work">Check Your Work</a><a href="#exercise-and-answer">Exercise and Answer</a></nav></details>
+        <h2 id="turn-one-order-into-schedulable-requirements">Turn One Order
+into Schedulable Requirements</h2>
+<p>A customer needs 120 blue brackets: 80 on day one and 40 on day two.
+Keep one order identity while expressing two due-date requirements.</p>
+<p>Create product P-1 with record <code>id=1</code>. A product attribute
+column references an attribute record; it does not store the word “Blue”
+directly.</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th>Table</th>
+<th style="text-align: right;">id</th>
+<th>name</th>
+<th>code</th>
+<th style="text-align: right;">value</th>
+<th style="text-align: right;">is_key</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>property_1</td>
+<td style="text-align: right;">1</td>
+<td>Color</td>
+<td>BLUE</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">product.id</th>
+<th>name</th>
+<th>code</th>
+<th>vin</th>
+<th style="text-align: right;">property_1</th>
+<th>property_2</th>
+<th>property_3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td>Blue bracket</td>
+<td>P-1</td>
+<td>FIN-P1</td>
+<td style="text-align: right;">1</td>
+<td>NULL</td>
+<td>NULL</td>
+</tr>
+</tbody>
+</table></div>
+<p>Here, <code>property_1</code> represents color. The name identifies
+the dimension, code BLUE identifies blue, and numeric value 1 is its
+stable numeric representation. <code>vin</code> identifies the finished
+item to which the product belongs without determining assembly
+quantities. Key attributes distinguish products in demand. If a rule
+uses color, also confirm that the attribute has been loaded.</p>
+<h2 id="create-a-header-and-two-lines">Create a Header and Two
+Lines</h2>
+<p>Order 1 in <code>order_info</code> has code <code>O-100</code>,
+description “Staged delivery of blue brackets,” and priority 0. Its
+creation time may retain the source timestamp.</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">order_item.id</th>
+<th style="text-align: right;">information</th>
+<th style="text-align: right;">product</th>
+<th style="text-align: right;">delivery_time</th>
+<th style="text-align: right;">number</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">80</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">40</td>
+</tr>
+</tbody>
+</table></div>
+<p><code>information=1</code> references the header;
+<code>product=1</code> references the product;
+<code>delivery_time</code> references lesson one's periods. Enter 80 and
+40, rather than cumulative quantities 80 and 120. Any cumulative
+fulfillment calculation belongs to the subsequent model
+interpretation.</p>
+<h2 id="map-an-attribute-to-a-business-name">Map an Attribute to a
+Business Name</h2>
+<p>This data-acquisition fragment maps <code>color</code> to the
+attribute position used in this scenario:</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">context</span><span class="kw">:</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">inputs</span><span class="kw">:</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">data_acquisition</span><span class="kw">:</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">property_mappings</span><span class="kw">:</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">color</span><span class="kw">:</span><span class="at"> property_1</span></span></code></pre></div>
+<p>It is part of a capability-orchestration recipe, which combines data,
+parameters, and actions into a workflow; it is not a complete solving
+recipe. Another scenario may place color in a different attribute table
+while retaining the same explicit business meaning.</p>
+<h2 id="check-your-work">Check Your Work</h2>
+<p>Resolve all header, product, time, and attribute references. Confirm
+that the lines total 120 units and that cancellations or deliveries have
+been handled consistently. Keep ID-to-code conversion in the source
+mapping; the string <code>P-1</code> cannot replace the integer product
+foreign key.</p>
+<p>Different products on one order need separate product records. Do not
+mix color and customer grade in one attribute position. Adding
+dimensions requires coordinated template and loading changes; three
+tables are the current representation, not a design limit.</p>
+<h2 id="exercise-and-answer">Exercise and Answer</h2>
+<p>The customer moves the second delivery to day three. Add a valid
+third time unit, then change the second line's
+<code>delivery_time</code> to its ID. Quantity remains 40. A nonexistent
+due-period reference is invalid even when total demand is correct.</p>
+<p>That step checks the order-to-time reference only. To recalculate
+inventory, materials and capacity, update the related files below as
+well. Order demand, expected stock issues and candidate output are
+separate objects. This exercise issues goods on their due dates; that
+assumption is not universal.</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th>File or table</th>
+<th>Change for the three-period exercise</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>time_unit</code>, <code>order_item</code></td>
+<td>Add <code>(id=3, offset=2, scale=28800, status=1)</code>; move line
+2's due time to 3</td>
+</tr>
+<tr class="even">
+<td><code>capacity</code></td>
+<td>Add period 3 for work centers 11 and 12, each with
+<code>used=0</code></td>
+</tr>
+<tr class="odd">
+<td><code>scenario.json</code></td>
+<td>Set <code>period_issues</code> to <code>[80,0,40]</code> in
+<code>time_unit.offset</code> order; opening stock remains 20</td>
+</tr>
+<tr class="even">
+<td><code>inventory_limit</code></td>
+<td>Cumulative production lower bounds: 80,80,120; upper bounds:
+160,160,200, representing ending stock between 20 and 100</td>
+</tr>
+<tr class="odd">
+<td><code>kitting_information</code></td>
+<td>Keep period 2 arrivals of 40 and 80; period 3 increments are zero,
+not cumulative supply of 120 and 240</td>
+</tr>
+<tr class="even">
+<td><code>manual_candidate.csv</code></td>
+<td>Move both 40-unit period 2 output rows to period 3; no production in
+period 2</td>
+</tr>
+</tbody>
+</table></div>
+<p>From the <code>examples</code> directory, build a complete extension
+in a separate folder:</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> build_example.py <span class="at">--third-period</span> <span class="at">--output-dir</span> ./third-period-example</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> check_example.py ./third-period-example/data.db</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> calculate_candidate.py ./third-period-example</span></code></pre></div>
+<p>The builder applies the <a
+href="../../assets/data-interface/examples/third-period.sql">three-period
+SQL changes</a> and updates JSON, candidate CSV and table CSV files
+together. It refuses to overwrite an existing database. When editing
+manually, maintain every item in the table. Editing an exported CSV does
+not automatically update <code>data.db</code>.</p>
+<p>Expected cumulative output is 80,80,120, with ending stock of 20 in
+every period. Both <code>aggregate_checks_passed</code> and
+<code>issues_match_due_quantities</code> are <code>true</code>. There
+are no period 2 candidate rows; period 3 stamping and assembly take 100
+and 80 minutes respectively. These are manual calculations, not solver
+results.</p>
+<p>Adding only a time unit produces an <code>errors</code> message
+identifying the issue-plan length. Extending only the issue plan then
+identifies missing inventory limits or capacity records. Changing only
+the second order quantity from 40 to 400 produces a <code>-360</code>
+difference in <code>demand_issue_comparison</code>; unchanged inventory
+arithmetic does not mean demand was met.</p>
+<p><a href="./Interface-01-Calendar.html">Previous</a> · <a
+href="./Interface-03-Resources.html">Next: resources</a></p>
+      </article>
+      <footer class="article-footer"><a href="./">Back to Learning Center</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki/Interface-02-Demand">Read on Wiki</a></footer>
+    </main>
+  </div>
+  <footer class="site-footer shell"><strong>DecisioWorks</strong><span>Learn decision capabilities through production problems.</span></footer>
+</body>
+</html>

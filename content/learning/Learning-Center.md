@@ -8,6 +8,8 @@ DecisioWorks supplies production-decision building blocks. These eight topics an
 
 ## Choose a Learning Path
 
+For manufacturing semantics, field configuration and reproducible calculations, open the [Standardized Data Interface Guide](Interface-Guide.md). It covers the semantic model, 18 tables and 105 fields, relationships, configuration patterns, nine lessons and a complete exercise download.
+
 | Your task | Suggested sequence |
 |---|---|
 | Define a problem and compare plans | A → D → H |

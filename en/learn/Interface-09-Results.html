@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>09 Interpret Results and Prepare the Next Planning Cycle | DecisioWorks</title>
+  <meta name="description" content="This is a manually constructed candidate for calculation, not solver output. The base database keeps planning_result empty; candidate rows are stored separately in CSV." />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-09-Results.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-09-Results.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-09-Results.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-09-Results.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="09 Interpret Results and Prepare the Next Planning Cycle | DecisioWorks" />
+  <meta property="og:description" content="This is a manually constructed candidate for calculation, not solver output. The base database keeps planning_result empty; candidate rows are stored separately in CSV." />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-09-Results.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers-en.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="09 Interpret Results and Prepare the Next Planning Cycle | DecisioWorks" />
+  <meta name="twitter:description" content="This is a manually constructed candidate for calculation, not solver output. The base database keeps planning_result empty; candidate rows are stored separately in CSV." />
+  <meta name="twitter:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers-en.png" />
+  <link rel="icon" href="../../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "09 Interpret Results and Prepare the Next Planning Cycle", "description": "This is a manually constructed candidate for calculation, not solver output. The base database keeps planning_result empty; candidate rows are stored separately in CSV.", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-09-Results.html", "inLanguage": "en", "author": {"@type": "Organization", "name": "DecisioWorks", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/"}, {"@type": "ListItem", "position": 2, "name": "Learning Center", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/"}, {"@type": "ListItem", "position": 3, "name": "09 Interpret Results and Prepare the Next Planning Cycle", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-09-Results.html"}]}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#article">Skip to content</a>
+  <header class="learning-header"><div class="shell header-inner">
+    <a class="brand" href="../"><img src="../../assets/decisioworks-logo.png" alt="" width="36" height="36" /><strong>DecisioWorks</strong></a>
+    <nav aria-label="Main navigation">
+      <a href="../">Home</a>
+      <a href="../docs/">Docs</a>
+      <a class="language-switch" href="../../learn/Interface-09-Results.html" lang="zh-CN" hreflang="zh-CN">中文</a>
+    </nav>
+  </div></header>
+  <div class="shell breadcrumbs" aria-label="Breadcrumb"><a href="../">Home</a><span>/</span><a href="./">Learning Center</a><span>/</span><span aria-current="page">09 Interpret Results and Prepare the Next Planning Cycle</span></div>
+  <div class="shell reading-layout">
+    <aside class="sidebar"><nav aria-label="Course contents"><a class="contents-home" href="./">Learning Center</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A From a Production Problem to a Testable Decision</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B Represent Manufacturing in Data</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C Objectives, Experience and Operational Rules</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D Read Plans through Recorded Cases</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E Coordinate Planning Levels and Responses</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F Open Collaboration and Continued Evolution</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G Connect Applications and AI Agents through Standard Actions</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H Build Everyday Decision Capability</a><span class="nav-section">Data Interface Guide</span><a href="./Interface-01-Calendar.html">01 Configure Time, Shifts, and Maintenance</a><a href="./Interface-02-Demand.html">02 Express Orders, Products, and Attributes</a><a href="./Interface-03-Resources.html">03 Configure Work Centers and Shared Resources</a><a href="./Interface-04-Routing.html">04 Configure Routes and Alternative Resources</a><a href="./Interface-05-Quantity.html">05 Calculate Cycle Output, Batches, and Processing Time</a><a href="./Interface-06-Materials.html">06 Configure Operation-Level Materials and Availability</a><a href="./Interface-07-Inventory.html">07 Translate Inventory Requirements into Cumulative Bounds</a><a href="./Interface-08-Validation.html">08 Import, Validate, and Load Business Data</a><a href="./Interface-09-Results.html" aria-current="page">09 Interpret Results and Prepare the Next Planning Cycle</a><a href="./Interface-Configurations.html">Configuration Patterns: From Shop-Floor Arrangements to Data</a><a href="./Interface-Fields.html">Complete Field Reference</a><a href="./Interface-Guide.html">Learning the Standardized Data Interface</a><a href="./Interface-Relationships.html">Object Relationships and Calculation Rules</a><a href="./Interface-Semantics.html">DecisioWorks Standardized Data Interface: A Detailed Semantic Guide</a><a href="./Interface-Walkthrough.html">Worked Example: Inputs, Checks and Adjustments for 120 Brackets</a><span class="nav-section">Worksheets</span><a href="./Worksheet-Operational-Rule.html">Operational Rule and Verification</a><a href="./Worksheet-Plan-Comparison.html">Baseline and Adjusted Plan Comparison</a><a href="./Worksheet-Review-and-Change-Record.html">Review and Change Record</a><a href="./Worksheet-Scenario-Brief.html">Scenario and Decision Task</a></nav></aside>
+    <main>
+      <details class="mobile-contents"><summary>Course contents</summary><nav aria-label="Mobile course contents"><a class="contents-home" href="./">Learning Center</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A From a Production Problem to a Testable Decision</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B Represent Manufacturing in Data</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C Objectives, Experience and Operational Rules</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D Read Plans through Recorded Cases</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E Coordinate Planning Levels and Responses</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F Open Collaboration and Continued Evolution</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G Connect Applications and AI Agents through Standard Actions</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H Build Everyday Decision Capability</a><span class="nav-section">Data Interface Guide</span><a href="./Interface-01-Calendar.html">01 Configure Time, Shifts, and Maintenance</a><a href="./Interface-02-Demand.html">02 Express Orders, Products, and Attributes</a><a href="./Interface-03-Resources.html">03 Configure Work Centers and Shared Resources</a><a href="./Interface-04-Routing.html">04 Configure Routes and Alternative Resources</a><a href="./Interface-05-Quantity.html">05 Calculate Cycle Output, Batches, and Processing Time</a><a href="./Interface-06-Materials.html">06 Configure Operation-Level Materials and Availability</a><a href="./Interface-07-Inventory.html">07 Translate Inventory Requirements into Cumulative Bounds</a><a href="./Interface-08-Validation.html">08 Import, Validate, and Load Business Data</a><a href="./Interface-09-Results.html" aria-current="page">09 Interpret Results and Prepare the Next Planning Cycle</a><a href="./Interface-Configurations.html">Configuration Patterns: From Shop-Floor Arrangements to Data</a><a href="./Interface-Fields.html">Complete Field Reference</a><a href="./Interface-Guide.html">Learning the Standardized Data Interface</a><a href="./Interface-Relationships.html">Object Relationships and Calculation Rules</a><a href="./Interface-Semantics.html">DecisioWorks Standardized Data Interface: A Detailed Semantic Guide</a><a href="./Interface-Walkthrough.html">Worked Example: Inputs, Checks and Adjustments for 120 Brackets</a><span class="nav-section">Worksheets</span><a href="./Worksheet-Operational-Rule.html">Operational Rule and Verification</a><a href="./Worksheet-Plan-Comparison.html">Baseline and Adjusted Plan Comparison</a><a href="./Worksheet-Review-and-Change-Record.html">Review and Change Record</a><a href="./Worksheet-Scenario-Brief.html">Scenario and Decision Task</a></nav></details>
+      <article id="article">
+        <header class="article-heading"><p class="kicker">Standardized Data Interface</p><h1>09 Interpret Results and Prepare the Next Planning Cycle</h1></header>
+        <details class="page-contents"><summary>On this page</summary><nav><a href="#task-recover-business-meaning-from-operation-results">Task:
+Recover Business Meaning from Operation Results</a><a href="#recover-time-and-material-usage">Recover Time and Material
+Usage</a><a href="#a-maintenance-change">A Maintenance Change</a><a href="#prepare-the-next-input">Prepare the Next Input</a><a href="#exercise-and-answer">Exercise and Answer</a></nav></details>
+        <h2 id="task-recover-business-meaning-from-operation-results">Task:
+Recover Business Meaning from Operation Results</h2>
+<p>This is a manually constructed candidate for calculation, not solver
+output. The base database keeps <code>planning_result</code> empty;
+candidate rows are stored separately in CSV.</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">workcenter</th>
+<th style="text-align: right;">time_unit</th>
+<th style="text-align: right;">process</th>
+<th style="text-align: right;">number</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1001</td>
+<td style="text-align: right;">80</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1002</td>
+<td style="text-align: right;">80</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1001</td>
+<td style="text-align: right;">40</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1002</td>
+<td style="text-align: right;">40</td>
+</tr>
+</tbody>
+</table></div>
+<p>Resolve each operation to its route and product. Assembly is the
+final operation, so deliveries correspond to 80 and 40. The four rows
+total 240 operation-output units, not 240 finished deliveries.</p>
+<h2 id="recover-time-and-material-usage">Recover Time and Material
+Usage</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th>Period and resource</th>
+<th style="text-align: right;">Output</th>
+<th style="text-align: right;">Units/cycle</th>
+<th style="text-align: right;">Cycles</th>
+<th style="text-align: right;">Seconds/cycle</th>
+<th style="text-align: right;">Processing minutes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Day-one stamping</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">600</td>
+<td style="text-align: right;">200</td>
+</tr>
+<tr class="even">
+<td>Day-one assembly</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">120</td>
+<td style="text-align: right;">160</td>
+</tr>
+<tr class="odd">
+<td>Day-two stamping</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">600</td>
+<td style="text-align: right;">100</td>
+</tr>
+<tr class="even">
+<td>Day-two assembly</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">120</td>
+<td style="text-align: right;">80</td>
+</tr>
+</tbody>
+</table></div>
+<p>Consumption is 80 blanks and 160 fasteners on day one, then another
+40 and 80. Check cumulative consumption against cumulative supply. With
+opening finished stock 20 and issues 80 then 40, ending finished
+inventory is 20 on both days.</p>
+<p>These calculations assume no initial setup, changeovers, scrap, or
+additional OEE adjustment. Add applicable time from the adopted records
+and rules when checking real results. Read <code>value_1/2/3</code>
+using the scenario's definition; cycle number and sequence position are
+scenario-specific interpretations.</p>
+<h2 id="a-maintenance-change">A Maintenance Change</h2>
+<p>Extending day-one stamping maintenance from two to three hours
+reduces available time from 360 to 300 minutes. The 200-minute stamping
+load still fits in aggregate. If maintenance occurs at the start of the
+shift and all 80 units needed on day one must finish stamping before any
+assembly starts, with no overlap between operations, continuous
+execution needs <code>180+200+160=540 minutes</code>, exceeding eight
+hours. The two-hour-maintenance version needs 480 minutes.</p>
+<p>Transferring all 80 units together is an additional assumption, not a
+consequence of <code>batch_size=20</code>. Confirm the processing batch
+and transfer batch separately. If each completed batch of 20 can move to
+assembly, with no transport or setup losses and both machines able to
+operate concurrently, the four batches finish at minutes 270, 320, 370,
+and 420. The 420-minute and 540-minute calculations use different
+transfer rules; neither is a solver run.</p>
+<p>A resource-load check therefore does not establish that the entire
+operation chain fits within the shift. Transfer batches, overlapping
+production, or changed windows need explicit scenario rules and model
+support. Result review needs both aggregate quantities and
+operation-level detail.</p>
+<h2 id="prepare-the-next-input">Prepare the Next Input</h2>
+<ol type="1">
+<li>Separate executed, committed, and adjustable work; retain the
+original plan.</li>
+<li>Update remaining demand using actual deliveries, rather than planned
+completion.</li>
+<li>Update available materials using actual consumption, receipts, and
+blocked quantities.</li>
+<li>Carry forward necessary resource commitments without counting
+maintenance twice.</li>
+<li>When the planning origin moves, rebuild every time reference, not
+just result numbering.</li>
+<li>Record configuration differences before starting the next capability
+run.</li>
+</ol>
+<h2 id="exercise-and-answer">Exercise and Answer</h2>
+<p>Day one promised 80 but delivered only 60. If the cumulative
+commitment is unchanged, day-two remaining delivery is 60: the original
+40 plus backlog 20. This does not automatically mean 60 new units must
+be produced. Review finished stock, work in process, completed but
+undelivered quantities, and inventory policy. Treating delivery backlog
+as new production can duplicate output.</p>
+<p><a href="./Interface-08-Validation.html">Previous</a> · <a
+href="./Interface-Walkthrough.html">Walkthrough</a> · <a
+href="./Interface-Relationships.html">Relationship reference</a></p>
+      </article>
+      <footer class="article-footer"><a href="./">Back to Learning Center</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki/Interface-09-Results">Read on Wiki</a></footer>
+    </main>
+  </div>
+  <footer class="site-footer shell"><strong>DecisioWorks</strong><span>Learn decision capabilities through production problems.</span></footer>
+</body>
+</html>

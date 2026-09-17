@@ -88,7 +88,7 @@ id="注塑排程案例让颜色盖型与容量进入换型决策">注塑排程�
 </tr>
 <tr class="odd">
 <td>批量审计</td>
-<td>对照生产率与需求倍数</td>
+<td>核对单次出件数、批量及模型要求的整数倍关系；需求量不必是批量的整数倍</td>
 <td>预处理是否发现不一致</td>
 </tr>
 <tr class="even">
@@ -129,6 +129,60 @@ alt="注塑调整方案与基线对比" /></p>
 <p>API
 证据与页面截图是两组独立的真实运行。并行搜索可能返回不同的可行序列，因此截图中的切换次数不要求与
 API 摘要逐项相同；每组 A/B 只在自身同一执行环境和参数口径内比较。</p>
+<h3 id="原始截图阅读说明">原始截图阅读说明</h3>
+<p>先看左侧运行配置，再看右侧总体指标和切换方向明细。保留原始中文界面作为运行证据。</p>
+<table>
+<thead>
+<tr class="header">
+<th>截图文字</th>
+<th>英文对应</th>
+<th>阅读要点</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>颜色切换权重</td>
+<td>Color-change weight</td>
+<td>用于序列切换</td>
+</tr>
+<tr class="even">
+<td>容器容量属性切换权重</td>
+<td>Container-capacity-change weight</td>
+<td>用于循环切换</td>
+</tr>
+<tr class="odd">
+<td>求解时限 / 求解线程</td>
+<td>Solve time limit / solver threads</td>
+<td>此基线截图为60秒、16线程</td>
+</tr>
+<tr class="even">
+<td>序列切换次数 / 循环切换次数</td>
+<td>Sequence / circular changeover count</td>
+<td>此截图分别为57、8</td>
+</tr>
+<tr class="odd">
+<td>估算加权切换目标值 / 内核加权切换目标值</td>
+<td>Estimated / kernel weighted changeover objective</td>
+<td>此处均为18.3，是加权量，不是分钟或实际次数</td>
+</tr>
+<tr class="even">
+<td>候选方案数</td>
+<td>Candidate solution count</td>
+<td>显示1个候选</td>
+</tr>
+<tr class="odd">
+<td>端到端耗时</td>
+<td>End-to-end elapsed time</td>
+<td>单位为秒，包含求解之外的处理，不等同于求解时限</td>
+</tr>
+<tr class="even">
+<td>切换方向明细 / 切换目标材料审计</td>
+<td>Changeover-direction details / objective-material audit</td>
+<td>同时检查业务属性、目标材料与切换次数</td>
+</tr>
+</tbody>
+</table>
+<p>使用A/B对比图复核该次页面实验内的变化，不用截图数值替代另一组API结果。</p>
 <section class="related-docs"><h2>继续阅读</h2><div><a href="ERP-MES-Data-Mapping-Guide.html"><span>ERP/MES 数据映射指南</span><b>→</b></a><a href="Objectives-and-Rule-Control.html"><span>目标与规则控制</span><b>→</b></a><a href="Results-Evidence-and-Feedback.html"><span>结果、证据与反馈</span><b>→</b></a></div></section></article>
   </main>
   <footer class="docs-footer"><div class="docs-shell"><strong>DecisioWorks</strong><span>制造业生产决策工具包</span></div></footer>

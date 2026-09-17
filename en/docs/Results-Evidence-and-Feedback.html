@@ -47,6 +47,7 @@ by itself prove that the arrangement should be executed. Users still
 need to know which demand is met, which orders are affected, where
 workload moved, what was sacrificed to reduce changeovers, and what must
 enter the next cycle.</p>
+<h2 id="three-levels-of-results">Three levels of results</h2>
 <table>
 <thead>
 <tr class="header">
@@ -69,31 +70,60 @@ enter the next cycle.</p>
 <tr class="odd">
 <td>Audit</td>
 <td>Did the configured run produce this result?</td>
-<td>Data/recipe version, objective direction, parameters, status</td>
+<td>Data version, objective direction, material mapping, parameters,
+status</td>
 </tr>
 </tbody>
 </table>
+<p>Overall metrics help identify priorities, object-level details
+support business review, and audit records explain how the result was
+produced. Each level serves a different purpose.</p>
+<h2 id="keep-physical-quantities-separate-from-objective-scores">Keep
+physical quantities separate from objective scores</h2>
 <p>Weighted objective scores describe trade-offs; physical time,
 quantities, and workload come from the corresponding business metrics.
-When reading Web Cockpit results, check units and granularity, then
-inspect workload by work center and shortages by order or product.
-Converting time to minutes requires an explicit time unit in the data,
-not a weighted score.</p>
-<p>Keep dataset and recipe versions, runtime parameters, timestamps,
-action status, candidate count, selected solution, key business metrics,
-and a diagnostic ID for later review. Run summaries, configuration
-fingerprints, and relevant diagnostics can support discussions with
-partners. Handle order, customer, and equipment details according to
-your organization's data-sharing requirements.</p>
+When reading Web Cockpit results, check units and granularity before
+interpreting these values.</p>
+<p>Convert time to minutes only when the source unit and conversion
+basis are known. Expand workload by work center and shortage at the
+granularity supported by the data and results. If a plan retains only
+product, operation, work center, and time unit, order-level delivery
+conclusions require an explicit allocation or linking rule. Total
+product output alone cannot establish that every order is satisfied.</p>
+<h2 id="turn-results-into-evidence">Turn results into evidence</h2>
+<p>Keep dataset and recipe versions, runtime parameters, start and end
+timestamps, action status, candidate count, selected solution, key
+business metrics, and a diagnostic ID for later review. Run summaries,
+configuration fingerprints, and relevant diagnostics can support
+discussions with partners. Handle order, customer, and equipment details
+according to your organization's data-sharing requirements.</p>
+<h2 id="from-results-to-feedback">From results to feedback</h2>
 <p>Underproduction, overload, kitting risk, waiting, changeovers, and
 execution deviation may become PlanBias and then PlanSignal. A signal
 can influence objectives, local rules, release, or data preparation for
 the next cycle. Feedback supplies sourced decision material; it does not
 silently overwrite the plan.</p>
-<p>For baseline-versus-rerun comparison, change only a small number of
-factors and report the benefit, cost, affected objects, stable scope,
-and new risks. A claim that an optimized result is better without input
-differences and object-level evidence is incomplete.</p>
+<h2 id="compare-a-baseline-with-a-rerun">Compare a baseline with a
+rerun</h2>
+<p>Change only a small number of factors and report the benefit, cost,
+affected objects, tasks that remained stable, and new risks. Showing a
+better result without input differences and object-level evidence does
+not provide a complete validation record.</p>
+<h2 id="common-misreadings">Common misreadings</h2>
+<ul>
+<li>Treating an objective score as actual production output.</li>
+<li>Looking only at average load and overlooking a bottleneck work
+center.</li>
+<li>Interpreting proven infeasibility as a software crash.</li>
+<li>Keeping result files without the corresponding data and
+configuration versions.</li>
+<li>Changing many parameters in every run and losing the ability to
+explain the differences.</li>
+</ul>
+<p>Continue with the <a
+href="https://github.com/qiaoyx-or/decisioworks/wiki/End-to-End-Scenario-Walkthrough">End-to-End Scenario
+Walkthrough</a> and <a href="Planning-and-Scheduling-Overview.html">Planning
+and Scheduling</a>.</p>
 <section class="related-docs"><h2>Continue Reading</h2><div><a href="Objectives-and-Rule-Control.html"><span>Objectives and Rule Control</span><b>→</b></a><a href="Planning-and-Scheduling-Overview.html"><span>Planning and Scheduling Overview</span><b>→</b></a><a href="Architecture-Overview.html"><span>DecisioWorks Architecture Overview</span><b>→</b></a></div></section></article>
   </main>
   <footer class="docs-footer"><div class="docs-shell"><strong>DecisioWorks</strong><span>Manufacturing Production Decision Toolkit</span></div></footer>

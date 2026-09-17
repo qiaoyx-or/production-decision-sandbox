@@ -32,7 +32,7 @@ This exercise assumes each finished unit passes through each operation once, wit
 ## Place a Change Correctly
 Changing fastener consumption from two to three raises the teaching requirement to 30. Update the confirmed operation-material relationship, check availability, then rerun. A larger delivery weight cannot supply the missing ten fasteners.
 
-A route or alternative-resource change also needs an object-level review. Another route may change materials, productivity and duration. Replacing a work-center label alone is insufficient.
+A route or alternative-resource change also needs an object-level review. Another route may change materials, output per cycle, and processing duration. For continuous processing, also check output per unit time and its units. Replacing a work-center label alone is insufficient.
 
 ## Exercise and Suggested Answer
 Add a surface-treatment operation consuming 0.2 liters of fluid per unit. Draw the route, resource and material relationships. Under the no-loss assumption, ten units require two liters.

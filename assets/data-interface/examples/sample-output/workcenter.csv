@@ -1,0 +1,4 @@
+id,name,code,type,parallelism,station_count,equipping_time,parent_id
+10,Shop,SHOP,1,1,1,0.0,
+11,Stamping A,PRESS-A,0,1,1,0.0,10
+12,Assembly,ASSEMBLY,0,1,1,0.0,10

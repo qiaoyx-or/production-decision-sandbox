@@ -7,6 +7,8 @@ A shift has 480 minutes, existing work uses 25%, and maintenance needs 30 minute
 
 For this hand-calculated teaching example, 480 minutes is gross shift time, the 25% is measured against it, and maintenance does not overlap existing work. Remaining time is 480 × (1−0.25) −30 = 330 minutes. This calculation applies to those assumptions; other capacity definitions require the corresponding conversion.
 
+In the standard interface, this normal period has `scale=28800` seconds and `status=1`. Combine existing work and maintenance as `used=(120+30)/480=0.3125`. Available time is then `28800×(1−0.3125)=19800` seconds, or 330 minutes. Maintenance is already included in that fraction and is not deducted again.
+
 ## Align Four Kinds of Time
 | Information | Related object | Check |
 |---|---|---|
@@ -15,10 +17,10 @@ For this hand-calculated teaching example, 480 minutes is gross shift time, the 
 | Material availability | kitting_information.time_unit | Arrival timing and quantity units are clear |
 | Plan output | planning_result.time_unit | Uses the same time axis as inputs |
 
-time_unit.id is a reference identifier. offset and scale explain position and scale. Consecutive IDs do not automatically mean days and cannot be converted to minutes without the scenario's time definition.
+`time_unit.id` is a reference identifier, `offset` expresses relative sequence, and `scale` is the period length in seconds. Interpret actual time positions using the origin and period sequence; consecutive identifiers alone do not represent days or minutes.
 
 ## Keep Ratios, Quantities and Time Separate
-capacity.used uses a ratio between zero and one: 25% is 0.25. Neither 25 nor 120 minutes expresses the same field meaning. Storage, calculation and percentage display need a consistent convention.
+`capacity.used` is the occupied or unavailable fraction between zero and one: 25% is 0.25. Neither 25 nor 120 minutes expresses the same field meaning. Storage, calculation and percentage display need a consistent convention. This input fraction is distinct from resource utilization calculated from a plan.
 
 | Condition | Review |
 |---|---|

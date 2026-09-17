@@ -8,6 +8,8 @@ A standardized data interface does more than align fields: it turns business fac
 
 ## Core objects
 
+Continue with the [Standardized Data Interface Guide](Interface-Guide) for the semantic model, complete fields, object relationships, configuration patterns, nine lessons and exercise downloads.
+
 Orders, products, routes, operations, work centers, capacity, calendars, shifts, maintenance, materials, operation-level BOM, inventory, kitting information, and planning results are connected through explicit keys, time coordinates, and relationships.
 
 ## Four relationship chains
@@ -27,7 +29,7 @@ The hard part of APS data onboarding is not importing tables. It is proving that
 
 - without ERP or MES, use `data.db` as a standard interface template to organize a scenario quickly;
 - with ERP or MES, map source data into shared business semantics and reduce integration friction;
-- represent shifts, maintenance, shared resources, lot sizes, yield, and operation-level BOM;
+- represent shifts, maintenance, shared resources, batch quantities, output per cycle, and operation-level BOM;
 - provide common inputs for master planning, scheduling, material readiness, and AI Agent onboarding.
 
 ## Differentiation

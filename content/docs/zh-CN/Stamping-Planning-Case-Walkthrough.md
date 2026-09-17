@@ -8,7 +8,7 @@
 
 ## 1. 输入数据
 
-订单通过 `order_item` 表达制品、交期和数量；制品经工艺路线和工序连接工作中心；`ingredient` 把物料需求绑定到工序；`kitting_information` 表达各时间单元的物料可用量；`capacity.used` 表达已有产能占用比例，取值为 0 到 1，不是本次求解得到的资源利用率。
+订单通过 `order_item` 表达制品、交期和数量；制品经工艺路线和工序连接工作中心；`ingredient` 把物料需求绑定到工序；`kitting_information` 表达各时间单元的物料可用量；`capacity.used` 表达已有占用或不可用产能比例，取值为0到1，不是本次求解得到的资源利用率。
 
 ## 2. 约束与目标
 
@@ -45,3 +45,21 @@
 ![冲压调整方案与基线对比](assets/enterprise-real-run-20260831/stamping_ab_compare.jpg)
 
 截图来自商业版场景实验台的另一组实际运行，使用 2 线程、60 秒并成功完成；上文 API 记录采用 16 线程、120 秒。复查结果时应分别对应各自的数据版本、配置和输出，不把两组运行当作同一次实验。应用到企业场景时，可沿用这里的比较方法，结合实际数据、设备条件和验收目标评估结果。
+
+### 原始截图阅读说明
+
+先看左侧基线配置，再看右侧运行状态和总体指标，最后下钻工作中心、时间单元及目标材料审计。保留原始界面文字，以便核对真实运行证据。
+
+| 截图文字 | 英文对应 | 阅读要点 |
+|---|---|---|
+| 基线方案 A / 基线结果 A | Baseline configuration A / baseline result A | 配置与结果应成组阅读 |
+| 求解时限 / 求解线程 | Solve time limit / solver threads | 本截图为60秒、2线程 |
+| 需求满足率 / 期末欠产量 | Demand fulfillment / final shortage | 数量满足不代表准时交付 |
+| 产能利用率 | Capacity utilization | 从结果计算的百分比 |
+| 实际加工负荷 | Actual processing load | 截图为6,193.14分钟 |
+| 实际计划占用 / 切换与等待损失 | Planned capacity occupation / setup and waiting loss | 单位为分钟，与上文未换算的API数值区别阅读 |
+| 工作中心级产能 / 时间单元级产能 | Capacity by work center / by time unit | 按约束粒度检查瓶颈 |
+| 目标材料审计 | Objective-material audit | 检查目标方向、权重和含义 |
+| 基线 / 调整 / 差异 | Baseline / adjusted / difference | A/B比较保持单位一致 |
+
+PlanBias或PlanSignal数量位置的横线表示该处没有显示数值，不能当成已确认的零。

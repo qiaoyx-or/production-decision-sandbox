@@ -1,0 +1,1241 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>完整字段参考 | DecisioWorks</title>
+  <meta name="description" content="本参考列出当前标准SQLite模板的18张表、105个字段。业务意义由语义体系定义，以下类型、可空性和对象默认值说明当前工程表示。对象默认值来自ORM构造器，不代表直接SQL插入时数据库会自动填充；配套SQL显式填写所需字段。允许为空也不等于某个计划场景可以省略必要关系。" />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-Fields.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-Fields.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-Fields.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-Fields.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="完整字段参考 | DecisioWorks" />
+  <meta property="og:description" content="本参考列出当前标准SQLite模板的18张表、105个字段。业务意义由语义体系定义，以下类型、可空性和对象默认值说明当前工程表示。对象默认值来自ORM构造器，不代表直接SQL插入时数据库会自动填充；配套SQL显式填写所需字段。允许为空也不等于某个计划场景可以省略必要关系。" />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-Fields.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="完整字段参考 | DecisioWorks" />
+  <meta name="twitter:description" content="本参考列出当前标准SQLite模板的18张表、105个字段。业务意义由语义体系定义，以下类型、可空性和对象默认值说明当前工程表示。对象默认值来自ORM构造器，不代表直接SQL插入时数据库会自动填充；配套SQL显式填写所需字段。允许为空也不等于某个计划场景可以省略必要关系。" />
+  <meta name="twitter:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <link rel="icon" href="../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "完整字段参考", "description": "本参考列出当前标准SQLite模板的18张表、105个字段。业务意义由语义体系定义，以下类型、可空性和对象默认值说明当前工程表示。对象默认值来自ORM构造器，不代表直接SQL插入时数据库会自动填充；配套SQL显式填写所需字段。允许为空也不等于某个计划场景可以省略必要关系。", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-Fields.html", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "DecisioWorks", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "首页", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/"}, {"@type": "ListItem", "position": 2, "name": "学习中心", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/"}, {"@type": "ListItem", "position": 3, "name": "完整字段参考", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-Fields.html"}]}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#article">跳到正文</a>
+  <header class="learning-header"><div class="shell header-inner">
+    <a class="brand" href="../"><img src="../assets/decisioworks-logo.png" alt="" width="36" height="36" /><strong>DecisioWorks</strong></a>
+    <nav aria-label="主导航">
+      <a href="../">主页</a>
+      <a href="../docs/">文档</a>
+      <a class="language-switch" href="../en/learn/Interface-Fields.html" lang="en" hreflang="en">English</a>
+    </nav>
+  </div></header>
+  <div class="shell breadcrumbs" aria-label="面包屑导航"><a href="../">首页</a><span>/</span><a href="./">学习中心</a><span>/</span><span aria-current="page">完整字段参考</span></div>
+  <div class="shell reading-layout">
+    <aside class="sidebar"><nav aria-label="课程目录"><a class="contents-home" href="./">学习中心</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A 从生产问题到可检验的决策</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B 用数据表达制造过程</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C 让目标、经验与规则参与决策</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D 从真实样例学会读计划</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E 让计划层级协同工作</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F 开放协作与持续演进</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G 用标准动作连接应用与AI Agent</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H 把一次练习变成日常能力</a><span class="nav-section">数据接口详解</span><a href="./Interface-01-Calendar.html">01 配置生产时间、班制与维护</a><a href="./Interface-02-Demand.html">02 表达订单、制品与产品属性</a><a href="./Interface-03-Resources.html">03 配置工作中心与共享资源</a><a href="./Interface-04-Routing.html">04 配置工艺路线与可选资源</a><a href="./Interface-05-Quantity.html">05 核算出件率、批量与加工时间</a><a href="./Interface-06-Materials.html">06 配置工序级物料与齐套</a><a href="./Interface-07-Inventory.html">07 把库存要求转换为累计约束</a><a href="./Interface-08-Validation.html">08 导入、校验并读取业务数据</a><a href="./Interface-09-Results.html">09 解释结果并准备下一轮计划</a><a href="./Interface-Configurations.html">典型配置模式：从现场安排到接口记录</a><a href="./Interface-Fields.html" aria-current="page">完整字段参考</a><a href="./Interface-Guide.html">标准化数据接口学习指南</a><a href="./Interface-Relationships.html">对象关系与计算规则</a><a href="./Interface-Semantics.html">DecisioWorks 标准化数据接口语义详解</a><a href="./Interface-Walkthrough.html">贯穿案例：120件支架的输入、核对与调整</a><span class="nav-section">工作表</span><a href="./Worksheet-Operational-Rule.html">现场规则记录与检查</a><a href="./Worksheet-Plan-Comparison.html">基线与调整方案比较</a><a href="./Worksheet-Review-and-Change-Record.html">复盘与持续改进记录</a><a href="./Worksheet-Scenario-Brief.html">场景与决策任务</a></nav></aside>
+    <main>
+      <details class="mobile-contents"><summary>课程目录</summary><nav aria-label="移动端课程目录"><a class="contents-home" href="./">学习中心</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A 从生产问题到可检验的决策</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B 用数据表达制造过程</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C 让目标、经验与规则参与决策</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D 从真实样例学会读计划</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E 让计划层级协同工作</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F 开放协作与持续演进</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G 用标准动作连接应用与AI Agent</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H 把一次练习变成日常能力</a><span class="nav-section">数据接口详解</span><a href="./Interface-01-Calendar.html">01 配置生产时间、班制与维护</a><a href="./Interface-02-Demand.html">02 表达订单、制品与产品属性</a><a href="./Interface-03-Resources.html">03 配置工作中心与共享资源</a><a href="./Interface-04-Routing.html">04 配置工艺路线与可选资源</a><a href="./Interface-05-Quantity.html">05 核算出件率、批量与加工时间</a><a href="./Interface-06-Materials.html">06 配置工序级物料与齐套</a><a href="./Interface-07-Inventory.html">07 把库存要求转换为累计约束</a><a href="./Interface-08-Validation.html">08 导入、校验并读取业务数据</a><a href="./Interface-09-Results.html">09 解释结果并准备下一轮计划</a><a href="./Interface-Configurations.html">典型配置模式：从现场安排到接口记录</a><a href="./Interface-Fields.html" aria-current="page">完整字段参考</a><a href="./Interface-Guide.html">标准化数据接口学习指南</a><a href="./Interface-Relationships.html">对象关系与计算规则</a><a href="./Interface-Semantics.html">DecisioWorks 标准化数据接口语义详解</a><a href="./Interface-Walkthrough.html">贯穿案例：120件支架的输入、核对与调整</a><span class="nav-section">工作表</span><a href="./Worksheet-Operational-Rule.html">现场规则记录与检查</a><a href="./Worksheet-Plan-Comparison.html">基线与调整方案比较</a><a href="./Worksheet-Review-and-Change-Record.html">复盘与持续改进记录</a><a href="./Worksheet-Scenario-Brief.html">场景与决策任务</a></nav></details>
+      <article id="article">
+        <header class="article-heading"><p class="kicker">标准化数据接口</p><h1>完整字段参考</h1></header>
+        <details class="page-contents"><summary>本页内容</summary><nav><a href="#capacity">capacity</a><a href="#ingredient">ingredient</a><a href="#inventory_limit">inventory_limit</a><a href="#kitting_information">kitting_information</a><a href="#material">material</a><a href="#order_info">order_info</a><a href="#order_item">order_item</a><a href="#planning_result">planning_result</a><a href="#process">process</a><a href="#process_adaptor">process_adaptor</a><a href="#process_route">process_route</a><a href="#product">product</a><a href="#property_1">property_1</a><a href="#property_2">property_2</a><a href="#property_3">property_3</a><a href="#shared_resource">shared_resource</a><a href="#time_unit">time_unit</a><a href="#workcenter">workcenter</a><a href="#名称对应与扩展">名称对应与扩展</a><a href="#设计示例与当前模板的表示差异">设计示例与当前模板的表示差异</a></nav></details>
+        <p>本参考列出当前标准SQLite模板的18张表、105个字段。业务意义由语义体系定义，以下类型、可空性和对象默认值说明当前工程表示。对象默认值来自ORM构造器，不代表直接SQL插入时数据库会自动填充；配套SQL显式填写所需字段。允许为空也不等于某个计划场景可以省略必要关系。</p>
+<p>单位列中的数量口径需要与场景单位表共同使用。OEE默认100表示百分数，capacity.used则采用0到1比例。具体模型的字段采用情况应随能力配置和运行证据核对。</p>
+<h2 id="capacity">capacity</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>字段</th>
+<th>存储类型</th>
+<th>可空</th>
+<th>对象默认值</th>
+<th>单位</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>id</code></td>
+<td>INTEGER</td>
+<td>否</td>
+<td><code>生成主键</code></td>
+<td>标识</td>
+<td>本表记录主键，用于引用。</td>
+</tr>
+<tr class="even">
+<td><code>time_unit</code></td>
+<td>INTEGER</td>
+<td>否</td>
+<td><code>无</code></td>
+<td>外键</td>
+<td>产能对应时期，引用time_unit.id。 → <code>time_unit.id</code></td>
+</tr>
+<tr class="odd">
+<td><code>used</code></td>
+<td>FLOAT</td>
+<td>否</td>
+<td><code>0.0</code></td>
+<td>比例</td>
+<td>已占用或不可用比例[0,1]；正常可用时间为scale×(1−used)。</td>
+</tr>
+<tr class="even">
+<td><code>workcenter</code></td>
+<td>INTEGER</td>
+<td>是</td>
+<td><code>None</code></td>
+<td>外键</td>
+<td>产能所属资源，引用workcenter.id。 → <code>workcenter.id</code></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="ingredient">ingredient</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>字段</th>
+<th>存储类型</th>
+<th>可空</th>
+<th>对象默认值</th>
+<th>单位</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>id</code></td>
+<td>INTEGER</td>
+<td>否</td>
+<td><code>生成主键</code></td>
+<td>标识</td>
+<td>本表记录主键，用于引用。</td>
+</tr>
+<tr class="even">
+<td><code>process</code></td>
+<td>INTEGER</td>
+<td>否</td>
+<td><code>无</code></td>
+<td>外键</td>
+<td>发生物料需求的工序，引用process.id。 → <code>process.id</code></td>
+</tr>
+<tr class="odd">
+<td><code>material</code></td>
+<td>INTEGER</td>
+<td>否</td>
+<td><code>无</code></td>
+<td>外键</td>
+<td>所需物料，引用material.id。 → <code>material.id</code></td>
+</tr>
+<tr class="even">
+<td><code>number</code></td>
+<td>INTEGER</td>
+<td>否</td>
+<td><code>0</code></td>
+<td>物料单位/产出单位</td>
+<td>工序配套数量；本课按一件工序产出定义，必须与出件率和供给单位一致。</td>
+</tr>
+<tr class="odd">
+<td><code>priority</code></td>
+<td>INTEGER</td>
+<td>否</td>
+<td><code>0</code></td>
+<td>优先级</td>
+<td>存在替代料时的配套优先级，由相应策略采用。</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="inventory_limit">inventory_limit</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>字段</th>
+<th>存储类型</th>
+<th>可空</th>
+<th>对象默认值</th>
+<th>单位</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>id</code></td>
+<td>INTEGER</td>
+<td>否</td>
+<td><code>生成主键</code></td>
+<td>标识</td>
+<td>本表记录主键，用于引用。</td>
+</tr>
+<tr class="even">
+<td><code>product</code></td>
+<td>INTEGER</td>
+<td>否</td>
+<td><code>无</code></td>
+<td>外键</td>
+<td>受限制制品，引用product.id。 → <code>product.id</code></td>
+</tr>
+<tr class="odd">
+<td><code>time_unit</code></td>
+<td>INTEGER</td>
+<td>否</td>
+<td><code>无</code></td>
+<td>外键</td>
+<td>限制生效时期，引用time_unit.id。 → <code>time_unit.id</code></td>
+</tr>
+<tr class="even">
+<td><code>binding</code></td>
+<td>INTEGER</td>
+<td>是</td>
+<td><code>None</code></td>
+<td>组标识</td>
+<td>同值表示共用库存，单位及容量分配需明确。</td>
+</tr>
+<tr class="odd">
+<td><code>upper_bound_acc</code></td>
+<td>INTEGER</td>
+<td>是</td>
+<td><code>None</code></td>
+<td>累计制品数量</td>
+<td>累计生产入库上限，由期初库存、收支与库容推导；NULL为未配置。</td>
+</tr>
+<tr class="even">
+<td><code>urgency</code></td>
+<td>FLOAT</td>
+<td>否</td>
+<td><code>0.0</code></td>
+<td>约定尺度</td>
+<td>紧迫性或周转相关值，采用方式由业务策略说明。</td>
+</tr>
+<tr class="odd">
+<td><code>lower_bound_acc</code></td>
+<td>INTEGER</td>
+<td>是</td>
+<td><code>None</code></td>
+<td>累计制品数量</td>
+<td>累计生产入库下限，由安全库存等要求推导；NULL为未配置。</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="kitting_information">kitting_information</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>字段</th>
+<th>存储类型</th>
+<th>可空</th>
+<th>对象默认值</th>
+<th>单位</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>id</code></td>
+<td>INTEGER</td>
+<td>否</td>
+<td><code>生成主键</code></td>
+<td>标识</td>
+<td>本表记录主键，用于引用。</td>
+</tr>
+<tr class="even">
+<td><code>time_unit</code></td>
+<td>INTEGER</td>
+<td>否</td>
+<td><code>无</code></td>
+<td>外键</td>
+<td>物料可用时点，引用time_unit.id。 → <code>time_unit.id</code></td>
+</tr>
+<tr class="odd">
+<td><code>material</code></td>
+<td>INTEGER</td>
+<td>否</td>
+<td><code>无</code></td>
+<td>外键</td>
+<td>已就绪物料，引用material.id。 → <code>material.id</code></td>
+</tr>
+<tr class="even">
+<td><code>number</code></td>
+<td>INTEGER</td>
+<td>否</td>
+<td><code>0</code></td>
+<td>物料单位</td>
+<td>就绪或可用数量；当前累计输入示例采用首期可用量及后续增量，不混入累计快照。</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="material">material</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>字段</th>
+<th>存储类型</th>
+<th>可空</th>
+<th>对象默认值</th>
+<th>单位</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>id</code></td>
+<td>INTEGER</td>
+<td>否</td>
+<td><code>生成主键</code></td>
+<td>标识</td>
+<td>本表记录主键，用于引用。</td>
+</tr>
+<tr class="even">
+<td><code>code</code></td>
+<td>VARCHAR</td>
+<td>否</td>
+<td><code>''</code></td>
+<td>编码</td>
+<td>物料业务编码。</td>
+</tr>
+<tr class="odd">
+<td><code>name</code></td>
+<td>VARCHAR</td>
+<td>否</td>
+<td><code>''</code></td>
+<td>文本</td>
+<td>物料名称。</td>
+</tr>
+<tr class="even">
+<td><code>vendor</code></td>
+<td>VARCHAR</td>
+<td>否</td>
+<td><code>''</code></td>
+<td>编码或文本</td>
+<td>供应商信息。</td>
+</tr>
+<tr class="odd">
+<td><code>substitute</code></td>
+<td>INTEGER</td>
+<td>是</td>
+<td><code>None</code></td>
+<td>组标识</td>
+<td>可替换物料采用同一值；无替代关系为NULL。</td>
+</tr>
+<tr class="even">
+<td><code>binding</code></td>
+<td>INTEGER</td>
+<td>是</td>
+<td><code>None</code></td>
+<td>组标识</td>
+<td>物料依赖或配套选型关系，需有对应解释与策略。</td>
+</tr>
+<tr class="odd">
+<td><code>extend</code></td>
+<td>INTEGER</td>
+<td>是</td>
+<td><code>None</code></td>
+<td>扩展约定</td>
+<td>预留扩展字段，例如供应商优先级；当前为整数，使用前定义含义和取值规则。</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="order_info">order_info</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>字段</th>
+<th>存储类型</th>
+<th>可空</th>
+<th>对象默认值</th>
+<th>单位</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>id</code></td>
+<td>INTEGER</td>
+<td>否</td>
+<td><code>生成主键</code></td>
+<td>标识</td>
+<td>本表记录主键，用于引用。</td>
+</tr>
+<tr class="even">
+<td><code>description</code></td>
+<td>VARCHAR</td>
+<td>否</td>
+<td><code>''</code></td>
+<td>文本</td>
+<td>订单描述。</td>
+</tr>
+<tr class="odd">
+<td><code>priority</code></td>
+<td>INTEGER</td>
+<td>否</td>
+<td><code>0</code></td>
+<td>优先级</td>
+<td>订单头优先级，排序方向由采用策略说明。</td>
+</tr>
+<tr class="even">
+<td><code>code</code></td>
+<td>VARCHAR</td>
+<td>是</td>
+<td><code>''</code></td>
+<td>编码</td>
+<td>订单业务编码。</td>
+</tr>
+<tr class="odd">
+<td><code>created_at</code></td>
+<td>DATETIME</td>
+<td>是</td>
+<td><code>None</code></td>
+<td>时间戳</td>
+<td>订单创建时间；保留原始时间，不映射为计划时间单元。</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="order_item">order_item</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>字段</th>
+<th>存储类型</th>
+<th>可空</th>
+<th>对象默认值</th>
+<th>单位</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>id</code></td>
+<td>INTEGER</td>
+<td>否</td>
+<td><code>生成主键</code></td>
+<td>标识</td>
+<td>本表记录主键，用于引用。</td>
+</tr>
+<tr class="even">
+<td><code>product</code></td>
+<td>INTEGER</td>
+<td>否</td>
+<td><code>无</code></td>
+<td>外键</td>
+<td>需求制品，引用product.id；设计中的production_id按制品语义对应此字段。
+→ <code>product.id</code></td>
+</tr>
+<tr class="odd">
+<td><code>information</code></td>
+<td>INTEGER</td>
+<td>否</td>
+<td><code>无</code></td>
+<td>外键</td>
+<td>所属订单头，引用order_info.id，对应order_information_id。 →
+<code>order_info.id</code></td>
+</tr>
+<tr class="even">
+<td><code>delivery_time</code></td>
+<td>INTEGER</td>
+<td>是</td>
+<td><code>None</code></td>
+<td>外键</td>
+<td>交付时间单元，引用time_unit.id；有交期需求应给出有效引用。 →
+<code>time_unit.id</code></td>
+</tr>
+<tr class="odd">
+<td><code>number</code></td>
+<td>INTEGER</td>
+<td>否</td>
+<td><code>0</code></td>
+<td>制品单位</td>
+<td>该条交付需求数量；分期需求分别记录，避免重复录入累计值。</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="planning_result">planning_result</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>字段</th>
+<th>存储类型</th>
+<th>可空</th>
+<th>对象默认值</th>
+<th>单位</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>id</code></td>
+<td>INTEGER</td>
+<td>否</td>
+<td><code>生成主键</code></td>
+<td>标识</td>
+<td>本表记录主键，用于引用。</td>
+</tr>
+<tr class="even">
+<td><code>workcenter</code></td>
+<td>INTEGER</td>
+<td>是</td>
+<td><code>None</code></td>
+<td>外键</td>
+<td>执行计划任务的workcenter.id。 → <code>workcenter.id</code></td>
+</tr>
+<tr class="odd">
+<td><code>time_unit</code></td>
+<td>INTEGER</td>
+<td>否</td>
+<td><code>None</code></td>
+<td>外键</td>
+<td>任务执行时期，引用time_unit.id。 → <code>time_unit.id</code></td>
+</tr>
+<tr class="even">
+<td><code>process</code></td>
+<td>INTEGER</td>
+<td>是</td>
+<td><code>None</code></td>
+<td>外键</td>
+<td>执行的工序，引用process.id；特定空序列槽位可用NULL。 →
+<code>process.id</code></td>
+</tr>
+<tr class="odd">
+<td><code>number</code></td>
+<td>INTEGER</td>
+<td>否</td>
+<td><code>0</code></td>
+<td>工序产出数量</td>
+<td>计划产出，不是加工次数；多工序合计不等于成品交付。</td>
+</tr>
+<tr class="even">
+<td><code>value_1</code></td>
+<td>INTEGER</td>
+<td>否</td>
+<td><code>0</code></td>
+<td>场景约定</td>
+<td>扩展字段；循环排程可约定为循环序号。</td>
+</tr>
+<tr class="odd">
+<td><code>value_2</code></td>
+<td>INTEGER</td>
+<td>否</td>
+<td><code>0</code></td>
+<td>场景约定</td>
+<td>扩展字段；循环排程可约定为序列位置。</td>
+</tr>
+<tr class="even">
+<td><code>value_3</code></td>
+<td>INTEGER</td>
+<td>否</td>
+<td><code>0</code></td>
+<td>场景约定</td>
+<td>预留扩展字段，使用前定义含义。</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="process">process</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>字段</th>
+<th>存储类型</th>
+<th>可空</th>
+<th>对象默认值</th>
+<th>单位</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>id</code></td>
+<td>INTEGER</td>
+<td>否</td>
+<td><code>生成主键</code></td>
+<td>标识</td>
+<td>本表记录主键，用于引用。</td>
+</tr>
+<tr class="even">
+<td><code>route</code></td>
+<td>INTEGER</td>
+<td>否</td>
+<td><code>无</code></td>
+<td>外键</td>
+<td>所属工艺路线，引用process_route.id。 →
+<code>process_route.id</code></td>
+</tr>
+<tr class="odd">
+<td><code>name</code></td>
+<td>VARCHAR</td>
+<td>否</td>
+<td><code>''</code></td>
+<td>文本</td>
+<td>工序名称。</td>
+</tr>
+<tr class="even">
+<td><code>code</code></td>
+<td>VARCHAR</td>
+<td>是</td>
+<td><code>''</code></td>
+<td>编码</td>
+<td>工序业务编码。</td>
+</tr>
+<tr class="odd">
+<td><code>operation_number</code></td>
+<td>INTEGER</td>
+<td>否</td>
+<td><code>1</code></td>
+<td>编号</td>
+<td>路线内工序编号；与执行顺序分开，按路线检查唯一性。</td>
+</tr>
+<tr class="even">
+<td><code>seqno</code></td>
+<td>INTEGER</td>
+<td>否</td>
+<td><code>1</code></td>
+<td>顺序</td>
+<td>工序顺序数；相同值表示无先后依赖，实际并行仍取决于其他条件。</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="process_adaptor">process_adaptor</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>字段</th>
+<th>存储类型</th>
+<th>可空</th>
+<th>对象默认值</th>
+<th>单位</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>id</code></td>
+<td>INTEGER</td>
+<td>否</td>
+<td><code>生成主键</code></td>
+<td>标识</td>
+<td>本表记录主键，用于引用。</td>
+</tr>
+<tr class="even">
+<td><code>process</code></td>
+<td>INTEGER</td>
+<td>是</td>
+<td><code>None</code></td>
+<td>外键</td>
+<td>被适配工序，引用process.id。 → <code>process.id</code></td>
+</tr>
+<tr class="odd">
+<td><code>workcenter</code></td>
+<td>INTEGER</td>
+<td>是</td>
+<td><code>None</code></td>
+<td>外键</td>
+<td>可执行该工序的资源，引用workcenter.id。 →
+<code>workcenter.id</code></td>
+</tr>
+<tr class="even">
+<td><code>priority</code></td>
+<td>INTEGER</td>
+<td>否</td>
+<td><code>0</code></td>
+<td>优先级</td>
+<td>该工序选用此资源的优先级。</td>
+</tr>
+<tr class="odd">
+<td><code>wip_buffer_size</code></td>
+<td>INTEGER</td>
+<td>否</td>
+<td><code>0</code></td>
+<td>约定数量单位</td>
+<td>在制品缓存容量；0的具体模型含义及约束采用方式需核对。</td>
+</tr>
+<tr class="even">
+<td><code>productivity</code></td>
+<td>INTEGER</td>
+<td>否</td>
+<td><code>1</code></td>
+<td>件/次</td>
+<td>当前离散模板为单次加工产出；连续生产设计需明确单位时间产出的转换。</td>
+</tr>
+<tr class="odd">
+<td><code>processing_time</code></td>
+<td>FLOAT</td>
+<td>否</td>
+<td><code>0.0</code></td>
+<td>秒/次</td>
+<td>标准单次加工时长，来源节拍应转换为这一口径。</td>
+</tr>
+<tr class="even">
+<td><code>setup_time</code></td>
+<td>FLOAT</td>
+<td>否</td>
+<td><code>0.0</code></td>
+<td>秒</td>
+<td>工艺切换时长；是否包含首次准备须在场景中说明。</td>
+</tr>
+<tr class="odd">
+<td><code>batch_size</code></td>
+<td>INTEGER</td>
+<td>否</td>
+<td><code>1</code></td>
+<td>制品单位</td>
+<td>按批加工数量，应为单次出件数量的整数倍。</td>
+</tr>
+<tr class="even">
+<td><code>OEE</code></td>
+<td>INTEGER</td>
+<td>否</td>
+<td><code>100</code></td>
+<td>百分数</td>
+<td>设备综合效率；当前默认100，实际折减位置由配置说明。</td>
+</tr>
+<tr class="odd">
+<td><code>binding</code></td>
+<td>INTEGER</td>
+<td>是</td>
+<td><code>None</code></td>
+<td>组标识</td>
+<td>同值表示共同加工；NULL或单独组不形成多工序共同加工。</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="process_route">process_route</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>字段</th>
+<th>存储类型</th>
+<th>可空</th>
+<th>对象默认值</th>
+<th>单位</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>id</code></td>
+<td>INTEGER</td>
+<td>否</td>
+<td><code>生成主键</code></td>
+<td>标识</td>
+<td>本表记录主键，用于引用。</td>
+</tr>
+<tr class="even">
+<td><code>product</code></td>
+<td>INTEGER</td>
+<td>否</td>
+<td><code>无</code></td>
+<td>外键</td>
+<td>路线所属制品，引用product.id；一制品可有多路线。 →
+<code>product.id</code></td>
+</tr>
+<tr class="odd">
+<td><code>name</code></td>
+<td>VARCHAR</td>
+<td>否</td>
+<td><code>''</code></td>
+<td>文本</td>
+<td>工艺路线名称。</td>
+</tr>
+<tr class="even">
+<td><code>code</code></td>
+<td>VARCHAR</td>
+<td>否</td>
+<td><code>''</code></td>
+<td>编码</td>
+<td>工艺路线业务编码。</td>
+</tr>
+<tr class="odd">
+<td><code>priority</code></td>
+<td>INTEGER</td>
+<td>否</td>
+<td><code>0</code></td>
+<td>优先级</td>
+<td>路线选择优先级，须由路线策略解释。</td>
+</tr>
+<tr class="even">
+<td><code>description</code></td>
+<td>VARCHAR</td>
+<td>是</td>
+<td><code>''</code></td>
+<td>文本</td>
+<td>加工路线的业务说明。</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="product">product</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>字段</th>
+<th>存储类型</th>
+<th>可空</th>
+<th>对象默认值</th>
+<th>单位</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>id</code></td>
+<td>INTEGER</td>
+<td>否</td>
+<td><code>生成主键</code></td>
+<td>标识</td>
+<td>本表记录主键，用于引用。</td>
+</tr>
+<tr class="even">
+<td><code>name</code></td>
+<td>VARCHAR</td>
+<td>否</td>
+<td><code>''</code></td>
+<td>文本</td>
+<td>制品名称，可为成品、半成品或零部件。</td>
+</tr>
+<tr class="odd">
+<td><code>code</code></td>
+<td>VARCHAR</td>
+<td>否</td>
+<td><code>''</code></td>
+<td>编码</td>
+<td>制品业务编码，与记录id分别管理。</td>
+</tr>
+<tr class="even">
+<td><code>vin</code></td>
+<td>VARCHAR</td>
+<td>是</td>
+<td><code>''</code></td>
+<td>编码</td>
+<td>所属成品唯一编码；不单独定义装配数量。</td>
+</tr>
+<tr class="odd">
+<td><code>property_1</code></td>
+<td>INTEGER</td>
+<td>是</td>
+<td><code>None</code></td>
+<td>外键</td>
+<td>引用property_1.id；本场景应固定说明其业务维度。 →
+<code>property_1.id</code></td>
+</tr>
+<tr class="even">
+<td><code>property_2</code></td>
+<td>INTEGER</td>
+<td>是</td>
+<td><code>None</code></td>
+<td>外键</td>
+<td>引用property_2.id；与第一属性构成独立分类维度。 →
+<code>property_2.id</code></td>
+</tr>
+<tr class="odd">
+<td><code>property_3</code></td>
+<td>INTEGER</td>
+<td>是</td>
+<td><code>None</code></td>
+<td>外键</td>
+<td>引用property_3.id；空值表示未关联此维度。 →
+<code>property_3.id</code></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="property_1">property_1</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>字段</th>
+<th>存储类型</th>
+<th>可空</th>
+<th>对象默认值</th>
+<th>单位</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>id</code></td>
+<td>INTEGER</td>
+<td>否</td>
+<td><code>生成主键</code></td>
+<td>标识</td>
+<td>本表记录主键，用于引用。</td>
+</tr>
+<tr class="even">
+<td><code>name</code></td>
+<td>VARCHAR</td>
+<td>否</td>
+<td><code>''</code></td>
+<td>文本</td>
+<td>属性名称，如型号、配置、颜色；与具体编码及属性值配合解释。</td>
+</tr>
+<tr class="odd">
+<td><code>code</code></td>
+<td>VARCHAR</td>
+<td>是</td>
+<td><code>''</code></td>
+<td>编码</td>
+<td>属性编码；在场景内保持稳定分类与映射。</td>
+</tr>
+<tr class="even">
+<td><code>value</code></td>
+<td>FLOAT</td>
+<td>是</td>
+<td><code>None</code></td>
+<td>按维度</td>
+<td>属性数值；当前SQLite类型为FLOAT，文字标签保存在名称和编码。</td>
+</tr>
+<tr class="odd">
+<td><code>is_key</code></td>
+<td>BOOLEAN</td>
+<td>否</td>
+<td><code>False</code></td>
+<td>布尔</td>
+<td>关键属性标识，表达需求中区分制品的必要属性；当前加载器据此选取属性字段。</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="property_2">property_2</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>字段</th>
+<th>存储类型</th>
+<th>可空</th>
+<th>对象默认值</th>
+<th>单位</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>id</code></td>
+<td>INTEGER</td>
+<td>否</td>
+<td><code>生成主键</code></td>
+<td>标识</td>
+<td>本表记录主键，用于引用。</td>
+</tr>
+<tr class="even">
+<td><code>name</code></td>
+<td>VARCHAR</td>
+<td>否</td>
+<td><code>''</code></td>
+<td>文本</td>
+<td>属性名称，如型号、配置、颜色；与具体编码及属性值配合解释。</td>
+</tr>
+<tr class="odd">
+<td><code>code</code></td>
+<td>VARCHAR</td>
+<td>是</td>
+<td><code>''</code></td>
+<td>编码</td>
+<td>属性编码；在场景内保持稳定分类与映射。</td>
+</tr>
+<tr class="even">
+<td><code>value</code></td>
+<td>FLOAT</td>
+<td>是</td>
+<td><code>None</code></td>
+<td>按维度</td>
+<td>属性数值；当前SQLite类型为FLOAT，文字标签保存在名称和编码。</td>
+</tr>
+<tr class="odd">
+<td><code>is_key</code></td>
+<td>BOOLEAN</td>
+<td>否</td>
+<td><code>False</code></td>
+<td>布尔</td>
+<td>关键属性标识，表达需求中区分制品的必要属性；当前加载器据此选取属性字段。</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="property_3">property_3</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>字段</th>
+<th>存储类型</th>
+<th>可空</th>
+<th>对象默认值</th>
+<th>单位</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>id</code></td>
+<td>INTEGER</td>
+<td>否</td>
+<td><code>生成主键</code></td>
+<td>标识</td>
+<td>本表记录主键，用于引用。</td>
+</tr>
+<tr class="even">
+<td><code>name</code></td>
+<td>VARCHAR</td>
+<td>否</td>
+<td><code>''</code></td>
+<td>文本</td>
+<td>属性名称，如型号、配置、颜色；与具体编码及属性值配合解释。</td>
+</tr>
+<tr class="odd">
+<td><code>code</code></td>
+<td>VARCHAR</td>
+<td>是</td>
+<td><code>''</code></td>
+<td>编码</td>
+<td>属性编码；在场景内保持稳定分类与映射。</td>
+</tr>
+<tr class="even">
+<td><code>value</code></td>
+<td>FLOAT</td>
+<td>是</td>
+<td><code>None</code></td>
+<td>按维度</td>
+<td>属性数值；当前SQLite类型为FLOAT，文字标签保存在名称和编码。</td>
+</tr>
+<tr class="odd">
+<td><code>is_key</code></td>
+<td>BOOLEAN</td>
+<td>否</td>
+<td><code>False</code></td>
+<td>布尔</td>
+<td>关键属性标识，表达需求中区分制品的必要属性；当前加载器据此选取属性字段。</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="shared_resource">shared_resource</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>字段</th>
+<th>存储类型</th>
+<th>可空</th>
+<th>对象默认值</th>
+<th>单位</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>id</code></td>
+<td>INTEGER</td>
+<td>否</td>
+<td><code>生成主键</code></td>
+<td>标识</td>
+<td>本表记录主键，用于引用。</td>
+</tr>
+<tr class="even">
+<td><code>binding</code></td>
+<td>INTEGER</td>
+<td>是</td>
+<td><code>None</code></td>
+<td>外键</td>
+<td>作为共享资源的workcenter.id。 → <code>workcenter.id</code></td>
+</tr>
+<tr class="odd">
+<td><code>to</code></td>
+<td>INTEGER</td>
+<td>是</td>
+<td><code>None</code></td>
+<td>外键</td>
+<td>依赖该资源的目标workcenter.id。 → <code>workcenter.id</code></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="time_unit">time_unit</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>字段</th>
+<th>存储类型</th>
+<th>可空</th>
+<th>对象默认值</th>
+<th>单位</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>id</code></td>
+<td>INTEGER</td>
+<td>否</td>
+<td><code>生成主键</code></td>
+<td>标识</td>
+<td>本表记录主键，用于引用。</td>
+</tr>
+<tr class="even">
+<td><code>offset</code></td>
+<td>INTEGER</td>
+<td>否</td>
+<td><code>0</code></td>
+<td>顺序</td>
+<td>相对计划起点的顺序偏移；与主键分开。</td>
+</tr>
+<tr class="odd">
+<td><code>scale</code></td>
+<td>INTEGER</td>
+<td>否</td>
+<td><code>8 * 60 * 60</code></td>
+<td>秒</td>
+<td>时间单元长度，小时级为3600，八小时窗口为28800。</td>
+</tr>
+<tr class="even">
+<td><code>status</code></td>
+<td>INTEGER</td>
+<td>否</td>
+<td><code>1</code></td>
+<td>状态</td>
+<td>1正常、0不可用、-1特殊或可选；可选状态需明确采用方式。</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="workcenter">workcenter</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>字段</th>
+<th>存储类型</th>
+<th>可空</th>
+<th>对象默认值</th>
+<th>单位</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>id</code></td>
+<td>INTEGER</td>
+<td>否</td>
+<td><code>生成主键</code></td>
+<td>标识</td>
+<td>本表记录主键，用于引用。</td>
+</tr>
+<tr class="even">
+<td><code>name</code></td>
+<td>VARCHAR</td>
+<td>否</td>
+<td><code>''</code></td>
+<td>文本</td>
+<td>工作中心名称，如设备、班组、区域、外协或组织。</td>
+</tr>
+<tr class="odd">
+<td><code>code</code></td>
+<td>VARCHAR</td>
+<td>是</td>
+<td><code>''</code></td>
+<td>编码</td>
+<td>资源业务编码。</td>
+</tr>
+<tr class="even">
+<td><code>type</code></td>
+<td>INTEGER</td>
+<td>否</td>
+<td><code>0</code></td>
+<td>类别</td>
+<td>叶子节点为0，非叶子节点非0。</td>
+</tr>
+<tr class="odd">
+<td><code>parallelism</code></td>
+<td>INTEGER</td>
+<td>否</td>
+<td><code>1</code></td>
+<td>并行单元</td>
+<td>并行能力数量；与工位数分别建模。</td>
+</tr>
+<tr class="even">
+<td><code>station_count</code></td>
+<td>INTEGER</td>
+<td>否</td>
+<td><code>1</code></td>
+<td>工位</td>
+<td>工位数量，结合热处理、循环产线等具体结构解释。</td>
+</tr>
+<tr class="odd">
+<td><code>equipping_time</code></td>
+<td>FLOAT</td>
+<td>否</td>
+<td><code>0</code></td>
+<td>时间</td>
+<td>工作中心配置准备时间；本课程按秒，与工序切换时间分别核算。</td>
+</tr>
+<tr class="even">
+<td><code>parent_id</code></td>
+<td>INTEGER</td>
+<td>是</td>
+<td><code>None</code></td>
+<td>外键</td>
+<td>父工作中心，引用workcenter.id；根节点为空。 →
+<code>workcenter.id</code></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="名称对应与扩展">名称对应与扩展</h2>
+<p><code>order_information → order_info</code>;
+<code>order_information_id → information</code>;
+<code>product_id → product</code>;
+<code>time_unit_id → time_unit</code>（订单交期为<code>delivery_time</code>）；<code>route_id → route</code>;
+<code>process_id → process</code>; <code>material_id → material</code>;
+<code>workcenter_id → workcenter</code>;
+<code>parent → parent_id</code>。</p>
+<p>属性机制可扩展到property_n；当前三个属性表是实现选择。decision_node属于工程扩展，不计入上述18张标准表。损耗、良率、审批时间等来源信息，应通过明确的映射或扩展表达，不能擅自改变标准字段的语义。</p>
+<h2 id="设计示例与当前模板的表示差异">设计示例与当前模板的表示差异</h2>
+<p>语义说明定义业务含义，当前模板记录实际存储要求。下表列出使用时需注意的差异，不通过改写真实类型或默认值来制造表面一致。</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>字段</th>
+<th>设计结构示例</th>
+<th>当前模板</th>
+<th>使用要求</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>process_adaptor.OEE</code></td>
+<td>FLOAT，默认100</td>
+<td>INTEGER，默认100</td>
+<td>小数效率需明确转换与精度，不能静默截断</td>
+</tr>
+<tr class="even">
+<td><code>process_adaptor.wip_buffer_size</code></td>
+<td>默认1</td>
+<td>默认0</td>
+<td>明确模型如何解释0，不自行视为无限容量</td>
+</tr>
+<tr class="odd">
+<td><code>property_i.value</code></td>
+<td>默认0</td>
+<td>可空，默认None</td>
+<td>区分未给值与数值0</td>
+</tr>
+<tr class="even">
+<td><code>property_i.is_key</code></td>
+<td>默认NULL</td>
+<td>不可空，默认False</td>
+<td>区分未说明与明确非关键，并检查加载</td>
+</tr>
+<tr class="odd">
+<td><code>product.vin/property_i</code></td>
+<td>示例不可空，属性可扩展</td>
+<td>vin与三个属性引用可空</td>
+<td>未使用维度与实际漏填分别处理</td>
+</tr>
+<tr class="even">
+<td><code>process_adaptor.process/workcenter</code>、<code>capacity.workcenter</code></td>
+<td>示例外键不可空</td>
+<td>可空</td>
+<td>可执行任务与产能仍需完整资源关系</td>
+</tr>
+<tr class="odd">
+<td><code>planning_result.workcenter/process</code></td>
+<td>示例外键不可空</td>
+<td>可空</td>
+<td>区分有效作业结果与规定的空序列槽位</td>
+</tr>
+</tbody>
+</table></div>
+<p>这不是全部物理类型差异清单。表名、列名和数据库形式可以映射变化，业务语义仍需保持一致。</p>
+<p><a href="./Interface-Relationships.html">关系与规则</a> · <a
+href="./Interface-Configurations.html">配置模式</a> · <a
+href="./Interface-Walkthrough.html">教学数据库</a></p>
+      </article>
+      <footer class="article-footer"><a href="./">返回学习中心</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki/Interface-Fields-zh-CN">在 Wiki 阅读</a></footer>
+    </main>
+  </div>
+  <footer class="site-footer shell"><strong>DecisioWorks</strong><span>从生产问题出发，理解与使用决策能力。</span></footer>
+</body>
+</html>

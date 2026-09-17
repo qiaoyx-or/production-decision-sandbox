@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>03 配置工作中心与共享资源 | DecisioWorks</title>
+  <meta name="description" content="一间车间有冲压机A、冲压机B和装配台。两台冲压机共用一套夹具。需要分别表达组织归属、机器能力和夹具限制。" />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-03-Resources.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-03-Resources.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-03-Resources.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-03-Resources.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="03 配置工作中心与共享资源 | DecisioWorks" />
+  <meta property="og:description" content="一间车间有冲压机A、冲压机B和装配台。两台冲压机共用一套夹具。需要分别表达组织归属、机器能力和夹具限制。" />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-03-Resources.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="03 配置工作中心与共享资源 | DecisioWorks" />
+  <meta name="twitter:description" content="一间车间有冲压机A、冲压机B和装配台。两台冲压机共用一套夹具。需要分别表达组织归属、机器能力和夹具限制。" />
+  <meta name="twitter:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <link rel="icon" href="../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "03 配置工作中心与共享资源", "description": "一间车间有冲压机A、冲压机B和装配台。两台冲压机共用一套夹具。需要分别表达组织归属、机器能力和夹具限制。", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-03-Resources.html", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "DecisioWorks", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "首页", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/"}, {"@type": "ListItem", "position": 2, "name": "学习中心", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/"}, {"@type": "ListItem", "position": 3, "name": "03 配置工作中心与共享资源", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-03-Resources.html"}]}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#article">跳到正文</a>
+  <header class="learning-header"><div class="shell header-inner">
+    <a class="brand" href="../"><img src="../assets/decisioworks-logo.png" alt="" width="36" height="36" /><strong>DecisioWorks</strong></a>
+    <nav aria-label="主导航">
+      <a href="../">主页</a>
+      <a href="../docs/">文档</a>
+      <a class="language-switch" href="../en/learn/Interface-03-Resources.html" lang="en" hreflang="en">English</a>
+    </nav>
+  </div></header>
+  <div class="shell breadcrumbs" aria-label="面包屑导航"><a href="../">首页</a><span>/</span><a href="./">学习中心</a><span>/</span><span aria-current="page">03 配置工作中心与共享资源</span></div>
+  <div class="shell reading-layout">
+    <aside class="sidebar"><nav aria-label="课程目录"><a class="contents-home" href="./">学习中心</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A 从生产问题到可检验的决策</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B 用数据表达制造过程</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C 让目标、经验与规则参与决策</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D 从真实样例学会读计划</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E 让计划层级协同工作</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F 开放协作与持续演进</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G 用标准动作连接应用与AI Agent</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H 把一次练习变成日常能力</a><span class="nav-section">数据接口详解</span><a href="./Interface-01-Calendar.html">01 配置生产时间、班制与维护</a><a href="./Interface-02-Demand.html">02 表达订单、制品与产品属性</a><a href="./Interface-03-Resources.html" aria-current="page">03 配置工作中心与共享资源</a><a href="./Interface-04-Routing.html">04 配置工艺路线与可选资源</a><a href="./Interface-05-Quantity.html">05 核算出件率、批量与加工时间</a><a href="./Interface-06-Materials.html">06 配置工序级物料与齐套</a><a href="./Interface-07-Inventory.html">07 把库存要求转换为累计约束</a><a href="./Interface-08-Validation.html">08 导入、校验并读取业务数据</a><a href="./Interface-09-Results.html">09 解释结果并准备下一轮计划</a><a href="./Interface-Configurations.html">典型配置模式：从现场安排到接口记录</a><a href="./Interface-Fields.html">完整字段参考</a><a href="./Interface-Guide.html">标准化数据接口学习指南</a><a href="./Interface-Relationships.html">对象关系与计算规则</a><a href="./Interface-Semantics.html">DecisioWorks 标准化数据接口语义详解</a><a href="./Interface-Walkthrough.html">贯穿案例：120件支架的输入、核对与调整</a><span class="nav-section">工作表</span><a href="./Worksheet-Operational-Rule.html">现场规则记录与检查</a><a href="./Worksheet-Plan-Comparison.html">基线与调整方案比较</a><a href="./Worksheet-Review-and-Change-Record.html">复盘与持续改进记录</a><a href="./Worksheet-Scenario-Brief.html">场景与决策任务</a></nav></aside>
+    <main>
+      <details class="mobile-contents"><summary>课程目录</summary><nav aria-label="移动端课程目录"><a class="contents-home" href="./">学习中心</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A 从生产问题到可检验的决策</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B 用数据表达制造过程</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C 让目标、经验与规则参与决策</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D 从真实样例学会读计划</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E 让计划层级协同工作</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F 开放协作与持续演进</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G 用标准动作连接应用与AI Agent</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H 把一次练习变成日常能力</a><span class="nav-section">数据接口详解</span><a href="./Interface-01-Calendar.html">01 配置生产时间、班制与维护</a><a href="./Interface-02-Demand.html">02 表达订单、制品与产品属性</a><a href="./Interface-03-Resources.html" aria-current="page">03 配置工作中心与共享资源</a><a href="./Interface-04-Routing.html">04 配置工艺路线与可选资源</a><a href="./Interface-05-Quantity.html">05 核算出件率、批量与加工时间</a><a href="./Interface-06-Materials.html">06 配置工序级物料与齐套</a><a href="./Interface-07-Inventory.html">07 把库存要求转换为累计约束</a><a href="./Interface-08-Validation.html">08 导入、校验并读取业务数据</a><a href="./Interface-09-Results.html">09 解释结果并准备下一轮计划</a><a href="./Interface-Configurations.html">典型配置模式：从现场安排到接口记录</a><a href="./Interface-Fields.html">完整字段参考</a><a href="./Interface-Guide.html">标准化数据接口学习指南</a><a href="./Interface-Relationships.html">对象关系与计算规则</a><a href="./Interface-Semantics.html">DecisioWorks 标准化数据接口语义详解</a><a href="./Interface-Walkthrough.html">贯穿案例：120件支架的输入、核对与调整</a><span class="nav-section">工作表</span><a href="./Worksheet-Operational-Rule.html">现场规则记录与检查</a><a href="./Worksheet-Plan-Comparison.html">基线与调整方案比较</a><a href="./Worksheet-Review-and-Change-Record.html">复盘与持续改进记录</a><a href="./Worksheet-Scenario-Brief.html">场景与决策任务</a></nav></details>
+      <article id="article">
+        <header class="article-heading"><p class="kicker">标准化数据接口</p><h1>03 配置工作中心与共享资源</h1></header>
+        <details class="page-contents"><summary>本页内容</summary><nav><a href="#任务让资源关系可检查">任务：让资源关系可检查</a><a href="#分开保存共享关系与可用能力">分开保存共享关系与可用能力</a><a href="#手工发现一次冲突">手工发现一次冲突</a><a href="#区分三种资源关系">区分三种资源关系</a><a href="#练习与解析">练习与解析</a></nav></details>
+        <h2 id="任务让资源关系可检查">任务：让资源关系可检查</h2>
+<p>一间车间有冲压机A、冲压机B和装配台。两台冲压机共用一套夹具。需要分别表达组织归属、机器能力和夹具限制。</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">workcenter.id</th>
+<th>name</th>
+<th>code</th>
+<th style="text-align: right;">parent_id</th>
+<th style="text-align: right;">type</th>
+<th style="text-align: right;">station_count</th>
+<th style="text-align: right;">parallelism</th>
+<th style="text-align: right;">equipping_time</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">10</td>
+<td>车间</td>
+<td>SHOP</td>
+<td style="text-align: right;">NULL</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">11</td>
+<td>冲压机A</td>
+<td>PRESS-A</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">12</td>
+<td>装配台</td>
+<td>ASSEMBLY</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">13</td>
+<td>冲压机B</td>
+<td>PRESS-B</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">20</td>
+<td>共用夹具</td>
+<td>FIXTURE</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table></div>
+<p>这些是关系教学扩展记录；贯穿案例的基础数据库使用车间、冲压机A和装配台，另两项用于本课扩展。车间是组织节点，实际任务引用可执行资源；组织节点的标量默认值不等于又增加一套产能。</p>
+<p>组织层级还可表达共性属性继承、不同层级的规则和汇总分析。例如车间规定共同日历口径，设备补充自身维护；车间级规则由对应配置落实到参与资源，再按设备明细汇总负荷。教学表只建立父子关系，自动继承与规则展开是否启用需由实际能力确认。车间汇总负荷不是额外一台设备的产能。</p>
+<h2 id="分开保存共享关系与可用能力">分开保存共享关系与可用能力</h2>
+<p><code>shared_resource</code>只保存关联：</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">id</th>
+<th style="text-align: right;">binding</th>
+<th style="text-align: right;">to</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">11</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">13</td>
+</tr>
+</tbody>
+</table></div>
+<p><code>capacity</code>保存共享资源自己的能力：</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">id</th>
+<th style="text-align: right;">time_unit</th>
+<th style="text-align: right;">workcenter</th>
+<th style="text-align: right;">used</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">0.5</td>
+</tr>
+</tbody>
+</table></div>
+<p>第二天夹具只有半班可用。两个关联不会把半班复制成两份独立能力。<code>shared_resource</code>没有<code>time_unit</code>或<code>used</code>列，必须通过资源本身连接产能。</p>
+<h2 id="手工发现一次冲突">手工发现一次冲突</h2>
+<p>若A第二天需要夹具3小时，B需要2小时，夹具只可用4小时，则总需求5小时超过能力1小时。即使两台机器各自都有8小时，也不能据此判断组合计划可行。小时总量满足后，还需要确认具体使用时间不重叠。</p>
+<p>本课建立接口表达并手算冲突。要让某次求解自动排除冲突，应在模型配置与结果检查中确认共享关系已被采用。</p>
+<h2 id="区分三种资源关系">区分三种资源关系</h2>
+<ul>
+<li><code>parent_id</code>：组织归属，回答“属于谁”。</li>
+<li><code>process_adaptor</code>：工序可执行资源，回答“能在哪里加工”。</li>
+<li><code>shared_resource</code>：资源依赖，回答“还需要共同使用什么”。</li>
+</ul>
+<p><code>station_count</code>描述工位，<code>parallelism</code>描述并行数量。不能用增加求解线程数来替代资源并行能力，也不能无条件把工位数和并行数重复乘到时间上。</p>
+<h2 id="练习与解析">练习与解析</h2>
+<p>增加第二套完全独立的夹具时，先建立新的资源对象与日历，再说明哪些机器可以使用它。若两套夹具仍受同一名操作人员限制，还需表达人员共享，不能直接认为能力翻倍。检查成果应能从每个依赖追到唯一资源与其时间记录。</p>
+<p><a href="./Interface-02-Demand.html">上一课</a> · <a
+href="./Interface-04-Routing.html">下一课：工艺路线</a></p>
+      </article>
+      <footer class="article-footer"><a href="./">返回学习中心</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki/Interface-03-Resources-zh-CN">在 Wiki 阅读</a></footer>
+    </main>
+  </div>
+  <footer class="site-footer shell"><strong>DecisioWorks</strong><span>从生产问题出发，理解与使用决策能力。</span></footer>
+</body>
+</html>

@@ -1,5 +1,305 @@
 [
   {
+    "source": "Interface-01-Calendar-zh-CN.md",
+    "slug": "Interface-01-Calendar",
+    "language": "zh-CN",
+    "kind": "interface",
+    "topic": null,
+    "id": null,
+    "file": "Interface-01-Calendar.html",
+    "sha256": "76a5777059330fedd90d2173371d5a2a87d69a33e41c92250862523cbc1aa7bc"
+  },
+  {
+    "source": "Interface-01-Calendar.md",
+    "slug": "Interface-01-Calendar",
+    "language": "en",
+    "kind": "interface",
+    "topic": null,
+    "id": null,
+    "file": "Interface-01-Calendar.html",
+    "sha256": "a451cc61eb54fc6b4767234a7303dc3405fb5ae48767206747a5a5e5304733f1"
+  },
+  {
+    "source": "Interface-02-Demand-zh-CN.md",
+    "slug": "Interface-02-Demand",
+    "language": "zh-CN",
+    "kind": "interface",
+    "topic": null,
+    "id": null,
+    "file": "Interface-02-Demand.html",
+    "sha256": "e0cd0caf2d95e21e42f927bace6700195a6d0b3eedd72661c3e4ed9f79ca9324"
+  },
+  {
+    "source": "Interface-02-Demand.md",
+    "slug": "Interface-02-Demand",
+    "language": "en",
+    "kind": "interface",
+    "topic": null,
+    "id": null,
+    "file": "Interface-02-Demand.html",
+    "sha256": "137e7168f027634fb53ee15884bb03951f04c01e969be810bb270442ef79ff51"
+  },
+  {
+    "source": "Interface-03-Resources-zh-CN.md",
+    "slug": "Interface-03-Resources",
+    "language": "zh-CN",
+    "kind": "interface",
+    "topic": null,
+    "id": null,
+    "file": "Interface-03-Resources.html",
+    "sha256": "4ce43b58ee8a692ecc4643af146e08919fd94a512bed52815a8035a510d09b27"
+  },
+  {
+    "source": "Interface-03-Resources.md",
+    "slug": "Interface-03-Resources",
+    "language": "en",
+    "kind": "interface",
+    "topic": null,
+    "id": null,
+    "file": "Interface-03-Resources.html",
+    "sha256": "d592077dfddd641493ed9a55613574221a07450435c2b5f8c23db29aa2dd5848"
+  },
+  {
+    "source": "Interface-04-Routing-zh-CN.md",
+    "slug": "Interface-04-Routing",
+    "language": "zh-CN",
+    "kind": "interface",
+    "topic": null,
+    "id": null,
+    "file": "Interface-04-Routing.html",
+    "sha256": "4d77b5795a436178faf8d0414e5c93aeebcc9f980f31da556734141e5b0824bf"
+  },
+  {
+    "source": "Interface-04-Routing.md",
+    "slug": "Interface-04-Routing",
+    "language": "en",
+    "kind": "interface",
+    "topic": null,
+    "id": null,
+    "file": "Interface-04-Routing.html",
+    "sha256": "ccc3ea95e850ea7116e3afa5222ed60d4444265f7390c27c3ca8641c932cc8e9"
+  },
+  {
+    "source": "Interface-05-Quantity-zh-CN.md",
+    "slug": "Interface-05-Quantity",
+    "language": "zh-CN",
+    "kind": "interface",
+    "topic": null,
+    "id": null,
+    "file": "Interface-05-Quantity.html",
+    "sha256": "49ab385eb78a1a05208d6dbe0f113cf2e780d2cd41b60ba49e844ccfc30fce7a"
+  },
+  {
+    "source": "Interface-05-Quantity.md",
+    "slug": "Interface-05-Quantity",
+    "language": "en",
+    "kind": "interface",
+    "topic": null,
+    "id": null,
+    "file": "Interface-05-Quantity.html",
+    "sha256": "37f3ae4ed0b1ae6e5a82385d8c7729e7d591cad2f74fa98ed7d16cf2ea6b439d"
+  },
+  {
+    "source": "Interface-06-Materials-zh-CN.md",
+    "slug": "Interface-06-Materials",
+    "language": "zh-CN",
+    "kind": "interface",
+    "topic": null,
+    "id": null,
+    "file": "Interface-06-Materials.html",
+    "sha256": "903b83428b62727a02534bec8002e74c9957af9ae9ad1897d5d0bf2b1c48c574"
+  },
+  {
+    "source": "Interface-06-Materials.md",
+    "slug": "Interface-06-Materials",
+    "language": "en",
+    "kind": "interface",
+    "topic": null,
+    "id": null,
+    "file": "Interface-06-Materials.html",
+    "sha256": "ba3b5125b71b3403dbc327a7638d25df73b555297d39367487eac1b09be2c5c6"
+  },
+  {
+    "source": "Interface-07-Inventory-zh-CN.md",
+    "slug": "Interface-07-Inventory",
+    "language": "zh-CN",
+    "kind": "interface",
+    "topic": null,
+    "id": null,
+    "file": "Interface-07-Inventory.html",
+    "sha256": "24c1e9f8762baf97c3d3a11fdda751a0195697290158e0884ec4e79a5b656041"
+  },
+  {
+    "source": "Interface-07-Inventory.md",
+    "slug": "Interface-07-Inventory",
+    "language": "en",
+    "kind": "interface",
+    "topic": null,
+    "id": null,
+    "file": "Interface-07-Inventory.html",
+    "sha256": "9d2f902e05f5d4f62e2d7ecdac436bf9352664ff289a93bcf3a5dcff81fe2167"
+  },
+  {
+    "source": "Interface-08-Validation-zh-CN.md",
+    "slug": "Interface-08-Validation",
+    "language": "zh-CN",
+    "kind": "interface",
+    "topic": null,
+    "id": null,
+    "file": "Interface-08-Validation.html",
+    "sha256": "0667e5675610edaa02061e1d0cbf3e88c6724b600e5eef6edd2cc754c123930f"
+  },
+  {
+    "source": "Interface-08-Validation.md",
+    "slug": "Interface-08-Validation",
+    "language": "en",
+    "kind": "interface",
+    "topic": null,
+    "id": null,
+    "file": "Interface-08-Validation.html",
+    "sha256": "7c349d2fe36bfb370ee4d7c424c77f8299bbe6447426cfe21ee68fd34394a93f"
+  },
+  {
+    "source": "Interface-09-Results-zh-CN.md",
+    "slug": "Interface-09-Results",
+    "language": "zh-CN",
+    "kind": "interface",
+    "topic": null,
+    "id": null,
+    "file": "Interface-09-Results.html",
+    "sha256": "96d78f2212cdb9994deacdd2471cc25ab2cc0f6c3bfc0ece36c123a196cca6ad"
+  },
+  {
+    "source": "Interface-09-Results.md",
+    "slug": "Interface-09-Results",
+    "language": "en",
+    "kind": "interface",
+    "topic": null,
+    "id": null,
+    "file": "Interface-09-Results.html",
+    "sha256": "743ec6201fdcac2ca7678c298bb9bef51e1f19e5c10085c1e2584804f25d58bf"
+  },
+  {
+    "source": "Interface-Configurations-zh-CN.md",
+    "slug": "Interface-Configurations",
+    "language": "zh-CN",
+    "kind": "interface",
+    "topic": null,
+    "id": null,
+    "file": "Interface-Configurations.html",
+    "sha256": "db00f5ddf5dbe5f08794e5623ee4c13dee4e02bd9551b92959c04813e4f31723"
+  },
+  {
+    "source": "Interface-Configurations.md",
+    "slug": "Interface-Configurations",
+    "language": "en",
+    "kind": "interface",
+    "topic": null,
+    "id": null,
+    "file": "Interface-Configurations.html",
+    "sha256": "f7700e710e813325000d71d33cd013a5ff0920500b912fcff5eeec850838e33e"
+  },
+  {
+    "source": "Interface-Fields-zh-CN.md",
+    "slug": "Interface-Fields",
+    "language": "zh-CN",
+    "kind": "interface",
+    "topic": null,
+    "id": null,
+    "file": "Interface-Fields.html",
+    "sha256": "0d0c1816bc2138da1a14faaee631c7d0006d2bf12d80f9281e1a22be1b79b866"
+  },
+  {
+    "source": "Interface-Fields.md",
+    "slug": "Interface-Fields",
+    "language": "en",
+    "kind": "interface",
+    "topic": null,
+    "id": null,
+    "file": "Interface-Fields.html",
+    "sha256": "ceb509ba83379d8a1063bcab0c38bed7ab3bf6279c0301a4e0f22ee9c0d746a1"
+  },
+  {
+    "source": "Interface-Guide-zh-CN.md",
+    "slug": "Interface-Guide",
+    "language": "zh-CN",
+    "kind": "interface",
+    "topic": null,
+    "id": null,
+    "file": "Interface-Guide.html",
+    "sha256": "7e17a48eec44c9f2c83169a4bc95cceabb6c1dcdf8a0afb033eef859a72c919a"
+  },
+  {
+    "source": "Interface-Guide.md",
+    "slug": "Interface-Guide",
+    "language": "en",
+    "kind": "interface",
+    "topic": null,
+    "id": null,
+    "file": "Interface-Guide.html",
+    "sha256": "3033fc3564c19f33a9556da68d67537dba3746d8a204f161aef4b8acce6e6622"
+  },
+  {
+    "source": "Interface-Relationships-zh-CN.md",
+    "slug": "Interface-Relationships",
+    "language": "zh-CN",
+    "kind": "interface",
+    "topic": null,
+    "id": null,
+    "file": "Interface-Relationships.html",
+    "sha256": "16620994e684d42e8a5a463488b447f09cbeabd6262fbae771f182f501b472c9"
+  },
+  {
+    "source": "Interface-Relationships.md",
+    "slug": "Interface-Relationships",
+    "language": "en",
+    "kind": "interface",
+    "topic": null,
+    "id": null,
+    "file": "Interface-Relationships.html",
+    "sha256": "7d46c957fd3e1a6671defdaa0cd41b0cda4cb89faa4d379aa0cc8ee42b50ec24"
+  },
+  {
+    "source": "Interface-Semantics-zh-CN.md",
+    "slug": "Interface-Semantics",
+    "language": "zh-CN",
+    "kind": "interface",
+    "topic": null,
+    "id": null,
+    "file": "Interface-Semantics.html",
+    "sha256": "87553add1056f29fd9ca341ce6868409a15487b58b32a27debe7b41ca6520003"
+  },
+  {
+    "source": "Interface-Semantics.md",
+    "slug": "Interface-Semantics",
+    "language": "en",
+    "kind": "interface",
+    "topic": null,
+    "id": null,
+    "file": "Interface-Semantics.html",
+    "sha256": "e54b10898d785039a735f837e56c1f574904aa47f36b7ebedd34c9af6feb5ea8"
+  },
+  {
+    "source": "Interface-Walkthrough-zh-CN.md",
+    "slug": "Interface-Walkthrough",
+    "language": "zh-CN",
+    "kind": "interface",
+    "topic": null,
+    "id": null,
+    "file": "Interface-Walkthrough.html",
+    "sha256": "ccc96cdb48a018229554b5b0ea4f272643b96b93b56901cfbb66eb369dd1859f"
+  },
+  {
+    "source": "Interface-Walkthrough.md",
+    "slug": "Interface-Walkthrough",
+    "language": "en",
+    "kind": "interface",
+    "topic": null,
+    "id": null,
+    "file": "Interface-Walkthrough.html",
+    "sha256": "db3b0077762f82380dc1979e5d8d871f55ad95f2a70322d15814f9dec0dad129"
+  },
+  {
     "source": "Learning-A1-Define-a-Decision-Task-zh-CN.md",
     "slug": "Learning-A1-Define-a-Decision-Task",
     "language": "zh-CN",
@@ -87,7 +387,7 @@
     "topic": "B",
     "id": "B2",
     "file": "Learning-B2-Routes-and-Operation-Level-BOM.html",
-    "sha256": "48ca99a52851dbab30ad15da248b7c99276176c24b5386312de0e0c3fd3c709e"
+    "sha256": "07e67d4ade9e18355f43c4fd7569eaf63fd8e3d726c25cb443e119e2bbfeea9b"
   },
   {
     "source": "Learning-B2-Routes-and-Operation-Level-BOM.md",
@@ -97,7 +397,7 @@
     "topic": "B",
     "id": "B2",
     "file": "Learning-B2-Routes-and-Operation-Level-BOM.html",
-    "sha256": "9349214bad1ddd5beba3f0d4603f48f68bd2ed25a90a19e06a0251a00f98e6b1"
+    "sha256": "d4ca5755ca175da213ebc8fa60ce75b2c727a68bd4fdd6f2f9ba5d379ff77a44"
   },
   {
     "source": "Learning-B3-Align-Time-Capacity-and-Materials-zh-CN.md",
@@ -107,7 +407,7 @@
     "topic": "B",
     "id": "B3",
     "file": "Learning-B3-Align-Time-Capacity-and-Materials.html",
-    "sha256": "4e70cd44cfe420df117333fd2368a743d340cadfa5b80a6e3fa6e78d45df417c"
+    "sha256": "766e36dd4161503aaf60f5d91797bfbccc1b994e2ba373bb3ae569f10595bdc7"
   },
   {
     "source": "Learning-B3-Align-Time-Capacity-and-Materials.md",
@@ -117,7 +417,7 @@
     "topic": "B",
     "id": "B3",
     "file": "Learning-B3-Align-Time-Capacity-and-Materials.html",
-    "sha256": "fdf946781869be5e88da3a187748cc7ca48d65cd6d9ef805234abf91aa612724"
+    "sha256": "2b76a0583a4e19f1d85499367e4b965cf6150befe636b3a6ee3ba3352e2385c0"
   },
   {
     "source": "Learning-C1-Facts-Constraints-and-Preferences-zh-CN.md",
@@ -167,7 +467,7 @@
     "topic": "C",
     "id": "C3",
     "file": "Learning-C3-Turn-Experience-into-Rules.html",
-    "sha256": "84002244fe7371a3efe0a8d7743a03871f215755a0e4063a517ac95cee95a1ec"
+    "sha256": "8fee8e5780d86ddb5d7cbae0a64bb25f8c0207bb1f8dce07d69ca1e93a221cbe"
   },
   {
     "source": "Learning-C3-Turn-Experience-into-Rules.md",
@@ -187,7 +487,7 @@
     "topic": null,
     "id": null,
     "file": "index.html",
-    "sha256": "7e75f93192e46bf72b0694a1218b13129ae2511fadea7d22784088dd93df0b72"
+    "sha256": "574c63aed88357e5b85b29ac61b04b67d2ba36fdf251c4913217d70a16a345fe"
   },
   {
     "source": "Learning-Center.md",
@@ -197,7 +497,7 @@
     "topic": null,
     "id": null,
     "file": "index.html",
-    "sha256": "673335938e668358f46065815fb69fcb3a2abe938aa2a119afb24f42b7c265f0"
+    "sha256": "b92047c6a38afb14921cf4c0304eccaf8e9af576e25ccf3bb94e773c1e736ddd"
   },
   {
     "source": "Learning-D1-Read-a-Stamping-Plan-zh-CN.md",
@@ -527,7 +827,7 @@
     "topic": "B",
     "id": null,
     "file": "Learning-Topic-B-Manufacturing-Data.html",
-    "sha256": "f6bf84c4c685201dcf28f2561468c4a352139b9736002dc535cb2549d0933f42"
+    "sha256": "9df8fafb918285f3e8918f02b79548c9180600774593fa81aae7ba3f2d515964"
   },
   {
     "source": "Learning-Topic-B-Manufacturing-Data.md",
@@ -537,7 +837,7 @@
     "topic": "B",
     "id": null,
     "file": "Learning-Topic-B-Manufacturing-Data.html",
-    "sha256": "e9146beda7cb102e164cf68edbbe78306c64becdcdfd29d49920da71c13b3d99"
+    "sha256": "751ef3fa3287c1827ca59647ab9b83dd5c9fb8de470077e61eec4d7dc5a534c6"
   },
   {
     "source": "Learning-Topic-C-Objectives-and-Operational-Rules-zh-CN.md",

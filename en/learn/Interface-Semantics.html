@@ -1,0 +1,508 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DecisioWorks Standardized Data Interface: A Detailed Semantic Guide | DecisioWorks</title>
+  <meta name="description" content="A production plan addresses quantities, timing, manufacturing methods, and resource allocation together. Orders express demand; routes describe manufacturing; resources and calendars limit capacity; materials and inventory determine executable conditions. The standardized interface connects these objects so that inputs can be validated and translated into model conditions, then results can be restored to business records." />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-Semantics.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-Semantics.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-Semantics.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-Semantics.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="DecisioWorks Standardized Data Interface: A Detailed Semantic Guide | DecisioWorks" />
+  <meta property="og:description" content="A production plan addresses quantities, timing, manufacturing methods, and resource allocation together. Orders express demand; routes describe manufacturing; resources and calendars limit capacity; materials and inventory determine executable conditions. The standardized interface connects these objects so that inputs can be validated and translated into model conditions, then results can be restored to business records." />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-Semantics.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers-en.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="DecisioWorks Standardized Data Interface: A Detailed Semantic Guide | DecisioWorks" />
+  <meta name="twitter:description" content="A production plan addresses quantities, timing, manufacturing methods, and resource allocation together. Orders express demand; routes describe manufacturing; resources and calendars limit capacity; materials and inventory determine executable conditions. The standardized interface connects these objects so that inputs can be validated and translated into model conditions, then results can be restored to business records." />
+  <meta name="twitter:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers-en.png" />
+  <link rel="icon" href="../../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "DecisioWorks Standardized Data Interface: A Detailed Semantic Guide", "description": "A production plan addresses quantities, timing, manufacturing methods, and resource allocation together. Orders express demand; routes describe manufacturing; resources and calendars limit capacity; materials and inventory determine executable conditions. The standardized interface connects these objects so that inputs can be validated and translated into model conditions, then results can be restored to business records.", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-Semantics.html", "inLanguage": "en", "author": {"@type": "Organization", "name": "DecisioWorks", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/"}, {"@type": "ListItem", "position": 2, "name": "Learning Center", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/"}, {"@type": "ListItem", "position": 3, "name": "DecisioWorks Standardized Data Interface: A Detailed Semantic Guide", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-Semantics.html"}]}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#article">Skip to content</a>
+  <header class="learning-header"><div class="shell header-inner">
+    <a class="brand" href="../"><img src="../../assets/decisioworks-logo.png" alt="" width="36" height="36" /><strong>DecisioWorks</strong></a>
+    <nav aria-label="Main navigation">
+      <a href="../">Home</a>
+      <a href="../docs/">Docs</a>
+      <a class="language-switch" href="../../learn/Interface-Semantics.html" lang="zh-CN" hreflang="zh-CN">中文</a>
+    </nav>
+  </div></header>
+  <div class="shell breadcrumbs" aria-label="Breadcrumb"><a href="../">Home</a><span>/</span><a href="./">Learning Center</a><span>/</span><span aria-current="page">DecisioWorks Standardized Data Interface: A Detailed Semantic Guide</span></div>
+  <div class="shell reading-layout">
+    <aside class="sidebar"><nav aria-label="Course contents"><a class="contents-home" href="./">Learning Center</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A From a Production Problem to a Testable Decision</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B Represent Manufacturing in Data</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C Objectives, Experience and Operational Rules</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D Read Plans through Recorded Cases</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E Coordinate Planning Levels and Responses</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F Open Collaboration and Continued Evolution</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G Connect Applications and AI Agents through Standard Actions</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H Build Everyday Decision Capability</a><span class="nav-section">Data Interface Guide</span><a href="./Interface-01-Calendar.html">01 Configure Time, Shifts, and Maintenance</a><a href="./Interface-02-Demand.html">02 Express Orders, Products, and Attributes</a><a href="./Interface-03-Resources.html">03 Configure Work Centers and Shared Resources</a><a href="./Interface-04-Routing.html">04 Configure Routes and Alternative Resources</a><a href="./Interface-05-Quantity.html">05 Calculate Cycle Output, Batches, and Processing Time</a><a href="./Interface-06-Materials.html">06 Configure Operation-Level Materials and Availability</a><a href="./Interface-07-Inventory.html">07 Translate Inventory Requirements into Cumulative Bounds</a><a href="./Interface-08-Validation.html">08 Import, Validate, and Load Business Data</a><a href="./Interface-09-Results.html">09 Interpret Results and Prepare the Next Planning Cycle</a><a href="./Interface-Configurations.html">Configuration Patterns: From Shop-Floor Arrangements to Data</a><a href="./Interface-Fields.html">Complete Field Reference</a><a href="./Interface-Guide.html">Learning the Standardized Data Interface</a><a href="./Interface-Relationships.html">Object Relationships and Calculation Rules</a><a href="./Interface-Semantics.html" aria-current="page">DecisioWorks Standardized Data Interface: A Detailed Semantic Guide</a><a href="./Interface-Walkthrough.html">Worked Example: Inputs, Checks and Adjustments for 120 Brackets</a><span class="nav-section">Worksheets</span><a href="./Worksheet-Operational-Rule.html">Operational Rule and Verification</a><a href="./Worksheet-Plan-Comparison.html">Baseline and Adjusted Plan Comparison</a><a href="./Worksheet-Review-and-Change-Record.html">Review and Change Record</a><a href="./Worksheet-Scenario-Brief.html">Scenario and Decision Task</a></nav></aside>
+    <main>
+      <details class="mobile-contents"><summary>Course contents</summary><nav aria-label="Mobile course contents"><a class="contents-home" href="./">Learning Center</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A From a Production Problem to a Testable Decision</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B Represent Manufacturing in Data</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C Objectives, Experience and Operational Rules</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D Read Plans through Recorded Cases</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E Coordinate Planning Levels and Responses</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F Open Collaboration and Continued Evolution</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G Connect Applications and AI Agents through Standard Actions</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H Build Everyday Decision Capability</a><span class="nav-section">Data Interface Guide</span><a href="./Interface-01-Calendar.html">01 Configure Time, Shifts, and Maintenance</a><a href="./Interface-02-Demand.html">02 Express Orders, Products, and Attributes</a><a href="./Interface-03-Resources.html">03 Configure Work Centers and Shared Resources</a><a href="./Interface-04-Routing.html">04 Configure Routes and Alternative Resources</a><a href="./Interface-05-Quantity.html">05 Calculate Cycle Output, Batches, and Processing Time</a><a href="./Interface-06-Materials.html">06 Configure Operation-Level Materials and Availability</a><a href="./Interface-07-Inventory.html">07 Translate Inventory Requirements into Cumulative Bounds</a><a href="./Interface-08-Validation.html">08 Import, Validate, and Load Business Data</a><a href="./Interface-09-Results.html">09 Interpret Results and Prepare the Next Planning Cycle</a><a href="./Interface-Configurations.html">Configuration Patterns: From Shop-Floor Arrangements to Data</a><a href="./Interface-Fields.html">Complete Field Reference</a><a href="./Interface-Guide.html">Learning the Standardized Data Interface</a><a href="./Interface-Relationships.html">Object Relationships and Calculation Rules</a><a href="./Interface-Semantics.html" aria-current="page">DecisioWorks Standardized Data Interface: A Detailed Semantic Guide</a><a href="./Interface-Walkthrough.html">Worked Example: Inputs, Checks and Adjustments for 120 Brackets</a><span class="nav-section">Worksheets</span><a href="./Worksheet-Operational-Rule.html">Operational Rule and Verification</a><a href="./Worksheet-Plan-Comparison.html">Baseline and Adjusted Plan Comparison</a><a href="./Worksheet-Review-and-Change-Record.html">Review and Change Record</a><a href="./Worksheet-Scenario-Brief.html">Scenario and Decision Task</a></nav></details>
+      <article id="article">
+        <header class="article-heading"><p class="kicker">Standardized Data Interface</p><h1>DecisioWorks Standardized Data Interface: A Detailed Semantic Guide</h1></header>
+        <details class="page-contents"><summary>On this page</summary><nav><a href="#1-from-business-facts-to-production-decisions">1. From Business
+Facts to Production Decisions</a><a href="#2-system-map">2. System Map</a><a href="#3-identifiers-codes-and-references">3. Identifiers, Codes, and
+References</a><a href="#4-a-common-time-system">4. A Common Time System</a><a href="#5-work-centers-calendars-and-shared-resources">5. Work Centers,
+Calendars, and Shared Resources</a><a href="#6-products-attributes-and-demand">6. Products, Attributes, and
+Demand</a><a href="#7-routes-operations-and-resource-mappings">7. Routes,
+Operations, and Resource Mappings</a><a href="#8-materials-operation-level-bom-and-kitting">8. Materials,
+Operation-Level BOM, and Kitting</a><a href="#9-inventory-capacity">9. Inventory Capacity</a><a href="#10-exchange-mapping-and-validation">10. Exchange, Mapping, and
+Validation</a><a href="#11-operation-level-results-and-feedback">11. Operation-Level
+Results and Feedback</a><a href="#12-using-this-guide">12. Using This Guide</a></nav></details>
+        <h2 id="1-from-business-facts-to-production-decisions">1. From Business
+Facts to Production Decisions</h2>
+<p>A production plan addresses quantities, timing, manufacturing
+methods, and resource allocation together. Orders express demand; routes
+describe manufacturing; resources and calendars limit capacity;
+materials and inventory determine executable conditions. The
+standardized interface connects these objects so that inputs can be
+validated and translated into model conditions, then results can be
+restored to business records.</p>
+<p>The business layer handles data exchange and service calls. The
+engine layer contains mathematical models and decision modes, organizing
+facts into decision variables, constraints, and objectives. The
+algorithm layer handles solving and its parameters. Shared meanings
+connect the layers while data sources, model capabilities, and
+algorithms evolve independently.</p>
+<p>Service calls cover planning functions as well as parameter,
+business-rule and objective configuration. Decision modes can organize
+manual adjustment and reruns, coordinated plans, rolling updates and
+warm starts. The selected capability entry point and run configuration
+determine the mode actually used. Consistent semantics connect the
+input, model translation and returned results.</p>
+<p>SQLite tables are the concrete representation used here. Mapped CSV,
+JSON, or external-system data can express the same relationships. A
+reusable template preserves fields, relationships, units, configuration
+rules, and the scenario description together.</p>
+<h2 id="2-system-map">2. System Map</h2>
+<p><a
+href="../../assets/data-interface/semantic-relationships-en.svg">Open
+the full-size relationship diagram</a></p>
+<p><img src="../../assets/data-interface/semantic-relationships-en.svg"
+alt="Standardized data-interface object relationships" /></p>
+<p>Arrows show relationships for reading, rather than loading order or
+mandatory business actions. Work centers also form parent-child
+structures. A shared resource is itself represented as a work
+center.</p>
+<p>The complete system includes time, work centers, attributes,
+products, materials, order headers and lines, inventory limits, routes,
+operations, operation-resource mappings, operation-level BOM, kitting,
+capacity, shared resources, and planning results. Three physical
+attribute tables bring the current standard template to 18 tables.</p>
+<h2 id="3-identifiers-codes-and-references">3. Identifiers, Codes, and
+References</h2>
+<p>An <code>id</code> identifies a record for referencing; a
+<code>code</code> holds a business code; a <code>name</code> supplies a
+readable label. Matching business codes do not make a foreign key valid:
+<code>order_item.product</code> must resolve to an actual
+<code>product.id</code>.</p>
+<p>Semantic names such as <code>product_id</code>,
+<code>workcenter_id</code>, and <code>process_id</code> appear as
+<code>product</code>, <code>workcenter</code>, and <code>process</code>
+in the current template. <code>order_info</code> stores order headers,
+referenced by <code>order_item.information</code>;
+<code>delivery_time</code> is the order-line time reference. The field
+reference documents these naming correspondences.</p>
+<p>Keep source keys, target identifiers, unit conversions, and the basis
+for each mapping. Determine the business meaning of a missing value:
+<code>NULL</code> may mean unspecified, while zero can mean a known
+quantity of zero. Treat them separately.</p>
+<h2 id="4-a-common-time-system">4. A Common Time System</h2>
+<p><code>time_unit.id</code> is the reference key. <code>offset</code>
+expresses order relative to the planning origin. <code>scale</code>
+gives the length of the unit in seconds. <code>status</code> states how
+the period can be used.</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th>Status</th>
+<th>Meaning</th>
+<th>Configuration question</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>1</code></td>
+<td>Normally available</td>
+<td>Does a work center have additional local occupancy?</td>
+</tr>
+<tr class="even">
+<td><code>0</code></td>
+<td>Unavailable</td>
+<td>Does the shutdown or break apply globally?</td>
+</tr>
+<tr class="odd">
+<td><code>-1</code></td>
+<td>Special or optional, such as optional overtime</td>
+<td>Is the period adopted, and which configuration controls that
+choice?</td>
+</tr>
+</tbody>
+</table></div>
+<p>Optional status is a business state, not negative available time.
+When a model requires a resolved calendar, create an approved calendar
+view before solving. Entering <code>-1</code> alone does not activate
+overtime.</p>
+<p>Due dates, resource capacity, material availability, inventory
+limits, and results reference the same time basis.
+<code>created_at</code> retains the order creation timestamp rather than
+describing a planning window. Map source dates, time zones, shift
+membership, and receipt-effective times into a consistent relative
+coordinate.</p>
+<p>Hours, shifts, and working days suit different planning tasks. Within
+a run, the origin and granularity must be interpretable consistently.
+Differences between IDs are not elapsed minutes. Use the period lengths
+and planning origin for conversion. A shift-level total expresses
+aggregate availability; an interruption at a specific point requires
+finer periods or a model configuration that represents that window.</p>
+<p>Match granularity to the planning level. Medium- and long-term
+capacity planning concerns period totals, while near-term scheduling may
+require specific execution windows. Finer representation increases
+data-maintenance and computational demands and may fix arrangements that
+could remain flexible. Balance necessary precision, execution
+coordination, and room to adjust after disruptions rather than always
+choosing the finest resolution.</p>
+<h2 id="5-work-centers-calendars-and-shared-resources">5. Work Centers,
+Calendars, and Shared Resources</h2>
+<p>A work center can represent a machine, machine group, team, area,
+subcontractor, tool, or organizational unit. <code>parent_id</code>
+defines hierarchy; <code>type=0</code> identifies a leaf, and a nonzero
+type identifies a non-leaf. <code>station_count</code> counts stations,
+<code>parallelism</code> describes parallel units, and
+<code>equipping_time</code> records configuration or preparation
+time.</p>
+<p>Hierarchy also supports three business meanings: lower levels inherit
+and refine common attributes; optimization rules can apply at plant,
+shop, or machine level; and load, bottlenecks, and utilization can be
+aggregated by parent node. Define how inherited values are resolved, how
+rules reach resources, and how aggregation avoids double counting.
+Whether these steps run automatically depends on the selected capability
+and configuration.</p>
+<p>Stations and parallel units describe different resource structures.
+Their model interpretation depends on the scenario; multiplying them
+universally would be incorrect. A resource hierarchy also does not
+justify counting parent and child capacity twice.</p>
+<p>Global time units and local <code>capacity</code> records form each
+resource calendar. <code>capacity.used</code> is the occupied or
+unavailable fraction for that resource and period, from 0 to 1. In a
+normal period, for one resource and without duplicated losses:</p>
+<p><code>available seconds = scale × (1 − used)</code></p>
+<p>An eight-hour period is 28,800 seconds. Two hours of maintenance with
+no other occupancy gives <code>used=0.25</code> and 21,600 available
+seconds. A fully unavailable period can use <code>used=1</code>. Convert
+source hours or quantities using an explicit capacity baseline.
+Overlapping maintenance and committed work must use the union of
+unavailable intervals.</p>
+<p><code>shared_resource.binding</code> references the work center
+representing the shared resource; <code>to</code> references a dependent
+work center. One mold serving two machines needs two links and one
+calendar belonging to the mold. Links express dependence, while capacity
+records express availability. The relevant planning capability must
+apply the resulting conflict restriction.</p>
+<p>The complete capacity expression is
+<code>availability(i,j)=scale(j)×(1−used(i,j))×|status(j)|</code>. The
+absolute value preserves an availability quantity for special or
+optional periods without creating negative capacity; planning policy
+still determines whether to use that period. A status of 0 gives zero,
+while 1 gives the normal-period expression above. If OEE or another loss
+is also applied, specify its accounting layer to avoid counting the same
+loss again in <code>used</code>.</p>
+<h2 id="6-products-attributes-and-demand">6. Products, Attributes, and
+Demand</h2>
+<p>A product can be a finished item, intermediate item, or component.
+<code>name/code</code> identify it; <code>vin</code> identifies the
+finished item to which it belongs. A shared <code>vin</code> does not
+determine assembly quantities; routes and material relationships still
+express manufacturing.</p>
+<p>Attributes classify products by model, configuration, color, or other
+dimensions. <code>name/code/value/is_key</code> express the attribute
+name, code, value, and key-attribute flag. Key attributes distinguish
+products in demand. Each <code>property_i</code> describes a stable
+classification; combinations express composite categories and rule
+conditions.</p>
+<p>Each dimension partitions products into categories, such as blue,
+white and black for color. Combinations can describe product families,
+series and versions. Keep category meanings traceable when adding or
+changing classifications.</p>
+<p>Attributes also select the products to which a rule applies:</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th>Business rule</th>
+<th>How attributes participate</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Quantity within a scope</td>
+<td>Select a model and limit its output within a shift</td>
+</tr>
+<tr class="even">
+<td>Number of categories</td>
+<td>Group a batch by color and limit distinct colors</td>
+</tr>
+<tr class="odd">
+<td>Mutual exclusion or quantity relationships</td>
+<td>Select configuration combinations and define exclusion or
+ratios</td>
+</tr>
+<tr class="even">
+<td>Economic batch size</td>
+<td>Set a batch-size range for a model/configuration combination</td>
+</tr>
+<tr class="odd">
+<td>Changeover or batch counts</td>
+<td>Identify transitions through color or another attribute and limit
+their count</td>
+</tr>
+<tr class="even">
+<td>Prohibited adjacency</td>
+<td>Configure rules for sequences such as a dark color immediately
+followed by a light color</td>
+</tr>
+</tbody>
+</table></div>
+<p>Pass these conditions through the relevant service interface and rule
+configuration. Attribute records supply classification facts; the rules
+state how a particular run uses them.</p>
+<p>The current SQLite template supplies <code>property_1/2/3</code>,
+referenced by foreign keys in product records. Extending the mechanism
+requires coordinated schema, loading, mapping, validation, and model
+support. The current <code>value</code> column is numeric. A name
+identifies the attribute and a code identifies the category:
+“Color/BLUE/1” represents blue. Do not write <code>BLUE</code> into an
+integer foreign key or numeric column.</p>
+<p><code>property_mappings</code> can map a business name such as
+<code>color</code> to a standard attribute position. Check both the
+meaning of a key attribute and the current loader's use of
+<code>is_key</code> to select attribute fields. An attribute referenced
+by a rule must actually be loaded.</p>
+<p>Order headers describe the order, code, priority, and creation
+timestamp. Lines link the order, product, due period, and quantity.
+Split an order by product and due period when needed. Order, route,
+resource, and material priorities act on different objects; their
+numeric sorting conventions belong to the corresponding
+configuration.</p>
+<h2 id="7-routes-operations-and-resource-mappings">7. Routes,
+Operations, and Resource Mappings</h2>
+<p>A product can have one or several candidate routes. Each route
+belongs to one product and contains one or more operations. Route names,
+codes, descriptions, and priorities express manufacturing alternatives
+and selection preferences.</p>
+<p><code>process.operation_number</code> identifies an operation within
+its route; <code>seqno</code> expresses precedence. Equal
+<code>seqno</code> values mean no precedence between those operations.
+Simultaneous execution also depends on resources, materials, and model
+behavior. Check numbering uniqueness separately from precedence.</p>
+<p><code>process_adaptor</code> connects an operation to a work center.
+Alternative mappings can have different priorities, outputs, batches,
+durations, changeovers, buffers, efficiency, and joint-processing
+groups. Changing a resource may change several of these parameters.</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th>Parameter</th>
+<th>Meaning and relationship</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>productivity</code></td>
+<td>Output per processing cycle for discrete manufacturing; output per
+unit time in a continuous interpretation, with explicit units and
+conversion</td>
+</tr>
+<tr class="even">
+<td><code>batch_size</code></td>
+<td>Batch quantity; in the discrete case it must be an integer multiple
+of per-cycle output</td>
+</tr>
+<tr class="odd">
+<td><code>processing_time</code></td>
+<td>Standard duration in seconds; interpreted per processing cycle by
+the current discrete template</td>
+</tr>
+<tr class="even">
+<td><code>setup_time</code></td>
+<td>Operation changeover duration, distinguished from work-center
+preparation to avoid double counting</td>
+</tr>
+<tr class="odd">
+<td><code>wip_buffer_size</code></td>
+<td>Work-in-process buffer capacity, with its units and model usage
+specified</td>
+</tr>
+<tr class="even">
+<td><code>OEE</code></td>
+<td>Overall equipment effectiveness; identify the layer where its losses
+are accounted for</td>
+</tr>
+<tr class="odd">
+<td><code>binding</code></td>
+<td>A common group joins operations processed together; cycles,
+durations, and outputs must be consistent</td>
+</tr>
+</tbody>
+</table></div>
+<p>For discrete processing,
+<code>output quantity = processing cycles × output per cycle</code>. A
+20-unit batch at four units per cycle requires five cycles. Exact
+demand-to-batch divisibility is a scenario policy, not a universal
+demand rule. With a requirement of 42 and batches of 20, producing 40
+leaves a shortage of two; producing 60 creates a surplus of 18.</p>
+<p>Joint processing and shared resources express different
+relationships. Joint processing connects outputs to the same processing
+event; shared resources express competition for limited capacity. Both
+can coexist.</p>
+<h2 id="8-materials-operation-level-bom-and-kitting">8. Materials,
+Operation-Level BOM, and Kitting</h2>
+<p>Materials carry a name, code, vendor, substitute group, dependency
+group, and extension information. Equal <code>substitute</code> values
+identify alternatives. <code>binding</code> expresses dependent choices,
+such as compatible wheels and tires. The two relationships answer
+different questions: what can be replaced, and which selections must be
+coordinated.</p>
+<p><code>ingredient</code> defines the operation-level BOM through an
+operation, material, quantity, and priority. State the quantity basis
+explicitly: one unit of operation output or another documented converted
+unit. Operation output and machine cycles must not be mixed. Priority
+expresses material selection preference where alternatives exist and
+requires a corresponding selection policy.</p>
+<p><code>kitting_information</code> connects a material, time unit, and
+ready quantity, placing initial availability and later supply on one
+axis. The semantic question is how much material is available for the
+relevant operation by a point in time. The input mapping must also state
+whether rows hold incremental or cumulative quantities. A chain that
+cumulatively sums inputs expects initial availability once in the first
+period and later increments in their periods; repeatedly entering
+cumulative stock snapshots would overstate supply. Returns, canceled
+receipts, and changes in blocked stock need an explicit reconstruction
+or netting policy.</p>
+<p>Operation-level kitting places each requirement at its actual
+consumption step. Cutting may consume blanks while assembly consumes
+fasteners. If fasteners arrive tomorrow, cutting today depends on
+precedence, intermediate inventory, and period allocation. Product-level
+BOM can be carried through the appropriate operation while preserving
+the actual consumption point.</p>
+<h2 id="9-inventory-capacity">9. Inventory Capacity</h2>
+<p><code>inventory_limit</code> connects a product, period,
+shared-inventory group, cumulative upper and lower bounds, and urgency.
+These bounds are derived from initial stock, planned receipts and
+issues, and storage requirements. Equal <code>binding</code> values
+express shared inventory; <code>urgency</code> carries urgency or
+turnover-related information.</p>
+<p>Let I0 be opening inventory, P(t) cumulative production receipts,
+E(t) cumulative other receipts, and D(t) cumulative issues:</p>
+<p><code>I(t) = I0 + P(t) + E(t) − D(t)</code></p>
+<p>If <code>L(t) ≤ I(t) ≤ U(t)</code>, then:</p>
+<p><code>L(t) − I0 − E(t) + D(t) ≤ P(t) ≤ U(t) − I0 − E(t) + D(t)</code></p>
+<p>Cumulative production cannot be negative, so a valid negative lower
+bound may become zero. A negative upper bound means that even zero
+production would violate the inventory ceiling; review the inventory
+balance or requirement. Check the resulting bounds against the current
+integer and nonnegative input rules. Shared inventory also requires
+comparable units or a conversion basis; counts of differently sized
+products are not automatically comparable storage volumes.</p>
+<h2 id="10-exchange-mapping-and-validation">10. Exchange, Mapping, and
+Validation</h2>
+<p>Exchange includes reading, parsing, conversion, validation, error
+handling, and result output. Different source systems can supply the
+same business meanings. Validate field presence, types, ranges, unique
+identifiers, references, time coordinates, and the relationships needed
+by the selected capability.</p>
+<p>A useful order is identifiers and master data, time and units, routes
+and resources, materials and inventory, adopted configuration, then
+results. Check time continuity against the shared relative axis and
+document nonworking periods, so due dates and supplies do not fall into
+undefined windows. Structural validity is followed by a check that the
+selected model actually uses the intended constraints and
+objectives.</p>
+<p>Keep source data, standardized objects, and model-input views
+separate. When projecting a primary resource or a whole-batch
+requirement for one run, retain the original alternatives, original
+demand, transformation rule, and its effect. Standard data expresses the
+business; a model view expresses the conditions adopted for that
+run.</p>
+<h2 id="11-operation-level-results-and-feedback">11. Operation-Level
+Results and Feedback</h2>
+<p><code>planning_result</code> records the work center, period,
+operation, and output <code>number</code>. The quantity is output, not
+processing cycles. <code>value_1/2/3</code> are extension fields; a
+circular scheduling configuration may use them for cycle number,
+sequence position, and another documented value.</p>
+<p>If an item passes through two operations, adding both operation
+quantities does not give finished deliveries. Recover delivery through
+final operations, product ownership, and route selection. Use operation
+output, cycle output, duration, and material coefficients to recover
+workload and material requirements.</p>
+<p>Results also support subsequent changes. Executed work updates
+remaining demand, committed work updates occupied capacity, and
+execution feedback updates material availability and state. Rolling
+planning requires the origin and every time reference to move
+consistently. Retain the original plan, execution facts, changes, and
+next-run configuration to explain differences.</p>
+<p>Results can be exported in the standard structure or written to an
+explicit result database. Reading a business source does not require
+overwriting it. Explicit result persistence and source preservation can
+coexist in a traceable update process.</p>
+<h2 id="12-using-this-guide">12. Using This Guide</h2>
+<p>This table connects the running example's inputs, calculation
+meanings, and result checks. The figures are hand-calculated teaching
+examples, not new solver-run evidence.</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th>Input fact and fields</th>
+<th>Meaning in this example</th>
+<th>Output or feedback check</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Demand 80 units, output 4 per cycle, batch quantity 20</td>
+<td>20 cycles and 4 batches; retain original demand</td>
+<td>Relevant final-operation <code>planning_result.number</code> totals
+80 units, not 20 cycles</td>
+</tr>
+<tr class="even">
+<td>Normal period: <code>scale=28800</code>, <code>used=0.25</code>,
+<code>status=1</code></td>
+<td>21600 available seconds, or 360 minutes</td>
+<td>Stamping takes 20×600 seconds = 200 minutes, leaving 160; do not
+deduct maintenance twice</td>
+</tr>
+<tr class="odd">
+<td>One blank per stamped unit, output requirement 80</td>
+<td>This operation requires 80 blanks</td>
+<td>Check supply before consumption and cumulative material use</td>
+</tr>
+<tr class="even">
+<td>Stamping and assembly each output 80 units</td>
+<td>Two operations describe flow, not 160 finished units</td>
+<td>Recover deliveries using final operations, routes, and an
+order-allocation basis</td>
+</tr>
+<tr class="odd">
+<td>Actual delivery 60 against a commitment of 80</td>
+<td>Delivery deviation is 20 units</td>
+<td>Calculate remaining work using stock, work in process, and finished
+but undelivered quantities</td>
+</tr>
+</tbody>
+</table></div>
+<p>Follow the <a href="./Interface-Guide.html">nine lessons</a>, consult the
+<a href="./Interface-Fields.html">field reference</a> for types and nulls,
+check the <a href="./Interface-Relationships.html">relationship
+reference</a>, and complete the <a
+href="./Interface-Walkthrough.html">end-to-end exercise</a>.</p>
+<p>Semantic definitions describe what data expresses. The field
+dictionary documents current storage. Capability configuration and
+execution evidence establish what a particular solve used. Connecting
+these three lets users change data, replace source systems, and extend
+scenarios while preserving meaning.</p>
+      </article>
+      <footer class="article-footer"><a href="./">Back to Learning Center</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki/Interface-Semantics">Read on Wiki</a></footer>
+    </main>
+  </div>
+  <footer class="site-footer shell"><strong>DecisioWorks</strong><span>Learn decision capabilities through production problems.</span></footer>
+</body>
+</html>

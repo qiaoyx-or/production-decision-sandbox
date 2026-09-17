@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>标准化数据接口学习指南 | DecisioWorks</title>
+  <meta name="description" content="把一个生产场景交给计划模型，需要先说明生产什么、怎样加工、使用哪些资源、物料何时到位，以及不同时间内允许做多少。DecisioWorks 的标准化数据接口把这些问题组织为统一的业务对象和关系。" />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-Guide.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-Guide.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-Guide.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-Guide.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="标准化数据接口学习指南 | DecisioWorks" />
+  <meta property="og:description" content="把一个生产场景交给计划模型，需要先说明生产什么、怎样加工、使用哪些资源、物料何时到位，以及不同时间内允许做多少。DecisioWorks 的标准化数据接口把这些问题组织为统一的业务对象和关系。" />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-Guide.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="标准化数据接口学习指南 | DecisioWorks" />
+  <meta name="twitter:description" content="把一个生产场景交给计划模型，需要先说明生产什么、怎样加工、使用哪些资源、物料何时到位，以及不同时间内允许做多少。DecisioWorks 的标准化数据接口把这些问题组织为统一的业务对象和关系。" />
+  <meta name="twitter:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <link rel="icon" href="../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "标准化数据接口学习指南", "description": "把一个生产场景交给计划模型，需要先说明生产什么、怎样加工、使用哪些资源、物料何时到位，以及不同时间内允许做多少。DecisioWorks 的标准化数据接口把这些问题组织为统一的业务对象和关系。", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-Guide.html", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "DecisioWorks", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "首页", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/"}, {"@type": "ListItem", "position": 2, "name": "学习中心", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/"}, {"@type": "ListItem", "position": 3, "name": "标准化数据接口学习指南", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-Guide.html"}]}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#article">跳到正文</a>
+  <header class="learning-header"><div class="shell header-inner">
+    <a class="brand" href="../"><img src="../assets/decisioworks-logo.png" alt="" width="36" height="36" /><strong>DecisioWorks</strong></a>
+    <nav aria-label="主导航">
+      <a href="../">主页</a>
+      <a href="../docs/">文档</a>
+      <a class="language-switch" href="../en/learn/Interface-Guide.html" lang="en" hreflang="en">English</a>
+    </nav>
+  </div></header>
+  <div class="shell breadcrumbs" aria-label="面包屑导航"><a href="../">首页</a><span>/</span><a href="./">学习中心</a><span>/</span><span aria-current="page">标准化数据接口学习指南</span></div>
+  <div class="shell reading-layout">
+    <aside class="sidebar"><nav aria-label="课程目录"><a class="contents-home" href="./">学习中心</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A 从生产问题到可检验的决策</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B 用数据表达制造过程</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C 让目标、经验与规则参与决策</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D 从真实样例学会读计划</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E 让计划层级协同工作</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F 开放协作与持续演进</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G 用标准动作连接应用与AI Agent</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H 把一次练习变成日常能力</a><span class="nav-section">数据接口详解</span><a href="./Interface-01-Calendar.html">01 配置生产时间、班制与维护</a><a href="./Interface-02-Demand.html">02 表达订单、制品与产品属性</a><a href="./Interface-03-Resources.html">03 配置工作中心与共享资源</a><a href="./Interface-04-Routing.html">04 配置工艺路线与可选资源</a><a href="./Interface-05-Quantity.html">05 核算出件率、批量与加工时间</a><a href="./Interface-06-Materials.html">06 配置工序级物料与齐套</a><a href="./Interface-07-Inventory.html">07 把库存要求转换为累计约束</a><a href="./Interface-08-Validation.html">08 导入、校验并读取业务数据</a><a href="./Interface-09-Results.html">09 解释结果并准备下一轮计划</a><a href="./Interface-Configurations.html">典型配置模式：从现场安排到接口记录</a><a href="./Interface-Fields.html">完整字段参考</a><a href="./Interface-Guide.html" aria-current="page">标准化数据接口学习指南</a><a href="./Interface-Relationships.html">对象关系与计算规则</a><a href="./Interface-Semantics.html">DecisioWorks 标准化数据接口语义详解</a><a href="./Interface-Walkthrough.html">贯穿案例：120件支架的输入、核对与调整</a><span class="nav-section">工作表</span><a href="./Worksheet-Operational-Rule.html">现场规则记录与检查</a><a href="./Worksheet-Plan-Comparison.html">基线与调整方案比较</a><a href="./Worksheet-Review-and-Change-Record.html">复盘与持续改进记录</a><a href="./Worksheet-Scenario-Brief.html">场景与决策任务</a></nav></aside>
+    <main>
+      <details class="mobile-contents"><summary>课程目录</summary><nav aria-label="移动端课程目录"><a class="contents-home" href="./">学习中心</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A 从生产问题到可检验的决策</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B 用数据表达制造过程</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C 让目标、经验与规则参与决策</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D 从真实样例学会读计划</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E 让计划层级协同工作</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F 开放协作与持续演进</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G 用标准动作连接应用与AI Agent</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H 把一次练习变成日常能力</a><span class="nav-section">数据接口详解</span><a href="./Interface-01-Calendar.html">01 配置生产时间、班制与维护</a><a href="./Interface-02-Demand.html">02 表达订单、制品与产品属性</a><a href="./Interface-03-Resources.html">03 配置工作中心与共享资源</a><a href="./Interface-04-Routing.html">04 配置工艺路线与可选资源</a><a href="./Interface-05-Quantity.html">05 核算出件率、批量与加工时间</a><a href="./Interface-06-Materials.html">06 配置工序级物料与齐套</a><a href="./Interface-07-Inventory.html">07 把库存要求转换为累计约束</a><a href="./Interface-08-Validation.html">08 导入、校验并读取业务数据</a><a href="./Interface-09-Results.html">09 解释结果并准备下一轮计划</a><a href="./Interface-Configurations.html">典型配置模式：从现场安排到接口记录</a><a href="./Interface-Fields.html">完整字段参考</a><a href="./Interface-Guide.html" aria-current="page">标准化数据接口学习指南</a><a href="./Interface-Relationships.html">对象关系与计算规则</a><a href="./Interface-Semantics.html">DecisioWorks 标准化数据接口语义详解</a><a href="./Interface-Walkthrough.html">贯穿案例：120件支架的输入、核对与调整</a><span class="nav-section">工作表</span><a href="./Worksheet-Operational-Rule.html">现场规则记录与检查</a><a href="./Worksheet-Plan-Comparison.html">基线与调整方案比较</a><a href="./Worksheet-Review-and-Change-Record.html">复盘与持续改进记录</a><a href="./Worksheet-Scenario-Brief.html">场景与决策任务</a></nav></details>
+      <article id="article">
+        <header class="article-heading"><p class="kicker">标准化数据接口</p><h1>标准化数据接口学习指南</h1></header>
+        <details class="page-contents"><summary>本页内容</summary><nav><a href="#总纲">总纲</a><a href="#按任务学习">按任务学习</a><a href="#查询与实践">查询与实践</a></nav></details>
+        <p><a
+href="../assets/data-interface/decisioworks-data-interface-examples.zip">下载完整练习包（SQL、字段清单、Python脚本、数据库及CSV）</a></p>
+<p>把一个生产场景交给计划模型，需要先说明生产什么、怎样加工、使用哪些资源、物料何时到位，以及不同时间内允许做多少。DecisioWorks
+的标准化数据接口把这些问题组织为统一的业务对象和关系。</p>
+<p>本专题包含完整的语义说明、按任务组织的九课教程，以及字段、关系、模板与代码参考。初次学习从《语义详解》的体系图开始；准备实际数据时，按相应课程完成配置；查找具体字段时使用字段参考。</p>
+<h2 id="总纲">总纲</h2>
+<p><a href="./Interface-Semantics.html">DecisioWorks
+标准化数据接口语义详解</a>：完整阅读对象、字段语义、时间和数量规则、关联关系及结果更新方式。</p>
+<h2 id="按任务学习">按任务学习</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>课程</th>
+<th>完成后的成果</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="./Interface-01-Calendar.html">01
+配置生产时间、班制与维护</a></td>
+<td>一张时间表、资源占用记录及可用时间核算</td>
+</tr>
+<tr class="even">
+<td><a href="./Interface-02-Demand.html">02
+表达订单、制品与产品属性</a></td>
+<td>分期交付的订单明细、制品和属性映射</td>
+</tr>
+<tr class="odd">
+<td><a href="./Interface-03-Resources.html">03
+配置工作中心与共享资源</a></td>
+<td>组织关系、共享关系和资源能力记录</td>
+</tr>
+<tr class="even">
+<td><a href="./Interface-04-Routing.html">04
+配置工艺路线与可选资源</a></td>
+<td>有序工序、候选路线及资源适配记录</td>
+</tr>
+<tr class="odd">
+<td><a href="./Interface-05-Quantity.html">05
+核算出件率、批量与加工时间</a></td>
+<td>数量换算、批量校验和共同产出核算</td>
+</tr>
+<tr class="even">
+<td><a href="./Interface-06-Materials.html">06
+配置工序级物料与齐套</a></td>
+<td>分工序单耗、分时供给及人工齐套检查</td>
+</tr>
+<tr class="odd">
+<td><a href="./Interface-07-Inventory.html">07
+把库存要求转换为累计约束</a></td>
+<td>可追溯到库存收支的累计上下限</td>
+</tr>
+<tr class="even">
+<td><a href="./Interface-08-Validation.html">08
+导入、校验并读取业务数据</a></td>
+<td>字段映射表、独立教学数据库和校验结果</td>
+</tr>
+<tr class="odd">
+<td><a href="./Interface-09-Results.html">09
+解释结果并准备下一轮计划</a></td>
+<td>数量、时间、物料复核及更新清单</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="查询与实践">查询与实践</h2>
+<ul>
+<li><a
+href="./Interface-Fields.html">完整字段参考</a>：当前标准模板的18张表、105个字段；明确区分业务定义与存储要求。</li>
+<li><a
+href="./Interface-Relationships.html">关系与规则参考</a>：外键、基数关系、数量计算、同名字段区别。</li>
+<li><a
+href="./Interface-Configurations.html">典型配置模式</a>：单班、双班、连续生产、维护、共享资源、库存及数量口径。</li>
+<li><a
+href="./Interface-Walkthrough.html">贯穿案例与运行步骤</a>：从120件需求到配置校验、人工候选计划和维护调整。</li>
+</ul>
+<p>示例中的时间、需求和资源均为教学数据。配套程序创建独立数据库，执行结构校验及人工核算；人工候选表明确标注为手算，求解器运行结果须来自实际执行。这样可以分别学习“数据怎样表达”和“模型怎样采用”。</p>
+<p>阅读当前工程配置时，使用与安装版本配套的字段字典和能力说明。语义机制中的可扩展属性不限定为三个维度；本套SQLite模板具体提供三个属性表。</p>
+      </article>
+      <footer class="article-footer"><a href="./">返回学习中心</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki/Interface-Guide-zh-CN">在 Wiki 阅读</a></footer>
+    </main>
+  </div>
+  <footer class="site-footer shell"><strong>DecisioWorks</strong><span>从生产问题出发，理解与使用决策能力。</span></footer>
+</body>
+</html>

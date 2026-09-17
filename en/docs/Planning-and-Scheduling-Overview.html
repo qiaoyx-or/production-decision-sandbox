@@ -51,19 +51,24 @@ scheduler.</p>
 <h2 id="what-master-planning-owns">What master planning owns</h2>
 <p>Master planning brings together demand, capacity, material
 availability, inventory, delivery commitments, and execution feedback.
-It identifies underproduction, overload, kitting risk, inventory
-pressure, and commitment risk, then decides what may be released and
-what requires review.</p>
+It does not seek second-by-second precision for every operation. It
+identifies underproduction, overload, kitting risk, inventory pressure,
+and commitment risk, then decides what may be released and what needs to
+wait, be adjusted, or be escalated.</p>
 <p>DecisioWorks can represent these changes as PlanBias records. A bias
 preserves source, affected object, direction, and impact before anyone
 overwrites the active plan.</p>
 <h2 id="what-detailed-scheduling-owns">What detailed scheduling
 owns</h2>
-<p>Scheduling receives released, confirmed, materially ready work
-packages. Within a local production unit it handles resource assignment,
-sequence, waiting, idle time, and changeovers. Precise scheduling
-depends on stable input and should not absorb long-term forecasting,
-procurement commitments, or cross-department negotiation.</p>
+<p>Scheduling receives released, confirmed work packages that meet the
+material conditions required for that release. Within a local production
+unit it handles resource assignment, sequence, waiting, idle time, and
+changeovers. Upstream planning confirms material readiness; if a
+scheduling capability also supports time-phased material constraints,
+enable them explicitly. Precise scheduling depends on stable input,
+while long-term forecasting, procurement commitments, and
+cross-department coordination belong to the corresponding planning
+processes.</p>
 <h2 id="linkage-flow">Linkage flow</h2>
 <pre class="text"><code>demand, capacity, material, and execution changes
   -&gt; PlanBias -&gt; PlanSignal
@@ -71,9 +76,11 @@ procurement commitments, or cross-department negotiation.</p>
   -&gt; scheduling work package
   -&gt; workload, waiting, changeover, and execution feedback
   -&gt; next planning cycle</code></pre>
-<p>A PlanSignal can adjust an objective, create a local rule, influence
-release, or remain an alert. Change therefore enters the decision
-process before it modifies the plan.</p>
+<p>A PlanSignal routes a planning impact to a receiving action, which
+may propose an objective change, a local rule, or a release candidate,
+or retain an alert. Configuration and approval determine whether the
+proposal enters a later run. Creating a signal does not itself change
+the plan.</p>
 <h2 id="freeze-continue-or-reconstruct">Freeze, continue, or
 reconstruct</h2>
 <p>Disturbance response should not default to global rescheduling.
@@ -95,10 +102,20 @@ recipe and reload it first.</li>
 <li>Compare what remained stable, what changed, and why.</li>
 <li>Record cross-cycle issues as inputs to the next planning round.</li>
 </ol>
-<p>Common mistakes include treating MPS as a coarse Gantt chart, leaving
-procurement conflicts to scheduling, overwriting plans without an
-explanation, and comparing scores without considering execution
-stability.</p>
+<h2 id="common-mistakes">Common mistakes</h2>
+<ul>
+<li>Treating MPS as a coarse Gantt chart.</li>
+<li>Leaving material shortages and procurement conflicts entirely to the
+scheduler.</li>
+<li>Overwriting the original plan after an exception without explaining
+the change.</li>
+<li>Comparing only objective scores rather than plan stability and
+execution costs.</li>
+</ul>
+<p>Continue with the <a
+href="Stamping-Planning-Case-Walkthrough.html">Stamping Planning Case</a> and
+<a href="Results-Evidence-and-Feedback.html">Results, Evidence, and
+Feedback</a>.</p>
 <section class="related-docs"><h2>Continue Reading</h2><div><a href="Objectives-and-Rule-Control.html"><span>Objectives and Rule Control</span><b>→</b></a><a href="Results-Evidence-and-Feedback.html"><span>Results, Evidence, and Feedback</span><b>→</b></a><a href="Stamping-Planning-Case-Walkthrough.html"><span>Stamping Planning Case Walkthrough</span><b>→</b></a></div></section></article>
   </main>
   <footer class="docs-footer"><div class="docs-shell"><strong>DecisioWorks</strong><span>Manufacturing Production Decision Toolkit</span></div></footer>

@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>典型配置模式：从现场安排到接口记录 | DecisioWorks</title>
+  <meta name="description" content="选择模式前先回答三个问题：本次计划的时间粒度是什么；哪些变化影响全部资源，哪些只影响特定设备；需要控制总量，还是必须控制具体发生时刻。以下模式可以组合，示意表只列本节有关字段，完整记录按字段参考填写。" />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-Configurations.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-Configurations.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-Configurations.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-Configurations.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="典型配置模式：从现场安排到接口记录 | DecisioWorks" />
+  <meta property="og:description" content="选择模式前先回答三个问题：本次计划的时间粒度是什么；哪些变化影响全部资源，哪些只影响特定设备；需要控制总量，还是必须控制具体发生时刻。以下模式可以组合，示意表只列本节有关字段，完整记录按字段参考填写。" />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-Configurations.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="典型配置模式：从现场安排到接口记录 | DecisioWorks" />
+  <meta name="twitter:description" content="选择模式前先回答三个问题：本次计划的时间粒度是什么；哪些变化影响全部资源，哪些只影响特定设备；需要控制总量，还是必须控制具体发生时刻。以下模式可以组合，示意表只列本节有关字段，完整记录按字段参考填写。" />
+  <meta name="twitter:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <link rel="icon" href="../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "典型配置模式：从现场安排到接口记录", "description": "选择模式前先回答三个问题：本次计划的时间粒度是什么；哪些变化影响全部资源，哪些只影响特定设备；需要控制总量，还是必须控制具体发生时刻。以下模式可以组合，示意表只列本节有关字段，完整记录按字段参考填写。", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-Configurations.html", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "DecisioWorks", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "首页", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/"}, {"@type": "ListItem", "position": 2, "name": "学习中心", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/"}, {"@type": "ListItem", "position": 3, "name": "典型配置模式：从现场安排到接口记录", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-Configurations.html"}]}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#article">跳到正文</a>
+  <header class="learning-header"><div class="shell header-inner">
+    <a class="brand" href="../"><img src="../assets/decisioworks-logo.png" alt="" width="36" height="36" /><strong>DecisioWorks</strong></a>
+    <nav aria-label="主导航">
+      <a href="../">主页</a>
+      <a href="../docs/">文档</a>
+      <a class="language-switch" href="../en/learn/Interface-Configurations.html" lang="en" hreflang="en">English</a>
+    </nav>
+  </div></header>
+  <div class="shell breadcrumbs" aria-label="面包屑导航"><a href="../">首页</a><span>/</span><a href="./">学习中心</a><span>/</span><span aria-current="page">典型配置模式：从现场安排到接口记录</span></div>
+  <div class="shell reading-layout">
+    <aside class="sidebar"><nav aria-label="课程目录"><a class="contents-home" href="./">学习中心</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A 从生产问题到可检验的决策</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B 用数据表达制造过程</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C 让目标、经验与规则参与决策</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D 从真实样例学会读计划</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E 让计划层级协同工作</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F 开放协作与持续演进</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G 用标准动作连接应用与AI Agent</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H 把一次练习变成日常能力</a><span class="nav-section">数据接口详解</span><a href="./Interface-01-Calendar.html">01 配置生产时间、班制与维护</a><a href="./Interface-02-Demand.html">02 表达订单、制品与产品属性</a><a href="./Interface-03-Resources.html">03 配置工作中心与共享资源</a><a href="./Interface-04-Routing.html">04 配置工艺路线与可选资源</a><a href="./Interface-05-Quantity.html">05 核算出件率、批量与加工时间</a><a href="./Interface-06-Materials.html">06 配置工序级物料与齐套</a><a href="./Interface-07-Inventory.html">07 把库存要求转换为累计约束</a><a href="./Interface-08-Validation.html">08 导入、校验并读取业务数据</a><a href="./Interface-09-Results.html">09 解释结果并准备下一轮计划</a><a href="./Interface-Configurations.html" aria-current="page">典型配置模式：从现场安排到接口记录</a><a href="./Interface-Fields.html">完整字段参考</a><a href="./Interface-Guide.html">标准化数据接口学习指南</a><a href="./Interface-Relationships.html">对象关系与计算规则</a><a href="./Interface-Semantics.html">DecisioWorks 标准化数据接口语义详解</a><a href="./Interface-Walkthrough.html">贯穿案例：120件支架的输入、核对与调整</a><span class="nav-section">工作表</span><a href="./Worksheet-Operational-Rule.html">现场规则记录与检查</a><a href="./Worksheet-Plan-Comparison.html">基线与调整方案比较</a><a href="./Worksheet-Review-and-Change-Record.html">复盘与持续改进记录</a><a href="./Worksheet-Scenario-Brief.html">场景与决策任务</a></nav></aside>
+    <main>
+      <details class="mobile-contents"><summary>课程目录</summary><nav aria-label="移动端课程目录"><a class="contents-home" href="./">学习中心</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A 从生产问题到可检验的决策</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B 用数据表达制造过程</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C 让目标、经验与规则参与决策</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D 从真实样例学会读计划</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E 让计划层级协同工作</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F 开放协作与持续演进</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G 用标准动作连接应用与AI Agent</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H 把一次练习变成日常能力</a><span class="nav-section">数据接口详解</span><a href="./Interface-01-Calendar.html">01 配置生产时间、班制与维护</a><a href="./Interface-02-Demand.html">02 表达订单、制品与产品属性</a><a href="./Interface-03-Resources.html">03 配置工作中心与共享资源</a><a href="./Interface-04-Routing.html">04 配置工艺路线与可选资源</a><a href="./Interface-05-Quantity.html">05 核算出件率、批量与加工时间</a><a href="./Interface-06-Materials.html">06 配置工序级物料与齐套</a><a href="./Interface-07-Inventory.html">07 把库存要求转换为累计约束</a><a href="./Interface-08-Validation.html">08 导入、校验并读取业务数据</a><a href="./Interface-09-Results.html">09 解释结果并准备下一轮计划</a><a href="./Interface-Configurations.html" aria-current="page">典型配置模式：从现场安排到接口记录</a><a href="./Interface-Fields.html">完整字段参考</a><a href="./Interface-Guide.html">标准化数据接口学习指南</a><a href="./Interface-Relationships.html">对象关系与计算规则</a><a href="./Interface-Semantics.html">DecisioWorks 标准化数据接口语义详解</a><a href="./Interface-Walkthrough.html">贯穿案例：120件支架的输入、核对与调整</a><span class="nav-section">工作表</span><a href="./Worksheet-Operational-Rule.html">现场规则记录与检查</a><a href="./Worksheet-Plan-Comparison.html">基线与调整方案比较</a><a href="./Worksheet-Review-and-Change-Record.html">复盘与持续改进记录</a><a href="./Worksheet-Scenario-Brief.html">场景与决策任务</a></nav></details>
+      <article id="article">
+        <header class="article-heading"><p class="kicker">标准化数据接口</p><h1>典型配置模式：从现场安排到接口记录</h1></header>
+        <details class="page-contents"><summary>本页内容</summary><nav><a href="#1-单班双班与连续生产">1. 单班、双班与连续生产</a><a href="#2-一次维护如何影响产能">2. 一次维护如何影响产能</a><a href="#3-候选设备与共用工装">3. 候选设备与共用工装</a><a href="#4-一次加工多种产出">4. 一次加工、多种产出</a><a href="#5-到料记录累计值转成增量">5. 到料记录：累计值转成增量</a><a href="#6-库存目标转成累计生产范围">6. 库存目标转成累计生产范围</a><a href="#7-不同单位如何落到整数模板">7. 不同单位如何落到整数模板</a><a href="#8-选择后的检查">8. 选择后的检查</a></nav></details>
+        <p>选择模式前先回答三个问题：本次计划的时间粒度是什么；哪些变化影响全部资源，哪些只影响特定设备；需要控制总量，还是必须控制具体发生时刻。以下模式可以组合，示意表只列本节有关字段，完整记录按<a
+href="./Interface-Fields.html">字段参考</a>填写。</p>
+<h2 id="1-单班双班与连续生产">1. 单班、双班与连续生产</h2>
+<p>以一天24个一小时时间单元为例，所有行<code>scale=3600</code>。下表按区间压缩展示，实际数据每小时一行。</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>现场安排</th>
+<th>正常可用时段示例</th>
+<th>其余时段</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>单班8小时</td>
+<td>08:00–12:00、13:00–17:00</td>
+<td>全局停产时设<code>status=0</code></td>
+</tr>
+<tr class="even">
+<td>双班16小时</td>
+<td>00:00–08:00、08:00–16:00</td>
+<td>16:00–24:00停产</td>
+</tr>
+<tr class="odd">
+<td>连续生产</td>
+<td>00:00–24:00</td>
+<td>按设备停机另记资源占用</td>
+</tr>
+<tr class="even">
+<td>工作日生产</td>
+<td>周一至周五按相应班次</td>
+<td>周末设为停产或经确认的可选期</td>
+</tr>
+</tbody>
+</table></div>
+<p>这些时段仅用于演示。企业的休息、交接班、跨日班次和周历应按实际安排映射。若甲设备只上单班、乙设备上双班，统一时间轴应覆盖两者；局部停工写入各自<code>capacity.used</code>，避免将甲设备的停工设成全局停产。</p>
+<p>可选加班可以用<code>status=-1</code>表达待选择状态。进入需要确定日历的运行前，应先确认采用哪些加班段并记录依据。</p>
+<h2 id="2-一次维护如何影响产能">2. 一次维护如何影响产能</h2>
+<p>8小时聚合时间单元内，设备维护2小时：</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>表</th>
+<th>关键字段</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>time_unit</code></td>
+<td><code>id=1, offset=0, scale=28800, status=1</code></td>
+</tr>
+<tr class="even">
+<td><code>capacity</code></td>
+<td><code>workcenter=11, time_unit=1, used=0.25</code></td>
+</tr>
+</tbody>
+</table></div>
+<p>可用6小时。维护改为3小时，<code>used=0.375</code>，可用5小时。如果已有任务占2小时、维护也占2小时且重叠1小时，不可用总量为3小时，不能直接相加为4小时。</p>
+<p>要求“10:00–12:00设备不可加工”时，可将对应两个小时的设备占用设为1，或采用支持明确停机时窗的排程配置。仅给出整班25%的占用，无法还原停机发生在班初、班中还是班末。</p>
+<h2 id="3-候选设备与共用工装">3. 候选设备与共用工装</h2>
+<p>同一工序可配置两条<code>process_adaptor</code>记录，分别指向设备11和13；两条记录可以拥有不同出件率、时长、批量与优先级。替代设备的存在需要保留在数据中，由本次能力选择策略处理。</p>
+<p>若两台设备共用一套工装，将工装作为工作中心20：</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">shared_resource.binding</th>
+<th style="text-align: right;">shared_resource.to</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">11</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">13</td>
+</tr>
+</tbody>
+</table></div>
+<p>工装的可用时间单独记录为<code>capacity(workcenter=20, time_unit=1, used=0.5)</code>。两台设备各可用8小时，也不代表工装可同时服务16小时。目标资源是否连续占用工装、每件占用多久，应与具体能力配置相匹配。</p>
+<h2 id="4-一次加工多种产出">4. 一次加工、多种产出</h2>
+<p>同一模具每循环产出A两件、B两件、C一件，相关适配记录使用相同共同加工组。执行10次后，分别得到20、20、10件。</p>
+<p>需求分别为18、20、12件时，差异为A余2件、B刚好、C缺2件。是否加做两次，要结合新增A、B库存和C短缺代价决定。计算负荷时，共同循环只计一次占用；计算物料时按约定消耗基准归集，避免把共同加工时间重复相加。</p>
+<h2 id="5-到料记录累计值转成增量">5. 到料记录：累计值转成增量</h2>
+<p>来源系统给出截至两期的累计可用量80、120件，而输入链路按各期增量求和：</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>时期</th>
+<th style="text-align: right;">来源累计量</th>
+<th style="text-align: right;">写入就绪增量</th>
+<th style="text-align: right;">运行时累计量</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>第1期</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">80</td>
+</tr>
+<tr class="even">
+<td>第2期</td>
+<td style="text-align: right;">120</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">120</td>
+</tr>
+</tbody>
+</table></div>
+<p>若直接写80、120再累加，就会把可用量错误放大到200。第二期收到的是“当前剩余库存”时，还需要区分前期已消耗、已承诺和冻结量，不能直接对两个库存快照相减。</p>
+<p>物料被冻结或到货取消时，应重建后续可用曲线，按接入约定处理减少量；本教程的非负增量示例不接收未经解释的负记录。</p>
+<h2 id="6-库存目标转成累计生产范围">6. 库存目标转成累计生产范围</h2>
+<p>期初20件，最低20件、最高100件，前两期分别出库80、40件：</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>时点</th>
+<th style="text-align: right;">累计出库</th>
+<th style="text-align: right;">累计生产下限</th>
+<th style="text-align: right;">累计生产上限</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>第1期末</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">160</td>
+</tr>
+<tr class="even">
+<td>第2期末</td>
+<td style="text-align: right;">120</td>
+<td style="text-align: right;">120</td>
+<td style="text-align: right;">200</td>
+</tr>
+</tbody>
+</table></div>
+<p>这些值分别写入同一制品各期的累计上下限。它们是到各时点的界限，不能把80与120相加作为第二期下限。若出库发生在生产入库之前，还需要更细的时间表达。</p>
+<h2 id="7-不同单位如何落到整数模板">7. 不同单位如何落到整数模板</h2>
+<p>连续工艺每件消耗0.2升涂料，当前<code>ingredient.number</code>为整数。可统一换为毫升，每件填200；物料供给、库存记录及结果说明同步使用毫升。例如40升供给应转换为40000毫升，可配套200件。</p>
+<p>转换记录应包含来源单位、目标单位、换算系数和舍入策略。不要靠SQLite宽松存储把小数塞入整数列，再假定后续加载与求解会保留它。</p>
+<h2 id="8-选择后的检查">8. 选择后的检查</h2>
+<p>把所选模式写成一张配置说明表：业务条件、接口记录、计算预期、模型采用方式、结果检查。先用小数量手算一个例子，再扩展到实际数据量。下一步可以使用<a
+href="./Interface-Walkthrough.html">贯穿案例</a>运行结构校验和数据层读取。</p>
+      </article>
+      <footer class="article-footer"><a href="./">返回学习中心</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki/Interface-Configurations-zh-CN">在 Wiki 阅读</a></footer>
+    </main>
+  </div>
+  <footer class="site-footer shell"><strong>DecisioWorks</strong><span>从生产问题出发，理解与使用决策能力。</span></footer>
+</body>
+</html>

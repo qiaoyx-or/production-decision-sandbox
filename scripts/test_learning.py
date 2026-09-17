@@ -28,7 +28,7 @@ class LearningTests(unittest.TestCase):
 
     def test_manifest_and_translation_pairs(self):
         manifest = json.loads((ROOT / "content/learning/manifest.json").read_text(encoding="utf-8"))
-        self.assertEqual(len(manifest), 74)
+        self.assertEqual(len(manifest), 104)
         hashes = {item["source"]: item["sha256"] for item in manifest}
         for page in self.pages:
             self.assertEqual(hashes[page["source"]], page["sha256"])
@@ -78,13 +78,13 @@ class LearningTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             destination = Path(tmp)
             learning.export_wiki(ROOT, destination)
-            self.assertEqual(len(list(destination.glob("*.md"))), 74)
+            self.assertEqual(len(list(destination.glob("*.md"))), 104)
             for page in self.pages:
                 original = (ROOT / "content/learning" / page["source"]).read_text(encoding="utf-8-sig")
                 exported = (destination / page["source"]).read_text(encoding="utf-8")
                 self.assertEqual(re.sub(r"\]\([^)]+\)", "]()", original),
                                  re.sub(r"\]\([^)]+\)", "]()", exported))
-                self.assertNotRegex(exported, r"\]\((?:Learning-|Worksheet-)[^)]+\.md\)")
+                self.assertNotRegex(exported, r"\]\((?:Learning-|Worksheet-|Interface-)[^)]+\.md\)")
 
     def test_learning_urls_are_in_indexnow_scope(self):
         from submit_indexnow import public_url

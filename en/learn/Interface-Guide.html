@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Learning the Standardized Data Interface | DecisioWorks</title>
+  <meta name="description" content="A production model needs to know what to make, how it can be made, which resources it uses, when materials become available, and how much work each period permits. The DecisioWorks standardized data interface organizes these facts as connected business objects." />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-Guide.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-Guide.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-Guide.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-Guide.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Learning the Standardized Data Interface | DecisioWorks" />
+  <meta property="og:description" content="A production model needs to know what to make, how it can be made, which resources it uses, when materials become available, and how much work each period permits. The DecisioWorks standardized data interface organizes these facts as connected business objects." />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-Guide.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers-en.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Learning the Standardized Data Interface | DecisioWorks" />
+  <meta name="twitter:description" content="A production model needs to know what to make, how it can be made, which resources it uses, when materials become available, and how much work each period permits. The DecisioWorks standardized data interface organizes these facts as connected business objects." />
+  <meta name="twitter:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers-en.png" />
+  <link rel="icon" href="../../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "Learning the Standardized Data Interface", "description": "A production model needs to know what to make, how it can be made, which resources it uses, when materials become available, and how much work each period permits. The DecisioWorks standardized data interface organizes these facts as connected business objects.", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-Guide.html", "inLanguage": "en", "author": {"@type": "Organization", "name": "DecisioWorks", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/"}, {"@type": "ListItem", "position": 2, "name": "Learning Center", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/"}, {"@type": "ListItem", "position": 3, "name": "Learning the Standardized Data Interface", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-Guide.html"}]}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#article">Skip to content</a>
+  <header class="learning-header"><div class="shell header-inner">
+    <a class="brand" href="../"><img src="../../assets/decisioworks-logo.png" alt="" width="36" height="36" /><strong>DecisioWorks</strong></a>
+    <nav aria-label="Main navigation">
+      <a href="../">Home</a>
+      <a href="../docs/">Docs</a>
+      <a class="language-switch" href="../../learn/Interface-Guide.html" lang="zh-CN" hreflang="zh-CN">中文</a>
+    </nav>
+  </div></header>
+  <div class="shell breadcrumbs" aria-label="Breadcrumb"><a href="../">Home</a><span>/</span><a href="./">Learning Center</a><span>/</span><span aria-current="page">Learning the Standardized Data Interface</span></div>
+  <div class="shell reading-layout">
+    <aside class="sidebar"><nav aria-label="Course contents"><a class="contents-home" href="./">Learning Center</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A From a Production Problem to a Testable Decision</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B Represent Manufacturing in Data</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C Objectives, Experience and Operational Rules</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D Read Plans through Recorded Cases</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E Coordinate Planning Levels and Responses</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F Open Collaboration and Continued Evolution</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G Connect Applications and AI Agents through Standard Actions</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H Build Everyday Decision Capability</a><span class="nav-section">Data Interface Guide</span><a href="./Interface-01-Calendar.html">01 Configure Time, Shifts, and Maintenance</a><a href="./Interface-02-Demand.html">02 Express Orders, Products, and Attributes</a><a href="./Interface-03-Resources.html">03 Configure Work Centers and Shared Resources</a><a href="./Interface-04-Routing.html">04 Configure Routes and Alternative Resources</a><a href="./Interface-05-Quantity.html">05 Calculate Cycle Output, Batches, and Processing Time</a><a href="./Interface-06-Materials.html">06 Configure Operation-Level Materials and Availability</a><a href="./Interface-07-Inventory.html">07 Translate Inventory Requirements into Cumulative Bounds</a><a href="./Interface-08-Validation.html">08 Import, Validate, and Load Business Data</a><a href="./Interface-09-Results.html">09 Interpret Results and Prepare the Next Planning Cycle</a><a href="./Interface-Configurations.html">Configuration Patterns: From Shop-Floor Arrangements to Data</a><a href="./Interface-Fields.html">Complete Field Reference</a><a href="./Interface-Guide.html" aria-current="page">Learning the Standardized Data Interface</a><a href="./Interface-Relationships.html">Object Relationships and Calculation Rules</a><a href="./Interface-Semantics.html">DecisioWorks Standardized Data Interface: A Detailed Semantic Guide</a><a href="./Interface-Walkthrough.html">Worked Example: Inputs, Checks and Adjustments for 120 Brackets</a><span class="nav-section">Worksheets</span><a href="./Worksheet-Operational-Rule.html">Operational Rule and Verification</a><a href="./Worksheet-Plan-Comparison.html">Baseline and Adjusted Plan Comparison</a><a href="./Worksheet-Review-and-Change-Record.html">Review and Change Record</a><a href="./Worksheet-Scenario-Brief.html">Scenario and Decision Task</a></nav></aside>
+    <main>
+      <details class="mobile-contents"><summary>Course contents</summary><nav aria-label="Mobile course contents"><a class="contents-home" href="./">Learning Center</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A From a Production Problem to a Testable Decision</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B Represent Manufacturing in Data</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C Objectives, Experience and Operational Rules</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D Read Plans through Recorded Cases</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E Coordinate Planning Levels and Responses</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F Open Collaboration and Continued Evolution</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G Connect Applications and AI Agents through Standard Actions</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H Build Everyday Decision Capability</a><span class="nav-section">Data Interface Guide</span><a href="./Interface-01-Calendar.html">01 Configure Time, Shifts, and Maintenance</a><a href="./Interface-02-Demand.html">02 Express Orders, Products, and Attributes</a><a href="./Interface-03-Resources.html">03 Configure Work Centers and Shared Resources</a><a href="./Interface-04-Routing.html">04 Configure Routes and Alternative Resources</a><a href="./Interface-05-Quantity.html">05 Calculate Cycle Output, Batches, and Processing Time</a><a href="./Interface-06-Materials.html">06 Configure Operation-Level Materials and Availability</a><a href="./Interface-07-Inventory.html">07 Translate Inventory Requirements into Cumulative Bounds</a><a href="./Interface-08-Validation.html">08 Import, Validate, and Load Business Data</a><a href="./Interface-09-Results.html">09 Interpret Results and Prepare the Next Planning Cycle</a><a href="./Interface-Configurations.html">Configuration Patterns: From Shop-Floor Arrangements to Data</a><a href="./Interface-Fields.html">Complete Field Reference</a><a href="./Interface-Guide.html" aria-current="page">Learning the Standardized Data Interface</a><a href="./Interface-Relationships.html">Object Relationships and Calculation Rules</a><a href="./Interface-Semantics.html">DecisioWorks Standardized Data Interface: A Detailed Semantic Guide</a><a href="./Interface-Walkthrough.html">Worked Example: Inputs, Checks and Adjustments for 120 Brackets</a><span class="nav-section">Worksheets</span><a href="./Worksheet-Operational-Rule.html">Operational Rule and Verification</a><a href="./Worksheet-Plan-Comparison.html">Baseline and Adjusted Plan Comparison</a><a href="./Worksheet-Review-and-Change-Record.html">Review and Change Record</a><a href="./Worksheet-Scenario-Brief.html">Scenario and Decision Task</a></nav></details>
+      <article id="article">
+        <header class="article-heading"><p class="kicker">Standardized Data Interface</p><h1>Learning the Standardized Data Interface</h1></header>
+        <details class="page-contents"><summary>On this page</summary><nav><a href="#the-semantic-guide">The Semantic Guide</a><a href="#learn-through-tasks">Learn Through Tasks</a><a href="#references-and-practice">References and Practice</a></nav></details>
+        <p><a
+href="../../assets/data-interface/decisioworks-data-interface-examples.zip">Download
+the complete exercise pack (SQL, field list, Python scripts, database
+and CSV files)</a></p>
+<p>A production model needs to know what to make, how it can be made,
+which resources it uses, when materials become available, and how much
+work each period permits. The DecisioWorks standardized data interface
+organizes these facts as connected business objects.</p>
+<p>This course provides a complete semantic guide, nine task-based
+lessons, and field, relationship, template, and code references. Begin
+with the system map; use the lessons to build a configuration; consult
+the field reference for exact storage requirements.</p>
+<h2 id="the-semantic-guide">The Semantic Guide</h2>
+<p><a href="./Interface-Semantics.html">DecisioWorks Standardized Data
+Interface: A Detailed Semantic Guide</a> covers objects, field meanings,
+time and quantity rules, relationships, and result updates.</p>
+<h2 id="learn-through-tasks">Learn Through Tasks</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th>Lesson</th>
+<th>What you will produce</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="./Interface-01-Calendar.html">01 Configure time, shifts, and
+maintenance</a></td>
+<td>Time records, resource occupancy, and an available-time
+calculation</td>
+</tr>
+<tr class="even">
+<td><a href="./Interface-02-Demand.html">02 Express orders, products, and
+attributes</a></td>
+<td>Staged order deliveries and a product-attribute mapping</td>
+</tr>
+<tr class="odd">
+<td><a href="./Interface-03-Resources.html">03 Configure work centers and
+shared resources</a></td>
+<td>Resource hierarchy, sharing relationships, and availability
+records</td>
+</tr>
+<tr class="even">
+<td><a href="./Interface-04-Routing.html">04 Configure routes and
+alternative resources</a></td>
+<td>Operation precedence, route options, and resource mappings</td>
+</tr>
+<tr class="odd">
+<td><a href="./Interface-05-Quantity.html">05 Calculate cycle output,
+batches, and processing time</a></td>
+<td>Quantity conversions, batch checks, and joint-output
+calculations</td>
+</tr>
+<tr class="even">
+<td><a href="./Interface-06-Materials.html">06 Configure operation-level
+materials and availability</a></td>
+<td>Material requirements, time-phased supply, and a manual feasibility
+check</td>
+</tr>
+<tr class="odd">
+<td><a href="./Interface-07-Inventory.html">07 Translate inventory
+requirements into cumulative bounds</a></td>
+<td>Bounds derived from an inventory balance</td>
+</tr>
+<tr class="even">
+<td><a href="./Interface-08-Validation.html">08 Import, validate, and load
+business data</a></td>
+<td>A mapping sheet, a separate teaching database, and validation
+results</td>
+</tr>
+<tr class="odd">
+<td><a href="./Interface-09-Results.html">09 Interpret results and prepare
+the next planning cycle</a></td>
+<td>Output, time, material checks, and an update checklist</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="references-and-practice">References and Practice</h2>
+<ul>
+<li><a href="./Interface-Fields.html">Complete field reference</a>: 18
+tables and 105 fields in the current standard template, separating
+business meaning from storage requirements.</li>
+<li><a href="./Interface-Relationships.html">Relationship and rule
+reference</a>: foreign keys, cardinalities, calculations, and
+distinctions between similarly named fields.</li>
+<li><a href="./Interface-Configurations.html">Configuration patterns</a>:
+shifts, continuous production, maintenance, sharing, inventory, and
+quantity conventions.</li>
+<li><a href="./Interface-Walkthrough.html">End-to-end exercise and
+commands</a>: a 120-unit requirement, configuration checks, a manually
+constructed candidate plan, and a maintenance change.</li>
+</ul>
+<p>The quantities, resources, and periods in the exercises are teaching
+data. The supplied program builds a separate database and runs
+structural checks and manual calculations. Candidate rows are explicitly
+labeled as manually constructed; solver results must come from an actual
+run. This separates learning how data is expressed from testing how a
+model uses it.</p>
+<p>For production configuration, use the field definitions and
+capability documentation that accompany your installed version. The
+extensible attribute mechanism is not limited to three dimensions; this
+SQLite template implements three attribute tables.</p>
+      </article>
+      <footer class="article-footer"><a href="./">Back to Learning Center</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki/Interface-Guide">Read on Wiki</a></footer>
+    </main>
+  </div>
+  <footer class="site-footer shell"><strong>DecisioWorks</strong><span>Learn decision capabilities through production problems.</span></footer>
+</body>
+</html>

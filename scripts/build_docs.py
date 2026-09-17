@@ -228,7 +228,11 @@ def rewrite_links(body: str, language: str, selected: set[str]) -> str:
         target, suffix = (href.split("#", 1) + [""])[:2]
         target = target.removesuffix(".md")
         bare = target.removesuffix("-zh-CN")
-        if bare in selected:
+        if bare.startswith('Interface-'):
+            resolved = f'../learn/{bare}.html'
+            if suffix:
+                resolved += f'#{suffix}'
+        elif bare in selected:
             resolved = f"{bare}.html"
             if suffix:
                 resolved += f"#{suffix}"
@@ -450,7 +454,9 @@ def build(project_root: Path, wiki_publish: Path | None) -> None:
             )
         asset_source = (wiki_publish or (project_root.parent / "wiki" / "publish")) / "assets"
         if asset_source.exists():
-            shutil.copytree(asset_source, output_dir / "assets", dirs_exist_ok=True)
+            # The interface course uses shared root assets, not language-local copies.
+            shutil.copytree(asset_source, output_dir / "assets", dirs_exist_ok=True,
+                            ignore=shutil.ignore_patterns("data-interface", "__pycache__"))
 
     from build_sitemap import build as build_sitemap
     build_sitemap(project_root)

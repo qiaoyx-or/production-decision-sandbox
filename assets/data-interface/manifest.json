@@ -1,0 +1,218 @@
+{
+  "pages": [
+    {
+      "source": "zh-CN/index.md",
+      "published": "Interface-Guide-zh-CN.md",
+      "source_sha256": "e41901fbe9d3b244fe7664831e3a806009754a8f26546adb8c21a5e236ebed1b",
+      "published_sha256": "7e17a48eec44c9f2c83169a4bc95cceabb6c1dcdf8a0afb033eef859a72c919a"
+    },
+    {
+      "source": "zh-CN/semantics.md",
+      "published": "Interface-Semantics-zh-CN.md",
+      "source_sha256": "4fe6eecfea995d1b7eace7a4483aa30c8e8948dfc76b4871b0e1486190d41b1e",
+      "published_sha256": "87553add1056f29fd9ca341ce6868409a15487b58b32a27debe7b41ca6520003"
+    },
+    {
+      "source": "zh-CN/field-reference.md",
+      "published": "Interface-Fields-zh-CN.md",
+      "source_sha256": "3b4ee230b976e4ae802a917759041d5463c43f2b73a4cf3c5e128dcdefa85507",
+      "published_sha256": "0d0c1816bc2138da1a14faaee631c7d0006d2bf12d80f9281e1a22be1b79b866"
+    },
+    {
+      "source": "zh-CN/relationship-reference.md",
+      "published": "Interface-Relationships-zh-CN.md",
+      "source_sha256": "816799e0630aac37a4a6a616c0a6aef0c9835b603a9cc16932b9dec269545e69",
+      "published_sha256": "16620994e684d42e8a5a463488b447f09cbeabd6262fbae771f182f501b472c9"
+    },
+    {
+      "source": "zh-CN/configuration-patterns.md",
+      "published": "Interface-Configurations-zh-CN.md",
+      "source_sha256": "7797588159c1917e926a48adc550029dfb0bd926a7f942199989692f5304d4dd",
+      "published_sha256": "db00f5ddf5dbe5f08794e5623ee4c13dee4e02bd9551b92959c04813e4f31723"
+    },
+    {
+      "source": "zh-CN/walkthrough.md",
+      "published": "Interface-Walkthrough-zh-CN.md",
+      "source_sha256": "8185a73765f89eabfa27a66f9a55c54fd03617f5d51338fed6536c2ef42eb1da",
+      "published_sha256": "ccc96cdb48a018229554b5b0ea4f272643b96b93b56901cfbb66eb369dd1859f"
+    },
+    {
+      "source": "zh-CN/01-calendar.md",
+      "published": "Interface-01-Calendar-zh-CN.md",
+      "source_sha256": "261b67045fceb11a003a09ca92e5e9206a16208932b2dcb22573cc0720a1494d",
+      "published_sha256": "76a5777059330fedd90d2173371d5a2a87d69a33e41c92250862523cbc1aa7bc"
+    },
+    {
+      "source": "zh-CN/02-demand.md",
+      "published": "Interface-02-Demand-zh-CN.md",
+      "source_sha256": "73db59a0ca2f3dd2cee2a24d64ae9c17ba4f1115a0d958ca44553428de209a66",
+      "published_sha256": "e0cd0caf2d95e21e42f927bace6700195a6d0b3eedd72661c3e4ed9f79ca9324"
+    },
+    {
+      "source": "zh-CN/03-resources.md",
+      "published": "Interface-03-Resources-zh-CN.md",
+      "source_sha256": "a7b73f4b6fd3b93cdc9976d4aa4588ac8fe9059559144960b141b687e23074b1",
+      "published_sha256": "4ce43b58ee8a692ecc4643af146e08919fd94a512bed52815a8035a510d09b27"
+    },
+    {
+      "source": "zh-CN/04-routing.md",
+      "published": "Interface-04-Routing-zh-CN.md",
+      "source_sha256": "ffea6adc1b0fae7b16d7b1a745cac9bcd37662290d27afe9d0a29d9239d9aacf",
+      "published_sha256": "4d77b5795a436178faf8d0414e5c93aeebcc9f980f31da556734141e5b0824bf"
+    },
+    {
+      "source": "zh-CN/05-quantity.md",
+      "published": "Interface-05-Quantity-zh-CN.md",
+      "source_sha256": "7efaa0f6d35f0c8a700c6a34009ddb05d8ba8ebbabc093c56a04844877a6358c",
+      "published_sha256": "49ab385eb78a1a05208d6dbe0f113cf2e780d2cd41b60ba49e844ccfc30fce7a"
+    },
+    {
+      "source": "zh-CN/06-materials.md",
+      "published": "Interface-06-Materials-zh-CN.md",
+      "source_sha256": "44ad65f364ba22748f64b7ed0871b598e05bd7bafd6bbc5f1975ee71b131908e",
+      "published_sha256": "903b83428b62727a02534bec8002e74c9957af9ae9ad1897d5d0bf2b1c48c574"
+    },
+    {
+      "source": "zh-CN/07-inventory.md",
+      "published": "Interface-07-Inventory-zh-CN.md",
+      "source_sha256": "434cc0fec1f72728b0ec5c6a7e73c60d8fb10f9e30690e9407020dee7803528a",
+      "published_sha256": "24c1e9f8762baf97c3d3a11fdda751a0195697290158e0884ec4e79a5b656041"
+    },
+    {
+      "source": "zh-CN/08-validation.md",
+      "published": "Interface-08-Validation-zh-CN.md",
+      "source_sha256": "c19ad4431fcb41836859a093c5480f23607b54290d82611e01a6ef760ba14b47",
+      "published_sha256": "0667e5675610edaa02061e1d0cbf3e88c6724b600e5eef6edd2cc754c123930f"
+    },
+    {
+      "source": "zh-CN/09-results.md",
+      "published": "Interface-09-Results-zh-CN.md",
+      "source_sha256": "8a2586aa768d66314a75001bc91fb1551cd6b4eadac30124224dc6733ddffe26",
+      "published_sha256": "96d78f2212cdb9994deacdd2471cc25ab2cc0f6c3bfc0ece36c123a196cca6ad"
+    },
+    {
+      "source": "en/index.md",
+      "published": "Interface-Guide.md",
+      "source_sha256": "746365d758ed3e2f90682b3648f5c68274b0dbc0258f400295711192b0180ace",
+      "published_sha256": "3033fc3564c19f33a9556da68d67537dba3746d8a204f161aef4b8acce6e6622"
+    },
+    {
+      "source": "en/semantics.md",
+      "published": "Interface-Semantics.md",
+      "source_sha256": "187e050df4c759fd8ae7d440ac078f3793180d90ef450885a15614c6a6e7eb63",
+      "published_sha256": "e54b10898d785039a735f837e56c1f574904aa47f36b7ebedd34c9af6feb5ea8"
+    },
+    {
+      "source": "en/field-reference.md",
+      "published": "Interface-Fields.md",
+      "source_sha256": "2ff44fcc0110c20f757c64b552cc7ef2c016b7ed4adf2f4d6406d0112202e6c0",
+      "published_sha256": "ceb509ba83379d8a1063bcab0c38bed7ab3bf6279c0301a4e0f22ee9c0d746a1"
+    },
+    {
+      "source": "en/relationship-reference.md",
+      "published": "Interface-Relationships.md",
+      "source_sha256": "5da897cc0cc2da7d15d65bab7cf20f7f390f7407432ac1256c547cfa5a36c0e3",
+      "published_sha256": "7d46c957fd3e1a6671defdaa0cd41b0cda4cb89faa4d379aa0cc8ee42b50ec24"
+    },
+    {
+      "source": "en/configuration-patterns.md",
+      "published": "Interface-Configurations.md",
+      "source_sha256": "b341e2dfa676466a29f4306372a4b11f2806c66b869f08dc5e47e0333180edcc",
+      "published_sha256": "f7700e710e813325000d71d33cd013a5ff0920500b912fcff5eeec850838e33e"
+    },
+    {
+      "source": "en/walkthrough.md",
+      "published": "Interface-Walkthrough.md",
+      "source_sha256": "402a708adcaa6bfda487c63f9519f82dbe1b4d03669d995cfbb0dabe390dfa87",
+      "published_sha256": "db3b0077762f82380dc1979e5d8d871f55ad95f2a70322d15814f9dec0dad129"
+    },
+    {
+      "source": "en/01-calendar.md",
+      "published": "Interface-01-Calendar.md",
+      "source_sha256": "1570a63e84e79911a9903d374b27026ec9e98ccf608d060850e7d9576e29e1af",
+      "published_sha256": "a451cc61eb54fc6b4767234a7303dc3405fb5ae48767206747a5a5e5304733f1"
+    },
+    {
+      "source": "en/02-demand.md",
+      "published": "Interface-02-Demand.md",
+      "source_sha256": "1344406b6a40eb2dc1d8c16e65a5af26ae1f41b383e2f6be43346a64b932d7c1",
+      "published_sha256": "137e7168f027634fb53ee15884bb03951f04c01e969be810bb270442ef79ff51"
+    },
+    {
+      "source": "en/03-resources.md",
+      "published": "Interface-03-Resources.md",
+      "source_sha256": "f2064029f81c70d5236260071a6ba20e67d7eea1fc93f4a4c46ee8c35c1420b6",
+      "published_sha256": "d592077dfddd641493ed9a55613574221a07450435c2b5f8c23db29aa2dd5848"
+    },
+    {
+      "source": "en/04-routing.md",
+      "published": "Interface-04-Routing.md",
+      "source_sha256": "aaf3e6711c5faf680921ff406a23396549ecdb9157da49a3d23b32459fba5f49",
+      "published_sha256": "ccc3ea95e850ea7116e3afa5222ed60d4444265f7390c27c3ca8641c932cc8e9"
+    },
+    {
+      "source": "en/05-quantity.md",
+      "published": "Interface-05-Quantity.md",
+      "source_sha256": "6a889dca148f244541523674385df87b6cfcd96151654a0311de8b7cd09529f0",
+      "published_sha256": "37f3ae4ed0b1ae6e5a82385d8c7729e7d591cad2f74fa98ed7d16cf2ea6b439d"
+    },
+    {
+      "source": "en/06-materials.md",
+      "published": "Interface-06-Materials.md",
+      "source_sha256": "2ba864ec11fe5168dc2aac907d450cd5357ed858f3ac6e8620ead8ea1a403314",
+      "published_sha256": "ba3b5125b71b3403dbc327a7638d25df73b555297d39367487eac1b09be2c5c6"
+    },
+    {
+      "source": "en/07-inventory.md",
+      "published": "Interface-07-Inventory.md",
+      "source_sha256": "cc9cc56560e106055811fbb75ec2ab66b703efa12c31c371c57ecc1aa95016dd",
+      "published_sha256": "9d2f902e05f5d4f62e2d7ecdac436bf9352664ff289a93bcf3a5dcff81fe2167"
+    },
+    {
+      "source": "en/08-validation.md",
+      "published": "Interface-08-Validation.md",
+      "source_sha256": "ea1c297995f1165e1f8e0627a89881368d0804d470f65e4ec27585a661c81d3f",
+      "published_sha256": "7c349d2fe36bfb370ee4d7c424c77f8299bbe6447426cfe21ee68fd34394a93f"
+    },
+    {
+      "source": "en/09-results.md",
+      "published": "Interface-09-Results.md",
+      "source_sha256": "3dc410ebc398be87772182ce12b499886fb44308f5c9c89efb8f01129f51e54f",
+      "published_sha256": "743ec6201fdcac2ca7678c298bb9bef51e1f19e5c10085c1e2584804f25d58bf"
+    }
+  ],
+  "download": "decisioworks-data-interface-examples.zip",
+  "archive_sha256": "aa908327bda644f5787a3f83edc464cdef931666fa6873926f32e8b6570b5266",
+  "example_files": {
+    "base.sql": "3a50a23fe9eec26fbea9a1ce15e039320f0d91a8c9558afd5f6d333603897cee",
+    "build_example.py": "bec788b6ff436e341ad3ef67e43e1c2e299daeb7af6a3ba3f73e31a96754ff2d",
+    "calculate_candidate.py": "b5cd5c7b8d45e2fe1be5bc21c04be0d8ba39a70a61734e2e94cf68fca82d0247",
+    "check_example.py": "599232fc978afec7c0dbb10ffee5e49d8efdd66f893c8c5f7c6cc13fa56ab854",
+    "fields.json": "6f7fae74e647b7e2979e94d0e8d0bf2c3da31fa24835c181684a0f2380170b40",
+    "load_with_decisioworks.py": "0553ca821122dc82b91008cc7460e9b418e5349b031cfaabe98b8782f910ec00",
+    "sample-output/capacity.csv": "ee1cfb76d398652c1abb30a6a2fb61167b77babf028c3b1acf49d91ece129fa5",
+    "sample-output/data.db": "a23317f39f8bdda7e60c359cdaf26d6fd96da2c6bf0012d00accd742e23f27dc",
+    "sample-output/ingredient.csv": "32ef2f66dda3052f04de63909610795bafedcad392d73fced4a5f8dfc87a4790",
+    "sample-output/inventory_limit.csv": "6e303f0075a27074901b234f8944f0a4630072eeb0e366aa487fc63eee3d4940",
+    "sample-output/kitting_information.csv": "830c411c2d00f056704255969fd4098336e8268955a1b6923fc4801c349a6b37",
+    "sample-output/manual_candidate.csv": "950671348b312f6264a978fb28523e3ba9c6ab7a08b17269209f754a45642d43",
+    "sample-output/material.csv": "6643c9257a661242211fed5889d0fbd12fa0fa51e0232c8041ccbcf764e6cd55",
+    "sample-output/order_info.csv": "198752adb3938aeb077a238de37ffee21be809c6221c21b623831fbe103c7e0d",
+    "sample-output/order_item.csv": "79cef624068dac65f7550f73c282227f4e9631cf0f8d7dbf54c110bb461fdd8b",
+    "sample-output/planning_result.csv": "764ba3b5d1c708115e68ff141e0d22ee4a52c6fd32c04bfb433cf3058433f780",
+    "sample-output/process.csv": "7de496b218f7b0c8a56d4fbbf31b2bfcd9043b6649486acd3c6c9a30ccb43fa4",
+    "sample-output/process_adaptor.csv": "b516caf449695ef123c742125f1f317931992b1062953ec5521100f7bb6dbd6b",
+    "sample-output/process_route.csv": "bbd0c310323bf5194d2ea0cd919b18a89a9154820198027d46568085cb22981f",
+    "sample-output/product.csv": "f6079ad116167795743d66a1c39064f9d5b42c8343b30178e4d53ab8cefca286",
+    "sample-output/property_1.csv": "2bbdd236d17a40dfbb1425d23fd6d22836c775f87ac115590af943fabf87b0c3",
+    "sample-output/property_2.csv": "2173d01b6fb17f21868506ec68df7ee05848f1fb0d7b47034452b3d4fb1592db",
+    "sample-output/property_3.csv": "2173d01b6fb17f21868506ec68df7ee05848f1fb0d7b47034452b3d4fb1592db",
+    "sample-output/scenario.json": "b03371e1e78a02e3c0b4765c3d1d163153cba016582bc3bc548a4e188cff6528",
+    "sample-output/shared_resource.csv": "0bda6b13739d4d09a893ef24b4e8e1a7f9f5cf9299f4bbbb97ac50b3e8bf9cd4",
+    "sample-output/time_unit.csv": "c86a06e0c2cf448d4b0d9b4f20ee99fe66a409bfc687495982009918d5f20fe8",
+    "sample-output/workcenter.csv": "1a686a27e6a45421caaf50e53f5f72add2fff2404c35a9e41b2eafbdfc579a02",
+    "schema.sql": "c0ee339ca5fb6483ccd81f9c7b84112996617c5e460945b3cfbdc8237b968b6d",
+    "test_examples.py": "7391e53b0575bd7703252cdbab4270bbe8055fd2c6c2e67c190abae8a742fb39",
+    "third-period.sql": "79e49b1b49eaac0eff732bb053298ddfe81f01d815940e714d19f05033743009"
+  }
+}

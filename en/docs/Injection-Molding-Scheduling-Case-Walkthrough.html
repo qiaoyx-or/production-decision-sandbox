@@ -51,20 +51,26 @@ lines, 2 work centers, 115 materials, 418 process adaptors, and 120
 existing result rows. Its database integrity check passed. The existing
 rows are historical records in the input file and should be
 distinguished from newly generated results.</p>
+<h2 id="1-input-semantics">1. Input semantics</h2>
 <p>The recipe maps standard property slots to color, cap type, and
 container capacity. Capacity here means the product's container
 capacity, not equipment capacity. This keeps the model connected to
-business meaning instead of guessing meaning from storage positions.</p>
+business meaning instead of guessing meaning from storage positions such
+as <code>property_1</code> and <code>property_2</code>.</p>
+<h2 id="2-constraints-and-changeovers">2. Constraints and
+changeovers</h2>
 <p>The circular-sequence configuration enables capacity, demand,
 inventory, sequence-changeover, and circular-changeover constraints.
 Adjacent tasks use color for sequence changeovers; reused-capacity
 cycles use container capacity for circular state changes. Preprocessing
-validates integer fields and batch multiples before solving.</p>
+validates integer fields and batch multiples before solving. Correct
+inconsistent data before starting another run.</p>
+<h2 id="3-runtime-configuration">3. Runtime configuration</h2>
 <p>The reference configuration uses work center 2, sequence length 40,
 three cycles, objective weights color 0.1 and capacity 1, and a request
 of 16 threads for 60 seconds. These are sample settings, not universal
 injection-molding recommendations.</p>
-<p>Acceptance goes beyond the existence of a sequence.</p>
+<h2 id="4-outputs-and-acceptance">4. Outputs and acceptance</h2>
 <table>
 <thead>
 <tr class="header">
@@ -96,7 +102,8 @@ injection-molding recommendations.</p>
 </tr>
 <tr class="odd">
 <td>Batch audit</td>
-<td>Compare rate and demand multiples</td>
+<td>Check output per cycle, batch quantity, and model-required integer
+multiples; demand need not be a multiple of the batch quantity</td>
 <td>Did preprocessing catch inconsistency?</td>
 </tr>
 <tr class="even">
@@ -108,6 +115,8 @@ injection-molding recommendations.</p>
 </table>
 <p>For a rerun, change only a small number of color/capacity weights,
 sequence length, or cycle-count settings.</p>
+<h2 id="5-observed-runs-and-comparison">5. Observed runs and
+comparison</h2>
 <p>The following records come from DecisioWorks v1.4.0 Commercial
 Edition runs under an <code>Enterprise</code> license on 2026-08-31.
 Both API runs used 16 threads with a 60-second solve limit and returned
@@ -151,6 +160,67 @@ executions. Parallel search can return different feasible sequences, so
 the screenshot counts are not expected to match the API summary item by
 item. Each A/B comparison is evaluated only within its own execution
 environment and parameter baseline.</p>
+<h3 id="reading-the-original-chinese-screenshots">Reading the original
+Chinese screenshots</h3>
+<p>Read the left-side run configuration first, then the aggregate
+metrics and changeover-direction details on the right. The original
+Chinese interface is retained as run evidence.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Label in the screenshot</th>
+<th>English meaning</th>
+<th>Reading note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>颜色切换权重</td>
+<td>Color-change weight</td>
+<td>Weight applied to sequence changeovers</td>
+</tr>
+<tr class="even">
+<td>容器容量属性切换权重</td>
+<td>Container-capacity-change weight</td>
+<td>Weight applied to circular changeovers</td>
+</tr>
+<tr class="odd">
+<td>求解时限 / 求解线程</td>
+<td>Solve time limit / solver threads</td>
+<td>This baseline screenshot shows 60 seconds and 16 threads</td>
+</tr>
+<tr class="even">
+<td>序列切换次数 / 循环切换次数</td>
+<td>Sequence / circular changeover count</td>
+<td>This screenshot shows 57 and 8, respectively</td>
+</tr>
+<tr class="odd">
+<td>估算加权切换目标值 / 内核加权切换目标值</td>
+<td>Estimated / kernel weighted changeover objective</td>
+<td>Both show 18.3 here; a weighted value, not minutes or a physical
+count</td>
+</tr>
+<tr class="even">
+<td>候选方案数</td>
+<td>Candidate solution count</td>
+<td>One candidate is displayed</td>
+</tr>
+<tr class="odd">
+<td>端到端耗时</td>
+<td>End-to-end elapsed time</td>
+<td>Includes more than the solver time limit; shown in seconds</td>
+</tr>
+<tr class="even">
+<td>切换方向明细 / 切换目标材料审计</td>
+<td>Changeover-direction details / objective-material audit</td>
+<td>Check the business attribute, objective material and changeover
+count together</td>
+</tr>
+</tbody>
+</table>
+<p>Use the A/B comparison image to review changes within that UI
+experiment; do not substitute these screenshot values for the separate
+API results.</p>
 <section class="related-docs"><h2>Continue Reading</h2><div><a href="ERP-MES-Data-Mapping-Guide.html"><span>ERP/MES Data Mapping Guide</span><b>→</b></a><a href="Objectives-and-Rule-Control.html"><span>Objectives and Rule Control</span><b>→</b></a><a href="Results-Evidence-and-Feedback.html"><span>Results, Evidence, and Feedback</span><b>→</b></a></div></section></article>
   </main>
   <footer class="docs-footer"><div class="docs-shell"><strong>DecisioWorks</strong><span>Manufacturing Production Decision Toolkit</span></div></footer>

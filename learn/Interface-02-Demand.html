@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>02 表达订单、制品与产品属性 | DecisioWorks</title>
+  <meta name="description" content="客户订购蓝色支架120件，第一天交80件、第二天交40件。要保留一个订单身份，同时让两个交付要求分别进入计划。" />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-02-Demand.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-02-Demand.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-02-Demand.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-02-Demand.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="02 表达订单、制品与产品属性 | DecisioWorks" />
+  <meta property="og:description" content="客户订购蓝色支架120件，第一天交80件、第二天交40件。要保留一个订单身份，同时让两个交付要求分别进入计划。" />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-02-Demand.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="02 表达订单、制品与产品属性 | DecisioWorks" />
+  <meta name="twitter:description" content="客户订购蓝色支架120件，第一天交80件、第二天交40件。要保留一个订单身份，同时让两个交付要求分别进入计划。" />
+  <meta name="twitter:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <link rel="icon" href="../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "02 表达订单、制品与产品属性", "description": "客户订购蓝色支架120件，第一天交80件、第二天交40件。要保留一个订单身份，同时让两个交付要求分别进入计划。", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-02-Demand.html", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "DecisioWorks", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "首页", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/"}, {"@type": "ListItem", "position": 2, "name": "学习中心", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/"}, {"@type": "ListItem", "position": 3, "name": "02 表达订单、制品与产品属性", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-02-Demand.html"}]}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#article">跳到正文</a>
+  <header class="learning-header"><div class="shell header-inner">
+    <a class="brand" href="../"><img src="../assets/decisioworks-logo.png" alt="" width="36" height="36" /><strong>DecisioWorks</strong></a>
+    <nav aria-label="主导航">
+      <a href="../">主页</a>
+      <a href="../docs/">文档</a>
+      <a class="language-switch" href="../en/learn/Interface-02-Demand.html" lang="en" hreflang="en">English</a>
+    </nav>
+  </div></header>
+  <div class="shell breadcrumbs" aria-label="面包屑导航"><a href="../">首页</a><span>/</span><a href="./">学习中心</a><span>/</span><span aria-current="page">02 表达订单、制品与产品属性</span></div>
+  <div class="shell reading-layout">
+    <aside class="sidebar"><nav aria-label="课程目录"><a class="contents-home" href="./">学习中心</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A 从生产问题到可检验的决策</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B 用数据表达制造过程</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C 让目标、经验与规则参与决策</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D 从真实样例学会读计划</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E 让计划层级协同工作</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F 开放协作与持续演进</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G 用标准动作连接应用与AI Agent</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H 把一次练习变成日常能力</a><span class="nav-section">数据接口详解</span><a href="./Interface-01-Calendar.html">01 配置生产时间、班制与维护</a><a href="./Interface-02-Demand.html" aria-current="page">02 表达订单、制品与产品属性</a><a href="./Interface-03-Resources.html">03 配置工作中心与共享资源</a><a href="./Interface-04-Routing.html">04 配置工艺路线与可选资源</a><a href="./Interface-05-Quantity.html">05 核算出件率、批量与加工时间</a><a href="./Interface-06-Materials.html">06 配置工序级物料与齐套</a><a href="./Interface-07-Inventory.html">07 把库存要求转换为累计约束</a><a href="./Interface-08-Validation.html">08 导入、校验并读取业务数据</a><a href="./Interface-09-Results.html">09 解释结果并准备下一轮计划</a><a href="./Interface-Configurations.html">典型配置模式：从现场安排到接口记录</a><a href="./Interface-Fields.html">完整字段参考</a><a href="./Interface-Guide.html">标准化数据接口学习指南</a><a href="./Interface-Relationships.html">对象关系与计算规则</a><a href="./Interface-Semantics.html">DecisioWorks 标准化数据接口语义详解</a><a href="./Interface-Walkthrough.html">贯穿案例：120件支架的输入、核对与调整</a><span class="nav-section">工作表</span><a href="./Worksheet-Operational-Rule.html">现场规则记录与检查</a><a href="./Worksheet-Plan-Comparison.html">基线与调整方案比较</a><a href="./Worksheet-Review-and-Change-Record.html">复盘与持续改进记录</a><a href="./Worksheet-Scenario-Brief.html">场景与决策任务</a></nav></aside>
+    <main>
+      <details class="mobile-contents"><summary>课程目录</summary><nav aria-label="移动端课程目录"><a class="contents-home" href="./">学习中心</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A 从生产问题到可检验的决策</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B 用数据表达制造过程</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C 让目标、经验与规则参与决策</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D 从真实样例学会读计划</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E 让计划层级协同工作</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F 开放协作与持续演进</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G 用标准动作连接应用与AI Agent</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H 把一次练习变成日常能力</a><span class="nav-section">数据接口详解</span><a href="./Interface-01-Calendar.html">01 配置生产时间、班制与维护</a><a href="./Interface-02-Demand.html" aria-current="page">02 表达订单、制品与产品属性</a><a href="./Interface-03-Resources.html">03 配置工作中心与共享资源</a><a href="./Interface-04-Routing.html">04 配置工艺路线与可选资源</a><a href="./Interface-05-Quantity.html">05 核算出件率、批量与加工时间</a><a href="./Interface-06-Materials.html">06 配置工序级物料与齐套</a><a href="./Interface-07-Inventory.html">07 把库存要求转换为累计约束</a><a href="./Interface-08-Validation.html">08 导入、校验并读取业务数据</a><a href="./Interface-09-Results.html">09 解释结果并准备下一轮计划</a><a href="./Interface-Configurations.html">典型配置模式：从现场安排到接口记录</a><a href="./Interface-Fields.html">完整字段参考</a><a href="./Interface-Guide.html">标准化数据接口学习指南</a><a href="./Interface-Relationships.html">对象关系与计算规则</a><a href="./Interface-Semantics.html">DecisioWorks 标准化数据接口语义详解</a><a href="./Interface-Walkthrough.html">贯穿案例：120件支架的输入、核对与调整</a><span class="nav-section">工作表</span><a href="./Worksheet-Operational-Rule.html">现场规则记录与检查</a><a href="./Worksheet-Plan-Comparison.html">基线与调整方案比较</a><a href="./Worksheet-Review-and-Change-Record.html">复盘与持续改进记录</a><a href="./Worksheet-Scenario-Brief.html">场景与决策任务</a></nav></details>
+      <article id="article">
+        <header class="article-heading"><p class="kicker">标准化数据接口</p><h1>02 表达订单、制品与产品属性</h1></header>
+        <details class="page-contents"><summary>本页内容</summary><nav><a href="#把一个订单拆成可以计划的需求">把一个订单拆成可以计划的需求</a><a href="#建立订单与两条明细">建立订单与两条明细</a><a href="#属性怎样进入业务配置">属性怎样进入业务配置</a><a href="#自检">自检</a><a href="#练习与解析">练习与解析</a></nav></details>
+        <h2 id="把一个订单拆成可以计划的需求">把一个订单拆成可以计划的需求</h2>
+<p>客户订购蓝色支架120件，第一天交80件、第二天交40件。要保留一个订单身份，同时让两个交付要求分别进入计划。</p>
+<p>先建立制品P-1，当前记录的<code>id=1</code>。物理表中的属性外键指向属性记录，不直接保存“蓝色”。</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>表</th>
+<th style="text-align: right;">id</th>
+<th>name</th>
+<th>code</th>
+<th style="text-align: right;">value</th>
+<th style="text-align: right;">is_key</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>property_1</td>
+<td style="text-align: right;">1</td>
+<td>颜色</td>
+<td>BLUE</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">product.id</th>
+<th>name</th>
+<th>code</th>
+<th>vin</th>
+<th style="text-align: right;">property_1</th>
+<th>property_2</th>
+<th>property_3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td>蓝色支架</td>
+<td>P-1</td>
+<td>FIN-P1</td>
+<td style="text-align: right;">1</td>
+<td>NULL</td>
+<td>NULL</td>
+</tr>
+</tbody>
+</table></div>
+<p>本场景约定<code>property_1</code>表达颜色，名称说明属性维度，编码BLUE标识蓝色，数值1为该颜色的稳定数值表示。<code>vin</code>标识所属成品，不推导装配数量。关键属性用来区分需求中的制品；如后续规则引用颜色，还应检查它已被加载。</p>
+<h2 id="建立订单与两条明细">建立订单与两条明细</h2>
+<p><code>order_info</code>中的订单1使用编码<code>O-100</code>、描述“蓝色支架分期交付”、优先级0。创建时间可以保存原始时间戳。</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">order_item.id</th>
+<th style="text-align: right;">information</th>
+<th style="text-align: right;">product</th>
+<th style="text-align: right;">delivery_time</th>
+<th style="text-align: right;">number</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">80</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">40</td>
+</tr>
+</tbody>
+</table></div>
+<p><code>information=1</code>连接订单头，<code>product=1</code>连接制品，<code>delivery_time</code>连接第一课的时间单元。需求是80和40两条，而不是每期都填累计的80和120；是否做累计满足检查由后续模型处理。</p>
+<h2 id="属性怎样进入业务配置">属性怎样进入业务配置</h2>
+<p>下面是数据采集配置片段，业务名<code>color</code>对应本场景的属性位置：</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">context</span><span class="kw">:</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">inputs</span><span class="kw">:</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">data_acquisition</span><span class="kw">:</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">property_mappings</span><span class="kw">:</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">color</span><span class="kw">:</span><span class="at"> property_1</span></span></code></pre></div>
+<p>它是能力编排配方（recipe，将数据、参数和动作组织为运行流程的配置）中的一个片段，不是完整求解配方。换一个场景时，颜色可以位于其他属性表，但业务名称与含义应明确。</p>
+<h2 id="自检">自检</h2>
+<p>逐条检查订单、制品、时间和属性引用；核对两条明细合计120件；确认需求是否已经扣除取消与交付数量。物理ID与业务编码的转换应留在来源映射表，不能将字符串<code>P-1</code>直接填入整数<code>product</code>外键。</p>
+<p>同一订单的不同制品需要各自的制品记录。一个属性位置不能同时混装颜色与客户等级。属性维度扩展需要同步配置模板与加载链路，当前三个表不是设计上限。</p>
+<h2 id="练习与解析">练习与解析</h2>
+<p>客户将第二天40件改为第三天交付。先增加第三个合法时间单元，再把第二条明细的<code>delivery_time</code>改为新ID；数量仍为40。若交期编号不存在，即使总数量正确也不能形成有效输入。</p>
+<p>这一步只练习订单与时间的引用。若要继续核算库存、物料和产能，还需要同步以下文件。订单需求、预计出库和候选产出是三个不同对象；本例选择按交期出库，不能将此约定直接套用到所有业务。</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>文件或表</th>
+<th>三期练习中的修改</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>time_unit</code>、<code>order_item</code></td>
+<td>增加<code>(id=3, offset=2, scale=28800, status=1)</code>；明细2交期改为3</td>
+</tr>
+<tr class="even">
+<td><code>capacity</code></td>
+<td>为工作中心11、12分别增加第3期记录，<code>used=0</code></td>
+</tr>
+<tr class="odd">
+<td><code>scenario.json</code></td>
+<td><code>period_issues</code>改为<code>[80,0,40]</code>，按<code>time_unit.offset</code>顺序；期初库存仍为20</td>
+</tr>
+<tr class="even">
+<td><code>inventory_limit</code></td>
+<td>三期累计生产下限80、80、120，上限160、160、200，对应期末库存20至100</td>
+</tr>
+<tr class="odd">
+<td><code>kitting_information</code></td>
+<td>保留第2期到料40、80；第3期新增量为0，不能再填累计供给120、240</td>
+</tr>
+<tr class="even">
+<td><code>manual_candidate.csv</code></td>
+<td>将两条第2期产出40件的记录移到第3期；第2期不生产</td>
+</tr>
+</tbody>
+</table></div>
+<p>在<code>examples</code>目录创建一个独立、完整的三期副本：</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> build_example.py <span class="at">--third-period</span> <span class="at">--output-dir</span> ./third-period-example</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> check_example.py ./third-period-example/data.db</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> calculate_candidate.py ./third-period-example</span></code></pre></div>
+<p>生成器使用<a
+href="../assets/data-interface/examples/third-period.sql">三期调整SQL</a>，同时维护JSON、候选CSV及各表CSV；已有数据库不会被覆盖。手动练习时，应把表中各项一起修改。只改导出的CSV不会自动更新<code>data.db</code>。</p>
+<p>预期三期累计产出为80、80、120，期末库存均为20，<code>aggregate_checks_passed</code>及<code>issues_match_due_quantities</code>均为<code>true</code>。第2期没有候选产出行；第3期冲压和装配分别用100、80分钟。该结果是人工候选核算，不是求解记录。</p>
+<p>若只新增时间单元，复算会在<code>errors</code>中定位出库计划长度；只补出库计划还会定位缺少的库存限制或产能记录。若只把40件订单改为400件，<code>demand_issue_comparison</code>会显示差额<code>-360</code>，不能把未改变的库存手算当成需求已满足。</p>
+<p><a href="./Interface-01-Calendar.html">上一课</a> · <a
+href="./Interface-03-Resources.html">下一课：资源</a></p>
+      </article>
+      <footer class="article-footer"><a href="./">返回学习中心</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki/Interface-02-Demand-zh-CN">在 Wiki 阅读</a></footer>
+    </main>
+  </div>
+  <footer class="site-footer shell"><strong>DecisioWorks</strong><span>从生产问题出发，理解与使用决策能力。</span></footer>
+</body>
+</html>

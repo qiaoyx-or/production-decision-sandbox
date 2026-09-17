@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>08 Import, Validate, and Load Business Data | DecisioWorks</title>
+  <meta name="description" content="Write the base scenario from the first seven lessons into a separate teaching database, validate its structure and values, and load it through the project data layer. Shared fixtures and alternative machines remain extension exercises rather than implicit base conditions." />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-08-Validation.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-08-Validation.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-08-Validation.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-08-Validation.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="08 Import, Validate, and Load Business Data | DecisioWorks" />
+  <meta property="og:description" content="Write the base scenario from the first seven lessons into a separate teaching database, validate its structure and values, and load it through the project data layer. Shared fixtures and alternative machines remain extension exercises rather than implicit base conditions." />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-08-Validation.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers-en.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="08 Import, Validate, and Load Business Data | DecisioWorks" />
+  <meta name="twitter:description" content="Write the base scenario from the first seven lessons into a separate teaching database, validate its structure and values, and load it through the project data layer. Shared fixtures and alternative machines remain extension exercises rather than implicit base conditions." />
+  <meta name="twitter:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers-en.png" />
+  <link rel="icon" href="../../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "08 Import, Validate, and Load Business Data", "description": "Write the base scenario from the first seven lessons into a separate teaching database, validate its structure and values, and load it through the project data layer. Shared fixtures and alternative machines remain extension exercises rather than implicit base conditions.", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-08-Validation.html", "inLanguage": "en", "author": {"@type": "Organization", "name": "DecisioWorks", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/"}, {"@type": "ListItem", "position": 2, "name": "Learning Center", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/"}, {"@type": "ListItem", "position": 3, "name": "08 Import, Validate, and Load Business Data", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-08-Validation.html"}]}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#article">Skip to content</a>
+  <header class="learning-header"><div class="shell header-inner">
+    <a class="brand" href="../"><img src="../../assets/decisioworks-logo.png" alt="" width="36" height="36" /><strong>DecisioWorks</strong></a>
+    <nav aria-label="Main navigation">
+      <a href="../">Home</a>
+      <a href="../docs/">Docs</a>
+      <a class="language-switch" href="../../learn/Interface-08-Validation.html" lang="zh-CN" hreflang="zh-CN">中文</a>
+    </nav>
+  </div></header>
+  <div class="shell breadcrumbs" aria-label="Breadcrumb"><a href="../">Home</a><span>/</span><a href="./">Learning Center</a><span>/</span><span aria-current="page">08 Import, Validate, and Load Business Data</span></div>
+  <div class="shell reading-layout">
+    <aside class="sidebar"><nav aria-label="Course contents"><a class="contents-home" href="./">Learning Center</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A From a Production Problem to a Testable Decision</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B Represent Manufacturing in Data</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C Objectives, Experience and Operational Rules</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D Read Plans through Recorded Cases</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E Coordinate Planning Levels and Responses</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F Open Collaboration and Continued Evolution</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G Connect Applications and AI Agents through Standard Actions</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H Build Everyday Decision Capability</a><span class="nav-section">Data Interface Guide</span><a href="./Interface-01-Calendar.html">01 Configure Time, Shifts, and Maintenance</a><a href="./Interface-02-Demand.html">02 Express Orders, Products, and Attributes</a><a href="./Interface-03-Resources.html">03 Configure Work Centers and Shared Resources</a><a href="./Interface-04-Routing.html">04 Configure Routes and Alternative Resources</a><a href="./Interface-05-Quantity.html">05 Calculate Cycle Output, Batches, and Processing Time</a><a href="./Interface-06-Materials.html">06 Configure Operation-Level Materials and Availability</a><a href="./Interface-07-Inventory.html">07 Translate Inventory Requirements into Cumulative Bounds</a><a href="./Interface-08-Validation.html" aria-current="page">08 Import, Validate, and Load Business Data</a><a href="./Interface-09-Results.html">09 Interpret Results and Prepare the Next Planning Cycle</a><a href="./Interface-Configurations.html">Configuration Patterns: From Shop-Floor Arrangements to Data</a><a href="./Interface-Fields.html">Complete Field Reference</a><a href="./Interface-Guide.html">Learning the Standardized Data Interface</a><a href="./Interface-Relationships.html">Object Relationships and Calculation Rules</a><a href="./Interface-Semantics.html">DecisioWorks Standardized Data Interface: A Detailed Semantic Guide</a><a href="./Interface-Walkthrough.html">Worked Example: Inputs, Checks and Adjustments for 120 Brackets</a><span class="nav-section">Worksheets</span><a href="./Worksheet-Operational-Rule.html">Operational Rule and Verification</a><a href="./Worksheet-Plan-Comparison.html">Baseline and Adjusted Plan Comparison</a><a href="./Worksheet-Review-and-Change-Record.html">Review and Change Record</a><a href="./Worksheet-Scenario-Brief.html">Scenario and Decision Task</a></nav></aside>
+    <main>
+      <details class="mobile-contents"><summary>Course contents</summary><nav aria-label="Mobile course contents"><a class="contents-home" href="./">Learning Center</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A From a Production Problem to a Testable Decision</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B Represent Manufacturing in Data</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C Objectives, Experience and Operational Rules</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D Read Plans through Recorded Cases</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E Coordinate Planning Levels and Responses</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F Open Collaboration and Continued Evolution</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G Connect Applications and AI Agents through Standard Actions</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H Build Everyday Decision Capability</a><span class="nav-section">Data Interface Guide</span><a href="./Interface-01-Calendar.html">01 Configure Time, Shifts, and Maintenance</a><a href="./Interface-02-Demand.html">02 Express Orders, Products, and Attributes</a><a href="./Interface-03-Resources.html">03 Configure Work Centers and Shared Resources</a><a href="./Interface-04-Routing.html">04 Configure Routes and Alternative Resources</a><a href="./Interface-05-Quantity.html">05 Calculate Cycle Output, Batches, and Processing Time</a><a href="./Interface-06-Materials.html">06 Configure Operation-Level Materials and Availability</a><a href="./Interface-07-Inventory.html">07 Translate Inventory Requirements into Cumulative Bounds</a><a href="./Interface-08-Validation.html" aria-current="page">08 Import, Validate, and Load Business Data</a><a href="./Interface-09-Results.html">09 Interpret Results and Prepare the Next Planning Cycle</a><a href="./Interface-Configurations.html">Configuration Patterns: From Shop-Floor Arrangements to Data</a><a href="./Interface-Fields.html">Complete Field Reference</a><a href="./Interface-Guide.html">Learning the Standardized Data Interface</a><a href="./Interface-Relationships.html">Object Relationships and Calculation Rules</a><a href="./Interface-Semantics.html">DecisioWorks Standardized Data Interface: A Detailed Semantic Guide</a><a href="./Interface-Walkthrough.html">Worked Example: Inputs, Checks and Adjustments for 120 Brackets</a><span class="nav-section">Worksheets</span><a href="./Worksheet-Operational-Rule.html">Operational Rule and Verification</a><a href="./Worksheet-Plan-Comparison.html">Baseline and Adjusted Plan Comparison</a><a href="./Worksheet-Review-and-Change-Record.html">Review and Change Record</a><a href="./Worksheet-Scenario-Brief.html">Scenario and Decision Task</a></nav></details>
+      <article id="article">
+        <header class="article-heading"><p class="kicker">Standardized Data Interface</p><h1>08 Import, Validate, and Load Business Data</h1></header>
+        <details class="page-contents"><summary>On this page</summary><nav><a href="#task-create-an-explainable-data-copy">Task: Create an
+Explainable Data Copy</a><a href="#map-the-source-first">Map the Source First</a><a href="#build-and-check">Build and Check</a><a href="#use-the-real-project-entry-point">Use the Real Project Entry
+Point</a><a href="#exercise-and-answer">Exercise and Answer</a></nav></details>
+        <h2 id="task-create-an-explainable-data-copy">Task: Create an
+Explainable Data Copy</h2>
+<p>Write the base scenario from the first seven lessons into a separate
+teaching database, validate its structure and values, and load it
+through the project data layer. Shared fixtures and alternative machines
+remain extension exercises rather than implicit base conditions.</p>
+<h2 id="map-the-source-first">Map the Source First</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th>Source</th>
+<th>Business meaning</th>
+<th>Target field</th>
+<th>Conversion</th>
+<th>Check</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>P-1 on order O-100</td>
+<td>Demanded product</td>
+<td>order_item.product</td>
+<td>Map P-1 to id=1</td>
+<td>Product exists</td>
+</tr>
+<tr class="even">
+<td>80 due on day one</td>
+<td>Period delivery requirement</td>
+<td>delivery_time/number</td>
+<td>Time 1, quantity 80</td>
+<td>Unit is pieces</td>
+</tr>
+<tr class="odd">
+<td>Two maintenance hours</td>
+<td>Unavailable share of an eight-hour period</td>
+<td>capacity.used</td>
+<td>2÷8=0.25</td>
+<td>Deduct once</td>
+</tr>
+<tr class="even">
+<td>Four units per ten-minute cycle</td>
+<td>Per-cycle parameters</td>
+<td>productivity/processing_time</td>
+<td>4 and 600 seconds</td>
+<td>Batch 20 is divisible</td>
+</tr>
+<tr class="odd">
+<td>160 fasteners initially ready</td>
+<td>Opening available supply</td>
+<td>kitting_information.number</td>
+<td>160</td>
+<td>Separate later increments</td>
+</tr>
+</tbody>
+</table></div>
+<p>Retain the basis for each conversion, not just column names. A
+numeric 120 might mean minutes, pieces, or a percentage; a type check
+alone cannot decide.</p>
+<h2 id="build-and-check">Build and Check</h2>
+<p>From the supplied <code>examples</code> directory:</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> build_example.py <span class="at">--output-dir</span> ./output</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> check_example.py ./output/data.db</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> test_examples.py</span></code></pre></div>
+<p>The builder refuses to overwrite an existing target database. Use a
+new output directory for another attempt. The schema comes from the
+current standard template and contains no customer records. See the <a
+href="./Interface-Walkthrough.html">walkthrough</a> for generated files and
+outputs.</p>
+<p>Validation starts with tables, field types, primary keys,
+nullability, and foreign-key declarations. It then checks stored values,
+referenced objects, time status, occupied fractions, batch divisibility,
+OEE, the resource hierarchy, operation numbering, and inventory bounds.
+A readable table can still lack a foreign-key declaration, leaving the
+database unable to detect invalid references; retain the template's
+relationship constraints. Quantity and batch columns in this teaching
+template are integers. Floating-point values must be finite, booleans
+must be 0 or 1, and OEE uses percentages from 0 to 100. A type error
+identifies the object, field, and row ID before arithmetic checks are
+attempted. Missing files and damaged databases produce an error message
+and a nonzero exit status.</p>
+<p>This exercise requires a due period for each delivery demand, a
+resource for each capacity record, and both an operation and a work
+center for each adaptor. Result or shared-resource records, when
+present, also need their associated objects. These exercise-specific
+requirements do not change the standard schema's nullable fields.
+Optional inventory bounds, unused attribute slots, and the root work
+center's parent can remain null.</p>
+<p>The output lists executed checks in <code>checks_performed</code>,
+checks blocked by earlier errors in <code>checks_skipped</code>, and
+responsibilities outside this validator in <code>not_checked</code>. An
+<code>ok: true</code> result means the listed input checks passed.
+Demand coverage, full scheduling feasibility, advanced scenario rules,
+and model solving require separate validation. Negative tests cover
+invalid stored types, fractional batches, out-of-range values, missing
+references, and hierarchy cycles.</p>
+<h2 id="use-the-real-project-entry-point">Use the Real Project Entry
+Point</h2>
+<p>With DecisioWorks dependencies installed, run the companion script
+from the project root:</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> /path/to/examples/load_with_decisioworks.py /path/to/output/data.db</span></code></pre></div>
+<p>It uses these actual APIs; replace <code>/path/to</code> with the
+real location:</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>root <span class="op">=</span> Path.cwd()  <span class="co"># Run from the DecisioWorks project root.</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>sys.path.insert(<span class="dv">0</span>, <span class="bu">str</span>(root <span class="op">/</span> <span class="st">&quot;DecisioCore&quot;</span>))</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> data_layer.repository <span class="im">import</span> load_business_data</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> data_layer.preprocessing.pipeline <span class="im">import</span> run_preprocessing_pipeline</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> load_business_data(<span class="st">&quot;/path/to/output/data.db&quot;</span>, source_type<span class="op">=</span><span class="st">&quot;sqlite&quot;</span>)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>data, report <span class="op">=</span> run_preprocessing_pipeline(data, {</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;enabled&quot;</span>: <span class="va">True</span>,</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;handlers&quot;</span>: [<span class="st">&quot;validate_batch_productivity_multiple&quot;</span>],</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;failure_policy&quot;</span>: <span class="st">&quot;error&quot;</span>,</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(report)</span></code></pre></div>
+<p>Inspect loaded objects and row counts, then select a planning model
+suited to the scenario. Record the actual capacity, routing, material,
+inventory, objective, and runtime configuration used in a solve.
+Complete tables do not substitute for that configuration.</p>
+<h2 id="exercise-and-answer">Exercise and Answer</h2>
+<p>In a copy, change <code>used</code> to 25: the fraction check should
+reject it. Change a due-period reference to 99: expect a reference
+error. Change batch size 20 to 18 while retaining output four: expect a
+divisibility error. Test one change at a time, keeping the correct
+original. Diagnostics should identify the object and row so that
+correction returns to the business source.</p>
+<p><a href="./Interface-07-Inventory.html">Previous</a> · <a
+href="./Interface-09-Results.html">Next: results and updates</a></p>
+      </article>
+      <footer class="article-footer"><a href="./">Back to Learning Center</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki/Interface-08-Validation">Read on Wiki</a></footer>
+    </main>
+  </div>
+  <footer class="site-footer shell"><strong>DecisioWorks</strong><span>Learn decision capabilities through production problems.</span></footer>
+</body>
+</html>

@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Worked Example: Inputs, Checks and Adjustments for 120 Brackets | DecisioWorks</title>
+  <meta name="description" content="This example connects time, demand, routing, resources, materials and inventory through two operations: stamping and assembly. It produces a loadable teaching database, table files and quantity calculations, without changing your business database." />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-Walkthrough.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-Walkthrough.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-Walkthrough.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-Walkthrough.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Worked Example: Inputs, Checks and Adjustments for 120 Brackets | DecisioWorks" />
+  <meta property="og:description" content="This example connects time, demand, routing, resources, materials and inventory through two operations: stamping and assembly. It produces a loadable teaching database, table files and quantity calculations, without changing your business database." />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-Walkthrough.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers-en.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Worked Example: Inputs, Checks and Adjustments for 120 Brackets | DecisioWorks" />
+  <meta name="twitter:description" content="This example connects time, demand, routing, resources, materials and inventory through two operations: stamping and assembly. It produces a loadable teaching database, table files and quantity calculations, without changing your business database." />
+  <meta name="twitter:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers-en.png" />
+  <link rel="icon" href="../../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "Worked Example: Inputs, Checks and Adjustments for 120 Brackets", "description": "This example connects time, demand, routing, resources, materials and inventory through two operations: stamping and assembly. It produces a loadable teaching database, table files and quantity calculations, without changing your business database.", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-Walkthrough.html", "inLanguage": "en", "author": {"@type": "Organization", "name": "DecisioWorks", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/"}, {"@type": "ListItem", "position": 2, "name": "Learning Center", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/"}, {"@type": "ListItem", "position": 3, "name": "Worked Example: Inputs, Checks and Adjustments for 120 Brackets", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-Walkthrough.html"}]}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#article">Skip to content</a>
+  <header class="learning-header"><div class="shell header-inner">
+    <a class="brand" href="../"><img src="../../assets/decisioworks-logo.png" alt="" width="36" height="36" /><strong>DecisioWorks</strong></a>
+    <nav aria-label="Main navigation">
+      <a href="../">Home</a>
+      <a href="../docs/">Docs</a>
+      <a class="language-switch" href="../../learn/Interface-Walkthrough.html" lang="zh-CN" hreflang="zh-CN">中文</a>
+    </nav>
+  </div></header>
+  <div class="shell breadcrumbs" aria-label="Breadcrumb"><a href="../">Home</a><span>/</span><a href="./">Learning Center</a><span>/</span><span aria-current="page">Worked Example: Inputs, Checks and Adjustments for 120 Brackets</span></div>
+  <div class="shell reading-layout">
+    <aside class="sidebar"><nav aria-label="Course contents"><a class="contents-home" href="./">Learning Center</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A From a Production Problem to a Testable Decision</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B Represent Manufacturing in Data</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C Objectives, Experience and Operational Rules</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D Read Plans through Recorded Cases</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E Coordinate Planning Levels and Responses</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F Open Collaboration and Continued Evolution</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G Connect Applications and AI Agents through Standard Actions</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H Build Everyday Decision Capability</a><span class="nav-section">Data Interface Guide</span><a href="./Interface-01-Calendar.html">01 Configure Time, Shifts, and Maintenance</a><a href="./Interface-02-Demand.html">02 Express Orders, Products, and Attributes</a><a href="./Interface-03-Resources.html">03 Configure Work Centers and Shared Resources</a><a href="./Interface-04-Routing.html">04 Configure Routes and Alternative Resources</a><a href="./Interface-05-Quantity.html">05 Calculate Cycle Output, Batches, and Processing Time</a><a href="./Interface-06-Materials.html">06 Configure Operation-Level Materials and Availability</a><a href="./Interface-07-Inventory.html">07 Translate Inventory Requirements into Cumulative Bounds</a><a href="./Interface-08-Validation.html">08 Import, Validate, and Load Business Data</a><a href="./Interface-09-Results.html">09 Interpret Results and Prepare the Next Planning Cycle</a><a href="./Interface-Configurations.html">Configuration Patterns: From Shop-Floor Arrangements to Data</a><a href="./Interface-Fields.html">Complete Field Reference</a><a href="./Interface-Guide.html">Learning the Standardized Data Interface</a><a href="./Interface-Relationships.html">Object Relationships and Calculation Rules</a><a href="./Interface-Semantics.html">DecisioWorks Standardized Data Interface: A Detailed Semantic Guide</a><a href="./Interface-Walkthrough.html" aria-current="page">Worked Example: Inputs, Checks and Adjustments for 120 Brackets</a><span class="nav-section">Worksheets</span><a href="./Worksheet-Operational-Rule.html">Operational Rule and Verification</a><a href="./Worksheet-Plan-Comparison.html">Baseline and Adjusted Plan Comparison</a><a href="./Worksheet-Review-and-Change-Record.html">Review and Change Record</a><a href="./Worksheet-Scenario-Brief.html">Scenario and Decision Task</a></nav></aside>
+    <main>
+      <details class="mobile-contents"><summary>Course contents</summary><nav aria-label="Mobile course contents"><a class="contents-home" href="./">Learning Center</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A From a Production Problem to a Testable Decision</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B Represent Manufacturing in Data</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C Objectives, Experience and Operational Rules</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D Read Plans through Recorded Cases</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E Coordinate Planning Levels and Responses</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F Open Collaboration and Continued Evolution</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G Connect Applications and AI Agents through Standard Actions</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H Build Everyday Decision Capability</a><span class="nav-section">Data Interface Guide</span><a href="./Interface-01-Calendar.html">01 Configure Time, Shifts, and Maintenance</a><a href="./Interface-02-Demand.html">02 Express Orders, Products, and Attributes</a><a href="./Interface-03-Resources.html">03 Configure Work Centers and Shared Resources</a><a href="./Interface-04-Routing.html">04 Configure Routes and Alternative Resources</a><a href="./Interface-05-Quantity.html">05 Calculate Cycle Output, Batches, and Processing Time</a><a href="./Interface-06-Materials.html">06 Configure Operation-Level Materials and Availability</a><a href="./Interface-07-Inventory.html">07 Translate Inventory Requirements into Cumulative Bounds</a><a href="./Interface-08-Validation.html">08 Import, Validate, and Load Business Data</a><a href="./Interface-09-Results.html">09 Interpret Results and Prepare the Next Planning Cycle</a><a href="./Interface-Configurations.html">Configuration Patterns: From Shop-Floor Arrangements to Data</a><a href="./Interface-Fields.html">Complete Field Reference</a><a href="./Interface-Guide.html">Learning the Standardized Data Interface</a><a href="./Interface-Relationships.html">Object Relationships and Calculation Rules</a><a href="./Interface-Semantics.html">DecisioWorks Standardized Data Interface: A Detailed Semantic Guide</a><a href="./Interface-Walkthrough.html" aria-current="page">Worked Example: Inputs, Checks and Adjustments for 120 Brackets</a><span class="nav-section">Worksheets</span><a href="./Worksheet-Operational-Rule.html">Operational Rule and Verification</a><a href="./Worksheet-Plan-Comparison.html">Baseline and Adjusted Plan Comparison</a><a href="./Worksheet-Review-and-Change-Record.html">Review and Change Record</a><a href="./Worksheet-Scenario-Brief.html">Scenario and Decision Task</a></nav></details>
+      <article id="article">
+        <header class="article-heading"><p class="kicker">Standardized Data Interface</p><h1>Worked Example: Inputs, Checks and Adjustments for 120 Brackets</h1></header>
+        <details class="page-contents"><summary>On this page</summary><nav><a href="#1-business-conditions">1. Business Conditions</a><a href="#2-prepare-the-files">2. Prepare the Files</a><a href="#3-check-the-inputs">3. Check the Inputs</a><a href="#4-load-the-example-into-decisioworks">4. Load the Example into
+DecisioWorks</a><a href="#5-recalculate-the-manual-candidate">5. Recalculate the Manual
+Candidate</a><a href="#6-why-maintenance-changes-require-another-check">6. Why
+Maintenance Changes Require Another Check</a><a href="#7-move-from-the-exercise-to-your-data">7. Move from the Exercise
+to Your Data</a></nav></details>
+        <p><a
+href="../../assets/data-interface/decisioworks-data-interface-examples.zip">Download
+the complete exercise pack (SQL, field list, Python scripts, database
+and CSV files)</a></p>
+<p>This example connects time, demand, routing, resources, materials and
+inventory through two operations: stamping and assembly. It produces a
+loadable teaching database, table files and quantity calculations,
+without changing your business database.</p>
+<h2 id="1-business-conditions">1. Business Conditions</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th>Item</th>
+<th>Condition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Product</td>
+<td>P-1 blue bracket</td>
+</tr>
+<tr class="even">
+<td>Order</td>
+<td>80 pieces in period 1 and 40 in period 2</td>
+</tr>
+<tr class="odd">
+<td>Time</td>
+<td>Two normal eight-hour production periods, 28,800 seconds each</td>
+</tr>
+<tr class="even">
+<td>Stamping</td>
+<td>Machine 11; four pieces per 600-second cycle; batch 20</td>
+</tr>
+<tr class="odd">
+<td>Assembly</td>
+<td>Resource 12; one piece per 120-second cycle; batch 20</td>
+</tr>
+<tr class="even">
+<td>Maintenance</td>
+<td>Two hours unavailable on stamping in period 1;
+<code>used=0.25</code></td>
+</tr>
+<tr class="odd">
+<td>BOM</td>
+<td>One blank per stamped piece; two fasteners per assembled piece</td>
+</tr>
+<tr class="even">
+<td>Supply</td>
+<td>Initially 80 blanks and 160 fasteners; another 40 and 80 in period
+2</td>
+</tr>
+<tr class="odd">
+<td>Finished inventory</td>
+<td>Opening stock 20; ending range 20–100; issues of 80 and 40</td>
+</tr>
+<tr class="even">
+<td>Simplifications</td>
+<td>No scrap, no setup loss, OEE 100, no alternative resources</td>
+</tr>
+</tbody>
+</table></div>
+<p>The periods represent two production windows. When mapping real
+dates, also retain the planning origin, shift times and nonworking
+intervals.</p>
+<h2 id="2-prepare-the-files">2. Prepare the Files</h2>
+<p>From the supplied <code>examples</code> directory, use Python 3.10 or
+later. The base scripts use only the standard library. On Linux, use
+<code>python3</code> instead of <code>python</code> if that is how your
+environment is configured.</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> build_example.py <span class="at">--output-dir</span> ./my-first-example</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> check_example.py ./my-first-example/data.db</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> calculate_candidate.py ./my-first-example</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> test_examples.py</span></code></pre></div>
+<p>The builder creates:</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th>File</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>data.db</code></td>
+<td>Teaching database with 18 standard tables</td>
+</tr>
+<tr class="even">
+<td>CSV named after each table</td>
+<td>Inspect and compare inputs; the initial result CSV has only a
+header</td>
+</tr>
+<tr class="odd">
+<td><code>manual_candidate.csv</code></td>
+<td>Four manually constructed operation-output rows</td>
+</tr>
+<tr class="even">
+<td><code>scenario.json</code></td>
+<td>Units, supply convention, opening inventory, independent per-period
+stock issues in <code>period_issues</code>, and simplifications</td>
+</tr>
+</tbody>
+</table></div>
+<p>An existing <code>data.db</code> stops the builder; choose another
+directory. You may also inspect the supplied <a
+href="../../assets/data-interface/decisioworks-data-interface-examples.zip">sample
+output</a> before rebuilding from SQL. The business records are the
+same.</p>
+<h2 id="3-check-the-inputs">3. Check the Inputs</h2>
+<p><code>check_example.py</code> should report <code>ok: true</code>, 18
+tables and 105 fields. There are two order lines, two operations, two
+adaptors, four capacity rows, two BOM rows, four readiness rows and two
+inventory-limit rows.</p>
+<p><code>planning_result</code> has zero rows. The manual candidate is
+stored separately and is never written into the input database as an
+actual solver result.</p>
+<p>Use this query in a SQLite viewer to inspect how demand reaches its
+operations:</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode sql"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> oi.<span class="kw">id</span> <span class="kw">AS</span> order_line, p.code <span class="kw">AS</span> product_code,</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>       oi.delivery_time, oi.<span class="dt">number</span> <span class="kw">AS</span> demand_quantity,</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>       r.code <span class="kw">AS</span> route_code, op.code <span class="kw">AS</span> operation_code, op.seqno</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> order_item oi</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="kw">JOIN</span> product p <span class="kw">ON</span> p.<span class="kw">id</span> <span class="op">=</span> oi.product</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="kw">JOIN</span> process_route r <span class="kw">ON</span> r.product <span class="op">=</span> p.<span class="kw">id</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="kw">JOIN</span> process op <span class="kw">ON</span> op.route <span class="op">=</span> r.<span class="kw">id</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> oi.<span class="kw">id</span>, r.<span class="kw">id</span>, op.seqno;</span></code></pre></div>
+<p>The query returns four rows: each of two demand lines joins to two
+operations. Do not sum the repeated demand values into additional
+demand.</p>
+<h2 id="4-load-the-example-into-decisioworks">4. Load the Example into
+DecisioWorks</h2>
+<p>With DecisioWorks and its dependencies available, run from any
+directory:</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> /path/to/examples/load_with_decisioworks.py /path/to/my-first-example/data.db <span class="at">--project-root</span> /path/to/DecisioWorks</span></code></pre></div>
+<p>Replace the three paths with actual locations. The script sets up the
+project import paths, calls <code>load_business_data</code>, and runs
+<code>validate_batch_productivity_multiple</code>.</p>
+<p>The verified loaded counts are <code>demand=2</code>,
+<code>process=2</code>, <code>capacity=4</code>, <code>bom=2</code>,
+<code>kitting=4</code> and <code>inventory_limit=2</code>, with
+preprocessing status <code>ok</code>. This confirms data-layer loading;
+the step does not execute a solver.</p>
+<h2 id="5-recalculate-the-manual-candidate">5. Recalculate the Manual
+Candidate</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Resource</th>
+<th style="text-align: right;">Period</th>
+<th>Operation</th>
+<th style="text-align: right;">Output pieces</th>
+<th style="text-align: right;">Cycles</th>
+<th style="text-align: right;">Processing minutes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">1</td>
+<td>Stamping</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">200</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">1</td>
+<td>Assembly</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">160</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">2</td>
+<td>Stamping</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">100</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">2</td>
+<td>Assembly</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">80</td>
+</tr>
+</tbody>
+</table></div>
+<p>Stamping has 360 available minutes in period 1; all other
+resource-period combinations have 480. Cumulative consumption is 120
+blanks and 240 fasteners, matching supply. Ending finished stock is 20
+in each period; cumulative production is 80 and then 120.</p>
+<p>The calculator should return
+<code>aggregate_checks_passed: true</code>. It also retains
+<code>solver_executed: false</code> and
+<code>full_scheduling_feasibility_proven: false</code>: the calculation
+checks aggregate relationships in this candidate, not every timing,
+transport, changeover or overlap condition.</p>
+<p><code>ok</code> means the inputs meet this calculator's requirements.
+<code>aggregate_checks_passed</code> covers resource, material and
+inventory totals. <code>demand_issue_comparison</code> lists order
+demand, assumed stock issues and their difference by period.
+<code>issues_match_due_quantities</code> compares those two quantity
+series only; it does not prove order allocation or on-time delivery, so
+<code>demand_coverage_checked</code> remains <code>false</code>. Missing
+records or unsupported inputs produce <code>ok: false</code>, diagnostic
+<code>errors</code> and a nonzero exit code.</p>
+<h2 id="6-why-maintenance-changes-require-another-check">6. Why
+Maintenance Changes Require Another Check</h2>
+<p>Build a separate exercise copy:</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> build_example.py <span class="at">--output-dir</span> ./three-hour-maintenance</span></code></pre></div>
+<p>Execute this SQL in the copy:</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode sql"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">UPDATE</span> capacity <span class="kw">SET</span> used<span class="op">=</span><span class="fl">0.375</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> workcenter<span class="op">=</span><span class="dv">11</span> <span class="kw">AND</span> time_unit<span class="op">=</span><span class="dv">1</span>;</span></code></pre></div>
+<p>Run validation and calculation again. Stamping availability falls to
+300 minutes, still enough for its 200 processing minutes.</p>
+<p>Now add these assumptions: maintenance occurs at shift start, all
+stamping finishes before assembly starts, and the operations do not
+overlap. Originally the chain needs 120+200+160=480 minutes. Longer
+maintenance raises it to 180+200+160=540 minutes. Individual resource
+totals passing their checks does not establish that the complete routing
+fits within eight hours.</p>
+<p>Choose a business response: allow confirmed transfer-batch overlap,
+adjust supply and start times, revise delivery arrangements, or enable
+optional time. Run the appropriate scheduling capability with the
+selected conditions and check its actual output.</p>
+<h2 id="7-move-from-the-exercise-to-your-data">7. Move from the Exercise
+to Your Data</h2>
+<p>Begin with small changes that retain the example's object
+relationships. When changing due dates or the number of periods, follow
+<a href="./Interface-02-Demand.html">lesson 02</a> to update the issue plan,
+inventory limits, resource calendars, supply and candidate output
+together. Table CSV exports are for inspection; calculations read
+<code>data.db</code>. Record the source, units, expected change and
+check result.</p>
+<p>This manual calculator supports product <code>id=1</code>, one route,
+two sequential operations on separate resources, one adaptor per
+operation, OEE100 and no setup loss. Quantities are discrete units, both
+operations produce equal quantities in each period, and there is no
+opening work in progress. All periods must be normal production periods.
+You can add periods using the complete procedure; alternate routes,
+shared resources, substitute materials, joint processing, optional time
+and advanced batch rules require another calculation or model. Batch
+dispatch, WIP capacity, order allocation and detailed timing feasibility
+need separate checks through the relevant model.</p>
+<p>Changing demand does not automatically change the stock-issue
+assumptions in <code>scenario.json</code> or the output in
+<code>manual_candidate.csv</code>. Explain the difference before
+revising the order, issue plan or candidate. For a business case outside
+the stated scope, retain field and relationship checks and use the
+appropriate DecisioWorks model and run configuration rather than
+treating this manual report as full acceptance.</p>
+<p>Useful review materials include input tables, source mappings, rule
+configuration, run records, result tables and before/after explanations.
+Use the <a href="./Interface-Fields.html">field reference</a> for storage
+details and the <a href="./Interface-Semantics.html">semantic guide</a> for
+business relationships.</p>
+      </article>
+      <footer class="article-footer"><a href="./">Back to Learning Center</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki/Interface-Walkthrough">Read on Wiki</a></footer>
+    </main>
+  </div>
+  <footer class="site-footer shell"><strong>DecisioWorks</strong><span>Learn decision capabilities through production problems.</span></footer>
+</body>
+</html>

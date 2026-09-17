@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Object Relationships and Calculation Rules | DecisioWorks</title>
+  <meta name="description" content="The field reference shows where values belong. This page explains how records connect and which quantities can be compared. Identify source objects by their business codes, then translate their references into target record IDs." />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-Relationships.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-Relationships.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-Relationships.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-Relationships.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Object Relationships and Calculation Rules | DecisioWorks" />
+  <meta property="og:description" content="The field reference shows where values belong. This page explains how records connect and which quantities can be compared. Identify source objects by their business codes, then translate their references into target record IDs." />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-Relationships.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers-en.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Object Relationships and Calculation Rules | DecisioWorks" />
+  <meta name="twitter:description" content="The field reference shows where values belong. This page explains how records connect and which quantities can be compared. Identify source objects by their business codes, then translate their references into target record IDs." />
+  <meta name="twitter:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers-en.png" />
+  <link rel="icon" href="../../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "Object Relationships and Calculation Rules", "description": "The field reference shows where values belong. This page explains how records connect and which quantities can be compared. Identify source objects by their business codes, then translate their references into target record IDs.", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-Relationships.html", "inLanguage": "en", "author": {"@type": "Organization", "name": "DecisioWorks", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/"}, {"@type": "ListItem", "position": 2, "name": "Learning Center", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/"}, {"@type": "ListItem", "position": 3, "name": "Object Relationships and Calculation Rules", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-Relationships.html"}]}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#article">Skip to content</a>
+  <header class="learning-header"><div class="shell header-inner">
+    <a class="brand" href="../"><img src="../../assets/decisioworks-logo.png" alt="" width="36" height="36" /><strong>DecisioWorks</strong></a>
+    <nav aria-label="Main navigation">
+      <a href="../">Home</a>
+      <a href="../docs/">Docs</a>
+      <a class="language-switch" href="../../learn/Interface-Relationships.html" lang="zh-CN" hreflang="zh-CN">中文</a>
+    </nav>
+  </div></header>
+  <div class="shell breadcrumbs" aria-label="Breadcrumb"><a href="../">Home</a><span>/</span><a href="./">Learning Center</a><span>/</span><span aria-current="page">Object Relationships and Calculation Rules</span></div>
+  <div class="shell reading-layout">
+    <aside class="sidebar"><nav aria-label="Course contents"><a class="contents-home" href="./">Learning Center</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A From a Production Problem to a Testable Decision</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B Represent Manufacturing in Data</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C Objectives, Experience and Operational Rules</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D Read Plans through Recorded Cases</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E Coordinate Planning Levels and Responses</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F Open Collaboration and Continued Evolution</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G Connect Applications and AI Agents through Standard Actions</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H Build Everyday Decision Capability</a><span class="nav-section">Data Interface Guide</span><a href="./Interface-01-Calendar.html">01 Configure Time, Shifts, and Maintenance</a><a href="./Interface-02-Demand.html">02 Express Orders, Products, and Attributes</a><a href="./Interface-03-Resources.html">03 Configure Work Centers and Shared Resources</a><a href="./Interface-04-Routing.html">04 Configure Routes and Alternative Resources</a><a href="./Interface-05-Quantity.html">05 Calculate Cycle Output, Batches, and Processing Time</a><a href="./Interface-06-Materials.html">06 Configure Operation-Level Materials and Availability</a><a href="./Interface-07-Inventory.html">07 Translate Inventory Requirements into Cumulative Bounds</a><a href="./Interface-08-Validation.html">08 Import, Validate, and Load Business Data</a><a href="./Interface-09-Results.html">09 Interpret Results and Prepare the Next Planning Cycle</a><a href="./Interface-Configurations.html">Configuration Patterns: From Shop-Floor Arrangements to Data</a><a href="./Interface-Fields.html">Complete Field Reference</a><a href="./Interface-Guide.html">Learning the Standardized Data Interface</a><a href="./Interface-Relationships.html" aria-current="page">Object Relationships and Calculation Rules</a><a href="./Interface-Semantics.html">DecisioWorks Standardized Data Interface: A Detailed Semantic Guide</a><a href="./Interface-Walkthrough.html">Worked Example: Inputs, Checks and Adjustments for 120 Brackets</a><span class="nav-section">Worksheets</span><a href="./Worksheet-Operational-Rule.html">Operational Rule and Verification</a><a href="./Worksheet-Plan-Comparison.html">Baseline and Adjusted Plan Comparison</a><a href="./Worksheet-Review-and-Change-Record.html">Review and Change Record</a><a href="./Worksheet-Scenario-Brief.html">Scenario and Decision Task</a></nav></aside>
+    <main>
+      <details class="mobile-contents"><summary>Course contents</summary><nav aria-label="Mobile course contents"><a class="contents-home" href="./">Learning Center</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A From a Production Problem to a Testable Decision</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B Represent Manufacturing in Data</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C Objectives, Experience and Operational Rules</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D Read Plans through Recorded Cases</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E Coordinate Planning Levels and Responses</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F Open Collaboration and Continued Evolution</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G Connect Applications and AI Agents through Standard Actions</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H Build Everyday Decision Capability</a><span class="nav-section">Data Interface Guide</span><a href="./Interface-01-Calendar.html">01 Configure Time, Shifts, and Maintenance</a><a href="./Interface-02-Demand.html">02 Express Orders, Products, and Attributes</a><a href="./Interface-03-Resources.html">03 Configure Work Centers and Shared Resources</a><a href="./Interface-04-Routing.html">04 Configure Routes and Alternative Resources</a><a href="./Interface-05-Quantity.html">05 Calculate Cycle Output, Batches, and Processing Time</a><a href="./Interface-06-Materials.html">06 Configure Operation-Level Materials and Availability</a><a href="./Interface-07-Inventory.html">07 Translate Inventory Requirements into Cumulative Bounds</a><a href="./Interface-08-Validation.html">08 Import, Validate, and Load Business Data</a><a href="./Interface-09-Results.html">09 Interpret Results and Prepare the Next Planning Cycle</a><a href="./Interface-Configurations.html">Configuration Patterns: From Shop-Floor Arrangements to Data</a><a href="./Interface-Fields.html">Complete Field Reference</a><a href="./Interface-Guide.html">Learning the Standardized Data Interface</a><a href="./Interface-Relationships.html" aria-current="page">Object Relationships and Calculation Rules</a><a href="./Interface-Semantics.html">DecisioWorks Standardized Data Interface: A Detailed Semantic Guide</a><a href="./Interface-Walkthrough.html">Worked Example: Inputs, Checks and Adjustments for 120 Brackets</a><span class="nav-section">Worksheets</span><a href="./Worksheet-Operational-Rule.html">Operational Rule and Verification</a><a href="./Worksheet-Plan-Comparison.html">Baseline and Adjusted Plan Comparison</a><a href="./Worksheet-Review-and-Change-Record.html">Review and Change Record</a><a href="./Worksheet-Scenario-Brief.html">Scenario and Decision Task</a></nav></details>
+      <article id="article">
+        <header class="article-heading"><p class="kicker">Standardized Data Interface</p><h1>Object Relationships and Calculation Rules</h1></header>
+        <details class="page-contents"><summary>On this page</summary><nav><a href="#1-demand-and-manufacturing-relationships">1. Demand and
+Manufacturing Relationships</a><a href="#2-time-and-resource-relationships">2. Time and Resource
+Relationships</a><a href="#3-materials-inventory-and-results">3. Materials, Inventory and
+Results</a><a href="#4-fields-that-share-a-name-but-not-a-meaning">4. Fields That
+Share a Name but Not a Meaning</a><a href="#5-quantity-and-time-calculations">5. Quantity and Time
+Calculations</a><a href="#6-complete-three-separate-checks">6. Complete Three Separate
+Checks</a></nav></details>
+        <p>The field reference shows where values belong. This page explains how
+records connect and which quantities can be compared. Identify source
+objects by their business codes, then translate their references into
+target record IDs.</p>
+<h2 id="1-demand-and-manufacturing-relationships">1. Demand and
+Manufacturing Relationships</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th>Relationship</th>
+<th>Current fields</th>
+<th>What to check</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>An order contains multiple lines</td>
+<td><code>order_item.information → order_info.id</code></td>
+<td>Every line belongs to an existing order; split one product across
+due periods when needed</td>
+</tr>
+<tr class="even">
+<td>Multiple demand lines can reference one product</td>
+<td><code>order_item.product → product.id</code></td>
+<td>Use the product ID, not the order-line ID</td>
+</tr>
+<tr class="odd">
+<td>A product references records in its attribute dimensions</td>
+<td><code>product.property_i → property_i.id</code></td>
+<td>Keep foreign keys, text labels and numeric values distinct</td>
+</tr>
+<tr class="even">
+<td>A product can have alternative routes</td>
+<td><code>process_route.product → product.id</code></td>
+<td>Alternatives are manufacturing choices, not additional demand</td>
+</tr>
+<tr class="odd">
+<td>A route contains operations</td>
+<td><code>process.route → process_route.id</code></td>
+<td><code>operation_number</code> identifies an operation within the
+route; <code>seqno</code> defines precedence</td>
+</tr>
+<tr class="even">
+<td>An operation can run on alternative resources</td>
+<td><code>process_adaptor.process/workcenter</code></td>
+<td>Each record describes one operation-resource combination and its
+parameters</td>
+</tr>
+<tr class="odd">
+<td>An operation uses materials</td>
+<td><code>ingredient.process/material</code></td>
+<td>Define the consumption basis and trace each material to its
+supply</td>
+</tr>
+</tbody>
+</table></div>
+<p>Equal <code>seqno</code> values mean there is no precedence between
+those operations. They do not need to be made unique. Whether the
+operations can run simultaneously is a separate resource and material
+question.</p>
+<h2 id="2-time-and-resource-relationships">2. Time and Resource
+Relationships</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th>Reference</th>
+<th>Target</th>
+<th>Business question</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>order_item.delivery_time</code></td>
+<td><code>time_unit.id</code></td>
+<td>When is demand due?</td>
+</tr>
+<tr class="even">
+<td><code>capacity.time_unit</code></td>
+<td><code>time_unit.id</code></td>
+<td>Which period does this resource availability describe?</td>
+</tr>
+<tr class="odd">
+<td><code>kitting_information.time_unit</code></td>
+<td><code>time_unit.id</code></td>
+<td>When can the material be used?</td>
+</tr>
+<tr class="even">
+<td><code>inventory_limit.time_unit</code></td>
+<td><code>time_unit.id</code></td>
+<td>At which point is cumulative receipt checked?</td>
+</tr>
+<tr class="odd">
+<td><code>planning_result.time_unit</code></td>
+<td><code>time_unit.id</code></td>
+<td>In which period is operation output recorded?</td>
+</tr>
+<tr class="even">
+<td><code>capacity.workcenter</code></td>
+<td><code>workcenter.id</code></td>
+<td>Which resource has this unavailable fraction?</td>
+</tr>
+<tr class="odd">
+<td><code>workcenter.parent_id</code></td>
+<td><code>workcenter.id</code></td>
+<td>Which organizational node owns the resource?</td>
+</tr>
+<tr class="even">
+<td><code>shared_resource.binding/to</code></td>
+<td>Two <code>workcenter.id</code> values</td>
+<td>Which shared resource serves which target resource?</td>
+</tr>
+</tbody>
+</table></div>
+<p>The resource hierarchy should lead to a root without self-reference
+or cycles. Check shared-resource links for accidental self-binding as
+well. A shared resource may serve multiple targets, and a target may
+depend on multiple shared resources.</p>
+<p>Calendar completeness depends on the resources and periods included
+in a run. When a resource-period record is missing, determine whether
+availability is unconfigured or covered by an explicit default. Do not
+assume full availability.</p>
+<h2 id="3-materials-inventory-and-results">3. Materials, Inventory and
+Results</h2>
+<p><code>kitting_information.material</code> references a material.
+<code>inventory_limit.product</code> references a product. Keep their
+inventory meanings distinct: the former describes readiness for
+operation consumption; the latter constrains cumulative production
+receipts of a product.</p>
+<p><code>planning_result.process</code> leads through the route to the
+product; <code>workcenter</code> identifies the actual resource. In
+addition to existing individually, the operation and resource should
+form an allowed combination for the scenario. Delivery quantities must
+follow the manufacturing path actually selected.</p>
+<p>Some references are nullable in the database. A particular exercise
+or capability may still require them. For example, this course needs
+both operation and resource references to recalculate its result
+rows.</p>
+<h2 id="4-fields-that-share-a-name-but-not-a-meaning">4. Fields That
+Share a Name but Not a Meaning</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Object</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>binding</code></td>
+<td><code>material</code></td>
+<td>Dependent material-choice group</td>
+</tr>
+<tr class="even">
+<td><code>binding</code></td>
+<td><code>process_adaptor</code></td>
+<td>Joint-processing group</td>
+</tr>
+<tr class="odd">
+<td><code>binding</code></td>
+<td><code>inventory_limit</code></td>
+<td>Shared-inventory group</td>
+</tr>
+<tr class="even">
+<td><code>binding</code></td>
+<td><code>shared_resource</code></td>
+<td>Shared-resource work-center ID; a foreign key</td>
+</tr>
+<tr class="odd">
+<td><code>priority</code></td>
+<td>Order, route, adaptor, BOM</td>
+<td>Preference within that object type; check the configured ordering
+direction</td>
+</tr>
+<tr class="even">
+<td><code>number</code></td>
+<td>Order line</td>
+<td>Demand quantity</td>
+</tr>
+<tr class="odd">
+<td><code>number</code></td>
+<td>Operation BOM</td>
+<td>Material requirement on the declared basis</td>
+</tr>
+<tr class="even">
+<td><code>number</code></td>
+<td>Material readiness</td>
+<td>Available quantity on the declared incremental or cumulative
+basis</td>
+</tr>
+<tr class="odd">
+<td><code>number</code></td>
+<td>Planning result</td>
+<td>Operation output quantity</td>
+</tr>
+</tbody>
+</table></div>
+<p>Equal group numbers do not create cross-table relationships. Material
+<code>binding=1</code> and inventory <code>binding=1</code>, for
+example, are unrelated unless a separate mapping explicitly connects
+them.</p>
+<h2 id="5-quantity-and-time-calculations">5. Quantity and Time
+Calculations</h2>
+<p>These calculations assume discrete processing on one resource, with
+no scrap or setup losses. Define additional conversions when applying
+OEE, parallel processing, joint output or shared inventory.</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th>Question</th>
+<th>Calculation</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Available time in a normal period</td>
+<td><code>scale × (1 − used)</code></td>
+<td>28,800 seconds × 0.75 = 21,600 seconds</td>
+</tr>
+<tr class="even">
+<td>Processing cycles</td>
+<td>Output ÷ output per cycle</td>
+<td>80 ÷ 4 = 20 cycles</td>
+</tr>
+<tr class="odd">
+<td>Pure processing time</td>
+<td>Cycles × cycle duration</td>
+<td>20 × 600 seconds = 200 minutes</td>
+</tr>
+<tr class="even">
+<td>Whole-batch configuration</td>
+<td>Batch ÷ output per cycle must be an integer</td>
+<td>20 ÷ 4 = 5 cycles per batch</td>
+</tr>
+<tr class="odd">
+<td>Material consumption</td>
+<td>Operation output × requirement per piece</td>
+<td>80 assembled pieces × 2 fasteners = 160 fasteners</td>
+</tr>
+<tr class="even">
+<td>Cumulative supply</td>
+<td>Opening availability + effective later increments</td>
+<td>80 + 40 = 120 pieces</td>
+</tr>
+<tr class="odd">
+<td>Ending inventory</td>
+<td>Opening stock + cumulative receipts − cumulative issues</td>
+<td>20 + 120 − 120 = 20 pieces</td>
+</tr>
+</tbody>
+</table></div>
+<p>If 80 pieces pass through stamping and assembly, finished output is
+80 pieces. Adding the two operation rows gives 160 operation-output
+records, not 160 finished pieces.</p>
+<h2 id="6-complete-three-separate-checks">6. Complete Three Separate
+Checks</h2>
+<p><strong>Structure:</strong> tables, fields, types, primary keys and
+foreign keys.</p>
+<p><strong>Business meaning:</strong> units, relationship direction,
+time coverage, batch rules, supply and inventory conventions.</p>
+<p><strong>Run behavior:</strong> the resource, material and precedence
+rules actually used by the selected configuration, and whether the
+output can be checked against them.</p>
+<p>The accompanying validator checks a defined subset of structure and
+business rules for the worked example. Add capability-specific checks
+for a complete production scenario. Select a suitable <a
+href="./Interface-Configurations.html">configuration pattern</a>, then
+follow the <a href="./Interface-Walkthrough.html">worked example</a>.</p>
+      </article>
+      <footer class="article-footer"><a href="./">Back to Learning Center</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki/Interface-Relationships">Read on Wiki</a></footer>
+    </main>
+  </div>
+  <footer class="site-footer shell"><strong>DecisioWorks</strong><span>Learn decision capabilities through production problems.</span></footer>
+</body>
+</html>

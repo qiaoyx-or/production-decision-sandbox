@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DecisioWorks 标准化数据接口语义详解 | DecisioWorks</title>
+  <meta name="description" content="生产计划同时回答数量、时间、加工方式和资源分配问题。订单给出需求，工艺描述制造路径，资源和日历限定可用能力，物料与库存决定可执行条件。标准化数据接口把这些对象放入同一个语义体系，使输入可以被校验、转成模型条件，再将结果还原为业务记录。" />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-Semantics.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-Semantics.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-Semantics.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-Semantics.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="DecisioWorks 标准化数据接口语义详解 | DecisioWorks" />
+  <meta property="og:description" content="生产计划同时回答数量、时间、加工方式和资源分配问题。订单给出需求，工艺描述制造路径，资源和日历限定可用能力，物料与库存决定可执行条件。标准化数据接口把这些对象放入同一个语义体系，使输入可以被校验、转成模型条件，再将结果还原为业务记录。" />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-Semantics.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="DecisioWorks 标准化数据接口语义详解 | DecisioWorks" />
+  <meta name="twitter:description" content="生产计划同时回答数量、时间、加工方式和资源分配问题。订单给出需求，工艺描述制造路径，资源和日历限定可用能力，物料与库存决定可执行条件。标准化数据接口把这些对象放入同一个语义体系，使输入可以被校验、转成模型条件，再将结果还原为业务记录。" />
+  <meta name="twitter:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <link rel="icon" href="../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "DecisioWorks 标准化数据接口语义详解", "description": "生产计划同时回答数量、时间、加工方式和资源分配问题。订单给出需求，工艺描述制造路径，资源和日历限定可用能力，物料与库存决定可执行条件。标准化数据接口把这些对象放入同一个语义体系，使输入可以被校验、转成模型条件，再将结果还原为业务记录。", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-Semantics.html", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "DecisioWorks", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "首页", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/"}, {"@type": "ListItem", "position": 2, "name": "学习中心", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/"}, {"@type": "ListItem", "position": 3, "name": "DecisioWorks 标准化数据接口语义详解", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-Semantics.html"}]}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#article">跳到正文</a>
+  <header class="learning-header"><div class="shell header-inner">
+    <a class="brand" href="../"><img src="../assets/decisioworks-logo.png" alt="" width="36" height="36" /><strong>DecisioWorks</strong></a>
+    <nav aria-label="主导航">
+      <a href="../">主页</a>
+      <a href="../docs/">文档</a>
+      <a class="language-switch" href="../en/learn/Interface-Semantics.html" lang="en" hreflang="en">English</a>
+    </nav>
+  </div></header>
+  <div class="shell breadcrumbs" aria-label="面包屑导航"><a href="../">首页</a><span>/</span><a href="./">学习中心</a><span>/</span><span aria-current="page">DecisioWorks 标准化数据接口语义详解</span></div>
+  <div class="shell reading-layout">
+    <aside class="sidebar"><nav aria-label="课程目录"><a class="contents-home" href="./">学习中心</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A 从生产问题到可检验的决策</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B 用数据表达制造过程</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C 让目标、经验与规则参与决策</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D 从真实样例学会读计划</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E 让计划层级协同工作</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F 开放协作与持续演进</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G 用标准动作连接应用与AI Agent</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H 把一次练习变成日常能力</a><span class="nav-section">数据接口详解</span><a href="./Interface-01-Calendar.html">01 配置生产时间、班制与维护</a><a href="./Interface-02-Demand.html">02 表达订单、制品与产品属性</a><a href="./Interface-03-Resources.html">03 配置工作中心与共享资源</a><a href="./Interface-04-Routing.html">04 配置工艺路线与可选资源</a><a href="./Interface-05-Quantity.html">05 核算出件率、批量与加工时间</a><a href="./Interface-06-Materials.html">06 配置工序级物料与齐套</a><a href="./Interface-07-Inventory.html">07 把库存要求转换为累计约束</a><a href="./Interface-08-Validation.html">08 导入、校验并读取业务数据</a><a href="./Interface-09-Results.html">09 解释结果并准备下一轮计划</a><a href="./Interface-Configurations.html">典型配置模式：从现场安排到接口记录</a><a href="./Interface-Fields.html">完整字段参考</a><a href="./Interface-Guide.html">标准化数据接口学习指南</a><a href="./Interface-Relationships.html">对象关系与计算规则</a><a href="./Interface-Semantics.html" aria-current="page">DecisioWorks 标准化数据接口语义详解</a><a href="./Interface-Walkthrough.html">贯穿案例：120件支架的输入、核对与调整</a><span class="nav-section">工作表</span><a href="./Worksheet-Operational-Rule.html">现场规则记录与检查</a><a href="./Worksheet-Plan-Comparison.html">基线与调整方案比较</a><a href="./Worksheet-Review-and-Change-Record.html">复盘与持续改进记录</a><a href="./Worksheet-Scenario-Brief.html">场景与决策任务</a></nav></aside>
+    <main>
+      <details class="mobile-contents"><summary>课程目录</summary><nav aria-label="移动端课程目录"><a class="contents-home" href="./">学习中心</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A 从生产问题到可检验的决策</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B 用数据表达制造过程</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C 让目标、经验与规则参与决策</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D 从真实样例学会读计划</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E 让计划层级协同工作</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F 开放协作与持续演进</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G 用标准动作连接应用与AI Agent</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H 把一次练习变成日常能力</a><span class="nav-section">数据接口详解</span><a href="./Interface-01-Calendar.html">01 配置生产时间、班制与维护</a><a href="./Interface-02-Demand.html">02 表达订单、制品与产品属性</a><a href="./Interface-03-Resources.html">03 配置工作中心与共享资源</a><a href="./Interface-04-Routing.html">04 配置工艺路线与可选资源</a><a href="./Interface-05-Quantity.html">05 核算出件率、批量与加工时间</a><a href="./Interface-06-Materials.html">06 配置工序级物料与齐套</a><a href="./Interface-07-Inventory.html">07 把库存要求转换为累计约束</a><a href="./Interface-08-Validation.html">08 导入、校验并读取业务数据</a><a href="./Interface-09-Results.html">09 解释结果并准备下一轮计划</a><a href="./Interface-Configurations.html">典型配置模式：从现场安排到接口记录</a><a href="./Interface-Fields.html">完整字段参考</a><a href="./Interface-Guide.html">标准化数据接口学习指南</a><a href="./Interface-Relationships.html">对象关系与计算规则</a><a href="./Interface-Semantics.html" aria-current="page">DecisioWorks 标准化数据接口语义详解</a><a href="./Interface-Walkthrough.html">贯穿案例：120件支架的输入、核对与调整</a><span class="nav-section">工作表</span><a href="./Worksheet-Operational-Rule.html">现场规则记录与检查</a><a href="./Worksheet-Plan-Comparison.html">基线与调整方案比较</a><a href="./Worksheet-Review-and-Change-Record.html">复盘与持续改进记录</a><a href="./Worksheet-Scenario-Brief.html">场景与决策任务</a></nav></details>
+      <article id="article">
+        <header class="article-heading"><p class="kicker">标准化数据接口</p><h1>DecisioWorks 标准化数据接口语义详解</h1></header>
+        <details class="page-contents"><summary>本页内容</summary><nav><a href="#1-从业务事实到生产决策">1. 从业务事实到生产决策</a><a href="#2-体系总图">2. 体系总图</a><a href="#3-标识编码与关联">3. 标识、编码与关联</a><a href="#4-统一时间体系">4. 统一时间体系</a><a href="#5-工作中心日历与共享资源">5. 工作中心、日历与共享资源</a><a href="#6-制品属性与需求">6. 制品、属性与需求</a><a href="#7-工艺路线工序与资源适配">7. 工艺路线、工序与资源适配</a><a href="#8-物料工序级bom与齐套">8. 物料、工序级BOM与齐套</a><a href="#9-库存能力">9. 库存能力</a><a href="#10-数据交换映射与校验">10. 数据交换、映射与校验</a><a href="#11-工序级结果与反馈">11. 工序级结果与反馈</a><a href="#12-如何使用本详解">12. 如何使用本详解</a></nav></details>
+        <h2 id="1-从业务事实到生产决策">1. 从业务事实到生产决策</h2>
+<p>生产计划同时回答数量、时间、加工方式和资源分配问题。订单给出需求，工艺描述制造路径，资源和日历限定可用能力，物料与库存决定可执行条件。标准化数据接口把这些对象放入同一个语义体系，使输入可以被校验、转成模型条件，再将结果还原为业务记录。</p>
+<p>业务层负责数据交换与服务调用；引擎层承载数学模型与决策模式，将业务对象组织为决策变量、约束和目标；算法层处理求解及其参数。三个层次通过明确的数据含义连接。业务系统可以调整数据来源，模型可以扩展表达，算法可以升级，而共同的业务含义保持稳定。</p>
+<p>服务调用既包括计划功能，也包括参数、业务规则和目标配置。决策模式可以组织人工调整后重算、多计划协同、滚动更新及热启动等过程；具体采用哪种模式，应由相应能力入口与运行配置说明。标准化语义贯穿输入、模型转换与结果回传。</p>
+<p>SQLite表是本专题使用的具体表达形式。CSV、JSON或外部系统的数据经过映射，也可以表达同样的对象关系。一个可复用模板应同时保留字段、关联、单位、配置规则和场景说明。</p>
+<h2 id="2-体系总图">2. 体系总图</h2>
+<p><a
+href="../assets/data-interface/semantic-relationships-zh-CN.svg">查看原尺寸关系图</a></p>
+<p><img
+src="../assets/data-interface/semantic-relationships-zh-CN.svg"
+alt="标准化数据接口对象关系" /></p>
+<p>图中箭头用于阅读关联方向，不代表数据加载顺序或必然发生的业务动作。工作中心还可以组成父子结构；共享资源本身也用工作中心表达。</p>
+<p>完整体系包括时间、工作中心、属性、制品、物料、订单头、订单明细、库存限制、工艺路线、工序、工序资源适配、工序级BOM、齐套、产能、共享资源和计划结果。属性机制在当前模板中展开为三个表，共形成18张标准表。</p>
+<h2 id="3-标识编码与关联">3. 标识、编码与关联</h2>
+<p><code>id</code>是具体记录的引用标识，<code>code</code>用于业务编码，<code>name</code>用于名称说明。业务编码相同不能自动保证外键正确：订单明细中的<code>product</code>要指向实际的<code>product.id</code>。</p>
+<p>设计说明中出现的<code>product_id</code>、<code>workcenter_id</code>、<code>process_id</code>等语义名称，在当前模板中分别实现为<code>product</code>、<code>workcenter</code>、<code>process</code>。订单头使用<code>order_info</code>，订单明细通过<code>information</code>引用它；明细交期字段为<code>delivery_time</code>。这些名称的对应见字段参考，含义保持一致。</p>
+<p>在来源映射时保留来源主键、目标标识、单位转换与确认依据。一个字段缺失时，先确定业务含义：<code>NULL</code>可以表示未配置，数字0可能表示确实为零；两者不能统一替换。</p>
+<h2 id="4-统一时间体系">4. 统一时间体系</h2>
+<p><code>time_unit.id</code>用于引用；<code>offset</code>表示相对于计划起点的顺序位置；<code>scale</code>表示时间单元长度，单位为秒；<code>status</code>表达该单元的使用状态。</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>状态</th>
+<th>语义</th>
+<th>配置时需要确认</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>1</code></td>
+<td>正常生产可用</td>
+<td>各工作中心是否还有局部占用</td>
+</tr>
+<tr class="even">
+<td><code>0</code></td>
+<td>不可用时间</td>
+<td>休息、停产等条件是否适用于全局</td>
+</tr>
+<tr class="odd">
+<td><code>-1</code></td>
+<td>特殊或可选时间，如可选加班</td>
+<td>当前计划是否采用、由什么配置决定采用</td>
+</tr>
+</tbody>
+</table></div>
+<p>可选状态是一种业务状态，不能直接解释为负的可用时间。若运行模型需要已确定的日历，应先形成经确认的日历副本，再进行求解；仅写入<code>-1</code>不等于加班已经启用。</p>
+<p>订单交期、资源产能、物料可用时间、库存限制和计划结果都引用同一时间基准。订单创建时间<code>created_at</code>保留原始时间戳，不承担计划窗口的含义。跨系统的日期、时区、班次归属和到料生效点，应先映射成统一的相对时间。</p>
+<p>小时、班次和工作日可以作为不同任务的时间粒度。同一运行中的粒度及起点要能一致解释。时间编号的差值不是分钟数；换算应使用时间单元长度与计划起点。聚合为整班的可用分钟数，只表达总量；需要约束“中途连续停机”时，应细分时间单元或使用能够表达具体时窗的模型配置。</p>
+<p>时间粒度需要与计划层级匹配。中长期产能规划关注时期总量，近期排程可能需要具体执行窗口。更细的时间表达会增加数据维护和计算负担，也可能提前固定本可灵活处理的安排；应在必要精度、执行协调和扰动后的调整空间之间权衡，而不是一律选择最细粒度。</p>
+<h2 id="5-工作中心日历与共享资源">5. 工作中心、日历与共享资源</h2>
+<p>工作中心可表示设备、设备组、班组、作业区域、外协单位、工装资源或组织单元。<code>parent_id</code>表达层级；<code>type=0</code>表示叶子节点，非0表示非叶子节点。<code>station_count</code>为工位数量，<code>parallelism</code>为并行数量，<code>equipping_time</code>为配置准备时间。</p>
+<p>层级还承载三类业务含义：上层共性属性由下层继承并细化；优化规则可作用于工厂、车间或设备等不同层级；负荷、瓶颈和利用率可按父节点汇总。配置应说明继承值怎样解析、规则怎样落实到资源，以及汇总怎样避免重复计算。具体运行是否自动执行这些处理，需要由所用能力与配置确认。</p>
+<p>工位数和并行数描述不同资源结构。它们怎样进入具体模型，应结合场景解释，不能一律把两者相乘作为产能。组织树也不意味着上下层产能可以重复汇总。</p>
+<p>全局时间单元与各工作中心的<code>capacity</code>共同组成资源日历。<code>capacity.used</code>表示指定资源在指定时间单元内已经占用或不可用的比例，范围为0到1。正常时间内、在单资源且损失不重复计算的条件下：</p>
+<p><code>可用时间（秒） = scale × (1 − used)</code></p>
+<p>例如8小时共28800秒，维护2小时且无其他占用，<code>used=0.25</code>，可用21600秒。整段不可用可表达为<code>used=1</code>。源表中的件数、小时数先按明确基准换算为比例；维护与已有任务重叠时，按实际不可用时间的并集计算。</p>
+<p>共享资源通过<code>shared_resource.binding</code>引用资源本身对应的工作中心，通过<code>to</code>引用使用它的目标工作中心。一套模具供两台设备使用，需要两条绑定关系和一套属于模具本身的能力记录。绑定关系表达谁依赖谁，可用能力表达能够使用多少；具体冲突限制由相应计划能力采用。</p>
+<p>完整的产能数量表达为<code>availability(i,j)=scale(j)×(1−used(i,j))×|status(j)|</code>。绝对值使特殊/可选时段保留其可用量表达，不会产生负产能；是否使用该时段仍由计划策略决定。<code>status=0</code>时为零，<code>status=1</code>时即上面的正常时段简式。OEE等损失若另行采用，应明确核算位置，避免与<code>used</code>重复扣减。</p>
+<h2 id="6-制品属性与需求">6. 制品、属性与需求</h2>
+<p>制品可表示成品、半成品或零部件。<code>name/code</code>描述名称和编码，<code>vin</code>描述所属成品的唯一编码。仅凭相同<code>vin</code>不能推导零部件的装配数量，制造关系仍通过工艺与物料结构表达。</p>
+<p>属性机制将制品按型号、配置、颜色等维度分类。属性的<code>name/code/value/is_key</code>分别描述属性名称、编码、值和关键属性标识；关键属性用于区分需求中的制品。一个<code>property_i</code>对应一个稳定分类维度，多个属性共同表达复合分类和规则条件。</p>
+<p>每个属性维度构成对制品的一种分类划分，例如按颜色分为蓝、白、黑三类；属性组合可以描述产品族、系列、版本等层次。新增或调整分类时，要保持各分类与业务含义可追溯。</p>
+<p>属性也为规则提供选择条件：</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>业务规则</th>
+<th>属性如何参与</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>范围内数量限制</td>
+<td>在一个班次内选择某型号，限制其产出数量</td>
+</tr>
+<tr class="even">
+<td>范围内种类限制</td>
+<td>在一个批次内按颜色分组，限制颜色种类数</td>
+</tr>
+<tr class="odd">
+<td>不同时生产或数量相关性</td>
+<td>选择某配置组合，定义互斥或数量配比</td>
+</tr>
+<tr class="even">
+<td>经济批量</td>
+<td>为某型号与配置组合设定批量区间</td>
+</tr>
+<tr class="odd">
+<td>切换次数或批次数</td>
+<td>用颜色等属性识别切换，并配置次数限制</td>
+</tr>
+<tr class="even">
+<td>不相邻生产</td>
+<td>对深色后紧接浅色等顺序配置规则</td>
+</tr>
+</tbody>
+</table></div>
+<p>这些条件通过相应服务接口与规则配置传入。属性记录提供分类事实，规则配置说明本次如何使用分类。</p>
+<p>当前SQLite模板提供<code>property_1/2/3</code>，制品记录存放属性记录的外键。属性机制可以扩展；扩展时应同步处理字段、加载、映射、校验与模型采用方式。当前模板的<code>value</code>为数值字段，名称说明属性、编码标识类别，例如“颜色/BLUE/1”表示蓝色这一取值，不要直接把<code>BLUE</code>填入整数外键或数值列。</p>
+<p>工程配置可通过<code>property_mappings</code>把<code>color</code>等业务名称对应到标准属性位置。语义中的“关键属性”与当前加载器通过<code>is_key</code>选取属性字段的行为应一并核对；规则确实引用某属性时，要确认它已被加载。</p>
+<p>订单头描述订单、编码、优先级与创建时间；订单明细连接订单、制品、交付时间和需求数量。同一订单可以按制品及交期拆为多行。订单优先级、路线优先级、资源优先级与物料配套优先级各作用于自身对象，数值大小的排序规则由对应配置说明，不跨对象通用。</p>
+<h2 id="7-工艺路线工序与资源适配">7. 工艺路线、工序与资源适配</h2>
+<p>一个制品可以有一条或多条候选路线；一条路线属于一个制品，包含一道或多道工序。路线名称、编码、描述和优先级用于表达加工方案与选择倾向。</p>
+<p><code>process.operation_number</code>标识路线内的工序编号；<code>seqno</code>表达顺序关系。不同工序可以有相同<code>seqno</code>，其语义是彼此没有先后依赖。它们是否能同时加工，还取决于资源、物料和模型采用方式。编号唯一性与顺序关系应分别检查。</p>
+<p><code>process_adaptor</code>连接工序和工作中心。一道工序可有多个资源适配记录，各自拥有优先级、出件率、批量、加工时间、切换时间、缓存容量、OEE和绑定加工标记。替换资源可能同时改变这些加工参数。</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>参数</th>
+<th>语义及相互关系</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>productivity</code></td>
+<td>离散加工的单次产出数量；连续加工设计中为单位时间产出，配置时必须明确量纲及转换方式</td>
+</tr>
+<tr class="even">
+<td><code>batch_size</code></td>
+<td>按批加工的数量；离散加工中必须可由整数次加工组成，即为出件率的整数倍</td>
+</tr>
+<tr class="odd">
+<td><code>processing_time</code></td>
+<td>标准加工时长，单位为秒；当前离散模板按单次加工解释</td>
+</tr>
+<tr class="even">
+<td><code>setup_time</code></td>
+<td>工艺切换时长，与工作中心配置时间分别确认，防止重复计入</td>
+</tr>
+<tr class="odd">
+<td><code>wip_buffer_size</code></td>
+<td>在制品缓存容量，配套说明容量单位及具体模型是否采用</td>
+</tr>
+<tr class="even">
+<td><code>OEE</code></td>
+<td>设备综合效率；损失在哪一层计入必须明确</td>
+</tr>
+<tr class="odd">
+<td><code>binding</code></td>
+<td>相同组标识表示相关工序共同加工，需保持加工次数、时间与产出关系一致</td>
+</tr>
+</tbody>
+</table></div>
+<p>离散加工中，<code>产出数量 = 加工次数 × 单次出件数量</code>。一批20件、每次4件，需要5次加工。需求必须整批满足属于具体业务策略：42件需求在20件整批条件下，可以讨论40件欠2件或60件余18件，不能把“需求是批量整数倍”推广为所有业务的统一要求。</p>
+<p>共同加工与共享资源是两类不同关系：前者把若干产出连接到同一次加工，后者表达不同任务竞争同一有限资源。二者可以出现在同一场景中。</p>
+<h2 id="8-物料工序级bom与齐套">8. 物料、工序级BOM与齐套</h2>
+<p>物料包含名称、编码、供应商、替代组、依赖组和扩展信息。相同<code>substitute</code>表示可替代关系；<code>binding</code>描述选型依赖，例如轮毂与轮胎规格需要匹配。替代与依赖分别说明可换什么、哪些选择必须一起协调。</p>
+<p><code>ingredient</code>通过工序、物料、数量和优先级表达工序级BOM。数量描述该工序对应制品的配套需求，示例应明确以一件工序产出为基准，还是经过转换后的其他单位，不能把工序产出与设备加工次数混用。优先级在可替换物料情形下表达配套顺序，实际选择仍需对应策略采用。</p>
+<p><code>kitting_information</code>连接物料、时间单元和就绪数量，把当前库存和后续供给放入统一时间轴。语义上要回答“到这个时点有多少物料能够用于相应工序”。工程映射同时要约定记录的是本期新增可用量还是累计值：采用累计求和的输入链路时，应把期初可用量放入首期、后续增量放入对应时期，不能反复写入累计库存快照。退料、取消到货、冻结量变化需要经明确的重建或净额转换处理。</p>
+<p>工序级齐套让不同物料在实际消耗点发生作用。例如切割使用坯料，装配使用紧固件；紧固件明天到达时，今天是否可以先切割，由工序顺序、在制品和时段安排共同决定。产品级BOM可以通过相应工序承载，但要保留真实的消耗位置。</p>
+<h2 id="9-库存能力">9. 库存能力</h2>
+<p><code>inventory_limit</code>将制品、时间、共用库存标记、累计上下限和紧迫性联系起来。它表达从当前库存、计划入库、计划出库和库存容量折算出的限制。<code>upper_bound_acc</code>与<code>lower_bound_acc</code>是累计数量界限，<code>binding</code>相同表示库存共用，<code>urgency</code>表达紧迫性或周转相关信息。</p>
+<p>设期初库存为I0，截至t累计生产入库为P(t)，累计其他入库为E(t)，累计出库为D(t)，则：</p>
+<p><code>I(t) = I0 + P(t) + E(t) − D(t)</code></p>
+<p>若库存要求为<code>L(t) ≤ I(t) ≤ U(t)</code>，可以推导：</p>
+<p><code>L(t) − I0 − E(t) + D(t) ≤ P(t) ≤ U(t) − I0 − E(t) + D(t)</code></p>
+<p>累计生产不能为负，合法的负下界可取0；负上界意味着即使不生产也无法满足该库存上限，需要处理库存收支或限制条件。算出的界限与当前接口的整数、非负要求一起检查。共用库存还需要可比较的单位或换算基准，不能直接把不同尺寸制品的件数当成相同体积。</p>
+<h2 id="10-数据交换映射与校验">10. 数据交换、映射与校验</h2>
+<p>数据交换包括读取、解析、转换、校验、异常处理和结果输出。来源系统可以不同，统一含义与关系使同一场景能够复用计划能力。校验至少覆盖：字段存在、数据类型、数值范围、标识唯一、引用完整、时间坐标，以及需要启用的业务关系。</p>
+<p>合理的检查顺序是：标识与主数据 → 时间与单位 → 路线和资源 → 物料与库存
+→ 配置采用 →
+运行结果。时间连续性按统一的相对时间轴检查，明确非工作时段如何表示，避免交期或供给落入未定义的窗口。结构检查通过后，还要检查具体模型是否采用预期的约束与目标。</p>
+<p>源数据、标准对象和模型输入视图分别保存。为某个模型选取主资源或做批量投影时，保留原始选择范围、原始需求、投影规则及影响说明。标准接口持续表达真实业务，模型视图表达本次运行采用的条件。</p>
+<h2 id="11-工序级结果与反馈">11. 工序级结果与反馈</h2>
+<p><code>planning_result</code>通过工作中心、时间单元、工序和<code>number</code>表示在哪个资源、哪个时期完成哪道工序的多少产出。<code>number</code>表示产出数量，不能直接解释为加工次数。<code>value_1/2/3</code>为扩展字段，例如具体循环排程中可分别约定循环序号、序列位置及其他信息。</p>
+<p>同一件制品经过两道工序时，两条工序产出不能相加作为成品交付量。应依据末工序、制品对应及所用路线恢复交付，再根据工序产出、出件率、时长与物料单耗恢复负荷和物料需求。</p>
+<p>计划结果还可以为后续调整提供输入：已执行任务更新剩余需求，已占用资源更新产能，执行反馈更新物料与状态。滚动计划时，同时更新计划起点和所有时间引用。保留原始计划、执行事实、更新记录及下一轮配置，才能解释方案之间的变化。</p>
+<p>结果可以输出为标准结构或写入指定结果库。读取原始业务数据不要求覆盖源数据库；显式结果写回与默认保留源数据可以共同组成可追溯的更新流程。</p>
+<h2 id="12-如何使用本详解">12. 如何使用本详解</h2>
+<p>下表用贯穿案例连接输入、计算含义和结果复核。数值为手算教学示例，不代表新增的求解运行记录。</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>输入事实与字段</th>
+<th>本例计算含义</th>
+<th>输出或反馈如何核对</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>订单80件，单次出件4件，每批20件</td>
+<td>20次加工、4批；保留原始订单量</td>
+<td>对应末工序<code>planning_result.number</code>合计80件，而非20次</td>
+</tr>
+<tr class="even">
+<td>正常期<code>scale=28800</code>、<code>used=0.25</code>、<code>status=1</code></td>
+<td>可用21600秒，即360分钟</td>
+<td>冲压20次×600秒=200分钟，余160分钟；不重复扣维护</td>
+</tr>
+<tr class="odd">
+<td>冲压坯料单耗1件，需产80件</td>
+<td>本工序物料需求80件</td>
+<td>核对该工序消耗时点之前的供给和累计消耗</td>
+</tr>
+<tr class="even">
+<td>冲压和装配各产80件</td>
+<td>两道工序表达流转，不是160件成品</td>
+<td>按末工序、路线与订单分配依据恢复交付量</td>
+</tr>
+<tr class="odd">
+<td>实际交付60件，原承诺80件</td>
+<td>交付偏差20件</td>
+<td>下一轮结合库存、在制品和已完工未交付量计算剩余任务</td>
+</tr>
+</tbody>
+</table></div>
+<p>按<a href="./Interface-Guide.html">九课教程</a>逐步完成配置，通过<a
+href="./Interface-Fields.html">字段参考</a>确认类型与空值，通过<a
+href="./Interface-Relationships.html">关系参考</a>检查跨表约束，再用<a
+href="./Interface-Walkthrough.html">贯穿案例</a>完成一次完整核对。</p>
+<p>语义定义说明数据能表达什么；字段字典说明当前模板如何存储；能力配置与运行证据说明某次求解实际采用了什么。将三者对应起来，使用者就能在保持业务含义的前提下调整数据、替换来源系统并持续完善场景。</p>
+      </article>
+      <footer class="article-footer"><a href="./">返回学习中心</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki/Interface-Semantics-zh-CN">在 Wiki 阅读</a></footer>
+    </main>
+  </div>
+  <footer class="site-footer shell"><strong>DecisioWorks</strong><span>从生产问题出发，理解与使用决策能力。</span></footer>
+</body>
+</html>

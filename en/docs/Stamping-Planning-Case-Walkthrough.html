@@ -49,19 +49,28 @@ how orders, capacity, and material readiness become planning inputs. The
 sample inspected on 2026-08-31 contained 1,920 order lines, 50 capacity
 records, 38 operation-level material links, 500 kitting records, 25 time
 units, and 3 work centers. Its database integrity check passed.</p>
-<p>Orders provide product, due time, and quantity. Routes and operations
-connect products to work centers. <code>ingredient</code> binds material
-demand to operations, <code>kitting_information</code> provides material
-availability by time, and <code>capacity.used</code> is the fraction of
-capacity already occupied, from 0 to 1. It is an input, not the resource
-utilization calculated from this run.</p>
-<p>The recipe enables capacity, demand, and kitting constraints, uses
-soft capacity, and leaves inventory constraints disabled. Its objective
-uses <code>job_bias=-0.001</code> and <code>waittime=1.0</code>. The
+<h2 id="1-input-data">1. Input data</h2>
+<p>Order lines in <code>order_item</code> provide product, due time, and
+quantity. Routes and operations connect products to work centers.
+<code>ingredient</code> binds material demand to operations,
+<code>kitting_information</code> provides material availability by time,
+and <code>capacity.used</code> is the fraction already occupied or
+unavailable, from 0 to 1. It is an input, not resource utilization
+calculated from this run.</p>
+<h2 id="2-constraints-and-objectives">2. Constraints and objectives</h2>
+<p>The supplied recipe enables capacity, demand, and kitting
+constraints, uses soft capacity, and leaves inventory constraints
+disabled. Its objective uses <code>job_bias=-0.001</code> and
+<code>waittime=1.0</code>, mapping due-date and completion-time pressure
+to the workshop plan's cumulative-waiting objective material. The
 configured solver request is 16 threads and 120 seconds, subject to
 edition and license limits.</p>
+<h2 id="3-processing-flow">3. Processing flow</h2>
 <p>The action chain is acquisition → constraint parsing → generation →
-selection → evaluation → optional dispatch.</p>
+selection → evaluation → optional dispatch. Dispatch leaves the standard
+database unchanged; only an explicitly configured standalone JSON result
+file can be written.</p>
+<h2 id="4-outputs-and-interpretation">4. Outputs and interpretation</h2>
 <table>
 <thead>
 <tr class="header">
@@ -101,6 +110,8 @@ selection → evaluation → optional dispatch.</p>
 <p>Baseline and rerun comparisons should keep the data version fixed,
 change only a few objectives, rules, or resource conditions, and retain
 the configuration difference.</p>
+<h2 id="5-observed-runs-and-comparison">5. Observed runs and
+comparison</h2>
 <p>The following records come from DecisioWorks v1.4.0 Commercial
 Edition runs under an <code>Enterprise</code> license on 2026-08-31. The
 API baseline used 16 threads with a 120-second limit and returned
@@ -141,6 +152,71 @@ above use 16 threads and 120 seconds. Review each set against its own
 data version, configuration, and output rather than treating them as one
 experiment. For a business deployment, apply the same comparison method
 to your data, equipment conditions, and acceptance criteria.</p>
+<h3 id="reading-the-original-chinese-screenshots">Reading the original
+Chinese screenshots</h3>
+<p>Start with the left-side baseline configuration, then the result
+status and aggregate metrics on the right. Finally inspect the
+work-center and time-unit breakdowns and the objective-material audit.
+The original interface labels are retained to preserve the run
+evidence.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Label in the screenshot</th>
+<th>English meaning</th>
+<th>Reading note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>基线方案 A / 基线结果 A</td>
+<td>Baseline configuration A / baseline result A</td>
+<td>Keep this configuration with this result</td>
+</tr>
+<tr class="even">
+<td>求解时限 / 求解线程</td>
+<td>Solve time limit / solver threads</td>
+<td>This screenshot shows 60 seconds and 2 threads</td>
+</tr>
+<tr class="odd">
+<td>需求满足率 / 期末欠产量</td>
+<td>Demand fulfillment / final shortage</td>
+<td>Quantity fulfillment does not prove on-time delivery</td>
+</tr>
+<tr class="even">
+<td>产能利用率</td>
+<td>Capacity utilization</td>
+<td>A percentage calculated from the result</td>
+</tr>
+<tr class="odd">
+<td>实际加工负荷</td>
+<td>Actual processing load</td>
+<td>Displayed in minutes: 6,193.14 in this screenshot</td>
+</tr>
+<tr class="even">
+<td>实际计划占用 / 切换与等待损失</td>
+<td>Planned capacity occupation / setup and waiting loss</td>
+<td>Minutes, unlike the unconverted API values above</td>
+</tr>
+<tr class="odd">
+<td>工作中心级产能 / 时间单元级产能</td>
+<td>Capacity by work center / by time unit</td>
+<td>Review bottlenecks at the same granularity as constraints</td>
+</tr>
+<tr class="even">
+<td>目标材料审计</td>
+<td>Objective-material audit</td>
+<td>Check the objective's direction, weight and interpretation</td>
+</tr>
+<tr class="odd">
+<td>基线 / 调整 / 差异</td>
+<td>Baseline / adjusted / difference</td>
+<td>Compare like-for-like units in the A/B view</td>
+</tr>
+</tbody>
+</table>
+<p>An em dash in the PlanBias or PlanSignal count means no numeric count
+is shown there; it should not be read as a confirmed zero.</p>
 <section class="related-docs"><h2>Continue Reading</h2><div><a href="Standardized-Data-Interface.html"><span>Standardized Data Interface</span><b>→</b></a><a href="Planning-and-Scheduling-Overview.html"><span>Planning and Scheduling Overview</span><b>→</b></a><a href="Results-Evidence-and-Feedback.html"><span>Results, Evidence, and Feedback</span><b>→</b></a></div></section></article>
   </main>
   <footer class="docs-footer"><div class="docs-shell"><strong>DecisioWorks</strong><span>Manufacturing Production Decision Toolkit</span></div></footer>

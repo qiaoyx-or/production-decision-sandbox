@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Configuration Patterns: From Shop-Floor Arrangements to Data | DecisioWorks</title>
+  <meta name="description" content="Before choosing a pattern, establish the planning time granularity, distinguish global changes from resource-specific changes, and decide whether aggregate quantities or exact timing must be controlled. The patterns can be combined. Tables below show only relevant fields; complete records follow the field reference." />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-Configurations.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-Configurations.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-Configurations.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-Configurations.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Configuration Patterns: From Shop-Floor Arrangements to Data | DecisioWorks" />
+  <meta property="og:description" content="Before choosing a pattern, establish the planning time granularity, distinguish global changes from resource-specific changes, and decide whether aggregate quantities or exact timing must be controlled. The patterns can be combined. Tables below show only relevant fields; complete records follow the field reference." />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-Configurations.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers-en.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Configuration Patterns: From Shop-Floor Arrangements to Data | DecisioWorks" />
+  <meta name="twitter:description" content="Before choosing a pattern, establish the planning time granularity, distinguish global changes from resource-specific changes, and decide whether aggregate quantities or exact timing must be controlled. The patterns can be combined. Tables below show only relevant fields; complete records follow the field reference." />
+  <meta name="twitter:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers-en.png" />
+  <link rel="icon" href="../../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "Configuration Patterns: From Shop-Floor Arrangements to Data", "description": "Before choosing a pattern, establish the planning time granularity, distinguish global changes from resource-specific changes, and decide whether aggregate quantities or exact timing must be controlled. The patterns can be combined. Tables below show only relevant fields; complete records follow the field reference.", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-Configurations.html", "inLanguage": "en", "author": {"@type": "Organization", "name": "DecisioWorks", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/"}, {"@type": "ListItem", "position": 2, "name": "Learning Center", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/"}, {"@type": "ListItem", "position": 3, "name": "Configuration Patterns: From Shop-Floor Arrangements to Data", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-Configurations.html"}]}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#article">Skip to content</a>
+  <header class="learning-header"><div class="shell header-inner">
+    <a class="brand" href="../"><img src="../../assets/decisioworks-logo.png" alt="" width="36" height="36" /><strong>DecisioWorks</strong></a>
+    <nav aria-label="Main navigation">
+      <a href="../">Home</a>
+      <a href="../docs/">Docs</a>
+      <a class="language-switch" href="../../learn/Interface-Configurations.html" lang="zh-CN" hreflang="zh-CN">中文</a>
+    </nav>
+  </div></header>
+  <div class="shell breadcrumbs" aria-label="Breadcrumb"><a href="../">Home</a><span>/</span><a href="./">Learning Center</a><span>/</span><span aria-current="page">Configuration Patterns: From Shop-Floor Arrangements to Data</span></div>
+  <div class="shell reading-layout">
+    <aside class="sidebar"><nav aria-label="Course contents"><a class="contents-home" href="./">Learning Center</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A From a Production Problem to a Testable Decision</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B Represent Manufacturing in Data</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C Objectives, Experience and Operational Rules</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D Read Plans through Recorded Cases</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E Coordinate Planning Levels and Responses</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F Open Collaboration and Continued Evolution</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G Connect Applications and AI Agents through Standard Actions</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H Build Everyday Decision Capability</a><span class="nav-section">Data Interface Guide</span><a href="./Interface-01-Calendar.html">01 Configure Time, Shifts, and Maintenance</a><a href="./Interface-02-Demand.html">02 Express Orders, Products, and Attributes</a><a href="./Interface-03-Resources.html">03 Configure Work Centers and Shared Resources</a><a href="./Interface-04-Routing.html">04 Configure Routes and Alternative Resources</a><a href="./Interface-05-Quantity.html">05 Calculate Cycle Output, Batches, and Processing Time</a><a href="./Interface-06-Materials.html">06 Configure Operation-Level Materials and Availability</a><a href="./Interface-07-Inventory.html">07 Translate Inventory Requirements into Cumulative Bounds</a><a href="./Interface-08-Validation.html">08 Import, Validate, and Load Business Data</a><a href="./Interface-09-Results.html">09 Interpret Results and Prepare the Next Planning Cycle</a><a href="./Interface-Configurations.html" aria-current="page">Configuration Patterns: From Shop-Floor Arrangements to Data</a><a href="./Interface-Fields.html">Complete Field Reference</a><a href="./Interface-Guide.html">Learning the Standardized Data Interface</a><a href="./Interface-Relationships.html">Object Relationships and Calculation Rules</a><a href="./Interface-Semantics.html">DecisioWorks Standardized Data Interface: A Detailed Semantic Guide</a><a href="./Interface-Walkthrough.html">Worked Example: Inputs, Checks and Adjustments for 120 Brackets</a><span class="nav-section">Worksheets</span><a href="./Worksheet-Operational-Rule.html">Operational Rule and Verification</a><a href="./Worksheet-Plan-Comparison.html">Baseline and Adjusted Plan Comparison</a><a href="./Worksheet-Review-and-Change-Record.html">Review and Change Record</a><a href="./Worksheet-Scenario-Brief.html">Scenario and Decision Task</a></nav></aside>
+    <main>
+      <details class="mobile-contents"><summary>Course contents</summary><nav aria-label="Mobile course contents"><a class="contents-home" href="./">Learning Center</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A From a Production Problem to a Testable Decision</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B Represent Manufacturing in Data</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C Objectives, Experience and Operational Rules</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D Read Plans through Recorded Cases</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E Coordinate Planning Levels and Responses</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F Open Collaboration and Continued Evolution</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G Connect Applications and AI Agents through Standard Actions</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H Build Everyday Decision Capability</a><span class="nav-section">Data Interface Guide</span><a href="./Interface-01-Calendar.html">01 Configure Time, Shifts, and Maintenance</a><a href="./Interface-02-Demand.html">02 Express Orders, Products, and Attributes</a><a href="./Interface-03-Resources.html">03 Configure Work Centers and Shared Resources</a><a href="./Interface-04-Routing.html">04 Configure Routes and Alternative Resources</a><a href="./Interface-05-Quantity.html">05 Calculate Cycle Output, Batches, and Processing Time</a><a href="./Interface-06-Materials.html">06 Configure Operation-Level Materials and Availability</a><a href="./Interface-07-Inventory.html">07 Translate Inventory Requirements into Cumulative Bounds</a><a href="./Interface-08-Validation.html">08 Import, Validate, and Load Business Data</a><a href="./Interface-09-Results.html">09 Interpret Results and Prepare the Next Planning Cycle</a><a href="./Interface-Configurations.html" aria-current="page">Configuration Patterns: From Shop-Floor Arrangements to Data</a><a href="./Interface-Fields.html">Complete Field Reference</a><a href="./Interface-Guide.html">Learning the Standardized Data Interface</a><a href="./Interface-Relationships.html">Object Relationships and Calculation Rules</a><a href="./Interface-Semantics.html">DecisioWorks Standardized Data Interface: A Detailed Semantic Guide</a><a href="./Interface-Walkthrough.html">Worked Example: Inputs, Checks and Adjustments for 120 Brackets</a><span class="nav-section">Worksheets</span><a href="./Worksheet-Operational-Rule.html">Operational Rule and Verification</a><a href="./Worksheet-Plan-Comparison.html">Baseline and Adjusted Plan Comparison</a><a href="./Worksheet-Review-and-Change-Record.html">Review and Change Record</a><a href="./Worksheet-Scenario-Brief.html">Scenario and Decision Task</a></nav></details>
+      <article id="article">
+        <header class="article-heading"><p class="kicker">Standardized Data Interface</p><h1>Configuration Patterns: From Shop-Floor Arrangements to Data</h1></header>
+        <details class="page-contents"><summary>On this page</summary><nav><a href="#1-single-shift-double-shift-and-continuous-production">1.
+Single-Shift, Double-Shift and Continuous Production</a><a href="#2-representing-maintenance">2. Representing Maintenance</a><a href="#3-alternative-machines-and-shared-tooling">3. Alternative
+Machines and Shared Tooling</a><a href="#4-one-processing-cycle-multiple-outputs">4. One Processing
+Cycle, Multiple Outputs</a><a href="#5-converting-cumulative-supply-to-increments">5. Converting
+Cumulative Supply to Increments</a><a href="#6-converting-stock-targets-to-cumulative-production-bounds">6.
+Converting Stock Targets to Cumulative Production Bounds</a><a href="#7-using-an-integer-template-with-other-units">7. Using an
+Integer Template with Other Units</a><a href="#8-checking-a-chosen-pattern">8. Checking a Chosen Pattern</a></nav></details>
+        <p>Before choosing a pattern, establish the planning time granularity,
+distinguish global changes from resource-specific changes, and decide
+whether aggregate quantities or exact timing must be controlled. The
+patterns can be combined. Tables below show only relevant fields;
+complete records follow the <a href="./Interface-Fields.html">field
+reference</a>.</p>
+<h2 id="1-single-shift-double-shift-and-continuous-production">1.
+Single-Shift, Double-Shift and Continuous Production</h2>
+<p>For illustration, divide a day into 24 hourly units, each with
+<code>scale=3600</code>. The table groups adjacent hours for
+readability; actual data has one record per hour.</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th>Arrangement</th>
+<th>Example normal operating periods</th>
+<th>Remaining periods</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>One eight-hour shift</td>
+<td>08:00–12:00 and 13:00–17:00</td>
+<td>Use <code>status=0</code> for a global shutdown</td>
+</tr>
+<tr class="even">
+<td>Two eight-hour shifts</td>
+<td>00:00–08:00 and 08:00–16:00</td>
+<td>Closed from 16:00–24:00</td>
+</tr>
+<tr class="odd">
+<td>Continuous production</td>
+<td>00:00–24:00</td>
+<td>Record equipment-specific downtime separately</td>
+</tr>
+<tr class="even">
+<td>Weekday production</td>
+<td>Apply the selected shifts Monday through Friday</td>
+<td>Weekends are closed or explicitly optional</td>
+</tr>
+</tbody>
+</table></div>
+<p>These hours are illustrative. Map actual breaks, handovers, overnight
+shifts and weekly calendars. If machine A works one shift and B works
+two, the shared time axis should cover both. Record A's local closure
+through its <code>capacity.used</code>, rather than shutting down the
+global calendar.</p>
+<p><code>status=-1</code> can express overtime awaiting a decision.
+Before a run that requires a fixed calendar, confirm the optional
+periods being used and retain the reason.</p>
+<h2 id="2-representing-maintenance">2. Representing Maintenance</h2>
+<p>For two hours of maintenance within an aggregated eight-hour
+period:</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th>Table</th>
+<th>Relevant values</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>time_unit</code></td>
+<td><code>id=1, offset=0, scale=28800, status=1</code></td>
+</tr>
+<tr class="even">
+<td><code>capacity</code></td>
+<td><code>workcenter=11, time_unit=1, used=0.25</code></td>
+</tr>
+</tbody>
+</table></div>
+<p>Six hours remain. Three hours of maintenance changes
+<code>used</code> to 0.375 and leaves five hours. If an existing
+two-hour task overlaps two-hour maintenance by one hour, total
+unavailability is three hours, not four.</p>
+<p>To prohibit processing specifically from 10:00–12:00, mark those
+resource-hour records fully unavailable, or use a scheduling
+configuration with explicit downtime windows. An aggregate 25% loss does
+not reveal whether downtime occurs at the start, middle or end of a
+shift.</p>
+<h2 id="3-alternative-machines-and-shared-tooling">3. Alternative
+Machines and Shared Tooling</h2>
+<p>An operation can have two <code>process_adaptor</code> records
+pointing to machines 11 and 13. Output per cycle, duration, batch size
+and priority may differ. Preserve the alternatives in the data and let
+the selected capability's resource-choice policy process them.</p>
+<p>If the machines share one tool, represent the tool as work center
+20:</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">shared_resource.binding</th>
+<th style="text-align: right;">shared_resource.to</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">11</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">13</td>
+</tr>
+</tbody>
+</table></div>
+<p>Record its availability separately as
+<code>capacity(workcenter=20, time_unit=1, used=0.5)</code>. Two
+machines each available for eight hours do not create sixteen
+simultaneous hours of tool availability. Whether the tool is held
+continuously and how much each piece occupies it must match the selected
+capability configuration.</p>
+<h2 id="4-one-processing-cycle-multiple-outputs">4. One Processing
+Cycle, Multiple Outputs</h2>
+<p>A mold produces two A pieces, two B pieces and one C piece per cycle.
+The corresponding adaptor records share a joint-processing group. Ten
+cycles produce 20, 20 and 10 pieces.</p>
+<p>Against demand of 18, 20 and 12, the differences are two surplus A
+pieces, no B difference and two missing C pieces. Running two more
+cycles depends on the trade-off between extra A/B inventory and C
+shortage. Count a shared cycle once when calculating resource occupancy;
+apply the declared material-consumption basis without duplicating shared
+processing time.</p>
+<h2 id="5-converting-cumulative-supply-to-increments">5. Converting
+Cumulative Supply to Increments</h2>
+<p>Suppose the source reports cumulative availability of 80 and 120
+pieces, while the input chain sums period increments:</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th>Period</th>
+<th style="text-align: right;">Source cumulative quantity</th>
+<th style="text-align: right;">Readiness increment written</th>
+<th style="text-align: right;">Cumulative quantity used</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">80</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td style="text-align: right;">120</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">120</td>
+</tr>
+</tbody>
+</table></div>
+<p>Writing 80 and 120 and then summing them incorrectly creates 200
+available pieces. If the second record is remaining stock instead,
+account for consumption, commitments and holds before conversion.
+Subtracting two stock snapshots is insufficient.</p>
+<p>For a material hold or cancelled delivery, rebuild the future
+availability curve and apply the agreed handling of reductions. This
+course's nonnegative-increment example does not accept unexplained
+negative records.</p>
+<h2 id="6-converting-stock-targets-to-cumulative-production-bounds">6.
+Converting Stock Targets to Cumulative Production Bounds</h2>
+<p>Opening stock is 20 pieces, the stock range is 20–100, and issues are
+80 followed by 40:</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th>Checkpoint</th>
+<th style="text-align: right;">Cumulative issues</th>
+<th style="text-align: right;">Cumulative production minimum</th>
+<th style="text-align: right;">Cumulative production maximum</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>End of period 1</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">160</td>
+</tr>
+<tr class="even">
+<td>End of period 2</td>
+<td style="text-align: right;">120</td>
+<td style="text-align: right;">120</td>
+<td style="text-align: right;">200</td>
+</tr>
+</tbody>
+</table></div>
+<p>Write each pair as the product's bounds at that point. They are
+cumulative checkpoints: adding 80 and 120 does not give the
+second-period minimum. Issues occurring before production receipts may
+require finer time representation.</p>
+<h2 id="7-using-an-integer-template-with-other-units">7. Using an
+Integer Template with Other Units</h2>
+<p>A process consumes 0.2 liters of coating per piece, but the current
+<code>ingredient.number</code> field is integer-valued. Use milliliters
+consistently: write 200 per piece, and convert supply, inventory and
+result descriptions to the same unit. Forty liters becomes 40,000
+milliliters, enough for 200 pieces.</p>
+<p>Record the source unit, target unit, conversion factor and rounding
+policy. Do not rely on SQLite's permissive storage to preserve decimals
+in integer columns throughout loading and solving.</p>
+<h2 id="8-checking-a-chosen-pattern">8. Checking a Chosen Pattern</h2>
+<p>Document the business condition, interface records, expected
+calculation, model adoption and result check. Verify a small example by
+hand before scaling the dataset. The <a
+href="./Interface-Walkthrough.html">worked example</a> provides structure
+checks and an actual data-layer loading procedure.</p>
+      </article>
+      <footer class="article-footer"><a href="./">Back to Learning Center</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki/Interface-Configurations">Read on Wiki</a></footer>
+    </main>
+  </div>
+  <footer class="site-footer shell"><strong>DecisioWorks</strong><span>Learn decision capabilities through production problems.</span></footer>
+</body>
+</html>

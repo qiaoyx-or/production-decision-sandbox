@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>06 Configure Operation-Level Materials and Availability | DecisioWorks</title>
+  <meta name="description" content="Each bracket consumes one blank during stamping and two fasteners during assembly. Coefficients are per unit of operation output, with no scrap. Create materials 1 (BLANK) and 2 (FASTENER), then enter ingredient:" />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-06-Materials.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-06-Materials.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-06-Materials.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-06-Materials.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="06 Configure Operation-Level Materials and Availability | DecisioWorks" />
+  <meta property="og:description" content="Each bracket consumes one blank during stamping and two fasteners during assembly. Coefficients are per unit of operation output, with no scrap. Create materials 1 (BLANK) and 2 (FASTENER), then enter ingredient:" />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-06-Materials.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers-en.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="06 Configure Operation-Level Materials and Availability | DecisioWorks" />
+  <meta name="twitter:description" content="Each bracket consumes one blank during stamping and two fasteners during assembly. Coefficients are per unit of operation output, with no scrap. Create materials 1 (BLANK) and 2 (FASTENER), then enter ingredient:" />
+  <meta name="twitter:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers-en.png" />
+  <link rel="icon" href="../../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "06 Configure Operation-Level Materials and Availability", "description": "Each bracket consumes one blank during stamping and two fasteners during assembly. Coefficients are per unit of operation output, with no scrap. Create materials 1 (BLANK) and 2 (FASTENER), then enter ingredient:", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-06-Materials.html", "inLanguage": "en", "author": {"@type": "Organization", "name": "DecisioWorks", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/"}, {"@type": "ListItem", "position": 2, "name": "Learning Center", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/"}, {"@type": "ListItem", "position": 3, "name": "06 Configure Operation-Level Materials and Availability", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-06-Materials.html"}]}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#article">Skip to content</a>
+  <header class="learning-header"><div class="shell header-inner">
+    <a class="brand" href="../"><img src="../../assets/decisioworks-logo.png" alt="" width="36" height="36" /><strong>DecisioWorks</strong></a>
+    <nav aria-label="Main navigation">
+      <a href="../">Home</a>
+      <a href="../docs/">Docs</a>
+      <a class="language-switch" href="../../learn/Interface-06-Materials.html" lang="zh-CN" hreflang="zh-CN">中文</a>
+    </nav>
+  </div></header>
+  <div class="shell breadcrumbs" aria-label="Breadcrumb"><a href="../">Home</a><span>/</span><a href="./">Learning Center</a><span>/</span><span aria-current="page">06 Configure Operation-Level Materials and Availability</span></div>
+  <div class="shell reading-layout">
+    <aside class="sidebar"><nav aria-label="Course contents"><a class="contents-home" href="./">Learning Center</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A From a Production Problem to a Testable Decision</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B Represent Manufacturing in Data</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C Objectives, Experience and Operational Rules</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D Read Plans through Recorded Cases</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E Coordinate Planning Levels and Responses</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F Open Collaboration and Continued Evolution</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G Connect Applications and AI Agents through Standard Actions</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H Build Everyday Decision Capability</a><span class="nav-section">Data Interface Guide</span><a href="./Interface-01-Calendar.html">01 Configure Time, Shifts, and Maintenance</a><a href="./Interface-02-Demand.html">02 Express Orders, Products, and Attributes</a><a href="./Interface-03-Resources.html">03 Configure Work Centers and Shared Resources</a><a href="./Interface-04-Routing.html">04 Configure Routes and Alternative Resources</a><a href="./Interface-05-Quantity.html">05 Calculate Cycle Output, Batches, and Processing Time</a><a href="./Interface-06-Materials.html" aria-current="page">06 Configure Operation-Level Materials and Availability</a><a href="./Interface-07-Inventory.html">07 Translate Inventory Requirements into Cumulative Bounds</a><a href="./Interface-08-Validation.html">08 Import, Validate, and Load Business Data</a><a href="./Interface-09-Results.html">09 Interpret Results and Prepare the Next Planning Cycle</a><a href="./Interface-Configurations.html">Configuration Patterns: From Shop-Floor Arrangements to Data</a><a href="./Interface-Fields.html">Complete Field Reference</a><a href="./Interface-Guide.html">Learning the Standardized Data Interface</a><a href="./Interface-Relationships.html">Object Relationships and Calculation Rules</a><a href="./Interface-Semantics.html">DecisioWorks Standardized Data Interface: A Detailed Semantic Guide</a><a href="./Interface-Walkthrough.html">Worked Example: Inputs, Checks and Adjustments for 120 Brackets</a><span class="nav-section">Worksheets</span><a href="./Worksheet-Operational-Rule.html">Operational Rule and Verification</a><a href="./Worksheet-Plan-Comparison.html">Baseline and Adjusted Plan Comparison</a><a href="./Worksheet-Review-and-Change-Record.html">Review and Change Record</a><a href="./Worksheet-Scenario-Brief.html">Scenario and Decision Task</a></nav></aside>
+    <main>
+      <details class="mobile-contents"><summary>Course contents</summary><nav aria-label="Mobile course contents"><a class="contents-home" href="./">Learning Center</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A From a Production Problem to a Testable Decision</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B Represent Manufacturing in Data</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C Objectives, Experience and Operational Rules</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D Read Plans through Recorded Cases</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E Coordinate Planning Levels and Responses</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F Open Collaboration and Continued Evolution</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G Connect Applications and AI Agents through Standard Actions</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H Build Everyday Decision Capability</a><span class="nav-section">Data Interface Guide</span><a href="./Interface-01-Calendar.html">01 Configure Time, Shifts, and Maintenance</a><a href="./Interface-02-Demand.html">02 Express Orders, Products, and Attributes</a><a href="./Interface-03-Resources.html">03 Configure Work Centers and Shared Resources</a><a href="./Interface-04-Routing.html">04 Configure Routes and Alternative Resources</a><a href="./Interface-05-Quantity.html">05 Calculate Cycle Output, Batches, and Processing Time</a><a href="./Interface-06-Materials.html" aria-current="page">06 Configure Operation-Level Materials and Availability</a><a href="./Interface-07-Inventory.html">07 Translate Inventory Requirements into Cumulative Bounds</a><a href="./Interface-08-Validation.html">08 Import, Validate, and Load Business Data</a><a href="./Interface-09-Results.html">09 Interpret Results and Prepare the Next Planning Cycle</a><a href="./Interface-Configurations.html">Configuration Patterns: From Shop-Floor Arrangements to Data</a><a href="./Interface-Fields.html">Complete Field Reference</a><a href="./Interface-Guide.html">Learning the Standardized Data Interface</a><a href="./Interface-Relationships.html">Object Relationships and Calculation Rules</a><a href="./Interface-Semantics.html">DecisioWorks Standardized Data Interface: A Detailed Semantic Guide</a><a href="./Interface-Walkthrough.html">Worked Example: Inputs, Checks and Adjustments for 120 Brackets</a><span class="nav-section">Worksheets</span><a href="./Worksheet-Operational-Rule.html">Operational Rule and Verification</a><a href="./Worksheet-Plan-Comparison.html">Baseline and Adjusted Plan Comparison</a><a href="./Worksheet-Review-and-Change-Record.html">Review and Change Record</a><a href="./Worksheet-Scenario-Brief.html">Scenario and Decision Task</a></nav></details>
+      <article id="article">
+        <header class="article-heading"><p class="kicker">Standardized Data Interface</p><h1>06 Configure Operation-Level Materials and Availability</h1></header>
+        <details class="page-contents"><summary>On this page</summary><nav><a href="#task-place-consumption-at-the-correct-operation">Task: Place
+Consumption at the Correct Operation</a><a href="#time-phase-supply">Time-Phase Supply</a><a href="#locate-the-affected-operation">Locate the Affected
+Operation</a><a href="#substitutes-and-dependent-choices">Substitutes and Dependent
+Choices</a><a href="#exercise-and-answer">Exercise and Answer</a></nav></details>
+        <h2 id="task-place-consumption-at-the-correct-operation">Task: Place
+Consumption at the Correct Operation</h2>
+<p>Each bracket consumes one blank during stamping and two fasteners
+during assembly. Coefficients are per unit of operation output, with no
+scrap. Create materials 1 (BLANK) and 2 (FASTENER), then enter
+<code>ingredient</code>:</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">id</th>
+<th style="text-align: right;">process</th>
+<th style="text-align: right;">material</th>
+<th style="text-align: right;">number</th>
+<th style="text-align: right;">priority</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1001</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1002</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table></div>
+<p>Eighty brackets require 80 blanks and 160 fasteners. Stamping
+produces four units per cycle, so 20 cycles still consume 80 blanks.
+Multiplying 20 cycles by one blank would understate demand by a factor
+of four.</p>
+<h2 id="time-phase-supply">Time-Phase Supply</h2>
+<p>This lesson uses opening ready quantity followed by newly available
+quantities. Enter these increments:</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">id</th>
+<th style="text-align: right;">time_unit</th>
+<th style="text-align: right;">material</th>
+<th style="text-align: right;">number</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">80</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">160</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">40</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">80</td>
+</tr>
+</tbody>
+</table></div>
+<p>Cumulative supply is 80 blanks and 160 fasteners on day one, then 120
+and 240 on day two. Compare cumulative consumption against supply on the
+same basis. Source cumulative supply snapshots of 80 and 120 become
+increments 80 and 40 before entering a cumulatively summed input chain;
+summing 80 and 120 again would incorrectly give 200.</p>
+<p>Explain both availability at a point in time and how period rows are
+stored. If stock snapshots already deduct consumption, simple
+differencing does not yield supply receipts. Reconstruct availability
+from opening stock, confirmed receipts, consumption, and blocked
+quantities.</p>
+<p>For blanks, assume zero opening inventory, supply and consumption
+before each checkpoint, and no blocked stock or losses:</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Data table"><table>
+<thead>
+<tr class="header">
+<th>Checkpoint</th>
+<th style="text-align: right;">New availability in the period (this
+example's input)</th>
+<th style="text-align: right;">Cumulative supply</th>
+<th style="text-align: right;">Cumulative consumption</th>
+<th style="text-align: right;">Stock after consumption</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>End of day one</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td>End of day two</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">120</td>
+<td style="text-align: right;">120</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table></div>
+<p>Here 80 and 40 are execution inputs, 80 and 120 are cumulative
+supply, and 0 and 0 are remaining stock. They are not interchangeable.
+An unchanged stock balance does not mean that no material arrived on day
+two.</p>
+<h2 id="locate-the-affected-operation">Locate the Affected
+Operation</h2>
+<p>If day-one fasteners fall to 120 and day-two receipts rise to 120,
+day-one assembly is limited to 60 units while two-day supply remains
+240. Enough blanks do not establish assembly readiness. Stamping 80 and
+holding 20 intermediates depends on buffers, precedence, and planning
+policy.</p>
+<p>For an arrival during a shift, use finer periods and specify whether
+material becomes usable at a window's start or end. A shift-level row
+alone cannot distinguish morning from afternoon availability.</p>
+<h2 id="substitutes-and-dependent-choices">Substitutes and Dependent
+Choices</h2>
+<p>Two alternative fasteners can share a
+<code>material.substitute</code> group, with
+<code>ingredient.priority</code> expressing a supply preference.
+Coordinated wheel-and-tire choices use a material dependency. A
+selection policy must interpret substitutes, dependencies, and
+priorities; adding all alternative stock together while ignoring
+specifications would lose the relationship.</p>
+<p><code>vendor</code> records the supplier. <code>extend</code> is a
+reserved extension field, for example for supplier priority. Define its
+meaning, allowed values, and interpretation before use. A reference
+mapping is needed only when the extension is explicitly designed as a
+reference.</p>
+<h2 id="exercise-and-answer">Exercise and Answer</h2>
+<p>Add surface treatment consuming 0.2 liters per item. With integer
+quantity fields, use milliliters consistently: coefficient 200 and
+requirement 2000 for ten items. Supply must also be in milliliters.
+Record the unit in the mapping documentation. Converting only the BOM
+would introduce a factor-of-1000 error.</p>
+<p><a href="./Interface-05-Quantity.html">Previous</a> · <a
+href="./Interface-07-Inventory.html">Next: inventory</a></p>
+      </article>
+      <footer class="article-footer"><a href="./">Back to Learning Center</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki/Interface-06-Materials">Read on Wiki</a></footer>
+    </main>
+  </div>
+  <footer class="site-footer shell"><strong>DecisioWorks</strong><span>Learn decision capabilities through production problems.</span></footer>
+</body>
+</html>

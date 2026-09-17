@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>09 解释结果并准备下一轮计划 | DecisioWorks</title>
+  <meta name="description" content="下面是贯穿案例的人工候选表，用于核算，不是求解器输出。基础库中的planning_result保持为空；候选表单独保存在CSV中。" />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-09-Results.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-09-Results.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-09-Results.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-09-Results.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="09 解释结果并准备下一轮计划 | DecisioWorks" />
+  <meta property="og:description" content="下面是贯穿案例的人工候选表，用于核算，不是求解器输出。基础库中的planning_result保持为空；候选表单独保存在CSV中。" />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-09-Results.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="09 解释结果并准备下一轮计划 | DecisioWorks" />
+  <meta name="twitter:description" content="下面是贯穿案例的人工候选表，用于核算，不是求解器输出。基础库中的planning_result保持为空；候选表单独保存在CSV中。" />
+  <meta name="twitter:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <link rel="icon" href="../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "09 解释结果并准备下一轮计划", "description": "下面是贯穿案例的人工候选表，用于核算，不是求解器输出。基础库中的planning_result保持为空；候选表单独保存在CSV中。", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-09-Results.html", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "DecisioWorks", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "首页", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/"}, {"@type": "ListItem", "position": 2, "name": "学习中心", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/"}, {"@type": "ListItem", "position": 3, "name": "09 解释结果并准备下一轮计划", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-09-Results.html"}]}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#article">跳到正文</a>
+  <header class="learning-header"><div class="shell header-inner">
+    <a class="brand" href="../"><img src="../assets/decisioworks-logo.png" alt="" width="36" height="36" /><strong>DecisioWorks</strong></a>
+    <nav aria-label="主导航">
+      <a href="../">主页</a>
+      <a href="../docs/">文档</a>
+      <a class="language-switch" href="../en/learn/Interface-09-Results.html" lang="en" hreflang="en">English</a>
+    </nav>
+  </div></header>
+  <div class="shell breadcrumbs" aria-label="面包屑导航"><a href="../">首页</a><span>/</span><a href="./">学习中心</a><span>/</span><span aria-current="page">09 解释结果并准备下一轮计划</span></div>
+  <div class="shell reading-layout">
+    <aside class="sidebar"><nav aria-label="课程目录"><a class="contents-home" href="./">学习中心</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A 从生产问题到可检验的决策</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B 用数据表达制造过程</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C 让目标、经验与规则参与决策</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D 从真实样例学会读计划</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E 让计划层级协同工作</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F 开放协作与持续演进</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G 用标准动作连接应用与AI Agent</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H 把一次练习变成日常能力</a><span class="nav-section">数据接口详解</span><a href="./Interface-01-Calendar.html">01 配置生产时间、班制与维护</a><a href="./Interface-02-Demand.html">02 表达订单、制品与产品属性</a><a href="./Interface-03-Resources.html">03 配置工作中心与共享资源</a><a href="./Interface-04-Routing.html">04 配置工艺路线与可选资源</a><a href="./Interface-05-Quantity.html">05 核算出件率、批量与加工时间</a><a href="./Interface-06-Materials.html">06 配置工序级物料与齐套</a><a href="./Interface-07-Inventory.html">07 把库存要求转换为累计约束</a><a href="./Interface-08-Validation.html">08 导入、校验并读取业务数据</a><a href="./Interface-09-Results.html" aria-current="page">09 解释结果并准备下一轮计划</a><a href="./Interface-Configurations.html">典型配置模式：从现场安排到接口记录</a><a href="./Interface-Fields.html">完整字段参考</a><a href="./Interface-Guide.html">标准化数据接口学习指南</a><a href="./Interface-Relationships.html">对象关系与计算规则</a><a href="./Interface-Semantics.html">DecisioWorks 标准化数据接口语义详解</a><a href="./Interface-Walkthrough.html">贯穿案例：120件支架的输入、核对与调整</a><span class="nav-section">工作表</span><a href="./Worksheet-Operational-Rule.html">现场规则记录与检查</a><a href="./Worksheet-Plan-Comparison.html">基线与调整方案比较</a><a href="./Worksheet-Review-and-Change-Record.html">复盘与持续改进记录</a><a href="./Worksheet-Scenario-Brief.html">场景与决策任务</a></nav></aside>
+    <main>
+      <details class="mobile-contents"><summary>课程目录</summary><nav aria-label="移动端课程目录"><a class="contents-home" href="./">学习中心</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A 从生产问题到可检验的决策</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B 用数据表达制造过程</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C 让目标、经验与规则参与决策</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D 从真实样例学会读计划</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E 让计划层级协同工作</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F 开放协作与持续演进</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G 用标准动作连接应用与AI Agent</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H 把一次练习变成日常能力</a><span class="nav-section">数据接口详解</span><a href="./Interface-01-Calendar.html">01 配置生产时间、班制与维护</a><a href="./Interface-02-Demand.html">02 表达订单、制品与产品属性</a><a href="./Interface-03-Resources.html">03 配置工作中心与共享资源</a><a href="./Interface-04-Routing.html">04 配置工艺路线与可选资源</a><a href="./Interface-05-Quantity.html">05 核算出件率、批量与加工时间</a><a href="./Interface-06-Materials.html">06 配置工序级物料与齐套</a><a href="./Interface-07-Inventory.html">07 把库存要求转换为累计约束</a><a href="./Interface-08-Validation.html">08 导入、校验并读取业务数据</a><a href="./Interface-09-Results.html" aria-current="page">09 解释结果并准备下一轮计划</a><a href="./Interface-Configurations.html">典型配置模式：从现场安排到接口记录</a><a href="./Interface-Fields.html">完整字段参考</a><a href="./Interface-Guide.html">标准化数据接口学习指南</a><a href="./Interface-Relationships.html">对象关系与计算规则</a><a href="./Interface-Semantics.html">DecisioWorks 标准化数据接口语义详解</a><a href="./Interface-Walkthrough.html">贯穿案例：120件支架的输入、核对与调整</a><span class="nav-section">工作表</span><a href="./Worksheet-Operational-Rule.html">现场规则记录与检查</a><a href="./Worksheet-Plan-Comparison.html">基线与调整方案比较</a><a href="./Worksheet-Review-and-Change-Record.html">复盘与持续改进记录</a><a href="./Worksheet-Scenario-Brief.html">场景与决策任务</a></nav></details>
+      <article id="article">
+        <header class="article-heading"><p class="kicker">标准化数据接口</p><h1>09 解释结果并准备下一轮计划</h1></header>
+        <details class="page-contents"><summary>本页内容</summary><nav><a href="#任务从工序结果恢复业务含义">任务：从工序结果恢复业务含义</a><a href="#恢复加工时间和物料">恢复加工时间和物料</a><a href="#一次维护变更">一次维护变更</a><a href="#下一轮输入更新清单">下一轮输入更新清单</a><a href="#练习与解析">练习与解析</a></nav></details>
+        <h2 id="任务从工序结果恢复业务含义">任务：从工序结果恢复业务含义</h2>
+<p>下面是贯穿案例的人工候选表，用于核算，不是求解器输出。基础库中的<code>planning_result</code>保持为空；候选表单独保存在CSV中。</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">workcenter</th>
+<th style="text-align: right;">time_unit</th>
+<th style="text-align: right;">process</th>
+<th style="text-align: right;">number</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1001</td>
+<td style="text-align: right;">80</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1002</td>
+<td style="text-align: right;">80</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1001</td>
+<td style="text-align: right;">40</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1002</td>
+<td style="text-align: right;">40</td>
+</tr>
+</tbody>
+</table></div>
+<p>先由<code>process</code>找路线，再找制品。装配是末工序，两天交付对应80和40；四行数量之和240表达工序产出合计，不能写成成品交付240件。</p>
+<h2 id="恢复加工时间和物料">恢复加工时间和物料</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>时期与资源</th>
+<th style="text-align: right;">产出</th>
+<th style="text-align: right;">出件数量</th>
+<th style="text-align: right;">加工次数</th>
+<th style="text-align: right;">单次秒数</th>
+<th style="text-align: right;">加工分钟</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>第一天冲压</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">600</td>
+<td style="text-align: right;">200</td>
+</tr>
+<tr class="even">
+<td>第一天装配</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">120</td>
+<td style="text-align: right;">160</td>
+</tr>
+<tr class="odd">
+<td>第二天冲压</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">600</td>
+<td style="text-align: right;">100</td>
+</tr>
+<tr class="even">
+<td>第二天装配</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">120</td>
+<td style="text-align: right;">80</td>
+</tr>
+</tbody>
+</table></div>
+<p>第一天坯料消耗80、紧固件160；第二天新增消耗40、80。累计消耗与累计供给分别核对。期初成品20，两日出库80、40，日末成品库存均为20。</p>
+<p>上述核算假设无初始准备、无工序切换、无损耗，且OEE不另行折减。实际结果应按适配记录及已采用规则补充对应时间。<code>value_1/2/3</code>的含义取决于场景；循环序号与序列位置必须依据该场景的结果说明读取。</p>
+<h2 id="一次维护变更">一次维护变更</h2>
+<p>把第一天冲压维护由2小时改为3小时，可用时间从360降为300分钟，200分钟冲压负荷仍未超出总量。若维护在班初，且第一天所需80件必须全部完成冲压后才开始装配，两道工序不重叠，连续执行总时长为<code>180+200+160=540分钟</code>，超过8小时窗口；在两小时维护情形则是480分钟。</p>
+<p>这里的80件整体转序是额外假设，不由<code>batch_size=20</code>推导。加工批量与转运批量应分别确认：若允许每完成20件就转入装配，在无运输和准备损失、两台设备可并行工作的同一手算条件下，四批最终完成于第270、320、370、420分钟。420分钟与540分钟对应不同的转序规则，均不是求解器运行结果。</p>
+<p>因此，单资源负荷检查通过不代表整个工序链一定在同班完成。是否允许分批转移、交叠生产或调整时窗，要由场景规则和所选模型决定。这是为什么结果复核既需要总体数量，也需要工序级过程。</p>
+<h2 id="下一轮输入更新清单">下一轮输入更新清单</h2>
+<ol type="1">
+<li>区分已执行、已承诺和可调整任务，保存原计划。</li>
+<li>根据真实交付更新剩余需求，不把计划完成量当作已经交付。</li>
+<li>根据真实消耗、收货和冻结情况更新可用物料。</li>
+<li>将需要继续保留的资源占用计入新的产能记录，避免与维护重复。</li>
+<li>若滚动计划起点改变，重建全部时间引用，而不仅重编号结果表。</li>
+<li>输出新配置与旧配置的差异，再启动相应能力运行。</li>
+</ol>
+<h2 id="练习与解析">练习与解析</h2>
+<p>计划第一天交80，实际只交60。若客户累计承诺未变，第二天剩余交付应为60（原第二天40加前日欠20）。但这不直接等于第二天需要新生产60：还要核对成品、在制品、已加工未交付数量和库存策略。把“欠交”直接改写成“新增生产”可能重复生产。</p>
+<p><a href="./Interface-08-Validation.html">上一课</a> · <a
+href="./Interface-Walkthrough.html">贯穿案例</a> · <a
+href="./Interface-Relationships.html">关系参考</a></p>
+      </article>
+      <footer class="article-footer"><a href="./">返回学习中心</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki/Interface-09-Results-zh-CN">在 Wiki 阅读</a></footer>
+    </main>
+  </div>
+  <footer class="site-footer shell"><strong>DecisioWorks</strong><span>从生产问题出发，理解与使用决策能力。</span></footer>
+</body>
+</html>

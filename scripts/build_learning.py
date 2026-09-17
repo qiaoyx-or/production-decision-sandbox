@@ -28,7 +28,8 @@ def page_info(path: Path) -> dict:
         raise ValueError(f"Missing title: {path.name}")
     body = re.sub(r"\A# [^\n]+\n+[^\n]+\n+", "", text, count=1)
     paragraphs = [p.strip() for p in body.split("\n\n") if p.strip()]
-    first = next((p for p in paragraphs if not p.startswith(("#", "|", "-", ">"))), title)
+    first = next((p for p in paragraphs if not p.startswith(("#", "|", "-", ">"))
+                  and not (slug.startswith('Interface-') and re.fullmatch(r'\[[^]]+\]\([^)]+\)', p))), title)
     description = re.sub(r"\[([^]]+)\]\([^)]+\)", r"\1", first)
     description = re.sub(r"[*\x60]", "", description).replace("\n", " ")
     lesson = re.match(r"Learning-([A-H][1-3])-", slug)
@@ -36,7 +37,7 @@ def page_info(path: Path) -> dict:
     return {
         "source": path.name, "slug": slug, "language": "zh-CN" if zh else "en",
         "title": title, "description": description,
-        "kind": "center" if slug == "Learning-Center" else "topic" if topic else "lesson" if lesson else "worksheet",
+        "kind": "interface" if slug.startswith("Interface-") else "center" if slug == "Learning-Center" else "topic" if topic else "lesson" if lesson else "worksheet",
         "topic": lesson.group(1)[0] if lesson else topic.group(1) if topic else None,
         "id": lesson.group(1) if lesson else None, "body": body,
         "file": "index.html" if slug == "Learning-Center" else slug + ".html",
@@ -46,13 +47,15 @@ def page_info(path: Path) -> dict:
 
 def inventory(root: Path) -> list[dict]:
     pages = [page_info(p) for p in sorted((root / "content/learning").glob("*.md"))]
-    if len(pages) != 74:
-        raise ValueError(f"Expected 74 reviewed pages, found {len(pages)}")
+    if len(pages) != 104:
+        raise ValueError(f"Expected 104 reviewed pages, found {len(pages)}")
     for language in ("zh-CN", "en"):
         selected = [p for p in pages if p["language"] == language]
         counts = {kind: sum(p["kind"] == kind for p in selected) for kind in ("center", "topic", "lesson", "worksheet")}
         if counts != {"center": 1, "topic": 8, "lesson": 24, "worksheet": 4}:
             raise ValueError(f"Incomplete {language} inventory: {counts}")
+        if sum(p['kind'] == 'interface' for p in selected) != 15:
+            raise ValueError(f"Incomplete {language} data-interface course")
     return pages
 
 
@@ -76,6 +79,9 @@ def render_body(page: dict, pages: list[dict]) -> str:
         if url.scheme or url.netloc or not url.path:
             return match.group(0)
         name = unquote(url.path)
+        if name.startswith('../../assets/data-interface/'):
+            prefix = '../' if page['language'] == 'zh-CN' else '../../'
+            return 'href="' + html.escape(prefix + name.removeprefix('../../'), quote=True) + '"'
         if name not in lookup:
             raise ValueError(f"Unknown local learning link: {page['source']}: {raw}")
         href = local_href(lookup[name], page["language"])
@@ -83,6 +89,8 @@ def render_body(page: dict, pages: list[dict]) -> str:
             href += "#" + url.fragment
         return 'href="' + html.escape(href, quote=True) + '"'
     result = re.sub(r'href="([^"]+)"', rewrite, result)
+    prefix = '../' if page['language'] == 'zh-CN' else '../../'
+    result = result.replace('src="../../assets/data-interface/', 'src="' + prefix + 'assets/data-interface/')
     # Keep wide field tables readable without making the page itself scroll sideways.
     result = re.sub(r"<table>", '<div class="table-scroll" role="region" tabindex="0" aria-label="' +
                     ("数据表" if page["language"] == "zh-CN" else "Data table") + '"><table>', result)
@@ -110,6 +118,12 @@ def template(page: dict, pages: list[dict]) -> str:
                     current = ' aria-current="page"' if lesson["slug"] == page["slug"] else ""
                     links.append(f'<a class="lesson-link" href="{local_href(lesson, language)}"{current}>{html.escape(lesson["title"])}</a>')
     sidebar = '<a class="contents-home" href="./">' + label("学习中心", "Learning Center") + '</a>' + "".join(links)
+    interface = [p for p in selected if p['kind'] == 'interface']
+    sidebar += '<span class="nav-section">' + label('数据接口详解', 'Data Interface Guide') + '</span>'
+    for item in interface:
+        if page['kind'] == 'interface' or item['slug'] == 'Interface-Guide':
+            current = ' aria-current="page"' if item['slug'] == page['slug'] else ''
+            sidebar += f'<a href="{local_href(item, language)}"{current}>{html.escape(item["title"])}</a>'
     sidebar += '<span class="nav-section">' + label("工作表", "Worksheets") + "</span>"
     sidebar += "".join(f'<a href="{local_href(p, language)}">' + html.escape(p["title"].split("：")[-1].removeprefix("Worksheet: ")) + "</a>" for p in selected if p["kind"] == "worksheet")
     body = render_body(page, pages)
@@ -140,7 +154,8 @@ def template(page: dict, pages: list[dict]) -> str:
     title = html.escape(page["title"] + " | DecisioWorks")
     description = html.escape(page["description"], quote=True)
     kind = {"center": label("学习路径", "Learning paths"), "topic": label("专题", "Topic"),
-            "lesson": label("课程", "Lesson"), "worksheet": label("工作表", "Worksheet")}[page["kind"]]
+            "lesson": label("课程", "Lesson"), "worksheet": label("工作表", "Worksheet"),
+            "interface": label("标准化数据接口", "Standardized Data Interface")}[page["kind"]]
     return f'''<!doctype html>
 <html lang="{language}">
 <head>
@@ -206,6 +221,8 @@ def export_wiki(root: Path, destination: Path) -> None:
     for page in pages:
         def rewrite(match):
             target = urlsplit(match.group(1))
+            if target.path.startswith('../../assets/data-interface/'):
+                return '](' + target.path.removeprefix('../../') + ')'
             if not target.scheme and not target.netloc and target.path in names:
                 return "](" + target.path[:-3] + ("#" + target.fragment if target.fragment else "") + ")"
             return match.group(0)
@@ -231,7 +248,7 @@ def build(root: Path, source: Path | None = None, wiki: Path | None = None) -> N
     update_sitemap(root, pages)
     if wiki:
         export_wiki(root, wiki)
-    print(f"Built {len(pages)} learning pages (37 per language).")
+    print(f"Built {len(pages)} learning pages ({len(pages) // 2} per language).")
 
 
 if __name__ == "__main__":

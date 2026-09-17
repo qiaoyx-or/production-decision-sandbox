@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>对象关系与计算规则 | DecisioWorks</title>
+  <meta name="description" content="字段表回答“填在哪里”，本页回答“记录之间如何连接、哪些数量可以比较”。准备数据时，先用业务编码确定对象，再把引用转换为目标表的记录ID。" />
+  <link rel="canonical" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-Relationships.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-Relationships.html" />
+  <link rel="alternate" hreflang="en" href="https://qiaoyx-or.github.io/production-decision-sandbox/en/learn/Interface-Relationships.html" />
+  <link rel="alternate" hreflang="x-default" href="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-Relationships.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="对象关系与计算规则 | DecisioWorks" />
+  <meta property="og:description" content="字段表回答“填在哪里”，本页回答“记录之间如何连接、哪些数量可以比较”。准备数据时，先用业务编码确定对象，再把引用转换为目标表的记录ID。" />
+  <meta property="og:url" content="https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-Relationships.html" />
+  <meta property="og:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="对象关系与计算规则 | DecisioWorks" />
+  <meta name="twitter:description" content="字段表回答“填在哪里”，本页回答“记录之间如何连接、哪些数量可以比较”。准备数据时，先用业务编码确定对象，再把引用转换为目标表的记录ID。" />
+  <meta name="twitter:image" content="https://qiaoyx-or.github.io/production-decision-sandbox/assets/decisioworks-project-layers.png" />
+  <link rel="icon" href="../assets/decisioworks-logo.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "对象关系与计算规则", "description": "字段表回答“填在哪里”，本页回答“记录之间如何连接、哪些数量可以比较”。准备数据时，先用业务编码确定对象，再把引用转换为目标表的记录ID。", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-Relationships.html", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "DecisioWorks", "url": "https://qiaoyx-or.github.io/production-decision-sandbox/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "首页", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/"}, {"@type": "ListItem", "position": 2, "name": "学习中心", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/"}, {"@type": "ListItem", "position": 3, "name": "对象关系与计算规则", "item": "https://qiaoyx-or.github.io/production-decision-sandbox/learn/Interface-Relationships.html"}]}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#article">跳到正文</a>
+  <header class="learning-header"><div class="shell header-inner">
+    <a class="brand" href="../"><img src="../assets/decisioworks-logo.png" alt="" width="36" height="36" /><strong>DecisioWorks</strong></a>
+    <nav aria-label="主导航">
+      <a href="../">主页</a>
+      <a href="../docs/">文档</a>
+      <a class="language-switch" href="../en/learn/Interface-Relationships.html" lang="en" hreflang="en">English</a>
+    </nav>
+  </div></header>
+  <div class="shell breadcrumbs" aria-label="面包屑导航"><a href="../">首页</a><span>/</span><a href="./">学习中心</a><span>/</span><span aria-current="page">对象关系与计算规则</span></div>
+  <div class="shell reading-layout">
+    <aside class="sidebar"><nav aria-label="课程目录"><a class="contents-home" href="./">学习中心</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A 从生产问题到可检验的决策</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B 用数据表达制造过程</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C 让目标、经验与规则参与决策</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D 从真实样例学会读计划</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E 让计划层级协同工作</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F 开放协作与持续演进</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G 用标准动作连接应用与AI Agent</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H 把一次练习变成日常能力</a><span class="nav-section">数据接口详解</span><a href="./Interface-01-Calendar.html">01 配置生产时间、班制与维护</a><a href="./Interface-02-Demand.html">02 表达订单、制品与产品属性</a><a href="./Interface-03-Resources.html">03 配置工作中心与共享资源</a><a href="./Interface-04-Routing.html">04 配置工艺路线与可选资源</a><a href="./Interface-05-Quantity.html">05 核算出件率、批量与加工时间</a><a href="./Interface-06-Materials.html">06 配置工序级物料与齐套</a><a href="./Interface-07-Inventory.html">07 把库存要求转换为累计约束</a><a href="./Interface-08-Validation.html">08 导入、校验并读取业务数据</a><a href="./Interface-09-Results.html">09 解释结果并准备下一轮计划</a><a href="./Interface-Configurations.html">典型配置模式：从现场安排到接口记录</a><a href="./Interface-Fields.html">完整字段参考</a><a href="./Interface-Guide.html">标准化数据接口学习指南</a><a href="./Interface-Relationships.html" aria-current="page">对象关系与计算规则</a><a href="./Interface-Semantics.html">DecisioWorks 标准化数据接口语义详解</a><a href="./Interface-Walkthrough.html">贯穿案例：120件支架的输入、核对与调整</a><span class="nav-section">工作表</span><a href="./Worksheet-Operational-Rule.html">现场规则记录与检查</a><a href="./Worksheet-Plan-Comparison.html">基线与调整方案比较</a><a href="./Worksheet-Review-and-Change-Record.html">复盘与持续改进记录</a><a href="./Worksheet-Scenario-Brief.html">场景与决策任务</a></nav></aside>
+    <main>
+      <details class="mobile-contents"><summary>课程目录</summary><nav aria-label="移动端课程目录"><a class="contents-home" href="./">学习中心</a><a href="./Learning-Topic-A-Problem-and-Validation.html">A 从生产问题到可检验的决策</a><a href="./Learning-Topic-B-Manufacturing-Data.html">B 用数据表达制造过程</a><a href="./Learning-Topic-C-Objectives-and-Operational-Rules.html">C 让目标、经验与规则参与决策</a><a href="./Learning-Topic-D-Read-Real-Planning-Cases.html">D 从真实样例学会读计划</a><a href="./Learning-Topic-E-Coordinate-Plans-and-Responses.html">E 让计划层级协同工作</a><a href="./Learning-Topic-F-Open-Collaboration-and-Evolution.html">F 开放协作与持续演进</a><a href="./Learning-Topic-G-Actions-Extensions-and-Agents.html">G 用标准动作连接应用与AI Agent</a><a href="./Learning-Topic-H-Build-Everyday-Decision-Capability.html">H 把一次练习变成日常能力</a><span class="nav-section">数据接口详解</span><a href="./Interface-01-Calendar.html">01 配置生产时间、班制与维护</a><a href="./Interface-02-Demand.html">02 表达订单、制品与产品属性</a><a href="./Interface-03-Resources.html">03 配置工作中心与共享资源</a><a href="./Interface-04-Routing.html">04 配置工艺路线与可选资源</a><a href="./Interface-05-Quantity.html">05 核算出件率、批量与加工时间</a><a href="./Interface-06-Materials.html">06 配置工序级物料与齐套</a><a href="./Interface-07-Inventory.html">07 把库存要求转换为累计约束</a><a href="./Interface-08-Validation.html">08 导入、校验并读取业务数据</a><a href="./Interface-09-Results.html">09 解释结果并准备下一轮计划</a><a href="./Interface-Configurations.html">典型配置模式：从现场安排到接口记录</a><a href="./Interface-Fields.html">完整字段参考</a><a href="./Interface-Guide.html">标准化数据接口学习指南</a><a href="./Interface-Relationships.html" aria-current="page">对象关系与计算规则</a><a href="./Interface-Semantics.html">DecisioWorks 标准化数据接口语义详解</a><a href="./Interface-Walkthrough.html">贯穿案例：120件支架的输入、核对与调整</a><span class="nav-section">工作表</span><a href="./Worksheet-Operational-Rule.html">现场规则记录与检查</a><a href="./Worksheet-Plan-Comparison.html">基线与调整方案比较</a><a href="./Worksheet-Review-and-Change-Record.html">复盘与持续改进记录</a><a href="./Worksheet-Scenario-Brief.html">场景与决策任务</a></nav></details>
+      <article id="article">
+        <header class="article-heading"><p class="kicker">标准化数据接口</p><h1>对象关系与计算规则</h1></header>
+        <details class="page-contents"><summary>本页内容</summary><nav><a href="#1-需求与制造关系">1. 需求与制造关系</a><a href="#2-时间与资源关系">2. 时间与资源关系</a><a href="#3-物料库存与结果关系">3. 物料、库存与结果关系</a><a href="#4-同名字段的不同含义">4. 同名字段的不同含义</a><a href="#5-数量与时间核算">5. 数量与时间核算</a><a href="#6-三种检查要分别完成">6. 三种检查要分别完成</a></nav></details>
+        <p>字段表回答“填在哪里”，本页回答“记录之间如何连接、哪些数量可以比较”。准备数据时，先用业务编码确定对象，再把引用转换为目标表的记录ID。</p>
+<h2 id="1-需求与制造关系">1. 需求与制造关系</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>关系</th>
+<th>当前字段</th>
+<th>如何检查</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>一个订单包含多条明细</td>
+<td><code>order_item.information → order_info.id</code></td>
+<td>每条明细归属一个有效订单；同一制品可按交期拆行</td>
+</tr>
+<tr class="even">
+<td>多条需求可以指向同一制品</td>
+<td><code>order_item.product → product.id</code></td>
+<td>不把订单行ID填成制品ID</td>
+</tr>
+<tr class="odd">
+<td>制品引用各维属性记录</td>
+<td><code>product.property_i → property_i.id</code></td>
+<td>外键、文字标签和数值属性分别填写</td>
+</tr>
+<tr class="even">
+<td>一个制品可以有多条候选路线</td>
+<td><code>process_route.product → product.id</code></td>
+<td>路线是加工选择，不能把每条候选路线都当成额外需求</td>
+</tr>
+<tr class="odd">
+<td>一条路线包含多道工序</td>
+<td><code>process.route → process_route.id</code></td>
+<td>路线内<code>operation_number</code>区分工序，<code>seqno</code>表达先后</td>
+</tr>
+<tr class="even">
+<td>工序可以适配多个资源</td>
+<td><code>process_adaptor.process/workcenter</code></td>
+<td>每条记录是一种工序与资源组合，参数随组合确定</td>
+</tr>
+<tr class="odd">
+<td>工序关联多种物料</td>
+<td><code>ingredient.process/material</code></td>
+<td>单耗基准明确；每种物料都有可追溯的供给</td>
+</tr>
+</tbody>
+</table></div>
+<p>相同<code>seqno</code>表示相关工序之间没有先后依赖，不必强行改成唯一值。需要确认的另一个问题是，它们能否同时得到资源与物料。</p>
+<h2 id="2-时间与资源关系">2. 时间与资源关系</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>引用来源</th>
+<th>指向</th>
+<th>业务问题</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>order_item.delivery_time</code></td>
+<td><code>time_unit.id</code></td>
+<td>需求在哪个时间单元到期</td>
+</tr>
+<tr class="even">
+<td><code>capacity.time_unit</code></td>
+<td><code>time_unit.id</code></td>
+<td>这段资源能力属于哪个时期</td>
+</tr>
+<tr class="odd">
+<td><code>kitting_information.time_unit</code></td>
+<td><code>time_unit.id</code></td>
+<td>物料何时具备使用条件</td>
+</tr>
+<tr class="even">
+<td><code>inventory_limit.time_unit</code></td>
+<td><code>time_unit.id</code></td>
+<td>到哪个时点检查累计入库界限</td>
+</tr>
+<tr class="odd">
+<td><code>planning_result.time_unit</code></td>
+<td><code>time_unit.id</code></td>
+<td>工序产出落在哪个时期</td>
+</tr>
+<tr class="even">
+<td><code>capacity.workcenter</code></td>
+<td><code>workcenter.id</code></td>
+<td>占用比例属于哪个资源</td>
+</tr>
+<tr class="odd">
+<td><code>workcenter.parent_id</code></td>
+<td><code>workcenter.id</code></td>
+<td>资源归属哪个组织节点</td>
+</tr>
+<tr class="even">
+<td><code>shared_resource.binding/to</code></td>
+<td>两个<code>workcenter.id</code></td>
+<td>哪个共享资源供哪个目标资源使用</td>
+</tr>
+</tbody>
+</table></div>
+<p>父子资源结构应能追溯到根节点，避免自引用和循环。共享关系也要排除错误的自绑定。一个共享资源可以服务多个目标，一个目标也可以依赖多个共享资源。</p>
+<p>日历完整性取决于运行的时间范围与资源范围。某个资源缺少某期记录时，应先确认是“未配置”还是有明确的默认策略，不能自行假定全天可用。</p>
+<h2 id="3-物料库存与结果关系">3. 物料、库存与结果关系</h2>
+<p><code>kitting_information.material</code>引用物料。<code>inventory_limit.product</code>引用制品，两者的库存语义需要分开：前者用于工序物料的就绪条件，后者用于制品累计生产入库限制。</p>
+<p><code>planning_result.process</code>可沿工序、路线追到制品；<code>workcenter</code>指定实际资源。结果中的资源和工序除了各自存在，还应构成该场景允许的适配组合。选择了候选路线后，交付量按照实际采用的制造路径归集。</p>
+<p>当前数据库允许部分关联字段为空，这是存储能力。具体教学任务或运行能力仍可要求它们必填，例如本教程的结果复核需要明确工序与资源。</p>
+<h2 id="4-同名字段的不同含义">4. 同名字段的不同含义</h2>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>字段</th>
+<th>所在对象</th>
+<th>正确解释</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>binding</code></td>
+<td><code>material</code></td>
+<td>物料选型依赖分组</td>
+</tr>
+<tr class="even">
+<td><code>binding</code></td>
+<td><code>process_adaptor</code></td>
+<td>共同加工分组</td>
+</tr>
+<tr class="odd">
+<td><code>binding</code></td>
+<td><code>inventory_limit</code></td>
+<td>共用库存分组</td>
+</tr>
+<tr class="even">
+<td><code>binding</code></td>
+<td><code>shared_resource</code></td>
+<td>共享资源工作中心ID，属于外键</td>
+</tr>
+<tr class="odd">
+<td><code>priority</code></td>
+<td>订单、路线、适配、BOM</td>
+<td>各自对象的优先关系；排序方向按对应配置确认</td>
+</tr>
+<tr class="even">
+<td><code>number</code></td>
+<td>订单明细</td>
+<td>需求数量</td>
+</tr>
+<tr class="odd">
+<td><code>number</code></td>
+<td>工序BOM</td>
+<td>按已声明基准计的物料需求量</td>
+</tr>
+<tr class="even">
+<td><code>number</code></td>
+<td>齐套信息</td>
+<td>按已声明增量或累计口径记录的就绪量</td>
+</tr>
+<tr class="odd">
+<td><code>number</code></td>
+<td>计划结果</td>
+<td>工序产出数量</td>
+</tr>
+</tbody>
+</table></div>
+<p>相同整数分组值不表示跨表属于同一组。例如物料<code>binding=1</code>与库存<code>binding=1</code>没有自动关联。</p>
+<h2 id="5-数量与时间核算">5. 数量与时间核算</h2>
+<p>以下计算以单资源离散加工、无报废、无切换损失为前提。增加OEE、并行加工、共同产出或库存共用时，应明确相应转换。</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="数据表"><table>
+<thead>
+<tr class="header">
+<th>问题</th>
+<th>计算</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>正常时期可用时间</td>
+<td><code>scale × (1 − used)</code></td>
+<td>28800秒×0.75=21600秒</td>
+</tr>
+<tr class="even">
+<td>加工次数</td>
+<td>产出量÷单次出件数</td>
+<td>80÷4=20次</td>
+</tr>
+<tr class="odd">
+<td>纯加工时间</td>
+<td>次数×单次加工时间</td>
+<td>20×600秒=200分钟</td>
+</tr>
+<tr class="even">
+<td>整批配置</td>
+<td>批量÷单次出件数为整数</td>
+<td>20÷4=5次/批</td>
+</tr>
+<tr class="odd">
+<td>物料消耗</td>
+<td>工序产出×每件单耗</td>
+<td>80件装配×2件紧固件=160件</td>
+</tr>
+<tr class="even">
+<td>累计供应</td>
+<td>期初可用量+后续已生效增量</td>
+<td>80+40=120件</td>
+</tr>
+<tr class="odd">
+<td>期末库存</td>
+<td>期初+累计入库−累计出库</td>
+<td>20+120−120=20件</td>
+</tr>
+</tbody>
+</table></div>
+<p>单件通过冲压和装配各一次，两道工序都记录80件时，成品为80件；两道工序的160件合计只能描述工序产出记录总量。</p>
+<h2 id="6-三种检查要分别完成">6. 三种检查要分别完成</h2>
+<p><strong>结构检查</strong>：表、字段、类型、主键、外键完整。</p>
+<p><strong>业务检查</strong>：单位、关联方向、时间范围、批量、供给和库存口径成立。</p>
+<p><strong>运行检查</strong>：本次能力配置实际采用了哪些资源、物料和顺序限制，输出能否逐项复核。</p>
+<p>配套校验器针对贯穿案例执行前两类检查中的明确规则；完整场景仍需按所用能力补充检查。可从<a
+href="./Interface-Configurations.html">典型配置模式</a>选择接近自己业务的模式，再按<a
+href="./Interface-Walkthrough.html">贯穿案例</a>完成一次核对。</p>
+      </article>
+      <footer class="article-footer"><a href="./">返回学习中心</a><a href="https://github.com/qiaoyx-or/decisioworks/wiki/Interface-Relationships-zh-CN">在 Wiki 阅读</a></footer>
+    </main>
+  </div>
+  <footer class="site-footer shell"><strong>DecisioWorks</strong><span>从生产问题出发，理解与使用决策能力。</span></footer>
+</body>
+</html>

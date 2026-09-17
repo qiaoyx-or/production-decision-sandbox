@@ -17,7 +17,7 @@
 这份业务说明用于确认规则含义；接入时再将其转换为所选接口要求的字段。
 
 ## marginal_control的作用位置
-`marginal_control`（边缘控制模块）表达现场规则与控制要求，并生成影响分析。`marginalization_analysis`能力编排配方（recipe）演示了`boundary_control`方法：用对象键标识控制对象，`lower_bound`和`upper_bound`分别表示下限和上限，`variable_indices`指定对应的优化变量索引。
+`marginal_control`（规则控制模块）表达现场规则与控制要求，并生成影响分析。`marginalization_analysis`能力编排配方（recipe）演示了`boundary_control`方法：用对象键标识控制对象，`lower_bound`和`upper_bound`分别表示下限和上限，`variable_indices`指定对应的优化变量索引。
 
 `variable_indices`表示变量位置，而不是生产数量。只有在某个变量确实表示指定对象的产量、单位也为“件”时，给它设置`upper_bound=300`才有“最多300件”的业务含义。接入前先确认对象映射、变量单位及模型支持情况。
 
