@@ -5,10 +5,11 @@ import hashlib
 import json
 import re
 import shutil
-import subprocess
 import zipfile
 from pathlib import Path
 from urllib.parse import urlsplit
+
+from render_data_interface_diagram import render_diagram
 
 FILES = {
     'index.md': 'Interface-Guide', 'semantics.md': 'Interface-Semantics',
@@ -51,7 +52,7 @@ def diagram(source, destination):
     dot.extend(f'{a} -> {b};' for a, b in edges)
     dot.append('}')
     destination.with_suffix('.dot').write_text('\n'.join(dot) + '\n', encoding='utf-8')
-    subprocess.run(['dot', '-Tsvg', '-o', str(destination)], input='\n'.join(dot), text=True, check=True)
+    render_diagram(nodes, edges, destination)
     return match.group(0)
 
 
